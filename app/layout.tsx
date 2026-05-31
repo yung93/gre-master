@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
+import { AuthProvider } from "@/lib/auth";
 import "./globals.css";
 
 const sans = Inter({
@@ -34,13 +35,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning className={`${sans.variable} ${serif.variable} ${mono.variable} h-full`}>
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <footer className="page-shell py-10 mt-12 border-t border-[var(--color-rule)]">
-          <p className="text-[var(--color-ink-faint)] text-sm">
-            <span className="serif italic">GRE Master</span> — a private study workbench.
-          </p>
-        </footer>
+        <AuthProvider>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <footer className="page-shell py-10 mt-12 border-t border-[var(--color-rule)]">
+            <p className="text-[var(--color-ink-faint)] text-sm">
+              <span className="serif italic">GRE Master</span> — a private study workbench.
+            </p>
+          </footer>
+        </AuthProvider>
       </body>
     </html>
   );

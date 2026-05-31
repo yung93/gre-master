@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AuthButton from "./AuthButton";
 
 interface NavItem {
   href: string;
@@ -17,7 +18,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="page-shell border-b border-[var(--color-rule)]">
+    <header className="page-shell border-b border-[var(--color-rule)] relative">
       <div className="pt-5 pb-2 flex justify-center items-baseline gap-3">
         <Link href="/" className="flex items-baseline gap-3">
           <span className="serif text-2xl tracking-tight">GRE Master</span>
@@ -46,6 +47,9 @@ export default function Nav() {
           })}
         </ul>
       </nav>
+      <div className="absolute top-4 right-[var(--space-page-x)]">
+        <AuthButton />
+      </div>
     </header>
   );
 }
