@@ -18,14 +18,14 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="page-shell border-b border-[var(--color-rule)] relative">
-      <div className="pt-5 pb-2 flex justify-center items-baseline gap-3">
+    <header className="relative border-b border-[var(--color-rule)]">
+      <div className="page-shell pt-5 pb-2 flex justify-center items-baseline gap-3">
         <Link href="/" className="flex items-baseline gap-3">
           <span className="serif text-2xl tracking-tight">GRE Master</span>
           <span className="eyebrow hidden sm:inline">a study workbench</span>
         </Link>
       </div>
-      <nav aria-label="Primary" className="pb-3 flex justify-center">
+      <nav aria-label="Primary" className="page-shell pb-3 flex justify-center">
         <ul className="flex gap-1 items-center">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
@@ -47,7 +47,7 @@ export default function Nav() {
           })}
         </ul>
       </nav>
-      <div className="absolute top-4 right-[var(--space-page-x)]">
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-6 lg:right-8">
         <AuthButton />
       </div>
     </header>

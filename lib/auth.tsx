@@ -2,8 +2,10 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import {
+  browserLocalPersistence,
   getRedirectResult,
   onAuthStateChanged,
+  setPersistence,
   signInWithPopup,
   signInWithRedirect,
   signOut as fbSignOut,
@@ -27,15 +29,6 @@ const AuthContext = createContext<AuthContextValue>({
   error: null,
 });
 
-const POPUP_FALLBACK_CODES = new Set([
-  "auth/popup-blocked",
-  "auth/popup-closed-by-user",
-  "auth/cancelled-popup-request",
-  "auth/web-storage-unsupported",
-  "auth/operation-not-supported-in-this-environment",
-  "auth/internal-error",
-]);
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,9 +37,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const auth = getFirebaseAuth();
 
-    getRedirectResult(auth).catch((err: unknown) => {
-      setError(err instanceof Error ? err.message : "Sign-in failed");
-    });
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => getRedirectResult(auth))
+      .catch((err: unknown) => {
+        setError(err instanceof Error ? err.message : "Sign-in failed");
+      });
 
     return onAuthStateChanged(auth, (next) => {
       setUser(next);
@@ -61,15 +56,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       await signInWithPopup(auth, googleProvider);
     } catch (err: unknown) {
       const code = (err as { code?: string })?.code ?? "";
-      if (POPUP_FALLBACK_CODES.has(code)) {
+      // Popup blocked or unsupported — fall back to full-page redirect.
+      if (
+        code === "auth/popup-blocked" ||
+        code === "auth/popup-closed-by-user" ||
+        code === "auth/cancelled-popup-request" ||
+        code === "auth/operation-not-supported-in-this-environment"
+      ) {
         try {
           await signInWithRedirect(auth, googleProvider);
+          return;
         } catch (redirectErr) {
           setError(redirectErr instanceof Error ? redirectErr.message : "Sign-in failed");
+          return;
         }
-        return;
       }
-      setError(err instanceof Error ? err.message : "Sign-in failed");
+      const message = err instanceof Error ? err.message : "Sign-in failed";
+      setError(code ? `${code}: ${message}` : message);
     }
   }
 

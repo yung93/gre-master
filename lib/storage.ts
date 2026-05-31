@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const PREFIX = "gre-master/v1/";
 const WRITE_EVENT = "gre-master:local-write";
@@ -37,38 +37,43 @@ export function useLocalState<T>(
   initial: T,
 ): [T, (next: T | ((prev: T) => T)) => void] {
   const [state, setState] = useState<T>(initial);
-  const [hydrated, setHydrated] = useState(false);
+  const lastSeenSerializedRef = useRef<string | null>(null);
 
   useEffect(() => {
-    setState(readJson<T>(key, initial));
-    setHydrated(true);
+    const stored = readJson<T>(key, initial);
+    lastSeenSerializedRef.current = JSON.stringify(stored);
+    setState(stored);
   }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     function onWrite(event: Event) {
       const detail = (event as CustomEvent<{ key: string }>).detail;
-      if (!detail || detail.key === key) {
-        setState(readJson<T>(key, initial));
-      }
+      if (detail && detail.key !== key) return;
+      const raw = window.localStorage.getItem(PREFIX + key);
+      const signature = raw ?? "";
+      if (signature === lastSeenSerializedRef.current) return;
+      lastSeenSerializedRef.current = signature;
+      setState(readJson<T>(key, initial));
     }
     window.addEventListener(WRITE_EVENT, onWrite);
-    return () => window.removeEventListener(WRITE_EVENT, onWrite);
+    window.addEventListener("storage", onWrite);
+    return () => {
+      window.removeEventListener(WRITE_EVENT, onWrite);
+      window.removeEventListener("storage", onWrite);
+    };
   }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const update = useCallback(
     (next: T | ((prev: T) => T)) => {
       setState((prev) => {
         const value = typeof next === "function" ? (next as (p: T) => T)(prev) : next;
+        lastSeenSerializedRef.current = JSON.stringify(value);
         writeJson(key, value);
         return value;
       });
     },
     [key],
   );
-
-  useEffect(() => {
-    if (hydrated) writeJson(key, state);
-  }, [hydrated, key, state]);
 
   return [state, update];
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { useAuth } from "@/lib/auth";
 import { useCloudSync } from "@/lib/cloud-sync";
@@ -33,25 +32,30 @@ export default function AuthButton() {
     <div className="relative">
       <button
         onClick={() => setMenuOpen((v) => !v)}
-        className="flex items-center gap-2 px-2 py-1 rounded-full hover:bg-[var(--color-accent-soft)] transition-colors"
+        className="block rounded-full transition-transform hover:scale-105"
         aria-haspopup="menu"
         aria-expanded={menuOpen}
+        title={`Cloud sync: ${syncTitle(status)}`}
       >
-        {user.photoURL ? (
-          <Image
-            src={user.photoURL}
-            alt=""
-            width={24}
-            height={24}
-            className="rounded-full"
-            unoptimized
-          />
-        ) : (
-          <span className="w-6 h-6 rounded-full bg-[var(--color-accent)] text-white text-xs flex items-center justify-center">
-            {(user.displayName ?? user.email ?? "?").slice(0, 1).toUpperCase()}
-          </span>
-        )}
-        <SyncDot status={status} />
+        <span
+          className={`block rounded-full p-[2px] ${syncRing(status)}`}
+        >
+          {user.photoURL ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={user.photoURL}
+              alt={user.displayName ?? "Account"}
+              width={32}
+              height={32}
+              referrerPolicy="no-referrer"
+              className="w-8 h-8 rounded-full object-cover block bg-[var(--color-bg-elevated)]"
+            />
+          ) : (
+            <span className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white text-sm flex items-center justify-center">
+              {(user.displayName ?? user.email ?? "?").slice(0, 1).toUpperCase()}
+            </span>
+          )}
+        </span>
       </button>
 
       {menuOpen && (
@@ -92,16 +96,33 @@ export default function AuthButton() {
   );
 }
 
-function SyncDot({ status }: { status: ReturnType<typeof useCloudSync>["status"] }) {
-  const tone =
-    status === "ready"
-      ? "bg-[var(--color-success)]"
-      : status === "syncing" || status === "loading"
-        ? "bg-[var(--color-warm)] animate-pulse"
-        : status === "error"
-          ? "bg-[var(--color-danger)]"
-          : "bg-[var(--color-rule-strong)]";
-  return <span aria-hidden className={`w-1.5 h-1.5 rounded-full ${tone}`} />;
+function syncRing(status: ReturnType<typeof useCloudSync>["status"]): string {
+  switch (status) {
+    case "ready":
+      return "bg-[var(--color-success)]";
+    case "syncing":
+    case "loading":
+      return "bg-[var(--color-warm)] animate-pulse";
+    case "error":
+      return "bg-[var(--color-danger)]";
+    default:
+      return "bg-[var(--color-rule-strong)]";
+  }
+}
+
+function syncTitle(status: ReturnType<typeof useCloudSync>["status"]): string {
+  switch (status) {
+    case "ready":
+      return "synced";
+    case "syncing":
+      return "syncing…";
+    case "loading":
+      return "loading…";
+    case "error":
+      return "error";
+    default:
+      return "idle";
+  }
 }
 
 function SyncLabel({ status }: { status: ReturnType<typeof useCloudSync>["status"] }) {
