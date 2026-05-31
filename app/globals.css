@@ -98,15 +98,20 @@ html, body {
   margin-inline: auto;
 }
 
-button, input, textarea, select {
-  font: inherit;
-  color: inherit;
+/* Base resets that set `color` must live in @layer base so Tailwind utility
+   classes (e.g. text-white, text-[color:var(--color-accent)]) can override them.
+   Unlayered rules otherwise win over all layered utilities regardless of specificity. */
+@layer base {
+  button, input, textarea, select {
+    font: inherit;
+    color: inherit;
+  }
+
+  a { color: inherit; text-decoration: none; }
 }
 
 button { cursor: pointer; }
 textarea { resize: vertical; }
-
-a { color: inherit; text-decoration: none; }
 
 mark {
   background: oklch(92% 0.08 80);

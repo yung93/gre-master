@@ -28,16 +28,16 @@ export default function Nav() {
         </Link>
       </div>
       <nav aria-label="Primary" className="page-shell pb-3 flex justify-center">
-        <ul className="flex flex-wrap gap-1 items-center justify-center">
+        <ul className="flex flex-wrap gap-2 items-center justify-center">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm transition-colors ${
+                  className={`px-3 py-1.5 text-sm leading-5 transition-colors ${
                     active
-                      ? "text-[var(--color-ink)] bg-[var(--color-accent-soft)]"
+                      ? "font-bold text-[var(--color-accent)]"
                       : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
                   }`}
                   aria-current={active ? "page" : undefined}
@@ -47,13 +47,17 @@ export default function Nav() {
               </li>
             );
           })}
-          <li className="ml-1">
+          <li>
             <Link
               href="/mock"
-              className={`btn text-sm ${mockActive ? "btn-primary" : "btn-accent"}`}
+              className={`px-3 py-1.5 text-sm leading-5 rounded-md inline-flex items-center gap-1 text-white transition-[background-color,filter] ${
+                mockActive
+                  ? "bg-[var(--color-ink)] font-medium"
+                  : "bg-[var(--color-accent)] hover:brightness-110"
+              }`}
               aria-current={mockActive ? "page" : undefined}
             >
-              Mock Test
+              Mock Test <span aria-hidden>→</span>
             </Link>
           </li>
         </ul>
