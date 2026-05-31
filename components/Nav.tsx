@@ -10,12 +10,14 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { href: "/learn", label: "Learn" },
-  { href: "/mock", label: "Mock Test" },
+  { href: "/verbal", label: "Verbal" },
+  { href: "/quant", label: "Quantitative" },
+  { href: "/writing", label: "Analytical" },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
+  const mockActive = pathname === "/mock" || pathname.startsWith("/mock/");
 
   return (
     <header className="relative border-b border-[var(--color-rule)]">
@@ -26,7 +28,7 @@ export default function Nav() {
         </Link>
       </div>
       <nav aria-label="Primary" className="page-shell pb-3 flex justify-center">
-        <ul className="flex gap-1 items-center">
+        <ul className="flex flex-wrap gap-1 items-center justify-center">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href || pathname.startsWith(item.href + "/");
             return (
@@ -45,6 +47,15 @@ export default function Nav() {
               </li>
             );
           })}
+          <li className="ml-1">
+            <Link
+              href="/mock"
+              className={`btn text-sm ${mockActive ? "btn-primary" : "btn-accent"}`}
+              aria-current={mockActive ? "page" : undefined}
+            >
+              Mock Test
+            </Link>
+          </li>
         </ul>
       </nav>
       <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-6 lg:right-8">
