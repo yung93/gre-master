@@ -8,6 +8,19 @@ export interface SrsState {
   lastReviewedAt: number | null;
 }
 
+/**
+ * Per-card state for the Anki-style learning queue.
+ * `streak` counts consecutive correct answers toward graduation.
+ * `graduated` flips true once the card leaves the active learning batch and
+ * enters long-term SM-2 review scheduling.
+ */
+export interface LearnProgress {
+  streak: number;
+  seen: number;
+  graduated: boolean;
+  lastSeenAt: number | null;
+}
+
 export interface VocabEntry {
   id: string;
   word: string;

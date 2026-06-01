@@ -1,85 +1,112 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import Flashcard from "@/components/Flashcard";
 import SrsControls from "@/components/SrsControls";
 import SpeakButton from "@/components/SpeakButton";
 import { VOCAB } from "@/data/vocab";
-import { initialSrsState, isDue, scheduleNext } from "@/lib/srs";
+import { initialSrsState, scheduleNext } from "@/lib/srs";
+import {
+  BATCH_SIZE,
+  GOOD_STEPS_TO_GRADUATE,
+  applyGrade,
+  initialLearnProgress,
+  pickFromBatch,
+  refillBatch,
+  seedBatch,
+} from "@/lib/learn-queue";
 import { useLocalState } from "@/lib/storage";
-import type { SrsGrade, SrsState } from "@/lib/types";
+import type { LearnProgress, SrsGrade, SrsState } from "@/lib/types";
 
-type DeckMode = "due" | "all" | "fresh";
+const ORDERED_IDS = VOCAB.map((v) => v.id);
 
 interface SessionStats {
   reviewed: number;
-  again: number;
-  good: number;
-}
-
-function pickNext(
-  states: Record<string, SrsState>,
-  mode: DeckMode,
-  now: number,
-  excludeId?: string,
-): string | null {
-  const candidates = VOCAB.filter((v) => v.id !== excludeId);
-  if (mode === "fresh") {
-    const unseen = candidates.filter((v) => !states[v.id] || states[v.id].repetitions === 0);
-    if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)].id;
-  }
-  if (mode === "due") {
-    const due = candidates.filter((v) => {
-      const state = states[v.id] ?? initialSrsState(now);
-      return isDue(state, now);
-    });
-    if (due.length > 0) return due[Math.floor(Math.random() * due.length)].id;
-  }
-  if (candidates.length === 0) return null;
-  return candidates[Math.floor(Math.random() * candidates.length)].id;
+  graduatedThisSession: number;
 }
 
 export default function VerbalPage() {
-  const [states, setStates] = useLocalState<Record<string, SrsState>>("srs/vocab", {});
-  const [stats, setStats] = useState<SessionStats>({ reviewed: 0, again: 0, good: 0 });
-  const [mode, setMode] = useState<DeckMode>("due");
+  const [progress, setProgress] = useLocalState<Record<string, LearnProgress>>("learn/vocab", {});
+  const [srs, setSrs] = useLocalState<Record<string, SrsState>>("srs/vocab", {});
+  const [batch, setBatch] = useLocalState<string[]>("learn/vocab-batch", []);
+  const [stats, setStats] = useState<SessionStats>({ reviewed: 0, graduatedThisSession: 0 });
   const [currentId, setCurrentId] = useState<string | null>(null);
+  const hydratedRef = useRef(false);
 
+  // On first hydration, build/repair the persisted batch (random backfill) once.
   useEffect(() => {
-    if (!currentId) {
-      const next = pickNext(states, mode, Date.now());
-      if (next) setCurrentId(next);
-    }
-  }, [currentId, states, mode]);
+    if (hydratedRef.current) return;
+    hydratedRef.current = true;
+    setBatch((prev) => {
+      const repaired = prev.length > 0
+        ? refillBatch(prev, ORDERED_IDS, progress, BATCH_SIZE)
+        : seedBatch(ORDERED_IDS, progress, BATCH_SIZE);
+      setCurrentId(pickFromBatch(repaired, progress));
+      return repaired;
+    });
+  }, [progress, setBatch]);
+
+  // Keep a valid current card whenever the batch changes.
+  useEffect(() => {
+    if (!hydratedRef.current) return;
+    if (currentId && batch.includes(currentId)) return;
+    if (batch.length > 0) setCurrentId(pickFromBatch(batch, progress));
+    else setCurrentId(null);
+  }, [batch, currentId, progress]);
 
   const current = useMemo(() => VOCAB.find((v) => v.id === currentId) ?? null, [currentId]);
+  const currentProgress = currentId ? progress[currentId] ?? initialLearnProgress() : null;
 
-  const dueNow = useMemo(() => {
-    const now = Date.now();
-    return VOCAB.reduce((acc, v) => (isDue(states[v.id] ?? initialSrsState(now), now) ? acc + 1 : acc), 0);
-  }, [states]);
+  const masteredCount = useMemo(
+    () => ORDERED_IDS.reduce((n, id) => (progress[id]?.graduated ? n + 1 : n), 0),
+    [progress],
+  );
+  const activeInBatch = batch.filter(
+    (id) => (progress[id]?.seen ?? 0) > 0 && !progress[id]?.graduated,
+  ).length;
 
   function handleGrade(grade: SrsGrade) {
     if (!current) return;
     const now = Date.now();
-    const prev = states[current.id] ?? initialSrsState(now);
-    const next = scheduleNext(prev, grade, now);
-    setStates((s) => ({ ...s, [current.id]: next }));
+    const id = current.id;
+    const prevProgress = progress[id] ?? initialLearnProgress();
+    const nextProgress = applyGrade(prevProgress, grade, now);
+
+    const nextProgressMap = { ...progress, [id]: nextProgress };
+    setProgress(nextProgressMap);
+
+    // When a card graduates, hand it to SM-2 for long-term review.
+    const justGraduated = nextProgress.graduated && !prevProgress.graduated;
+    if (justGraduated) {
+      const prevSrs = srs[id] ?? initialSrsState(now);
+      setSrs((s) => ({ ...s, [id]: scheduleNext(prevSrs, grade === "easy" ? "easy" : "good", now) }));
+    }
+
     setStats((s) => ({
       reviewed: s.reviewed + 1,
-      again: s.again + (grade === "again" ? 1 : 0),
-      good: s.good + (grade === "good" || grade === "easy" ? 1 : 0),
+      graduatedThisSession: s.graduatedThisSession + (justGraduated ? 1 : 0),
     }));
-    const upcoming = pickNext(states, mode, now, current.id);
-    setCurrentId(upcoming);
+
+    // Refill drops the graduated word and pulls in a RANDOM replacement.
+    const nextBatch = justGraduated
+      ? refillBatch(batch, ORDERED_IDS, nextProgressMap, BATCH_SIZE)
+      : batch;
+    setBatch(nextBatch);
+    setCurrentId(pickFromBatch(nextBatch, nextProgressMap, id));
   }
 
   function resetProgress() {
     if (typeof window !== "undefined" && !window.confirm("Reset all vocabulary progress?")) return;
-    setStates({});
-    setStats({ reviewed: 0, again: 0, good: 0 });
-    setCurrentId(null);
+    setProgress({});
+    setSrs({});
+    const fresh = seedBatch(ORDERED_IDS, {}, BATCH_SIZE);
+    setBatch(fresh);
+    setStats({ reviewed: 0, graduatedThisSession: 0 });
+    setCurrentId(pickFromBatch(fresh, {}));
   }
+
+  const allMastered = masteredCount === VOCAB.length;
 
   return (
     <div className="page-shell pt-10 pb-20">
@@ -90,28 +117,34 @@ export default function VerbalPage() {
             <em className="not-italic">Flip</em>, recall, grade.
           </h1>
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
-            Front shows the word, part of speech, and an exam-style sentence with the word
-            elided. Back reveals the definition (both Traditional Chinese and English),
-            the full example, and any synonyms.
+            You drill a rolling set of {BATCH_SIZE} words. Answer{" "}
+            <span className="font-medium text-[var(--color-ink)]">Good</span> {GOOD_STEPS_TO_GRADUATE} times
+            (or <span className="font-medium text-[var(--color-ink)]">Easy</span> once) to master a word; the
+            moment it graduates, a new word takes its place. Mastered words come back later for spaced review.
           </p>
         </div>
-        <div className="surface-soft px-5 py-4 grid grid-cols-3 gap-4">
-          <Stat label="Due" value={dueNow.toString()} />
-          <Stat label="Reviewed" value={stats.reviewed.toString()} />
-          <Stat label="Total" value={VOCAB.length.toString()} />
+        <div className="surface-soft px-5 py-4">
+          <div className="grid grid-cols-3 gap-4">
+            <Stat label="In batch" value={`${activeInBatch}/${BATCH_SIZE}`} />
+            <Stat label="Mastered" value={`${masteredCount}`} />
+            <Stat label="Total" value={`${VOCAB.length}`} />
+          </div>
+          <Link
+            href="/words"
+            className="btn btn-secondary text-xs w-full mt-4"
+          >
+            Browse word list →
+          </Link>
         </div>
       </header>
 
-      <div className="mt-8 flex flex-wrap items-center gap-2">
-        <ModeButton current={mode} value="due" onSelect={setMode}>Due first</ModeButton>
-        <ModeButton current={mode} value="fresh" onSelect={setMode}>Fresh first</ModeButton>
-        <ModeButton current={mode} value="all" onSelect={setMode}>Shuffle all</ModeButton>
-        <span className="ml-auto text-xs text-[var(--color-ink-faint)] mono">{stats.reviewed} this session</span>
-        <button onClick={resetProgress} className="btn btn-ghost text-xs">Reset progress</button>
+      <div className="mt-6 flex items-center gap-3">
+        <ProgressBar value={masteredCount} total={VOCAB.length} />
+        <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
       </div>
 
       <div className="mt-8">
-        {current ? (
+        {current && currentProgress ? (
           <>
             <Flashcard
               cardKey={current.id}
@@ -138,14 +171,8 @@ export default function VerbalPage() {
                     <SpeakButton text={current.word} shortcut="s" />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <p className="eyebrow">繁體中文</p>
-                      <p className="serif mt-1.5 text-xl leading-snug">{current.meaningZh}</p>
-                    </div>
-                    <div>
-                      <p className="eyebrow">English</p>
-                      <p className="mt-1.5 leading-snug text-[var(--color-ink-muted)]">{current.meaningEn}</p>
-                    </div>
+                    <p className="serif text-xl leading-snug">{current.meaningZh}</p>
+                    <p className="leading-snug text-[var(--color-ink-muted)] self-center">{current.meaningEn}</p>
                   </div>
                   <hr className="rule" />
                   <div>
@@ -161,17 +188,21 @@ export default function VerbalPage() {
                   )}
                 </div>
               }
-              footerFront={<span>Card {VOCAB.findIndex((v) => v.id === current.id) + 1} of {VOCAB.length}</span>}
-              footerBack={<span>Grade your recall to schedule the next review</span>}
+              footerFront={<MasteryPips streak={currentProgress.streak} />}
+              footerBack={<MasteryPips streak={currentProgress.streak} />}
             />
             <SrsControls onGrade={handleGrade} />
           </>
+        ) : allMastered ? (
+          <div className="surface p-12 text-center">
+            <p className="serif text-2xl">Every word mastered. 🎉</p>
+            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
+              All {VOCAB.length} words have graduated. Add more words, or reset to run through them again.
+            </p>
+          </div>
         ) : (
           <div className="surface p-12 text-center">
-            <p className="serif text-2xl">No cards due. Take a break.</p>
-            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
-              Switch the mode above to drill anyway, or come back when something matures.
-            </p>
+            <p className="serif text-2xl">Loading your batch…</p>
           </div>
         )}
       </div>
@@ -188,25 +219,38 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ModeButton({
-  current,
-  value,
-  onSelect,
-  children,
-}: {
-  current: DeckMode;
-  value: DeckMode;
-  onSelect: (v: DeckMode) => void;
-  children: React.ReactNode;
-}) {
-  const active = current === value;
+function ProgressBar({ value, total }: { value: number; total: number }) {
+  const pct = total === 0 ? 0 : Math.round((value / total) * 100);
   return (
-    <button
-      onClick={() => onSelect(value)}
-      className={`btn text-xs ${active ? "btn-primary" : "btn-secondary"}`}
-    >
-      {children}
-    </button>
+    <div className="flex-1">
+      <div className="flex items-baseline justify-between mb-1">
+        <span className="eyebrow">Mastery</span>
+        <span className="mono text-xs text-[var(--color-ink-faint)]">{value} / {total} · {pct}%</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden">
+        <div
+          className="h-full bg-[var(--color-accent)] transition-[width] duration-500"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function MasteryPips({ streak }: { streak: number }) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className="text-[var(--color-ink-faint)]">mastery</span>
+      {Array.from({ length: GOOD_STEPS_TO_GRADUATE }).map((_, i) => (
+        <span
+          key={i}
+          aria-hidden
+          className={`w-2 h-2 rounded-full ${
+            i < streak ? "bg-[var(--color-success)]" : "bg-[var(--color-rule-strong)]"
+          }`}
+        />
+      ))}
+    </span>
   );
 }
 

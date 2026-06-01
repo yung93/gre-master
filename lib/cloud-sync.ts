@@ -5,11 +5,12 @@ import { doc, getDoc, onSnapshot, serverTimestamp, setDoc, type Timestamp } from
 import { getFirebaseDb } from "./firebase";
 import { useAuth } from "./auth";
 import { readJson, writeJson } from "./storage";
-import type { MockSessionState, SrsState } from "./types";
+import type { LearnProgress, MockSessionState, SrsState } from "./types";
 
 const KEY_VOCAB = "srs/vocab";
 const KEY_QUANT = "srs/quant";
 const KEY_MOCK = "mock/active";
+const KEY_LEARN_VOCAB = "learn/vocab";
 const LOCAL_WRITE_EVENT = "gre-master:local-write";
 
 export type SyncStatus = "idle" | "loading" | "ready" | "syncing" | "error";
@@ -17,6 +18,7 @@ export type SyncStatus = "idle" | "loading" | "ready" | "syncing" | "error";
 interface CloudPayload {
   vocab: Record<string, SrsState>;
   quant: Record<string, SrsState>;
+  learnVocab: Record<string, LearnProgress>;
   mockActive: MockSessionState | null;
   updatedAt?: Timestamp;
 }
@@ -25,6 +27,7 @@ function readLocalPayload(): CloudPayload {
   return {
     vocab: readJson<Record<string, SrsState>>(KEY_VOCAB, {}),
     quant: readJson<Record<string, SrsState>>(KEY_QUANT, {}),
+    learnVocab: readJson<Record<string, LearnProgress>>(KEY_LEARN_VOCAB, {}),
     mockActive: readJson<MockSessionState | null>(KEY_MOCK, null),
   };
 }
@@ -32,7 +35,27 @@ function readLocalPayload(): CloudPayload {
 function writeLocalPayload(payload: CloudPayload): void {
   writeJson(KEY_VOCAB, payload.vocab);
   writeJson(KEY_QUANT, payload.quant);
+  writeJson(KEY_LEARN_VOCAB, payload.learnVocab);
   writeJson(KEY_MOCK, payload.mockActive);
+}
+
+function mergeLearn(
+  local: Record<string, LearnProgress>,
+  remote: Record<string, LearnProgress>,
+): Record<string, LearnProgress> {
+  const out: Record<string, LearnProgress> = { ...local };
+  for (const id in remote) {
+    const localState = out[id];
+    const remoteState = remote[id];
+    if (!localState) {
+      out[id] = remoteState;
+      continue;
+    }
+    const localTs = localState.lastSeenAt ?? 0;
+    const remoteTs = remoteState.lastSeenAt ?? 0;
+    if (remoteTs > localTs) out[id] = remoteState;
+  }
+  return out;
 }
 
 function mergeSrs(
@@ -67,6 +90,7 @@ function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): Clou
   return {
     vocab: mergeSrs(local.vocab, remote.vocab ?? {}),
     quant: mergeSrs(local.quant, remote.quant ?? {}),
+    learnVocab: mergeLearn(local.learnVocab, remote.learnVocab ?? {}),
     mockActive: pickLatestMock(local.mockActive, remote.mockActive ?? null),
   };
 }
