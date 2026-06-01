@@ -15,13 +15,13 @@ export default function AuthButton() {
 
   if (!user) {
     return (
-      <div className="flex items-center gap-3">
+      <div className="flex flex-col items-end gap-1">
         <button onClick={signIn} className="btn btn-secondary text-xs">
           <GoogleMark /> Sign in to sync
         </button>
         {error && (
-          <span className="mono text-[10px] text-[var(--color-danger)]" title={error}>
-            ⚠
+          <span className="mono text-[10px] text-[var(--color-danger)] max-w-[16rem] text-right leading-tight">
+            {error}
           </span>
         )}
       </div>
