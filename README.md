@@ -19,13 +19,21 @@ npm run build        # static export to ./out
 
 ## Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds a static export and publishes it to GitHub Pages. The site is available at:
+The app is hosted on **Firebase Hosting** at:
 
 ```
-https://<your-user>.github.io/<repo-name>/
+https://gre-master-a2ec8.web.app
 ```
 
-Enable it on first deploy in **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Manual deploy (builds the static export, then publishes):
+
+```bash
+npm run deploy
+```
+
+Automated deploy: pushing to `main` triggers `.github/workflows/firebase-deploy.yml`.
+This requires a `FIREBASE_SERVICE_ACCOUNT` repository secret (a Firebase service-account
+JSON key with the Firebase Hosting Admin role). Without it, use `npm run deploy` locally.
 
 ## Adding content
 
