@@ -5,8 +5,15 @@ import type { LearnProgress, SrsGrade } from "./types";
  *
  * A fixed-size batch of active cards is kept "in rotation" and persisted, so it
  * stays stable across renders. Each card must be mastered to graduate out of the
- * batch; the instant it graduates, a RANDOM unseen card backfills the slot so the
- * active size stays constant.
+ * batch; the instant it graduates, the slot is backfilled.
+ *
+ * Backfill source:
+ *   - Normally a RANDOM unseen word fills the freed slot.
+ *   - But on every REVISIT_EVERY-th mastery, the slot is filled instead by
+ *     bringing back a previously-mastered word (the least-revisited one, ties
+ *     broken randomly) for spaced review. Its streak resets, so it must be
+ *     re-mastered. If no mastered words exist (or no new words remain), it falls
+ *     back to the other source.
  *
  * Mastery rule (mirrors Anki's learning steps):
  *   - "good"  → +1 to the streak; graduates at GOOD_STEPS_TO_GRADUATE
@@ -14,20 +21,24 @@ import type { LearnProgress, SrsGrade } from "./types";
  *   - "hard"  → holds the streak where it is (no progress, no reset)
  *   - "again" → resets the streak to 0
  *
- * Graduated cards are not discarded: the page hands them to the SM-2 scheduler
- * for long-term review, and they can resurface on later days.
- *
- * IMPORTANT: the backfill is random, so the batch-building functions must only be
- * called from event handlers (and once on hydration) — never during render — and
- * their result must be persisted. Calling them in render would reshuffle the batch
- * on every paint.
+ * IMPORTANT: backfill is random, so the batch-building functions must only be
+ * called from event handlers (and once on hydration) — never during render —
+ * and their result must be persisted.
  */
 
 export const BATCH_SIZE = 10;
 export const GOOD_STEPS_TO_GRADUATE = 2;
+export const REVISIT_EVERY = 10;
 
 export function initialLearnProgress(): LearnProgress {
-  return { streak: 0, seen: 0, graduated: false, lastSeenAt: null };
+  return {
+    streak: 0,
+    seen: 0,
+    graduated: false,
+    everMastered: false,
+    revisitCount: 0,
+    lastSeenAt: null,
+  };
 }
 
 export function isGraduated(progress: LearnProgress | undefined): boolean {
@@ -41,20 +52,48 @@ export function applyGrade(
   now: number = Date.now(),
 ): LearnProgress {
   const seen = prev.seen + 1;
+  const base = {
+    everMastered: prev.everMastered,
+    revisitCount: prev.revisitCount,
+  };
 
   if (grade === "again") {
-    return { streak: 0, seen, graduated: false, lastSeenAt: now };
+    return { ...base, streak: 0, seen, graduated: false, lastSeenAt: now };
   }
   if (grade === "hard") {
     return { ...prev, seen, lastSeenAt: now };
   }
   if (grade === "easy") {
-    return { streak: GOOD_STEPS_TO_GRADUATE, seen, graduated: true, lastSeenAt: now };
+    return { ...base, streak: GOOD_STEPS_TO_GRADUATE, seen, graduated: true, everMastered: true, lastSeenAt: now };
   }
   // "good"
   const streak = prev.streak + 1;
   const graduated = streak >= GOOD_STEPS_TO_GRADUATE;
-  return { streak, seen, graduated, lastSeenAt: now };
+  return {
+    ...base,
+    streak,
+    seen,
+    graduated,
+    everMastered: prev.everMastered || graduated,
+    lastSeenAt: now,
+  };
+}
+
+/**
+ * Re-enter a mastered word for review: clear its graduated/streak state (so it
+ * must be re-mastered) and bump its revisit counter. `everMastered` stays true.
+ */
+export function markRevisit(
+  prev: Readonly<LearnProgress>,
+  now: number = Date.now(),
+): LearnProgress {
+  return {
+    ...prev,
+    streak: 0,
+    graduated: false,
+    revisitCount: prev.revisitCount + 1,
+    lastSeenAt: now,
+  };
 }
 
 /** Words never seen yet and not graduated, eligible to enter the batch. */
@@ -70,9 +109,41 @@ function freshCandidates(
   });
 }
 
+/** Currently-mastered words (graduated, not already in the batch), for revisits. */
+function masteredCandidates(
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  exclude: ReadonlySet<string>,
+): string[] {
+  return orderedIds.filter((id) => {
+    if (exclude.has(id)) return false;
+    return progress[id]?.graduated === true;
+  });
+}
+
 function pickRandom<T>(arr: readonly T[]): T | undefined {
   if (arr.length === 0) return undefined;
   return arr[Math.floor(Math.random() * arr.length)];
+}
+
+/**
+ * Choose one mastered word to revisit: the least-revisited, ties broken
+ * randomly. Returns undefined if there are none.
+ */
+export function pickRevisit(
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  exclude: ReadonlySet<string> = new Set(),
+): string | undefined {
+  const pool = masteredCandidates(orderedIds, progress, exclude);
+  if (pool.length === 0) return undefined;
+  let min = Infinity;
+  for (const id of pool) {
+    const c = progress[id]?.revisitCount ?? 0;
+    if (c < min) min = c;
+  }
+  const leastRevisited = pool.filter((id) => (progress[id]?.revisitCount ?? 0) === min);
+  return pickRandom(leastRevisited);
 }
 
 /**
@@ -95,8 +166,8 @@ export function seedBatch(
 
 /**
  * Reconcile a persisted batch with current progress: drop any graduated words,
- * drop ids no longer in the deck, then backfill the freed slots with RANDOM
- * unseen words up to `size`. Survivors keep their relative order.
+ * drop ids no longer in the deck, then backfill freed slots with RANDOM unseen
+ * words up to `size`. Survivors keep their relative order.
  */
 export function refillBatch(
   batch: readonly string[],

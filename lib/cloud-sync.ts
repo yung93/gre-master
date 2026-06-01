@@ -11,6 +11,7 @@ const KEY_VOCAB = "srs/vocab";
 const KEY_QUANT = "srs/quant";
 const KEY_MOCK = "mock/active";
 const KEY_LEARN_VOCAB = "learn/vocab";
+const KEY_LEARN_VOCAB_MASTERY = "learn/vocab-mastery-count";
 const LOCAL_WRITE_EVENT = "gre-master:local-write";
 
 export type SyncStatus = "idle" | "loading" | "ready" | "syncing" | "error";
@@ -19,6 +20,7 @@ interface CloudPayload {
   vocab: Record<string, SrsState>;
   quant: Record<string, SrsState>;
   learnVocab: Record<string, LearnProgress>;
+  learnVocabMastery: number;
   mockActive: MockSessionState | null;
   updatedAt?: Timestamp;
 }
@@ -28,6 +30,7 @@ function readLocalPayload(): CloudPayload {
     vocab: readJson<Record<string, SrsState>>(KEY_VOCAB, {}),
     quant: readJson<Record<string, SrsState>>(KEY_QUANT, {}),
     learnVocab: readJson<Record<string, LearnProgress>>(KEY_LEARN_VOCAB, {}),
+    learnVocabMastery: readJson<number>(KEY_LEARN_VOCAB_MASTERY, 0),
     mockActive: readJson<MockSessionState | null>(KEY_MOCK, null),
   };
 }
@@ -36,6 +39,7 @@ function writeLocalPayload(payload: CloudPayload): void {
   writeJson(KEY_VOCAB, payload.vocab);
   writeJson(KEY_QUANT, payload.quant);
   writeJson(KEY_LEARN_VOCAB, payload.learnVocab);
+  writeJson(KEY_LEARN_VOCAB_MASTERY, payload.learnVocabMastery);
   writeJson(KEY_MOCK, payload.mockActive);
 }
 
@@ -91,6 +95,7 @@ function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): Clou
     vocab: mergeSrs(local.vocab, remote.vocab ?? {}),
     quant: mergeSrs(local.quant, remote.quant ?? {}),
     learnVocab: mergeLearn(local.learnVocab, remote.learnVocab ?? {}),
+    learnVocabMastery: Math.max(local.learnVocabMastery, remote.learnVocabMastery ?? 0),
     mockActive: pickLatestMock(local.mockActive, remote.mockActive ?? null),
   };
 }

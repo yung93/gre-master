@@ -10,9 +10,12 @@ import { initialSrsState, scheduleNext } from "@/lib/srs";
 import {
   BATCH_SIZE,
   GOOD_STEPS_TO_GRADUATE,
+  REVISIT_EVERY,
   applyGrade,
   initialLearnProgress,
+  markRevisit,
   pickFromBatch,
+  pickRevisit,
   refillBatch,
   seedBatch,
 } from "@/lib/learn-queue";
@@ -30,22 +33,43 @@ export default function VerbalPage() {
   const [progress, setProgress] = useLocalState<Record<string, LearnProgress>>("learn/vocab", {});
   const [srs, setSrs] = useLocalState<Record<string, SrsState>>("srs/vocab", {});
   const [batch, setBatch] = useLocalState<string[]>("learn/vocab-batch", []);
+  const [masteryCount, setMasteryCount] = useLocalState<number>("learn/vocab-mastery-count", 0);
   const [stats, setStats] = useState<SessionStats>({ reviewed: 0, graduatedThisSession: 0 });
   const [currentId, setCurrentId] = useState<string | null>(null);
   const hydratedRef = useRef(false);
 
-  // On first hydration, build/repair the persisted batch (random backfill) once.
+  // On first hydration: migrate legacy progress (add everMastered/revisitCount),
+  // then build/repair the persisted batch (random backfill) once.
   useEffect(() => {
     if (hydratedRef.current) return;
     hydratedRef.current = true;
+
+    let migrated = progress;
+    const needsMigration = Object.values(progress).some(
+      (p) => p.everMastered === undefined || p.revisitCount === undefined,
+    );
+    if (needsMigration) {
+      migrated = Object.fromEntries(
+        Object.entries(progress).map(([id, p]) => [
+          id,
+          {
+            ...p,
+            everMastered: p.everMastered ?? p.graduated ?? false,
+            revisitCount: p.revisitCount ?? 0,
+          },
+        ]),
+      );
+      setProgress(migrated);
+    }
+
     setBatch((prev) => {
       const repaired = prev.length > 0
-        ? refillBatch(prev, ORDERED_IDS, progress, BATCH_SIZE)
-        : seedBatch(ORDERED_IDS, progress, BATCH_SIZE);
-      setCurrentId(pickFromBatch(repaired, progress));
+        ? refillBatch(prev, ORDERED_IDS, migrated, BATCH_SIZE)
+        : seedBatch(ORDERED_IDS, migrated, BATCH_SIZE);
+      setCurrentId(pickFromBatch(repaired, migrated));
       return repaired;
     });
-  }, [progress, setBatch]);
+  }, [progress, setBatch, setProgress]);
 
   // Keep a valid current card whenever the batch changes.
   useEffect(() => {
@@ -58,8 +82,9 @@ export default function VerbalPage() {
   const current = useMemo(() => VOCAB.find((v) => v.id === currentId) ?? null, [currentId]);
   const currentProgress = currentId ? progress[currentId] ?? initialLearnProgress() : null;
 
+  // "Mastered" counts words ever mastered, so it does not dip during revisits.
   const masteredCount = useMemo(
-    () => ORDERED_IDS.reduce((n, id) => (progress[id]?.graduated ? n + 1 : n), 0),
+    () => ORDERED_IDS.reduce((n, id) => (progress[id]?.everMastered ? n + 1 : n), 0),
     [progress],
   );
   const activeInBatch = batch.filter(
@@ -73,14 +98,42 @@ export default function VerbalPage() {
     const prevProgress = progress[id] ?? initialLearnProgress();
     const nextProgress = applyGrade(prevProgress, grade, now);
 
-    const nextProgressMap = { ...progress, [id]: nextProgress };
-    setProgress(nextProgressMap);
+    let nextProgressMap = { ...progress, [id]: nextProgress };
 
-    // When a card graduates, hand it to SM-2 for long-term review.
+    // A graduation is either mastering a new word or re-mastering a revisited one.
     const justGraduated = nextProgress.graduated && !prevProgress.graduated;
     if (justGraduated) {
       const prevSrs = srs[id] ?? initialSrsState(now);
       setSrs((s) => ({ ...s, [id]: scheduleNext(prevSrs, grade === "easy" ? "easy" : "good", now) }));
+    }
+
+    let nextBatch = batch;
+    if (justGraduated) {
+      const nextCount = masteryCount + 1;
+      setMasteryCount(nextCount);
+
+      // Every REVISIT_EVERY masteries, bring back a mastered word instead of a
+      // new one. Exclude the word just graduated and everything still in the batch.
+      const wantRevisit = nextCount % REVISIT_EVERY === 0;
+      const exclude = new Set<string>([...batch, id]);
+      const revisitId = wantRevisit
+        ? pickRevisit(ORDERED_IDS, nextProgressMap, exclude)
+        : undefined;
+
+      if (revisitId) {
+        nextProgressMap = { ...nextProgressMap, [revisitId]: markRevisit(nextProgressMap[revisitId], now) };
+        setProgress(nextProgressMap);
+        // Drop the graduated word, keep the rest, then add the revisit word.
+        const survivors = batch.filter((b) => b !== id && !nextProgressMap[b]?.graduated);
+        nextBatch = [...survivors, revisitId];
+        // Top up with new words if the revisit did not fill the batch.
+        nextBatch = refillBatch(nextBatch, ORDERED_IDS, nextProgressMap, BATCH_SIZE);
+      } else {
+        setProgress(nextProgressMap);
+        nextBatch = refillBatch(batch, ORDERED_IDS, nextProgressMap, BATCH_SIZE);
+      }
+    } else {
+      setProgress(nextProgressMap);
     }
 
     setStats((s) => ({
@@ -88,10 +141,6 @@ export default function VerbalPage() {
       graduatedThisSession: s.graduatedThisSession + (justGraduated ? 1 : 0),
     }));
 
-    // Refill drops the graduated word and pulls in a RANDOM replacement.
-    const nextBatch = justGraduated
-      ? refillBatch(batch, ORDERED_IDS, nextProgressMap, BATCH_SIZE)
-      : batch;
     setBatch(nextBatch);
     setCurrentId(pickFromBatch(nextBatch, nextProgressMap, id));
   }
@@ -100,6 +149,7 @@ export default function VerbalPage() {
     if (typeof window !== "undefined" && !window.confirm("Reset all vocabulary progress?")) return;
     setProgress({});
     setSrs({});
+    setMasteryCount(0);
     const fresh = seedBatch(ORDERED_IDS, {}, BATCH_SIZE);
     setBatch(fresh);
     setStats({ reviewed: 0, graduatedThisSession: 0 });
@@ -119,8 +169,9 @@ export default function VerbalPage() {
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
             You drill a rolling set of {BATCH_SIZE} words. Answer{" "}
             <span className="font-medium text-[var(--color-ink)]">Good</span> {GOOD_STEPS_TO_GRADUATE} times
-            (or <span className="font-medium text-[var(--color-ink)]">Easy</span> once) to master a word; the
-            moment it graduates, a new word takes its place. Mastered words come back later for spaced review.
+            (or <span className="font-medium text-[var(--color-ink)]">Easy</span> once) to master a word; a new
+            word then takes its place. Every {REVISIT_EVERY} masteries, a previously-mastered word resurfaces
+            for review instead of a new one — so nothing is learned once and forgotten.
           </p>
         </div>
         <div className="surface-soft px-5 py-4">

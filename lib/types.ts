@@ -11,13 +11,19 @@ export interface SrsState {
 /**
  * Per-card state for the Anki-style learning queue.
  * `streak` counts consecutive correct answers toward graduation.
- * `graduated` flips true once the card leaves the active learning batch and
- * enters long-term SM-2 review scheduling.
+ * `graduated` flips true while the card is mastered and out of the active batch;
+ * it is temporarily set back to false when the card is pulled in for a revisit.
+ * `everMastered` stays true once a card has been mastered at least once, so the
+ * "Mastered" count does not flicker downward during revisits.
+ * `revisitCount` is how many times the card has been pulled back for review;
+ * the queue prefers the least-revisited mastered words.
  */
 export interface LearnProgress {
   streak: number;
   seen: number;
   graduated: boolean;
+  everMastered: boolean;
+  revisitCount: number;
   lastSeenAt: number | null;
 }
 
