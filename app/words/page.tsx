@@ -5,7 +5,7 @@ import Link from "next/link";
 import SpeakButton from "@/components/SpeakButton";
 import { VOCAB } from "@/data/vocab";
 import { useLocalState } from "@/lib/storage";
-import type { LearnProgress, VocabEntry } from "@/lib/types";
+import type { LearnProgress, MemoryAid, VocabEntry } from "@/lib/types";
 
 type StatusFilter = "all" | "mastered" | "learning" | "new";
 
@@ -283,6 +283,7 @@ function WordRow({ entry, index, progress, hideZh }: WordRowProps) {
             <p className="serif text-lg leading-snug">{entry.meaningZh}</p>
             <p className="text-sm leading-snug text-[var(--color-ink-muted)] self-center">{entry.meaningEn}</p>
           </div>
+          {entry.memoryAid && <MemoryAidBlock aid={entry.memoryAid} />}
           <div>
             <p className="eyebrow">Example</p>
             <p className="serif mt-1 italic leading-relaxed">{entry.example}</p>
@@ -313,6 +314,30 @@ function StatusDot({ status }: { status: StatusFilter }) {
       <span aria-hidden className="w-2 h-2 rounded-full" style={{ background: c.color }} />
       <span className="hidden sm:inline text-[10px] mono text-[var(--color-ink-faint)] w-14">{c.label}</span>
     </span>
+  );
+}
+
+function MemoryAidBlock({ aid }: { aid: MemoryAid }) {
+  return (
+    <div className="surface-soft px-4 py-3">
+      <p className="eyebrow">記憶 · Memory hook</p>
+      {aid.roots && aid.roots.length > 0 && (
+        <div className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-2">
+          {aid.roots.map((r, i) => (
+            <span key={i} className="inline-flex items-center gap-1.5">
+              {i > 0 && <span className="text-[var(--color-ink-faint)]">+</span>}
+              <span className="mono text-sm px-2 py-0.5 rounded bg-[var(--color-accent-soft)] text-[oklch(30%_0.09_195)]">
+                {r.part}
+              </span>
+              <span className="text-sm text-[var(--color-ink-muted)]">{r.meaning}</span>
+            </span>
+          ))}
+        </div>
+      )}
+      {aid.mnemonic && (
+        <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-ink)]">{aid.mnemonic}</p>
+      )}
+    </div>
   );
 }
 

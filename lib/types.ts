@@ -21,6 +21,16 @@ export interface LearnProgress {
   lastSeenAt: number | null;
 }
 
+/**
+ * A memory aid for a word. `roots` breaks the word into morphemes with glosses;
+ * `mnemonic` is a short hook (often linking the sound/parts to the meaning, with
+ * a Traditional Chinese cue) to make the word stick.
+ */
+export interface MemoryAid {
+  roots?: { part: string; meaning: string }[];
+  mnemonic?: string;
+}
+
 export interface VocabEntry {
   id: string;
   word: string;
@@ -32,6 +42,7 @@ export interface VocabEntry {
   exampleZh: string;
   synonyms?: string[];
   tags?: string[];
+  memoryAid?: MemoryAid;
 }
 
 export type QuantTopic =

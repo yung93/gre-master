@@ -17,7 +17,7 @@ import {
   seedBatch,
 } from "@/lib/learn-queue";
 import { useLocalState } from "@/lib/storage";
-import type { LearnProgress, SrsGrade, SrsState } from "@/lib/types";
+import type { LearnProgress, MemoryAid, SrsGrade, SrsState } from "@/lib/types";
 
 const ORDERED_IDS = VOCAB.map((v) => v.id);
 
@@ -174,6 +174,7 @@ export default function VerbalPage() {
                     <p className="serif text-xl leading-snug">{current.meaningZh}</p>
                     <p className="leading-snug text-[var(--color-ink-muted)] self-center">{current.meaningEn}</p>
                   </div>
+                  {current.memoryAid && <MemoryAidBlock aid={current.memoryAid} />}
                   <hr className="rule" />
                   <div>
                     <p className="eyebrow">Example</p>
@@ -251,6 +252,30 @@ function MasteryPips({ streak }: { streak: number }) {
         />
       ))}
     </span>
+  );
+}
+
+function MemoryAidBlock({ aid }: { aid: MemoryAid }) {
+  return (
+    <div className="surface-soft px-4 py-3">
+      <p className="eyebrow">記憶 · Memory hook</p>
+      {aid.roots && aid.roots.length > 0 && (
+        <div className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-2">
+          {aid.roots.map((r, i) => (
+            <span key={i} className="inline-flex items-center gap-1.5">
+              {i > 0 && <span className="text-[var(--color-ink-faint)]">+</span>}
+              <span className="mono text-sm px-2 py-0.5 rounded bg-[var(--color-accent-soft)] text-[oklch(30%_0.09_195)]">
+                {r.part}
+              </span>
+              <span className="text-sm text-[var(--color-ink-muted)]">{r.meaning}</span>
+            </span>
+          ))}
+        </div>
+      )}
+      {aid.mnemonic && (
+        <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-ink)]">{aid.mnemonic}</p>
+      )}
+    </div>
   );
 }
 

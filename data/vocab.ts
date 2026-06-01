@@ -11,6 +11,13 @@ export const VOCAB: VocabEntry[] = [
     exampleZh: "儘管暴風雨毫無減弱跡象，船長仍堅持連夜前行。",
     synonyms: ["subside", "wane", "diminish"],
     tags: ["high-frequency"],
+    memoryAid: {
+      roots: [
+        { part: "a-", meaning: "向 (to)" },
+        { part: "bate", meaning: "打擊/減少 (beat down)" },
+      ],
+      mnemonic: "a(去)+ bate(打擊)→ 把氣勢「打下去」→ 減弱。聯想 battle 打到精疲力盡，氣焰 abate。",
+    },
   },
   {
     id: "v-aberrant",
@@ -21,6 +28,14 @@ export const VOCAB: VocabEntry[] = [
     example: "The committee dismissed the result as aberrant, attributing it to flawed instrumentation rather than to any genuine effect.",
     exampleZh: "委員會將該結果視為異常，歸因於儀器缺陷而非任何真正的效應。",
     synonyms: ["anomalous", "deviant"],
+    memoryAid: {
+      roots: [
+        { part: "ab-", meaning: "離開 (away)" },
+        { part: "err", meaning: "走、犯錯 (wander/err)" },
+        { part: "-ant", meaning: "形容詞" },
+      ],
+      mnemonic: "ab(離)+ err(error 走偏)→ 偏離正軌的 → 異常的。",
+    },
   },
   {
     id: "v-abscond",
@@ -31,6 +46,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The treasurer absconded with the foundation's reserves long before any audit could expose the discrepancies.",
     exampleZh: "在任何審計能揭露差異之前，財務主管早已捲款潛逃。",
     synonyms: ["flee", "decamp"],
+    memoryAid: {
+      roots: [
+        { part: "abs-", meaning: "離開 (away)" },
+        { part: "cond", meaning: "藏 (hide, 同 conceal)" },
+      ],
+      mnemonic: "abs(走)+ cond(藏)→ 躲起來逃走 → 潛逃。",
+    },
   },
   {
     id: "v-acquiesce",
@@ -41,6 +63,14 @@ export const VOCAB: VocabEntry[] = [
     example: "Worn down by months of negotiation, the union finally acquiesced to terms it had previously deemed intolerable.",
     exampleZh: "歷經數月談判耗盡精力，工會終於默許了先前認為無法接受的條件。",
     synonyms: ["assent", "consent"],
+    memoryAid: {
+      roots: [
+        { part: "ac-", meaning: "向 (to)" },
+        { part: "quie", meaning: "安靜 (quiet)" },
+        { part: "-sce", meaning: "動詞" },
+      ],
+      mnemonic: "ac + quie(quiet 安靜)→ 安靜不反對 → 默許。",
+    },
   },
   {
     id: "v-alacrity",
@@ -51,6 +81,13 @@ export const VOCAB: VocabEntry[] = [
     example: "She accepted the assignment with such alacrity that her supervisors suspected she had been angling for it for months.",
     exampleZh: "她欣然接下任務，敏捷之甚使主管懷疑她早已覬覦多時。",
     synonyms: ["eagerness", "promptness"],
+    memoryAid: {
+      roots: [
+        { part: "alacr", meaning: "輕快、熱切 (brisk)" },
+        { part: "-ity", meaning: "名詞" },
+      ],
+      mnemonic: "諧音「呃，let me try!」一口答應 → 欣然、敏捷。",
+    },
   },
   {
     id: "v-ambivalent",
@@ -60,6 +97,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having mixed feelings about something",
     example: "Critics remain ambivalent about the novel, praising its ambition while lamenting its uneven execution.",
     exampleZh: "評論者對這部小說評價矛盾，一面讚揚其雄心，一面惋惜其執行不均。",
+    memoryAid: {
+      roots: [
+        { part: "ambi-", meaning: "兩者 (both)" },
+        { part: "val", meaning: "力量/價值 (strength)" },
+      ],
+      mnemonic: "ambi(兩邊)+ val(力量)→ 兩股力量拉扯 → 矛盾、猶豫。對照 ambidextrous 兩手都靈巧。",
+    },
   },
   {
     id: "v-ameliorate",
@@ -70,6 +114,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The new policy did little to ameliorate the systemic shortages it was ostensibly designed to address.",
     exampleZh: "新政策對表面上欲解決的系統性短缺幾乎毫無改善作用。",
     synonyms: ["improve", "alleviate"],
+    memoryAid: {
+      roots: [
+        { part: "a-", meaning: "使 (to)" },
+        { part: "melior", meaning: "更好 (better)" },
+      ],
+      mnemonic: "melior = 拉丁文「better」(義大利文 migliore)→ 使更好 → 改善。",
+    },
   },
   {
     id: "v-anachronism",
@@ -79,6 +130,14 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "something belonging to a period other than that in which it exists",
     example: "The film's wristwatches and synthetic fabrics were jarring anachronisms in an otherwise meticulous reconstruction of antiquity.",
     exampleZh: "在其他細節考究還原古代的影片中，腕錶與合成布料是刺眼的時代錯置。",
+    memoryAid: {
+      roots: [
+        { part: "ana-", meaning: "逆、反 (against)" },
+        { part: "chron", meaning: "時間 (time)" },
+        { part: "-ism", meaning: "名詞" },
+      ],
+      mnemonic: "ana(反)+ chron(時間，同 chronology)→ 與時間相悖 → 時代錯置。",
+    },
   },
   {
     id: "v-apocryphal",
@@ -88,6 +147,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "of doubtful authenticity, although widely circulated as true",
     example: "Historians have long dismissed the dramatic deathbed confession as apocryphal, no contemporary source corroborating it.",
     exampleZh: "歷史學家長久以來將那場戲劇性的臨終懺悔視為杜撰之事，因無同代史料佐證。",
+    memoryAid: {
+      roots: [
+        { part: "apo-", meaning: "離開 (away)" },
+        { part: "cryph", meaning: "隱藏 (hidden, 同 crypt)" },
+      ],
+      mnemonic: "apo + cryph(crypt 地窖/隱藏)→ 來源被藏起、不可考 → 真偽存疑的。",
+    },
   },
   {
     id: "v-approbation",
@@ -98,6 +164,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Far from courting approbation, the architect designed buildings that deliberately confounded popular taste.",
     exampleZh: "這位建築師非但不求讚許，反而刻意設計令大眾品味困惑的建築。",
     synonyms: ["acclaim", "endorsement"],
+    memoryAid: {
+      roots: [
+        { part: "ap-", meaning: "向 (to)" },
+        { part: "prob", meaning: "證明好、贊同 (prove/good)" },
+      ],
+      mnemonic: "prob(approve / probe 證實是好的)→ 讚許。對照 reprobate 被否定的壞人。",
+    },
   },
   {
     id: "v-arduous",
@@ -107,6 +180,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "requiring strenuous effort; difficult and tiring",
     example: "Translating the manuscript proved more arduous than the scholar had anticipated, each fragment yielding a fresh ambiguity.",
     exampleZh: "翻譯手稿的工作比學者預期的更為艱鉅，每一片段都帶來新的歧義。",
+    memoryAid: {
+      roots: [
+        { part: "ard", meaning: "陡、燃燒 (steep/burning)" },
+        { part: "-uous", meaning: "形容詞" },
+      ],
+      mnemonic: "ard 如 arduous 的陡坡，又像 ardent 燃燒般費力 → 艱鉅的。",
+    },
   },
   {
     id: "v-assiduous",
@@ -117,6 +197,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Only the most assiduous students managed to keep pace with the professor's rapid-fire derivations.",
     exampleZh: "只有最勤勉的學生才跟得上教授一連串迅猛的推導。",
     synonyms: ["diligent", "sedulous"],
+    memoryAid: {
+      roots: [
+        { part: "as-", meaning: "靠近 (to)" },
+        { part: "sid", meaning: "坐 (sit, 同 sedentary)" },
+      ],
+      mnemonic: "as + sid(坐)→ 一直坐著埋頭做 → 勤勉的。",
+    },
   },
   {
     id: "v-audacious",
@@ -126,6 +213,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "showing a willingness to take surprisingly bold risks",
     example: "The startup's audacious plan to undercut every incumbent within eighteen months struck most analysts as quixotic.",
     exampleZh: "這家新創公司在十八個月內削價勝過所有現有企業的大膽計畫，在多數分析師看來不切實際。",
+    memoryAid: {
+      roots: [
+        { part: "aud", meaning: "敢 (dare, 拉丁 audere)" },
+        { part: "-acious", meaning: "充滿…的" },
+      ],
+      mnemonic: "audere = 敢 (法文 audace 膽量)→ 大膽的。注意不是 audio(聽)。",
+    },
   },
   {
     id: "v-banal",
@@ -136,6 +230,12 @@ export const VOCAB: VocabEntry[] = [
     example: "What the critics found banal, audiences embraced as comfortingly familiar.",
     exampleZh: "評論家覺得陳腐之物，觀眾卻視之為親切熟悉而欣然接受。",
     synonyms: ["trite", "hackneyed"],
+    memoryAid: {
+      roots: [
+        { part: "ban", meaning: "公共、人人皆可 (common)" },
+      ],
+      mnemonic: "原指封建「公用磨坊」人人都用 → 太普通 → 陳腐的。諧音「白as 牆」平淡。",
+    },
   },
   {
     id: "v-belie",
@@ -145,6 +245,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to fail to give a true notion or impression of; to contradict",
     example: "Her composed demeanour belied the panic she felt as the deadline loomed.",
     exampleZh: "她鎮定的舉止掩飾了截止日逼近時內心的恐慌。",
+    memoryAid: {
+      roots: [
+        { part: "be-", meaning: "使 (around/about)" },
+        { part: "lie", meaning: "謊言 (lie)" },
+      ],
+      mnemonic: "be + lie(謊)→ 給人假象、與事實不符 → 掩飾。",
+    },
   },
   {
     id: "v-bolster",
@@ -155,6 +262,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The new findings bolster the hypothesis that the migration was driven primarily by climatic shifts.",
     exampleZh: "新發現支持了該假說：此次遷徙主要由氣候變遷所驅動。",
     synonyms: ["reinforce", "buttress"],
+    memoryAid: {
+      roots: [
+        { part: "bolster", meaning: "長枕 (a long cushion)" },
+      ],
+      mnemonic: "bolster 本是「長枕頭」→ 拿枕頭墊高、支撐 → 加強、支持。",
+    },
   },
   {
     id: "v-bombastic",
@@ -164,6 +277,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "high-sounding but with little meaning; inflated",
     example: "Beneath the bombastic rhetoric lay a policy proposal of remarkable modesty.",
     exampleZh: "在浮誇的修辭之下，是一份格外溫和的政策提案。",
+    memoryAid: {
+      roots: [
+        { part: "bombast", meaning: "棉絮填料 (cotton padding)" },
+      ],
+      mnemonic: "bombast 原指衣服裡的「棉花填料」→ 言語灌水、虛胖 → 浮誇的。諧音 bomb(炸)聲勢大而空。",
+    },
   },
   {
     id: "v-burgeon",
@@ -173,6 +292,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to begin to grow or increase rapidly; to flourish",
     example: "Once dismissed as marginal, the field has burgeoned into one of the most influential branches of the discipline.",
     exampleZh: "這個一度被視為邊緣的領域，已蓬勃發展成該學科最具影響力的分支之一。",
+    memoryAid: {
+      roots: [
+        { part: "burg", meaning: "芽 (bud, 古法 borjon)" },
+      ],
+      mnemonic: "像 burgeon 的「芽」突然冒出 → 迅速生長、蓬勃發展。",
+    },
   },
   {
     id: "v-cacophony",
@@ -182,6 +307,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a harsh, discordant mixture of sounds",
     example: "The opening movement begins in cacophony before resolving, almost reluctantly, into melody.",
     exampleZh: "首樂章以刺耳雜音開始，幾乎是不情願地化為旋律。",
+    memoryAid: {
+      roots: [
+        { part: "caco-", meaning: "壞 (bad)" },
+        { part: "phon", meaning: "聲音 (sound, 同 phone)" },
+      ],
+      mnemonic: "caco(壞)+ phon(聲音)→ 壞聲音 → 刺耳雜音。對照 euphony 悅耳。",
+    },
   },
   {
     id: "v-cajole",
@@ -191,6 +323,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to persuade by flattery or coaxing",
     example: "After hours of cajoling, the curator finally agreed to lend the painting for the retrospective.",
     exampleZh: "歷經數小時的勸誘，策展人終於同意出借該畫作參加回顧展。",
+    memoryAid: {
+      roots: [
+        { part: "cajole", meaning: "哄騙 (法文 cajoler，原意像關籠之鳥般哄)" },
+      ],
+      mnemonic: "諧音「卡住、macho 哄」→ 用甜言把人哄住 → 勸誘。",
+    },
   },
   {
     id: "v-capricious",
@@ -201,6 +339,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The committee's capricious decisions left grant applicants uncertain how to prepare.",
     exampleZh: "委員會反覆無常的決定使申請補助者不知如何準備。",
     synonyms: ["mercurial", "fickle"],
+    memoryAid: {
+      roots: [
+        { part: "capric", meaning: "山羊般亂跳 (goat, 義 capriccio)" },
+        { part: "-ious", meaning: "形容詞" },
+      ],
+      mnemonic: "capr = 山羊 (Capricorn 摩羯)→ 像山羊般亂蹦 → 反覆無常的。",
+    },
   },
   {
     id: "v-castigate",
@@ -210,6 +355,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to reprimand someone severely",
     example: "The op-ed castigated regulators for failing to act on warnings raised years earlier.",
     exampleZh: "該社論嚴厲斥責監管機構未能對數年前提出的警告採取行動。",
+    memoryAid: {
+      roots: [
+        { part: "cast", meaning: "純淨、矯正 (chaste/pure)" },
+        { part: "-igate", meaning: "使" },
+      ],
+      mnemonic: "cast(使純淨，同 chaste)→ 嚴懲以「導正」→ 嚴厲斥責。",
+    },
   },
   {
     id: "v-circumspect",
@@ -220,6 +372,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Investors grew more circumspect after a series of high-profile collapses in the sector.",
     exampleZh: "在該行業一連串引人矚目的崩潰之後，投資人變得更為謹慎。",
     synonyms: ["prudent", "cautious"],
+    memoryAid: {
+      roots: [
+        { part: "circum-", meaning: "周圍 (around)" },
+        { part: "spect", meaning: "看 (look, 同 inspect)" },
+      ],
+      mnemonic: "circum(環繞)+ spect(看)→ 行動前四下張望 → 謹慎的。",
+    },
   },
   {
     id: "v-coalesce",
@@ -229,6 +388,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to come together to form one mass or whole",
     example: "Disparate protest movements gradually coalesced into a coherent political force.",
     exampleZh: "不同的抗議運動逐漸聯合成一股有條理的政治力量。",
+    memoryAid: {
+      roots: [
+        { part: "co-", meaning: "一起 (together)" },
+        { part: "alesce", meaning: "長大 (grow)" },
+      ],
+      mnemonic: "co(共)+ alesce(grow，同 adolescent 成長)→ 一起長成一體 → 聯合、合併。",
+    },
   },
   {
     id: "v-cogent",
@@ -238,6 +404,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "clear, logical, and convincing",
     example: "Her dissent was the most cogent in a session otherwise dominated by procedural sniping.",
     exampleZh: "在這場以程序性爭執為主的會議中，她的異議最具說服力。",
+    memoryAid: {
+      roots: [
+        { part: "co-", meaning: "一起 (together)" },
+        { part: "ag/ig", meaning: "驅動 (drive, 同 act)" },
+      ],
+      mnemonic: "co + ag(驅動)→ 把思路驅趕到一處 → 有說服力的、論證有力的。",
+    },
   },
   {
     id: "v-conciliatory",
@@ -247,6 +420,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "intended to placate or pacify",
     example: "The minister's conciliatory tone marked a striking departure from his earlier intransigence.",
     exampleZh: "部長和解的語氣與他先前的不妥協態度形成鮮明對比。",
+    memoryAid: {
+      roots: [
+        { part: "con-", meaning: "一起 (together)" },
+        { part: "cili", meaning: "召集、和解 (call together, 拉丁 concilium 會議)" },
+      ],
+      mnemonic: "con(一起)+ cili(召集)→ 把雙方召到一起 → 和解的、安撫的。同源 council 議會。",
+    },
   },
   {
     id: "v-condone",
@@ -256,6 +436,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to accept or allow behaviour that is considered wrong",
     example: "The board's silence was widely read not as neutrality but as tacit willingness to condone the misconduct.",
     exampleZh: "董事會的沉默被普遍解讀為並非中立，而是默許不當行為的暗示。",
+    memoryAid: {
+      roots: [
+        { part: "con-", meaning: "完全 (wholly)" },
+        { part: "don", meaning: "給予 (give, 同 donate)" },
+      ],
+      mnemonic: "con + don(給，同 donate)→ 「給予」赦免 → 寬恕、默許。",
+    },
   },
   {
     id: "v-corroborate",
@@ -266,6 +453,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Two independent witnesses corroborated the petitioner's version of events.",
     exampleZh: "兩位獨立目擊者證實了申訴人對事件的陳述。",
     synonyms: ["substantiate", "verify"],
+    memoryAid: {
+      roots: [
+        { part: "cor-", meaning: "共同 (together)" },
+        { part: "robor", meaning: "力量 (strength, 拉丁 robur 橡木)" },
+      ],
+      mnemonic: "cor + robor(robust 強健)→ 一起加強 → 證實、佐證。",
+    },
   },
   {
     id: "v-credulous",
@@ -275,6 +469,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having or showing too great a readiness to believe things",
     example: "The scheme preyed on credulous retirees who mistook polished marketing for institutional credibility.",
     exampleZh: "該騙局專騙輕信的退休人士，他們把精美行銷誤認為機構公信力。",
+    memoryAid: {
+      roots: [
+        { part: "cred", meaning: "相信 (believe, 同 credit)" },
+        { part: "-ulous", meaning: "易於…的" },
+      ],
+      mnemonic: "cred(信，同 credit/credible)→ 太容易信 → 輕信的。",
+    },
   },
   {
     id: "v-cursory",
@@ -284,6 +485,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "hasty and therefore not thorough or detailed",
     example: "Even a cursory reading reveals inconsistencies the auditors somehow failed to flag.",
     exampleZh: "即使粗略一讀也能看出審計人員不知何故未標記的不一致之處。",
+    memoryAid: {
+      roots: [
+        { part: "curs", meaning: "跑 (run, 同 cursor)" },
+        { part: "-ory", meaning: "形容詞" },
+      ],
+      mnemonic: "curs(跑，同 cursor 游標)→ 跑著看一眼 → 粗略的、草率的。",
+    },
   },
   {
     id: "v-deride",
@@ -293,6 +501,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to express contempt for; ridicule",
     example: "Once derided as utopian, the proposal is now treated as the baseline of any serious reform.",
     exampleZh: "這項曾被嘲弄為烏托邦的提案，如今被視為任何認真改革的基準。",
+    memoryAid: {
+      roots: [
+        { part: "de-", meaning: "向下 (down)" },
+        { part: "ride", meaning: "笑 (laugh, 拉丁 ridere)" },
+      ],
+      mnemonic: "de(下)+ ride(笑，同 ridiculous)→ 笑話某人 → 嘲笑。",
+    },
   },
   {
     id: "v-didactic",
@@ -302,6 +517,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "intended to teach, often in a moralizing way",
     example: "The novelist's later work grew increasingly didactic, sacrificing nuance for moral clarity.",
     exampleZh: "這位小說家後期作品愈發說教，為求道德明晰而犧牲了細膩。",
+    memoryAid: {
+      roots: [
+        { part: "didac", meaning: "教 (teach, 希臘 didaskein)" },
+      ],
+      mnemonic: "didac = 教 → 說教的、教導的。諧音「弟弟tactic 教弟弟」。",
+    },
   },
   {
     id: "v-disabuse",
@@ -311,6 +532,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to persuade someone that an idea or belief is mistaken",
     example: "A single afternoon in the field disabused her of the romantic notions she had carried since graduate school.",
     exampleZh: "現場一個下午的工作就使她拋下了研究所以來懷抱的浪漫想法。",
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "除去 (remove)" },
+        { part: "abuse", meaning: "誤用、錯誤想法 (misuse)" },
+      ],
+      mnemonic: "dis(去除)+ abuse(錯誤觀念)→ 去除錯誤想法 → 使醒悟。",
+    },
   },
   {
     id: "v-disparate",
@@ -320,6 +548,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "essentially different in kind",
     example: "Synthesizing such disparate strands of evidence into a single narrative required considerable ingenuity.",
     exampleZh: "將如此迥異的證據綜合為單一敘述需要相當的巧思。",
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "分開 (apart)" },
+        { part: "par", meaning: "相等 (equal, 同 par)" },
+      ],
+      mnemonic: "dis(分)+ par(相等)→ 不對等、分開的 → 迥異的。對照 compare / parity。",
+    },
   },
   {
     id: "v-dogmatic",
@@ -329,6 +564,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "inclined to lay down principles as incontrovertibly true",
     example: "The field's progress was hindered for decades by a few dogmatic figures unwilling to entertain alternatives.",
     exampleZh: "該領域的進展數十年來受少數不願考慮其他可能的教條人物所阻。",
+    memoryAid: {
+      roots: [
+        { part: "dogma", meaning: "教條 (fixed belief)" },
+      ],
+      mnemonic: "dogma 教條 → 像信教條般不容質疑 → 武斷的、教條的。",
+    },
   },
   {
     id: "v-ebullient",
@@ -338,6 +579,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "cheerful and full of energy",
     example: "Her ebullient prose, while engaging, occasionally obscures the more sober arguments she is making.",
     exampleZh: "她熱情洋溢的文筆雖引人入勝，有時卻掩蓋了她所提出更冷靜的論點。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出 (out)" },
+        { part: "bull", meaning: "沸騰、冒泡 (boil, 拉丁 bullire)" },
+      ],
+      mnemonic: "e(出)+ bull(沸騰，同 boil)→ 情緒沸騰冒出 → 熱情洋溢的。",
+    },
   },
   {
     id: "v-eclectic",
@@ -347,6 +595,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "deriving ideas or style from a broad and diverse range of sources",
     example: "The composer's eclectic influences ranged from medieval plainchant to Brazilian forró.",
     exampleZh: "這位作曲家的影響來源兼容並蓄，從中世紀素歌到巴西 forró 音樂皆有。",
+    memoryAid: {
+      roots: [
+        { part: "ec-", meaning: "出 (out)" },
+        { part: "lect", meaning: "選、收集 (choose, 同 select)" },
+      ],
+      mnemonic: "ec(出)+ lect(選，同 select/collect)→ 從各處精選 → 兼容並蓄的。",
+    },
   },
   {
     id: "v-egregious",
@@ -356,6 +611,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "outstandingly bad; shocking",
     example: "The most egregious errors were not factual but methodological, undermining every downstream conclusion.",
     exampleZh: "最嚴重的錯誤並非事實錯誤而是方法論錯誤，動搖了後續所有結論。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出 (out)" },
+        { part: "greg", meaning: "羊群 (flock, 同 gregarious)" },
+      ],
+      mnemonic: "e(出)+ greg(羊群)→ 突出於羊群之外 → (壞得)出眾的 → 極惡劣的。",
+    },
   },
   {
     id: "v-eloquent",
@@ -365,6 +627,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "fluent or persuasive in speaking or writing",
     example: "Her silence at the hearing was, in its own way, more eloquent than any prepared statement could have been.",
     exampleZh: "她在聽證會上的沉默，以其獨特方式比任何準備好的聲明都更具說服力。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出 (out)" },
+        { part: "loqu", meaning: "說 (speak, 同 loquacious)" },
+      ],
+      mnemonic: "e(出)+ loqu(說)→ 話說得出眾 → 雄辯的。",
+    },
   },
   {
     id: "v-empirical",
@@ -374,6 +643,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "based on observation or experience rather than theory",
     example: "The model is elegant but, as yet, lacks the empirical support that would make it persuasive to skeptics.",
     exampleZh: "該模型雅致，但目前缺乏能說服懷疑者的經驗支持。",
+    memoryAid: {
+      roots: [
+        { part: "em-", meaning: "在…之中 (in)" },
+        { part: "peir", meaning: "嘗試、經驗 (trial, 同 experience)" },
+      ],
+      mnemonic: "與 experience / experiment 同源 → 基於經驗實驗的。",
+    },
   },
   {
     id: "v-enervate",
@@ -383,6 +659,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to cause someone to feel drained of energy",
     example: "The protracted negotiations enervated even the most stalwart members of the delegation.",
     exampleZh: "曠日持久的談判使代表團中最堅定的成員也精疲力竭。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出、去除 (out)" },
+        { part: "nerv", meaning: "神經、筋 (nerve/sinew)" },
+      ],
+      mnemonic: "e(抽掉)+ nerv(神經/筋)→ 抽掉筋骨 → 使衰弱。注意：不是「使緊張」!",
+    },
   },
   {
     id: "v-ephemeral",
@@ -393,6 +676,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Such trends are ephemeral by design, engineered to be displaced within a season.",
     exampleZh: "這類潮流本就是短暫的，被設計為在一季內就被取代。",
     synonyms: ["transient", "evanescent"],
+    memoryAid: {
+      roots: [
+        { part: "epi-", meaning: "在…上 (upon)" },
+        { part: "hemer", meaning: "日 (day, 希臘 hemera)" },
+      ],
+      mnemonic: "epi + hemer(日)→ 只活一天 (如蜉蝣 ephemera)→ 短暫的。",
+    },
   },
   {
     id: "v-equanimity",
@@ -402,6 +692,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "mental calmness and composure, especially in difficult situations",
     example: "He met the cross-examination with an equanimity that unsettled his interrogators.",
     exampleZh: "他以一種令審問者不安的鎮定面對交叉詰問。",
+    memoryAid: {
+      roots: [
+        { part: "equ", meaning: "平等 (equal/even)" },
+        { part: "anim", meaning: "心、靈 (mind, 同 animate)" },
+      ],
+      mnemonic: "equ(平)+ anim(心)→ 心境平穩 → 鎮定、沉著。",
+    },
   },
   {
     id: "v-equivocal",
@@ -411,6 +708,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "open to more than one interpretation; ambiguous",
     example: "The evidence is equivocal: it neither confirms nor refutes the prevailing hypothesis.",
     exampleZh: "證據是模稜兩可的：既不能證實也不能反駁主流假說。",
+    memoryAid: {
+      roots: [
+        { part: "equi-", meaning: "相等 (equal)" },
+        { part: "voc", meaning: "聲音、說 (voice/call)" },
+      ],
+      mnemonic: "equi(等)+ voc(聲)→ 兩種說法等量齊觀 → 模稜兩可的。對照 unequivocal 明確的。",
+    },
   },
   {
     id: "v-erudite",
@@ -420,6 +724,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having or showing great knowledge or learning",
     example: "Erudite without being pedantic, the lecture seamlessly wove together half a dozen disciplines.",
     exampleZh: "這場演講博學而不賣弄，將半打學科無縫地交織在一起。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出、脫離 (out)" },
+        { part: "rud", meaning: "粗糙、未加工 (rude/raw)" },
+      ],
+      mnemonic: "e(脫離)+ rud(rude 粗陋)→ 脫離粗鄙 → 有學問的 → 博學的。",
+    },
   },
   {
     id: "v-eschew",
@@ -429,6 +740,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to deliberately avoid using or doing",
     example: "The author eschews ornament in favour of a prose so spare it can feel almost forensic.",
     exampleZh: "作者避用修飾，偏好一種簡約到近乎法醫式的散文。",
+    memoryAid: {
+      roots: [
+        { part: "eschew", meaning: "迴避 (古日耳曼，同 shy/shun)" },
+      ],
+      mnemonic: "與 shy / shun 同源 → 害羞躲開 → 避免、迴避。諧音「易休」見了就休避。",
+    },
   },
   {
     id: "v-esoteric",
@@ -438,6 +755,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "intended for or understood by only a small group",
     example: "What had once been an esoteric subfield is now central to debates about machine learning at scale.",
     exampleZh: "曾經是深奧子領域的東西，如今卻是大規模機器學習辯論的核心。",
+    memoryAid: {
+      roots: [
+        { part: "eso-", meaning: "內部 (within)" },
+        { part: "-teric", meaning: "形容詞" },
+      ],
+      mnemonic: "eso(內)→ 只給圈內人懂的 → 深奧的。對照 exoteric 大眾的。",
+    },
   },
   {
     id: "v-exacerbate",
@@ -447,6 +771,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make a problem or situation worse",
     example: "Rather than mitigating the shortage, the price controls exacerbated it.",
     exampleZh: "價格管制非但沒有緩解短缺，反而加劇了短缺。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "使 (thoroughly)" },
+        { part: "acerb", meaning: "苦澀、尖刻 (bitter/sharp, 同 acerbic)" },
+      ],
+      mnemonic: "ex + acerb(苦澀，同 acerbic)→ 使更苦 → 加劇、惡化。",
+    },
   },
   {
     id: "v-extol",
@@ -456,6 +787,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to praise enthusiastically",
     example: "Even commentators who had previously been skeptical now extol the program as a model of restraint.",
     exampleZh: "連先前懷疑的評論者，如今也讚頌該方案為節制的典範。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "向上 (up)" },
+        { part: "tol", meaning: "舉起 (raise, 拉丁 tollere)" },
+      ],
+      mnemonic: "ex(上)+ tol(舉)→ 把人高高舉起 → 讚頌。",
+    },
   },
   {
     id: "v-fastidious",
@@ -465,6 +803,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "very attentive to and concerned about accuracy and detail",
     example: "Her fastidious notes proved indispensable when, years later, the experiment had to be reconstructed from scratch.",
     exampleZh: "多年後該實驗必須從頭重建時，她一絲不苟的筆記證明不可或缺。",
+    memoryAid: {
+      roots: [
+        { part: "fastidi", meaning: "厭惡、挑剔 (loathing, 拉丁 fastidium)" },
+      ],
+      mnemonic: "諧音「fast 太丟死」一點瑕疵都丟掉 → 一絲不苟、挑剔的。",
+    },
   },
   {
     id: "v-fortuitous",
@@ -474,6 +818,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "happening by accident or chance rather than design",
     example: "The collaboration that produced their best work was entirely fortuitous, the result of a missed train.",
     exampleZh: "促成他們最佳作品的合作完全是偶然的——源於一班錯過的火車。",
+    memoryAid: {
+      roots: [
+        { part: "fortu", meaning: "運氣 (chance/luck, 同 fortune)" },
+        { part: "-itous", meaning: "形容詞" },
+      ],
+      mnemonic: "fortu(運氣，同 fortune)→ 碰運氣發生的 → 偶然的。",
+    },
   },
   {
     id: "v-garrulous",
@@ -483,6 +834,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "excessively talkative, especially on trivial matters",
     example: "His normally garrulous colleague fell uncharacteristically silent when the topic turned to budgets.",
     exampleZh: "他平常饒舌的同事在話題轉向預算時，一反常態地沉默下來。",
+    memoryAid: {
+      roots: [
+        { part: "garr", meaning: "喋喋 (chatter, 拉丁 garrire)" },
+        { part: "-ulous", meaning: "愛…的" },
+      ],
+      mnemonic: "諧音「嘎啦嘎啦」講不停 → 饒舌的。",
+    },
   },
   {
     id: "v-grandiloquent",
@@ -492,6 +850,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "pompous or extravagant in language or style",
     example: "Stripped of its grandiloquent packaging, the argument turns out to be surprisingly thin.",
     exampleZh: "剝去浮誇的包裝，這個論點竟然意外地單薄。",
+    memoryAid: {
+      roots: [
+        { part: "grand", meaning: "大 (great)" },
+        { part: "loqu", meaning: "說 (speak)" },
+      ],
+      mnemonic: "grand(大)+ loqu(說)→ 把話說得很大 → 誇大的、浮誇的。",
+    },
   },
   {
     id: "v-iconoclast",
@@ -501,6 +866,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who attacks cherished beliefs or institutions",
     example: "Hailed as an iconoclast in her thirties, she has since become precisely the kind of figure she once mocked.",
     exampleZh: "三十多歲時被譽為打破傳統者的她，如今已成為她當年所嘲笑的那類人物。",
+    memoryAid: {
+      roots: [
+        { part: "icono-", meaning: "偶像、聖像 (image, 同 icon)" },
+        { part: "clast", meaning: "打破 (break)" },
+      ],
+      mnemonic: "icon(偶像)+ clast(打破)→ 打破偶像者 → 打破傳統者。",
+    },
   },
   {
     id: "v-impecunious",
@@ -510,6 +882,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having little or no money",
     example: "The composer spent his impecunious years giving lessons to indifferent students.",
     exampleZh: "這位作曲家在貧困的歲月裡為一群興趣缺缺的學生上課。",
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "無 (not)" },
+        { part: "pecun", meaning: "錢 (money, 拉丁 pecunia)" },
+      ],
+      mnemonic: "im(無)+ pecun(錢，源自 pecus 牲畜=古代財富)→ 沒錢的 → 貧困的。",
+    },
   },
   {
     id: "v-incipient",
@@ -519,6 +898,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "beginning to develop or come into existence",
     example: "The incipient crisis was visible months earlier in indicators no one in authority bothered to read.",
     exampleZh: "這場初期的危機其實在數月前就在無人關注的指標中顯現。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "開始 (into)" },
+        { part: "cip", meaning: "拿、取 (take, 同 capture)" },
+      ],
+      mnemonic: "in + cip(取，同 incipit 起首)→ 剛開始抓取 → 初期的。",
+    },
   },
   {
     id: "v-indolent",
@@ -528,6 +914,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "wanting to avoid activity or exertion; lazy",
     example: "The reputation for being indolent was unearned; behind the languid manner lay a relentless work ethic.",
     exampleZh: "懶散的名聲並不公允；在那慵懶的舉止背後是無情的工作倫理。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "dol", meaning: "痛苦、費力 (pain, 拉丁 dolere)" },
+      ],
+      mnemonic: "in(不)+ dol(費力，同 condole 哀悼)→ 不願費力 → 懶散的。",
+    },
   },
   {
     id: "v-ingenuous",
@@ -537,6 +930,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "innocent and unsuspecting",
     example: "Her ingenuous remarks at the press conference were misread as calculated provocation.",
     exampleZh: "她在記者會上天真坦率的言論，被誤讀為刻意挑釁。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "天生 (inborn)" },
+        { part: "gen", meaning: "生 (born, 同 genuine)" },
+      ],
+      mnemonic: "in + gen(生，同 genuine 真誠)→ 天生未加雕飾 → 天真坦率的。別跟 ingenious(機巧)搞混。",
+    },
   },
   {
     id: "v-inveterate",
@@ -546,6 +946,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having a particular habit, activity, or interest that is long-established",
     example: "An inveterate skeptic, she could not bring herself to endorse claims that lacked replication.",
     exampleZh: "作為一個根深蒂固的懷疑論者，她無法為缺乏可重複性的主張背書。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "在…之中 (in)" },
+        { part: "veter", meaning: "老、年久 (old, 拉丁 vetus，同 veteran)" },
+      ],
+      mnemonic: "in + veter(老，同 veteran 老兵)→ 老到根深 → 根深蒂固的、積習已深的。",
+    },
   },
   {
     id: "v-laconic",
@@ -555,6 +962,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "using very few words",
     example: "His laconic responses to the panel's questions were taken, variously, for arrogance and for nerves.",
     exampleZh: "他對小組提問言簡意賅的回應，被不同人視為傲慢或緊張。",
+    memoryAid: {
+      roots: [
+        { part: "Lacon", meaning: "斯巴達 (Laconia 拉哥尼亞)" },
+      ],
+      mnemonic: "斯巴達 (Laconia) 人以說話簡短著稱 → 言簡意賅的。",
+    },
   },
   {
     id: "v-laud",
@@ -564,6 +977,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to praise highly",
     example: "Lauded on its release, the report has since been quietly contradicted by every dataset that has emerged.",
     exampleZh: "報告發布時備受讚譽，此後卻被陸續出現的每一組數據悄然推翻。",
+    memoryAid: {
+      roots: [
+        { part: "laud", meaning: "讚美 (praise, 拉丁 laudare)" },
+      ],
+      mnemonic: "同源 applaud 鼓掌、laudable 值得讚揚的 → 讚美、稱讚。",
+    },
   },
   {
     id: "v-loquacious",
@@ -573,6 +992,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "tending to talk a great deal",
     example: "Loquacious in private, the witness became guarded the moment the recording began.",
     exampleZh: "這名證人私下健談，錄音一開始便變得戒備謹慎。",
+    memoryAid: {
+      roots: [
+        { part: "loqu", meaning: "說 (speak)" },
+        { part: "-acious", meaning: "充滿…的" },
+      ],
+      mnemonic: "loqu(說，同 eloquent/colloquial)→ 滿口話 → 健談的。",
+    },
   },
   {
     id: "v-mendacious",
@@ -582,6 +1008,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not telling the truth; lying",
     example: "The campaign's mendacious advertising eroded public trust faster than its policies could rebuild it.",
     exampleZh: "競選活動虛假的廣告侵蝕公眾信任的速度，快於其政策能重建的速度。",
+    memoryAid: {
+      roots: [
+        { part: "mend", meaning: "缺陷、謊 (fault, 同 amend)" },
+        { part: "-acious", meaning: "充滿…的" },
+      ],
+      mnemonic: "mend(缺陷)→ 滿是不實 → 說謊的、虛假的。",
+    },
   },
   {
     id: "v-mercurial",
@@ -591,6 +1024,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "subject to sudden or unpredictable changes of mood",
     example: "Negotiating with so mercurial a partner exhausted even seasoned diplomats.",
     exampleZh: "與如此善變的對手談判，連經驗豐富的外交官也疲憊不堪。",
+    memoryAid: {
+      roots: [
+        { part: "Mercury", meaning: "水星/信使墨丘利 (Mercury)" },
+      ],
+      mnemonic: "墨丘利 (Mercury) 行動如水銀般善變難測 → 善變的、情緒多變的。",
+    },
   },
   {
     id: "v-meticulous",
@@ -600,6 +1039,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "showing great attention to detail; very careful and precise",
     example: "The restoration was so meticulous that conservators could later identify each brushstroke they had added.",
     exampleZh: "這次修復極為細心，以致修復人員後來能辨識出他們所添加的每一筆。",
+    memoryAid: {
+      roots: [
+        { part: "metic", meaning: "害怕 (fear, 拉丁 metus)" },
+        { part: "-ulous", meaning: "充滿…的" },
+      ],
+      mnemonic: "原意「過度害怕(出錯)」→ 戰戰兢兢、極其細心的。",
+    },
   },
   {
     id: "v-mitigate",
@@ -609,6 +1055,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make less severe or painful",
     example: "Early intervention does not eliminate the risk, but it reliably mitigates the worst outcomes.",
     exampleZh: "早期介入無法消除風險，但能可靠地減輕最嚴重的後果。",
+    memoryAid: {
+      roots: [
+        { part: "miti", meaning: "溫和 (soft/mild, 拉丁 mitis)" },
+        { part: "-gate", meaning: "使" },
+      ],
+      mnemonic: "miti(溫和)→ 使變溫和 → 減輕、緩解。",
+    },
   },
   {
     id: "v-nascent",
@@ -618,6 +1071,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "just coming into existence and beginning to display signs of future potential",
     example: "Investment poured into the nascent industry on the strength of forecasts no one could responsibly defend.",
     exampleZh: "投資以一些無人能負責任地辯護的預測為依據，湧入這個新興產業。",
+    memoryAid: {
+      roots: [
+        { part: "nasc", meaning: "出生 (born, 同 natal)" },
+        { part: "-ent", meaning: "形容詞" },
+      ],
+      mnemonic: "nasc(生，同 native/renaissance)→ 剛誕生的 → 新興的。",
+    },
   },
   {
     id: "v-obfuscate",
@@ -627,6 +1087,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to render obscure, unclear, or unintelligible",
     example: "Industry lobbyists worked to obfuscate the connection between exposure and incidence of the disease.",
     exampleZh: "業界遊說者努力混淆暴露與該疾病發病率之間的關聯。",
+    memoryAid: {
+      roots: [
+        { part: "ob-", meaning: "over" },
+        { part: "fusc", meaning: "暗、黑 (dark, 拉丁 fuscus)" },
+      ],
+      mnemonic: "ob + fusc(使變暗)→ 把事情弄黑、看不清 → 使混淆。",
+    },
   },
   {
     id: "v-obsequious",
@@ -636,6 +1103,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "obedient or attentive to an excessive or servile degree",
     example: "Her staff's obsequious manner around her gradually became indistinguishable from disrespect.",
     exampleZh: "下屬在她身邊諂媚的舉止，逐漸與不敬難以區分。",
+    memoryAid: {
+      roots: [
+        { part: "ob-", meaning: "朝向 (toward)" },
+        { part: "sequ", meaning: "跟隨 (follow, 同 sequence)" },
+      ],
+      mnemonic: "ob + sequ(跟隨)→ 一路跟在後面討好 → 諂媚的。",
+    },
   },
   {
     id: "v-ostensible",
@@ -645,6 +1119,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "stated or appearing to be true, but not necessarily so",
     example: "The ostensible purpose of the meeting was technical; its actual purpose was to gauge political will.",
     exampleZh: "會議表面上的目的是技術性的，實際目的卻是評估政治意願。",
+    memoryAid: {
+      roots: [
+        { part: "os-/ob-", meaning: "朝向 (toward)" },
+        { part: "tens", meaning: "伸展、展示 (stretch, 同 extend)" },
+      ],
+      mnemonic: "tens(展示，同 ostentation 炫耀)→ 展示出來給人看的 → 表面的。",
+    },
   },
   {
     id: "v-paragon",
@@ -654,6 +1135,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person or thing regarded as a perfect example of a particular quality",
     example: "Held up for decades as a paragon of fiscal restraint, the institution was, internally, anything but.",
     exampleZh: "這間機構數十年來被奉為財政節制的典範，內部實則完全相反。",
+    memoryAid: {
+      roots: [
+        { part: "para-", meaning: "旁、比 (alongside)" },
+        { part: "-gon", meaning: "磨石 (whetstone, 義 paragone)" },
+      ],
+      mnemonic: "原指用來比較、檢驗的「試金石」→ 完美範例、典範。",
+    },
   },
   {
     id: "v-paucity",
@@ -663,6 +1151,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "the presence of something in only small or insufficient quantities",
     example: "The paucity of longitudinal data leaves the field reliant on inference where measurement would be preferable.",
     exampleZh: "縱貫性資料的缺乏，使該領域在本應以測量為佳之處只能仰賴推論。",
+    memoryAid: {
+      roots: [
+        { part: "pauc", meaning: "少 (few, 同 few/poco)" },
+        { part: "-ity", meaning: "名詞" },
+      ],
+      mnemonic: "pauc(少)→ 缺乏、少量。對照 paucity vs plethora(過多)。",
+    },
   },
   {
     id: "v-pedantic",
@@ -672,6 +1167,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "excessively concerned with minor details or rules",
     example: "What initially seems pedantic about her approach turns out, page by page, to be its great virtue.",
     exampleZh: "她的研究方法初看像是拘泥細節，逐頁讀來卻顯出其極大優點。",
+    memoryAid: {
+      roots: [
+        { part: "ped", meaning: "教育、孩童 (teach, 希臘 paidos 同 pedagogy)" },
+      ],
+      mnemonic: "與 pedagogy(教育學)同源 → 愛賣弄學問的、拘泥細節的。",
+    },
   },
   {
     id: "v-perfunctory",
@@ -681,6 +1182,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "carried out with a minimum of effort or reflection",
     example: "The investigation was so perfunctory that its conclusions could have been drafted before it began.",
     exampleZh: "這場調查如此敷衍，其結論幾乎可以在開始前就草擬完成。",
+    memoryAid: {
+      roots: [
+        { part: "per-", meaning: "完全/草草 (through)" },
+        { part: "funct", meaning: "執行 (perform, 同 function)" },
+      ],
+      mnemonic: "per + funct(執行)→ 只把功能走完一遍 → 敷衍的、草率的。",
+    },
   },
   {
     id: "v-placate",
@@ -690,6 +1198,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make someone less angry or hostile",
     example: "Concessions intended to placate the opposition only emboldened it.",
     exampleZh: "意在安撫反對派的讓步，反而使其更加大膽。",
+    memoryAid: {
+      roots: [
+        { part: "plac", meaning: "使平靜、取悅 (please, 同 please/placid)" },
+      ],
+      mnemonic: "plac(平靜，同 placid 平靜的)→ 使平息 → 安撫。",
+    },
   },
   {
     id: "v-prodigal",
@@ -699,6 +1213,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "spending money or resources freely and recklessly",
     example: "Decades of prodigal spending left the endowment too depleted to weather even a modest downturn.",
     exampleZh: "數十年揮霍的支出，使捐贈基金虧空到連溫和的下行都難以承受。",
+    memoryAid: {
+      roots: [
+        { part: "prod-", meaning: "向前、出 (forth)" },
+        { part: "ig", meaning: "驅趕 (drive, 同 act)" },
+      ],
+      mnemonic: "把錢往外趕 → 揮霍的。聖經「浪子 (the prodigal son)」典故。",
+    },
   },
   {
     id: "v-prosaic",
@@ -708,6 +1229,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having the style or diction of prose; lacking poetic beauty; commonplace",
     example: "The explanation is more prosaic than the conspiracy theorists allow: poor record-keeping, not deliberate concealment.",
     exampleZh: "解釋比陰謀論者所容許的更為平淡：是紀錄不善，而非刻意隱瞞。",
+    memoryAid: {
+      roots: [
+        { part: "pros", meaning: "散文 (prose)" },
+        { part: "-aic", meaning: "形容詞" },
+      ],
+      mnemonic: "prose(散文，相對於詩)→ 沒有詩意 → 平淡的、乏味的。",
+    },
   },
   {
     id: "v-quixotic",
@@ -717,6 +1245,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "exceedingly idealistic; unrealistic and impractical",
     example: "What looked at first like a quixotic crusade has, against the odds, become policy.",
     exampleZh: "最初看似空想的運動，竟出人意料地化為政策。",
+    memoryAid: {
+      roots: [
+        { part: "Quixote", meaning: "唐吉訶德 (Don Quixote)" },
+      ],
+      mnemonic: "唐吉訶德 (Don Quixote) 挑戰風車 → 不切實際的、空想的。",
+    },
   },
   {
     id: "v-recalcitrant",
@@ -726,6 +1260,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having an obstinately uncooperative attitude",
     example: "Several recalcitrant member states blocked an agreement the majority had already endorsed.",
     exampleZh: "幾個頑抗的成員國阻擋了多數已表贊同的協議。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "向後 (back)" },
+        { part: "calc", meaning: "腳跟、踢 (heel/kick, 拉丁 calx)" },
+      ],
+      mnemonic: "re(回)+ calc(踢，如馬向後踢)→ 又踢又抗 → 頑抗的、難管教的。",
+    },
   },
   {
     id: "v-recondite",
@@ -735,6 +1276,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "little known; abstruse",
     example: "Her appetite for recondite mathematical results made her an unlikely but invaluable collaborator on the project.",
     exampleZh: "她對深奧數學結論的渴求，使她成為該項目意外卻寶貴的合作者。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "再 (back)" },
+        { part: "cond", meaning: "藏 (hide, 同 abscond)" },
+      ],
+      mnemonic: "re + cond(藏)→ 深藏起來的知識 → 深奧的、難解的。",
+    },
   },
   {
     id: "v-repudiate",
@@ -744,6 +1292,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to refuse to accept or be associated with",
     example: "The party formally repudiated positions it had taken less than a decade earlier.",
     exampleZh: "該黨正式否認其不到十年前所持的立場。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "away" },
+        { part: "pud", meaning: "羞恥 (shame, 拉丁 pudere)" },
+      ],
+      mnemonic: "re + pud(羞恥)→ 羞於承認而推開 → 拒絕、否認。",
+    },
   },
   {
     id: "v-reticent",
@@ -753,6 +1308,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not revealing one's thoughts or feelings readily",
     example: "Normally reticent on policy matters, the chair surprised everyone by speaking at length.",
     exampleZh: "通常在政策議題上沉默寡言的主席，這次出人意料地長篇發言。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "back" },
+        { part: "tic/tac", meaning: "沉默 (be silent, 同 tacit)" },
+      ],
+      mnemonic: "re + tic(沉默，同 tacit/taciturn)→ 把話留住 → 沉默寡言的。",
+    },
   },
   {
     id: "v-sanguine",
@@ -762,6 +1324,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "optimistic or positive, especially in a difficult situation",
     example: "Analysts remain sanguine about the long-term outlook even as quarterly figures disappoint.",
     exampleZh: "即便季度數據令人失望，分析師對長期前景仍抱樂觀。",
+    memoryAid: {
+      roots: [
+        { part: "sangui", meaning: "血 (blood, 拉丁 sanguis)" },
+      ],
+      mnemonic: "古體液說：血多的人面色紅潤、性格開朗 → 樂觀的。",
+    },
   },
   {
     id: "v-sardonic",
@@ -771,6 +1339,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "grimly mocking or cynical",
     example: "A sardonic footnote was the closest the author allowed himself to outright dissent.",
     exampleZh: "一條嘲諷的腳註，是作者允許自己最接近公開異議的表達。",
+    memoryAid: {
+      roots: [
+        { part: "Sardonia", meaning: "薩丁尼亞 (Sardinia 的一種毒草)" },
+      ],
+      mnemonic: "傳說薩丁尼亞毒草使人臉部扭曲成「冷笑」→ 嘲諷的。",
+    },
   },
   {
     id: "v-specious",
@@ -780,6 +1354,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "superficially plausible but actually wrong",
     example: "The argument is specious: each premise sounds reasonable, yet none is supported by the evidence cited.",
     exampleZh: "這個論點似是而非：每個前提聽來合理，卻無一獲所引證據支持。",
+    memoryAid: {
+      roots: [
+        { part: "spec", meaning: "看、外觀 (look, 同 spectacle)" },
+        { part: "-ious", meaning: "形容詞" },
+      ],
+      mnemonic: "spec(外觀)→ 外表好看、實則有誤 → 似是而非的。",
+    },
   },
   {
     id: "v-spurious",
@@ -789,6 +1370,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not being what it purports to be; false or fake",
     example: "The correlation, on closer inspection, proved spurious: both variables were responding to a third, unmeasured factor.",
     exampleZh: "細究之下，這項相關性實屬虛假：兩個變量皆受第三個未被測量的因素所影響。",
+    memoryAid: {
+      roots: [
+        { part: "spurius", meaning: "私生的、假的 (拉丁 spurius=illegitimate)" },
+      ],
+      mnemonic: "諧音「spur(馬刺)+ious」假冒的馬刺 → 虛假的、偽造的。",
+    },
   },
   {
     id: "v-sycophant",
@@ -798,6 +1385,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who acts obsequiously toward someone important",
     example: "Surrounded by sycophants, the executive received almost no information she had not preselected.",
     exampleZh: "身邊圍繞著阿諛者，這位高層幾乎收不到任何她未預先篩選過的訊息。",
+    memoryAid: {
+      roots: [
+        { part: "syco-", meaning: "無花果 (fig)" },
+        { part: "phant", meaning: "顯示 (show)" },
+      ],
+      mnemonic: "希臘原意「顯示無花果者」(告密者)→ 阿諛奉承者、馬屁精。",
+    },
   },
   {
     id: "v-taciturn",
@@ -807,6 +1401,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "reserved or uncommunicative in speech",
     example: "Famously taciturn in interviews, she nevertheless gave generous, detailed responses to written questions.",
     exampleZh: "她在訪談中以沉默寡言著稱，但對書面提問卻給出了詳盡慷慨的回應。",
+    memoryAid: {
+      roots: [
+        { part: "tac", meaning: "沉默 (silent, 同 tacit)" },
+        { part: "-turn", meaning: "傾向" },
+      ],
+      mnemonic: "tac(沉默，同 tacit)→ 傾向沉默 → 沉默寡言的。",
+    },
   },
   {
     id: "v-tenuous",
@@ -816,6 +1417,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "very weak or slight",
     example: "The connection between the two phenomena is tenuous and rests almost entirely on a single, contested study.",
     exampleZh: "這兩種現象之間的關聯薄弱，幾乎完全建立在一份具爭議性的研究上。",
+    memoryAid: {
+      roots: [
+        { part: "tenu", meaning: "細、薄 (thin, 拉丁 tenuis)" },
+        { part: "-ous", meaning: "形容詞" },
+      ],
+      mnemonic: "tenu(細薄)→ 細如一線 → 薄弱的、牽強的。",
+    },
   },
   {
     id: "v-trenchant",
@@ -825,6 +1433,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "vigorous or incisive in expression or style",
     example: "Her trenchant critique reframed a debate that had grown stale in the absence of new arguments.",
     exampleZh: "她犀利的批評重新框定了在缺乏新論點下日趨陳舊的辯論。",
+    memoryAid: {
+      roots: [
+        { part: "trench", meaning: "切、割 (cut, 法文 trancher)" },
+      ],
+      mnemonic: "trench(切，同 trench 戰壕/切溝)→ 言辭如刀切 → 犀利的、尖銳的。",
+    },
   },
   {
     id: "v-ubiquitous",
@@ -834,6 +1448,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "present, appearing, or found everywhere",
     example: "What had been a niche concern a decade ago is now ubiquitous in policy circles.",
     exampleZh: "十年前還是小眾議題之事，如今在政策圈中無所不在。",
+    memoryAid: {
+      roots: [
+        { part: "ubique", meaning: "到處 (everywhere, 拉丁 ubique)" },
+        { part: "-ous", meaning: "形容詞" },
+      ],
+      mnemonic: "ubique = 拉丁文「到處」→ 無所不在的。諧音「you-be-quit-us，你到處都在」。",
+    },
   },
   {
     id: "v-vacillate",
@@ -843,6 +1464,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to alternate or waver between different opinions or actions",
     example: "The board vacillated for months between two strategies, ultimately implementing neither well.",
     exampleZh: "董事會在兩種策略間搖擺數月，最終哪一個都沒有好好執行。",
+    memoryAid: {
+      roots: [
+        { part: "vacill", meaning: "搖擺 (sway, 拉丁 vacillare)" },
+      ],
+      mnemonic: "諧音「why-so-late」拿不定主意 → 猶豫不決、搖擺不定。",
+    },
   },
   {
     id: "v-venerate",
@@ -852,6 +1479,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to regard with great respect; revere",
     example: "Once venerated as a founder, he is now read more critically by a generation less inclined to defer.",
     exampleZh: "他曾被尊崇為奠基者，如今則被一個較不願順從的世代以更具批判性的方式閱讀。",
+    memoryAid: {
+      roots: [
+        { part: "vener", meaning: "愛、崇敬 (love, 源自女神 Venus)" },
+      ],
+      mnemonic: "vener(源自愛神 Venus)→ 如敬神般敬愛 → 敬仰、崇敬。",
+    },
   },
   {
     id: "v-vex",
@@ -861,6 +1494,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make someone feel annoyed or worried",
     example: "What most vexed the reviewers was less the conclusion than the casual handling of the underlying data.",
     exampleZh: "最令審稿人惱怒的並非結論本身，而是對底層資料的隨意處理。",
+    memoryAid: {
+      roots: [
+        { part: "vex", meaning: "搖動、煩擾 (shake/annoy, 拉丁 vexare)" },
+      ],
+      mnemonic: "同源 vexation 煩惱。諧音「煩死」→ 使惱怒、困擾。",
+    },
   },
   {
     id: "v-vilify",
@@ -870,6 +1509,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to speak or write about in an abusively disparaging manner",
     example: "Vilified in the press during her lifetime, she is now treated as a foundational figure.",
     exampleZh: "她生前在媒體上備受詆毀，如今卻被視為奠基性的人物。",
+    memoryAid: {
+      roots: [
+        { part: "vil", meaning: "卑賤 (cheap/base, 同 vile)" },
+        { part: "-ify", meaning: "使" },
+      ],
+      mnemonic: "vil(卑賤，同 vile)+ ify(使)→ 使人變得卑賤 → 詆毀、中傷。",
+    },
   },
   {
     id: "v-zealot",
@@ -879,6 +1525,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who is fanatical and uncompromising in pursuit of their ideals",
     example: "Reform requires advocates, not zealots; the latter tend to alienate the very constituencies they need.",
     exampleZh: "改革需要的是倡導者而非狂熱者；後者往往疏遠他們最需要的群眾。",
+    memoryAid: {
+      roots: [
+        { part: "zeal", meaning: "狂熱 (zeal)" },
+        { part: "-ot", meaning: "人" },
+      ],
+      mnemonic: "zeal(狂熱)+ ot(人)→ 狂熱的人 → 狂熱者、極端分子。",
+    },
   },
   {
     id: "v-abjure",
@@ -889,6 +1542,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Under pressure from the tribunal, the philosopher was forced to abjure beliefs he had spent a lifetime defending.",
     exampleZh: "在裁判庭的壓力下，這位哲學家被迫公開放棄他畢生捍衛的信念。",
     synonyms: ["renounce", "forswear"],
+    memoryAid: {
+      roots: [
+        { part: "ab-", meaning: "離開 (away)" },
+        { part: "jur", meaning: "發誓 (swear, 同 jury)" },
+      ],
+      mnemonic: "ab(離)+ jur(發誓，同 jury/perjury)→ 發誓棄絕 → 公開放棄。",
+    },
   },
   {
     id: "v-abeyance",
@@ -899,6 +1559,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The project was held in abeyance until the funding question could be resolved.",
     exampleZh: "在資金問題解決之前，這個專案被暫時擱置。",
     synonyms: ["suspension", "dormancy"],
+    memoryAid: {
+      roots: [
+        { part: "a-", meaning: "向 (to)" },
+        { part: "bey", meaning: "張口期待 (gape, 古法 abeer)" },
+      ],
+      mnemonic: "懸而未決、張口等待中 → 中止、暫停狀態。諧音「abey(暫)+ance」。",
+    },
   },
   {
     id: "v-accretion",
@@ -908,6 +1575,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "gradual growth or increase by accumulation",
     example: "The reef is not built in a season but by the slow accretion of countless generations of coral.",
     exampleZh: "礁石並非一季所成，而是無數世代珊瑚緩慢積累的結果。",
+    memoryAid: {
+      roots: [
+        { part: "ac-", meaning: "向 (to)" },
+        { part: "cret", meaning: "生長 (grow, 同 increase/crescent)" },
+      ],
+      mnemonic: "ac + cret(生長，同 crescent 新月漸長)→ 逐漸增長、積累。",
+    },
   },
   {
     id: "v-adumbrate",
@@ -917,6 +1591,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to outline or foreshadow something only partially or vaguely",
     example: "The opening chapter adumbrates themes that the rest of the book will develop in detail.",
     exampleZh: "開篇一章預示了全書其餘部分將詳加闡發的主題。",
+    memoryAid: {
+      roots: [
+        { part: "ad-", meaning: "向 (to)" },
+        { part: "umbr", meaning: "影子 (shadow, 拉丁 umbra)" },
+      ],
+      mnemonic: "ad + umbr(影子，同 umbrella 遮陽傘)→ 投下淡淡輪廓 → 預示、勾勒輪廓。",
+    },
   },
   {
     id: "v-aggrandize",
@@ -926,6 +1607,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to increase the power, status, or wealth of; to exaggerate",
     example: "Every reform he proposed seemed designed less to serve the public than to aggrandize his own office.",
     exampleZh: "他提出的每項改革，與其說是為公眾服務，不如說是為了擴張自己的職權。",
+    memoryAid: {
+      roots: [
+        { part: "ag-", meaning: "使 (to)" },
+        { part: "grand", meaning: "大 (great)" },
+      ],
+      mnemonic: "ag + grand(大)→ 使變大 → 增強權勢、誇大。",
+    },
   },
   {
     id: "v-amalgamate",
@@ -936,6 +1624,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The two rival firms amalgamated to weather a downturn neither could have survived alone.",
     exampleZh: "兩家對立的公司合併，以渡過任何一方單獨都無法熬過的衰退。",
     synonyms: ["merge", "fuse"],
+    memoryAid: {
+      roots: [
+        { part: "amalgam", meaning: "汞合金 (mercury alloy)" },
+        { part: "-ate", meaning: "使" },
+      ],
+      mnemonic: "amalgam 本是「汞齊合金」(補牙用)→ 把金屬熔在一起 → 合併、融合。",
+    },
   },
   {
     id: "v-anodyne",
@@ -945,6 +1640,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "intended to avoid causing offense; bland and inoffensive",
     example: "Pressed for a verdict, the spokesperson offered only an anodyne statement that committed the agency to nothing.",
     exampleZh: "被追問定論時，發言人只給出一份不痛不癢、毫無承諾的聲明。",
+    memoryAid: {
+      roots: [
+        { part: "an-", meaning: "無 (without)" },
+        { part: "odyne", meaning: "痛 (pain, 希臘 odyne)" },
+      ],
+      mnemonic: "an(無)+ odyne(痛)→ 止痛、不刺激的 → 四平八穩、不痛不癢的。",
+    },
   },
   {
     id: "v-antipathy",
@@ -955,6 +1657,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Her antipathy to grand theories made her a meticulous, if unambitious, empiricist.",
     exampleZh: "她對宏大理論的反感，使她成為一位嚴謹卻不具野心的經驗主義者。",
     synonyms: ["aversion", "hostility"],
+    memoryAid: {
+      roots: [
+        { part: "anti-", meaning: "反 (against)" },
+        { part: "path", meaning: "感覺 (feeling, 同 sympathy)" },
+      ],
+      mnemonic: "anti(反)+ path(感覺，同 sympathy)→ 反感、厭惡。",
+    },
   },
   {
     id: "v-apostate",
@@ -964,6 +1673,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who renounces a previously held belief or allegiance",
     example: "Once the movement's leading theorist, he was now denounced as an apostate by his former allies.",
     exampleZh: "他曾是該運動的首席理論家，如今卻被昔日盟友斥為變節者。",
+    memoryAid: {
+      roots: [
+        { part: "apo-", meaning: "離開 (away)" },
+        { part: "stat", meaning: "站 (stand, 同 status)" },
+      ],
+      mnemonic: "apo(離)+ stat(站)→ 從原立場站開 → 叛教者、變節者。",
+    },
   },
   {
     id: "v-arrogate",
@@ -973,6 +1689,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to claim or seize without justification",
     example: "Over the decade the committee quietly arrogated powers that properly belonged to the legislature.",
     exampleZh: "十年間，這個委員會悄然僭取了本應屬於立法機關的權力。",
+    memoryAid: {
+      roots: [
+        { part: "ar-", meaning: "向 (to)" },
+        { part: "rog", meaning: "要求、問 (ask, 同 interrogate)" },
+      ],
+      mnemonic: "ar + rog(要求，同 interrogate)→ 強行要來 → 僭取、霸佔權力。對照 arrogant 傲慢的。",
+    },
   },
   {
     id: "v-ascetic",
@@ -983,6 +1706,12 @@ export const VOCAB: VocabEntry[] = [
     example: "His ascetic routine—no coffee, no comforts, work before dawn—struck colleagues as either heroic or absurd.",
     exampleZh: "他禁慾的作息——不喝咖啡、不求安逸、黎明前即工作——在同事看來不是英勇便是荒謬。",
     synonyms: ["austere", "abstemious"],
+    memoryAid: {
+      roots: [
+        { part: "ascet", meaning: "鍛鍊、修練 (exercise, 希臘 askesis)" },
+      ],
+      mnemonic: "原指運動員的「苦練」→ 嚴格自律 → 禁慾的、苦行的。",
+    },
   },
   {
     id: "v-aspersion",
@@ -992,6 +1721,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "an attack on someone's reputation; a damaging remark",
     example: "Rather than engage the argument, he cast aspersions on the motives of everyone who advanced it.",
     exampleZh: "他不去回應論點本身，反而對每個提出該論點的人的動機進行中傷。",
+    memoryAid: {
+      roots: [
+        { part: "a-", meaning: "向 (to)" },
+        { part: "spers", meaning: "灑、散 (scatter, 同 disperse)" },
+      ],
+      mnemonic: "a + spers(灑，同 disperse)→ 朝人潑灑(髒水)→ 誹謗、中傷。",
+    },
   },
   {
     id: "v-assuage",
@@ -1002,6 +1738,13 @@ export const VOCAB: VocabEntry[] = [
     example: "No amount of official reassurance could assuage the residents' fears about the new plant.",
     exampleZh: "再多官方的安撫，也無法緩解居民對新工廠的恐懼。",
     synonyms: ["allay", "mollify"],
+    memoryAid: {
+      roots: [
+        { part: "as-", meaning: "向 (to)" },
+        { part: "suav", meaning: "甜、柔 (sweet, 拉丁 suavis)" },
+      ],
+      mnemonic: "as + suav(甜柔，同 suave 溫文)→ 使變柔和 → 緩和、減輕痛苦。",
+    },
   },
   {
     id: "v-attenuate",
@@ -1011,6 +1754,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to reduce in force, effect, or value",
     example: "Distance and time attenuate even the strongest signal until it is indistinguishable from noise.",
     exampleZh: "距離與時間會減弱即使最強的訊號，直至它與雜訊難以分辨。",
+    memoryAid: {
+      roots: [
+        { part: "at-", meaning: "向 (to)" },
+        { part: "tenu", meaning: "細、薄 (thin, 同 tenuous)" },
+      ],
+      mnemonic: "at + tenu(細薄，同 tenuous)→ 使變細變弱 → 減弱。",
+    },
   },
   {
     id: "v-aver",
@@ -1021,6 +1771,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The defendant continued to aver his innocence even as the evidence mounted against him.",
     exampleZh: "即便對他不利的證據不斷累積，被告仍堅稱自己無辜。",
     synonyms: ["assert", "affirm"],
+    memoryAid: {
+      roots: [
+        { part: "a-", meaning: "向 (to)" },
+        { part: "ver", meaning: "真 (true, 拉丁 verus，同 verify)" },
+      ],
+      mnemonic: "a + ver(真，同 verify/verdict)→ 聲稱為真 → 斷言、堅稱。",
+    },
   },
   {
     id: "v-axiomatic",
@@ -1030,6 +1787,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "self-evident or unquestionable",
     example: "It was once axiomatic that the earth lay at the center of the cosmos; the assumption proved spectacularly wrong.",
     exampleZh: "地球位於宇宙中心一度被視為不證自明，這個假設後來被證明大錯特錯。",
+    memoryAid: {
+      roots: [
+        { part: "axio", meaning: "有價值、值得 (worthy, 希臘 axios)" },
+      ],
+      mnemonic: "axiom 公理(不證自明的真理)→ 不證自明的、公理的。",
+    },
   },
   {
     id: "v-bedizen",
@@ -1039,6 +1802,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to dress or decorate gaudily",
     example: "The lobby was bedizened with so much gilt and mirror that visitors mistook excess for elegance.",
     exampleZh: "大廳俗麗地堆滿鍍金與鏡面，使訪客將過度誤認為優雅。",
+    memoryAid: {
+      roots: [
+        { part: "be-", meaning: "使 (around)" },
+        { part: "dizen", meaning: "裝飾紡線 (deck out)" },
+      ],
+      mnemonic: "be + dizen → 渾身掛滿裝飾 → 俗麗地裝飾。",
+    },
   },
   {
     id: "v-blandishment",
@@ -1048,6 +1818,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "flattering or coaxing speech intended to persuade",
     example: "Immune to threats, she proved equally resistant to the blandishments of those who hoped to buy her vote.",
     exampleZh: "她不受威脅，對那些企圖收買其選票者的甜言蜜語也同樣不為所動。",
+    memoryAid: {
+      roots: [
+        { part: "bland", meaning: "溫和、奉承 (soft, 拉丁 blandus)" },
+        { part: "-ment", meaning: "名詞" },
+      ],
+      mnemonic: "bland(溫和的，柔言)→ 軟語奉承 → 甜言蜜語。",
+    },
   },
   {
     id: "v-blithe",
@@ -1057,6 +1834,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "showing a casual, often heedless, lack of concern",
     example: "His blithe assurance that the deadline posed no problem evaporated as the date drew near.",
     exampleZh: "他輕率地保證截止日不成問題，但隨著日子逼近，這份篤定煙消雲散。",
+    memoryAid: {
+      roots: [
+        { part: "blithe", meaning: "歡樂、無憂 (古英 blīþe)" },
+      ],
+      mnemonic: "同 Blithe Spirit；輕快無憂 → 引申為「輕率的、無憂無慮的」。",
+    },
   },
   {
     id: "v-boorish",
@@ -1066,6 +1849,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "rough and bad-mannered; coarse",
     example: "What charmed him as candor struck everyone else as boorish indifference to the feelings of others.",
     exampleZh: "他自認為率真的舉止，在他人眼中卻是對他人感受粗魯的漠視。",
+    memoryAid: {
+      roots: [
+        { part: "boor", meaning: "農夫、鄉巴佬 (peasant, 荷 boer)" },
+      ],
+      mnemonic: "boor(鄉巴佬，同南非 Boer 布爾人)→ 像鄉野粗人 → 粗魯無教養的。",
+    },
   },
   {
     id: "v-calumny",
@@ -1076,6 +1865,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The biography defends its subject against a century of calumny built on a single forged letter.",
     exampleZh: "這本傳記為傳主辯護，駁斥一個世紀以來建立在一封偽造信件上的誹謗。",
     synonyms: ["slander", "defamation"],
+    memoryAid: {
+      roots: [
+        { part: "calumn", meaning: "誣告 (false accusation, 拉丁 calumnia)" },
+      ],
+      mnemonic: "同源 challenge。諧音「卡人泥」往人身上抹泥 → 誹謗、中傷。",
+    },
   },
   {
     id: "v-canard",
@@ -1085,6 +1880,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "an unfounded rumor or false story",
     example: "The claim that the policy would bankrupt the city was a canard repeated until it sounded like fact.",
     exampleZh: "該政策將使城市破產的說法，是一則重複到聽似事實的謠言。",
+    memoryAid: {
+      roots: [
+        { part: "canard", meaning: "鴨子 (法文 duck)" },
+      ],
+      mnemonic: "法文「鴨子」，源自俗語「半賣鴨」騙局 → 不實傳聞、謠言。",
+    },
   },
   {
     id: "v-captious",
@@ -1094,6 +1895,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "tending to find fault or raise petty objections",
     example: "A captious reviewer, he could be relied on to fixate on a misplaced comma and miss the argument entirely.",
     exampleZh: "作為一個吹毛求疵的審稿人，他總能緊盯一個錯置的逗號，卻完全錯過論點本身。",
+    memoryAid: {
+      roots: [
+        { part: "capt", meaning: "抓 (seize, 同 capture)" },
+        { part: "-ious", meaning: "形容詞" },
+      ],
+      mnemonic: "capt(抓，同 capture)→ 專抓小辮子 → 吹毛求疵的。",
+    },
   },
   {
     id: "v-chicanery",
@@ -1104,6 +1912,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The deal collapsed once auditors uncovered the chicanery buried in its footnotes.",
     exampleZh: "一旦審計人員揭露了藏在附註中的詭計，這筆交易便告破裂。",
     synonyms: ["deception", "subterfuge"],
+    memoryAid: {
+      roots: [
+        { part: "chican", meaning: "耍花招 (法文 chicane 詭辯)" },
+      ],
+      mnemonic: "諧音「欺看你」耍詐騙你 → 詭計、欺騙。",
+    },
   },
   {
     id: "v-churlish",
@@ -1113,6 +1927,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "rude in a mean-spirited and surly way",
     example: "It would be churlish to deny her the credit, given how much of the result was hers alone.",
     exampleZh: "鑑於這項成果有多少是她獨力完成，否認她的功勞未免太過無禮。",
+    memoryAid: {
+      roots: [
+        { part: "churl", meaning: "鄉下粗人、農奴 (古英 ceorl)" },
+      ],
+      mnemonic: "churl(粗人)+ ish → 像粗人般 → 粗鄙無禮的。",
+    },
   },
   {
     id: "v-coda",
@@ -1122,6 +1942,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a concluding section or event, especially one that rounds off a work",
     example: "The epilogue functions as a quiet coda to a novel otherwise full of noise and incident.",
     exampleZh: "結語為這部處處喧囂多事的小說，充當了一段安靜的尾聲。",
+    memoryAid: {
+      roots: [
+        { part: "coda", meaning: "尾巴 (tail, 拉丁 cauda)" },
+      ],
+      mnemonic: "音樂術語「尾聲」，源自拉丁 cauda 尾巴 → 結尾、終曲。",
+    },
   },
   {
     id: "v-cogitate",
@@ -1131,6 +1957,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to think deeply about something; to ponder",
     example: "He cogitated over the problem for weeks before committing a single word to the page.",
     exampleZh: "他對這個問題深思了數週，才在紙上寫下隻字片語。",
+    memoryAid: {
+      roots: [
+        { part: "co-", meaning: "一起 (together)" },
+        { part: "agit", meaning: "驅動、攪動 (drive/stir, 同 agitate)" },
+      ],
+      mnemonic: "co + agit(攪動，同 agitate)→ 在腦中反覆攪動 → 思考、深思。",
+    },
   },
   {
     id: "v-comport",
@@ -1140,6 +1973,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to be in agreement with; to conduct oneself in a particular way",
     example: "The findings do not comport with the theory the committee had hoped to confirm.",
     exampleZh: "這些發現與委員會本希望證實的理論並不相符。",
+    memoryAid: {
+      roots: [
+        { part: "com-", meaning: "一起 (together)" },
+        { part: "port", meaning: "攜帶 (carry, 同 transport)" },
+      ],
+      mnemonic: "com + port(帶，同 transport)→ 把自己舉止帶向某方式；相符 → 舉止合宜、相符。",
+    },
   },
   {
     id: "v-contrite",
@@ -1149,6 +1989,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "feeling or expressing remorse for wrongdoing",
     example: "The apology read as calculated rather than contrite, an exercise in damage control.",
     exampleZh: "這份道歉讀來是精心算計而非真心悔悟，不過是一場損害控制的演練。",
+    memoryAid: {
+      roots: [
+        { part: "con-", meaning: "完全 (wholly)" },
+        { part: "trit", meaning: "磨 (rub/grind, 同 attrition)" },
+      ],
+      mnemonic: "con + trit(磨，同 trite 被磨舊的)→ 心被磨碎、痛悔 → 悔悟的。",
+    },
   },
   {
     id: "v-conundrum",
@@ -1158,6 +2005,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a confusing and difficult problem or question",
     example: "The paradox poses a genuine conundrum: each premise seems true, yet together they cannot both hold.",
     exampleZh: "這個悖論構成一個真正的難題：每個前提看似為真，但兩者無法同時成立。",
+    memoryAid: {
+      roots: [
+        { part: "conundrum", meaning: "謎、難題 (來源不明的學院俚語)" },
+      ],
+      mnemonic: "諧音「考難的」→ 難題、謎。",
+    },
   },
   {
     id: "v-craven",
@@ -1168,6 +2021,12 @@ export const VOCAB: VocabEntry[] = [
     example: "Critics called the retreat craven; defenders called it prudent. The truth lay somewhere between.",
     exampleZh: "批評者稱這次撤退懦弱，辯護者則稱其謹慎。真相介於兩者之間。",
     synonyms: ["cowardly", "pusillanimous"],
+    memoryAid: {
+      roots: [
+        { part: "crav", meaning: "被擊敗、屈服 (defeated, 古法 cravant)" },
+      ],
+      mnemonic: "諧音「craven=軟」被嚇軟 → 懦弱的、膽小的。",
+    },
   },
   {
     id: "v-decorous",
@@ -1177,6 +2036,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "in keeping with good taste and propriety; polite and restrained",
     example: "Beneath the decorous surface of the negotiation ran a current of barely suppressed hostility.",
     exampleZh: "在談判得體的表象之下，湧動著一股幾乎難以壓抑的敵意。",
+    memoryAid: {
+      roots: [
+        { part: "decor", meaning: "合宜、裝飾 (seemly, 拉丁 decor)" },
+      ],
+      mnemonic: "decor(裝飾/合宜，同 decorate/decorum)→ 合乎體面的 → 得體的、端莊的。",
+    },
   },
   {
     id: "v-denigrate",
@@ -1187,6 +2052,13 @@ export const VOCAB: VocabEntry[] = [
     example: "One can question a rival's methods without denigrating the sincerity of their intentions.",
     exampleZh: "人可以質疑對手的方法，而不必詆毀其意圖的真誠。",
     synonyms: ["belittle", "disparage"],
+    memoryAid: {
+      roots: [
+        { part: "de-", meaning: "使 (completely)" },
+        { part: "nigr", meaning: "黑 (black, 拉丁 niger)" },
+      ],
+      mnemonic: "de + nigr(黑)→ 把人抹黑 → 詆毀、貶損。",
+    },
   },
   {
     id: "v-desiccate",
@@ -1196,6 +2068,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to remove the moisture from; to drain of vitality",
     example: "Years of rote administration had desiccated a department once known for its inventiveness.",
     exampleZh: "多年機械式的行政管理，已使這個曾以創造力著稱的部門枯竭。",
+    memoryAid: {
+      roots: [
+        { part: "de-", meaning: "完全 (thoroughly)" },
+        { part: "sicc", meaning: "乾 (dry, 拉丁 siccus)" },
+      ],
+      mnemonic: "de + sicc(乾)→ 徹底弄乾 → 使乾燥、使枯竭。乾燥劑 desiccant。",
+    },
   },
   {
     id: "v-desultory",
@@ -1205,6 +2084,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "lacking a plan or purpose; moving randomly from one thing to another",
     example: "The committee's desultory discussion wandered for an hour without reaching a single decision.",
     exampleZh: "委員會散漫的討論漫無目的地進行了一小時，卻未做出任何決定。",
+    memoryAid: {
+      roots: [
+        { part: "de-", meaning: "下 (down)" },
+        { part: "sult", meaning: "跳 (leap, 同 assault)" },
+      ],
+      mnemonic: "de + sult(跳，同 assault/result)→ 跳來跳去 → 散漫的、無條理的。",
+    },
   },
   {
     id: "v-diaphanous",
@@ -1214,6 +2100,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "light, delicate, and translucent",
     example: "Her argument, however elegant, was diaphanous—it dissolved the moment any weight was placed on it.",
     exampleZh: "她的論點雖然優雅，卻輕薄如紗——一旦施加任何分量便告瓦解。",
+    memoryAid: {
+      roots: [
+        { part: "dia-", meaning: "穿過 (through)" },
+        { part: "phan", meaning: "顯現、光 (show/light, 同 phantom)" },
+      ],
+      mnemonic: "dia(穿)+ phan(光，同 phantom)→ 光能穿過 → 透明的、輕薄的。",
+    },
   },
   {
     id: "v-diffident",
@@ -1224,6 +2117,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Diffident in seminars, she was nonetheless fearless on the page, where her prose turned combative.",
     exampleZh: "她在研討課上羞怯，落筆卻無所畏懼，文字甚至帶有攻擊性。",
     synonyms: ["timid", "reticent"],
+    memoryAid: {
+      roots: [
+        { part: "dif-", meaning: "不 (not/apart)" },
+        { part: "fid", meaning: "信任 (trust, 同 confide)" },
+      ],
+      mnemonic: "dif(不)+ fid(信，同 confidence)→ 不自信 → 羞怯的、缺乏自信的。",
+    },
   },
   {
     id: "v-dilatory",
@@ -1233,6 +2133,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "slow to act; intended to cause delay",
     example: "The defense's dilatory tactics dragged a straightforward case out over three years.",
     exampleZh: "辯方拖延的策略，將一樁本應簡單的案件拖延了三年。",
+    memoryAid: {
+      roots: [
+        { part: "di-", meaning: "分開 (apart)" },
+        { part: "lat", meaning: "帶、拖 (carry, 同 relate)" },
+      ],
+      mnemonic: "di + lat(拖)→ 拖拖拉拉 → 拖延的、遲緩的。同 delay。",
+    },
   },
   {
     id: "v-dirge",
@@ -1242,6 +2149,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a mournful song or lament for the dead",
     example: "What began as a celebration of the era closed, unexpectedly, as a dirge for its lost ambitions.",
     exampleZh: "這場本為謳歌時代而起的活動，竟出人意料地以一首為其失落理想而作的輓歌收場。",
+    memoryAid: {
+      roots: [
+        { part: "dirige", meaning: "引導 (direct, 拉丁安魂曲首字)" },
+      ],
+      mnemonic: "源自拉丁安魂彌撒首字 Dirige(引導亡魂)→ 輓歌、哀歌。",
+    },
   },
   {
     id: "v-discomfit",
@@ -1251,6 +2164,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make someone feel uneasy or embarrassed",
     example: "The interviewer's first question was designed to discomfit, and it succeeded.",
     exampleZh: "訪問者的第一個問題旨在使人困窘，而它確實奏效了。",
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "否 (un-)" },
+        { part: "comfit", meaning: "準備好 (prepare, 同 confect)" },
+      ],
+      mnemonic: "dis + comfit(準備)→ 使措手不及 → 使尷尬、使困窘。聯想 discomfort 不適。",
+    },
   },
   {
     id: "v-discursive",
@@ -1260,6 +2180,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "digressing from subject to subject; rambling",
     example: "The lecture was brilliant but discursive, circling its thesis without ever quite landing on it.",
     exampleZh: "這場演講才華橫溢卻散漫離題，繞著論點打轉，卻始終未能切中要害。",
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "四處 (apart)" },
+        { part: "curs", meaning: "跑 (run, 同 cursor)" },
+      ],
+      mnemonic: "dis + curs(跑)→ 思緒四處亂跑 → 散漫的、離題的。",
+    },
   },
   {
     id: "v-disinterested",
@@ -1270,6 +2197,13 @@ export const VOCAB: VocabEntry[] = [
     example: "What the dispute needed was a disinterested arbiter, not another partisan dressed up as one.",
     exampleZh: "這場爭端需要的是一位公正無私的仲裁者，而非又一個偽裝成仲裁者的偏袒之人。",
     synonyms: ["impartial", "unbiased"],
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "無 (not)" },
+        { part: "interest", meaning: "利害關係 (stake)" },
+      ],
+      mnemonic: "dis(無)+ interest(利害)→ 無私利 → 公正無私的。注意：≠ uninterested(不感興趣)!",
+    },
   },
   {
     id: "v-dissemble",
@@ -1280,6 +2214,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Trained to dissemble, the diplomat betrayed nothing of the alarm the news had caused.",
     exampleZh: "受過掩飾訓練的這位外交官，絲毫未流露出消息所引發的驚慌。",
     synonyms: ["feign", "dissimulate"],
+    memoryAid: {
+      roots: [
+        { part: "dis-", meaning: "相反 (opposite)" },
+        { part: "sembl", meaning: "相似、顯得 (seem, 同 resemble)" },
+      ],
+      mnemonic: "dis + sembl(顯得，同 resemble)→ 裝出不同的樣子 → 掩飾、偽裝。",
+    },
   },
   {
     id: "v-dither",
@@ -1289,6 +2230,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to be indecisive; to act nervously or without resolution",
     example: "While the board dithered over wording, the opportunity it was debating quietly passed.",
     exampleZh: "當董事會還在字句上猶豫不決時，他們所辯論的機會已悄然溜走。",
+    memoryAid: {
+      roots: [
+        { part: "dither", meaning: "發抖、慌亂 (英方言 didder)" },
+      ],
+      mnemonic: "諧音「抖」緊張發抖拿不定主意 → 猶豫、慌亂。",
+    },
   },
   {
     id: "v-effrontery",
@@ -1299,6 +2246,13 @@ export const VOCAB: VocabEntry[] = [
     example: "He had the effrontery to demand a raise the same week his project collapsed.",
     exampleZh: "就在他的專案垮台的同一週，他竟厚顏無恥地要求加薪。",
     synonyms: ["audacity", "impudence"],
+    memoryAid: {
+      roots: [
+        { part: "ef-", meaning: "出 (out)" },
+        { part: "front", meaning: "額頭、臉面 (forehead/face)" },
+      ],
+      mnemonic: "ef + front(臉)→ 把臉豁出去、不要臉 → 厚顏無恥。",
+    },
   },
   {
     id: "v-efficacy",
@@ -1308,6 +2262,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "the ability to produce a desired result",
     example: "The treatment's efficacy in the lab has yet to be demonstrated under real clinical conditions.",
     exampleZh: "該療法在實驗室中的功效，尚有待在真實臨床條件下加以證實。",
+    memoryAid: {
+      roots: [
+        { part: "ef-", meaning: "出 (out)" },
+        { part: "fic", meaning: "做 (make/do, 同 effect)" },
+      ],
+      mnemonic: "ef + fic(做，同 effect/efficient)→ 能做出效果 → 功效、效力。",
+    },
   },
   {
     id: "v-effulgent",
@@ -1317,6 +2278,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "shining brightly; radiant",
     example: "The critic praised the soprano's effulgent upper register, which seemed to fill the hall by itself.",
     exampleZh: "評論家盛讚這位女高音光輝燦爛的高音域，彷彿能獨自填滿整座大廳。",
+    memoryAid: {
+      roots: [
+        { part: "ef-", meaning: "出 (out)" },
+        { part: "fulg", meaning: "閃耀 (shine, 拉丁 fulgere)" },
+      ],
+      mnemonic: "ef + fulg(閃耀)→ 光芒四射 → 光輝燦爛的。",
+    },
   },
   {
     id: "v-elegy",
@@ -1326,6 +2294,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a mournful poem, typically a lament for the dead",
     example: "The memoir reads less as a triumphant history than as an elegy for a vanished way of life.",
     exampleZh: "這部回憶錄與其說是凱旋的歷史，不如說是一首為消逝生活方式而作的哀歌。",
+    memoryAid: {
+      roots: [
+        { part: "eleg", meaning: "哀歌 (lament, 希臘 elegos)" },
+      ],
+      mnemonic: "諧音「挽legy」哀悼的詩 → 哀歌、輓詩。別跟 eulogy(頌詞)混。",
+    },
   },
   {
     id: "v-emollient",
@@ -1335,6 +2309,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having a soothing or calming effect; attempting to avoid confrontation",
     example: "His emollient remarks were meant to cool a dispute that his earlier bluntness had inflamed.",
     exampleZh: "他安撫性的話語，意在平息因他先前直言而激化的爭端。",
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出 (out)" },
+        { part: "moll", meaning: "軟 (soft, 拉丁 mollis)" },
+      ],
+      mnemonic: "e + moll(軟，同 mollify)→ 使軟化、舒緩 → 安撫的、緩和的。",
+    },
   },
   {
     id: "v-encomium",
@@ -1345,6 +2326,13 @@ export const VOCAB: VocabEntry[] = [
     example: "What was billed as a balanced assessment turned out to be an uncritical encomium.",
     exampleZh: "這份號稱持平的評估，結果竟是一篇毫無批判的頌詞。",
     synonyms: ["eulogy", "panegyric"],
+    memoryAid: {
+      roots: [
+        { part: "en-", meaning: "在…中 (in)" },
+        { part: "com", meaning: "狂歡、頌讚 (revel, 希臘 komos)" },
+      ],
+      mnemonic: "在慶典中的讚歌 → 頌詞、讚辭。",
+    },
   },
   {
     id: "v-endemic",
@@ -1354,6 +2342,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "regularly found among a particular people or in a certain place",
     example: "Corruption was so endemic to the system that reformers scarcely knew where to begin.",
     exampleZh: "腐敗在這個體制中如此根深蒂固，改革者幾乎不知從何著手。",
+    memoryAid: {
+      roots: [
+        { part: "en-", meaning: "在…之中 (in)" },
+        { part: "dem", meaning: "人民、地區 (people, 同 democracy)" },
+      ],
+      mnemonic: "en + dem(人民/地方，同 epidemic)→ 某地特有的 → 地方性的、特有的。",
+    },
   },
   {
     id: "v-enmity",
@@ -1364,6 +2359,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Decades of professional enmity dissolved, improbably, over a shared interest in birdwatching.",
     exampleZh: "數十年的職業仇恨，竟因共同的賞鳥興趣而出人意料地化解。",
     synonyms: ["animosity", "antagonism"],
+    memoryAid: {
+      roots: [
+        { part: "en-", meaning: "使 (in)" },
+        { part: "em/amic", meaning: "敵/友 (enemy, 反 amicable)" },
+      ],
+      mnemonic: "同 enemy 的名詞 → 敵意、仇恨。",
+    },
   },
   {
     id: "v-epigram",
@@ -1373,6 +2375,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a concise, witty, and often paradoxical statement",
     example: "He could compress into a single epigram an argument others needed a chapter to make.",
     exampleZh: "他能將別人需要一整章才能闡述的論點，濃縮成一句警句。",
+    memoryAid: {
+      roots: [
+        { part: "epi-", meaning: "在…上 (upon)" },
+        { part: "gram", meaning: "寫 (write, 同 grammar)" },
+      ],
+      mnemonic: "epi + gram(寫，同 telegram)→ 刻在上面的短句 → 警句、雋語。",
+    },
   },
   {
     id: "v-equable",
@@ -1382,6 +2391,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not easily disturbed or angered; steady and even-tempered",
     example: "Her equable temperament made her the natural choice to chair a famously fractious committee.",
     exampleZh: "她穩定的性情，使她成為主持這個出了名愛爭吵的委員會的不二人選。",
+    memoryAid: {
+      roots: [
+        { part: "equ", meaning: "平等、均勻 (even)" },
+        { part: "-able", meaning: "形容詞" },
+      ],
+      mnemonic: "equ(均勻，同 equal)→ 情緒均勻 → 穩定的、溫和的。",
+    },
   },
   {
     id: "v-evanescent",
@@ -1392,6 +2408,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Fame of that kind is evanescent, gone the moment the next sensation arrives.",
     exampleZh: "那種名聲轉瞬即逝，下一個轟動出現之際便煙消雲散。",
     synonyms: ["ephemeral", "transient"],
+    memoryAid: {
+      roots: [
+        { part: "e-", meaning: "出 (out)" },
+        { part: "vanesc", meaning: "消失 (vanish)" },
+      ],
+      mnemonic: "e + vanesc(消失，同 vanish)→ 漸漸消失的 → 轉瞬即逝的。",
+    },
   },
   {
     id: "v-execrable",
@@ -1401,6 +2424,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "extremely bad or unpleasant",
     example: "The food was execrable, the service worse, and yet the place was somehow always full.",
     exampleZh: "食物極差，服務更糟，然而這家店不知怎地總是客滿。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "出 (out)" },
+        { part: "secr", meaning: "神聖、詛咒 (sacred/curse)" },
+      ],
+      mnemonic: "ex + secr(詛咒)→ 被詛咒的、該咒罵的 → 極壞的、可憎的。",
+    },
   },
   {
     id: "v-exigent",
@@ -1410,6 +2440,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "pressing; demanding immediate action or attention",
     example: "In less exigent circumstances the proposal would have been debated for months, not hours.",
     exampleZh: "若非情況如此緊急，這項提案本會被辯論數月，而非數小時。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "出 (out)" },
+        { part: "ig/ag", meaning: "驅動 (drive, 同 act)" },
+      ],
+      mnemonic: "ex + ig(驅動)→ 逼著立刻做 → 緊急的、苛求的。同 exigency。",
+    },
   },
   {
     id: "v-expiate",
@@ -1419,6 +2456,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to atone for or make amends for guilt or wrongdoing",
     example: "The endowment was, some said, an attempt to expiate the manner in which the fortune had been made.",
     exampleZh: "有人說，這筆捐贈是為了贖回這筆財富的賺取方式。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "完全 (out)" },
+        { part: "pi", meaning: "虔誠 (pious, 拉丁 pius)" },
+      ],
+      mnemonic: "ex + pi(虔誠，同 pious/piety)→ 以虔誠補過 → 贖罪、補償。",
+    },
   },
   {
     id: "v-extant",
@@ -1428,6 +2472,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "still in existence; surviving",
     example: "Of the dozen treatises he is known to have written, only three are extant.",
     exampleZh: "他已知撰寫的十二篇論著中，僅有三篇現存於世。",
+    memoryAid: {
+      roots: [
+        { part: "ex-", meaning: "出 (out)" },
+        { part: "sta", meaning: "站 (stand, 同 status)" },
+      ],
+      mnemonic: "ex + sta(站，同 stand)→ 仍站立著的 → 現存的、尚存的。對照 extinct 滅絕。",
+    },
   },
   {
     id: "v-fatuous",
@@ -1437,6 +2488,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "silly and pointless; complacently foolish",
     example: "It is a fatuous optimism that mistakes the absence of bad news for the presence of good.",
     exampleZh: "那是一種愚蠢的樂觀，把壞消息的缺席誤認為好消息的存在。",
+    memoryAid: {
+      roots: [
+        { part: "fatu", meaning: "愚蠢 (foolish, 拉丁 fatuus)" },
+      ],
+      mnemonic: "諧音「發吃us」吃飽撐著犯傻 → 愚蠢的、昏聵的。同 infatuate 沖昏頭。",
+    },
   },
   {
     id: "v-fecund",
@@ -1447,6 +2504,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The decade was extraordinarily fecund, producing more lasting work than the half-century before it.",
     exampleZh: "那十年異常多產，創造出比之前半世紀更多歷久彌新的作品。",
     synonyms: ["fertile", "prolific"],
+    memoryAid: {
+      roots: [
+        { part: "fec", meaning: "生產 (produce, 拉丁 fecundus，同 fetus)" },
+      ],
+      mnemonic: "fec(生產，同 fetus 胎兒)→ 能大量生育 → 多產的、肥沃的。",
+    },
   },
   {
     id: "v-fervid",
@@ -1456,6 +2519,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "intensely enthusiastic or passionate",
     example: "His fervid defense of the theory outran the rather modest evidence he could actually marshal.",
     exampleZh: "他對該理論熱烈的辯護，遠超他實際所能調動的相當有限的證據。",
+    memoryAid: {
+      roots: [
+        { part: "ferv", meaning: "沸騰 (boil, 拉丁 fervere)" },
+      ],
+      mnemonic: "ferv(沸騰，同 fervent/effervescent)→ 熱血沸騰 → 熱烈的、狂熱的。",
+    },
   },
   {
     id: "v-flag",
@@ -1465,6 +2534,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to lose vigor or strength; to decline",
     example: "Attention began to flag in the third hour, and the chair wisely called a recess.",
     exampleZh: "進入第三個小時後，眾人的注意力開始減弱，主席明智地宣布休會。",
+    memoryAid: {
+      roots: [
+        { part: "flag", meaning: "下垂、無力 (droop)" },
+      ],
+      mnemonic: "想像旗子(flag)無風時垂軟下垂 → 減弱、變得無力。",
+    },
   },
   {
     id: "v-florid",
@@ -1474,6 +2549,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "elaborately or excessively intricate; flowery in style",
     example: "Stripped of its florid prose, the essay's actual claim was both modest and familiar.",
     exampleZh: "剝去華麗的辭藻，這篇文章真正的主張既溫和又老套。",
+    memoryAid: {
+      roots: [
+        { part: "flor", meaning: "花 (flower, 拉丁 flos，同 floral)" },
+      ],
+      mnemonic: "flor(花，同 floral/flourish)→ 像花一樣繁複 → 辭藻華麗的、過分修飾的。",
+    },
   },
   {
     id: "v-foment",
@@ -1484,6 +2565,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The pamphlets were designed less to inform than to foment unrest in the provinces.",
     exampleZh: "這些小冊子與其說是為了告知，不如說是為了在各省煽動動亂。",
     synonyms: ["incite", "instigate"],
+    memoryAid: {
+      roots: [
+        { part: "fo", meaning: "加熱、敷 (warm, 拉丁 fovere)" },
+        { part: "-ment", meaning: "動詞" },
+      ],
+      mnemonic: "原意「熱敷」→ 加熱、煽風點火 → 煽動、助長。",
+    },
   },
   {
     id: "v-forestall",
@@ -1493,6 +2581,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to prevent or obstruct by taking action in advance",
     example: "The early concession was meant to forestall a rebellion that never, in the end, materialized.",
     exampleZh: "這次提前讓步意在預先阻止一場最終未曾發生的叛亂。",
+    memoryAid: {
+      roots: [
+        { part: "fore-", meaning: "預先 (before)" },
+        { part: "stall", meaning: "位置、攔阻 (place/stop)" },
+      ],
+      mnemonic: "fore(預先)+ stall(攔)→ 預先攔住 → 預先阻止、先發制人。",
+    },
   },
   {
     id: "v-fulminate",
@@ -1503,6 +2598,12 @@ export const VOCAB: VocabEntry[] = [
     example: "He fulminated against the new rules in every forum that would have him, to little practical effect.",
     exampleZh: "他在每個願意接納他的場合都猛烈抨擊新規定，卻幾無實際成效。",
     synonyms: ["rail", "inveigh"],
+    memoryAid: {
+      roots: [
+        { part: "fulmin", meaning: "閃電、雷擊 (lightning, 拉丁 fulmen)" },
+      ],
+      mnemonic: "fulmen(雷電)→ 如雷霆般發作 → 嚴厲譴責、猛烈抨擊。",
+    },
   },
   {
     id: "v-gainsay",
@@ -1512,6 +2613,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to deny or contradict; to speak against",
     example: "Whatever one thinks of his methods, there is no gainsaying the results he achieved.",
     exampleZh: "無論人們如何看待他的方法，他所取得的成果是無可否認的。",
+    memoryAid: {
+      roots: [
+        { part: "gain-", meaning: "逆、反 (against, 古英 gēan)" },
+        { part: "say", meaning: "說 (say)" },
+      ],
+      mnemonic: "gain(against 反)+ say(說)→ 反著說 → 否認、反駁。",
+    },
   },
   {
     id: "v-glib",
@@ -1521,6 +2629,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "fluent but insincere or shallow",
     example: "His glib answers satisfied the audience but evaded every question of substance.",
     exampleZh: "他油嘴滑舌的回答取悅了觀眾，卻迴避了每一個實質問題。",
+    memoryAid: {
+      roots: [
+        { part: "glib", meaning: "光滑 (slippery, 低地德語 glibberig)" },
+      ],
+      mnemonic: "原意「滑溜」→ 嘴皮滑溜、油嘴滑舌 → 油嘴滑舌的、輕率的。",
+    },
   },
   {
     id: "v-gossamer",
@@ -1530,6 +2644,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "extremely light, thin, and delicate",
     example: "The distinction he drew was gossamer, real enough to name but too fine to build upon.",
     exampleZh: "他所作的區分纖細如絲，真實到足以命名，卻精微到無法據以立論。",
+    memoryAid: {
+      roots: [
+        { part: "goss", meaning: "鵝 (goose)" },
+        { part: "samer", meaning: "夏 (summer)" },
+      ],
+      mnemonic: "原指秋日飄浮的蛛絲(goose-summer)→ 極輕薄纖細的。",
+    },
   },
   {
     id: "v-harangue",
@@ -1540,6 +2661,12 @@ export const VOCAB: VocabEntry[] = [
     example: "What was scheduled as a briefing became a half-hour harangue against the press.",
     exampleZh: "原定的簡報，變成了一場長達半小時、針對媒體的激烈訓斥。",
     synonyms: ["tirade", "diatribe"],
+    memoryAid: {
+      roots: [
+        { part: "harangue", meaning: "當眾演說 (法/義 haranga 集會)" },
+      ],
+      mnemonic: "諧音「喝-rang」對著群眾大聲喝斥 → 長篇激烈演說、訓斥。",
+    },
   },
   {
     id: "v-hidebound",
@@ -1549,6 +2676,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "unwilling to change because of tradition or convention",
     example: "A hidebound faculty resisted the new curriculum less on its merits than out of sheer habit.",
     exampleZh: "墨守成規的教師群反對新課程，與其說是基於其優劣，不如說純粹出於習慣。",
+    memoryAid: {
+      roots: [
+        { part: "hide", meaning: "獸皮 (animal skin)" },
+        { part: "bound", meaning: "被綁 (tied)" },
+      ],
+      mnemonic: "hide(皮)+ bound(綁)→ 被皮繃緊、動彈不得 → 墨守成規的、思想狹隘的。",
+    },
   },
   {
     id: "v-imbroglio",
@@ -1558,6 +2692,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a complicated or embarrassing situation",
     example: "The merger collapsed into a legal imbroglio that took years and fortunes to untangle.",
     exampleZh: "這樁合併淪為一場法律糾紛，耗費數年與鉅資方才理清。",
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "在…中 (in)" },
+        { part: "broglio", meaning: "糾纏 (義 brogliare 攪亂)" },
+      ],
+      mnemonic: "義大利文，同 embroil 使捲入 → 糾紛、複雜混亂的局面。",
+    },
   },
   {
     id: "v-immutable",
@@ -1567,6 +2708,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "unchanging over time; unable to be changed",
     example: "What one generation treats as immutable law the next often reveals to be mere convention.",
     exampleZh: "一代人視為不可改變之律法者，下一代往往揭示其不過是慣例而已。",
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "不 (not)" },
+        { part: "mut", meaning: "改變 (change, 同 mutate)" },
+      ],
+      mnemonic: "im(不)+ mut(變，同 mutation)→ 不可變的、永恆的。",
+    },
   },
   {
     id: "v-impassive",
@@ -1576,6 +2724,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not feeling or showing emotion; expressionless",
     example: "She remained impassive through the verdict, betraying neither relief nor dismay.",
     exampleZh: "宣判過程中她始終面無表情，既未流露寬慰，也未顯出沮喪。",
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "無 (not)" },
+        { part: "pass", meaning: "感受、激情 (feel, 同 passion)" },
+      ],
+      mnemonic: "im(無)+ pass(激情，同 passion)→ 無動於衷 → 面無表情的、冷漠的。",
+    },
   },
   {
     id: "v-imperturbable",
@@ -1586,6 +2741,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The pilot's imperturbable voice over the intercom did more to calm the cabin than any announcement could.",
     exampleZh: "機長透過廣播沉著冷靜的聲音，比任何公告都更能安撫機艙。",
     synonyms: ["unflappable", "composed"],
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "不 (not)" },
+        { part: "perturb", meaning: "擾亂 (disturb)" },
+      ],
+      mnemonic: "im(不)+ perturb(擾亂)→ 不受擾 → 沉著冷靜的。",
+    },
   },
   {
     id: "v-impugn",
@@ -1595,6 +2757,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to dispute the truth, validity, or honesty of something",
     example: "To question the data is fair; to impugn the integrity of everyone who collected it is not.",
     exampleZh: "質疑數據是公允的；抨擊每個採集數據者的誠信則並非如此。",
+    memoryAid: {
+      roots: [
+        { part: "im-", meaning: "向 (against)" },
+        { part: "pugn", meaning: "打、拳 (fight, 拉丁 pugnus 拳頭)" },
+      ],
+      mnemonic: "im + pugn(打，同 pugnacious)→ 出拳攻擊(論點)→ 質疑、抨擊。",
+    },
   },
   {
     id: "v-inchoate",
@@ -1604,6 +2773,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "just begun and so not fully formed; rudimentary",
     example: "What is now a rigorous discipline began as a set of inchoate intuitions no one could quite defend.",
     exampleZh: "如今嚴謹的學科，最初不過是一組無人能完全捍衛、未成形的直覺。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "開始 (in)" },
+        { part: "choate", meaning: "套上、開始 (begin, 拉丁 incohare)" },
+      ],
+      mnemonic: "剛套上馬具、剛開始 → 初步的、未成形的。",
+    },
   },
   {
     id: "v-indefatigable",
@@ -1614,6 +2790,14 @@ export const VOCAB: VocabEntry[] = [
     example: "An indefatigable correspondent, she answered every letter, however hostile, in her own hand.",
     exampleZh: "作為一位不知疲倦的通信者，她親手回覆每一封信，無論其多麼充滿敵意。",
     synonyms: ["tireless", "unflagging"],
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "de-", meaning: "完全" },
+        { part: "fatig", meaning: "疲倦 (tire, 同 fatigue)" },
+      ],
+      mnemonic: "in(不)+ fatig(疲倦，同 fatigue)→ 不知疲倦的、不懈的。",
+    },
   },
   {
     id: "v-ineffable",
@@ -1623,6 +2807,14 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "too great or extreme to be expressed in words",
     example: "Mystics insist the experience is ineffable, which makes the libraries written about it all the more curious.",
     exampleZh: "神秘主義者堅稱該體驗難以言喻，這使得為其撰寫的成堆書籍愈發耐人尋味。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "ef-", meaning: "出 (out)" },
+        { part: "fa", meaning: "說 (speak, 拉丁 fari)" },
+      ],
+      mnemonic: "in(不)+ fa(說，同 fable/fate)→ 說不出口的 → 難以言喻的。",
+    },
   },
   {
     id: "v-ingratiate",
@@ -1633,6 +2825,13 @@ export const VOCAB: VocabEntry[] = [
     example: "He spent his first month ingratiating himself with the very people he would later have to overrule.",
     exampleZh: "他頭一個月都在討好那些他日後不得不駁回其意見的人。",
     synonyms: ["curry favor", "fawn"],
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "進入 (into)" },
+        { part: "grati", meaning: "恩寵、討好 (favor, 同 grace)" },
+      ],
+      mnemonic: "in + grati(恩寵，同 grace/gratitude)→ 設法進入他人歡心 → 討好、逢迎。",
+    },
   },
   {
     id: "v-inimical",
@@ -1642,6 +2841,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "tending to obstruct or harm; hostile",
     example: "Conditions inimical to free inquiry rarely announce themselves; they accrete quietly.",
     exampleZh: "有害於自由探究的條件鮮少自我宣告，而是悄然累積。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "imic", meaning: "友 (friend, 同 amicable)" },
+      ],
+      mnemonic: "in(不)+ imic(友，同 amicable 友善)→ 不友善的 → 有害的、敵對的。",
+    },
   },
   {
     id: "v-insipid",
@@ -1652,6 +2858,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The sequel was insipid where the original had been sharp, cautious where it had been bold.",
     exampleZh: "原作犀利之處，續集卻乏味；原作大膽之處，續集卻謹小慎微。",
     synonyms: ["bland", "vapid"],
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "sipid", meaning: "有味道 (tasty, 拉丁 sapidus)" },
+      ],
+      mnemonic: "in(不)+ sipid(有味，同 savor)→ 沒味道 → 乏味的、平淡無奇的。",
+    },
   },
   {
     id: "v-intractable",
@@ -1662,6 +2875,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Problems once thought intractable yielded quickly once the right question was asked.",
     exampleZh: "一旦問對了問題，那些曾被認為棘手的難題便迅速迎刃而解。",
     synonyms: ["unmanageable", "obdurate"],
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "不 (not)" },
+        { part: "tract", meaning: "拉、處理 (pull/handle, 同 tractor)" },
+      ],
+      mnemonic: "in(不)+ tract(拉，同 tractor)→ 拉不動 → 棘手的、難駕馭的。",
+    },
   },
   {
     id: "v-inure",
@@ -1671,6 +2891,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to accustom someone to something unpleasant",
     example: "Years on the ward had inured her to sights that would unsettle most people.",
     exampleZh: "在病房工作多年，已使她習慣了會令多數人不安的景象。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "使 (in)" },
+        { part: "ure", meaning: "使用、習慣 (use, 古法 euvre 工作)" },
+      ],
+      mnemonic: "in + ure(使用)→ 用慣了 → 使習慣(於不快之事)。",
+    },
   },
   {
     id: "v-invective",
@@ -1680,6 +2907,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "insulting, abusive, or highly critical language",
     example: "The review descended from criticism into pure invective by its second paragraph.",
     exampleZh: "這篇評論到第二段便從批評淪為純粹的謾罵。",
+    memoryAid: {
+      roots: [
+        { part: "in-", meaning: "向 (against)" },
+        { part: "vect", meaning: "運送、攜帶 (carry, 同 vehicle)" },
+      ],
+      mnemonic: "in + vect(攜帶，同 vehicle)→ 把怒火運向對方 → 謾罵、激烈抨擊。同 inveigh。",
+    },
   },
   {
     id: "v-jejune",
@@ -1689,6 +2923,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "naive and simplistic; or dull and insubstantial",
     example: "What had seemed profound at twenty struck him, at fifty, as embarrassingly jejune.",
     exampleZh: "二十歲時看似深刻的東西，到五十歲時在他看來卻幼稚得令人尷尬。",
+    memoryAid: {
+      roots: [
+        { part: "jejun", meaning: "空腹、貧瘠 (fasting/barren, 拉丁 jejunus)" },
+      ],
+      mnemonic: "原意「空腹的」→ 空洞無物 → 枯燥乏味的、幼稚的。",
+    },
   },
   {
     id: "v-juxtapose",
@@ -1698,6 +2938,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to place close together for contrasting effect",
     example: "The exhibit juxtaposes early sketches with finished canvases, and the gap between them is the real subject.",
     exampleZh: "這場展覽將早期草圖與完成的畫作並置，而兩者之間的差距才是真正的主題。",
+    memoryAid: {
+      roots: [
+        { part: "juxta-", meaning: "靠近 (beside, 拉丁 juxta)" },
+        { part: "pose", meaning: "放置 (place)" },
+      ],
+      mnemonic: "juxta(旁邊)+ pose(放)→ 並排放置 → 並置、對照。",
+    },
   },
   {
     id: "v-lassitude",
@@ -1708,6 +2955,13 @@ export const VOCAB: VocabEntry[] = [
     example: "A general lassitude had settled over the project, as if everyone were waiting for someone else to act.",
     exampleZh: "一種普遍的倦怠籠罩著整個專案，彷彿人人都在等別人先行動。",
     synonyms: ["lethargy", "torpor"],
+    memoryAid: {
+      roots: [
+        { part: "lass", meaning: "疲倦 (weary, 拉丁 lassus)" },
+        { part: "-itude", meaning: "名詞" },
+      ],
+      mnemonic: "lass(疲倦)→ 諧音「累死兔」→ 倦怠、無精打采。同 alas 唉。",
+    },
   },
   {
     id: "v-latent",
@@ -1717,6 +2971,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "existing but not yet developed or manifest; hidden",
     example: "The crisis exposed tensions that had been latent in the alliance for years.",
     exampleZh: "這場危機暴露了在這個聯盟中潛伏多年的緊張關係。",
+    memoryAid: {
+      roots: [
+        { part: "lat", meaning: "躲藏 (lie hidden, 拉丁 latere)" },
+        { part: "-ent", meaning: "形容詞" },
+      ],
+      mnemonic: "lat(藏)→ 潛伏不顯 → 潛在的、隱藏的。",
+    },
   },
   {
     id: "v-libertine",
@@ -1726,6 +2987,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who behaves without moral or sexual restraint",
     example: "History remembers him as a libertine, though his letters reveal a surprisingly disciplined mind.",
     exampleZh: "歷史記住他是個放蕩不羈之人，但他的書信卻揭示出一個出乎意料自律的頭腦。",
+    memoryAid: {
+      roots: [
+        { part: "liber", meaning: "自由 (free, 同 liberty)" },
+        { part: "-tine", meaning: "人" },
+      ],
+      mnemonic: "liber(自由，同 liberty)→ 過度放縱自由的人 → 放蕩不羈者。",
+    },
   },
   {
     id: "v-limpid",
@@ -1736,6 +3004,12 @@ export const VOCAB: VocabEntry[] = [
     example: "Her limpid prose made notoriously difficult ideas feel almost obvious.",
     exampleZh: "她明晰的文筆，使出了名艱深的觀念顯得幾乎理所當然。",
     synonyms: ["lucid", "pellucid"],
+    memoryAid: {
+      roots: [
+        { part: "limp", meaning: "清澈 (clear, 拉丁 limpidus)" },
+      ],
+      mnemonic: "諧音「林匹得」清澈見底 → 清澈的、明晰的。",
+    },
   },
   {
     id: "v-maladroit",
@@ -1746,6 +3020,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His maladroit attempt at an apology managed to give fresh offense to everyone present.",
     exampleZh: "他笨拙的道歉嘗試，竟設法重新冒犯了在場的每一個人。",
     synonyms: ["clumsy", "gauche"],
+    memoryAid: {
+      roots: [
+        { part: "mal-", meaning: "壞、不 (bad)" },
+        { part: "adroit", meaning: "靈巧 (skillful, 法 à droit 向右/正確)" },
+      ],
+      mnemonic: "mal(不)+ adroit(靈巧)→ 不靈巧 → 笨拙的、不得體的。",
+    },
   },
   {
     id: "v-malinger",
@@ -1755,6 +3036,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to pretend illness in order to avoid duty or work",
     example: "Suspecting he was malingering, the supervisor asked for a doctor's note he could not produce.",
     exampleZh: "主管懷疑他在裝病，要求他出示一張他拿不出的醫生證明。",
+    memoryAid: {
+      roots: [
+        { part: "mal-", meaning: "壞 (bad)" },
+        { part: "linger", meaning: "逗留 (法 malingre 病弱)" },
+      ],
+      mnemonic: "mal(壞)+ linger(賴著)→ 裝病賴著不工作 → 裝病逃避責任。",
+    },
   },
   {
     id: "v-maudlin",
@@ -1764,6 +3052,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "self-pityingly or tearfully sentimental",
     example: "The film's final act tips from genuine feeling into maudlin excess.",
     exampleZh: "影片的最後一幕，從真摯的情感滑向多愁善感的氾濫。",
+    memoryAid: {
+      roots: [
+        { part: "Maudlin", meaning: "抹大拉的馬利亞 (Mary Magdalene)" },
+      ],
+      mnemonic: "源自常被畫成淚眼的 Magdalene(抹大拉)→ 多愁善感的、感傷的。",
+    },
   },
   {
     id: "v-mawkish",
@@ -1773,6 +3067,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "excessively sentimental in a feeble or sickly way",
     example: "What the author intended as tender came across as mawkish, and readers recoiled.",
     exampleZh: "作者本意溫柔的筆觸，讀來卻矯揉造作地傷感，令讀者退避。",
+    memoryAid: {
+      roots: [
+        { part: "mawk", meaning: "蛆 (maggot, 古北歐 mathkr)" },
+      ],
+      mnemonic: "原意「令人作嘔如蛆」→ 矯揉造作地傷感的。",
+    },
   },
   {
     id: "v-mollify",
@@ -1783,6 +3083,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The concession was offered to mollify critics, but it only convinced them the cause was just.",
     exampleZh: "這項讓步本是為了安撫批評者，卻只讓他們確信自己的主張是正當的。",
     synonyms: ["placate", "appease"],
+    memoryAid: {
+      roots: [
+        { part: "moll", meaning: "軟 (soft, 拉丁 mollis)" },
+        { part: "-ify", meaning: "使" },
+      ],
+      mnemonic: "moll(軟，同 emollient)+ ify(使)→ 使心軟 → 安撫、平息。",
+    },
   },
   {
     id: "v-mordant",
@@ -1793,6 +3100,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Her mordant wit made her feared at dinner parties and indispensable on the editorial page.",
     exampleZh: "她尖刻的機智，使她在晚宴上令人畏懼，在社論版上不可或缺。",
     synonyms: ["caustic", "trenchant"],
+    memoryAid: {
+      roots: [
+        { part: "mord", meaning: "咬 (bite, 拉丁 mordere)" },
+        { part: "-ant", meaning: "形容詞" },
+      ],
+      mnemonic: "mord(咬，同 remorse 良心啃咬)→ 言語咬人 → 尖刻的、辛辣的。",
+    },
   },
   {
     id: "v-nadir",
@@ -1802,6 +3116,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "the lowest or most unsuccessful point",
     example: "The reception of that book marked the nadir of a career that would later recover spectacularly.",
     exampleZh: "那本書的反響，標誌著一段日後將戲劇性復甦的事業的谷底。",
+    memoryAid: {
+      roots: [
+        { part: "nadir", meaning: "相對 (opposite, 阿拉伯 naẓīr 天底)" },
+      ],
+      mnemonic: "天文術語「天底」(與 zenith 天頂相對)→ 最低點、谷底。",
+    },
   },
   {
     id: "v-nebulous",
@@ -1812,6 +3132,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The mandate was so nebulous that two committees could read it as authorizing opposite things.",
     exampleZh: "這項授權如此模糊，以致兩個委員會都能將其解讀為批准了截然相反的事。",
     synonyms: ["vague", "amorphous"],
+    memoryAid: {
+      roots: [
+        { part: "nebul", meaning: "雲、霧 (cloud, 拉丁 nebula)" },
+      ],
+      mnemonic: "nebula(星雲/霧)→ 雲霧朦朧 → 模糊的、含混的。",
+    },
   },
   {
     id: "v-noisome",
@@ -1821,6 +3147,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "having an extremely offensive smell; harmful",
     example: "The report did not mince words about the noisome conditions in the older wards.",
     exampleZh: "這份報告對老舊病房中惡臭的環境毫不諱言。",
+    memoryAid: {
+      roots: [
+        { part: "noi", meaning: "傷害 (annoy 的縮略)" },
+        { part: "-some", meaning: "令人…的" },
+      ],
+      mnemonic: "noi(來自 annoy 而非 noise)+ some → 令人厭惡的 → 惡臭的、有害的。注意：與「吵」無關!",
+    },
   },
   {
     id: "v-obdurate",
@@ -1831,6 +3164,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Negotiators found him obdurate on every point that mattered and flexible only on those that did not.",
     exampleZh: "談判者發現他在每個重要問題上都頑固不化，只在無關緊要之處才肯通融。",
     synonyms: ["obstinate", "intransigent"],
+    memoryAid: {
+      roots: [
+        { part: "ob-", meaning: "against" },
+        { part: "dur", meaning: "硬、持久 (hard, 同 durable)" },
+      ],
+      mnemonic: "ob + dur(硬，同 durable/endure)→ 硬碰硬 → 頑固的、冷酷無情的。",
+    },
   },
   {
     id: "v-obviate",
@@ -1840,6 +3180,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to remove a need or difficulty; to prevent",
     example: "A clearer contract at the outset would have obviated the litigation that consumed the next decade.",
     exampleZh: "若一開始就有一份更清晰的合約，便可免去耗費此後十年的訴訟。",
+    memoryAid: {
+      roots: [
+        { part: "ob-", meaning: "擋在前 (in the way)" },
+        { part: "via", meaning: "路 (way, 拉丁 via)" },
+      ],
+      mnemonic: "ob + via(路)→ 擋在路前先解決掉 → 排除、使不必要。",
+    },
   },
   {
     id: "v-officious",
@@ -1849,6 +3196,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "asserting authority or interfering in an annoyingly intrusive way",
     example: "An officious clerk insisted on a form that, it turned out, no rule actually required.",
     exampleZh: "一名多事的職員堅持要一份表格，而事後證明根本沒有規定要求它。",
+    memoryAid: {
+      roots: [
+        { part: "offic", meaning: "職務 (duty, 同 office)" },
+        { part: "-ious", meaning: "形容詞" },
+      ],
+      mnemonic: "office(職務)→ over 盡職、多事 → 愛管閒事的。注意：≠ official 官方的!",
+    },
   },
   {
     id: "v-opprobrium",
@@ -1859,6 +3213,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The decision drew such opprobrium that the agency reversed it within the week.",
     exampleZh: "這項決定招致如此強烈的公開譴責，以致該機構在一週內便予以撤銷。",
     synonyms: ["disgrace", "obloquy"],
+    memoryAid: {
+      roots: [
+        { part: "op-", meaning: "向 (against)" },
+        { part: "probr", meaning: "羞恥、責備 (reproach, 拉丁 probrum)" },
+      ],
+      mnemonic: "op + probr(責備)→ 眾人指責 → 公開的譴責、恥辱。",
+    },
   },
   {
     id: "v-ossify",
@@ -1868,6 +3229,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to become rigid or fixed in attitude or practice",
     example: "A doctrine that began as a bold hypothesis had, over generations, ossified into dogma.",
     exampleZh: "一個始於大膽假設的學說，歷經數代已僵化為教條。",
+    memoryAid: {
+      roots: [
+        { part: "oss", meaning: "骨 (bone, 拉丁 os)" },
+        { part: "-ify", meaning: "使" },
+      ],
+      mnemonic: "oss(骨，同 osseous)+ ify(使)→ 變成骨頭般硬 → 僵化、硬化。",
+    },
   },
   {
     id: "v-palliate",
@@ -1877,6 +3245,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make a problem seem less serious; to relieve without curing",
     example: "The measures palliate the symptoms of the shortage without touching its underlying cause.",
     exampleZh: "這些措施減輕了短缺的症狀，卻未觸及其根本原因。",
+    memoryAid: {
+      roots: [
+        { part: "palli", meaning: "斗篷 (cloak, 拉丁 pallium)" },
+        { part: "-ate", meaning: "使" },
+      ],
+      mnemonic: "palli(斗篷)→ 用斗篷遮蓋病情 → 減輕症狀、掩飾。安寧療護 palliative care。",
+    },
   },
   {
     id: "v-panegyric",
@@ -1887,6 +3262,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The obituary read as panegyric, omitting the controversies that had defined his career.",
     exampleZh: "這篇訃聞讀來像頌詞，略去了界定其生涯的種種爭議。",
     synonyms: ["encomium", "eulogy"],
+    memoryAid: {
+      roots: [
+        { part: "pan-", meaning: "全 (all)" },
+        { part: "egyr", meaning: "集會 (assembly, 希臘 agyris)" },
+      ],
+      mnemonic: "pan(全)+ egyr(集會)→ 在全體集會上的讚辭 → 頌詞、讚揚。",
+    },
   },
   {
     id: "v-pellucid",
@@ -1897,6 +3279,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His pellucid summary did in two pages what the original report failed to do in fifty.",
     exampleZh: "他清澈明白的摘要，以兩頁完成了原報告五十頁都未能做到的事。",
     synonyms: ["lucid", "limpid"],
+    memoryAid: {
+      roots: [
+        { part: "pel-", meaning: "完全 (through)" },
+        { part: "luc", meaning: "光 (light, 同 lucid)" },
+      ],
+      mnemonic: "pel(穿透)+ luc(光，同 lucid/translucent)→ 光線穿透 → 清澈的、明白易懂的。",
+    },
   },
   {
     id: "v-penury",
@@ -1907,6 +3296,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The artist's late years were spent in a penury that his posthumous fame did nothing to relieve.",
     exampleZh: "這位藝術家的晚年在赤貧中度過，而他身後的盛名於事無補。",
     synonyms: ["destitution", "indigence"],
+    memoryAid: {
+      roots: [
+        { part: "penur", meaning: "匱乏 (want, 拉丁 penuria)" },
+      ],
+      mnemonic: "諧音「pen(筆)+你窮」窮到只剩筆 → 貧困、赤貧。",
+    },
   },
   {
     id: "v-perspicacious",
@@ -1917,6 +3312,13 @@ export const VOCAB: VocabEntry[] = [
     example: "A perspicacious reader will notice the inconsistency the author hoped to slip past.",
     exampleZh: "敏銳的讀者會注意到作者本想矇混過去的矛盾。",
     synonyms: ["astute", "discerning"],
+    memoryAid: {
+      roots: [
+        { part: "per-", meaning: "穿過 (through)" },
+        { part: "spic", meaning: "看 (look, 同 spectacle)" },
+      ],
+      mnemonic: "per(穿)+ spic(看)→ 一眼看穿 → 敏銳的、有洞察力的。",
+    },
   },
   {
     id: "v-phlegmatic",
@@ -1927,6 +3329,12 @@ export const VOCAB: VocabEntry[] = [
     example: "His phlegmatic response to the crisis steadied a team on the edge of panic.",
     exampleZh: "他對危機冷靜的反應，穩住了一支瀕臨恐慌的團隊。",
     synonyms: ["stolid", "imperturbable"],
+    memoryAid: {
+      roots: [
+        { part: "phlegm", meaning: "黏液 (體液之一)" },
+      ],
+      mnemonic: "古體液說：黏液(phlegm)多的人冷靜遲緩 → 冷靜的、不動感情的。",
+    },
   },
   {
     id: "v-platitude",
@@ -1936,6 +3344,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a remark used so often that it has lost meaning",
     example: "Asked for a strategy, the executive offered platitudes about synergy and excellence.",
     exampleZh: "被問及策略時，這位高層只給出關於協同與卓越的陳腔濫調。",
+    memoryAid: {
+      roots: [
+        { part: "plat", meaning: "平、扁 (flat, 法 plat)" },
+        { part: "-itude", meaning: "名詞" },
+      ],
+      mnemonic: "plat(平淡，同 plateau/plate)→ 平淡的老話 → 陳腔濫調。",
+    },
   },
   {
     id: "v-plethora",
@@ -1946,6 +3361,12 @@ export const VOCAB: VocabEntry[] = [
     example: "Faced with a plethora of options, the committee found it harder, not easier, to decide.",
     exampleZh: "面對過多的選項，委員會發現決策變得更難而非更容易。",
     synonyms: ["surfeit", "glut"],
+    memoryAid: {
+      roots: [
+        { part: "pleth", meaning: "充滿 (fullness, 希臘 plethein，同 plenty)" },
+      ],
+      mnemonic: "pleth(滿，同 plenty)→ 滿到溢出 → 過多、過剩。",
+    },
   },
   {
     id: "v-pragmatic",
@@ -1955,6 +3376,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "dealing with things sensibly and realistically",
     example: "Her pragmatic streak kept the visionary plans of her colleagues tethered to a workable budget.",
     exampleZh: "她務實的一面，使同事們富於遠見的計畫得以繫於一份可行的預算。",
+    memoryAid: {
+      roots: [
+        { part: "pragm", meaning: "事、行動 (deed, 希臘 pragma)" },
+      ],
+      mnemonic: "pragma(實事/行動，同 practice)→ 講求實際 → 務實的、實用的。",
+    },
   },
   {
     id: "v-precipitate",
@@ -1965,6 +3392,13 @@ export const VOCAB: VocabEntry[] = [
     example: "A precipitate withdrawal would forfeit gains that years of patience had secured.",
     exampleZh: "倉促的撤退會斷送多年耐心才換來的成果。",
     synonyms: ["hasty", "rash"],
+    memoryAid: {
+      roots: [
+        { part: "pre-", meaning: "向前 (before)" },
+        { part: "cipit", meaning: "頭 (head, 拉丁 caput)" },
+      ],
+      mnemonic: "pre + cipit(頭)→ 頭朝前栽下去 → 倉促的、魯莽的。同 precipice 懸崖。",
+    },
   },
   {
     id: "v-prevaricate",
@@ -1975,6 +3409,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Asked directly whether he had approved the payment, he prevaricated for a full minute.",
     exampleZh: "被直接問及是否批准了那筆款項時，他支吾搪塞了整整一分鐘。",
     synonyms: ["equivocate", "hedge"],
+    memoryAid: {
+      roots: [
+        { part: "pre-", meaning: "前 (before)" },
+        { part: "varic", meaning: "叉開、彎 (straddle, 拉丁 varicare)" },
+      ],
+      mnemonic: "pre + varic(叉開腿走歪)→ 答話拐彎 → 支吾搪塞、含糊其辭。",
+    },
   },
   {
     id: "v-probity",
@@ -1985,6 +3426,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His reputation for probity was such that even opponents accepted his account without question.",
     exampleZh: "他正直的聲譽如此卓著，連對手也毫不質疑地接受他的說法。",
     synonyms: ["integrity", "rectitude"],
+    memoryAid: {
+      roots: [
+        { part: "prob", meaning: "好、證明 (good/prove, 拉丁 probus)" },
+        { part: "-ity", meaning: "名詞" },
+      ],
+      mnemonic: "prob(好的，同 probe/approve)→ 品行經得起檢驗 → 正直、誠實。",
+    },
   },
   {
     id: "v-proclivity",
@@ -1995,6 +3443,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The author's proclivity for digression is charming in essays and fatal in instructions.",
     exampleZh: "這位作者離題的傾向，在隨筆中惹人喜愛，在說明書中卻是致命的。",
     synonyms: ["propensity", "penchant"],
+    memoryAid: {
+      roots: [
+        { part: "pro-", meaning: "向前 (forward)" },
+        { part: "cliv", meaning: "斜坡 (slope, 拉丁 clivus)" },
+      ],
+      mnemonic: "pro + cliv(斜坡，同 incline)→ 向某方向傾斜 → 傾向、癖性。",
+    },
   },
   {
     id: "v-propitiate",
@@ -2004,6 +3459,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to win or regain the favor of by doing something pleasing",
     example: "Concessions meant to propitiate the regulators were read by shareholders as an admission of guilt.",
     exampleZh: "意在撫慰監管者的讓步，卻被股東解讀為認罪。",
+    memoryAid: {
+      roots: [
+        { part: "pro-", meaning: "向前 (forward)" },
+        { part: "piti", meaning: "虔誠、有利 (favorable, 同 pious)" },
+      ],
+      mnemonic: "pro + piti(虔誠/示好)→ 獻祭討好神明 → 撫慰、討好以平息怒氣。",
+    },
   },
   {
     id: "v-prolix",
@@ -2014,6 +3476,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The report would have persuaded more had it been half as prolix.",
     exampleZh: "這份報告若篇幅減半、不那麼冗長，本會更具說服力。",
     synonyms: ["verbose", "long-winded"],
+    memoryAid: {
+      roots: [
+        { part: "pro-", meaning: "向前 (forth)" },
+        { part: "lix", meaning: "流、液 (flow/liquid, 拉丁 liquere)" },
+      ],
+      mnemonic: "pro + lix(流)→ 話如水般流不停 → 冗長的、囉嗦的。",
+    },
   },
   {
     id: "v-puerile",
@@ -2024,6 +3493,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The debate degenerated into puerile name-calling that embarrassed both sides.",
     exampleZh: "辯論墮落成幼稚的互相謾罵，令雙方都感到難堪。",
     synonyms: ["juvenile", "infantile"],
+    memoryAid: {
+      roots: [
+        { part: "puer", meaning: "小孩 (boy, 拉丁 puer)" },
+        { part: "-ile", meaning: "形容詞" },
+      ],
+      mnemonic: "puer(小孩)→ 像小孩般 → 幼稚的、孩子氣的。",
+    },
   },
   {
     id: "v-pugnacious",
@@ -2034,6 +3510,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His pugnacious style won debates but lost the allies he would later need.",
     exampleZh: "他好鬥的風格贏得了辯論，卻失去了他日後所需的盟友。",
     synonyms: ["combative", "bellicose"],
+    memoryAid: {
+      roots: [
+        { part: "pugn", meaning: "拳、打 (fight, 拉丁 pugnus 拳)" },
+        { part: "-acious", meaning: "愛…的" },
+      ],
+      mnemonic: "pugn(拳，同 impugn/pugilist 拳手)→ 愛揮拳 → 好鬥的、好爭辯的。",
+    },
   },
   {
     id: "v-pusillanimous",
@@ -2044,6 +3527,13 @@ export const VOCAB: VocabEntry[] = [
     example: "What the cautious called prudence the bold dismissed as pusillanimous evasion.",
     exampleZh: "謹慎者所謂的審慎，在大膽者眼中不過是懦弱的逃避。",
     synonyms: ["cowardly", "craven"],
+    memoryAid: {
+      roots: [
+        { part: "pusill", meaning: "微小 (very small, 拉丁 pusillus)" },
+        { part: "anim", meaning: "心、勇氣 (mind/spirit)" },
+      ],
+      mnemonic: "pusill(微小)+ anim(心，同 animate)→ 心量小 → 膽小的、懦弱的。",
+    },
   },
   {
     id: "v-quiescent",
@@ -2054,6 +3544,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The volcano had been quiescent for so long that towns had crept up its slopes.",
     exampleZh: "這座火山蟄伏已久，以致城鎮已悄然蔓延至其山坡。",
     synonyms: ["dormant", "inactive"],
+    memoryAid: {
+      roots: [
+        { part: "quie", meaning: "安靜 (quiet, 拉丁 quies)" },
+        { part: "-escent", meaning: "漸…的" },
+      ],
+      mnemonic: "quie(安靜，同 quiet/acquiesce)→ 安靜不動 → 靜止的、蟄伏的。",
+    },
   },
   {
     id: "v-rarefied",
@@ -2063,6 +3560,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "of an esoteric, exclusive, or elevated character",
     example: "The journal's rarefied debates rarely touched the practical questions practitioners faced.",
     exampleZh: "這份期刊高深的辯論，鮮少觸及從業者面對的實際問題。",
+    memoryAid: {
+      roots: [
+        { part: "rare", meaning: "稀 (thin/rare)" },
+        { part: "-fied", meaning: "使變…" },
+      ],
+      mnemonic: "rare(稀薄)→ 像高山稀薄空氣 → 高深的、曲高和寡的。",
+    },
   },
   {
     id: "v-rebarbative",
@@ -2072,6 +3576,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "unattractive and objectionable; repellent",
     example: "His prose, for all its precision, has a rebarbative coldness that keeps readers at arm's length.",
     exampleZh: "他的文字儘管精確，卻有一種令人反感的冷漠，使讀者敬而遠之。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "互相 (back)" },
+        { part: "barb", meaning: "鬍鬚 (beard, 拉丁 barba)" },
+      ],
+      mnemonic: "re + barb(鬍鬚)→ 兩人鬍子對刺、互不順眼 → 令人反感的。同 barbed 帶刺的。",
+    },
   },
   {
     id: "v-redoubtable",
@@ -2082,6 +3593,13 @@ export const VOCAB: VocabEntry[] = [
     example: "A redoubtable cross-examiner, she could unravel a rehearsed witness in minutes.",
     exampleZh: "作為一位令人敬畏的詰問者，她能在幾分鐘內拆穿一個排練過的證人。",
     synonyms: ["formidable", "fearsome"],
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "強調" },
+        { part: "doubt", meaning: "懼、疑 (fear/doubt)" },
+      ],
+      mnemonic: "redoubt(令人畏懼)→ 令人敬畏的、可怕的(尤指對手)。",
+    },
   },
   {
     id: "v-refractory",
@@ -2091,6 +3609,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "stubborn or unmanageable; resistant to treatment",
     example: "The condition proved refractory to every therapy the specialists tried.",
     exampleZh: "這種病症對專家們嘗試的每一種療法都頑抗難治。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "回 (back)" },
+        { part: "fract", meaning: "折斷 (break, 同 fracture)" },
+      ],
+      mnemonic: "re + fract(折，同 fracture/refract)→ 把命令折回去 → 倔強的、難管教的。",
+    },
   },
   {
     id: "v-remonstrate",
@@ -2100,6 +3625,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "to make a forcefully reproachful protest",
     example: "She remonstrated with the board for hours, but the vote had been decided in advance.",
     exampleZh: "她向董事會抗議了數小時，但投票結果早已內定。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "再 (back)" },
+        { part: "monstr", meaning: "指出、顯示 (show, 同 demonstrate)" },
+      ],
+      mnemonic: "re + monstr(指出，同 demonstrate)→ 反覆指出錯誤 → 抗議、告誡。",
+    },
   },
   {
     id: "v-reprobate",
@@ -2109,6 +3641,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "an unprincipled person",
     example: "The novel's narrator is an aging reprobate whose charm never quite excuses his conduct.",
     exampleZh: "小說的敘事者是個年老的無賴，其魅力始終無法完全為其行徑開脫。",
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "否 (back/not)" },
+        { part: "prob", meaning: "證明好 (prove good)" },
+      ],
+      mnemonic: "re(不)+ prob(好，同 approve)→ 不被認可的人 → 墮落者、無賴。對照 approbation。",
+    },
   },
   {
     id: "v-rescind",
@@ -2119,6 +3658,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The board rescinded the policy within days of the public outcry it provoked.",
     exampleZh: "在引發公眾強烈抗議的幾天內，董事會便撤銷了該政策。",
     synonyms: ["revoke", "repeal"],
+    memoryAid: {
+      roots: [
+        { part: "re-", meaning: "回 (back)" },
+        { part: "scind", meaning: "切、撕 (cut, 拉丁 scindere)" },
+      ],
+      mnemonic: "re + scind(切，同 scissors)→ 切掉、撕回 → 撤銷、廢除。",
+    },
   },
   {
     id: "v-restive",
@@ -2128,6 +3674,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "unable to keep still or be patient; restless",
     example: "The longer the verdict was delayed, the more restive the crowd outside became.",
     exampleZh: "判決拖延得愈久，外面的群眾就愈發焦躁不安。",
+    memoryAid: {
+      roots: [
+        { part: "rest", meaning: "停留 (stay/rest)" },
+        { part: "-ive", meaning: "形容詞" },
+      ],
+      mnemonic: "原指馬「不肯前進、躁動」→ 焦躁不安的、難駕馭的。注意：≠ restful!",
+    },
   },
   {
     id: "v-sagacious",
@@ -2138,6 +3691,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His sagacious advice, ignored at the time, looked prophetic a decade later.",
     exampleZh: "他睿智的建議當時被忽視，十年後卻顯得頗有先見之明。",
     synonyms: ["astute", "judicious"],
+    memoryAid: {
+      roots: [
+        { part: "sag", meaning: "敏銳察覺 (perceive keenly, 拉丁 sagire)" },
+        { part: "-acious", meaning: "充滿…的" },
+      ],
+      mnemonic: "sag(敏察，同 sage 智者)→ 睿智的、有遠見的。",
+    },
   },
   {
     id: "v-salient",
@@ -2148,6 +3708,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The memo buried its most salient point in a footnote almost no one read.",
     exampleZh: "這份備忘錄將其最重要的一點，埋在一條幾乎無人閱讀的附註中。",
     synonyms: ["prominent", "conspicuous"],
+    memoryAid: {
+      roots: [
+        { part: "sal", meaning: "跳 (leap, 拉丁 salire)" },
+        { part: "-ent", meaning: "形容詞" },
+      ],
+      mnemonic: "sal(跳，同 salmon 鮭魚/assail)→ 跳出來搶眼 → 顯著的、突出的。",
+    },
   },
   {
     id: "v-sedulous",
@@ -2158,6 +3725,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Only sedulous archival work could have reconstructed a life so deliberately hidden.",
     exampleZh: "唯有勤勉的檔案工作，才能重建一段如此刻意隱藏的人生。",
     synonyms: ["assiduous", "diligent"],
+    memoryAid: {
+      roots: [
+        { part: "sed", meaning: "坐、不停 (sit, 拉丁 sedulo 殷勤)" },
+        { part: "-ulous", meaning: "充滿…的" },
+      ],
+      mnemonic: "久坐不停地做 → 勤勉的、專注的。同 assiduous。",
+    },
   },
   {
     id: "v-soporific",
@@ -2167,6 +3741,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "tending to induce drowsiness or sleep",
     example: "The speaker's soporific monotone emptied the lecture hall well before the hour was up.",
     exampleZh: "講者催眠般單調的語調，使演講廳遠在一小時結束前便已空空蕩蕩。",
+    memoryAid: {
+      roots: [
+        { part: "sopor", meaning: "沉睡 (deep sleep, 拉丁 sopor)" },
+        { part: "-fic", meaning: "使…的" },
+      ],
+      mnemonic: "sopor(沉睡)+ fic(使)→ 使人入睡 → 催眠的、使人昏昏欲睡的。",
+    },
   },
   {
     id: "v-spartan",
@@ -2177,6 +3758,12 @@ export const VOCAB: VocabEntry[] = [
     example: "His spartan office held a desk, a chair, and nothing that could be called a comfort.",
     exampleZh: "他簡樸的辦公室裡只有一張桌子、一把椅子，再無任何稱得上舒適之物。",
     synonyms: ["austere", "ascetic"],
+    memoryAid: {
+      roots: [
+        { part: "Sparta", meaning: "斯巴達 (Sparta)" },
+      ],
+      mnemonic: "斯巴達 (Sparta) 人生活刻苦、紀律嚴明 → 簡樸的、嚴格節制的。",
+    },
   },
   {
     id: "v-spendthrift",
@@ -2186,6 +3773,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "a person who spends money in an extravagant, wasteful way",
     example: "The heir proved a spendthrift, dispersing in a decade what had taken a century to amass.",
     exampleZh: "這位繼承人是個揮霍無度者，十年間便散盡了耗時一個世紀才積累的財富。",
+    memoryAid: {
+      roots: [
+        { part: "spend", meaning: "花費 (spend)" },
+        { part: "thrift", meaning: "積蓄 (savings)" },
+      ],
+      mnemonic: "spend(花)掉 thrift(積蓄)→ 把存款花光 → 揮霍無度者。",
+    },
   },
   {
     id: "v-stentorian",
@@ -2195,6 +3789,12 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "(of a voice) loud and powerful",
     example: "His stentorian voice carried to the back of the hall without the aid of a microphone.",
     exampleZh: "他洪亮的嗓音無需麥克風便能傳到大廳後方。",
+    memoryAid: {
+      roots: [
+        { part: "Stentor", meaning: "斯坦托 (希臘嗓門洪亮的傳令官)" },
+      ],
+      mnemonic: "荷馬史詩中嗓音如五十人的傳令官 Stentor → 聲音洪亮的。",
+    },
   },
   {
     id: "v-stolid",
@@ -2205,6 +3805,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The stolid sergeant absorbed the bad news without so much as a change in expression.",
     exampleZh: "這位不動聲色的中士接收壞消息時，連表情都未曾變化。",
     synonyms: ["impassive", "phlegmatic"],
+    memoryAid: {
+      roots: [
+        { part: "stol", meaning: "遲鈍、呆 (dull, 拉丁 stolidus)" },
+      ],
+      mnemonic: "諧音「石頭lid」像石頭般無表情 → 不動聲色的、無動於衷的。",
+    },
   },
   {
     id: "v-strident",
@@ -2214,6 +3820,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "loud and harsh; aggressively insistent",
     example: "As the campaign wore on, its once-measured rhetoric grew increasingly strident.",
     exampleZh: "隨著競選的推進，其一度溫和的言辭變得愈發尖銳刺耳。",
+    memoryAid: {
+      roots: [
+        { part: "strid", meaning: "刺耳作響 (creak, 拉丁 stridere)" },
+        { part: "-ent", meaning: "形容詞" },
+      ],
+      mnemonic: "strid(嘎吱作響)→ 刺耳的、尖銳的。",
+    },
   },
   {
     id: "v-sublime",
@@ -2223,6 +3836,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "of such excellence or beauty as to inspire awe",
     example: "The symphony's final movement achieves a sublime grandeur the earlier ones only hint at.",
     exampleZh: "這部交響曲的終樂章達到了一種前面樂章僅暗示過的崇高壯麗。",
+    memoryAid: {
+      roots: [
+        { part: "sub-", meaning: "向上至 (up to)" },
+        { part: "lim", meaning: "門楣、界限 (threshold, 拉丁 limen)" },
+      ],
+      mnemonic: "sub + lim(門楣)→ 高至門楣之上 → 崇高的、壯麗的。",
+    },
   },
   {
     id: "v-supplant",
@@ -2233,6 +3853,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The new method did not so much improve on the old as supplant it entirely.",
     exampleZh: "新方法與其說是改進了舊方法，不如說是將其完全取代。",
     synonyms: ["replace", "supersede"],
+    memoryAid: {
+      roots: [
+        { part: "sup-", meaning: "從下 (under)" },
+        { part: "plant", meaning: "腳掌、踩 (sole, 拉丁 planta)" },
+      ],
+      mnemonic: "sup + plant(腳掌)→ 從下絆倒再踩上去 → 取代、排擠。",
+    },
   },
   {
     id: "v-tendentious",
@@ -2243,6 +3870,13 @@ export const VOCAB: VocabEntry[] = [
     example: "The documentary's tendentious editing left no doubt about the conclusion it wanted viewers to reach.",
     exampleZh: "這部紀錄片帶有傾向性的剪輯，使它想讓觀眾得出的結論毫無懸念。",
     synonyms: ["partisan", "biased"],
+    memoryAid: {
+      roots: [
+        { part: "tend", meaning: "伸、傾向 (stretch/tend)" },
+        { part: "-entious", meaning: "形容詞" },
+      ],
+      mnemonic: "tend(傾向，同 tendency)→ 帶明顯傾向的 → 有偏見的、有傾向性的。",
+    },
   },
   {
     id: "v-timorous",
@@ -2253,6 +3887,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Too timorous to object openly, she registered her dissent only in private memos.",
     exampleZh: "她太過膽怯而不敢公開反對，只在私人備忘錄中記下異議。",
     synonyms: ["timid", "apprehensive"],
+    memoryAid: {
+      roots: [
+        { part: "tim", meaning: "怕 (fear, 拉丁 timere)" },
+        { part: "-orous", meaning: "充滿…的" },
+      ],
+      mnemonic: "tim(怕，同 timid)→ 膽怯的、畏縮的。",
+    },
   },
   {
     id: "v-torpid",
@@ -2263,6 +3904,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The market remained torpid for months, indifferent to news that would once have moved it sharply.",
     exampleZh: "市場數月來一直遲鈍不振，對那些一度會使其劇烈波動的消息漠然以對。",
     synonyms: ["lethargic", "sluggish"],
+    memoryAid: {
+      roots: [
+        { part: "torp", meaning: "麻木、僵 (numb, 拉丁 torpere)" },
+      ],
+      mnemonic: "torp(麻木，同 torpor)→ 遲鈍的、麻木的。電鰻 torpedo 使獵物麻痺。",
+    },
   },
   {
     id: "v-truculent",
@@ -2273,6 +3920,13 @@ export const VOCAB: VocabEntry[] = [
     example: "His truculent refusal to compromise turned a minor disagreement into a lasting feud.",
     exampleZh: "他蠻橫地拒絕妥協，把一場小小的分歧變成了一段持久的宿怨。",
     synonyms: ["belligerent", "pugnacious"],
+    memoryAid: {
+      roots: [
+        { part: "truc", meaning: "兇猛 (fierce, 拉丁 trux)" },
+        { part: "-ulent", meaning: "充滿…的" },
+      ],
+      mnemonic: "truc(兇猛)→ 諧音「揍you-len」想揍人 → 好鬥的、蠻橫的。",
+    },
   },
   {
     id: "v-turgid",
@@ -2283,6 +3937,12 @@ export const VOCAB: VocabEntry[] = [
     example: "Beneath the turgid academic prose lay an idea that could have been stated in a sentence.",
     exampleZh: "在浮誇的學術文字之下，是一個本可用一句話說清的觀念。",
     synonyms: ["bombastic", "grandiloquent"],
+    memoryAid: {
+      roots: [
+        { part: "turg", meaning: "腫脹 (swell, 拉丁 turgere)" },
+      ],
+      mnemonic: "turg(腫脹)→ 文字虛腫膨脹 → 浮誇的、腫脹的。",
+    },
   },
   {
     id: "v-untenable",
@@ -2292,6 +3952,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "not able to be defended against attack or objection",
     example: "Once the key witness recanted, the prosecution's position became untenable.",
     exampleZh: "一旦關鍵證人翻供，控方的立場便站不住腳了。",
+    memoryAid: {
+      roots: [
+        { part: "un-", meaning: "不 (not)" },
+        { part: "ten", meaning: "持、守 (hold, 拉丁 tenere)" },
+      ],
+      mnemonic: "un(不)+ ten(守，同 tenable/tenant)→ 守不住 → 站不住腳的、難以維持的。",
+    },
   },
   {
     id: "v-vapid",
@@ -2302,6 +3969,12 @@ export const VOCAB: VocabEntry[] = [
     example: "What passed for conversation at the gala was uniformly vapid, all surface and no substance.",
     exampleZh: "晚會上充作交談的內容一律乏味，盡是表面而毫無實質。",
     synonyms: ["insipid", "bland"],
+    memoryAid: {
+      roots: [
+        { part: "vap", meaning: "蒸氣 (vapor, 拉丁 vapidus 走味)" },
+      ],
+      mnemonic: "vap(蒸氣，同 vapor)→ 氣跑光、走味 → 乏味的、無生氣的。",
+    },
   },
   {
     id: "v-variegated",
@@ -2311,6 +3984,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "marked with different colors; varied in character",
     example: "His variegated career spanned law, journalism, and, improbably, marine biology.",
     exampleZh: "他多樣的職業生涯橫跨法律、新聞，乃至出人意料的海洋生物學。",
+    memoryAid: {
+      roots: [
+        { part: "vari", meaning: "變化、多樣 (various)" },
+        { part: "-gated", meaning: "使具…" },
+      ],
+      mnemonic: "vari(多樣，同 various/variety)→ 多樣的、色彩斑斕的。",
+    },
   },
   {
     id: "v-vituperate",
@@ -2321,6 +4001,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Rather than rebut the study, the columnist simply vituperated against its authors.",
     exampleZh: "這位專欄作家不去反駁該研究，只是一味痛斥其作者。",
     synonyms: ["revile", "castigate"],
+    memoryAid: {
+      roots: [
+        { part: "vit", meaning: "缺陷、瑕疵 (fault, 同 vice)" },
+        { part: "uper", meaning: "準備、責 (prepare)" },
+      ],
+      mnemonic: "vit(瑕疵，同 vice)→ 挑人缺點痛罵 → 謾罵、痛斥。",
+    },
   },
   {
     id: "v-voluble",
@@ -2331,6 +4018,13 @@ export const VOCAB: VocabEntry[] = [
     example: "Voluble on subjects he loved, he turned monosyllabic the moment talk shifted to himself.",
     exampleZh: "談及所愛的話題時他滔滔不絕，話題一轉到自己身上便惜字如金。",
     synonyms: ["garrulous", "loquacious"],
+    memoryAid: {
+      roots: [
+        { part: "volv/vol", meaning: "滾、轉 (roll, 同 revolve)" },
+        { part: "-uble", meaning: "易…的" },
+      ],
+      mnemonic: "vol(滾，同 revolve)→ 話像滾輪轉不停 → 健談的、滔滔不絕的。",
+    },
   },
   {
     id: "v-wanton",
@@ -2340,6 +4034,13 @@ export const VOCAB: VocabEntry[] = [
     meaningEn: "deliberate and unprovoked; without regard for what is right",
     example: "The report condemned the wanton destruction of records that might have settled the question.",
     exampleZh: "報告譴責了對那些本可解決爭議的紀錄的肆意銷毀。",
+    memoryAid: {
+      roots: [
+        { part: "wan-", meaning: "缺乏 (lacking, 古英)" },
+        { part: "towen", meaning: "管教 (discipline)" },
+      ],
+      mnemonic: "wan(缺)+ ton(管教)→ 缺乏管教 → 肆意的、無端的。",
+    },
   },
   {
     id: "v-winnow",
@@ -2350,6 +4051,12 @@ export const VOCAB: VocabEntry[] = [
     example: "The committee winnowed two hundred applications down to a shortlist of six.",
     exampleZh: "委員會將兩百份申請篩選至僅剩六人的候選名單。",
     synonyms: ["sift", "cull"],
+    memoryAid: {
+      roots: [
+        { part: "winn", meaning: "風 (wind, 古英 windwian)" },
+      ],
+      mnemonic: "同 wind 風 → 用風吹去穀殼留下穀粒 → 篩選、去蕪存菁。",
+    },
   },
   {
     id: "v-zenith",
@@ -2360,5 +4067,11 @@ export const VOCAB: VocabEntry[] = [
     example: "The empire was at its zenith precisely when the forces of its decline were already gathering.",
     exampleZh: "這個帝國正值巔峰之際，導致其衰落的力量其實已在悄然積聚。",
     synonyms: ["apex", "acme"],
+    memoryAid: {
+      roots: [
+        { part: "zenith", meaning: "頭頂之路 (阿拉伯 samt 路)" },
+      ],
+      mnemonic: "天文術語「天頂」(與 nadir 天底相對)→ 頂點、巔峰。",
+    },
   },
 ];
