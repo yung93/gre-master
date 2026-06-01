@@ -25,15 +25,14 @@ The app is hosted on **Firebase Hosting** at:
 https://gre-master-a2ec8.web.app
 ```
 
-Manual deploy (builds the static export, then publishes):
+Deploy is manual — build the static export and publish in one command:
 
 ```bash
 npm run deploy
 ```
 
-Automated deploy: pushing to `main` triggers `.github/workflows/firebase-deploy.yml`.
-This requires a `FIREBASE_SERVICE_ACCOUNT` repository secret (a Firebase service-account
-JSON key with the Firebase Hosting Admin role). Without it, use `npm run deploy` locally.
+(Requires a one-time `npx firebase login` with the account that owns the
+`gre-master-a2ec8` project.)
 
 ## Adding content
 
