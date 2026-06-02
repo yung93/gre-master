@@ -18,6 +18,16 @@ interface DictionaryEntry {
   phonetics?: DictionaryPhonetic[];
 }
 
+// Pre-generated Samantha MP3/M4A clips live in Firebase Cloud Storage under
+// audio/<word>.m4a. Public read is enabled on that folder, so they play as
+// plain same-origin-style media (no CORS/referer issues).
+const STORAGE_BUCKET = "gre-master-a2ec8.firebasestorage.app";
+
+function storageUrl(word: string): string {
+  const path = `audio/${word.toLowerCase()}.m4a`;
+  return `https://firebasestorage.googleapis.com/v0/b/${STORAGE_BUCKET}/o/${encodeURIComponent(path)}?alt=media`;
+}
+
 async function fetchPronunciationUrl(word: string): Promise<string | null> {
   const cacheKey = `gre-master/v1/audio/${word.toLowerCase()}`;
   if (typeof window !== "undefined") {
@@ -68,14 +78,23 @@ export default function SpeakButton({ text, label, shortcut, size = "sm" }: Spea
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Single word → a pre-generated Storage clip exists, so the button is ready
+  // immediately. Multi-word text (e.g. a sentence) has no clip, so look one up.
+  const isSingleWord = !/\s/.test(text.trim());
+
   useEffect(() => {
-    setStatus("loading");
     setAudioUrl(null);
     const cleaned = text.trim();
     if (!cleaned) {
       setStatus("unavailable");
       return;
     }
+    if (isSingleWord) {
+      setStatus("ready");
+      return;
+    }
+    // Phrase: fall back to the dictionary recording lookup.
+    setStatus("loading");
     let cancelled = false;
     fetchPronunciationUrl(cleaned).then((url) => {
       if (cancelled) return;
@@ -89,30 +108,43 @@ export default function SpeakButton({ text, label, shortcut, size = "sm" }: Spea
     return () => {
       cancelled = true;
     };
-  }, [text]);
+  }, [text, isSingleWord]);
 
-  const play = useCallback(() => {
-    if (!audioUrl) return;
+  const playUrl = useCallback((url: string, onError?: () => void) => {
     try {
       audioRef.current?.pause();
-      const audio = new Audio(audioUrl);
+      const audio = new Audio(url);
       audio.preload = "auto";
-      audio.crossOrigin = "anonymous";
       audioRef.current = audio;
       audio.onplay = () => setPlaying(true);
       audio.onended = () => setPlaying(false);
       audio.onerror = () => {
         setPlaying(false);
-        setStatus("unavailable");
+        if (onError) onError();
       };
       audio.play().catch(() => {
         setPlaying(false);
-        setStatus("unavailable");
+        if (onError) onError();
       });
     } catch {
-      setStatus("unavailable");
+      if (onError) onError();
     }
-  }, [audioUrl]);
+  }, []);
+
+  const play = useCallback(() => {
+    if (audioUrl) {
+      playUrl(audioUrl);
+      return;
+    }
+    if (isSingleWord) {
+      // Storage clip first; if missing, fall back to a dictionary recording.
+      playUrl(storageUrl(text.trim()), () => {
+        fetchPronunciationUrl(text.trim()).then((url) => {
+          if (url) playUrl(url);
+        });
+      });
+    }
+  }, [audioUrl, isSingleWord, text, playUrl]);
 
   useEffect(() => {
     if (!shortcut || status !== "ready") return;
