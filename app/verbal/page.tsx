@@ -13,6 +13,7 @@ import {
   REVISIT_EVERY,
   applyGrade,
   initialLearnProgress,
+  isMastered,
   markRevisit,
   pickFromBatch,
   pickRevisit,
@@ -84,7 +85,7 @@ export default function VerbalPage() {
 
   // "Mastered" counts words ever mastered, so it does not dip during revisits.
   const masteredCount = useMemo(
-    () => ORDERED_IDS.reduce((n, id) => (progress[id]?.everMastered ? n + 1 : n), 0),
+    () => ORDERED_IDS.reduce((n, id) => (isMastered(progress[id]) ? n + 1 : n), 0),
     [progress],
   );
   const activeInBatch = batch.filter(

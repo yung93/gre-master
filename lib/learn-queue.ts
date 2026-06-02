@@ -45,6 +45,17 @@ export function isGraduated(progress: LearnProgress | undefined): boolean {
   return progress?.graduated ?? false;
 }
 
+/**
+ * Whether a word counts as "mastered" for display. True if it was ever
+ * mastered (so a word temporarily out for spaced revisit still counts), with a
+ * fallback to `graduated` for legacy entries created before the everMastered
+ * field existed. Both /verbal and /words use this so their counts never drift.
+ */
+export function isMastered(progress: LearnProgress | undefined): boolean {
+  if (!progress) return false;
+  return progress.everMastered ?? progress.graduated ?? false;
+}
+
 /** Apply a grade to a card's learning progress. Pure: returns a new object. */
 export function applyGrade(
   prev: Readonly<LearnProgress>,

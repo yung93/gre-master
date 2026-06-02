@@ -4,6 +4,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import SpeakButton from "@/components/SpeakButton";
 import { VOCAB } from "@/data/vocab";
+import { isMastered } from "@/lib/learn-queue";
 import { useLocalState } from "@/lib/storage";
 import type { LearnProgress, MemoryAid, VocabEntry } from "@/lib/types";
 
@@ -13,34 +14,30 @@ const PAGE_SIZE = 20;
 
 function statusOf(progress: LearnProgress | undefined): StatusFilter {
   if (!progress || progress.seen === 0) return "new";
-  if (progress.graduated) return "mastered";
+  if (isMastered(progress)) return "mastered";
   return "learning";
 }
+
+type SortMode = "az" | "shuffle";
 
 export default function WordsPage() {
   const [progress] = useLocalState<Record<string, LearnProgress>>("learn/vocab", {});
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<StatusFilter>("all");
-  const [pos, setPos] = useState<string>("all");
   const [hideZh, setHideZh] = useState(false);
+  const [sortMode, setSortMode] = useState<SortMode>("az");
+  const [shuffleSeed, setShuffleSeed] = useState(0);
   const [page, setPage] = useState(1);
   const deferredQuery = useDeferredValue(query);
 
-  const partsOfSpeech = useMemo(() => {
-    const set = new Set<string>();
-    VOCAB.forEach((v) => set.add(v.partOfSpeech));
-    return ["all", ...Array.from(set).sort()];
-  }, []);
-
   const masteredCount = useMemo(
-    () => VOCAB.reduce((n, v) => (progress[v.id]?.graduated ? n + 1 : n), 0),
+    () => VOCAB.reduce((n, v) => (isMastered(progress[v.id]) ? n + 1 : n), 0),
     [progress],
   );
 
   const filtered = useMemo(() => {
     const q = deferredQuery.trim().toLowerCase();
-    return VOCAB.filter((v) => {
-      if (pos !== "all" && v.partOfSpeech !== pos) return false;
+    const matched = VOCAB.filter((v) => {
       if (status !== "all" && statusOf(progress[v.id]) !== status) return false;
       if (!q) return true;
       return (
@@ -50,12 +47,38 @@ export default function WordsPage() {
         (v.synonyms ?? []).some((s) => s.toLowerCase().includes(q))
       );
     });
-  }, [deferredQuery, status, pos, progress]);
+    if (sortMode === "az") {
+      return [...matched].sort((a, b) => a.word.localeCompare(b.word));
+    }
+    // shuffle — Fisher–Yates seeded by shuffleSeed so the order is stable
+    // until the user reshuffles (and re-derivable on re-render).
+    const arr = [...matched];
+    let s = shuffleSeed * 2654435761 + 1;
+    const rand = () => {
+      s = (s * 1103515245 + 12345) & 0x7fffffff;
+      return s / 0x7fffffff;
+    };
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [deferredQuery, status, progress, sortMode, shuffleSeed]);
 
-  // Reset to the first page whenever the result set changes.
+  // Reset to the first page whenever the result set or order changes.
   useEffect(() => {
     setPage(1);
-  }, [deferredQuery, status, pos]);
+  }, [deferredQuery, status, sortMode, shuffleSeed]);
+
+  function toggleSort() {
+    if (sortMode === "az") {
+      setSortMode("shuffle");
+      setShuffleSeed((n) => n + 1);
+    } else {
+      // already shuffling → reshuffle; long-press not needed, just cycle back to A–Z
+      setSortMode("az");
+    }
+  }
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -129,18 +152,18 @@ export default function WordsPage() {
               {f.label}
             </button>
           ))}
-          <select
-            value={pos}
-            onChange={(e) => setPos(e.target.value)}
-            className="surface px-3 py-1.5 text-sm rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
-            aria-label="Filter by part of speech"
+          <button
+            onClick={toggleSort}
+            className={`inline-flex items-center justify-center h-9 w-9 rounded-md border transition-colors ${
+              sortMode === "shuffle"
+                ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)]"
+                : "surface text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+            }`}
+            aria-label={sortMode === "az" ? "Shuffle word order" : "Sort A–Z"}
+            title={sortMode === "az" ? "Shuffle" : "Sorted A–Z (tap to sort alphabetically)"}
           >
-            {partsOfSpeech.map((p) => (
-              <option key={p} value={p}>
-                {p === "all" ? "All parts" : p}
-              </option>
-            ))}
-          </select>
+            {sortMode === "az" ? <ShuffleIcon /> : <SortAzIcon />}
+          </button>
           <button
             onClick={() => setHideZh((v) => !v)}
             className={`inline-flex items-center justify-center h-9 w-9 rounded-md border transition-colors ${
@@ -152,7 +175,7 @@ export default function WordsPage() {
             aria-label={hideZh ? "Show Traditional Chinese meaning" : "Hide Traditional Chinese meaning"}
             title={hideZh ? "Show 中文 meaning" : "Hide 中文 meaning"}
           >
-            {hideZh ? <EyeOffIcon /> : <EyeIcon />}
+            {hideZh ? <EyeIcon /> : <EyeOffIcon />}
           </button>
         </div>
       </div>
@@ -338,6 +361,26 @@ function MemoryAidBlock({ aid }: { aid: MemoryAid }) {
         <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-ink)]">{aid.mnemonic}</p>
       )}
     </div>
+  );
+}
+
+function ShuffleIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M3 5h3.5c1 0 1.9.5 2.5 1.3L15 17c.6.8 1.5 1.3 2.5 1.3H21" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 19h3.5c1 0 1.9-.5 2.5-1.3l1.2-1.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14.3 7.9 15 7c.6-.8 1.5-1.3 2.5-1.3H21" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M18.5 3.5 21 5.7 18.5 8M18.5 16.5 21 18.7 18.5 21" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function SortAzIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M7 4v16M7 20l-3-3M7 20l3-3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13 6h7M13 11h5M13 16h3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
   );
 }
 
