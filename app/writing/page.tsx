@@ -3,12 +3,35 @@
 import { Fragment, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { WRITING_PROMPTS } from "@/data/writing";
+import { useLocalState } from "@/lib/storage";
 import type { EssaySentence, EssayType, SampleEssay, WritingPrompt } from "@/lib/types";
+
+function CheckCircleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden className={className}>
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.72-9.97a.75.75 0 00-1.06-1.06L9 10.69 7.34 9.03a.75.75 0 10-1.06 1.06l2.19 2.19c.3.3.77.3 1.06 0l4.19-4.19z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 
 export default function WritingPage() {
   const [type, setType] = useState<EssayType>("issue");
   const [category, setCategory] = useState<string>("all");
   const [selectedId, setSelectedId] = useState<string>(() => WRITING_PROMPTS[0].id);
+  const [read, setRead] = useLocalState<Record<string, boolean>>("writing/read", {});
+
+  function toggleRead(id: string) {
+    setRead((prev) => {
+      const next = { ...prev };
+      if (next[id]) delete next[id];
+      else next[id] = true;
+      return next;
+    });
+  }
 
   const filtered = useMemo(() => {
     return WRITING_PROMPTS.filter((p) => p.type === type && (category === "all" || p.category === category));
@@ -87,6 +110,7 @@ export default function WritingPage() {
           )}
           {filtered.map((prompt) => {
             const active = selected?.id === prompt.id;
+            const isRead = !!read[prompt.id];
             return (
               <button
                 key={prompt.id}
@@ -97,11 +121,23 @@ export default function WritingPage() {
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <p className="eyebrow">{prompt.category}</p>
-                  {prompt.sample && (
-                    <span className="mono text-[10px] text-[var(--color-accent)]">SAMPLE</span>
-                  )}
+                  <div className="flex items-center gap-2 shrink-0">
+                    {isRead && (
+                      <span title="Read" className="inline-flex text-[var(--color-success)]">
+                        <CheckCircleIcon className="w-4 h-4" />
+                        <span className="sr-only">Read</span>
+                      </span>
+                    )}
+                    {prompt.sample && (
+                      <span className="mono text-[10px] text-[var(--color-accent)]">SAMPLE</span>
+                    )}
+                  </div>
                 </div>
-                <p className="serif mt-2 leading-snug text-[var(--color-ink)] line-clamp-3 text-base">
+                <p
+                  className={`serif mt-2 leading-snug line-clamp-3 text-base ${
+                    isRead ? "text-[var(--color-ink-muted)]" : "text-[var(--color-ink)]"
+                  }`}
+                >
                   {prompt.prompt}
                 </p>
               </button>
@@ -110,7 +146,13 @@ export default function WritingPage() {
         </aside>
 
         <section className="space-y-8">
-          {selected ? <PromptDetail prompt={selected} /> : (
+          {selected ? (
+            <PromptDetail
+              prompt={selected}
+              isRead={!!read[selected.id]}
+              onToggleRead={() => toggleRead(selected.id)}
+            />
+          ) : (
             <div className="surface p-8 text-sm text-[var(--color-ink-muted)]">Select a prompt to begin.</div>
           )}
         </section>
@@ -119,13 +161,41 @@ export default function WritingPage() {
   );
 }
 
-function PromptDetail({ prompt }: { prompt: WritingPrompt }) {
+interface PromptDetailProps {
+  prompt: WritingPrompt;
+  isRead: boolean;
+  onToggleRead: () => void;
+}
+
+function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
   return (
     <>
       <article className="surface p-7 sm:p-9">
         <div className="flex items-baseline justify-between gap-4 mb-4">
           <p className="eyebrow">{prompt.type === "issue" ? "Issue Task" : "Argument Task"} · {prompt.category}</p>
-          <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
+          <div className="flex items-center gap-3 shrink-0">
+            <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
+            {prompt.sample && (
+              <button
+                type="button"
+                onClick={onToggleRead}
+                aria-pressed={isRead}
+                className={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border transition-colors ${
+                  isRead
+                    ? "border-[var(--color-success)] text-[var(--color-success)] bg-[oklch(96%_0.04_155)]"
+                    : "border-[var(--color-rule)] text-[var(--color-ink-muted)] hover:border-[var(--color-rule-strong)] hover:text-[var(--color-ink)]"
+                }`}
+              >
+                {isRead ? (
+                  <>
+                    <CheckCircleIcon className="w-3.5 h-3.5" /> Read
+                  </>
+                ) : (
+                  "Mark as read"
+                )}
+              </button>
+            )}
+          </div>
         </div>
         <blockquote className="serif text-xl leading-snug border-l-2 border-[var(--color-accent)] pl-5">
           {prompt.prompt}

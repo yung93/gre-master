@@ -12,6 +12,7 @@ const KEY_QUANT = "srs/quant";
 const KEY_MOCK = "mock/active";
 const KEY_LEARN_VOCAB = "learn/vocab";
 const KEY_LEARN_VOCAB_MASTERY = "learn/vocab-mastery-count";
+const KEY_WRITING_READ = "writing/read";
 const LOCAL_WRITE_EVENT = "gre-master:local-write";
 
 export type SyncStatus = "idle" | "loading" | "ready" | "syncing" | "error";
@@ -22,6 +23,7 @@ interface CloudPayload {
   learnVocab: Record<string, LearnProgress>;
   learnVocabMastery: number;
   mockActive: MockSessionState | null;
+  writingRead: Record<string, boolean>;
   updatedAt?: Timestamp;
 }
 
@@ -32,6 +34,7 @@ function readLocalPayload(): CloudPayload {
     learnVocab: readJson<Record<string, LearnProgress>>(KEY_LEARN_VOCAB, {}),
     learnVocabMastery: readJson<number>(KEY_LEARN_VOCAB_MASTERY, 0),
     mockActive: readJson<MockSessionState | null>(KEY_MOCK, null),
+    writingRead: readJson<Record<string, boolean>>(KEY_WRITING_READ, {}),
   };
 }
 
@@ -41,6 +44,7 @@ function writeLocalPayload(payload: CloudPayload): void {
   writeJson(KEY_LEARN_VOCAB, payload.learnVocab);
   writeJson(KEY_LEARN_VOCAB_MASTERY, payload.learnVocabMastery);
   writeJson(KEY_MOCK, payload.mockActive);
+  writeJson(KEY_WRITING_READ, payload.writingRead);
 }
 
 function mergeLearn(
@@ -90,6 +94,22 @@ function pickLatestMock(
   return a.startedAt >= b.startedAt ? a : b;
 }
 
+/**
+ * Read flags are unioned: a prompt marked read on any device stays read
+ * everywhere. This keeps the progress marker stable (like everMastered) at the
+ * cost of not propagating an explicit "mark unread" across devices.
+ */
+function mergeReadState(
+  local: Record<string, boolean>,
+  remote: Record<string, boolean>,
+): Record<string, boolean> {
+  const out: Record<string, boolean> = { ...local };
+  for (const id in remote) {
+    if (remote[id]) out[id] = true;
+  }
+  return out;
+}
+
 function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): CloudPayload {
   return {
     vocab: mergeSrs(local.vocab, remote.vocab ?? {}),
@@ -97,6 +117,7 @@ function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): Clou
     learnVocab: mergeLearn(local.learnVocab, remote.learnVocab ?? {}),
     learnVocabMastery: Math.max(local.learnVocabMastery, remote.learnVocabMastery ?? 0),
     mockActive: pickLatestMock(local.mockActive, remote.mockActive ?? null),
+    writingRead: mergeReadState(local.writingRead, remote.writingRead ?? {}),
   };
 }
 
