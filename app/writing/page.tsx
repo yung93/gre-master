@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useRef, useState } from "react";
 import { WRITING_PROMPTS } from "@/data/writing";
-import type { EssayType, WritingPrompt } from "@/lib/types";
+import type { EssaySentence, EssayType, SampleEssay, WritingPrompt } from "@/lib/types";
 
 export default function WritingPage() {
   const [type, setType] = useState<EssayType>("issue");
@@ -40,9 +40,9 @@ export default function WritingPage() {
             Prompts, by <em className="not-italic">category</em>.
           </h1>
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
-            Pick a prompt and outline it on the right. When the prompt has a sample
-            response, useful phrases and structural moves are highlighted so you can
-            steal them, not just admire them.
+            Pick a prompt and study the sample response. Each sample is broken into
+            its structural sections; hover a sentence to see the job it does, and the
+            useful words and rhetorical signposts are highlighted as you read.
           </p>
         </div>
         <div className="flex gap-2">
@@ -120,43 +120,175 @@ function PromptDetail({ prompt }: { prompt: WritingPrompt }) {
           <p className="eyebrow">{prompt.type === "issue" ? "Issue Task" : "Argument Task"} · {prompt.category}</p>
           <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
         </div>
-        <blockquote className="serif text-2xl sm:text-3xl leading-snug border-l-2 border-[var(--color-accent)] pl-5">
+        <blockquote className="serif text-xl leading-snug border-l-2 border-[var(--color-accent)] pl-5">
           {prompt.prompt}
         </blockquote>
         <p className="mt-6 text-sm text-[var(--color-ink-muted)] leading-relaxed">{prompt.directions}</p>
       </article>
 
-      {prompt.sample && (
-        <article className="surface-soft p-7 sm:p-9">
-          <div className="flex items-baseline justify-between mb-4 gap-4">
-            <h3 className="serif text-2xl">{prompt.sample.title}</h3>
-            <div className="text-xs flex gap-3 items-center">
-              <span className="inline-flex items-center gap-1.5">
-                <span aria-hidden className="w-2.5 h-2.5 rounded-sm" style={{ background: "var(--color-accent-soft)" }} />
-                useful phrase
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span aria-hidden className="w-2.5 h-2.5 rounded-sm" style={{ background: "var(--color-warm-soft)" }} />
-                structural move
-              </span>
-            </div>
-          </div>
-          <p className="serif text-lg leading-[1.85] whitespace-pre-wrap text-[var(--color-ink)]">
-            {prompt.sample.body.map((segment, i) =>
-              segment.tone === "default" ? (
-                <span key={i}>{segment.text}</span>
-              ) : (
-                <mark key={i} data-tone={segment.tone} title={segment.note}>
-                  {segment.text}
-                </mark>
-              ),
-            )}
-          </p>
-          <p className="mt-5 text-xs text-[var(--color-ink-faint)]">
-            Hover any highlight to see why it earns its keep.
-          </p>
+      {prompt.sample ? <SampleEssayView essay={prompt.sample} /> : (
+        <article className="surface-soft p-7 text-sm text-[var(--color-ink-muted)] leading-relaxed">
+          No sample response for this prompt yet — outline your own using the structure
+          patterns from the annotated samples in this category.
         </article>
       )}
     </>
   );
+}
+
+function wordCount(text: string): number {
+  const trimmed = text.trim();
+  return trimmed.length === 0 ? 0 : trimmed.split(/\s+/).length;
+}
+
+function sectionWordCount(section: SampleEssay["sections"][number]): number {
+  return section.sentences.reduce((n, s) => n + wordCount(s.text), 0);
+}
+
+function SampleEssayView({ essay }: { essay: SampleEssay }) {
+  const total = essay.sections.reduce((n, s) => n + sectionWordCount(s), 0);
+  const [showNote, setShowNote] = useState(false);
+
+  return (
+    <TooltipLayer>
+      <article className="surface p-7 sm:p-9">
+        <div className="mb-6 pb-5 border-b border-[var(--color-rule)]">
+          <div className="flex items-baseline justify-between gap-x-5 gap-y-1 flex-wrap">
+            <p className="eyebrow">Sample response</p>
+            <p className="mono text-xs text-[var(--color-ink-faint)]">
+              <button
+                type="button"
+                onClick={() => setShowNote((v) => !v)}
+                aria-expanded={showNote}
+                className="text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+              >
+                {essay.score.toFixed(1)}
+              </button>
+              {" · "}{total} words
+            </p>
+          </div>
+          {showNote && (
+            <p className="mt-2 text-sm text-[var(--color-ink-muted)] leading-relaxed">
+              {essay.scoreNote}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-7">
+          {essay.sections.map((section, i) => (
+            <section key={i}>
+              <div className="flex items-baseline gap-2 mb-2 border-l-2 border-[var(--color-accent)] pl-3">
+                <p className="eyebrow">{section.role}</p>
+                <span className="mono text-[11px] text-[var(--color-ink-faint)]">· {sectionWordCount(section)} words</span>
+              </div>
+              <p className="serif text-lg leading-[1.95] text-[var(--color-ink)]">
+                {section.sentences.map((sentence, j) => (
+                  <Fragment key={j}>
+                    <span
+                      data-tip={sentence.fn}
+                      className="cursor-default decoration-dotted decoration-[var(--color-ink-faint)] underline-offset-[5px] hover:underline"
+                    >
+                      {renderSentence(sentence)}
+                    </span>{" "}
+                  </Fragment>
+                ))}
+              </p>
+            </section>
+          ))}
+        </div>
+      </article>
+    </TooltipLayer>
+  );
+}
+
+/**
+ * A single shared tooltip for any descendant carrying `data-tip`. Using event
+ * delegation with `closest` shows exactly one bubble — the innermost annotated
+ * element under the cursor — so a vocab word's gloss does not stack with its
+ * sentence's function label.
+ */
+function TooltipLayer({ children }: { children: React.ReactNode }) {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const [tip, setTip] = useState<{ text: string; left: number; top: number } | null>(null);
+
+  function handleOver(e: React.MouseEvent) {
+    const el = (e.target as HTMLElement).closest<HTMLElement>("[data-tip]");
+    if (!el || !rootRef.current?.contains(el)) return;
+    const text = el.dataset.tip;
+    if (!text) return;
+    const r = el.getBoundingClientRect();
+    setTip({ text, left: r.left + r.width / 2, top: r.top });
+  }
+
+  function handleOut(e: React.MouseEvent) {
+    if ((e.target as HTMLElement).closest("[data-tip]")) setTip(null);
+  }
+
+  return (
+    <div ref={rootRef} onMouseOver={handleOver} onMouseOut={handleOut}>
+      {children}
+      {tip && (
+        <div
+          role="tooltip"
+          className="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-full"
+          style={{ left: tip.left, top: tip.top - 10 }}
+        >
+          <div className="relative bg-[var(--color-bg-elevated)] text-[var(--color-ink)] text-sm leading-snug rounded-lg border border-[var(--color-rule)] shadow-[var(--shadow-lift)] px-3 py-2 max-w-[16rem] text-center">
+            {tip.text}
+            <span
+              aria-hidden
+              className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rotate-45 bg-[var(--color-bg-elevated)] border-r border-b border-[var(--color-rule)]"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Render a sentence with its useful words (teal, gloss tooltip) and rhetorical
+ * signposts (orange, no tooltip) highlighted. Terms are matched
+ * case-insensitively, first occurrence only, with no overlaps; vocab wins ties
+ * over a move, and terms that do not appear are skipped silently.
+ */
+function renderSentence(sentence: EssaySentence): React.ReactNode {
+  const lower = sentence.text.toLowerCase();
+  type Range = { start: number; end: number; kind: "vocab" | "move"; gloss?: string };
+  const ranges: Range[] = [];
+
+  const claim = (term: string, kind: "vocab" | "move", gloss?: string) => {
+    const at = lower.indexOf(term.toLowerCase());
+    if (at === -1) return;
+    const end = at + term.length;
+    if (ranges.some((r) => at < r.end && end > r.start)) return;
+    ranges.push({ start: at, end, kind, gloss });
+  };
+
+  for (const v of sentence.vocab ?? []) claim(v.term, "vocab", v.gloss);
+  for (const m of sentence.moves ?? []) claim(m, "move");
+
+  if (ranges.length === 0) return sentence.text;
+  ranges.sort((a, b) => a.start - b.start);
+
+  const nodes: React.ReactNode[] = [];
+  let cursor = 0;
+  ranges.forEach((r, i) => {
+    if (cursor < r.start) nodes.push(sentence.text.slice(cursor, r.start));
+    const piece = sentence.text.slice(r.start, r.end);
+    nodes.push(
+      r.kind === "vocab" ? (
+        <mark key={`r${i}`} data-tone="phrase" data-tip={r.gloss}>
+          {piece}
+        </mark>
+      ) : (
+        <mark key={`r${i}`} data-tone="move">
+          {piece}
+        </mark>
+      ),
+    );
+    cursor = r.end;
+  });
+  if (cursor < sentence.text.length) nodes.push(sentence.text.slice(cursor));
+  return nodes;
 }

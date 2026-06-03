@@ -71,15 +71,45 @@ export interface QuantEntry {
 
 export type EssayType = "issue" | "argument";
 
-export interface WritingHighlight {
+/**
+ * A useful vocabulary word from a sample essay (teal highlight). `term` must
+ * appear (case-insensitively) as a contiguous substring of its sentence so it
+ * can be highlighted inline; `gloss` is its Traditional Chinese meaning, shown
+ * in a tooltip and on the dedicated essay-vocabulary page.
+ */
+export interface EssayVocab {
+  term: string;
+  gloss: string;
+}
+
+/**
+ * One sentence of a sample essay, tagged with the rhetorical job it does
+ * (`fn`, e.g. "Thesis statement", "Topic sentence", "Restate thesis"). Sentence
+ * functions drive the hover annotation and recite mode.
+ *
+ * `vocab` are useful words (teal, with a Chinese gloss tooltip). `moves` are
+ * rhetorical signpost phrases (orange, no tooltip) such as "And yet" or
+ * "Worse still"; each must occur (case-insensitively) in `text`.
+ */
+export interface EssaySentence {
   text: string;
-  tone: "phrase" | "structure" | "default";
-  note?: string;
+  fn: string;
+  vocab?: EssayVocab[];
+  moves?: string[];
+}
+
+/** A structural section of a sample essay (e.g. "Introduction", "Conclusion"). */
+export interface EssaySection {
+  role: string;
+  sentences: EssaySentence[];
 }
 
 export interface SampleEssay {
-  title: string;
-  body: WritingHighlight[];
+  /** Expected GRE Analytical Writing score (0–6) under the ETS scoring guide. */
+  score: number;
+  /** One-line rationale phrased in the language of the rubric band. */
+  scoreNote: string;
+  sections: EssaySection[];
 }
 
 export interface WritingPrompt {

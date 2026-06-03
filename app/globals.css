@@ -127,6 +127,10 @@ mark[data-tone="structure"] {
   background: var(--color-warm-soft);
   color: oklch(38% 0.08 50);
 }
+mark[data-tone="move"] {
+  background: var(--color-warm-soft);
+  color: oklch(40% 0.1 50);
+}
 
 .btn {
   display: inline-flex;
