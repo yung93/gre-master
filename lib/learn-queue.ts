@@ -212,6 +212,118 @@ function fillRandom(
 }
 
 /**
+ * Per-topic mastery tally over the whole deck. Drives the per-topic progress
+ * bars and decides which topic a freshly-introduced card is drawn from.
+ * `ratio` is mastered / total (0 when a topic has no cards).
+ */
+export interface TopicMastery {
+  topic: string;
+  total: number;
+  mastered: number;
+  ratio: number;
+}
+
+export function topicMastery(
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  topicOf: (id: string) => string,
+): TopicMastery[] {
+  const totals = new Map<string, number>();
+  const masteredByTopic = new Map<string, number>();
+  for (const id of orderedIds) {
+    const topic = topicOf(id);
+    totals.set(topic, (totals.get(topic) ?? 0) + 1);
+    if (isMastered(progress[id])) {
+      masteredByTopic.set(topic, (masteredByTopic.get(topic) ?? 0) + 1);
+    }
+  }
+  return [...totals.entries()].map(([topic, total]) => {
+    const mastered = masteredByTopic.get(topic) ?? 0;
+    return { topic, total, mastered, ratio: total === 0 ? 0 : mastered / total };
+  });
+}
+
+/**
+ * Like fillRandom, but each fresh card is drawn from the topic with the lowest
+ * mastery ratio (recomputed per pick so fills spread across weak topics).
+ * Within the chosen topic the card is random; topic ties are broken randomly.
+ */
+function fillByWeakestTopic(
+  base: readonly string[],
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  size: number,
+  topicOf: (id: string) => string,
+): string[] {
+  const out = [...base];
+  const used = new Set(out);
+  while (out.length < size) {
+    const pool = freshCandidates(orderedIds, progress, used);
+    if (pool.length === 0) break;
+
+    const byTopic = new Map<string, string[]>();
+    for (const id of pool) {
+      const topic = topicOf(id);
+      const group = byTopic.get(topic) ?? [];
+      group.push(id);
+      byTopic.set(topic, group);
+    }
+
+    const ratios = new Map(
+      topicMastery(orderedIds, progress, topicOf).map((t) => [t.topic, t.ratio] as const),
+    );
+    let weakest: string[] = [];
+    let min = Infinity;
+    for (const topic of byTopic.keys()) {
+      const ratio = ratios.get(topic) ?? 0;
+      if (ratio < min) {
+        min = ratio;
+        weakest = [topic];
+      } else if (ratio === min) {
+        weakest.push(topic);
+      }
+    }
+
+    const topic = pickRandom(weakest)!;
+    const choice = pickRandom(byTopic.get(topic)!)!;
+    out.push(choice);
+    used.add(choice);
+  }
+  return out;
+}
+
+/** Topic-balanced variant of {@link seedBatch}. */
+export function seedBatchByTopic(
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  topicOf: (id: string) => string,
+  size: number = BATCH_SIZE,
+): string[] {
+  const batch: string[] = [];
+  for (const id of orderedIds) {
+    const p = progress[id];
+    if (p && p.seen > 0 && !p.graduated) batch.push(id);
+    if (batch.length >= size) break;
+  }
+  return fillByWeakestTopic(batch, orderedIds, progress, size, topicOf);
+}
+
+/** Topic-balanced variant of {@link refillBatch}. */
+export function refillBatchByTopic(
+  batch: readonly string[],
+  orderedIds: readonly string[],
+  progress: Readonly<Record<string, LearnProgress>>,
+  topicOf: (id: string) => string,
+  size: number = BATCH_SIZE,
+): string[] {
+  const deckSet = new Set(orderedIds);
+  const survivors = batch.filter(
+    (id) => deckSet.has(id) && !progress[id]?.graduated,
+  );
+  return fillByWeakestTopic(survivors, orderedIds, progress, size, topicOf);
+}
+
+/**
  * Pick the next card to present from a batch. Prefers the card seen least
  * recently (never-seen first), excluding the one just answered when the batch
  * has more than one card so the same card never repeats back-to-back.

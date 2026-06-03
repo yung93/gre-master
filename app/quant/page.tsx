@@ -1,12 +1,26 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Flashcard from "@/components/Flashcard";
 import SrsControls from "@/components/SrsControls";
 import { QUANT } from "@/data/quant";
-import { initialSrsState, isDue, scheduleNext } from "@/lib/srs";
+import { initialSrsState, scheduleNext } from "@/lib/srs";
+import {
+  GOOD_STEPS_TO_GRADUATE,
+  applyGrade,
+  initialLearnProgress,
+  isMastered,
+  pickFromBatch,
+  refillBatchByTopic,
+  seedBatchByTopic,
+  topicMastery,
+} from "@/lib/learn-queue";
 import { useLocalState } from "@/lib/storage";
-import type { QuantTopic, SrsGrade, SrsState } from "@/lib/types";
+import type { LearnProgress, QuantTopic, SrsGrade, SrsState } from "@/lib/types";
+
+// Quant's deck is small, so the batch is tighter than verbal's 10. Unlike verbal,
+// a mastered problem is retired for good — there is no spaced revisit.
+const QUANT_BATCH_SIZE = 6;
 
 const TOPIC_LABEL: Record<QuantTopic, string> = {
   arithmetic: "Arithmetic",
@@ -15,55 +29,125 @@ const TOPIC_LABEL: Record<QuantTopic, string> = {
   "data-analysis": "Data Analysis",
   "word-problem": "Word Problems",
 };
+const TOPIC_ORDER: QuantTopic[] = [
+  "arithmetic",
+  "algebra",
+  "geometry",
+  "data-analysis",
+  "word-problem",
+];
 
-type TopicFilter = "all" | QuantTopic;
+const ORDERED_IDS = QUANT.map((q) => q.id);
+const TOPIC_OF = new Map<string, QuantTopic>(QUANT.map((q) => [q.id, q.topic]));
+const topicOf = (id: string): string => TOPIC_OF.get(id) ?? "arithmetic";
 
-function pickNext(
-  states: Record<string, SrsState>,
-  topic: TopicFilter,
-  excludeId: string | undefined,
-  now: number,
-): string | null {
-  const pool = QUANT.filter(
-    (q) => q.id !== excludeId && (topic === "all" || q.topic === topic),
-  );
-  if (pool.length === 0) return null;
-  const due = pool.filter((q) => isDue(states[q.id] ?? initialSrsState(now), now));
-  const choices = due.length > 0 ? due : pool;
-  return choices[Math.floor(Math.random() * choices.length)].id;
+interface SessionStats {
+  reviewed: number;
+  masteredThisSession: number;
 }
 
 export default function QuantPage() {
-  const [states, setStates] = useLocalState<Record<string, SrsState>>("srs/quant", {});
-  const [topic, setTopic] = useState<TopicFilter>("all");
+  const [progress, setProgress] = useLocalState<Record<string, LearnProgress>>("learn/quant", {});
+  const [srs, setSrs] = useLocalState<Record<string, SrsState>>("srs/quant", {});
+  const [batch, setBatch] = useLocalState<string[]>("learn/quant-batch", []);
+  const [stats, setStats] = useState<SessionStats>({ reviewed: 0, masteredThisSession: 0 });
   const [currentId, setCurrentId] = useState<string | null>(null);
-  const [reviewed, setReviewed] = useState(0);
+  const hydratedRef = useRef(false);
 
+  // On first hydration, build or repair the persisted batch once (topic-balanced).
   useEffect(() => {
-    if (!currentId) {
-      const next = pickNext(states, topic, undefined, Date.now());
-      if (next) setCurrentId(next);
-    }
-  }, [currentId, states, topic]);
+    if (hydratedRef.current) return;
+    hydratedRef.current = true;
 
+    setBatch((prev) => {
+      const repaired = prev.length > 0
+        ? refillBatchByTopic(prev, ORDERED_IDS, progress, topicOf, QUANT_BATCH_SIZE)
+        : seedBatchByTopic(ORDERED_IDS, progress, topicOf, QUANT_BATCH_SIZE);
+      setCurrentId(pickFromBatch(repaired, progress));
+      return repaired;
+    });
+  }, [progress, setBatch]);
+
+  // Keep a valid current card whenever the batch changes.
   useEffect(() => {
-    const next = pickNext(states, topic, undefined, Date.now());
-    setCurrentId(next);
-  }, [topic]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (!hydratedRef.current) return;
+    if (currentId && batch.includes(currentId)) return;
+    if (batch.length > 0) setCurrentId(pickFromBatch(batch, progress));
+    else setCurrentId(null);
+  }, [batch, currentId, progress]);
 
   const current = useMemo(() => QUANT.find((q) => q.id === currentId) ?? null, [currentId]);
+  const currentProgress = currentId ? progress[currentId] ?? initialLearnProgress() : null;
+
+  const topicStats = useMemo(() => topicMastery(ORDERED_IDS, progress, topicOf), [progress]);
+  const statsByTopic = useMemo(
+    () => new Map(topicStats.map((t) => [t.topic, t])),
+    [topicStats],
+  );
+  const masteredCount = useMemo(
+    () => ORDERED_IDS.reduce((n, id) => (isMastered(progress[id]) ? n + 1 : n), 0),
+    [progress],
+  );
+  const activeInBatch = batch.filter(
+    (id) => (progress[id]?.seen ?? 0) > 0 && !progress[id]?.graduated,
+  ).length;
+
+  // The topic the next new card will be drawn from (lowest mastery ratio).
+  const weakestTopic = useMemo<QuantTopic | null>(() => {
+    let weakest: QuantTopic | null = null;
+    let min = Infinity;
+    for (const topic of TOPIC_ORDER) {
+      const ratio = statsByTopic.get(topic)?.ratio ?? 0;
+      if (ratio < min) {
+        min = ratio;
+        weakest = topic;
+      }
+    }
+    return masteredCount === QUANT.length ? null : weakest;
+  }, [statsByTopic, masteredCount]);
 
   function handleGrade(grade: SrsGrade) {
     if (!current) return;
     const now = Date.now();
-    const prev = states[current.id] ?? initialSrsState(now);
-    const nextState = scheduleNext(prev, grade, now);
-    setStates((s) => ({ ...s, [current.id]: nextState }));
-    setReviewed((r) => r + 1);
-    setCurrentId(pickNext(states, topic, current.id, now));
+    const id = current.id;
+    const prevProgress = progress[id] ?? initialLearnProgress();
+    const nextProgress = applyGrade(prevProgress, grade, now);
+
+    const nextProgressMap = { ...progress, [id]: nextProgress };
+    setProgress(nextProgressMap);
+
+    // A mastered problem graduates out of the batch for good (no revisit). Its
+    // freed slot is backfilled with a new problem from the weakest topic.
+    const justMastered = nextProgress.graduated && !prevProgress.graduated;
+    if (justMastered) {
+      const prevSrs = srs[id] ?? initialSrsState(now);
+      setSrs((s) => ({ ...s, [id]: scheduleNext(prevSrs, grade === "easy" ? "easy" : "good", now) }));
+    }
+
+    const nextBatch = justMastered
+      ? refillBatchByTopic(batch, ORDERED_IDS, nextProgressMap, topicOf, QUANT_BATCH_SIZE)
+      : batch;
+
+    setStats((s) => ({
+      reviewed: s.reviewed + 1,
+      masteredThisSession: s.masteredThisSession + (justMastered ? 1 : 0),
+    }));
+
+    setBatch(nextBatch);
+    setCurrentId(pickFromBatch(nextBatch, nextProgressMap, id));
   }
 
-  const topics: TopicFilter[] = ["all", "arithmetic", "algebra", "geometry", "data-analysis", "word-problem"];
+  function resetProgress() {
+    if (typeof window !== "undefined" && !window.confirm("Reset all quantitative progress?")) return;
+    setProgress({});
+    setSrs({});
+    const fresh = seedBatchByTopic(ORDERED_IDS, {}, topicOf, QUANT_BATCH_SIZE);
+    setBatch(fresh);
+    setStats({ reviewed: 0, masteredThisSession: 0 });
+    setCurrentId(pickFromBatch(fresh, {}));
+  }
+
+  const allMastered = masteredCount === QUANT.length;
 
   return (
     <div className="page-shell pt-10 pb-20">
@@ -74,43 +158,42 @@ export default function QuantPage() {
             <em className="not-italic">Work</em> it, then flip.
           </h1>
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
-            Solve the problem on scratch paper before flipping. The back shows the
-            answer and a worked explanation; grade yourself the same way you grade
-            vocabulary so the system can space repetitions.
+            You drill a rolling set of {QUANT_BATCH_SIZE} problems. Answer{" "}
+            <span className="font-medium text-[var(--color-ink)]">Good</span> {GOOD_STEPS_TO_GRADUATE} times
+            (or <span className="font-medium text-[var(--color-ink)]">Easy</span> once) to master a problem; once
+            mastered it retires for good, and a new one takes its place — drawn from whichever topic you've mastered{" "}
+            <em className="not-italic">least</em>, so weak areas surface first.
           </p>
         </div>
         <div className="surface-soft px-5 py-4 grid grid-cols-3 gap-4">
-          <div>
-            <p className="eyebrow">Reviewed</p>
-            <p className="serif text-2xl mt-1">{reviewed}</p>
-          </div>
-          <div>
-            <p className="eyebrow">In topic</p>
-            <p className="serif text-2xl mt-1">
-              {topic === "all" ? QUANT.length : QUANT.filter((q) => q.topic === topic).length}
-            </p>
-          </div>
-          <div>
-            <p className="eyebrow">Total</p>
-            <p className="serif text-2xl mt-1">{QUANT.length}</p>
-          </div>
+          <Stat label="In batch" value={`${activeInBatch}/${QUANT_BATCH_SIZE}`} />
+          <Stat label="Mastered" value={`${masteredCount}`} />
+          <Stat label="Total" value={`${QUANT.length}`} />
         </div>
       </header>
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {topics.map((t) => (
-          <button
-            key={t}
-            onClick={() => setTopic(t)}
-            className={`btn text-xs ${t === topic ? "btn-primary" : "btn-secondary"}`}
-          >
-            {t === "all" ? "All topics" : TOPIC_LABEL[t]}
-          </button>
-        ))}
+      <div className="mt-6 flex items-center gap-3">
+        <ProgressBar label="Overall mastery" value={masteredCount} total={QUANT.length} />
+        <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
+      </div>
+
+      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-4">
+        {TOPIC_ORDER.map((topic) => {
+          const t = statsByTopic.get(topic);
+          return (
+            <TopicProgress
+              key={topic}
+              label={TOPIC_LABEL[topic]}
+              mastered={t?.mastered ?? 0}
+              total={t?.total ?? 0}
+              isWeakest={topic === weakestTopic}
+            />
+          );
+        })}
       </div>
 
       <div className="mt-8">
-        {current ? (
+        {current && currentProgress ? (
           <>
             <Flashcard
               cardKey={current.id}
@@ -141,29 +224,104 @@ export default function QuantPage() {
                   <p className="serif text-3xl text-[var(--color-accent)]">{current.answer}</p>
                   <hr className="rule" />
                   <div className="grid md:grid-cols-2 gap-5">
-                    <div>
-                      <p className="eyebrow">Working · English</p>
-                      <p className="mt-2 leading-relaxed text-[var(--color-ink-muted)]">{current.explanation}</p>
-                    </div>
-                    <div className="md:border-l md:border-[var(--color-rule)] md:pl-5">
-                      <p className="eyebrow">解答 · 繁體中文</p>
-                      <p className="serif mt-2 leading-relaxed">{current.explanationZh}</p>
-                    </div>
+                    <p className="leading-relaxed text-[var(--color-ink-muted)]">{current.explanation}</p>
+                    <p className="serif leading-relaxed md:border-l md:border-[var(--color-rule)] md:pl-5">{current.explanationZh}</p>
                   </div>
                 </div>
               }
-              footerFront={<span>Solve on paper, then flip</span>}
-              footerBack={<span>Grade your recall</span>}
+              footerFront={<MasteryPips streak={currentProgress.streak} />}
+              footerBack={<MasteryPips streak={currentProgress.streak} />}
             />
             <SrsControls onGrade={handleGrade} />
           </>
+        ) : allMastered ? (
+          <div className="surface p-12 text-center">
+            <p className="serif text-2xl">Every problem mastered. 🎉</p>
+            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
+              All {QUANT.length} problems have graduated. Add more, or reset to run through them again.
+            </p>
+          </div>
         ) : (
           <div className="surface p-12 text-center">
-            <p className="serif text-2xl">Nothing in this topic.</p>
-            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">Try another topic above.</p>
+            <p className="serif text-2xl">Loading your batch…</p>
           </div>
         )}
       </div>
     </div>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="eyebrow">{label}</p>
+      <p className="serif text-2xl mt-1">{value}</p>
+    </div>
+  );
+}
+
+function ProgressBar({ label, value, total }: { label: string; value: number; total: number }) {
+  const pct = total === 0 ? 0 : Math.round((value / total) * 100);
+  return (
+    <div className="flex-1">
+      <div className="flex items-baseline justify-between mb-1">
+        <span className="eyebrow">{label}</span>
+        <span className="mono text-xs text-[var(--color-ink-faint)]">{value} / {total} · {pct}%</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden">
+        <div
+          className="h-full bg-[var(--color-accent)] transition-[width] duration-500"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function TopicProgress({
+  label,
+  mastered,
+  total,
+  isWeakest,
+}: {
+  label: string;
+  mastered: number;
+  total: number;
+  isWeakest: boolean;
+}) {
+  const pct = total === 0 ? 0 : Math.round((mastered / total) * 100);
+  return (
+    <div>
+      <div className="flex items-baseline justify-between gap-2 mb-1">
+        <span className="text-xs font-medium text-[var(--color-ink)]">{label}</span>
+        <span className="mono text-[11px] text-[var(--color-ink-faint)]">{mastered}/{total}</span>
+      </div>
+      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden">
+        <div
+          className="h-full transition-[width] duration-500"
+          style={{
+            width: `${pct}%`,
+            background: isWeakest ? "var(--color-warm)" : "var(--color-accent)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function MasteryPips({ streak }: { streak: number }) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className="text-[var(--color-ink-faint)]">mastery</span>
+      {Array.from({ length: GOOD_STEPS_TO_GRADUATE }).map((_, i) => (
+        <span
+          key={i}
+          aria-hidden
+          className={`w-2 h-2 rounded-full ${
+            i < streak ? "bg-[var(--color-success)]" : "bg-[var(--color-rule-strong)]"
+          }`}
+        />
+      ))}
+    </span>
   );
 }
