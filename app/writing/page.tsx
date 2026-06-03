@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { WRITING_PROMPTS } from "@/data/writing";
 import { useLocalState } from "@/lib/storage";
@@ -203,7 +203,7 @@ function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
         <p className="mt-6 text-sm text-[var(--color-ink-muted)] leading-relaxed">{prompt.directions}</p>
       </article>
 
-      {prompt.sample ? <SampleEssayView essay={prompt.sample} /> : (
+      {prompt.sample ? <SampleEssayView essay={prompt.sample} promptText={prompt.prompt} /> : (
         <article className="surface-soft p-7 text-sm text-[var(--color-ink-muted)] leading-relaxed">
           No sample response for this prompt yet — outline your own using the structure
           patterns from the annotated samples in this category.
@@ -222,16 +222,27 @@ function sectionWordCount(section: SampleEssay["sections"][number]): number {
   return section.sentences.reduce((n, s) => n + wordCount(s.text), 0);
 }
 
-function SampleEssayView({ essay }: { essay: SampleEssay }) {
+function SampleEssayView({ essay, promptText }: { essay: SampleEssay; promptText: string }) {
   const total = essay.sections.reduce((n, s) => n + sectionWordCount(s), 0);
   const [showNote, setShowNote] = useState(false);
+  const [reciting, setReciting] = useState(false);
 
   return (
+    <>
     <TooltipLayer>
       <article className="surface p-7 sm:p-9">
         <div className="mb-6 pb-5 border-b border-[var(--color-rule)]">
           <div className="flex items-baseline justify-between gap-x-5 gap-y-1 flex-wrap">
-            <p className="eyebrow">Sample response</p>
+            <div className="flex items-center gap-3">
+              <p className="eyebrow">Sample response</p>
+              <button
+                type="button"
+                onClick={() => setReciting(true)}
+                className="text-xs px-2.5 py-1 rounded-md border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent-soft)] transition-colors"
+              >
+                Recite ▸
+              </button>
+            </div>
             <p className="mono text-xs text-[var(--color-ink-faint)]">
               <button
                 type="button"
@@ -275,6 +286,129 @@ function SampleEssayView({ essay }: { essay: SampleEssay }) {
         </div>
       </article>
     </TooltipLayer>
+    {reciting && (
+      <ReciteDialog essay={essay} promptText={promptText} onClose={() => setReciting(false)} />
+    )}
+    </>
+  );
+}
+
+/**
+ * Recite-from-structure practice. Ephemeral by design — no persistence: each
+ * sentence shows only its function as a cue, the model text stays masked until
+ * tapped, and the user drafts their own version above it. All state resets when
+ * the dialog closes.
+ */
+function ReciteDialog({
+  essay,
+  promptText,
+  onClose,
+}: {
+  essay: SampleEssay;
+  promptText: string;
+  onClose: () => void;
+}) {
+  const [revealed, setRevealed] = useState<Set<string>>(new Set());
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  const keys = essay.sections.flatMap((s, si) => s.sentences.map((_, j) => `${si}-${j}`));
+  const allRevealed = keys.length > 0 && revealed.size === keys.length;
+
+  function toggle(key: string) {
+    setRevealed((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Recite the essay from its structure"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[rgba(20,18,12,0.45)]"
+      onMouseDown={onClose}
+    >
+      <div
+        className="surface w-full max-w-2xl max-h-[90vh] flex flex-col shadow-[var(--shadow-lift)]"
+        onMouseDown={(e) => e.stopPropagation()}
+      >
+        <div className="shrink-0 border-b border-[var(--color-rule)] px-6 py-4 flex items-start justify-between gap-4">
+          <div>
+            <p className="eyebrow">Recite from structure</p>
+            <p className="text-sm text-[var(--color-ink-muted)] mt-0.5">
+              Write each sentence from its cue, then tap to reveal and compare.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => setRevealed(allRevealed ? new Set() : new Set(keys))}
+              className="btn btn-secondary text-xs"
+            >
+              {allRevealed ? "Hide all" : "Reveal all"}
+            </button>
+            <button type="button" onClick={onClose} className="btn btn-ghost text-xs">
+              Close
+            </button>
+          </div>
+        </div>
+
+        <div className="overflow-y-auto px-6 py-5 space-y-7">
+          <div className="surface-soft p-4">
+            <p className="eyebrow">Prompt</p>
+            <p className="serif mt-1 leading-snug">{promptText}</p>
+          </div>
+
+          {essay.sections.map((section, si) => (
+            <section key={si}>
+              <p className="eyebrow border-l-2 border-[var(--color-accent)] pl-3 mb-3">{section.role}</p>
+              <ol className="space-y-5">
+                {section.sentences.map((sentence, j) => {
+                  const key = `${si}-${j}`;
+                  const isRevealed = revealed.has(key);
+                  return (
+                    <li key={key}>
+                      <p className="text-xs font-medium text-[var(--color-ink)] mb-1.5">{sentence.fn}</p>
+                      <textarea
+                        value={drafts[key] ?? ""}
+                        onChange={(e) => setDrafts((d) => ({ ...d, [key]: e.target.value }))}
+                        rows={2}
+                        placeholder="Write this sentence from the cue…"
+                        className="w-full surface px-3 py-2 text-sm leading-relaxed focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => toggle(key)}
+                        aria-expanded={isRevealed}
+                        title={isRevealed ? undefined : "Tap to reveal"}
+                        className={`mt-1.5 w-full text-left serif text-sm leading-relaxed rounded-md transition-colors ${
+                          isRevealed
+                            ? "text-[var(--color-ink-muted)]"
+                            : "bg-[var(--color-ink)]/8 text-transparent select-none hover:bg-[var(--color-ink)]/12"
+                        }`}
+                      >
+                        {sentence.text}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
