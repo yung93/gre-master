@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import { WRITING_PROMPTS } from "@/data/writing";
 import type { EssaySentence, EssayType, SampleEssay, WritingPrompt } from "@/lib/types";
 
@@ -44,6 +45,12 @@ export default function WritingPage() {
             its structural sections; hover a sentence to see the job it does, and the
             useful words and rhetorical signposts are highlighted as you read.
           </p>
+          <Link
+            href="/writing/words"
+            className="inline-block mt-3 text-sm text-[var(--color-accent)] hover:underline underline-offset-4"
+          >
+            Useful words from these samples →
+          </Link>
         </div>
         <div className="flex gap-2">
           <button
