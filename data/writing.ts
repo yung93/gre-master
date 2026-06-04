@@ -3387,6 +3387,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "People's attitudes are determined more by their immediate situation or surroundings than by society as a whole.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the power of immediate surroundings while showing that society reaches us mainly through them, so the statement's opposition between the two is false; well organized and thoughtful.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Why do we believe what we believe? The statement offers a tidy answer: that our attitudes are shaped more by the people and circumstances right around us than by the larger society we live in.", fn: "Hook" },
+            { text: "On this view, the family, the workplace, and the neighborhood matter more to how we think than nation, culture, or the spirit of the age.", fn: "Context (the statement)" },
+            { text: "Our immediate surroundings do exert a powerful and underrated influence, but the statement draws too sharp a line, because society as a whole largely works through those very surroundings.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Immediate surroundings shape us",
+          sentences: [
+            { text: "It is true that the people and conditions closest to us shape our attitudes with surprising force.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "We absorb the opinions of our friends, adjust to the norms of our workplace, and adapt to the conditions we face daily, often without even noticing.", fn: "Explanation", vocab: [{ term: "norms", gloss: "規範；常規" }] },
+            { text: "A person can hold one set of attitudes among colleagues and another at a family dinner, shifting with the immediate company rather than with any abstract social creed.", fn: "Example" },
+            { text: "Studies of behavior repeatedly show that situation overpowers disposition: decent people behave badly in cruel environments, and ordinary people rise in supportive ones.", fn: "Develop", vocab: [{ term: "disposition", gloss: "性情；本性" }] },
+            { text: "So the statement is right that the near and the concrete shape us more than we like to admit.", fn: "Sub-conclusion" },
+            { text: "We are, to a striking degree, the products of our immediate company.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But society acts through the immediate",
+          sentences: [
+            { text: "However, the statement sets immediate surroundings against society as if the two were rivals, when in fact society reaches us mainly through them.", fn: "Pivot", moves: ["However"] },
+            { text: "The norms of our workplace, the opinions of our friends, and the conditions of our neighborhood are not separate from society; they are the local channels through which a whole society transmits its values.", fn: "Point", vocab: [{ term: "transmit", gloss: "傳遞；傳達" }] },
+            { text: "The attitudes we soak up from those around us were themselves shaped by the culture, laws, media, and history of the larger society.", fn: "Explanation" },
+            { text: "A child's immediate family teaches him a language, a religion, and a set of prejudices that the family did not invent but inherited from society at large.", fn: "Example", vocab: [{ term: "prejudices", gloss: "偏見；成見" }] },
+            { text: "To say we are shaped more by our surroundings than by society is therefore a little like saying a river is shaped more by its banks than by the rain that fills it.", fn: "Develop" },
+            { text: "The immediate and the social are not two competing forces but the near and far ends of a single one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where the statement holds and fails",
+          sentences: [
+            { text: "Moreover, which influence dominates depends on the attitude in question.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Day-to-day moods and behaviors do bend most to immediate circumstance, but our deepest values, about justice, family, faith, and nation, are usually inherited from the wider society long before any particular situation acts on them.", fn: "Point", vocab: [{ term: "inherited", gloss: "承襲的；繼承來的" }] },
+            { text: "The statement describes the surface of our attitudes well and their foundations poorly.", fn: "Explanation" },
+            { text: "Both forces are real, and a full account of why we think as we do needs the near situation and the far society together.", fn: "Develop" },
+            { text: "We are shaped from close up and from far away at once.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, immediate surroundings powerfully shape our attitudes, but not in opposition to society, which usually acts through them.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Situation often governs our daily attitudes, while society shapes the deeper values and the very surroundings that influence us, so the two cannot be cleanly weighed against each other.", fn: "Synthesis" },
+            { text: "We are formed not by our surroundings instead of society, but by society as it reaches us through our surroundings.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-052",
@@ -3395,6 +3450,65 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that shows cutting arts barely touches hunger while sacrificing real value, and that the named conditions would suspend funding almost permanently; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When people are going hungry, spending public money on paintings and symphonies can look like an indulgence the nation cannot afford.", fn: "Hook" },
+            { text: "The recommendation acts on this intuition, urging that governments suspend funding for the arts whenever significant numbers of citizens are hungry or unemployed.", fn: "Context (the recommendation)" },
+            { text: "The impulse is humane, but the recommendation is mistaken, because arts funding is too small to relieve hunger, too valuable to abandon, and the conditions it names would justify suspending it almost permanently.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Cutting the arts will not feed anyone",
+          sentences: [
+            { text: "First, suspending arts funding would do almost nothing to feed the hungry or employ the jobless.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Government arts budgets are a negligible fraction of public spending, and redirecting them would barely register against the vast cost of hunger and unemployment.", fn: "Explanation", vocab: [{ term: "negligible", gloss: "微不足道的" }] },
+            { text: "A nation could cancel every grant to every museum and orchestra and still not dent a serious unemployment crisis.", fn: "Example" },
+            { text: "The recommendation offers the appearance of compassion — a visible sacrifice of something frivolous — while accomplishing little for the people it claims to help.", fn: "Develop", vocab: [{ term: "frivolous", gloss: "輕浮的；無關緊要的" }] },
+            { text: "A gesture that feels responsible but changes nothing is not good policy.", fn: "Sub-conclusion" },
+            { text: "The hungry are simply not fed by the cancellation of a concert.", fn: "Sharpen" },
+            { text: "Symbolism is no substitute for substance.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The arts are not a disposable luxury",
+          sentences: [
+            { text: "Moreover, the arts are not a luxury to be discarded the moment times turn difficult.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Art sustains the spirit, preserves a culture's identity, and gives meaning to lives that material relief alone cannot reach.", fn: "Point", vocab: [{ term: "identity", gloss: "認同；身分" }] },
+            { text: "Precisely when people are suffering, a society needs the consolation, expression, and hope that art provides, as the hardest eras in history have understood.", fn: "Explanation", vocab: [{ term: "consolation", gloss: "慰藉；安慰" }] },
+            { text: "Governments have funded murals and theaters during depressions not in spite of hard times but because of them, both to employ artists and to lift a despairing public.", fn: "Example" },
+            { text: "The arts also support jobs and tourism, so cutting their funding can deepen the very unemployment the recommendation hopes to ease.", fn: "Develop" },
+            { text: "The cheapest thing a desperate nation can do is also the most short-sighted: quietly erase its own culture.", fn: "Develop" },
+            { text: "A people robbed of its culture has lost something it cannot eat its way back to.", fn: "Develop" },
+            { text: "To treat art as the first thing to sacrifice is to misunderstand what a society is even for.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Priorities at the margin, not abolition",
+          sentences: [
+            { text: "However, the recommendation is not entirely without merit.", fn: "Concede", moves: ["However"] },
+            { text: "Resources are limited, and in a genuine emergency a government must put feeding its people ahead of funding a new gallery.", fn: "Develop the concession" },
+            { text: "But that is an argument for sensible priorities at the margin, not for suspending arts funding wholesale whenever hardship exists.", fn: "Rebut" },
+            { text: "Hunger and unemployment, in some measure, are nearly always present, so a rule to suspend the arts whenever they appear would suspend them forever.", fn: "Explain" },
+            { text: "A crisis calls for careful triage, not for cultural amputation.", fn: "Aphoristic" },
+            { text: "Adjusting budgets in a crisis is prudent; abolishing a nation's cultural life is not.", fn: "Sub-conclusion", vocab: [{ term: "prudent", gloss: "審慎的；明智的" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, nations should not suspend arts funding simply because some citizens are hungry or unemployed.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because such cuts barely touch the problem while sacrificing something genuinely valuable, and because hardship is nearly constant, the recommendation would do real harm for little gain.", fn: "Synthesis" },
+            { text: "A wise nation feeds its people and keeps its art, recognizing that it needs both to be worth living in.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-053",
@@ -3403,6 +3517,65 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "All parents should be required to volunteer time to their children's schools.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that shows a mandate would punish the families least able to comply and drain volunteering of its value, then offers a better path of encouragement; persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Schools work better when parents are involved, and few would deny that a child benefits when their family takes an interest in their education.", fn: "Hook" },
+            { text: "From this truth the recommendation draws a rule: that all parents should be required to volunteer time at their children's schools.", fn: "Context (the recommendation)" },
+            { text: "Parental involvement is valuable and should be encouraged, but requiring it would be unfair, impractical, and self-defeating, because the parents least able to comply are often the ones whose children need the most help.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — A mandate punishes the struggling",
+          sentences: [
+            { text: "First, a requirement to volunteer would fall hardest on the parents least able to meet it.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A single mother working two jobs, a father on a night shift, or a family caring for a sick relative cannot easily give hours to a school, however much they may wish to.", fn: "Explanation" },
+            { text: "To require their time is to set up many devoted parents to fail, exposing them to blame for a duty their circumstances make impossible.", fn: "Develop" },
+            { text: "And it is exactly these overstretched families whose children most need support, so a mandate would punish the vulnerable and widen the gap between rich and poor schools.", fn: "Reinforce", vocab: [{ term: "vulnerable", gloss: "弱勢的；易受傷害的" }] },
+            { text: "A rule the wealthy can satisfy easily and the struggling cannot is not fairness but a hidden penalty on poverty.", fn: "Sub-conclusion" },
+            { text: "The families with the least time to give are usually the ones whose children most need a school that helps.", fn: "Reinforce" },
+            { text: "Good intentions do not make an impossible demand reasonable.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Compulsion poisons volunteering",
+          sentences: [
+            { text: "Moreover, the word required contradicts the very thing that makes volunteering valuable.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Volunteering means giving freely, and an obligation enforced by penalty is no longer volunteering but conscription.", fn: "Point", vocab: [{ term: "conscription", gloss: "強制徵召；徵募" }] },
+            { text: "Forced volunteers tend to show up resentful and contribute grudgingly, which helps a school far less than a few willing hands.", fn: "Explanation", vocab: [{ term: "resentful", gloss: "怨恨的；忿忿不平的" }] },
+            { text: "The genuine involvement that benefits children grows from interest and goodwill, neither of which can be commanded into being.", fn: "Develop" },
+            { text: "A parent dragged to a classroom under threat is unlikely to inspire anyone, including their own child.", fn: "Example" },
+            { text: "A school full of grudging conscripts is no better off than a school with none.", fn: "Develop" },
+            { text: "Help offered under threat is rarely much help at all.", fn: "Sharpen" },
+            { text: "Compulsion may produce attendance, but it cannot produce the engagement that actually matters.", fn: "Sub-conclusion", vocab: [{ term: "engagement", gloss: "投入；參與" }] },
+          ],
+        },
+        {
+          role: "Body — Encourage, do not require",
+          sentences: [
+            { text: "However, the recommendation rightly senses that parental involvement matters enormously.", fn: "Concede", moves: ["However"] },
+            { text: "Schools genuinely benefit when parents help, and a culture of involvement is well worth actively building.", fn: "Develop the concession" },
+            { text: "But the way to build it is to invite, enable, and welcome parents — flexible hours, meaningful roles, real appreciation — not to threaten them.", fn: "Rebut" },
+            { text: "Make involvement easy and rewarding and most parents will give what they can; make it a legal duty and you breed only resentment and excuses.", fn: "Explain" },
+            { text: "People give most generously when they are asked, not when they are ordered.", fn: "Develop" },
+            { text: "Encouragement builds participation; compulsion builds resistance.", fn: "Sub-conclusion", vocab: [{ term: "compulsion", gloss: "強迫；強制" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, parents should be strongly encouraged to help their children's schools, but not required to.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A mandate would burden the families least able to bear it and drain volunteering of the goodwill that gives it value, achieving less than a warm invitation would.", fn: "Synthesis" },
+            { text: "The goal is willing partners in a child's education, and willingness is precisely what a requirement destroys.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-054",
@@ -3411,6 +3584,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that affirms the value of study abroad while showing a blanket requirement would fall unevenly, and proposes enabling over compelling; concrete and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A semester abroad can be transformative: a student returns more independent, more open-minded, and at home in a new language and culture.", fn: "Hook" },
+            { text: "Persuaded by such benefits, the recommendation would have colleges require every student to spend at least one semester studying in a foreign country.", fn: "Context (the recommendation)" },
+            { text: "Study abroad is genuinely valuable and should be vigorously encouraged, but making it a requirement for all would be unfair and impractical, because its costs and demands fall very unevenly on different students.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The experience really does benefit",
+          sentences: [
+            { text: "First, the recommendation is right about the value of the experience.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Living in another country forces a student to navigate unfamiliar customs, often in another language, building an independence and adaptability that no classroom can teach.", fn: "Explanation", vocab: [{ term: "adaptability", gloss: "適應力" }] },
+            { text: "Students return from a semester abroad more confident, more curious about the world, and far better able to see their own society from the outside.", fn: "Example" },
+            { text: "In an interconnected world, the ability to understand other cultures is not a luxury but a practical and increasingly necessary skill.", fn: "Develop" },
+            { text: "So the benefits the recommendation cites are real, and colleges should do everything reasonable to make the experience available.", fn: "Sub-conclusion" },
+            { text: "To stand in an unfamiliar street where no one shares your language is an education a lecture hall cannot imitate.", fn: "Reinforce" },
+            { text: "Few experiences expand a young person's horizons so quickly.", fn: "Reinforce", vocab: [{ term: "horizons", gloss: "視野；眼界" }] },
+          ],
+        },
+        {
+          role: "Body — A blanket requirement falls unevenly",
+          sentences: [
+            { text: "However, to require it of every student ignores how differently the demand would land.", fn: "Pivot", moves: ["However"] },
+            { text: "Studying abroad is expensive, and a mandate would impose a heavy cost on students already struggling to afford tuition, deepening inequality rather than spreading opportunity.", fn: "Point", vocab: [{ term: "inequality", gloss: "不平等" }] },
+            { text: "Some students have caring responsibilities, health conditions, visa difficulties, or jobs that make a semester overseas genuinely impossible.", fn: "Explanation" },
+            { text: "A student supporting a family, or one with a disability that makes travel hard, cannot simply drop everything for a semester abroad, however enriching it might be.", fn: "Example" },
+            { text: "Forcing the requirement on everyone would either bar such students from graduating or push colleges to grant so many exemptions that the requirement becomes a fiction.", fn: "Develop", vocab: [{ term: "exemptions", gloss: "豁免；例外" }] },
+            { text: "A graduation requirement that only the comfortable can meet is no requirement at all.", fn: "Sharpen" },
+            { text: "A rule that many students cannot follow is not a sound policy but a barrier dressed as an opportunity.", fn: "Sub-conclusion", vocab: [{ term: "barrier", gloss: "障礙；阻礙" }] },
+          ],
+        },
+        {
+          role: "Body — Enable rather than compel",
+          sentences: [
+            { text: "Moreover, the goals of the recommendation are better served by making study abroad possible than by making it mandatory.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Colleges should fund scholarships, build exchange partnerships, offer shorter and cheaper options, and actively encourage students to go.", fn: "Point" },
+            { text: "Remove the obstacles and far more students will choose the experience freely than any mandate could meaningfully reach.", fn: "Explanation" },
+            { text: "For those who truly cannot travel, similar growth can be offered closer to home, through programs that bring other cultures to them.", fn: "Develop" },
+            { text: "Opportunity offered freely will reach more students than opportunity imposed on everyone.", fn: "Develop" },
+            { text: "The aim is to open the door wide, not to push everyone through it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, colleges should make study abroad available and attractive to all, but not require it of all.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the experience is valuable but its costs fall unevenly, the wise policy removes barriers and encourages participation rather than imposing a mandate many cannot meet.", fn: "Synthesis" },
+            { text: "Set the opportunity within everyone's reach, and let the students who can seize it do so willingly.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-055",
@@ -3419,6 +3650,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Teachers' salaries should be based on the academic performance of their students.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): a recommendation-appropriate response that shows in most circumstances the policy is unfair and distorting, then concedes the case for accountability and offers fairer measures; clear, if treading familiar ground.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It seems only fair to pay the best teachers the most, and a student's performance looks like an objective measure of who the best teachers are.", fn: "Hook" },
+            { text: "The recommendation would therefore tie teachers' salaries to the academic performance of their students.", fn: "Context (the recommendation)" },
+            { text: "Although the recommendation is appealing, in most circumstances adopting it would do more harm than good, because student performance is shaped by far more than the teacher, and rewarding it directly corrupts teaching itself.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Results are not the teacher's alone",
+          sentences: [
+            { text: "First, in the circumstances most teachers actually work in, student results reflect forces well beyond their control.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Home life, health, language, poverty, and prior schooling shape test scores at least as much as anything that happens in class.", fn: "Explanation" },
+            { text: "A gifted teacher in a poor school may lift her students enormously and still see lower scores than a weaker teacher whose pupils arrive already privileged and prepared.", fn: "Example", vocab: [{ term: "privileged", gloss: "享有特權的；優渥的" }] },
+            { text: "To pay the first teacher less would reward circumstance over skill, the precise unfairness the policy claims to cure.", fn: "Develop" },
+            { text: "Where results depend largely on a student's background, scoring teachers by those results is neither fair nor accurate.", fn: "Sub-conclusion" },
+            { text: "Two teachers of equal skill, handed unequal classes, will post unequal scores through no fault of their own.", fn: "Reinforce" },
+            { text: "It would judge the gardener by the weather as much as by the gardening.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — It would distort teaching",
+          sentences: [
+            { text: "Moreover, in almost any school the policy would corrupt the teaching it means to improve.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Teachers paid by test scores have every incentive to teach narrowly to the test, drill memorization, and quietly avoid the weakest students.", fn: "Point", vocab: [{ term: "incentive", gloss: "誘因；動機" }] },
+            { text: "The richest parts of education — curiosity, creativity, and character — produce nothing a standardized test records, and so would be the first to be dropped.", fn: "Explanation", vocab: [{ term: "standardized", gloss: "標準化的" }] },
+            { text: "Over time the policy would also drive the best teachers away from the struggling schools that need them most, since no one will accept lower pay for harder work.", fn: "Develop" },
+            { text: "A measure becomes worthless the moment people start gaming it, and tying livelihoods to scores guarantees they will.", fn: "Example", vocab: [{ term: "livelihoods", gloss: "生計" }] },
+            { text: "Pay people for test numbers, and test numbers, not learning, are what you will get.", fn: "Sharpen" },
+            { text: "The circumstances in which this policy improves teaching are rare; the ones in which it deforms teaching are everywhere.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Accountability, done better",
+          sentences: [
+            { text: "However, the recommendation does respond to a legitimate concern.", fn: "Concede", moves: ["However"] },
+            { text: "Teachers, like anyone, should be accountable for whether their students actually learn, and a school cannot ignore results entirely.", fn: "Develop the concession", vocab: [{ term: "accountable", gloss: "負有責任的；應問責的" }] },
+            { text: "But there are far better measures than raw scores — how much a teacher improves her students over a year, classroom observation, and peer and parent feedback — that reward real effectiveness without the distortions.", fn: "Rebut" },
+            { text: "These reward what teachers genuinely control rather than the luck of which students they happened to be given.", fn: "Explain" },
+            { text: "Real accountability asks how far students travelled, not merely where they happened to end up.", fn: "Develop" },
+            { text: "Accountability is a reason to judge teaching carefully, not to price it by a single number.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, in nearly all realistic circumstances, basing teachers' salaries on student performance would do harm.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because results depend on forces no teacher commands and the policy corrupts the teaching it rewards, a wiser system holds teachers accountable by fairer measures.", fn: "Synthesis" },
+            { text: "Pay teachers for the quality of their teaching, not for the accident of which students walk through the door.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-056",
@@ -3427,6 +3716,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "It is no longer possible for a society to regard any living man or woman as a hero.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the claim with observation and a clear account of what heroism is, then squarely confronts the strongest counter — media exposure and cynicism — and answers it; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We live in a skeptical age, quick to expose the flaws of anyone we are tempted to admire.", fn: "Hook" },
+            { text: "The claim concludes that this skepticism has gone so far that a society can no longer regard any living man or woman as a hero.", fn: "Context (the claim)" },
+            { text: "I disagree, because heroism rests on great deeds rather than on flawless lives, and people around the world plainly continue to revere the living for exactly such deeds.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Heroes still exist, visibly",
+          sentences: [
+            { text: "First, the claim is contradicted by simple observation.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Ordinary people still risk their lives for strangers, doctors still serve through plagues, and dissidents still defy tyrants, and the public still honors them for it.", fn: "Example", vocab: [{ term: "dissidents", gloss: "異議人士" }] },
+            { text: "Across every country, living figures are admired, thanked, and held up as examples, which would be impossible if heroism had truly become unthinkable.", fn: "Explanation" },
+            { text: "We have not lost our capacity for admiration; we have only become more careful about where we place it.", fn: "Develop", vocab: [{ term: "admiration", gloss: "欽佩；敬仰" }] },
+            { text: "The living hero is not extinct; he is simply held to an honest standard.", fn: "Sub-conclusion" },
+            { text: "Walk through any city after a disaster and you will find people calling their rescuers heroes, and meaning it.", fn: "Reinforce" },
+            { text: "A society that still produces courage will always find people to admire.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Heroism never required perfection",
+          sentences: [
+            { text: "Moreover, the claim assumes that a hero must be without flaws, and that has never been true.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A hero is someone who does something brave or selfless, not someone who is good in every private respect.", fn: "Point" },
+            { text: "Discovering that a courageous person is also vain, or difficult, or inconsistent does not undo the courage; it merely shows that heroes are human.", fn: "Explanation" },
+            { text: "Indeed, a flawed person who rises to a great moment is more inspiring than a saint, because his example is one ordinary people can actually follow.", fn: "Develop" },
+            { text: "We do not stop honoring those who ran toward danger because we later learn they were imperfect at home.", fn: "Example" },
+            { text: "A statue may need to be spotless; a hero never did.", fn: "Aphoristic" },
+            { text: "What our age has abandoned is not heroism but the fantasy that heroes are perfect.", fn: "Sub-conclusion", vocab: [{ term: "fantasy", gloss: "幻想；不切實際的想法" }] },
+          ],
+        },
+        {
+          role: "Body — The strongest objection",
+          sentences: [
+            { text: "The most compelling case for the claim is that relentless media exposure and public cynicism make it impossible for any reputation to survive intact.", fn: "Identify the strongest counter", vocab: [{ term: "cynicism", gloss: "憤世嫉俗；犬儒態度" }], moves: ["The most compelling"] },
+            { text: "There is real force here, since modern coverage does drag every figure's failings into the light and a knowing cynicism is quick to sneer at anyone praised.", fn: "Concede its force" },
+            { text: "But this confuses the death of the flawless image with the death of heroism, and exposing a hero's faults is not the same as the erasure of his deeds.", fn: "Rebut", vocab: [{ term: "erasure", gloss: "抹除；消除" }] },
+            { text: "Cynics may scoff, yet the firefighter, the rescuer, and the reformer go on being admired by most people precisely because what they did was real.", fn: "Explain" },
+            { text: "The cynic's sneer has never once pulled a child from a burning house.", fn: "Sharpen" },
+            { text: "Exposure has changed how we admire our heroes; it has not taken them away.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, it remains entirely possible to regard the living as heroes.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because heroism depends on deeds rather than on spotless lives, the modern exposure of human flaws has retired the false idol, not the real hero.", fn: "Synthesis" },
+            { text: "We can still honor the living; we have only learned to honor people as they are rather than as we once pretended they were.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-057",
