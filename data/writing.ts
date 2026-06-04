@@ -4165,6 +4165,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educators should base their assessment of students' learning not on students' grasp of facts but on the ability to explain the ideas, trends, and concepts that those facts illustrate.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): a recommendation-appropriate response that endorses assessing understanding over rote recall while showing facts cannot be excluded; clear and well organized, though the analysis stays fairly general.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A student can memorize a hundred dates and understand nothing about history, while another who knows fewer facts grasps why events unfolded as they did.", fn: "Hook" },
+            { text: "The recommendation builds on this, urging educators to assess students not on their grasp of facts but on their ability to explain the ideas, trends, and concepts those facts illustrate.", fn: "Context (the recommendation)" },
+            { text: "The recommendation rightly prizes understanding over rote recall, but its sharp not facts but concepts is too absolute, because explaining a concept well is impossible without the facts that ground it.", fn: "Thesis statement (qualified position)", vocab: [{ term: "rote", gloss: "死記硬背的" }] },
+          ],
+        },
+        {
+          role: "Body — Understanding is the better target",
+          sentences: [
+            { text: "First, in most subjects the ability to explain concepts is a far better measure of real learning than the recall of facts.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Facts are easily memorized and easily forgotten, while the grasp of why and how — the trends and ideas behind them — is what lets a student think, predict, and apply knowledge.", fn: "Explanation" },
+            { text: "A medical student who can explain why a disease spreads will handle an unfamiliar case better than one who has merely memorized a list of symptoms.", fn: "Example" },
+            { text: "Assessing for explanation rewards the deeper learning that education is supposed to produce and discourages the shallow cramming that mere fact-tests invite.", fn: "Develop", vocab: [{ term: "cramming", gloss: "臨時抱佛腳；死記硬背" }] },
+            { text: "In these circumstances the recommendation is sound: testing understanding teaches students to understand.", fn: "Sub-conclusion" },
+            { text: "What we choose to measure is what students will work to achieve.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But explanation requires facts",
+          sentences: [
+            { text: "However, the recommendation's contrast between facts and concepts is misleading, because the two cannot be cleanly separated.", fn: "Pivot", moves: ["However"] },
+            { text: "A concept is built out of facts, and a student who knows no facts has nothing from which to construct an explanation.", fn: "Point" },
+            { text: "One cannot explain the causes of a war without knowing what happened, or the idea of evolution without facts about species and fossils.", fn: "Example" },
+            { text: "An explanation offered with no command of the facts is usually empty verbiage, fluent-sounding but hollow.", fn: "Develop", vocab: [{ term: "verbiage", gloss: "空話；冗詞" }] },
+            { text: "To assess explanation while ignoring facts entirely would reward confident vagueness and let students hide a lack of knowledge behind impressive-sounding words.", fn: "Reinforce" },
+            { text: "Facts are not the enemy of understanding; they are its raw material, and assessment cannot abandon them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Emphasis, not exclusion",
+          sentences: [
+            { text: "Moreover, the recommendation is best read as a shift of emphasis, not a banishment of facts.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The wise approach assesses whether students can use facts to explain ideas, valuing the explanation while still requiring the knowledge it depends on.", fn: "Point" },
+            { text: "A good exam question asks a student not merely to recall a fact but to deploy it — to explain, connect, and apply — which tests both at once.", fn: "Explanation" },
+            { text: "Where teaching has collapsed into testing trivia, moving toward explanation is a clear improvement, but the goal is integration, not the pretense that understanding floats free of facts.", fn: "Develop", vocab: [{ term: "integration", gloss: "整合；融會貫通" }] },
+            { text: "Assess the use of knowledge, not knowledge alone and not explanation without it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, educators should indeed assess understanding over mere memorization, but not to the exclusion of the facts that understanding requires.", fn: "Restate", vocab: [{ term: "memorization", gloss: "死記；背誦" }], moves: ["In conclusion"] },
+            { text: "Because concepts are built from facts, the wise assessment asks students to explain ideas using the facts that illustrate them, rewarding depth without pretending knowledge is dispensable.", fn: "Synthesis" },
+            { text: "Test whether students can think with what they know, which is neither facts alone nor explanation without them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-064",
@@ -4173,6 +4228,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Unfortunately, in contemporary society, creating an appealing image has become more important than the reality or truth behind that image.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that image now dominates much of modern life while arguing that reality reasserts itself in the long run, and reads the statement as a warning rather than a verdict; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "From polished social-media profiles to carefully managed political brands, we live surrounded by images crafted to impress, often with little regard for the truth beneath.", fn: "Hook" },
+            { text: "The statement laments this, claiming that in contemporary society creating an appealing image has become more important than the reality or truth behind it.", fn: "Context (the statement)" },
+            { text: "The statement captures a real and worrying feature of modern life, but it overstates the case, because while image has gained alarming power, reality still reasserts itself in the end.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The trend is real",
+          sentences: [
+            { text: "It is true that image has come to dominate vast areas of contemporary life.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Advertising sells feelings rather than products, politicians are packaged like brands, and on social media people curate flawless versions of lives that bear little resemblance to reality.", fn: "Explanation", vocab: [{ term: "curate", gloss: "精心策劃；篩選呈現" }] },
+            { text: "A company can prosper for years on clever marketing while selling a mediocre product, and a person can build a following on an image that is largely performance.", fn: "Example", vocab: [{ term: "mediocre", gloss: "平庸的" }] },
+            { text: "Modern technology has supercharged this, giving everyone the tools to manufacture an appealing surface and rewarding those who do so with attention and money.", fn: "Develop" },
+            { text: "So the statement is right that crafting an image now often matters more, in the moment, than the truth behind it.", fn: "Sub-conclusion" },
+            { text: "Appearance has become a currency in its own right.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But reality reasserts itself",
+          sentences: [
+            { text: "However, to say image has become more important than reality is to mistake the short term for the whole story.", fn: "Pivot", moves: ["However"] },
+            { text: "An appealing image built on a false reality is fragile, and sooner or later the gap between the two is exposed.", fn: "Point", vocab: [{ term: "fragile", gloss: "脆弱的；易破裂的" }] },
+            { text: "A company that markets brilliantly but makes shoddy products eventually loses its customers, and a politician whose image hides incompetence is found out when results are demanded.", fn: "Example", vocab: [{ term: "incompetence", gloss: "無能；不稱職" }] },
+            { text: "Image can win the first round, but reality wins the rematch, because consequences flow from what is true, not from what merely looks good.", fn: "Explanation" },
+            { text: "The bridge built by a charming but incompetent engineer still falls down, and the patient treated by a doctor with a wonderful image but no skill still suffers.", fn: "Develop" },
+            { text: "Image may be more important for getting noticed, but reality remains more important for lasting.", fn: "Sub-conclusion" },
+            { text: "A beautiful surface over a rotten core is a delay, not a victory.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — A warning, not a verdict",
+          sentences: [
+            { text: "Moreover, the statement is most useful read as a warning rather than as a verdict.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "It is genuinely dangerous that image so often triumphs in the short term, since it lets the dishonest prosper and rewards style over substance.", fn: "Point", vocab: [{ term: "substance", gloss: "實質；內涵" }] },
+            { text: "But the remedy is not to despair that reality no longer matters; it is to look past images and judge by substance, which we remain perfectly able to do.", fn: "Explanation" },
+            { text: "A culture that values truth can still reward it, and individuals who insist on substance over surface keep reality in its rightful place.", fn: "Develop" },
+            { text: "Image has grown powerful, but only as powerful as we allow it to be.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, image has indeed gained troubling importance, but it has not truly overtaken reality.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Appearances increasingly win attention and short-term reward, yet substance still determines what endures, so the statement names a real danger rather than a settled fact.", fn: "Synthesis" },
+            { text: "We should resist the tyranny of image not by pretending it has won, but by remembering that, in the end, the truth tends to surface.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-065",
@@ -4181,6 +4292,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The effectiveness of a country's leaders is best measured by examining the well- being of that country's citizens.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees with strong reasoning that citizen well-being is the truest and least fakeable measure of leadership, then meets the objection about inherited circumstances by refining it to improvement over time; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "By what yardstick should we judge a country's leaders — the strength of its armies, the size of its economy, the grandeur of its monuments?", fn: "Hook" },
+            { text: "The claim offers a humane answer: that the effectiveness of a country's leaders is best measured by the well-being of its citizens.", fn: "Context (the claim)" },
+            { text: "I largely agree, because the purpose of leadership is to serve the people, though the measure must be applied fairly, accounting for the circumstances leaders inherit and cannot control.", fn: "Thesis statement (agree with qualification)" },
+          ],
+        },
+        {
+          role: "Body — Well-being is the right measure",
+          sentences: [
+            { text: "First, citizen well-being is the truest test because it captures what leadership is actually for.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A leader's job is not to amass power or glory for its own sake but to make the lives of ordinary people safer, freer, healthier, and more prosperous.", fn: "Explanation", vocab: [{ term: "prosperous", gloss: "繁榮的；富足的" }] },
+            { text: "A government may boast a booming economy or a powerful military, but if its citizens are poor, fearful, or oppressed, it has failed at the one thing leadership exists to do.", fn: "Example", vocab: [{ term: "oppressed", gloss: "受壓迫的" }] },
+            { text: "Other measures — economic statistics, national prestige — matter only insofar as they translate into the well-being of real people, which makes well-being the more fundamental standard.", fn: "Develop", vocab: [{ term: "prestige", gloss: "聲望；威望" }] },
+            { text: "So the claim rightly locates the test of leadership in how the led actually fare.", fn: "Sub-conclusion" },
+            { text: "A flourishing people is the clearest sign of leadership that works.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Well-being is the most honest measure",
+          sentences: [
+            { text: "Moreover, well-being is a harder and more honest measure than the ones leaders tend to prefer.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Leaders love to be judged by grand projects and impressive numbers, which are easy to display and easy to fake, while broad well-being cannot be faked or concentrated in a showcase.", fn: "Point" },
+            { text: "Averages can hide misery, so even economic growth means little if its gains reach only a few; the well-being of the many is the figure that resists manipulation.", fn: "Explanation", vocab: [{ term: "manipulation", gloss: "操縱；操弄" }] },
+            { text: "A country can post record growth while most of its people grow poorer, and a leader judged by the growth alone would look far better than he deserves.", fn: "Example" },
+            { text: "To measure by well-being is to ask the question that powerful people most want to avoid: how are ordinary lives actually going?", fn: "Develop" },
+            { text: "Precisely because it is hard to fake, citizen well-being is the soundest measure available.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The objection about circumstances",
+          sentences: [
+            { text: "The most compelling objection is that leaders inherit conditions they did not create and cannot fully control.", fn: "Identify the strongest counter", vocab: [{ term: "inherit", gloss: "承接；繼承" }], moves: ["The most compelling"] },
+            { text: "A leader handed a famine, a war, or a collapsing economy may govern brilliantly and still preside over suffering, while a lucky one inherits prosperity he did nothing to build.", fn: "Concede its force" },
+            { text: "This is a real caution, but it refines the measure rather than refuting it: we should judge leaders by how much they improve well-being from the conditions they were given, not by its absolute level.", fn: "Rebut" },
+            { text: "Measured as change rather than as a snapshot, citizen well-being remains the best test, crediting leaders for the difference they actually make.", fn: "Explain" },
+            { text: "The fair question is not how well off are the people alone, but how much better or worse off this leadership made them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the well-being of its citizens is indeed the best measure of a country's leaders, provided it is judged fairly.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because leadership exists to serve the people and well-being resists the manipulation other measures invite, it is the soundest standard, so long as we credit leaders for the improvement they make from the circumstances they inherit.", fn: "Synthesis" },
+            { text: "Judge leaders by the lives of the led, but judge them by the difference they made, not by the hand they were dealt.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-066",
@@ -4189,6 +4355,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "A nation should require all of its students to study the same national curriculum until they enter college.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects rigid uniformity by showing it ignores real differences, resists change, and concentrates power, then concedes the equality argument and answers it with a common core within a flexible system; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Should every child in a nation learn the same things, or should schools be free to teach differently?", fn: "Hook" },
+            { text: "The claim takes a firm stand: that a nation should require all its students to study the same national curriculum until they enter college.", fn: "Context (the claim)" },
+            { text: "A shared core of knowledge is genuinely valuable, but requiring every student to study an identical curriculum is too rigid, because it ignores the differences among students, regions, and the changing needs a single national plan cannot foresee.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Rigid uniformity ignores difference",
+          sentences: [
+            { text: "First, a single mandatory curriculum forces very different students and communities into one mold.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Students differ enormously in ability, interest, and pace, and a curriculum identical for all will bore some, lose others, and fit almost no one perfectly.", fn: "Explanation" },
+            { text: "The lesson that challenges a gifted student leaves a struggling one behind, while the pace that suits the struggling one wastes the gifted one's time.", fn: "Example" },
+            { text: "Regions differ too: a farming community, a fishing town, and a tech city have distinct needs that a uniform national plan, written far away, cannot serve.", fn: "Develop" },
+            { text: "Imposed on everyone without exception, sameness becomes a straitjacket rather than a standard.", fn: "Sub-conclusion", vocab: [{ term: "straitjacket", gloss: "束縛；緊身衣" }] },
+            { text: "A child who already reads fluently and one still struggling cannot be well served by the very same page on the very same day.", fn: "Reinforce" },
+            { text: "One size, in education as in clothing, fits no one well.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Rigidity resists change and concentrates power",
+          sentences: [
+            { text: "Moreover, a single fixed curriculum is dangerously slow to change and easy to abuse.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Knowledge and the world move quickly, and a national curriculum, hard to revise, tends to lag years behind what students actually need.", fn: "Point" },
+            { text: "Centralizing what every child learns also hands enormous power to whoever controls it, which a government can use to push a single narrow view.", fn: "Explanation", vocab: [{ term: "centralizing", gloss: "集中化；中央集權" }] },
+            { text: "History is full of states that used a mandatory national curriculum to glorify themselves and silence dissent, teaching propaganda as fact.", fn: "Example", vocab: [{ term: "propaganda", gloss: "宣傳；政治宣傳" }] },
+            { text: "Diversity of schools and approaches is a safeguard, allowing better methods to emerge and bad ideas to be confined rather than imposed on a whole generation at once.", fn: "Develop" },
+            { text: "Uniformity removes the experimentation and competition from which education improves.", fn: "Sub-conclusion", vocab: [{ term: "uniformity", gloss: "一致性；劃一" }] },
+          ],
+        },
+        {
+          role: "Body — The equality argument, answered",
+          sentences: [
+            { text: "The most compelling argument for the claim is that a common curriculum builds equality and national cohesion.", fn: "Identify the strongest counter", vocab: [{ term: "cohesion", gloss: "凝聚力；團結" }], moves: ["The most compelling"] },
+            { text: "There is real force here: a shared body of knowledge ensures that a poor child and a rich one learn the same essentials, and gives a diverse nation a common language and culture.", fn: "Concede its force" },
+            { text: "But these goods require a common core, not a totally identical curriculum, and the two are very different things.", fn: "Rebut" },
+            { text: "A nation can require that all students master certain essentials — literacy, mathematics, the basics of science and citizenship — while leaving room for local content, individual choice, and varied methods.", fn: "Explain" },
+            { text: "Unity comes from sharing the essentials, not from forcing every classroom to march in lockstep.", fn: "Sharpen" },
+            { text: "Shared foundations and flexible building are not enemies; the wise system has both.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, a nation should require a common core of essential learning, but not an identical curriculum for all.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A shared foundation secures equality and unity, but rigid uniformity ignores real differences, resists change, and concentrates dangerous power, so the answer is a common core within a flexible system.", fn: "Synthesis" },
+            { text: "Teach every child the essentials in common, but do not pretend that every child, place, and age is the same.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-067",
@@ -4197,6 +4420,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educational institutions should actively encourage their students to choose fields of study in which jobs are plentiful.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a policy-appropriate response that traces the consequences of actively steering students into plentiful fields — mismatched workers, gluts, and starved essential fields — then offers informing over pushing; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Anxious about graduates' job prospects, many want colleges to steer students toward the fields where work is plentiful.", fn: "Hook" },
+            { text: "The policy would have educational institutions actively encourage students to choose such fields rather than leave the choice to interest or chance.", fn: "Context (the policy)" },
+            { text: "The policy is well-meaning, but its consequences would be largely harmful, because pushing students toward jobs over aptitude produces mediocre workers, gluts the very fields it favors, and starves others a society needs.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Mismatched, mediocre workers",
+          sentences: [
+            { text: "First, actively steering students into employable fields regardless of their talents would fill those fields with the wrong people.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A student pushed into engineering or computing for the jobs, but without the interest or aptitude for it, tends to struggle, underperform, and quit.", fn: "Explanation", vocab: [{ term: "aptitude", gloss: "性向；天賦" }] },
+            { text: "The reluctant accountant who entered the field only because it was safe often becomes a poor and miserable accountant, helping no one.", fn: "Example" },
+            { text: "Excellence grows from genuine engagement, so a policy that overrode interest in favor of job statistics would lower the quality of work in the very fields it promotes.", fn: "Develop" },
+            { text: "The consequence is not more good workers but more unhappy, mediocre ones.", fn: "Sub-conclusion", vocab: [{ term: "mediocre", gloss: "平庸的" }] },
+            { text: "Talent ignored is talent wasted, both for the student and for the society that needed it elsewhere.", fn: "Develop" },
+            { text: "You cannot push a person into a passion.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — It gluts some fields and starves others",
+          sentences: [
+            { text: "Moreover, encouraging everyone toward today's plentiful jobs would quietly destroy the very plenty it chases.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "If institutions push a generation into whatever fields are currently hiring, they flood those fields, and yesterday's shortage becomes tomorrow's glut of unemployable graduates.", fn: "Point", vocab: [{ term: "glut", gloss: "供過於求；過剩" }] },
+            { text: "Job markets shift faster than degrees can be earned, so a field that looks plentiful when students enroll may be oversupplied by the time they graduate.", fn: "Explanation" },
+            { text: "Countries that funneled students into a single hot field have repeatedly produced far more graduates than the field could absorb, leaving many jobless in the safe choice.", fn: "Example" },
+            { text: "Meanwhile the policy would drain students from essential fields — teaching, the arts, basic research, the humanities — that may offer fewer jobs but that a society cannot do without.", fn: "Develop", vocab: [{ term: "essential", gloss: "不可或缺的；必要的" }] },
+            { text: "By the time the crowd of graduates arrives, the door they were all sent toward has often already closed.", fn: "Sharpen" },
+            { text: "A nation that steers everyone toward plentiful jobs ends up with shortages where it can least afford them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Inform, do not push",
+          sentences: [
+            { text: "However, the policy responds to a real concern that deserves an answer.", fn: "Concede", moves: ["However"] },
+            { text: "Students do make uninformed choices, and leaving them ignorant of job realities would be its own kind of failure.", fn: "Develop the concession" },
+            { text: "But the answer is to inform, not to push: institutions should give students honest data about careers and prospects, then let them choose with open eyes.", fn: "Rebut", vocab: [{ term: "prospects", gloss: "前景；機會" }] },
+            { text: "Informing respects students as adults weighing real trade-offs; actively encouraging them toward particular fields overrides their judgment and their talents.", fn: "Explain" },
+            { text: "Good advice equips a choice; a hard push merely replaces it.", fn: "Aphoristic" },
+            { text: "Provide the map, and let students choose the road.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, institutions should inform students about job prospects but not actively herd them into plentiful fields.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the policy would produce mismatched workers, glut its favored fields, and starve essential ones, its consequences would clearly outweigh its good intentions.", fn: "Synthesis" },
+            { text: "Help students choose wisely by telling them the truth, not by choosing for them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-068",
@@ -4205,6 +4486,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "People's behavior is largely determined by forces not of their own making.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the powerful influence of unchosen forces while arguing that constraint is not determination and that denying agency is corrosive; addresses the determinist case directly and answers it; tightly reasoned.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "None of us chose our genes, our parents, our native country, or the era we were born into, and these unchosen forces shape us profoundly.", fn: "Hook" },
+            { text: "The claim presses this point hard, holding that people's behavior is largely determined by forces not of their own making.", fn: "Context (the claim)" },
+            { text: "There is deep truth in the claim, because we are shaped far more by circumstance than we like to admit, but largely determined goes too far, because within those constraints human beings still exercise real and meaningful choice.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Unchosen forces shape us deeply",
+          sentences: [
+            { text: "It is true that unchosen forces shape our behavior more than our pride allows us to see.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Our genes influence our temperament, our upbringing instills our values, and our culture, class, and circumstances set the range of options we ever face.", fn: "Explanation", vocab: [{ term: "temperament", gloss: "性情；氣質" }] },
+            { text: "A child born into poverty and violence and one born into wealth and security will, on average, behave very differently, and neither chose the conditions that shaped them.", fn: "Example" },
+            { text: "Even our apparent choices are nudged by influences we never notice, from advertising to the opinions of those around us, as psychology repeatedly shows.", fn: "Develop" },
+            { text: "So the claim is right that much of what we do flows from forces we did not make.", fn: "Sub-conclusion" },
+            { text: "We are, to a striking degree, the products of conditions we never selected.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But constraint is not determination",
+          sentences: [
+            { text: "However, that forces shape our behavior does not mean they wholly determine it.", fn: "Pivot", moves: ["However"] },
+            { text: "People in nearly identical circumstances behave differently, which would be impossible if circumstance simply dictated conduct.", fn: "Point" },
+            { text: "Two siblings raised in the same home, or two soldiers in the same war, can respond in opposite ways, one with cruelty and the other with courage.", fn: "Example" },
+            { text: "Our unchosen forces set the stage and narrow the options, but within that range we still deliberate, resist, and choose, which is exactly what largely determined denies.", fn: "Explanation", vocab: [{ term: "deliberate", gloss: "審慎考慮；斟酌" }] },
+            { text: "The recovering addict who chooses to quit, the person raised in bigotry who rejects it, and the coward who finds courage all show that circumstance is an influence, not a verdict.", fn: "Develop", vocab: [{ term: "verdict", gloss: "定論；判決" }] },
+            { text: "We are shaped by forces beyond our control, but we are not their puppets.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why agency matters",
+          sentences: [
+            { text: "Moreover, to call behavior largely determined is not only inaccurate but corrosive.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "If we are merely the products of forces we did not make, then no one is truly responsible for anything, and praise, blame, and effort lose their meaning.", fn: "Point" },
+            { text: "Yet we hold people responsible, and rightly, precisely because we recognize that they could have chosen otherwise within their circumstances.", fn: "Explanation" },
+            { text: "The belief in our own agency, that we can choose even against the pressures upon us, is also what makes change possible, for individuals and societies alike.", fn: "Develop", vocab: [{ term: "agency", gloss: "能動性；自主行動力" }] },
+            { text: "A person convinced he is wholly determined has already surrendered the freedom he in fact possesses.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, our behavior is powerfully shaped, but not largely determined, by forces beyond our control.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Circumstance sets the stage and limits our options, yet within those limits we genuinely choose, so the claim is right about the power of forces but wrong to dissolve our responsibility into them.", fn: "Synthesis", vocab: [{ term: "responsibility", gloss: "責任" }] },
+            { text: "We are neither free of our circumstances nor enslaved by them, but free within them, and that freedom is the part that matters most.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-069",
