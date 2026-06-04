@@ -5683,6 +5683,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "All college and university students would benefit from spending at least one semester studying in a foreign country.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the real, often transformative benefits of studying abroad, then shows that the sweeping word 'all' ignores cost, circumstance, field, and the student's own engagement; balanced and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Study abroad is often sold as a transformative rite of passage, the one semester that changes a young life forever.", fn: "Hook" },
+            { text: "From this enthusiasm the statement draws a sweeping conclusion: that all college and university students would benefit from spending at least one semester studying in a foreign country.", fn: "Context (the statement)" },
+            { text: "Study abroad genuinely enriches most students who undertake it, but the word all overreaches, for the benefit depends on circumstance, field, and the individual, and for some the cost outweighs the gain.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The real benefits",
+          sentences: [
+            { text: "There is no denying the real value of studying abroad.", fn: "Topic sentence" },
+            { text: "Living in another country forces a student out of familiar routines and immerses her in a different language and culture, an experience no classroom at home can fully reproduce.", fn: "Explanation" },
+            { text: "A semester abroad can sharpen a foreign language, build independence and confidence, and replace secondhand stereotypes with firsthand understanding of how other people actually live.", fn: "Example", vocab: [{ term: "stereotypes", gloss: "刻板印象" }] },
+            { text: "For students of language, international relations, art, or history especially, such exposure is not a luxury but an extension of their study, broadening the very perspective their field demands.", fn: "Develop", vocab: [{ term: "perspective", gloss: "觀點；視角" }] },
+            { text: "For many students, then, a semester abroad is among the most valuable parts of a degree.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why 'all' overreaches",
+          sentences: [
+            { text: "However, to say that all students would benefit ignores how differently they are placed.", fn: "Pivot", moves: ["However"] },
+            { text: "For many, a semester abroad is simply unaffordable, and the debt or lost earnings it brings can outweigh whatever rewards it offers.", fn: "Point" },
+            { text: "A student working to support a family, or one already stretched by tuition, may find that months away cost more than they are worth in money, time, and opportunity missed at home.", fn: "Explanation", vocab: [{ term: "tuition", gloss: "學費" }] },
+            { text: "Others carry obligations — caring for relatives, holding a job, finishing a tightly sequenced program — that a semester overseas would disrupt rather than enrich.", fn: "Develop", vocab: [{ term: "obligations", gloss: "義務；責任" }] },
+            { text: "And for some fields a semester away from laboratories, clinical placements, or studio work can set a student back rather than move her forward.", fn: "Develop" },
+            { text: "A benefit that depends so heavily on one's circumstances cannot honestly be called universal.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The benefit is not automatic",
+          sentences: [
+            { text: "Moreover, even when a student can go, the benefit is not automatic.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A semester abroad rewards the student who engages with it, but one who travels only to keep to familiar company and habits may gain little beyond a change of scenery.", fn: "Point" },
+            { text: "The real growth comes from venturing out, struggling with a new language, and forming genuine ties to a place, none of which the mere fact of being abroad ensures.", fn: "Explanation" },
+            { text: "For a reluctant or unprepared student, the same months might be spent anxious and disoriented, learning less than a focused semester at home would have taught.", fn: "Develop", vocab: [{ term: "disoriented", gloss: "迷失方向的；困惑的" }] },
+            { text: "The opportunity benefits the student who seizes it, not every student who is handed it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement rightly celebrates an experience that transforms many students, but wrongly extends that promise to all of them.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Studying abroad offers real and sometimes life-changing rewards, yet those rewards depend on a student's means, situation, field, and willingness to engage, so the honest claim is that most students who can go and throw themselves into it will benefit, not that every student would.", fn: "Synthesis" },
+            { text: "Encourage study abroad widely, but do not pretend it is the right semester for everyone.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-088",
@@ -5691,6 +5745,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people claim that a nation's government should preserve its wilderness areas in their natural state. Others argue that these areas should be developed for potential economic gain.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): steelmans development for economic gain, then sides with preservation on the grounds of irreversibility and long-term value, while conceding that limited sustainable use can reconcile the views; addresses both as required.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Every stretch of untouched wilderness is also, to some eye, a resource simply waiting to be used.", fn: "Hook" },
+            { text: "One view holds that a nation's government should preserve its wilderness areas in their natural state; the other argues that these areas should be developed for their potential economic gain.", fn: "Context (the two views)" },
+            { text: "While development promises real and immediate wealth, the wiser course leans toward preservation, because wilderness offers value that, once destroyed, can never be recovered, though preservation need not mean leaving every acre untouched.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for development",
+          sentences: [
+            { text: "Admittedly, the case for development is not to be dismissed.", fn: "Topic sentence", moves: ["Admittedly"] },
+            { text: "Wilderness areas often hold timber, minerals, energy, and land that a nation could turn into jobs and revenue, and for a poor country these gains can mean schools, hospitals, and lifted living standards.", fn: "Explanation", vocab: [{ term: "revenue", gloss: "收入；稅收" }] },
+            { text: "To lock such resources away untouched can look like a luxury only the rich can afford, leaving real human needs unmet for the sake of scenery.", fn: "Point" },
+            { text: "In regions where livelihoods are scarce, the promise of work and income from a forest or a mine can be genuinely difficult, and even unfair, to refuse.", fn: "Develop" },
+            { text: "Development, on this view, turns idle land into present human good.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why preservation is sounder",
+          sentences: [
+            { text: "However, this view weighs immediate gain too heavily against irreversible loss.", fn: "Pivot", moves: ["However"] },
+            { text: "A developed wilderness is gone for good, for the forest cleared, the river dammed, and the habitat paved cannot simply be restored once the profit has been spent.", fn: "Point", vocab: [{ term: "habitat", gloss: "棲息地" }] },
+            { text: "Wilderness provides benefits that markets rarely price — clean air and water, a stable climate, biodiversity, and refuge for wildlife and for the human spirit — and these vanish the moment it is developed.", fn: "Explanation", vocab: [{ term: "biodiversity", gloss: "生物多樣性" }] },
+            { text: "What looks like idle land is in fact doing essential work, and a nation that trades it for short-term gain often finds the costs arriving long after the money is gone.", fn: "Develop" },
+            { text: "Because the loss is permanent while the gain is temporary, the burden of proof should rest on those who would develop.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Preservation as the longer view",
+          sentences: [
+            { text: "Moreover, preservation is not merely sentiment; it is often the sounder economics over time.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Intact wilderness sustains tourism, fisheries, agriculture, and health in ways that outlast any single extraction, and future generations have a claim on it that the present has no right to spend.", fn: "Point", vocab: [{ term: "extraction", gloss: "開採；提取" }] },
+            { text: "A nation holds its wilderness in stewardship for those not yet born, and to consume it now for a one-time gain is to borrow against a future that cannot object.", fn: "Explanation", vocab: [{ term: "stewardship", gloss: "管理；保管責任" }] },
+            { text: "This does not require treating all wilderness as untouchable, since carefully limited, sustainable use can sometimes reconcile the two views without sacrificing what makes the land valuable.", fn: "Develop" },
+            { text: "The aim should be to preserve the wilderness while drawing on it, if at all, only in ways that do not destroy it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while developing wilderness for economic gain answers real and pressing needs, I side with preservation.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Wilderness offers an irreplaceable and lasting value that a single round of development would destroy forever, so a government's first duty is to protect it, permitting only the sustainable use that leaves its essential worth intact.", fn: "Synthesis" },
+            { text: "Wealth taken from a ruined wilderness is spent within a generation; the wilderness itself, once gone, is gone for all of them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-089",
@@ -5699,6 +5806,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, but the general well-being of all its people.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that broad well-being is the surer indicator because it cannot be faked and excludes no one, then adds the nuance that well-being and achievement are not opposed but tend to rise together; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We instinctively rank nations by their monuments — the masterpieces, the discoveries, the famous names that history chooses to remember.", fn: "Hook" },
+            { text: "Against that instinct, the claim insists that the surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, but the general well-being of all its people.", fn: "Context (the claim)" },
+            { text: "The claim is largely right, for the well-being of the many is a harder and more honest test of greatness than the brilliance of a few; yet the two are not truly opposed, since a flourishing people is also the soil from which lasting achievements grow.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Why achievements mislead",
+          sentences: [
+            { text: "Achievements make a poor sole measure of greatness because they reveal only a nation at its peak.", fn: "Topic sentence" },
+            { text: "A handful of great rulers, artists, and scientists tells us what the most gifted few could accomplish, not how the ordinary citizen actually lived.", fn: "Explanation" },
+            { text: "Some of history's most celebrated cultures produced dazzling art and thought atop a base of slavery, poverty, and deprivation, their splendour purchased with the suffering of the many.", fn: "Example", vocab: [{ term: "deprivation", gloss: "匱乏；剝奪" }] },
+            { text: "An indicator that can shine brightest in deeply unjust societies cannot be the surest sign of national greatness.", fn: "Develop", vocab: [{ term: "unjust", gloss: "不公正的；不義的" }] },
+            { text: "Achievements measure a nation flatteringly, from the top down.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why well-being is the surer test",
+          sentences: [
+            { text: "Well-being, by contrast, measures a nation where it is hardest to fake.", fn: "Pivot", moves: ["by contrast"] },
+            { text: "The health, freedom, education, and prosperity of the whole population reflect countless choices that reach into every life, not just the lives of the gifted.", fn: "Point", vocab: [{ term: "prosperity", gloss: "繁榮；富足" }] },
+            { text: "No nation can counterfeit the widespread well-being of its people; a few brilliant exceptions can be paraded, but decent lives for the many appear only when a society genuinely works.", fn: "Explanation", vocab: [{ term: "counterfeit", gloss: "偽造；假冒" }] },
+            { text: "To lift a whole population into health, freedom, and dignity is a harder and more admirable achievement than producing a few masterpieces over a wretched mass.", fn: "Develop" },
+            { text: "Because it cannot be faked and leaves no one out, general well-being is the surer indicator.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The two are connected",
+          sentences: [
+            { text: "Yet it would be a mistake to set well-being and achievement wholly against each other.", fn: "Pivot", moves: ["Yet"] },
+            { text: "A nation that educates, frees, and secures its people also gives far more of them the chance to become the very artists and scientists whose achievements it is proud of.", fn: "Point" },
+            { text: "Schools, hospitals, libraries, and a measure of security give ordinary people the time and freedom that great work quietly requires.", fn: "Develop" },
+            { text: "Broad well-being and great achievement tend to rise together, because a flourishing population is the ground from which talent most reliably emerges.", fn: "Explanation", vocab: [{ term: "flourish", gloss: "蓬勃發展；繁盛" }] },
+            { text: "The claim is best read not as despising achievement but as insisting that it be judged by whether it reaches the many rather than merely adorns the few.", fn: "Develop" },
+            { text: "Well-being is the surest indicator partly because, where it is real, achievement tends to follow.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right that the surest sign of a great nation is the general well-being of all its people, not the achievements of a gifted few.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Well-being is the harder, fairer, and more honest test, impossible to fake and inclusive of everyone, and far from excluding great achievement, it is the condition under which achievement most reliably flourishes.", fn: "Synthesis" },
+            { text: "Measure a nation not by its brightest names, but by the lives of those who will never be famous.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-090",
@@ -5707,6 +5868,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people argue that successful leaders in government, industry, or other fields must be highly competitive. Other people claim that in order to be successful, a leader must be willing and able to cooperate with others.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the drive that competitiveness supplies, then argues cooperation is the deeper foundation of leadership and that unchecked competitiveness is destructive; addresses both views and resolves them.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We picture great leaders in two very different poses: the fierce competitor who must win, and the patient builder who brings people together.", fn: "Hook" },
+            { text: "Some argue that successful leaders in government, industry, and other fields must be highly competitive; others claim that to succeed a leader must be willing and able to cooperate with others.", fn: "Context (the two views)" },
+            { text: "Both qualities matter, but the second view is closer to the truth: competitiveness can drive a leader forward, yet it is the capacity to cooperate that lets a leader achieve anything lasting through other people.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for competitiveness",
+          sentences: [
+            { text: "There is real merit in the case for competitiveness.", fn: "Topic sentence" },
+            { text: "Leaders operate in a world of rivals — for markets, votes, resources, and influence — and one without the drive to compete will be overtaken by those who have it.", fn: "Explanation", vocab: [{ term: "rivals", gloss: "對手；競爭者" }] },
+            { text: "In contests for advancement, in negotiations, and in the daily clash of competing plans, a leader who will not fight her corner soon loses ground.", fn: "Develop" },
+            { text: "A competitive instinct supplies ambition, urgency, and the refusal to settle that pushes a leader and an organization to excel.", fn: "Point", vocab: [{ term: "ambition", gloss: "抱負；雄心" }] },
+            { text: "Without some competitive fire, a leader may lack the very drive that success demands.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why cooperation runs deeper",
+          sentences: [
+            { text: "However, leadership is, by its very nature, an exercise in cooperation.", fn: "Pivot", moves: ["However"] },
+            { text: "A leader achieves nothing alone, succeeding only by uniting the efforts of many people toward a shared end, and that is the work of cooperation rather than competition.", fn: "Point" },
+            { text: "The skills that define great leaders — listening, persuading, building trust, and forging alliances — are cooperative skills, aimed at bringing others along rather than defeating them.", fn: "Explanation", vocab: [{ term: "alliances", gloss: "聯盟；結盟" }] },
+            { text: "Even competition between organizations is won by cooperation within them, for the most competitive firm or party is usually the one whose people work together best.", fn: "Develop" },
+            { text: "History's most effective leaders are remembered less for crushing their rivals than for assembling coalitions, winning allies, and turning scattered effort into common purpose.", fn: "Develop" },
+            { text: "Cooperation is thus the deeper foundation, the thing without which competitive drive has nothing to build on.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Unchecked competitiveness destroys",
+          sentences: [
+            { text: "Moreover, competitiveness untempered by cooperation can actively destroy what a leader is trying to build.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A leader who must win every contest, even against his own colleagues, breeds fear, resentment, and division in the very team he depends on.", fn: "Point", vocab: [{ term: "resentment", gloss: "怨恨；不滿" }] },
+            { text: "Such a leader may win short-term battles while losing the loyalty and cooperation that long-term success quietly requires.", fn: "Explanation" },
+            { text: "Talented people quietly withhold their best work from a leader who treats every exchange as a contest to be won.", fn: "Develop" },
+            { text: "The most admired leaders channel their competitiveness outward, toward shared goals, while cooperating generously with the people whose help they need.", fn: "Develop", vocab: [{ term: "channel", gloss: "引導；疏導" }] },
+            { text: "Competitiveness, left to itself, can corrode the very cooperation on which leadership ultimately rests.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while a measure of competitiveness can sharpen and drive a leader, the more essential quality is the willingness and ability to cooperate.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Competition may decide individual contests, but leadership is the art of accomplishing things through others, and only cooperation makes that possible, so the best leaders compete where they must while cooperating wherever they can.", fn: "Synthesis" },
+            { text: "A leader who cannot cooperate may win, but will lead no one for long.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-091",
@@ -5715,6 +5931,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that corporations have a responsibility to promote the well- being of the societies and environments in which they operate. Others believe that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the clarity of the profit-only view, then argues legality is too low a floor and that corporations are embedded in society; sides with social responsibility while honoring the necessity of profit.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A corporation is at once a money-making machine and a powerful citizen of the society that allows it to exist.", fn: "Hook" },
+            { text: "Some hold that corporations have a responsibility to promote the well-being of the societies and environments in which they operate; others insist that, so long as they obey the law, their only responsibility is to make as much money as possible.", fn: "Context (the two views)" },
+            { text: "Profit is a legitimate and necessary aim, but the second view sets the bar too low: because corporations are powerful actors embedded in society, the first view is sounder, for they bear real responsibilities beyond mere legality.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for profit alone",
+          sentences: [
+            { text: "The profit-only view has a certain bracing clarity.", fn: "Topic sentence" },
+            { text: "A corporation exists to create value for its owners, and by pursuing profit within the law it already does much good, supplying goods, creating jobs, and funding the taxes on which public well-being depends.", fn: "Explanation" },
+            { text: "Profit, on this account, is not greed but discipline, the signal that a company is using scarce resources in ways people actually value.", fn: "Develop" },
+            { text: "Managers, the argument runs, are entrusted with the shareholders' money and have no mandate to spend it on social causes of their own choosing.", fn: "Point", vocab: [{ term: "mandate", gloss: "授權；委託" }] },
+            { text: "There is wisdom here: a company that neglects profit helps no one for long.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why legality is too low a floor",
+          sentences: [
+            { text: "However, to make legality the only limit on the pursuit of profit sets the bar dangerously low.", fn: "Pivot", moves: ["However"] },
+            { text: "The law always lags behind harm, and much that is destructive — polluting, exploiting, deceiving right up to the edge of the statute — stays perfectly legal until the damage is done and the rules catch up.", fn: "Point", vocab: [{ term: "exploiting", gloss: "剝削；利用" }] },
+            { text: "A corporation that does everything the law has not yet forbidden can devastate communities and environments while breaking no rule at all.", fn: "Explanation", vocab: [{ term: "devastate", gloss: "摧毀；蹂躪" }] },
+            { text: "Because corporations are often more powerful than the governments meant to regulate them, treating the law as a sufficient conscience leaves society exposed to enormous, perfectly legal harm.", fn: "Develop", vocab: [{ term: "regulate", gloss: "監管；規範" }] },
+            { text: "Mere legality is far too weak a standard for actors this powerful.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Corporations are embedded in society",
+          sentences: [
+            { text: "Moreover, corporations do not operate in a vacuum; they draw on the society around them and owe it something in return.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A company depends on public roads, an educated workforce, stable institutions, and a healthy environment, all provided by the very society it profits from.", fn: "Point", vocab: [{ term: "institutions", gloss: "制度；機構" }] },
+            { text: "Having drawn so heavily on the common good, a corporation has a real stake in sustaining it, so behaving responsibly is not charity but enlightened self-interest.", fn: "Explanation" },
+            { text: "The companies that prosper longest tend to be those that treat their workers, communities, and environment as partners in their success rather than as costs to be minimized.", fn: "Develop" },
+            { text: "Responsibility to society is woven into the very conditions that make a corporation possible.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while making money is a corporation's proper and necessary purpose, it cannot be its only responsibility.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because corporations are powerful, embedded in society, and capable of legal harm, they owe the communities and environments they depend on more than bare obedience to the law, so the duty to promote well-being and the pursuit of profit must finally be carried on together.", fn: "Synthesis" },
+            { text: "A corporation that obeys only the law has met its lowest obligation, not its whole one.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-092",
@@ -5723,6 +5992,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Researchers should not limit their investigations to only those areas in which they expect to discover something that has an immediate, practical application. Reason: It is impossible to predict the outcome of a line of research with any certainty.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): addresses both claim and reason, defending the unpredictability of research outcomes and the case against confining inquiry to the useful, while adding that knowledge has intrinsic value and that finite resources still demand judgment.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Pressed for results, we are tempted to fund only the research that promises an immediate payoff.", fn: "Hook" },
+            { text: "The claim resists that temptation, holding that researchers should not limit their investigations to areas expected to yield an immediate, practical application, on the reason that the outcome of any line of research is impossible to predict with certainty.", fn: "Context (claim and reason)" },
+            { text: "Both the claim and its reason are largely sound: unpredictability really does argue against confining research to the obviously useful, though it is not the only reason, since open inquiry also yields knowledge and unforeseen applications that narrow, applied work would miss.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The reason holds",
+          sentences: [
+            { text: "Consider first the reason, which is difficult to deny.", fn: "Topic sentence", moves: ["first"] },
+            { text: "The history of science shows again and again that we cannot foresee where a line of inquiry will lead, and that the most useful discoveries often arrive from research begun with no practical aim at all.", fn: "Explanation" },
+            { text: "Inquiries into abstract mathematics, the structure of the atom, or the habits of obscure organisms, pursued purely out of curiosity, later produced computers, medicine, and modern technology no one had foreseen.", fn: "Example", vocab: [{ term: "obscure", gloss: "不知名的；晦澀的" }] },
+            { text: "If outcomes are genuinely unpredictable, then judging research in advance by its expected usefulness will inevitably discard lines of inquiry that would have proven invaluable.", fn: "Develop", vocab: [{ term: "invaluable", gloss: "極為寶貴的；無價的" }] },
+            { text: "The reason holds: because we cannot predict outcomes, usefulness is a poor filter to apply beforehand.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The claim follows",
+          sentences: [
+            { text: "Indeed, the claim follows naturally, and it too deserves agreement.", fn: "Pivot", moves: ["Indeed"] },
+            { text: "To restrict research to areas of expected practical application is to bet everything on our limited foresight, starving the basic inquiry on which applied work ultimately depends.", fn: "Point", vocab: [{ term: "foresight", gloss: "先見之明；遠見" }] },
+            { text: "Applied research harvests what basic research has already discovered, so a society that funds only the immediately useful eventually runs out of new knowledge to apply.", fn: "Explanation" },
+            { text: "The richest practical breakthroughs tend to grow, sometimes decades later, from curiosity-driven work that no one could have justified on practical grounds at the time.", fn: "Develop" },
+            { text: "Limiting research to the obviously useful is therefore self-defeating, even on purely practical terms.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Two qualifications",
+          sentences: [
+            { text: "Still, the reason is not the only justification, nor should the claim be pushed into absurdity.", fn: "Pivot", moves: ["Still"] },
+            { text: "Open inquiry is worth defending not merely because outcomes are unpredictable, but because understanding the world is an intrinsic good, valuable quite apart from any application.", fn: "Point", vocab: [{ term: "intrinsic", gloss: "內在的；本質的" }] },
+            { text: "At the same time, the claim does not mean that all research is equally worthy or that practical needs should be ignored, since finite resources still require judgment about what to pursue.", fn: "Explanation", vocab: [{ term: "finite", gloss: "有限的" }] },
+            { text: "The point is not that usefulness never matters, but that it should not be the sole gatekeeper, lest we foreclose the discoveries we most need precisely because we could not yet see their use.", fn: "Develop" },
+            { text: "Properly understood, the claim widens the scope of research without abandoning all priorities.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason are largely persuasive.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the outcome of research truly cannot be predicted, confining it to the immediately useful would discard much of its eventual value, and the case is only strengthened by the further truth that knowledge is worth pursuing for its own sake.", fn: "Synthesis" },
+            { text: "Fund the search for understanding broadly, and the useful discoveries will follow from places no one thought to look.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-093",
