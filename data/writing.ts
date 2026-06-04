@@ -4549,6 +4549,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Although innovations such as video, computers, and the Internet seem to offer schools improved methods for instructing students, these technologies all too often distract from real learning.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that classroom technology often distracts while arguing that its effect depends on use, and reads the statement as a caution about use rather than a verdict on the tools; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A laptop open in a classroom can be a window onto the world's knowledge or a doorway to endless distraction, and often it is both at once.", fn: "Hook" },
+            { text: "The statement leans toward the gloomier view, warning that video, computers, and the Internet, for all their promise, all too often distract students from real learning.", fn: "Context (the statement)" },
+            { text: "The statement names a genuine danger, but it overstates the case, because these technologies are tools whose effect depends entirely on how they are used, and used well they enrich learning as much as misused they undermine it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The distraction is real",
+          sentences: [
+            { text: "It is true that classroom technology frequently distracts more than it teaches.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "A device that can open an encyclopedia can just as easily open a game, a chat, or a video, and the same screen that delivers a lesson competes with everything else online for a student's attention.", fn: "Explanation" },
+            { text: "Studies repeatedly find students researching a topic while drifting into social media, and a classroom of glowing laptops is often a classroom of divided minds.", fn: "Example" },
+            { text: "Technology can also create the illusion of learning — flashy videos and slick presentations that entertain without teaching — substituting stimulation for understanding.", fn: "Develop", vocab: [{ term: "illusion", gloss: "錯覺；假象" }, { term: "stimulation", gloss: "刺激；娛樂刺激" }] },
+            { text: "So the statement is right that these tools, carelessly used, can crowd out the very learning they were meant to support.", fn: "Sub-conclusion" },
+            { text: "A tool that can do anything can also do nothing useful.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But used well, technology helps",
+          sentences: [
+            { text: "However, to conclude that these technologies distract from real learning is to blame the tool for the hand that wields it.", fn: "Pivot", moves: ["However"] },
+            { text: "The same Internet that distracts also gives a curious student instant access to lectures, libraries, and experts once available only to a privileged few.", fn: "Point" },
+            { text: "Video can show a chemical reaction or a distant country no textbook could convey, and computers let students model, simulate, and practice in ways a chalkboard never allowed.", fn: "Explanation", vocab: [{ term: "simulate", gloss: "模擬；仿真" }] },
+            { text: "A child in a remote village can now learn from the world's best teachers, and a struggling student can review a difficult lesson as many times as she needs.", fn: "Example" },
+            { text: "Used deliberately, to do what older methods cannot, these tools do not distract from learning but deepen and democratize it.", fn: "Develop", vocab: [{ term: "democratize", gloss: "使普及；使大眾化" }] },
+            { text: "The technology that distracts the careless empowers the purposeful.", fn: "Sub-conclusion" },
+            { text: "The fault, when it appears, lies less in the tool than in how we use it.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The real issue is how we use it",
+          sentences: [
+            { text: "Moreover, the statement is most useful as a caution about use, not a verdict about technology.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Whether a computer helps or harms depends on the design of the lesson, the discipline of the student, and the skill of the teacher who directs it.", fn: "Point", vocab: [{ term: "discipline", gloss: "自律；紀律" }] },
+            { text: "A good teacher uses technology to focus attention, not to scatter it, and sets it aside when a quieter method works better.", fn: "Explanation" },
+            { text: "The answer to the danger the statement names is not to banish these tools but to use them wisely, teaching students to direct their attention rather than surrender it.", fn: "Develop" },
+            { text: "The screen is neither teacher nor distraction in itself; it becomes whatever the classroom makes of it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, technology can distract from real learning, but it does not have to, and often does the very opposite.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "These tools are powerful in either direction, enriching learning when used with purpose and undermining it when used without, so the problem lies in our use of them rather than in the tools themselves.", fn: "Synthesis" },
+            { text: "The task is not to fear the new tools but to master them, so that they serve learning instead of stealing it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-070",
@@ -4557,6 +4613,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best ideas arise from a passionate interest in commonplace things.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that passionate attention to the ordinary has produced extraordinary ideas, then argues that great ideas have many sources and that it is the passion, not the commonplace, that the statement should credit; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Newton watched an apple fall, Darwin studied barnacles and finches, and countless breakthroughs began with someone paying unusual attention to something utterly ordinary.", fn: "Hook" },
+            { text: "The statement generalizes from such cases, claiming that the best ideas arise from a passionate interest in commonplace things.", fn: "Context (the statement)" },
+            { text: "There is real insight here, because intense attention to the ordinary has produced extraordinary ideas, but the statement claims too much, since great ideas spring from many sources, not the commonplace alone.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Passionate attention to the ordinary is powerful",
+          sentences: [
+            { text: "It is true that some of the most profound ideas have grown from a fascination with everyday things.", fn: "Concession (topic sentence)", vocab: [{ term: "profound", gloss: "深刻的；意義深遠的" }], moves: ["It is true that"] },
+            { text: "The commonplace is so familiar that most people stop noticing it, and the person who looks again, with passion and patience, often sees what everyone else has overlooked.", fn: "Explanation" },
+            { text: "Gravity is the most ordinary experience imaginable, yet by taking the falling apple seriously Newton uncovered a law that governs the cosmos.", fn: "Example" },
+            { text: "Pasteur's interest in souring milk led to germ theory, and the study of a humble mould gave us antibiotics, because passionate attention turns the ordinary into a doorway.", fn: "Develop" },
+            { text: "So the statement captures a genuine and underrated truth: the everyday, looked at closely enough, is full of undiscovered ideas.", fn: "Sub-conclusion" },
+            { text: "Familiarity hides more than distance ever does.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But great ideas come from elsewhere too",
+          sentences: [
+            { text: "However, to make the commonplace the source of the best ideas ignores how many great ideas come from the opposite direction.", fn: "Pivot", moves: ["However"] },
+            { text: "Some of humanity's deepest insights arose not from ordinary things but from grand, abstract questions remote from daily life.", fn: "Point", vocab: [{ term: "abstract", gloss: "抽象的" }] },
+            { text: "Einstein's relativity came from imagining riding a beam of light, and much of mathematics explores worlds with no commonplace counterpart at all.", fn: "Example" },
+            { text: "Other great ideas come from accident, from collaboration, from the clash of disciplines, or from confronting a crisis, none of which is captured by passionate interest in commonplace things.", fn: "Explanation" },
+            { text: "A doctor's idea may come from a rare disease, an engineer's from an exotic material, an artist's from a dream, sources that are anything but ordinary.", fn: "Develop" },
+            { text: "The best ideas have too many origins for any single one, even the commonplace, to claim them all.", fn: "Sub-conclusion" },
+            { text: "Inspiration keeps no fixed address.", fn: "Reinforce", vocab: [{ term: "inspiration", gloss: "靈感" }] },
+          ],
+        },
+        {
+          role: "Body — The common thread is passion, not the commonplace",
+          sentences: [
+            { text: "Moreover, what the examples really share is not the commonplace but the passion.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The deeper truth is that great ideas come from intense, devoted attention, whether that attention falls on the ordinary or the extraordinary.", fn: "Point" },
+            { text: "Newton's apple and Einstein's light beam differ in their subject but not in the obsessive curiosity that turned each into a discovery.", fn: "Explanation", vocab: [{ term: "obsessive", gloss: "著迷的；念念不忘的" }, { term: "curiosity", gloss: "好奇心" }] },
+            { text: "The statement is right to prize passion but wrong to tie it to the commonplace, when the same passion fastened on the rare or the abstract is just as fruitful.", fn: "Develop" },
+            { text: "It is the depth of interest, not the ordinariness of its object, that breeds the best ideas.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, passionate interest in commonplace things is one rich source of great ideas, but not the only one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Intense attention to the ordinary has produced extraordinary discoveries, yet great ideas also arise from the abstract, the accidental, and the rare, so it is the passion, not the commonplace, that the statement should have credited.", fn: "Synthesis" },
+            { text: "The best ideas come not from ordinary things but from extraordinary attention, wherever it happens to fall.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-071",
@@ -4565,6 +4677,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "To be an effective leader, a public official must maintain the highest ethical and moral standards.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues that effectiveness rests mainly on competence and sometimes on compromise, then meets the strongest counter — that ethics secures trust — by distinguishing basic integrity from the highest standards; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We want our leaders to be both good and effective, and we like to believe the two always go together.", fn: "Hook" },
+            { text: "The claim insists they do, holding that to be an effective leader, a public official must maintain the highest ethical and moral standards.", fn: "Context (the claim)" },
+            { text: "Ethical standards genuinely matter to leadership, but the claim overstates the case, because effectiveness depends above all on competence, and history is full of effective leaders whose morals were far from the highest.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Effectiveness depends mainly on competence",
+          sentences: [
+            { text: "First, what makes a leader effective is, before anything else, the ability to get important things done.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A public official succeeds by making wise decisions, managing crises, building coalitions, and delivering results, and none of these is the same as moral purity.", fn: "Explanation" },
+            { text: "History records leaders of dubious private character who governed brilliantly, and saints whose high ideals left them helpless in the rough world of politics.", fn: "Example" },
+            { text: "Effectiveness is a matter of skill and judgment, and a flawless conscience guarantees neither, just as a flawed one need not prevent either.", fn: "Develop" },
+            { text: "So the claim errs in treating the highest morality as the key to effectiveness, when competence is the surer source.", fn: "Sub-conclusion", vocab: [{ term: "competence", gloss: "能力；勝任" }] },
+            { text: "Goodness and capability are different virtues, and leadership needs both, but it runs on the second.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Governing often requires compromise",
+          sentences: [
+            { text: "Moreover, the rough business of governing often requires the very compromises the highest standards forbid.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "An effective leader must bargain with opponents, conceal some intentions, and sometimes choose the lesser of two evils, none of which fits a standard of moral perfection.", fn: "Point" },
+            { text: "A leader too pure to make a deal, dirty his hands, or accept a flawed compromise may keep his conscience spotless while accomplishing nothing.", fn: "Explanation" },
+            { text: "Many admired statesmen achieved great goods — peace, reform, survival — only by means a strict moralist would condemn.", fn: "Example" },
+            { text: "This is not to praise corruption but to recognize that effectiveness in a messy world is not the same as ethical immaculacy.", fn: "Develop", vocab: [{ term: "immaculacy", gloss: "純潔無瑕；毫無缺點" }] },
+            { text: "The highest standards, rigidly held, can be a handicap rather than a help in the exercise of power.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The strongest case: ethics secures trust",
+          sentences: [
+            { text: "The most compelling argument for the claim is that ethics underpins the trust on which leadership depends.", fn: "Identify the strongest counter", moves: ["The most compelling"] },
+            { text: "A leader caught in serious wrongdoing loses credibility, invites scandal, and squanders the public confidence without which little can be achieved.", fn: "Concede its force", vocab: [{ term: "credibility", gloss: "信譽；公信力" }] },
+            { text: "This is true and important, but it shows that a leader needs a basic, reliable integrity, not that he must maintain the highest possible moral standards in every respect.", fn: "Rebut", vocab: [{ term: "integrity", gloss: "正直；誠信" }] },
+            { text: "There is a vast space between a corrupt official and a moral saint, and the most effective leaders usually live in it: honest enough to be trusted, pragmatic enough to be effective.", fn: "Explain", vocab: [{ term: "pragmatic", gloss: "務實的；實事求是的" }] },
+            { text: "Effectiveness requires enough ethics to keep trust, not the highest ethics imaginable.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, ethical standards matter to leadership, but the claim that the highest ones are necessary for effectiveness goes too far.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Effectiveness rests mainly on competence and often on pragmatic compromise, while ethics matters chiefly by securing trust, so a leader needs solid integrity rather than moral perfection.", fn: "Synthesis" },
+            { text: "We should want leaders who are both good and capable, but we should not pretend that only the morally highest can ever lead well.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-072",
@@ -4573,6 +4740,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Imagination is a more valuable asset than experience. Reason: People who lack experience are free to imagine what is possible without the constraints of established habits and attitudes.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): correctly grants the reason a partial truth and shows it does not justify the claim, since imagination needs experience to be worth anything; clear and well organized, if it could press the point a little harder.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We celebrate the visionary who imagines what has never been, and we sometimes pity the veteran weighed down by the way things have always been done.", fn: "Hook" },
+            { text: "The claim that imagination is more valuable than experience rests on the reason that those who lack experience are free to imagine the possible, unconstrained by established habits and attitudes.", fn: "Context (claim and reason)" },
+            { text: "The reason contains a kernel of truth, but it does not justify the claim, because imagination and experience are not rivals but partners, and experience usually strengthens imagination rather than caging it.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is partly true",
+          sentences: [
+            { text: "First, the reason rightly notes that inexperience can sometimes free the mind.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "A newcomer is not yet bound by the assumptions that long practice quietly instills, and may imagine a solution that veterans have stopped believing is possible.", fn: "Explanation", vocab: [{ term: "assumptions", gloss: "假設；成見" }] },
+            { text: "Outsiders have indeed transformed fields precisely because they did not know which ideas were supposed to be off limits.", fn: "Example" },
+            { text: "Experience can harden into habit, and habit can blind even the talented to alternatives they no longer think to consider.", fn: "Develop" },
+            { text: "So the reason is not baseless: a lack of experience can, on occasion, be a kind of freedom.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But it does not justify the claim",
+          sentences: [
+            { text: "However, that inexperience sometimes frees imagination does not make imagination more valuable than experience.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "Imagination without experience is mostly idle fantasy, since experience is what tells us which imagined possibilities are worth pursuing and how to make them real.", fn: "Point", vocab: [{ term: "fantasy", gloss: "幻想；空想" }] },
+            { text: "A child can imagine a city on Mars, but only experienced engineers and scientists could begin to build one; the vision is empty without the knowledge to realize it.", fn: "Explanation" },
+            { text: "The great innovators we admire were rarely ignorant dreamers; they were people who imagined boldly because they understood their field deeply enough to see where it could go.", fn: "Example", vocab: [{ term: "innovators", gloss: "創新者" }] },
+            { text: "Experience also feeds imagination, supplying the raw material — the problems, patterns, and possibilities — from which new ideas are actually built.", fn: "Develop" },
+            { text: "Far from being imagination's rival, experience is usually its fuel and its guide.", fn: "Sub-conclusion" },
+            { text: "A vision no one yet knows how to build is, by itself, just a wish.", fn: "Aphoristic" },
+            { text: "An imagination with nothing to work on imagines nothing worthwhile.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The reason romanticizes inexperience",
+          sentences: [
+            { text: "Moreover, the reason mistakes the rare case for the rule.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "For every outsider whose fresh imagination succeeded, countless inexperienced dreamers imagined the impossible and achieved nothing, because they lacked the experience to tell vision from delusion.", fn: "Point", vocab: [{ term: "delusion", gloss: "妄想；錯覺" }] },
+            { text: "The constraints of established habits the reason scorns are often hard-won lessons about what does not work, not mere prejudice to be ignored.", fn: "Explanation", vocab: [{ term: "prejudice", gloss: "偏見；成見" }] },
+            { text: "The most valuable mind is not the inexperienced one free to imagine anything, but the experienced one that can imagine and judge at once.", fn: "Develop" },
+            { text: "The veteran's caution is often experience quietly whispering what the dreamer cannot yet hear.", fn: "Sharpen" },
+            { text: "Freedom from experience is freedom from knowledge, which is no advantage at all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is partly true but the claim does not follow from it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Inexperience can occasionally free the imagination, but imagination needs experience to become anything more than daydreaming, so the two are partners and neither is simply more valuable than the other.", fn: "Synthesis" },
+            { text: "The most powerful asset is not imagination over experience, but imagination informed by it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-073",
@@ -4581,6 +4805,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In most professions and academic fields, imagination is more important than knowledge.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that imagination drives the advances we admire while arguing that in most fields knowledge is the indispensable foundation imagination must build on, and that the two are partners; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Einstein once said that imagination is more important than knowledge, and the statement extends his famous remark to most professions and fields.", fn: "Hook" },
+            { text: "It holds that in most professions and academic disciplines, imagination matters more than knowledge.", fn: "Context (the statement)" },
+            { text: "Imagination is indeed vital, and easy to undervalue, but the statement overstates its case, because in most fields knowledge is the indispensable foundation on which imagination must build.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Imagination is genuinely vital",
+          sentences: [
+            { text: "It is true that imagination drives the advances we most admire.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Knowledge tells us what is; imagination asks what might be, and every leap forward — a new theory, a new design, a new cure — begins with someone imagining a possibility that did not yet exist.", fn: "Explanation" },
+            { text: "Two scientists may possess identical knowledge, yet only the one who imagines a new experiment makes the discovery.", fn: "Example" },
+            { text: "In creative and frontier work especially, mere knowledge is not enough; it is imagination that turns facts into innovation.", fn: "Develop", vocab: [{ term: "innovation", gloss: "創新" }] },
+            { text: "So the statement is right that imagination is precious and too often neglected in favor of memorized fact.", fn: "Sub-conclusion" },
+            { text: "Facts are inert until an imagination puts them to work.", fn: "Aphoristic" },
+            { text: "Knowledge fills the mind; imagination moves it forward.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But knowledge is the foundation",
+          sentences: [
+            { text: "However, in most professions and fields, imagination cannot function without a deep base of knowledge.", fn: "Pivot", moves: ["However"] },
+            { text: "Imagination is not conjured from nothing; it works on what we know, recombining and extending it, so the richer one's knowledge, the more one has to imagine with.", fn: "Point", vocab: [{ term: "recombining", gloss: "重新組合；重組" }] },
+            { text: "A doctor's imaginative diagnosis, an engineer's bold design, and a historian's fresh interpretation all rest on years of accumulated knowledge that make the imaginative leap possible and reliable.", fn: "Explanation", vocab: [{ term: "accumulated", gloss: "累積的" }] },
+            { text: "An imaginative idea about medicine from someone who knows no biology is worthless, even dangerous, while the great medical imaginations belonged to people who first mastered the field.", fn: "Example" },
+            { text: "In the daily reality of most professions, moreover, sound knowledge matters far more often than flashes of imagination; we want our surgeons, accountants, and pilots to know their craft thoroughly first.", fn: "Develop", vocab: [{ term: "thoroughly", gloss: "徹底地" }] },
+            { text: "The bolder the idea, the more knowledge it takes to tell whether it could ever stand up.", fn: "Develop" },
+            { text: "Knowledge is what most work actually requires, and what imagination, when it comes, depends upon.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — They are partners, not rivals",
+          sentences: [
+            { text: "Moreover, the statement sets up a false contest between two things that plainly need each other.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Knowledge without imagination is sterile, merely repeating what is known; imagination without knowledge is empty, dreaming without the means to build.", fn: "Point", vocab: [{ term: "sterile", gloss: "貧乏的；無成果的" }] },
+            { text: "The greatest figures in any field combine the two, knowing their subject deeply and imagining boldly beyond it, and neither half alone would have sufficed.", fn: "Explanation" },
+            { text: "To ask which is more important is a little like asking whether the foundation or the architecture matters more to a building.", fn: "Develop" },
+            { text: "Imagination distinguishes the great, but knowledge is what makes them competent in the first place.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, imagination is invaluable, but it is not, in most fields, more important than knowledge.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Imagination supplies the vision and knowledge the means, and since imagination can only work on what is known, the two are partners rather than rivals to be ranked.", fn: "Synthesis" },
+            { text: "The best professionals are not those who choose imagination over knowledge, but those who marry the two.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-074",
@@ -4589,6 +4870,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Critical judgment of work in any given field has little value unless it comes from someone who is an expert in that field.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that expertise is indispensable for technical judgment while arguing that much valuable judgment is non-expert and that the right judge depends on the question; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When a critic pans a film or a layperson questions a scientific theory, we often ask: what gives them the right, if they are not experts?", fn: "Hook" },
+            { text: "The statement answers firmly, holding that critical judgment of work in any field has little value unless it comes from an expert in that field.", fn: "Context (the statement)" },
+            { text: "Expertise certainly improves certain kinds of judgment, but the statement goes too far, because much valuable criticism comes from non-experts, and some fields exist precisely to be judged by ordinary people.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Expertise improves technical judgment",
+          sentences: [
+            { text: "It is true that for many judgments, expertise is indispensable.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Only someone trained in a field fully understands its problems, methods, and standards, and can tell a genuine advance from a plausible-looking error.", fn: "Explanation" },
+            { text: "A non-physicist cannot meaningfully judge whether a new theory is sound, and a patient cannot assess a surgeon's technique the way another surgeon can.", fn: "Example" },
+            { text: "For technical correctness — is this proof valid, this diagnosis right, this engineering safe — the informed judgment of experts is worth far more than the opinion of the crowd.", fn: "Develop" },
+            { text: "So the statement is right that, on questions of technical merit, expert judgment carries a weight amateur judgment cannot.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But much valuable judgment is not expert",
+          sentences: [
+            { text: "However, to say that non-expert judgment has little value ignores how much of it is both valid and necessary.", fn: "Pivot", moves: ["However"] },
+            { text: "A great deal of work is made for ordinary people, and on whether it succeeds for them, ordinary people are the real experts.", fn: "Point" },
+            { text: "A film, a novel, a product, or a building is judged in part by how it affects its audience or users, and their response — does it move me, does it work for me — is not an amateur error but the very point.", fn: "Example", vocab: [{ term: "audience", gloss: "觀眾；受眾" }] },
+            { text: "The fresh eye of an outsider can also catch what insiders, deep in their assumptions, have stopped seeing, which is why fields often benefit from external criticism.", fn: "Explanation", vocab: [{ term: "assumptions", gloss: "假設；成見" }] },
+            { text: "Even on technical matters, history shows experts collectively mistaken, their consensus corrected by an outsider or by results no credential could override.", fn: "Develop", vocab: [{ term: "consensus", gloss: "共識" }, { term: "credential", gloss: "資歷；憑證" }] },
+            { text: "Valuable judgment, in short, is not the monopoly of experts.", fn: "Sub-conclusion", vocab: [{ term: "monopoly", gloss: "壟斷；獨占" }] },
+            { text: "The diner, not only the chef, can tell whether the meal is any good.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Match the judge to the question",
+          sentences: [
+            { text: "Moreover, the truth is that different judgments call for different judges.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "On questions of technical correctness, defer to experts; on questions of value, usefulness, or human effect, the audience's judgment may matter more.", fn: "Point" },
+            { text: "The statement errs by treating all critical judgment as the kind only experts can offer, when much of what is worth judging is precisely how work serves the non-experts it is meant for.", fn: "Explanation" },
+            { text: "A wise field listens to experts on its methods and to everyone on its purposes, rather than dismissing all outside voices as worthless.", fn: "Develop" },
+            { text: "Expertise should inform judgment, not monopolize it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, expert judgment is invaluable on technical questions but far from the only judgment that has value.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because much work exists to serve non-experts and outsiders sometimes see what insiders miss, critical judgment from beyond the field is often essential, not worthless.", fn: "Synthesis" },
+            { text: "The right question is not whether a critic is an expert, but whether their judgment fits the kind of question being asked.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-075",
