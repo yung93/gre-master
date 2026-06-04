@@ -399,6 +399,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best way to teach — whether as an educator, employer, or parent — is to praise positive actions and ignore negative ones.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a Claim-appropriate response that takes a clear stand across all three roles, then squarely confronts the most compelling objection and answers it; concrete examples and good control of language.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Whether the setting is a classroom, an office, or a family kitchen, the people in charge face the same daily choice about how to respond when someone does well and when someone falls short.", fn: "Hook (the shared problem)" },
+            { text: "One popular answer, captured in the claim, is that the best approach in every such role is to praise positive actions and simply ignore negative ones.", fn: "Context (the claim)" },
+            { text: "Praise is indeed a powerful tool in all three settings, but the claim overreaches, because ignoring negative actions deprives students, employees, and children alike of the correction they need to grow.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Where the claim is right",
+          sentences: [
+            { text: "It is true that praise accomplishes a great deal that criticism never can.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "A nervous new employee who is thanked for a small success takes on the next task with confidence, just as a child praised for trying hard learns that effort is worth repeating.", fn: "Example across contexts" },
+            { text: "Scold a child for every spilled drink and she soon stops trying to pour at all.", fn: "Reinforce the point" },
+            { text: "Encouragement builds the motivation and trust on which lasting improvement depends, and a manager or parent who notices only failures soon finds people hiding their mistakes rather than fixing them.", fn: "Explanation", vocab: [{ term: "motivation", gloss: "動機；動力" }] },
+            { text: "Recognition, freely given, makes people want to repeat the very behavior that earned it.", fn: "Reinforce" },
+            { text: "So the claim is right that praise should be the dominant note in teaching of every kind.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where it fails",
+          sentences: [
+            { text: "However, the instruction to ignore negative actions is where the claim goes badly wrong.", fn: "Pivot", moves: ["However"] },
+            { text: "An employee who repeatedly misses deadlines, a student who keeps misunderstanding a concept, a child who treats others unkindly — none of these improves simply because the problem is left unmentioned.", fn: "Example" },
+            { text: "Silence in the face of a fault is not neutrality; it quietly signals approval, the behavior hardens into habit, and everyone nearby draws the lesson that such conduct carries no consequences.", fn: "Explanation", vocab: [{ term: "consequences", gloss: "後果" }] },
+            { text: "The small unkindness a parent overlooks today can become the cruelty a teacher is forced to confront tomorrow.", fn: "Trace the cost forward" },
+            { text: "A new employee never told that his reports arrive late simply assumes they are fine and keeps filing them late.", fn: "Workplace example" },
+            { text: "In every one of the three roles, refusing to correct is not kindness but neglect dressed up as patience.", fn: "Sub-conclusion", vocab: [{ term: "neglect", gloss: "忽視；疏忽" }] },
+          ],
+        },
+        {
+          role: "Body — The strongest objection",
+          sentences: [
+            { text: "The most compelling case for the claim is that correction, clumsily delivered, can crush confidence and breed resentment.", fn: "Identify the strongest counter", moves: ["The most compelling"] },
+            { text: "There is real force in this worry, since harsh, public, or relentless criticism does demoralize people and can undo everything praise has built.", fn: "Concede its force", vocab: [{ term: "demoralize", gloss: "使氣餒；使士氣低落" }] },
+            { text: "But this objection argues against bad correction, not against correction itself, and the remedy is to correct skillfully rather than to fall silent.", fn: "Rebut" },
+            { text: "Pointing out a fault privately, specifically, and as a problem to be solved together preserves the relationship while still addressing the mistake.", fn: "Explain how" },
+            { text: "A surgeon who is never told about a sloppy technique will go on endangering patients, however cheerful the operating room.", fn: "High-stakes example" },
+            { text: "Handled this way, correction becomes a form of respect, a sign that the teacher, manager, or parent believes the person capable of better.", fn: "Reframe correction as respect", vocab: [{ term: "respect", gloss: "尊重" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is half right and half harmful.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "In the classroom, the workplace, and the home alike, praise should lead, but ignoring negative actions would leave people to repeat errors that no one was willing to name.", fn: "Synthesis" },
+            { text: "To praise everything indiscriminately is, in the end, to praise nothing at all.", fn: "Aphoristic addition" },
+            { text: "The best teachers, in any role, praise generously and correct kindly, understanding that genuine care sometimes means refusing to look away.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-008",
@@ -407,6 +464,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Teachers' salaries should be based on their students' academic performance.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the claim with two strong, well-developed reasons and then meets the accountability objection head-on with a fairer alternative; clear organization and persuasive examples.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It seems only fair that the best teachers should earn the most, and few measures of teaching look more objective than how well a teacher's students perform.", fn: "Hook (the intuitive appeal)" },
+            { text: "From this intuition comes the claim that teachers' salaries should be based on their students' academic performance, rewarding success and discouraging failure.", fn: "Context (the claim)" },
+            { text: "Appealing as it sounds, I disagree, because a student's performance depends on far more than the teacher, and tying pay to test scores would distort teaching while punishing those who take on the hardest classrooms.", fn: "Thesis statement (clear position)", vocab: [{ term: "distort", gloss: "扭曲；使失真" }] },
+          ],
+        },
+        {
+          role: "Body — Performance is not the teacher alone",
+          sentences: [
+            { text: "First, academic results reflect a host of factors that lie entirely outside a teacher's control.", fn: "Topic sentence", vocab: [{ term: "factors", gloss: "因素" }], moves: ["First"] },
+            { text: "A child's home life, health, language, prior schooling, and even hunger shape test scores at least as much as anything that happens in the classroom.", fn: "Example" },
+            { text: "A devoted teacher in a poor neighborhood may lift her students enormously and still see lower scores than a mediocre teacher in a wealthy suburb whose pupils arrive already ahead.", fn: "Develop the inequity" },
+            { text: "Judging the teacher by the raw result is like judging a doctor solely by how sick her patients happened to be on arrival.", fn: "Analogy" },
+            { text: "Two teachers of equal skill can produce wildly different scores simply because one was handed a stronger class than the other.", fn: "Reinforce the inequity" },
+            { text: "To pay the first teacher less than the second would reward circumstances rather than skill, which is precisely the unfairness the policy claims to cure.", fn: "State the implication" },
+          ],
+        },
+        {
+          role: "Body — Perverse incentives",
+          sentences: [
+            { text: "Worse, linking pay directly to scores would corrupt the very teaching it aims to improve.", fn: "Pivot", vocab: [{ term: "corrupt", gloss: "敗壞；使墮落" }], moves: ["Worse"] },
+            { text: "Teachers under such pressure would have every reason to teach narrowly to the test, drill memorization over understanding, and quietly steer weak students away from their classes.", fn: "Example" },
+            { text: "The richest parts of education — curiosity, creativity, the slow building of character — produce nothing a standardized test can capture, and so would be the first casualties.", fn: "Explanation", vocab: [{ term: "standardized", gloss: "標準化的" }] },
+            { text: "Over time the policy would drive the best teachers out of the struggling schools that need them most, since no one would volunteer to be paid less for harder work.", fn: "Long-term consequence" },
+            { text: "A measure becomes useless, and often harmful, the moment people begin gaming it rather than pursuing what it was meant to track.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The accountability objection",
+          sentences: [
+            { text: "The strongest argument for the claim is that teachers, like everyone else, should be held accountable for results.", fn: "Identify the strongest counter", vocab: [{ term: "accountable", gloss: "負有責任的；應問責的" }], moves: ["The strongest"] },
+            { text: "This is a fair concern, since a school cannot simply ignore whether its students are actually learning anything.", fn: "Concede its force" },
+            { text: "But accountability does not require so crude an instrument as tying salaries to raw test scores.", fn: "Rebut" },
+            { text: "Fairer methods exist — measuring how much a teacher improves her students over a year, weighing classroom observation, and considering peer and parent feedback — that reward genuine effectiveness without the distortions.", fn: "Offer an alternative" },
+            { text: "Good evaluation looks at the distance a teacher's students travel, not merely the point at which they happen to finish.", fn: "Develop the alternative" },
+            { text: "Accountability is a reason to evaluate teachers thoughtfully, not to reduce their worth to a single number.", fn: "Reframe" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim mistakes a convenient measure for a fair one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Students' performance is shaped by forces no teacher commands, and rewarding it directly would punish the dedicated and reward the lucky while narrowing education for everyone.", fn: "Synthesis" },
+            { text: "Fairness in pay should follow the teaching, which a teacher controls, rather than the outcome, which she only partly shapes.", fn: "Reinforce" },
+            { text: "Teachers should certainly be held to high standards, but their pay should reflect the quality of their teaching, not the accident of which students walk through the door.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-009",
@@ -415,6 +528,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Society should make efforts to save endangered species only if the potential extinction of those species is the result of human activities.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a policy-appropriate response that weighs the consequences of the 'only if' rule, shows why they are harmful, and answers the moral intuition behind the policy; coherent and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Conservation is expensive, and with limited money and effort, societies must constantly decide which species are worth the cost of saving.", fn: "Hook (the real constraint)" },
+            { text: "One proposed rule would draw the line by cause, saving species only when human activity is to blame for their decline and letting so-called natural extinctions run their course.", fn: "Context (the policy)" },
+            { text: "Although the policy carries a certain moral logic, I believe its consequences would be harmful, because the value of saving a species rarely depends on what caused its decline.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — The cause is rarely separable",
+          sentences: [
+            { text: "First, implementing the policy would force conservationists into nearly impossible judgments about cause.", fn: "Topic sentence", moves: ["First"] },
+            { text: "In a world reshaped by human agriculture, climate change, and travel, almost no extinction is purely natural, and disentangling human from non-human causes is often impossible.", fn: "Example", vocab: [{ term: "disentangling", gloss: "釐清；區分開" }] },
+            { text: "Officials would waste scarce time and money litigating blame instead of protecting habitats, and many species would vanish while the argument dragged on.", fn: "Consequence" },
+            { text: "Did the fish die because of the new dam, the warming river, or a parasite that has always lurked in these waters, and who could honestly say?", fn: "Illustrate the difficulty" },
+            { text: "A policy that hinges on an unanswerable question is a recipe for paralysis.", fn: "Sub-conclusion", vocab: [{ term: "paralysis", gloss: "癱瘓；停滯" }] },
+          ],
+        },
+        {
+          role: "Body — Consequences ignore the cause",
+          sentences: [
+            { text: "More importantly, the consequences of losing a species do not change according to why it is disappearing.", fn: "Pivot", moves: ["More importantly"] },
+            { text: "A bee that vanishes through some natural shift still leaves crops unpollinated, and a predator lost to disease still allows its prey to multiply and unbalance the ecosystem.", fn: "Example", vocab: [{ term: "ecosystem", gloss: "生態系統" }] },
+            { text: "Nature is a web of dependencies, and removing a strand weakens the whole regardless of cause, so a policy indifferent to natural extinctions would let real and avoidable damage unfold.", fn: "Explanation" },
+            { text: "To stand by and watch, merely because the first domino fell without our help, is to mistake passivity for innocence.", fn: "Sharpen the point" },
+            { text: "The loss of a single keystone species can cascade through an entire landscape, toppling others that quietly depended on it.", fn: "Develop the ecological stakes" },
+            { text: "If the practical harm is the same, the reason to act is the same.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The moral objection",
+          sentences: [
+            { text: "The strongest case for the policy is moral: that humans bear special responsibility for the harm they cause and none for nature's own workings.", fn: "Identify the strongest counter", vocab: [{ term: "responsibility", gloss: "責任" }], moves: ["The strongest"] },
+            { text: "There is something to this, and where humans have driven a species toward extinction, the duty to act is especially clear and urgent.", fn: "Concede its force" },
+            { text: "But responsibility for causing harm is a reason to do more, not a license to do nothing whenever we happen to be blameless.", fn: "Rebut" },
+            { text: "If we have the power to prevent a catastrophe and decline merely because we did not start it, the resulting loss is one we have allowed all the same.", fn: "Explain the consequence" },
+            { text: "A lifeguard does not refuse to save a drowning swimmer simply because he was not the one who pushed the man into the sea.", fn: "Analogy" },
+            { text: "Our obligation flows from our ability to help, not only from our guilt in causing harm.", fn: "Reframe", vocab: [{ term: "obligation", gloss: "義務；責任" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, restricting conservation to human-caused extinctions would do real damage for the sake of a tidy principle.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The cause of a species' decline may help set priorities, but it should not be the gatekeeper that decides whether we act at all.", fn: "Synthesis" },
+            { text: "What we can save, and what it is worth, should weigh far more heavily than the question of original blame.", fn: "Reinforce" },
+            { text: "Faced with a preventable loss, the wiser policy asks not whose fault it is, but whether saving the species is worth the cost and within our power.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-010",
@@ -423,6 +592,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "College students should base their choice of a field of study on the availability of jobs in that field.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): disagrees with a clear, well-supported position and then confronts the practical debt objection rather than dodging it, landing on a balanced synthesis; relevant examples throughout.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "With tuition high and graduates anxious about work, the advice to study whatever the job market wants can sound like simple common sense.", fn: "Hook" },
+            { text: "The claim takes this further, urging that students base their choice of field on the availability of jobs in it.", fn: "Context (the claim)" },
+            { text: "Job prospects deserve serious thought, but I disagree that they should be the basis of the decision, because a field chosen against one's interests and talents often leads to mediocrity and misery rather than security.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Interest and aptitude drive success",
+          sentences: [
+            { text: "First, students tend to excel at what genuinely engages them.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A young woman who loves biology will outwork and outperform a classmate who chose the major only because it seemed employable, and her passion will carry her through the inevitable hard years.", fn: "Example" },
+            { text: "Excellence, not mere enrollment in a popular field, is what ultimately earns good work, and excellence grows from genuine interest far more reliably than from cold calculation.", fn: "Explanation", vocab: [{ term: "excellence", gloss: "卓越；優異" }] },
+            { text: "Interest is what sustains the long, unglamorous hours of practice that real competence quietly requires.", fn: "Develop" },
+            { text: "Employers, after all, hire the candidate who is genuinely good, not the one who merely picked a fashionable major.", fn: "Reinforce" },
+            { text: "Choosing a field one finds dull, simply because jobs exist, often produces a mediocre worker in an overcrowded market.", fn: "Sub-conclusion", vocab: [{ term: "mediocre", gloss: "平庸的" }] },
+          ],
+        },
+        {
+          role: "Body — The market is a moving target",
+          sentences: [
+            { text: "Moreover, betting one's entire education on today's job market is far riskier than it first appears.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Fields that look secure when a student enrolls can be transformed or automated nearly out of existence by the time she graduates four years later.", fn: "Example" },
+            { text: "Skills that transfer — clear thinking, writing, and problem-solving — outlast any particular industry, and these are cultivated best when a student studies something deeply rather than strategically.", fn: "Explanation" },
+            { text: "The graduate who trained for a single narrow role may find that role gone the very moment the technology behind it shifts.", fn: "Risk example" },
+            { text: "Chasing the market can leave a graduate both unhappy and, ironically, unemployed.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The practical objection",
+          sentences: [
+            { text: "The most compelling argument for the claim is practical: degrees are expensive, and a graduate buried in debt cannot afford to be idealistic.", fn: "Identify the strongest counter", moves: ["The most compelling"] },
+            { text: "This is a real and serious concern, and it would be irresponsible to tell students to ignore whether a field can support a livelihood.", fn: "Concede its force", vocab: [{ term: "livelihood", gloss: "生計" }] },
+            { text: "But acknowledging job prospects as one important factor is very different from making them the basis of the entire choice.", fn: "Rebut", vocab: [{ term: "factor", gloss: "因素" }] },
+            { text: "The wiser path is to weigh interest, aptitude, and opportunity together, choosing a field one can both love and live on.", fn: "Synthesis", vocab: [{ term: "aptitude", gloss: "性向；天賦" }] },
+            { text: "Money matters, and pretending otherwise would be a disservice to students already anxious about their futures.", fn: "Concede further" },
+            { text: "Practicality should inform the decision, not dictate it.", fn: "Reframe" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, job availability is a factor to respect, not a rule to obey.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A field chosen purely for its job listings risks producing graduates who are good at nothing in particular and happy in nothing at all.", fn: "Synthesis" },
+            { text: "The happiest and most successful workers tend to be those who found the overlap between what they love and what the world will pay for.", fn: "Reinforce" },
+            { text: "Students should aim where their talents and interests meet real opportunity, rather than surrender the choice to a market that may well have moved on before they arrive.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-011",
@@ -431,6 +656,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "As we acquire more knowledge, things do not become more comprehensible, but more complex and mysterious.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a nuanced reading that grants the statement's truth at the frontier of inquiry while showing that knowledge makes most of the world more comprehensible; vivid examples and a clear synthesis.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "There is a humbling pattern in the history of science: every great discovery seems to open a door onto a room full of new questions.", fn: "Hook" },
+            { text: "The statement seizes on this pattern to make a striking claim — that as we acquire more knowledge, the world becomes not more comprehensible but more complex and mysterious.", fn: "Context (the statement)" },
+            { text: "The statement captures a genuine truth about the frontier of knowledge, but it overstates the case, because the same advances that reveal new mysteries also make vast stretches of the world far more comprehensible than before.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Knowledge expands the unknown",
+          sentences: [
+            { text: "It is true that learning often multiplies our questions faster than our answers.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Physicists who once imagined the atom was the smallest thing now study quarks and fields, and find the universe stranger at every scale they probe.", fn: "Example" },
+            { text: "Each answer redraws the boundary of the unknown, and a curious mind that learns more inevitably becomes aware of how much more there is still to learn.", fn: "Explanation" },
+            { text: "The more a scholar masters, the more sharply she sees the very edges of her own ignorance.", fn: "Develop the point" },
+            { text: "Socrates captured this long ago when he observed that the wisest man is the one who knows how little he truly knows.", fn: "Classical support" },
+            { text: "In this sense knowledge does breed a kind of productive mystery, and the expert is often more conscious of complexity than the novice.", fn: "Sub-conclusion", vocab: [{ term: "complexity", gloss: "複雜性" }, { term: "novice", gloss: "新手" }] },
+          ],
+        },
+        {
+          role: "Body — But most things grow clearer",
+          sentences: [
+            { text: "However, to conclude that the world has become less comprehensible is to confuse the expanding frontier with the settled interior.", fn: "Pivot", vocab: [{ term: "frontier", gloss: "前沿；邊界" }], moves: ["However"] },
+            { text: "Disease was once a terrifying mystery blamed on curses and bad air; now we understand germs, genes, and immune systems well enough to cure illnesses that once killed millions.", fn: "Example" },
+            { text: "Lightning was a god's anger and is now electricity; the wandering of the planets was an omen and is now orbital mechanics taught to schoolchildren.", fn: "Parallel example" },
+            { text: "We forecast storms, transplant organs, and send machines to other planets, feats that would have looked like sorcery to people drowning in older mysteries.", fn: "Concrete modern mastery" },
+            { text: "A farmer today glances at a weather forecast that would have struck his great-grandfather as outright prophecy.", fn: "Everyday example" },
+            { text: "For every new mystery knowledge uncovers, it converts a hundred former mysteries into ordinary, teachable understanding.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Mystery relocated, not multiplied",
+          sentences: [
+            { text: "The deeper point is that knowledge moves the mystery rather than multiplying it overall.", fn: "Topic sentence" },
+            { text: "What grows complex is the leading edge of inquiry, where specialists work; what grows clear is everything behind that edge, which steadily becomes common sense.", fn: "Explanation", vocab: [{ term: "inquiry", gloss: "探究；研究" }] },
+            { text: "A modern person navigates a world enormously more comprehensible than that of their ancestors, even if the experts at the frontier face questions those ancestors never dreamed of.", fn: "Reframe", vocab: [{ term: "comprehensible", gloss: "可理解的" }] },
+            { text: "Knowledge is less a shrinking island of light than a growing one whose lengthening shoreline simply touches more darkness.", fn: "Extend the image" },
+            { text: "The sphere of the understood expands even as the surface where it meets the unknown grows longer.", fn: "Geometric image" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is half true.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Acquiring knowledge does reveal new layers of complexity and mystery at the frontier, but it simultaneously makes enormous portions of the world clearer, safer, and easier to understand.", fn: "Synthesis" },
+            { text: "Confusion is the experience of the researcher at the edge, not of humanity as a whole.", fn: "Sharpen" },
+            { text: "We do not grow more confused as we learn; we grow better informed, even as the horizon of the unknown quietly retreats before us.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-012",
@@ -439,6 +720,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In any situation, progress requires discussion among people who have contrasting points of view.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees with strong reasoning about the value of disagreement, then qualifies the sweeping word 'any' with a fair counterexample; well organized and convincing.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is a comforting idea that the best results come from harmony, from teams that agree and pull smoothly in the same direction.", fn: "Hook" },
+            { text: "The statement insists on the opposite, claiming that in any situation progress requires discussion among people who hold contrasting points of view.", fn: "Context (the statement)" },
+            { text: "I largely agree, because disagreement exposes errors that agreement conceals, though the word 'any' pushes a sound principle a step too far.", fn: "Thesis statement (agree with qualification)" },
+          ],
+        },
+        {
+          role: "Body — Contrasting views cure blind spots",
+          sentences: [
+            { text: "First, contrasting viewpoints are the most reliable cure for the blind spots that afflict any single perspective.", fn: "Topic sentence", vocab: [{ term: "perspective", gloss: "觀點；視角" }], moves: ["First"] },
+            { text: "A team that all thinks alike will share the same assumptions and overlook the same flaws, marching confidently toward a cliff none of them can see.", fn: "Example", vocab: [{ term: "assumptions", gloss: "假設；成見" }] },
+            { text: "An outsider who disagrees forces the group to defend its reasoning, and in defending it they discover the weak joints they had simply taken for granted.", fn: "Explanation" },
+            { text: "This is why courts stage adversarial debate, why science demands peer criticism, and why wise leaders deliberately seek advisers willing to tell them no.", fn: "Support", vocab: [{ term: "adversarial", gloss: "對抗式的；對立的" }] },
+            { text: "The lone decision-maker, however brilliant, has only one vantage point and cannot step outside his own mind to inspect it.", fn: "Reinforce the blind-spot point" },
+            { text: "Progress, in these arenas, is the direct product of friction between opposing views.", fn: "Sub-conclusion", vocab: [{ term: "friction", gloss: "摩擦；衝突" }] },
+          ],
+        },
+        {
+          role: "Body — Opposition tests ideas",
+          sentences: [
+            { text: "Moreover, an idea that has survived genuine opposition is far stronger than one that has never been challenged at all.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A proposal waved through by a room of yes-men carries its hidden weaknesses out into the world, where they surface later as expensive failures.", fn: "Example" },
+            { text: "Debate is a kind of stress test, and the disagreement that feels uncomfortable in the meeting is exactly what prevents disaster in practice.", fn: "Explanation" },
+            { text: "History's worst blunders were often decisions that no one in the room felt safe enough to question out loud.", fn: "Historical reinforcement" },
+            { text: "A culture that treats every objection as disloyalty is quietly arranging its own future failures.", fn: "Warn against suppressing dissent" },
+            { text: "Disagreement caught early in a conversation is cheap; the same flaw discovered after the plan is built can be ruinously expensive.", fn: "Cost-timing point" },
+            { text: "What looks like conflict is often just quality control.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where 'any' overreaches",
+          sentences: [
+            { text: "However, the claim's insistence on any situation whatsoever asks more than the principle can bear.", fn: "Pivot", moves: ["However"] },
+            { text: "Once a decision has been carefully debated and made, endless re-argument becomes an obstacle, and a surgeon mid-operation or a pilot in a storm needs decisive action, not a seminar.", fn: "Example" },
+            { text: "There is a time for contrasting views and a time for united execution, and confusing the two can paralyze a group as surely as groupthink can mislead it.", fn: "Explanation", vocab: [{ term: "groupthink", gloss: "群體迷思" }] },
+            { text: "Even there, the disagreement belonged earlier, while the plan was being weighed, not in the middle of carrying it out.", fn: "Clarify the timing" },
+            { text: "Discussion drives progress when ideas are being formed, but it can obstruct progress when the moment calls for doing.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right in spirit if not in its sweeping any.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "In the crucial work of forming plans, testing ideas, and exposing errors, progress genuinely does depend on the clash of contrasting views.", fn: "Synthesis" },
+            { text: "Argue freely before the decision; then act as one once it is made.", fn: "Aphoristic close" },
+            { text: "The aim is never argument for its own sake but better decisions, and contrasting views remain the surest road to them.", fn: "Reinforce" },
+            { text: "The wise course is to invite vigorous disagreement while deciding, and then to unite firmly behind the decision once it is made.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-013",
