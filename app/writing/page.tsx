@@ -4,7 +4,45 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { WRITING_PROMPTS } from "@/data/writing";
 import { useLocalState } from "@/lib/storage";
-import type { EssaySentence, EssayType, SampleEssay, WritingPrompt } from "@/lib/types";
+import type { EssaySentence, SampleEssay, WritingPrompt } from "@/lib/types";
+
+// Matches the section id slugs on /writing/words so a category filter can deep-link.
+function categorySlug(category: string): string {
+  return category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+interface TaskType {
+  label: string;
+  hint: string;
+}
+
+// Derive the prompt's task type (and the move it asks for) from its directions.
+function taskType(directions: string): TaskType {
+  if (directions.includes("which view more closely aligns"))
+    return { label: "Two Views", hint: "Decide which of the two views you favor, and address both." };
+  if (directions.includes("the reason on which"))
+    return { label: "Claim & Reason", hint: "Evaluate both the claim and the reason it rests on." };
+  if (directions.includes("your views on the policy"))
+    return { label: "Policy", hint: "Weigh the likely consequences of implementing the policy." };
+  if (directions.includes("adopting the recommendation"))
+    return { label: "Recommendation", hint: "Describe circumstances where adopting it would or wouldn't be advantageous." };
+  if (directions.includes("the statement might or might not hold true"))
+    return { label: "Statement", hint: "Consider the ways the statement might or might not hold true." };
+  if (directions.includes("challenge your position"))
+    return { label: "Claim", hint: "Address the strongest reasons or examples that could challenge your position." };
+  return { label: "Issue", hint: "" };
+}
+
+function TaskTypePill({ task }: { task: TaskType }) {
+  return (
+    <span
+      title={task.hint}
+      className="text-[10px] tracking-wide uppercase font-medium px-2 py-0.5 rounded-full bg-[var(--color-accent-soft)] text-[oklch(35%_0.09_195)]"
+    >
+      {task.label}
+    </span>
+  );
+}
 
 function CheckCircleIcon({ className }: { className?: string }) {
   return (
@@ -19,7 +57,6 @@ function CheckCircleIcon({ className }: { className?: string }) {
 }
 
 export default function WritingPage() {
-  const [type, setType] = useState<EssayType>("issue");
   const [category, setCategory] = useState<string>("all");
   const [selectedId, setSelectedId] = useState<string>(() => WRITING_PROMPTS[0].id);
   const [read, setRead] = useLocalState<Record<string, boolean>>("writing/read", {});
@@ -34,26 +71,24 @@ export default function WritingPage() {
   }
 
   const filtered = useMemo(() => {
-    return WRITING_PROMPTS.filter((p) => p.type === type && (category === "all" || p.category === category));
-  }, [type, category]);
+    return WRITING_PROMPTS.filter((p) => category === "all" || p.category === category);
+  }, [category]);
 
   const categories = useMemo(() => {
     const set = new Set<string>();
-    WRITING_PROMPTS.filter((p) => p.type === type).forEach((p) => set.add(p.category));
+    WRITING_PROMPTS.forEach((p) => set.add(p.category));
     return ["all", ...Array.from(set).sort()];
-  }, [type]);
+  }, []);
 
   const selected = useMemo(
     () => WRITING_PROMPTS.find((p) => p.id === selectedId) ?? filtered[0] ?? null,
     [selectedId, filtered],
   );
 
-  function selectType(next: EssayType) {
-    setType(next);
-    setCategory("all");
-    const first = WRITING_PROMPTS.find((p) => p.type === next);
-    if (first) setSelectedId(first.id);
-  }
+  const readCount = useMemo(
+    () => filtered.reduce((n, p) => (read[p.id] ? n + 1 : n), 0),
+    [filtered, read],
+  );
 
   return (
     <div className="page-shell pt-10 pb-20">
@@ -68,26 +103,21 @@ export default function WritingPage() {
             its structural sections; hover a sentence to see the job it does, and the
             useful words and rhetorical signposts are highlighted as you read.
           </p>
-          <Link
-            href="/writing/words"
-            className="inline-block mt-3 text-sm text-[var(--color-accent)] hover:underline underline-offset-4"
-          >
-            Useful words from these samples →
-          </Link>
         </div>
-        <div className="flex gap-2">
-          <button
-            onClick={() => selectType("issue")}
-            className={`btn flex-1 ${type === "issue" ? "btn-primary" : "btn-secondary"}`}
+        <div className="surface-soft px-5 py-4">
+          <p className="eyebrow">Issue pool{category !== "all" ? ` · ${category}` : ""}</p>
+          <p className="serif text-3xl mt-1">
+            {filtered.length}
+            <span className="text-[var(--color-ink-faint)] text-base"> / {WRITING_PROMPTS.length} prompts · </span>
+            <span className="text-[var(--color-success)] text-base font-medium">{readCount}</span>
+            <span className="text-[var(--color-ink-faint)] text-base"> read</span>
+          </p>
+          <Link
+            href={category === "all" ? "/writing/words" : `/writing/words#${categorySlug(category)}`}
+            className="btn btn-secondary text-xs w-full mt-4"
           >
-            Issue Task
-          </button>
-          <button
-            onClick={() => selectType("argument")}
-            className={`btn flex-1 ${type === "argument" ? "btn-primary" : "btn-secondary"}`}
-          >
-            Argument Task
-          </button>
+            Useful words →
+          </Link>
         </div>
       </header>
 
@@ -119,17 +149,17 @@ export default function WritingPage() {
                   active ? "bg-[var(--color-accent-soft)]" : "hover:bg-[oklch(96%_0.005_80)]"
                 }`}
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <p className="eyebrow">{prompt.category}</p>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2 flex-wrap min-w-0">
+                    <p className="eyebrow">{prompt.category}</p>
+                    <TaskTypePill task={taskType(prompt.directions)} />
+                  </div>
                   <div className="flex items-center gap-2 shrink-0">
                     {isRead && (
                       <span title="Read" className="inline-flex text-[var(--color-success)]">
                         <CheckCircleIcon className="w-4 h-4" />
                         <span className="sr-only">Read</span>
                       </span>
-                    )}
-                    {prompt.sample && (
-                      <span className="mono text-[10px] text-[var(--color-accent)]">SAMPLE</span>
                     )}
                   </div>
                 </div>
@@ -168,11 +198,15 @@ interface PromptDetailProps {
 }
 
 function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
+  const tt = taskType(prompt.directions);
   return (
     <>
       <article className="surface p-7 sm:p-9">
         <div className="flex items-baseline justify-between gap-4 mb-4">
-          <p className="eyebrow">{prompt.type === "issue" ? "Issue Task" : "Argument Task"} · {prompt.category}</p>
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <p className="eyebrow">{prompt.category}</p>
+            <TaskTypePill task={tt} />
+          </div>
           <div className="flex items-center gap-3 shrink-0">
             <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
             {prompt.sample && (

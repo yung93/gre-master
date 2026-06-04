@@ -1,19 +1,216 @@
 import type { WritingPrompt } from "@/lib/types";
 
-const ISSUE_DIRECTIONS =
-  "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons or examples that could be used to challenge your position.";
+const D_STATEMENT =
+  "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.";
 
-const ARGUMENT_DIRECTIONS =
-  "Write a response in which you examine the stated and unstated assumptions of the argument. Be sure to explain how the argument depends on the assumptions and what the implications are if the assumptions prove unwarranted.";
+const D_RECOMMENDATION =
+  "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.";
+
+const D_TWO_VIEWS =
+  "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.";
+
+const D_CLAIM =
+  "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.";
+
+const D_CLAIM_REASON =
+  "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.";
+
+const D_POLICY =
+  "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.";
+
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
   {
-    id: "w-issue-edu-1",
+    id: "w-issue-001",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Governments should place few, if any, restrictions on scientific research and development.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-002",
     type: "issue",
     category: "Education",
     prompt:
-      "Universities should require every undergraduate to complete a substantial course of study in a field outside their major.",
-    directions: ISSUE_DIRECTIONS,
+      "The best way to teach is to praise positive actions and ignore negative ones.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-003",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Governments should offer college and university education free of charge to all students.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-004",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "The luxuries and conveniences of contemporary life prevent people from developing into truly strong and independent individuals.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-005",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "In any field of inquiry, the beginner is more likely than the expert to make important contributions.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-006",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "The surest indicator of a great nation is represented not by the achievements of its rulers, artists, or scientists, but by the general welfare of its people.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-007",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "The best way to teach — whether as an educator, employer, or parent — is to praise positive actions and ignore negative ones.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-008",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Teachers' salaries should be based on their students' academic performance.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-009",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "Society should make efforts to save endangered species only if the potential extinction of those species is the result of human activities.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-010",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "College students should base their choice of a field of study on the availability of jobs in that field.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-011",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "As we acquire more knowledge, things do not become more comprehensible, but more complex and mysterious.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-012",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "In any situation, progress requires discussion among people who have contrasting points of view.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-013",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educational institutions should dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-014",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Governments should not fund any scientific research whose consequences are unclear.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-015",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "Society should identify those children who have special talents and provide training for them at an early age to develop their talents.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-016",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "It is primarily through our identification with social groups that we define ourselves.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-017",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "College students should be encouraged to pursue subjects that interest them rather than the courses that seem most likely to lead to jobs.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-018",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Claim: When planning courses, educators should take into account the interests and suggestions of their students. Reason: Students are more motivated to learn when they are interested in what they are studying.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-019",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "The greatness of individuals can be decided only by those who live after them, not by their contemporaries.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-020",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Students should always question what they are taught instead of accepting it passively.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-021",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The increasingly rapid pace of life today causes more problems than it solves.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-022",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Claim: It is no longer possible for a society to regard any living man or woman as a hero. Reason: The reputation of anyone who is subjected to media scrutiny will eventually be diminished.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-023",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Competition for high grades seriously limits the quality of learning at all levels of education.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-024",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Universities should require every student to take a variety of courses outside the student's field of study.",
+    directions: D_RECOMMENDATION,
     sample: {
       score: 5,
       scoreNote:
@@ -149,164 +346,108 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     },
   },
   {
-    id: "w-issue-edu-2",
+    id: "w-issue-025",
     type: "issue",
     category: "Education",
     prompt:
-      "Students learn more from teachers who challenge their assumptions than from teachers who reinforce what they already believe.",
-    directions: ISSUE_DIRECTIONS,
+      "Educators should find out what students want included in the curriculum and then offer it to them.",
+    directions: D_RECOMMENDATION,
   },
   {
-    id: "w-issue-tech-1",
+    id: "w-issue-026",
     type: "issue",
-    category: "Technology",
+    category: "Education",
     prompt:
-      "As societies adopt increasingly sophisticated technologies, they lose more capacities than they gain.",
-    directions: ISSUE_DIRECTIONS,
-    sample: {
-      score: 5,
-      scoreNote:
-        "Strong (5): takes a clear stand, concedes the other side fairly, and supports each point with familiar examples and a historical analogy; fluent and well organized.",
-      sections: [
-        {
-          role: "Introduction",
-          sentences: [
-            {
-              text: "It is easy to believe that technology is quietly making us weaker.",
-              fn: "Hook (the worry)",
-            },
-            {
-              text: "Many people can no longer read a paper map, recall a phone number, or do simple arithmetic without a calculator, and each lost skill seems to prove that our machines are taking something from us.",
-              fn: "Context (evidence for the worry)",
-            },
-            {
-              text: "Yet I disagree with the claim that societies lose more than they gain, because technology does not so much destroy our abilities as shift them, freeing our attention for harder and more valuable work.",
-              fn: "Thesis statement (clear position)",
-              moves: ["Yet"],
-            },
-          ],
-        },
-        {
-          role: "Body — Concede the loss",
-          sentences: [
-            {
-              text: "It is true that certain skills fade once a machine can perform them for us.",
-              fn: "Concession (topic sentence)",
-              moves: ["It is true that"],
-            },
-            {
-              text: "Sailors once navigated by the stars, clerks added long columns of numbers by hand, and students memorized poems and speeches word for word.",
-              fn: "Example",
-              vocab: [{ term: "navigated", gloss: "導航；辨識方向" }],
-            },
-            {
-              text: "Today most of us would struggle to do any of these things, and it is fair to feel some loss when an old human ability quietly disappears.",
-              fn: "Acknowledge the loss honestly",
-            },
-            {
-              text: "Each of these abilities once felt essential, and giving it up can seem like a small defeat.",
-              fn: "Develop the feeling",
-            },
-            {
-              text: "But these losses are usually small, and almost no one truly suffers because a phone now remembers their appointments or an app finds the fastest route.",
-              fn: "Limit the concession",
-              moves: ["But"],
-            },
-          ],
-        },
-        {
-          role: "Body — The gain (main reason)",
-          sentences: [
-            {
-              text: "More importantly, the time and mental effort that machines save us are not simply lost; they are set free for other uses.",
-              fn: "Topic sentence (main reason)",
-              moves: ["More importantly"],
-            },
-            {
-              text: "A student who no longer spends an hour on long division can spend that hour learning to interpret data, design an experiment, or analyze an argument.",
-              fn: "Example",
-              vocab: [{ term: "analyze", gloss: "分析" }],
-            },
-            {
-              text: "The basic skill is handed to a machine so that a higher skill can take its place.",
-              fn: "Explanation",
-            },
-            {
-              text: "History offers a reassuring example, since the invention of writing removed the need to memorize the long stories that earlier societies had carried only in memory.",
-              fn: "Supporting analogy",
-            },
-            {
-              text: "No reasonable person believes that books made human beings less intelligent; instead, writing allowed knowledge to grow far beyond what any single memory could hold.",
-              fn: "Drive the analogy home",
-              vocab: [{ term: "intelligent", gloss: "聰明的；有智慧的" }],
-            },
-            {
-              text: "In the same way, calculators did not make engineers worse at their jobs; they let engineers spend their time on design rather than on hand calculation.",
-              fn: "Second example",
-            },
-          ],
-        },
-        {
-          role: "Body — Counterargument",
-          sentences: [
-            {
-              text: "Of course, this does not mean that every change is harmless.",
-              fn: "Pivot to the opposing view",
-              moves: ["Of course"],
-            },
-            {
-              text: "A society that depends on technology without understanding it can become dangerously helpless when that technology fails, whether the power goes out, the network breaks, or the software makes a mistake no one notices.",
-              fn: "State the objection",
-              vocab: [{ term: "helpless", gloss: "無助的；無能為力的" }],
-            },
-            {
-              text: "A pilot, for example, should still know how to fly when the autopilot fails, and a student should still understand the math a calculator performs.",
-              fn: "Illustrate the safeguard",
-            },
-            {
-              text: "The right response, however, is not to reject new tools but to keep teaching the fundamentals behind them, so that people stay in control of their machines rather than the other way around.",
-              fn: "Answer the objection",
-              moves: ["however"],
-            },
-          ],
-        },
-        {
-          role: "Conclusion",
-          sentences: [
-            {
-              text: "In conclusion, advanced technology changes our abilities far more than it reduces them, because for every skill that fades a new and often more powerful one becomes possible.",
-              fn: "Restate the position",
-              moves: ["In conclusion"],
-            },
-            {
-              text: "The pattern has repeated for centuries, from writing to printing to computers, and in each case society grew more capable rather than less.",
-              fn: "Generalize the pattern",
-            },
-            {
-              text: "As long as we stay aware of what we give up and protect the skills that truly matter, we gain far more than we lose.",
-              fn: "Final judgment",
-              vocab: [{ term: "aware", gloss: "意識到的；警覺的" }],
-            },
-          ],
-        },
-      ],
-    },
+      "Educators should teach facts only after their students have studied the ideas, trends, and concepts that help explain those facts.",
+    directions: D_RECOMMENDATION,
   },
   {
-    id: "w-issue-tech-2",
+    id: "w-issue-027",
     type: "issue",
-    category: "Technology",
+    category: "Education",
     prompt:
-      "Governments should regulate emerging technologies before, rather than after, those technologies become widely adopted.",
-    directions: ISSUE_DIRECTIONS,
+      "Claim: We can usually learn much more from people whose views we share than from those whose views contradict our own. Reason: Disagreement can cause stress and inhibit learning.",
+    directions: D_CLAIM_REASON,
   },
   {
-    id: "w-issue-gov-1",
+    id: "w-issue-028",
     type: "issue",
     category: "Government & Policy",
     prompt:
-      "Public officials should be guided primarily by what is feasible rather than by what is ideal.",
-    directions: ISSUE_DIRECTIONS,
+      "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people they serve.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-029",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Young people should be encouraged to pursue long-term, realistic goals rather than seek immediate fame and recognition.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-030",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "If a goal is worthy, then any means taken to attain it are justifiable.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-031",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "In order to become well-rounded individuals, all college students should be required to take courses in which they read poetry, novels, mythology, and other types of imaginative literature.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-032",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "In order for any work of art — for example, a film, a novel, a poem, or a song — to have merit, it must be understandable to most people.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-033",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Many important discoveries or creations are accidental: it is usually while seeking the answer to one question that we come across the answer to another.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-034",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The main benefit of the study of history is to dispel the illusion that people living now are significantly different from people who lived in earlier times.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-035",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Learning is primarily a matter of personal discipline; students cannot be motivated by school or college alone.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-036",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Scientists and other researchers should focus their research on areas that are likely to benefit the greatest number of people.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-037",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Politicians should pursue common ground and reasonable consensus rather than elusive ideals.",
+    directions: D_RECOMMENDATION,
     sample: {
       score: 4.5,
       scoreNote:
@@ -444,560 +585,827 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     },
   },
   {
-    id: "w-issue-gov-2",
-    type: "issue",
-    category: "Government & Policy",
-    prompt:
-      "The most enduring contributions of a society are made not by its political leaders but by its artists and scientists.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-soc-1",
-    type: "issue",
-    category: "Society & Culture",
-    prompt:
-      "A society's level of advancement should be judged primarily by how it treats its least powerful members.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-soc-2",
-    type: "issue",
-    category: "Society & Culture",
-    prompt:
-      "Tradition is a more reliable guide to action than reason.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-sci-1",
-    type: "issue",
-    category: "Science & Inquiry",
-    prompt:
-      "Major scientific advances usually come from individuals working against the consensus of their peers, not from consensus itself.",
-    directions: ISSUE_DIRECTIONS,
-    sample: {
-      score: 5,
-      scoreNote:
-        "Strong (5): a clear position that fairly concedes the famous exceptions and then explains, with concrete examples, why cooperation drives most progress; logically sound throughout.",
-      sections: [
-        {
-          role: "Introduction",
-          sentences: [
-            {
-              text: "People love stories about the lone genius who stands alone against the crowd and turns out to be right.",
-              fn: "Hook (the appealing image)",
-            },
-            {
-              text: "These stories are dramatic and inspiring, and they make it easy to believe that real scientific progress comes mainly from rebels who reject what everyone else accepts.",
-              fn: "Context (why the claim feels true)",
-            },
-            {
-              text: "The truth, though, is usually far less dramatic.",
-              fn: "Foreshadow the thesis",
-            },
-            {
-              text: "I disagree with this view, because the great majority of scientific advances are not the work of lonely rebels but the slow, shared achievement of many researchers working together.",
-              fn: "Thesis statement (clear position)",
-            },
-          ],
-        },
-        {
-          role: "Body — Concede the exception",
-          sentences: [
-            {
-              text: "It is true that a few famous discoveries did come from individuals who challenged the accepted ideas of their day.",
-              fn: "Concession (topic sentence)",
-              vocab: [{ term: "challenged", gloss: "挑戰；質疑" }],
-              moves: ["It is true that"],
-            },
-            {
-              text: "Alfred Wegener argued that the continents slowly drift across the earth, and his idea was mocked for decades before new evidence finally proved him right.",
-              fn: "Example",
-              vocab: [{ term: "evidence", gloss: "證據" }],
-            },
-            {
-              text: "Barry Marshall even swallowed bacteria himself to convince doctors that microbes, not stress, cause most stomach ulcers.",
-              fn: "Second example",
-            },
-            {
-              text: "Cases like these show that the consensus of experts can sometimes harden into stubbornness, and that a single determined person can occasionally overturn it.",
-              fn: "Explanation",
-              vocab: [{ term: "consensus", gloss: "共識；普遍看法" }],
-            },
-            {
-              text: "But it is worth noticing that we remember these stories precisely because they are rare exceptions.",
-              fn: "Limit the concession",
-              moves: ["But"],
-            },
-          ],
-        },
-        {
-          role: "Body — Main reason (cooperation drives progress)",
-          sentences: [
-            {
-              text: "By contrast, most scientific progress depends on cooperation, shared methods, and evidence that other people can check.",
-              fn: "Topic sentence (main reason)",
-              vocab: [{ term: "cooperation", gloss: "合作" }],
-              moves: ["By contrast"],
-            },
-            {
-              text: "The discovery of the structure of DNA, the mapping of the human genome, and the detection of new particles in physics each required large teams, years of careful testing, and results that other laboratories could repeat.",
-              fn: "Example",
-            },
-            {
-              text: "No single rebel could have produced these advances alone, because they rest on tools, data, and earlier discoveries gathered by an entire community of scientists.",
-              fn: "Explanation",
-              vocab: [{ term: "community", gloss: "群體；社群" }],
-            },
-            {
-              text: "Progress in science usually looks less like a single hero and more like a relay race, with each researcher passing carefully checked results to the next.",
-              fn: "Analogy",
-            },
-            {
-              text: "Even the famous outsider depends on the very system he challenges, since Wegener used measurements made by other geologists and Marshall used laboratory methods that the medical field had already developed.",
-              fn: "Turn the exception around",
-            },
-            {
-              text: "Strip away that shared foundation, and the lone genius would have nothing to work with at all.",
-              fn: "Drive the point home",
-            },
-          ],
-        },
-        {
-          role: "Body — Why the myth survives",
-          sentences: [
-            {
-              text: "It is worth asking why the myth of the lone genius remains so popular.",
-              fn: "Topic sentence",
-            },
-            {
-              text: "A single dramatic name is simply easier to remember than a team of hundreds.",
-              fn: "Explanation",
-            },
-            {
-              text: "Textbooks and news stories shorten long, messy histories into the tale of one clever person, and the patient work of the wider community quietly disappears from view.",
-              fn: "Develop the point",
-            },
-            {
-              text: "The everyday cooperation that produces most knowledge makes a far less exciting story, so we rarely bother to tell it.",
-              fn: "Close the paragraph",
-            },
-            {
-              text: "Because the dramatic version is the one we hear most often, we come to believe it is also the most common.",
-              fn: "Explain the false impression",
-            },
-          ],
-        },
-        {
-          role: "Conclusion",
-          sentences: [
-            {
-              text: "In conclusion, bold individuals who challenge the consensus do play an important part in science, but they are not its main engine.",
-              fn: "Restate the position",
-              moves: ["In conclusion"],
-            },
-            {
-              text: "This does not make individual brilliance worthless; it simply puts that brilliance in its proper place.",
-              fn: "Concede the individual's value",
-            },
-            {
-              text: "The bold individual is the spark, but the community is the engine that turns a spark into lasting knowledge.",
-              fn: "Crystallize the relationship",
-            },
-            {
-              text: "For every celebrated rebel, thousands of cooperating researchers quietly extend what we know and correct one another's mistakes, so science advances most of all through a careful community rather than through lone genius.",
-              fn: "Final judgment",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: "w-issue-sci-2",
-    type: "issue",
-    category: "Science & Inquiry",
-    prompt:
-      "Research funding should be directed primarily toward problems with foreseeable practical applications.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-arts-1",
-    type: "issue",
-    category: "Arts & Humanities",
-    prompt:
-      "The works of art a culture chooses to preserve say more about that culture than the works it produces.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-arts-2",
-    type: "issue",
-    category: "Arts & Humanities",
-    prompt:
-      "It is the responsibility of artists to challenge their audiences rather than to satisfy them.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-work-1",
-    type: "issue",
-    category: "Work & Economy",
-    prompt:
-      "Long-term success in any field depends less on talent than on the willingness to undertake unglamorous, repetitive work.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-work-2",
-    type: "issue",
-    category: "Work & Economy",
-    prompt:
-      "Organizations that prize loyalty over candor inevitably stagnate.",
-    directions: ISSUE_DIRECTIONS,
-  },
-  {
-    id: "w-issue-self-1",
+    id: "w-issue-038",
     type: "issue",
     category: "The Individual",
     prompt:
-      "People learn more from their failures than from their successes.",
-    directions: ISSUE_DIRECTIONS,
+      "People should undertake risky action only after they have carefully considered its consequences.",
+    directions: D_RECOMMENDATION,
   },
   {
-    id: "w-arg-policy-1",
-    type: "argument",
-    category: "Policy Memos",
+    id: "w-issue-039",
+    type: "issue",
+    category: "Government & Policy",
     prompt:
-      "The following appeared in a memo from the city manager of Lakeside, a coastal town. \"Last year, the neighboring town of Cape Bay extended its waterfront boardwalk by two kilometers and saw a 30 percent increase in summer tourism revenue. Local restaurants in Cape Bay also reported their highest annual sales in a decade. To revitalize Lakeside's flagging downtown economy, the council should fund a comparable extension of our own boardwalk, paid for by reallocating maintenance funds currently directed to municipal parks.\"",
-    directions: ARGUMENT_DIRECTIONS,
-    sample: {
-      score: 5,
-      scoreNote:
-        "Strong (5): identifies three distinct assumptions, explains why each is needed and what follows if it fails, and ends by naming the evidence that would settle the case; focused and well organized.",
-      sections: [
-        {
-          role: "Introduction",
-          sentences: [
-            {
-              text: "The city manager of Lakeside recommends extending the town's boardwalk, arguing that a similar extension in the nearby town of Cape Bay produced a thirty percent rise in tourism and record restaurant sales.",
-              fn: "Restate the argument",
-            },
-            {
-              text: "On the surface this looks like sensible reasoning: simply copy what worked next door.",
-              fn: "Acknowledge the appeal",
-            },
-            {
-              text: "The comparison is appealing, but it hides several leaps in reasoning.",
-              fn: "Signal the analysis",
-            },
-            {
-              text: "A closer look shows that the recommendation rests on three assumptions the memo never proves, and if any one of them is wrong, the plan may fail.",
-              fn: "Thesis statement (roadmap)",
-              vocab: [{ term: "assumptions", gloss: "假設；前提" }],
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 1 (the boardwalk was the cause)",
-          sentences: [
-            {
-              text: "First, the memo assumes that the boardwalk extension itself caused Cape Bay's increase in tourism.",
-              fn: "Identify assumption 1",
-              moves: ["First"],
-            },
-            {
-              text: "But many other factors could explain that increase just as easily.",
-              fn: "Challenge with alternatives",
-              vocab: [{ term: "factors", gloss: "因素" }],
-              moves: ["But"],
-            },
-            {
-              text: "Perhaps Cape Bay enjoyed unusually good weather that summer, ran a successful advertising campaign, lowered its hotel prices, or benefited from the closure of a competing resort nearby.",
-              fn: "List specific alternatives",
-            },
-            {
-              text: "The memo offers no evidence that any of these possibilities were ruled out.",
-              fn: "Point to the missing support",
-              vocab: [{ term: "evidence", gloss: "證據" }],
-            },
-            {
-              text: "A single neighboring example, however striking, is not enough to establish what truly drove the change.",
-              fn: "Reinforce the gap",
-            },
-            {
-              text: "If one of these other factors was the real cause, then building a longer boardwalk in Lakeside would not reproduce Cape Bay's success, and the money would be wasted.",
-              fn: "State the implication",
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 2 (the two towns are alike)",
-          sentences: [
-            {
-              text: "Second, the argument assumes that Lakeside is similar enough to Cape Bay for the same strategy to work.",
-              fn: "Identify assumption 2",
-              moves: ["Second"],
-            },
-            {
-              text: "However, the two towns may differ in important ways, such as the number of visitors they attract, the industries they depend on, or the reasons their economies are struggling.",
-              fn: "Challenge the comparison",
-              moves: ["However"],
-            },
-            {
-              text: "Cape Bay's downtown may have been weak because it lacked attractions near the water, while Lakeside's decline may come from a completely different source, such as high rents or poor parking.",
-              fn: "Give a concrete difference",
-            },
-            {
-              text: "Borrowing another town's solution only works if the two towns truly share the same problem in the first place.",
-              fn: "Generalize the flaw",
-            },
-            {
-              text: "Without a close look at both economies, the memo simply hopes that Lakeside will behave like its neighbor, without showing that it will.",
-              fn: "Underline the leap",
-            },
-            {
-              text: "If the cause of Lakeside's weakness is not a short boardwalk, then lengthening the boardwalk will not cure it.",
-              fn: "State the implication",
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 3 (cutting park funds is harmless)",
-          sentences: [
-            {
-              text: "Finally, the memo assumes that taking money away from park maintenance will create no problems of its own.",
-              fn: "Identify assumption 3",
-              moves: ["Finally"],
-            },
-            {
-              text: "Yet neglected parks can quickly become unattractive, driving away the very visitors the town hopes to gain.",
-              fn: "Challenge with consequences",
-              vocab: [{ term: "neglected", gloss: "被忽視的；疏於照料的" }],
-              moves: ["Yet"],
-            },
-            {
-              text: "Run-down parks may also lower nearby property values and lead to larger repair bills later, so the savings could end up costing the town more than they save.",
-              fn: "Extend the consequence",
-            },
-            {
-              text: "The memo never weighs this hidden cost against the gain it hopes to win on the waterfront.",
-              fn: "Note the omission",
-            },
-            {
-              text: "A plan that fixes the waterfront while letting the parks decay may leave Lakeside no better off than before.",
-              fn: "State the net effect",
-            },
-          ],
-        },
-        {
-          role: "Conclusion",
-          sentences: [
-            {
-              text: "To make this recommendation convincing, the manager would need real evidence on each point: that the boardwalk, and not some other factor, caused Cape Bay's growth, that Lakeside truly resembles Cape Bay, and that cutting park funding will not create new costs.",
-              fn: "Propose evidence (what would help)",
-              vocab: [{ term: "convincing", gloss: "有說服力的" }],
-            },
-            {
-              text: "Gathering this information would also protect the town from spending scarce money on a project that may not work.",
-              fn: "Note the stakes",
-            },
-            {
-              text: "Until that evidence is supplied, the proposal is an appealing guess rather than a sound plan.",
-              fn: "Final judgment",
-            },
-          ],
-        },
-      ],
-    },
+      "Leaders are created by the demands that are placed on them.",
+    directions: D_STATEMENT,
   },
   {
-    id: "w-arg-business-1",
-    type: "argument",
-    category: "Business Memos",
+    id: "w-issue-040",
+    type: "issue",
+    category: "Environment",
     prompt:
-      "The following appeared in a memo from the marketing director of Verdant Foods. \"Sales of our new organic snack bar rose 18 percent in the three months after we redesigned its packaging. During the same period, the line's social media mentions doubled. Customer surveys indicated that 72 percent of new buyers found the new packaging 'appealing.' We should therefore apply the same design principles to the rest of our product line in order to drive comparable growth across the company.\"",
-    directions: ARGUMENT_DIRECTIONS,
+      "There is little justification for society to make extraordinary efforts — especially at a great cost in money and jobs — to save endangered animal or plant species.",
+    directions: D_STATEMENT,
   },
   {
-    id: "w-arg-science-1",
-    type: "argument",
-    category: "Research Findings",
-    prompt:
-      "The following appeared in a research summary. \"A study of 400 university students found that those who reported regularly using a particular note-taking application achieved, on average, higher grades than those who did not. The application's developers therefore conclude that wider adoption of the application would raise academic performance across the student population.\"",
-    directions: ARGUMENT_DIRECTIONS,
-    sample: {
-      score: 4.5,
-      scoreNote:
-        "Between Adequate and Strong (4.5): competent, well-organized analysis of three real assumptions with relevant reasoning; clear throughout, though a top response would press each point a little harder.",
-      sections: [
-        {
-          role: "Introduction",
-          sentences: [
-            {
-              text: "A study of four hundred university students found that those who said they regularly used a particular note-taking app earned higher grades than those who did not.",
-              fn: "Restate the evidence",
-            },
-            {
-              text: "From this single result, the app's developers conclude that getting more students to use the app would raise grades across the whole student population.",
-              fn: "Restate the conclusion",
-            },
-            {
-              text: "The reasoning sounds plausible, but it moves from a small finding to a sweeping recommendation far too fast.",
-              fn: "Preview the problem",
-            },
-            {
-              text: "A good grade and a study habit can appear together for many reasons that have nothing to do with cause.",
-              fn: "Hint at the core flaw",
-            },
-            {
-              text: "The conclusion is too quick, because it depends on several assumptions that the study does not actually prove.",
-              fn: "Thesis statement (the conclusion is unproven)",
-              vocab: [{ term: "assumptions", gloss: "假設；前提" }],
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 1 (cause vs. choice)",
-          sentences: [
-            {
-              text: "First, the study shows only that app users tended to have higher grades, not that the app caused those grades.",
-              fn: "Identify assumption 1",
-              moves: ["First"],
-            },
-            {
-              text: "It is very likely that already hardworking and organized students were the ones who chose to use a note-taking app in the first place.",
-              fn: "Offer an alternative explanation",
-            },
-            {
-              text: "In that case the app would be a sign of good study habits rather than the source of them, and those students might have earned high grades with or without it.",
-              fn: "Explain the alternative",
-            },
-            {
-              text: "A correlation between using the app and earning good grades does not prove that one causes the other, so handing the app to every student might change very little.",
-              fn: "State the implication",
-              vocab: [{ term: "correlation", gloss: "相關性；關聯" }],
-            },
-            {
-              text: "Cause and effect simply cannot be read from this kind of simple comparison.",
-              fn: "State the principle",
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 2 (the data is reliable)",
-          sentences: [
-            {
-              text: "Second, the study relies entirely on what students reported about themselves.",
-              fn: "Identify assumption 2",
-              moves: ["Second"],
-            },
-            {
-              text: "Students were asked how often they used the app, and self-reports of this kind are often inaccurate.",
-              fn: "Challenge the data",
-            },
-            {
-              text: "Those who like to think of themselves as diligent may overstate both how much they used the app and how well they performed, making the link between the two look stronger than it really is.",
-              fn: "Explain the bias",
-              vocab: [{ term: "diligent", gloss: "勤勉的；用功的" }],
-            },
-            {
-              text: "A measurement that depends on memory and pride is shaky ground for such a confident claim.",
-              fn: "Underline the weakness",
-            },
-            {
-              text: "People are not always honest, even with themselves, about how hard they actually work.",
-              fn: "Reinforce the doubt",
-            },
-          ],
-        },
-        {
-          role: "Body — Assumption 3 (the sample represents everyone)",
-          sentences: [
-            {
-              text: "Finally, the study examined only four hundred university students, yet the conclusion is applied to the entire student population.",
-              fn: "Identify assumption 3",
-              moves: ["Finally"],
-            },
-            {
-              text: "University students are not necessarily representative of all learners.",
-              fn: "Challenge the generalization",
-              vocab: [{ term: "representative", gloss: "有代表性的" }],
-            },
-            {
-              text: "Younger children, students in very different subjects, and learners without reliable access to phones or laptops might gain nothing from the same app.",
-              fn: "Give concrete counterexamples",
-            },
-            {
-              text: "What clearly helps a focused graduate student may do nothing for a distracted teenager in a very different classroom.",
-              fn: "Concrete contrast",
-            },
-            {
-              text: "A result drawn from one type of student in one type of school simply cannot speak for everyone.",
-              fn: "Restate the scope problem",
-            },
-          ],
-        },
-        {
-          role: "Conclusion",
-          sentences: [
-            {
-              text: "To support its claim, the company would need much stronger evidence, such as a fair experiment that assigns the app to one randomly chosen group, withholds it from a similar group, and measures everyone's grades and usage directly.",
-              fn: "Propose evidence (what would help)",
-              vocab: [{ term: "experiment", gloss: "實驗" }],
-            },
-            {
-              text: "Good evidence would also follow a wide range of students over time, rather than capturing a single snapshot of one narrow group.",
-              fn: "Add a further test",
-            },
-            {
-              text: "Only then could the developers fairly claim that the app, rather than the students' own effort, produced the better grades.",
-              fn: "Tie evidence to the claim",
-            },
-            {
-              text: "Until such evidence exists, the higher grades are a reason to study the app more closely, not proof that it raises performance.",
-              fn: "Final judgment",
-              moves: ["Until such evidence"],
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: "w-arg-health-1",
-    type: "argument",
-    category: "Public Health",
-    prompt:
-      "The following appeared in a regional newspaper editorial. \"Since the city of Harrowmere opened a 24-hour walk-in clinic three years ago, emergency room visits at the city's main hospital have fallen by 12 percent. Other cities in our region experiencing emergency room overcrowding should open similar walk-in clinics to relieve pressure on their hospitals.\"",
-    directions: ARGUMENT_DIRECTIONS,
-  },
-  {
-    id: "w-arg-env-1",
-    type: "argument",
-    category: "Environmental Policy",
-    prompt:
-      "The following appeared in a letter to a state environmental agency. \"Eastfield County introduced a plastic bag fee five years ago and has since seen plastic litter at its beaches decline by 40 percent. Westfield County, which has comparable beaches but no such fee, has experienced no decline. To reduce coastal litter statewide, the agency should mandate a uniform plastic bag fee in every county.\"",
-    directions: ARGUMENT_DIRECTIONS,
-  },
-  {
-    id: "w-arg-edu-1",
-    type: "argument",
-    category: "Education",
-    prompt:
-      "The following appeared in a report from the principal of Cresthill High School. \"After we eliminated standardized homework assignments in the freshman class last year, average freshman test scores rose by 4 percent and reported student stress fell by half. We should therefore extend the policy to every grade level, where similar benefits can be expected.\"",
-    directions: ARGUMENT_DIRECTIONS,
-  },
-  {
-    id: "w-arg-tech-1",
-    type: "argument",
+    id: "w-issue-041",
+    type: "issue",
     category: "Technology",
     prompt:
-      "The following appeared in a memo from the chief information officer of a midsize firm. \"Since our engineering team began holding daily 15-minute stand-up meetings six months ago, the number of bugs reported in our flagship product has dropped by 25 percent. The same practice should be adopted by every department in the company, including sales, finance, and human resources, in order to produce comparable improvements in quality.\"",
-    directions: ARGUMENT_DIRECTIONS,
+      "The human mind will always be superior to machines because machines are only tools of human minds.",
+    directions: D_STATEMENT,
   },
   {
-    id: "w-arg-policy-2",
-    type: "argument",
-    category: "Policy Memos",
+    id: "w-issue-042",
+    type: "issue",
+    category: "Government & Policy",
     prompt:
-      "The following appeared in a memo from a town council member. \"A recent survey found that 65 percent of residents who responded support extending the operating hours of our public library. Therefore, extending those hours would benefit the majority of the town's residents and should be funded immediately, even if doing so requires reducing the operating hours of the community recreation center.\"",
-    directions: ARGUMENT_DIRECTIONS,
+      "People who are the most deeply committed to an idea or policy are also the most critical of it.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-043",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "Some people believe that society should try to save every plant and animal species, despite the expense to humans in effort, time, and financial well-being. Others believe that society need not make extraordinary efforts, especially at a great cost in money and jobs, to save endangered species.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-044",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Some people believe that the purpose of education is to free the mind and the spirit. Others believe that formal education tends to restrain our minds and spirits rather than set them free.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-045",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Some people believe it is often necessary, even desirable, for political leaders to withhold information from the public. Others believe that the public has a right to be fully informed.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-046",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Claim: Universities should require every student to take a variety of courses outside the student's major field of study. Reason: Acquiring knowledge of various academic disciplines is the best way to become truly educated.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-047",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Knowing about the past cannot help people to make important decisions today.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-048",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "In this age of intensive media coverage, it is no longer possible for a society to regard any living man or woman as a hero.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-049",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "We can usually learn much more from people whose views we share than from people whose views contradict our own.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-050",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The most effective way to understand contemporary culture is to analyze the trends of its youth.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-051",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "People's attitudes are determined more by their immediate situation or surroundings than by society as a whole.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-052",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-053",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "All parents should be required to volunteer time to their children's schools.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-054",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-055",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Teachers' salaries should be based on the academic performance of their students.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-056",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "It is no longer possible for a society to regard any living man or woman as a hero.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-057",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Some people believe that in order to thrive, a society must put its own overall success before the well-being of its individual citizens. Others believe that the well- being of a society can only be measured by the general welfare of all its people.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-058",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Claim: Any piece of information referred to as a fact should be mistrusted, since it may well be proven false in the future. Reason: Much of the information that people assume is factual actually turns out to be inaccurate.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-059",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed. Reason: It is inappropriate — and, perhaps, even cruel — to use public resources to fund the arts when people's basic needs are not being met.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-060",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: Many problems of modern society cannot be solved by laws and the legal system. Reason: Laws cannot change what is in people's hearts or minds.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-061",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educators should take students' interests into account when planning the content of the courses they teach.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-062",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "The primary goal of technological advancement should be to increase people's efficiency so that they have more leisure time.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-063",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educators should base their assessment of students' learning not on students' grasp of facts but on the ability to explain the ideas, trends, and concepts that those facts illustrate.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-064",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Unfortunately, in contemporary society, creating an appealing image has become more important than the reality or truth behind that image.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-065",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "The effectiveness of a country's leaders is best measured by examining the well- being of that country's citizens.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-066",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "A nation should require all of its students to study the same national curriculum until they enter college.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-067",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educational institutions should actively encourage their students to choose fields of study in which jobs are plentiful.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-068",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "People's behavior is largely determined by forces not of their own making.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-069",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Although innovations such as video, computers, and the Internet seem to offer schools improved methods for instructing students, these technologies all too often distract from real learning.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-070",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The best ideas arise from a passionate interest in commonplace things.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-071",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "To be an effective leader, a public official must maintain the highest ethical and moral standards.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-072",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Claim: Imagination is a more valuable asset than experience. Reason: People who lack experience are free to imagine what is possible without the constraints of established habits and attitudes.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-073",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "In most professions and academic fields, imagination is more important than knowledge.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-074",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Critical judgment of work in any given field has little value unless it comes from someone who is an expert in that field.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-075",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Some people believe that scientific discoveries have given us a much better understanding of the world around us. Others believe that science has revealed to us that the world is infinitely more complex than we ever realized.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-076",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "In any profession — business, politics, education, government — those in power should step down after five years.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-077",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Requiring university students to take a variety of courses outside their major fields of study is the best way to ensure that students become truly educated.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-078",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists. Reason: The surest indicator of a great nation is actually the welfare of all its people.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-079",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Any leader who is quickly and easily influenced by shifts in popular opinion will accomplish little.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-080",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people whom they serve.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-081",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "It is primarily in cities that a nation's cultural traditions are generated and preserved.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-082",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "We can learn much more from people whose views we share than from people whose views contradict our own.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-083",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "When old buildings stand on ground that modern planners feel could be better used for modern purposes, modern development should be given precedence over the preservation of historic buildings.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-084",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: The surest indicator of a great nation must be the achievements of its rulers, artists, or scientists. Reason: Great achievements by a nation's rulers, artists, or scientists will ensure a good life for the majority of that nation's people.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-085",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Some people claim that you can tell whether a nation is great by looking at the achievements of its rulers, artists, or scientists. Others argue that the surest indicator of a great nation is, in fact, the general welfare of all its people.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-086",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-087",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "All college and university students would benefit from spending at least one semester studying in a foreign country.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-088",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "Some people claim that a nation's government should preserve its wilderness areas in their natural state. Others argue that these areas should be developed for potential economic gain.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-089",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, but the general well-being of all its people.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-090",
+    type: "issue",
+    category: "Work & Economy",
+    prompt:
+      "Some people argue that successful leaders in government, industry, or other fields must be highly competitive. Other people claim that in order to be successful, a leader must be willing and able to cooperate with others.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-091",
+    type: "issue",
+    category: "Work & Economy",
+    prompt:
+      "Some people believe that corporations have a responsibility to promote the well- being of the societies and environments in which they operate. Others believe that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-092",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Claim: Researchers should not limit their investigations to only those areas in which they expect to discover something that has an immediate, practical application. Reason: It is impossible to predict the outcome of a line of research with any certainty.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-093",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Some people believe that our ever-increasing use of technology significantly reduces our opportunities for human interaction. Other people believe that technology provides us with new and better ways to communicate and connect with one another.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-094",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Claim: Knowing about the past cannot help people to make important decisions today. Reason: The world today is significantly more complex than it was even in the relatively recent past.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-095",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Claim: Knowing about the past cannot help people to make important decisions today. Reason: We are not able to make connections between current events and past events until we have some distance from both.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-096",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educational institutions should actively encourage their students to choose fields of study that will prepare them for lucrative careers.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-097",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Educational institutions have a responsibility to dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-098",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Some people believe that competition for high grades motivates students to excel in the classroom. Others believe that such competition seriously limits the quality of real learning.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-099",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Claim: Major policy decisions should always be left to politicians and other government experts. Reason: Politicians and other government experts are more informed and thus have better judgment and perspective than do members of the general public.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-100",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Some people believe that universities should require every student to take a variety of courses outside the student's field of study. Others believe that universities should not force students to take any courses other than those that will help prepare them for jobs in their chosen fields.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-101",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "It is more harmful to compromise one's own beliefs than to adhere to them.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-102",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Claim: Colleges and universities should specify all required courses and eliminate elective courses in order to provide clear guidance for students. Reason: College students — like people in general — prefer to follow directions rather than make their own decisions.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-103",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "No field of study can advance significantly unless it incorporates knowledge and experience from outside that field.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-104",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "True success can be measured primarily in terms of the goals one sets for oneself.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-105",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "The general welfare of a nation's people is a better indication of that nation's greatness than are the achievements of its rulers, artists, or scientists.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-106",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "The best test of an argument is the argument's ability to convince someone with an opposing viewpoint.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-107",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "Nations should pass laws to preserve any remaining wilderness areas in their natural state.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-108",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "In any field — business, politics, education, government — those in power should be required to step down after five years.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-109",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Some people claim that the goal of politics should be the pursuit of an ideal. Others argue that the goal should be finding common ground and reaching reasonable consensus.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-110",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "The best way to solve environmental problems caused by consumer-generated waste is for towns and cities to impose strict limits on the amount of trash they will accept from each household.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-111",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "We learn our most valuable lessons in life from struggling with our limitations rather than from enjoying our successes.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-112",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Claim: While boredom is often expressed with a sense of self-satisfaction, it should really be a source of embarrassment. Reason: Boredom arises from a lack of imagination and self-motivation.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-113",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Some people believe that the most important qualities of an effective teacher are understanding and empathy. Others believe that it is more important for teachers to be rigorous and demanding in their expectations for students.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-114",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: Though often considered an objective pursuit, learning about the historical past requires creativity. Reason: Because we can never know the past directly, we must reconstruct it by imaginatively interpreting historical accounts, documents, and artifacts.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-115",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Claim: No act is done purely for the benefit of others. Reason: All actions — even those that seem to be done for other people — are based on self-interest.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-116",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "To understand the most important characteristics of a society, one must study its major cities.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-117",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "Scandals are useful because they focus our attention on problems in ways that no speaker or reformer ever could.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-118",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Claim: Governments must ensure that their major cities receive the financial support they need in order to thrive. Reason: It is primarily in cities that a nation's cultural traditions are preserved and generated.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-119",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Some people believe that government funding of the arts is necessary to ensure that the arts can flourish and be available to all people. Others believe that government funding of the arts threatens the integrity of the arts.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-120",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Claim: In any field — business, politics, education, government — those in power should step down after five years. Reason: The surest path to success for any enterprise is revitalization through new leadership.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-121",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "In any field of endeavor, it is impossible to make a significant contribution without first being strongly influenced by past achievements within that field.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-122",
+    type: "issue",
+    category: "Environment",
+    prompt:
+      "Nations should pass laws to preserve any remaining wilderness areas in their natural state, even if these areas could be developed for economic gain.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-123",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Governments should offer a free university education to any student who has been admitted to a university but who cannot afford the tuition.",
+    directions: D_POLICY,
+  },
+  {
+    id: "w-issue-124",
+    type: "issue",
+    category: "Science & Inquiry",
+    prompt:
+      "Claim: In any situation, the best way to persuade other people is to present them with facts and statistics rather than with emotional arguments. Reason: Facts are objective, so they are more persuasive than subjective appeals.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-125",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Some people believe that success in creative fields, such as painting, fiction writing, and filmmaking, primarily requires hard work and perseverance. Others believe that such success mainly requires innate talents that cannot be learned.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-126",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "In business, education, and government, it is always appropriate to remain skeptical of new leaders until those leaders show that they are worthy of trust.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-127",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Claim: Group assignments that students must work together to complete should replace a substantial amount of traditional lecture-based instruction in college and university courses. Reason: It is vital for students to gain experience collaborating with peers to study a topic and to achieve a common goal.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-128",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Some people believe that in order to be effective, political leaders must yield to public opinion and abandon principle for the sake of compromise. Others believe that the most essential quality of an effective leader is the ability to remain consistently committed to particular principles and objectives.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-129",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Formal education tends to restrain our minds and spirits rather than set them free.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-130",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "The well-being of a society is enhanced when many of its people question authority.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-131",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Governments should focus on solving the immediate problems of today rather than on trying to solve the anticipated problems of the future.",
+    directions: D_RECOMMENDATION,
+  },
+  {
+    id: "w-issue-132",
+    type: "issue",
+    category: "Education",
+    prompt:
+      "Some people believe that college students should consider only their own talents and interests when choosing a field of study. Others believe that college students should base their choice of a field of study on the availability of jobs in that field.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-133",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Laws should be flexible enough to take account of various circumstances, times, and places.",
+    directions: D_STATEMENT,
+  },
+  {
+    id: "w-issue-134",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "Claim: The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models. Reason: Heroes and role models reveal a society's highest ideals.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-135",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Some people believe that it is helpful to view a challenging situation as an opportunity for personal growth. Others believe that reimagining challenging situations this way occupies too much of the focus one needs to face challenges effectively.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-136",
+    type: "issue",
+    category: "Society & Culture",
+    prompt:
+      "Some people believe that traveling to and living in numerous places increases one's ability to relate and connect to other people. Others believe that this ability is better cultivated by living in one place and developing a deep understanding of that community.",
+    directions: D_TWO_VIEWS,
+  },
+  {
+    id: "w-issue-137",
+    type: "issue",
+    category: "Arts & Humanities",
+    prompt:
+      "Claim: Young people's tendency to make extensive use of portable devices like smartphones and tablets has hurt their development of social skills. Reason: These devices encourage users to form artificial personalities and relationships online rather than fully and honestly engaging with the people around them.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-138",
+    type: "issue",
+    category: "The Individual",
+    prompt:
+      "Claim: When one is making a decision, it is better to have a limited number of options. Reason: The more options a person has, the more difficult it is to make a rational decision.",
+    directions: D_CLAIM_REASON,
+  },
+  {
+    id: "w-issue-139",
+    type: "issue",
+    category: "Technology",
+    prompt:
+      "Because people increasingly feel compelled to share their personal details online, the right to privacy is eroding.",
+    directions: D_CLAIM,
+  },
+  {
+    id: "w-issue-140",
+    type: "issue",
+    category: "Government & Policy",
+    prompt:
+      "Some people believe that journalism should make news entertaining to keep the public engaged and informed. Others believe that this practice prioritizes entertainment and undermines the mission of journalism.",
+    directions: D_TWO_VIEWS,
   },
 ];
