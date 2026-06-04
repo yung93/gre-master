@@ -2620,6 +2620,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Leaders are created by the demands that are placed on them.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that demanding circumstances produce leaders while arguing that demands can only develop a capacity already present and willingly offered; concrete examples and a clear synthesis.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We often wonder whether great leaders are born or made, and the statement offers a confident answer: that they are made, created by the demands placed upon them.", fn: "Hook" },
+            { text: "On this view, ordinary people become leaders because circumstances call forth abilities they would otherwise never have shown.", fn: "Context (the statement)" },
+            { text: "Demanding circumstances do play a powerful role in producing leaders, but the statement claims too much, because the demands of a situation reveal and develop leadership only in those who already possess the capacity to meet them.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Demands do summon leadership",
+          sentences: [
+            { text: "It is true that circumstances summon leadership that might otherwise have lain dormant.", fn: "Concession (topic sentence)", vocab: [{ term: "dormant", gloss: "潛伏的；蟄伏的" }], moves: ["It is true that"] },
+            { text: "Lincoln might have remained a competent country lawyer had the Civil War not demanded a statesman, and Churchill's defiance found its purpose only when his nation faced destruction.", fn: "Example" },
+            { text: "A crisis raises the stakes and the expectations, forcing people to grow into responsibilities they never sought and revealing reserves of courage and judgment they did not know they had.", fn: "Explanation", vocab: [{ term: "reserves", gloss: "儲備；潛藏的能力" }] },
+            { text: "Ordinary times rarely produce extraordinary leaders, precisely because they make no extraordinary demands.", fn: "Develop" },
+            { text: "Many a quiet figure has become decisive in an emergency, then faded again once the emergency had passed.", fn: "Example" },
+            { text: "Peace and plenty rarely produce a Lincoln, because they ask so little of anyone.", fn: "Reinforce" },
+            { text: "So the statement captures something real: without demands, much potential leadership is never called into being.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But demands cannot create capacity from nothing",
+          sentences: [
+            { text: "However, demands cannot create what is not there to be developed.", fn: "Pivot", moves: ["However"] },
+            { text: "The same crisis that elevates one person paralyzes or destroys another, which would be impossible if circumstances simply manufactured leaders.", fn: "Point", vocab: [{ term: "paralyzes", gloss: "使癱瘓；使動彈不得" }] },
+            { text: "Two officers face the same battle: one rises to command while the other panics, and the difference lies not in the demand but in the people who met it.", fn: "Example" },
+            { text: "Demands test and develop leadership, but the qualities they draw on — courage, judgment, the ability to inspire — must already exist in some form to be drawn upon.", fn: "Explanation" },
+            { text: "A situation can call for a leader without producing one, as many a leaderless crisis painfully shows.", fn: "Develop" },
+            { text: "History is full of moments that cried out for greatness and received only the ordinary people who happened to be in charge.", fn: "Example" },
+            { text: "The throne does not make the king; it merely shows the world whether he can wear it.", fn: "Aphoristic" },
+            { text: "The demand sets the stage, but the person must be able to fill it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Leaders are made by demand, ability, and choice",
+          sentences: [
+            { text: "Moreover, the statement leaves out the leader's own choices, which neither circumstance nor character fully explains.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Faced with the same demands and equipped with the same gifts, one person steps forward and another holds back, and that decision is the leader's own.", fn: "Explanation" },
+            { text: "Leadership is forged where demanding circumstances, latent ability, and a deliberate willingness to answer the call all meet.", fn: "Develop", vocab: [{ term: "latent", gloss: "潛在的；未顯露的" }, { term: "deliberate", gloss: "刻意的；經深思的" }] },
+            { text: "To say leaders are merely created by demands is to forget the courage it takes to respond to them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the demands placed on people do much to create leaders, but not by themselves.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Circumstances summon and shape leadership, yet they can only develop a capacity that already exists and is willingly offered, so leaders are made by demand, ability, and choice together.", fn: "Synthesis" },
+            { text: "The occasion may make the leader possible, but it is the person who decides to become one.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-040",
@@ -2628,6 +2685,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "There is little justification for society to make extraordinary efforts — especially at a great cost in money and jobs — to save endangered animal or plant species.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the 'little justification' verdict with strong practical and moral reasons while taking the concern with cost seriously; well organized and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Saving an endangered species can cost millions and sometimes the livelihoods of people who depend on the land or water it needs.", fn: "Hook" },
+            { text: "Weighing those costs, the statement concludes that there is little justification for society to make extraordinary efforts to save endangered animal or plant species.", fn: "Context (the statement)" },
+            { text: "The statement is right to take the costs seriously, but it is wrong to find little justification for such efforts, because the value of preserving species is large, lasting, and easy to underestimate.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — The practical justification",
+          sentences: [
+            { text: "First, species are not isolated curiosities but threads in ecosystems on which human life itself depends.", fn: "Topic sentence", vocab: [{ term: "ecosystems", gloss: "生態系統" }], moves: ["First"] },
+            { text: "The loss of a single species can unravel a food web, collapse a fishery, or remove a pollinator that crops rely on, imposing costs far greater than the price of protection.", fn: "Explanation", vocab: [{ term: "pollinator", gloss: "授粉者；傳粉生物" }] },
+            { text: "Bees, whose decline threatens the agriculture that feeds billions, show how the disappearance of a humble species can carry enormous economic weight.", fn: "Example" },
+            { text: "Many medicines, materials, and discoveries have come from organisms we nearly lost, and a species driven extinct takes its unknown uses with it forever.", fn: "Develop" },
+            { text: "We cannot know which obscure plant holds the cure for a future disease, and extinction forecloses that possibility permanently.", fn: "Example" },
+            { text: "Far from little justification, the practical case for preservation is often a matter of plain self-interest.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The moral justification",
+          sentences: [
+            { text: "Moreover, the justification is not only practical but moral.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "As the species most responsible for extinctions and most able to prevent them, humanity bears a real responsibility for the living world.", fn: "Point", vocab: [{ term: "responsibility", gloss: "責任" }] },
+            { text: "To let a species vanish through our carelessness, when we could have saved it, is a loss future generations will not forgive and cannot reverse.", fn: "Explanation" },
+            { text: "A civilization is judged partly by what it chooses to protect, and a world stripped of its wild variety would be poorer in ways no balance sheet can capture.", fn: "Develop" },
+            { text: "We do not preserve great art only when it is profitable, and the living heritage of millions of years of evolution deserves at least the same regard.", fn: "Example", vocab: [{ term: "heritage", gloss: "遺產；傳承" }] },
+            { text: "The worth of a species is not exhausted by its usefulness to us.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Cost is a reason to choose, not to quit",
+          sentences: [
+            { text: "However, the statement's concern with cost is not empty, and it would be dishonest to dismiss it.", fn: "Concede", moves: ["However"] },
+            { text: "Resources are limited, and money or jobs spent saving one species cannot be spent on others or on pressing human needs, so genuine trade-offs are unavoidable.", fn: "Develop the concession" },
+            { text: "But the answer is a careful triage among efforts rather than their abandonment, a matter of setting priorities, not of concluding that there is little justification at all.", fn: "Rebut", vocab: [{ term: "triage", gloss: "優先處理；分級取捨" }] },
+            { text: "Sensible conservation weighs costs against benefits case by case, protecting what can be protected at reasonable cost rather than either saving everything or giving up.", fn: "Explain" },
+            { text: "Acknowledging cost is a reason to be strategic, not a reason to be indifferent.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, there is ample justification for serious efforts to save endangered species, even if not for unlimited ones.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because species sustain the ecosystems we depend on and carry a value beyond price, the case for preservation is strong, and the costs are a reason to spend wisely rather than to walk away.", fn: "Synthesis" },
+            { text: "A society that lets its fellow creatures vanish to save a little money will find it has made a poor bargain indeed.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-041",
@@ -2636,6 +2748,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The human mind will always be superior to machines because machines are only tools of human minds.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): attacks the statement's certainty by showing tools routinely surpass their makers and that 'machines are only tools' is an assumption that may fail, while conceding present human superiority; tightly reasoned.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is comforting to believe that no machine can ever truly surpass us, since we are the ones who build them.", fn: "Hook" },
+            { text: "The statement turns this comfort into a certainty, asserting that the human mind will always be superior to machines because machines are merely tools of human minds.", fn: "Context (the statement)" },
+            { text: "The statement's conclusion is far from certain, because its supporting reason — that machines are only our tools — is an assumption that may not hold, and tools have a long history of surpassing their makers at the very tasks they were built for.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Tools already surpass us",
+          sentences: [
+            { text: "First, the claim that a tool cannot exceed its maker is simply false.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A calculator computes faster than any human, a telescope sees farther than any eye, and a crane lifts what no person could ever budge.", fn: "Example" },
+            { text: "We build tools precisely to do what our own minds and bodies cannot, so to surpass us in some respect is the whole point of a tool.", fn: "Explanation", vocab: [{ term: "surpass", gloss: "超越；勝過" }] },
+            { text: "Machines now defeat the best humans at chess, diagnose some diseases more accurately than doctors, and process information at scales no brain can approach.", fn: "Develop" },
+            { text: "The very tools the statement dismisses already outperform the human mind across a widening range of tasks.", fn: "Example" },
+            { text: "That something is a tool, then, does nothing to guarantee that its makers remain superior.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — 'Only tools' may not hold",
+          sentences: [
+            { text: "Moreover, the word always makes a prediction about the future that the present cannot support.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The reasoning assumes machines will forever remain mere tools, passive instruments of human will, yet that assumption is exactly what is in question.", fn: "Point" },
+            { text: "As machines grow more capable of learning, adapting, and acting as autonomous agents, the line between a tool and an independent mind grows blurry.", fn: "Explanation", vocab: [{ term: "autonomous", gloss: "自主的；自動運作的" }] },
+            { text: "No one can confidently say that minds far more powerful than ours will never be built, and to declare it impossible forever is to mistake present limits for permanent ones.", fn: "Develop", vocab: [{ term: "permanent", gloss: "永久的" }] },
+            { text: "People once insisted machines could never play music, drive a car, or hold a conversation, and each never has quietly fallen.", fn: "Example" },
+            { text: "An argument that rests on machines are only tools collapses the moment machines become something more.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Present superiority is not a permanent law",
+          sentences: [
+            { text: "However, the statement is not entirely wrong about the present.", fn: "Concede", moves: ["However"] },
+            { text: "Today's machines, for all their power, lack the consciousness, judgment, creativity, and moral understanding the human mind possesses, and in these respects we remain clearly superior.", fn: "Develop the concession", vocab: [{ term: "consciousness", gloss: "意識" }, { term: "creativity", gloss: "創造力" }] },
+            { text: "But this superiority is a fact about the present, not a guarantee about the future, and so far is very different from always.", fn: "Rebut" },
+            { text: "It is reasonable to say the human mind is superior to machines today; it is mere faith to insist it always will be.", fn: "Explain" },
+            { text: "Confidence about what can never happen is rarely a safe bet where technology is concerned.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the human mind may well remain superior in important ways, but the statement's certainty is unearned.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because tools routinely surpass their makers and the assumption that machines will stay only tools may not hold, no one can honestly promise that human superiority will last forever.", fn: "Synthesis" },
+            { text: "We should be proud of the human mind without mistaking our present advantage for a permanent law of nature.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-042",
@@ -2644,6 +2811,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "People who are the most deeply committed to an idea or policy are also the most critical of it.",
     directions: D_STATEMENT,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): grants the insight that genuine commitment invites criticism while showing that commitment as often breeds blind loyalty, and resolves it by distinguishing two kinds of commitment; clear, if a touch general.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We usually expect the true believer to defend his cause against all criticism, not to lead the attack on it.", fn: "Hook" },
+            { text: "The statement reverses this expectation, claiming that those most deeply committed to an idea or policy are also its most critical examiners.", fn: "Context (the statement)" },
+            { text: "There is a real insight here about the best kind of commitment, but as a general claim it is mistaken, because deep commitment is at least as likely to breed blind loyalty as honest criticism.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Real commitment invites criticism",
+          sentences: [
+            { text: "It is true that the most thoughtful adherents of a cause are often its sharpest critics.", fn: "Concession (topic sentence)", vocab: [{ term: "adherents", gloss: "擁護者；信徒" }], moves: ["It is true that"] },
+            { text: "Someone who genuinely cares about an idea wants it to succeed, and so attends closely to its flaws, since only by correcting weaknesses can the idea be made to work.", fn: "Explanation" },
+            { text: "The most valuable members of any movement are frequently those who question its strategy, point out its contradictions, and push it to do better.", fn: "Example" },
+            { text: "A scientist devoted to a theory tests it hardest of all, and a patriot who truly loves his country is often the first to criticize its failures.", fn: "Develop", vocab: [{ term: "patriot", gloss: "愛國者" }] },
+            { text: "Indifference, not devotion, is what produces silence, since we rarely bother to criticize what we do not care about.", fn: "Example" },
+            { text: "In this sense the statement is right: serious commitment and serious criticism can go hand in hand.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But commitment often breeds blindness",
+          sentences: [
+            { text: "However, deep commitment just as often produces the very opposite of criticism.", fn: "Pivot", moves: ["However"] },
+            { text: "The more people invest in a belief, the more painful it becomes to admit that it might be flawed, and so they defend it ever more fiercely.", fn: "Point" },
+            { text: "Strong conviction tends to filter the evidence, magnifying whatever supports the belief and quietly dismissing whatever threatens it.", fn: "Explanation", vocab: [{ term: "conviction", gloss: "堅定的信念" }] },
+            { text: "The most committed members of a political party or a religion are frequently the least critical of it, treating doubt as betrayal and questions as attacks.", fn: "Develop" },
+            { text: "Fanatics, by definition, are utterly committed and utterly uncritical, which alone shows that commitment does not guarantee criticism.", fn: "Example", vocab: [{ term: "fanatics", gloss: "狂熱分子" }] },
+            { text: "History's worst movements were sustained by true believers who never questioned the cause at all.", fn: "Example" },
+            { text: "Commitment, in short, can sharpen criticism or smother it, depending on the person.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Which kind of commitment",
+          sentences: [
+            { text: "Moreover, the truth of the statement depends entirely on what kind of commitment we mean.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A commitment to the success of an idea breeds criticism, because criticism serves the goal; a commitment to one's identity as a believer breeds defensiveness, because criticism threatens the self.", fn: "Explanation", vocab: [{ term: "defensiveness", gloss: "防衛心態；自我防備" }] },
+            { text: "The statement describes the former, healthier kind but mistakes it for commitment as such, ignoring the equally common kind that cannot bear a word against it.", fn: "Develop" },
+            { text: "The best believers criticize their cause; the most fervent often cannot.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is true of the finest commitment but false as a general rule.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Genuine devotion to an idea's success does invite honest criticism, but devotion to a belief as a badge of identity tends instead to silence it, so commitment and criticism are linked only when the commitment is of the right kind.", fn: "Synthesis" },
+            { text: "Whether a deep believer is his cause's best critic or its blindest defender depends on whether he loves the idea or merely loves believing it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-043",
@@ -2652,6 +2874,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that society should try to save every plant and animal species, despite the expense to humans in effort, time, and financial well-being. Others believe that society need not make extraordinary efforts, especially at a great cost in money and jobs, to save endangered species.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a two-views response that gives each position its due, then stakes out a clear middle that leans toward conservation while accepting the reality of cost; well organized and even-handed.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Few questions force the value of nature and the value of human welfare into sharper conflict than how hard we should fight to save endangered species.", fn: "Hook" },
+            { text: "Some hold that society should try to save every plant and animal species whatever the cost in effort, time, and money; others hold that we need not make extraordinary efforts, especially when the price is paid in jobs and dollars.", fn: "Context (state both views)" },
+            { text: "Both views capture something important, but my own position lies closer to the first while accepting the second's concern with cost: we should make serious efforts to save species, guided by priorities rather than by an absolute rule in either direction.", fn: "Thesis statement (which view aligns)" },
+          ],
+        },
+        {
+          role: "Body — The case for saving every species",
+          sentences: [
+            { text: "The first view rests on a powerful insight: that the loss of a species is permanent and its value genuinely hard to measure.", fn: "Topic sentence (view one)" },
+            { text: "Each species is the unique product of millions of years of evolution, and once gone it can never be recovered, so an extinction we permit is a door closed forever.", fn: "Explanation", vocab: [{ term: "evolution", gloss: "演化；進化" }] },
+            { text: "Species we once dismissed as worthless have yielded medicines, foods, and insights no one anticipated, which means we can rarely know what a vanishing species is truly worth.", fn: "Example" },
+            { text: "There is also a moral force to this view, since the species most responsible for extinctions arguably has a duty to prevent them.", fn: "Develop" },
+            { text: "Those who would save every species are right that extinction is uniquely final and its costs easy to underestimate.", fn: "Sub-conclusion" },
+            { text: "The strongest part of this view is its refusal to treat the irreplaceable as disposable.", fn: "Reinforce", vocab: [{ term: "irreplaceable", gloss: "無可取代的" }] },
+          ],
+        },
+        {
+          role: "Body — The case against extraordinary efforts",
+          sentences: [
+            { text: "However, the second view also speaks an uncomfortable truth: that resources are finite and human needs are real.", fn: "Pivot (view two)", vocab: [{ term: "finite", gloss: "有限的" }], moves: ["However"] },
+            { text: "Money and labor poured into saving one obscure species cannot be spent on schools, on medicine, or on the workers whose jobs a conservation rule may destroy.", fn: "Point" },
+            { text: "To promise to save every species regardless of cost is to ignore the genuine human suffering that such a promise can impose.", fn: "Explanation" },
+            { text: "A logging town shut down to protect a single bird pays a price in livelihoods that the first view too easily waves away.", fn: "Example", vocab: [{ term: "livelihoods", gloss: "生計" }] },
+            { text: "Realistically, we cannot save every species in any case; some are too far gone, and the attempt would exhaust resources better spent where they can still do good.", fn: "Develop" },
+            { text: "Those who resist extraordinary efforts are right that good intentions do not cancel real costs.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — My position: priorities, not absolutes",
+          sentences: [
+            { text: "On balance, my own view takes the first position's seriousness about extinction and disciplines it with the second's honesty about cost.", fn: "Pivot (my position)", moves: ["On balance"] },
+            { text: "Society should make real and sometimes considerable efforts to save species, but it should set priorities rather than pledge to save every one at any price.", fn: "Point" },
+            { text: "Where a species is ecologically vital, or can be saved at reasonable cost, the case for action is overwhelming; where the cost is ruinous and the prospects hopeless, the same resources may do more good elsewhere.", fn: "Explanation" },
+            { text: "This is not a betrayal of nature but the only responsible way to protect it, since pretending cost does not exist would discredit conservation, while pretending species do not matter would impoverish the world.", fn: "Develop", vocab: [{ term: "conservation", gloss: "保育；資源保護" }] },
+            { text: "The wise course rejects both every species at any cost and no extraordinary efforts at all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, my position aligns more closely with those who would fight to save species, but it accepts the other side's insistence that cost is real.", fn: "Restate (which view)", moves: ["In conclusion"] },
+            { text: "Extinction is final and the value of species easy to underestimate, yet resources are limited and human welfare matters, so the answer is serious, prioritized effort rather than an absolute rule.", fn: "Synthesis" },
+            { text: "We should save what we can, weigh honestly what we cannot, and refuse both reckless extinction and reckless expense.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-044",
@@ -2660,6 +2937,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that the purpose of education is to free the mind and the spirit. Others believe that formal education tends to restrain our minds and spirits rather than set them free.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a two-views response that argues education at its best frees the mind and that the restraint the second view describes is a failure of practice, not the nature of education; even-handed and clearly organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Ask whether education liberates the mind or cages it, and you will get passionate answers on both sides.", fn: "Hook" },
+            { text: "Some insist that the purpose of education is to free the mind and the spirit; others reply that formal education, as it is actually practiced, tends to restrain them instead.", fn: "Context (state both views)" },
+            { text: "Both views describe something real, but my position is that education at its best frees the mind, and that the restraint the second view describes is a failure of formal schooling rather than the nature of education itself.", fn: "Thesis statement (which view aligns)" },
+          ],
+        },
+        {
+          role: "Body — The case that education frees",
+          sentences: [
+            { text: "The first view rests on what education ideally does: it hands us the tools to think for ourselves.", fn: "Topic sentence (view one)" },
+            { text: "Learning to read, to reason, to weigh evidence, and to imagine other lives expands the boundaries of a mind that ignorance would otherwise keep small.", fn: "Explanation" },
+            { text: "A student who discovers history, science, and literature gains a thousand vantage points beyond the narrow world she was born into.", fn: "Example" },
+            { text: "Real education does not tell people what to think but equips them to question, which is the very definition of a freed mind.", fn: "Develop" },
+            { text: "On this view, education is the great liberator, the path out of the cave of inherited prejudice.", fn: "Sub-conclusion", vocab: [{ term: "liberator", gloss: "解放者" }, { term: "prejudice", gloss: "偏見；成見" }] },
+            { text: "Knowledge, used well, is what makes independent thought possible at all.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The case that schooling restrains",
+          sentences: [
+            { text: "However, the second view points to something every student has felt: that schooling can also cramp the mind it claims to free.", fn: "Pivot (view two)", moves: ["However"] },
+            { text: "Formal education often rewards obedience over curiosity, the right answer over the good question, and conformity over originality.", fn: "Point", vocab: [{ term: "conformity", gloss: "從眾；墨守成規" }, { term: "originality", gloss: "原創性" }] },
+            { text: "A regime of standardized tests, rigid curricula, and constant ranking can train students to follow instructions and fear mistakes rather than to think boldly.", fn: "Explanation", vocab: [{ term: "standardized", gloss: "標準化的" }] },
+            { text: "Many a creative child has had her imagination dulled by years of being told to color inside the lines and memorize what she was given.", fn: "Example" },
+            { text: "When education becomes mere training — filling minds with approved facts and punishing dissent — it does indeed restrain the spirit it ought to release.", fn: "Develop" },
+            { text: "Those who say formal education can imprison the mind are describing a real and common failure.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — My position: success versus failure",
+          sentences: [
+            { text: "On balance, these are not two equal accounts of education but descriptions of education succeeding and education failing.", fn: "Pivot (my position)", moves: ["On balance"] },
+            { text: "The first view captures what education is for; the second captures what it becomes when done badly, and the fault lies in the practice, not the purpose.", fn: "Point" },
+            { text: "A rigid school that crushes curiosity has not fulfilled the aim of education and then restrained the mind; it has betrayed that aim, which is precisely to set the mind free.", fn: "Explanation" },
+            { text: "The remedy for restraining schools is not less education but better education, one that teaches students to think rather than merely to comply.", fn: "Develop" },
+            { text: "Properly understood, the second view is a warning about how education can fail, and the first is a statement of what it should achieve.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, my position aligns with those who say education frees the mind, while taking seriously the warning that formal schooling can do the opposite.", fn: "Restate (which view)", moves: ["In conclusion"] },
+            { text: "Education rightly conceived liberates, and where it instead restrains, the failure lies in rigid, fearful practice rather than in learning itself.", fn: "Synthesis" },
+            { text: "The goal is not to abandon formal education but to make sure it keeps its promise to set the mind free.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-045",
