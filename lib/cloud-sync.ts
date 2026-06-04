@@ -12,6 +12,7 @@ const KEY_QUANT = "srs/quant";
 const KEY_MOCK = "mock/active";
 const KEY_LEARN_VOCAB = "learn/vocab";
 const KEY_LEARN_VOCAB_MASTERY = "learn/vocab-mastery-count";
+const KEY_LEARN_QUANT = "learn/quant";
 const KEY_WRITING_READ = "writing/read";
 const LOCAL_WRITE_EVENT = "gre-master:local-write";
 
@@ -22,6 +23,7 @@ interface CloudPayload {
   quant: Record<string, SrsState>;
   learnVocab: Record<string, LearnProgress>;
   learnVocabMastery: number;
+  learnQuant: Record<string, LearnProgress>;
   mockActive: MockSessionState | null;
   writingRead: Record<string, boolean>;
   updatedAt?: Timestamp;
@@ -33,6 +35,7 @@ function readLocalPayload(): CloudPayload {
     quant: readJson<Record<string, SrsState>>(KEY_QUANT, {}),
     learnVocab: readJson<Record<string, LearnProgress>>(KEY_LEARN_VOCAB, {}),
     learnVocabMastery: readJson<number>(KEY_LEARN_VOCAB_MASTERY, 0),
+    learnQuant: readJson<Record<string, LearnProgress>>(KEY_LEARN_QUANT, {}),
     mockActive: readJson<MockSessionState | null>(KEY_MOCK, null),
     writingRead: readJson<Record<string, boolean>>(KEY_WRITING_READ, {}),
   };
@@ -43,6 +46,7 @@ function writeLocalPayload(payload: CloudPayload): void {
   writeJson(KEY_QUANT, payload.quant);
   writeJson(KEY_LEARN_VOCAB, payload.learnVocab);
   writeJson(KEY_LEARN_VOCAB_MASTERY, payload.learnVocabMastery);
+  writeJson(KEY_LEARN_QUANT, payload.learnQuant);
   writeJson(KEY_MOCK, payload.mockActive);
   writeJson(KEY_WRITING_READ, payload.writingRead);
 }
@@ -116,6 +120,7 @@ function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): Clou
     quant: mergeSrs(local.quant, remote.quant ?? {}),
     learnVocab: mergeLearn(local.learnVocab, remote.learnVocab ?? {}),
     learnVocabMastery: Math.max(local.learnVocabMastery, remote.learnVocabMastery ?? 0),
+    learnQuant: mergeLearn(local.learnQuant, remote.learnQuant ?? {}),
     mockActive: pickLatestMock(local.mockActive, remote.mockActive ?? null),
     writingRead: mergeReadState(local.writingRead, remote.writingRead ?? {}),
   };
