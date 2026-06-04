@@ -2096,6 +2096,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In order for any work of art — for example, a film, a novel, a poem, or a song — to have merit, it must be understandable to most people.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the criterion with strong reasons — much great art is difficult, and merit differs from popularity — then concedes that art must communicate something; well organized and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Some of the most celebrated works in human history baffled their first audiences and many audiences since.", fn: "Hook" },
+            { text: "Yet the statement insists that for any work of art to have merit, it must be understandable to most people.", fn: "Context (the statement)" },
+            { text: "I disagree, because the value of art is not measured by how many people grasp it at first encounter, and a standard of mass understandability would condemn much of humanity's greatest work as worthless.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Much great art is difficult",
+          sentences: [
+            { text: "First, a great deal of art widely regarded as profound is not readily understandable to most people.", fn: "Topic sentence", vocab: [{ term: "profound", gloss: "深刻的；意義深遠的" }], moves: ["First"] },
+            { text: "Joyce's Ulysses, Picasso's late paintings, and much of classical poetry demand an effort, background, and patience that most readers and viewers simply do not bring to them.", fn: "Example" },
+            { text: "If understandability to the majority were the test of merit, these works would fail it, and we would have to call them worthless, which is plainly absurd.", fn: "Explanation" },
+            { text: "Difficulty is often the price of depth, since art that explores complex experience cannot always be flattened into something instantly clear.", fn: "Develop" },
+            { text: "A symphony's structure, a poem's allusions, a film's symbolism may reveal themselves only on the second or the tenth encounter, not the first.", fn: "Example", vocab: [{ term: "allusions", gloss: "典故；引喻" }] },
+            { text: "The fault, in such cases, may lie with the hurried audience rather than with the demanding work.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Merit is not popularity",
+          sentences: [
+            { text: "Moreover, the statement confuses being understood with being good, which are quite separate things.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Much that is instantly understandable is shallow, and much that is difficult is deep, so accessibility tells us about an audience, not about quality.", fn: "Point", vocab: [{ term: "accessibility", gloss: "易懂性；可親近性" }] },
+            { text: "A catchy jingle is understood by everyone and forgotten by morning, while a difficult novel that few finish can change the lives of those who do.", fn: "Example" },
+            { text: "The worth of art lies in what it reveals, how it moves us, and how long it lasts, none of which is settled by a head count of who got it.", fn: "Explanation" },
+            { text: "History is full of works ignored or scorned in their day that later generations recognized as masterpieces, which proves that majority understanding is no reliable guide to merit.", fn: "Develop" },
+            { text: "To equate merit with mass comprehension is to let the size of an audience decide the value of a work.", fn: "Sub-conclusion", vocab: [{ term: "comprehension", gloss: "理解；領會" }] },
+          ],
+        },
+        {
+          role: "Body — But art must communicate something",
+          sentences: [
+            { text: "There is, however, a reasonable instinct buried in the statement.", fn: "Concede", moves: ["however"] },
+            { text: "Art does communicate, and a work understood by no one at all, that locks its meaning away entirely, may indeed fail as art.", fn: "Develop the concession" },
+            { text: "But understandable to most people sets the bar far too low, demanding instant mass appeal rather than the possibility of understanding by a willing audience.", fn: "Rebut" },
+            { text: "The right standard is not that everyone must understand a work easily, but that it must offer something real to those who meet it with attention.", fn: "State the better standard" },
+            { text: "Between the gibberish that communicates nothing and the jingle that communicates only the obvious lies the vast territory of serious art.", fn: "Sub-conclusion", vocab: [{ term: "gibberish", gloss: "胡言亂語；難以理解的東西" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, art need not be understandable to most people in order to have merit.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Difficulty is often the companion of depth, and the value of a work is decided by what it offers those who engage with it, not by how large a crowd grasps it instantly.", fn: "Synthesis" },
+            { text: "The measure of art is not how many understand it, but how much there is to understand.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-033",
@@ -2104,6 +2159,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Many important discoveries or creations are accidental: it is usually while seeking the answer to one question that we come across the answer to another.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the large role of chance in discovery while showing that accident becomes discovery only through a prepared, persistent mind; concrete examples and a clear synthesis.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "The story of science is full of happy accidents: penicillin from a contaminated dish, X-rays from a stray glow, the microwave from a melted chocolate bar.", fn: "Hook" },
+            { text: "The statement generalizes from such tales, claiming that many important discoveries are accidental, stumbled upon while seeking the answer to some other question.", fn: "Context (the statement)" },
+            { text: "The statement is partly true, because chance genuinely plays a large role in discovery, but it tells only half the story, since accidents become discoveries only in the hands of a prepared and persistent mind.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Accident really does drive discovery",
+          sentences: [
+            { text: "It is true that accident has shaped an astonishing number of important findings.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Fleming was not hunting for antibiotics when a stray mould killed his bacteria, and Roentgen was not looking for X-rays when an unexpected glow lit his laboratory.", fn: "Example" },
+            { text: "Research is a journey into the unknown, and the unknown, by definition, holds surprises that no plan can anticipate.", fn: "Explanation", vocab: [{ term: "anticipate", gloss: "預料；預期" }] },
+            { text: "Often the question a scientist sets out to answer turns out to be less important than the strange result he happens to notice along the way.", fn: "Develop" },
+            { text: "Whole fields have opened because someone was studying one thing and tripped over another.", fn: "Example" },
+            { text: "The history of medicine, chemistry, and physics is studded with breakthroughs that arrived sideways, while their discoverers were looking elsewhere.", fn: "Reinforce" },
+            { text: "So the statement captures something real: discovery is far less orderly than the textbooks suggest.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But accident is not enough",
+          sentences: [
+            { text: "However, to call these discoveries simply accidental is to overlook the crucial half of the story.", fn: "Pivot", moves: ["However"] },
+            { text: "The same mould had landed on countless dishes before Fleming, and the same glow had surely been seen by others, yet they noticed nothing of importance.", fn: "Point" },
+            { text: "An accident becomes a discovery only when a trained, alert mind recognizes that something unexpected and significant has occurred.", fn: "Explanation" },
+            { text: "As Pasteur observed, chance favors the prepared mind, and the preparation is doing every bit as much work as the chance.", fn: "Support", vocab: [{ term: "preparation", gloss: "準備；有所準備" }] },
+            { text: "It took years of expertise for Fleming to grasp what his ruined experiment meant, and more years of others' labor to turn the observation into a medicine.", fn: "Develop" },
+            { text: "A thousand people spill their coffee; only the one already thinking hard about a problem sees in the spill the answer to it.", fn: "Example" },
+            { text: "Recognizing an anomaly as important, rather than dismissing it as a flaw, is itself a hard-won skill.", fn: "Develop" },
+            { text: "The lucky observation is simply wasted on a mind that does not know what it is looking at.", fn: "Sharpen" },
+            { text: "The accident supplies the opportunity, but knowledge, attention, and persistence supply the discovery.", fn: "Sub-conclusion", vocab: [{ term: "persistence", gloss: "堅持不懈；毅力" }] },
+          ],
+        },
+        {
+          role: "Body — Chance and preparation together",
+          sentences: [
+            { text: "Moreover, the fuller truth is that discovery is born of chance and preparation working together.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Neither alone suffices: planning without surprise rarely yields anything new, but surprise without a prepared observer yields nothing at all.", fn: "Explanation", vocab: [{ term: "observer", gloss: "觀察者" }] },
+            { text: "This is why important accidents cluster among those who work hardest and know most, not among the idle or the ignorant.", fn: "Develop" },
+            { text: "Serendipity is not the opposite of effort but its frequent reward.", fn: "Sub-conclusion", vocab: [{ term: "serendipity", gloss: "機緣巧合；意外的好運" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right that accident matters greatly but wrong to leave the matter there.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Important discoveries are indeed often stumbled upon, but the stumbling becomes a discovery only because a knowledgeable, watchful mind is present to recognize it.", fn: "Synthesis" },
+            { text: "Chance may open the door, but it takes a prepared mind to walk through it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-034",
@@ -2112,6 +2225,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The main benefit of the study of history is to dispel the illusion that people living now are significantly different from people who lived in earlier times.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that history reveals human continuity while arguing convincingly that it teaches change as much as sameness, and that no single benefit can be called the main one; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We tend to imagine ourselves as fundamentally new, more rational and humane than the benighted people of the past.", fn: "Hook" },
+            { text: "The statement holds that history's main benefit is to dispel exactly this illusion, by showing that people today are not significantly different from those who lived before.", fn: "Context (the statement)" },
+            { text: "History does powerfully reveal human continuity, but to call this its main benefit is too narrow, because history teaches us at least as much about how things change, and why, as about how people stay the same.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — History reveals continuity",
+          sentences: [
+            { text: "It is true that one of history's great lessons is the constancy of human nature.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Read the letters of ancient Romans or the diaries of medieval merchants and you meet people moved by the same ambition, love, fear, and vanity that move us now.", fn: "Example", vocab: [{ term: "vanity", gloss: "虛榮" }] },
+            { text: "This recognition is genuinely valuable, since it punctures the arrogance of the present and warns us that we are no wiser, and no safer from folly, than our ancestors were.", fn: "Explanation", vocab: [{ term: "arrogance", gloss: "傲慢；自大" }] },
+            { text: "A generation that believes itself immune to the mistakes of the past — to tyranny, to mob fury, to self-deception — is precisely the generation most likely to repeat them.", fn: "Develop" },
+            { text: "The conviction that it could never happen here has preceded many a catastrophe that earlier history had already rehearsed.", fn: "Example" },
+            { text: "So the statement names a real and important benefit: history humbles us by showing us ourselves in the people of the past.", fn: "Sub-conclusion", vocab: [{ term: "humbles", gloss: "使謙卑" }] },
+          ],
+        },
+        {
+          role: "Body — But history teaches change too",
+          sentences: [
+            { text: "However, to make this the main benefit is to ignore everything history teaches about difference and change.", fn: "Pivot", moves: ["However"] },
+            { text: "While human nature endures, the circumstances, beliefs, and possibilities of human life have changed enormously, and understanding that change is among history's chief gifts.", fn: "Point" },
+            { text: "History explains how we arrived at democracy, science, and rights that earlier ages lacked, and how institutions we now take for granted were painfully built.", fn: "Example", vocab: [{ term: "institutions", gloss: "制度；體制" }] },
+            { text: "To study history is to learn that the present is not fixed or natural but the product of particular causes, which means it could have been otherwise and can still be changed.", fn: "Explanation" },
+            { text: "This sense of how things came to be, and how they might be reformed, is arguably more useful than the bare reminder that people have always been people.", fn: "Develop" },
+            { text: "Knowing why an empire fell, or how a reform succeeded, equips us to act in ways that mere recognition of unchanging human nature does not.", fn: "Example" },
+            { text: "History teaches continuity and change together, and the second lesson is at least as important as the first.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — No single main benefit",
+          sentences: [
+            { text: "Moreover, history yields far too many benefits for any one to be crowned the main one.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "It supplies warning and inspiration, trains judgment, preserves memory, and explains the present, and which benefit matters most depends on who is studying and why.", fn: "Explanation" },
+            { text: "For a citizen it may be vigilance against repeating old evils; for a reformer, the knowledge that change is possible; for anyone, a richer sense of being human in time.", fn: "Develop", vocab: [{ term: "vigilance", gloss: "警惕；警覺" }] },
+            { text: "To single out one benefit as primary is to shrink a vast subject to a single use.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, dispelling the illusion of our own uniqueness is one real benefit of history, but not its main one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "History reveals both how like our ancestors we remain and how greatly our world has changed, and it is the union of these lessons, not either alone, that makes the past worth studying.", fn: "Synthesis" },
+            { text: "We study history not only to recognize ourselves in the dead, but to understand how their world became ours, and how ours might yet be remade.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-035",
@@ -2120,6 +2288,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Learning is primarily a matter of personal discipline; students cannot be motivated by school or college alone.",
     directions: D_STATEMENT,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): grants the centrality of personal discipline while showing that schools genuinely shape motivation, landing on a partnership view; clear and well organized, though the analysis stays fairly general.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Every teacher has watched two students sit in the same classroom and walk away with utterly different amounts of learning.", fn: "Hook" },
+            { text: "The statement reads this familiar fact as proof that learning is primarily a matter of personal discipline, and that schools and colleges cannot, by themselves, motivate students.", fn: "Context (the statement)" },
+            { text: "Personal discipline is indeed essential to learning, but the statement overstates its case, because good schools and teachers do far more to create motivation than the flat word cannot allows.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Discipline is central",
+          sentences: [
+            { text: "It is true that no institution can learn on a student's behalf.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "In the end, knowledge enters a mind only through that mind's own effort, and the hours of attention and practice that learning demands must be supplied by the learner.", fn: "Point" },
+            { text: "Two students with the same teachers, books, and timetable will learn very differently depending on the discipline each brings, and the most lavish school cannot rescue a student who refuses to work.", fn: "Example" },
+            { text: "Motivation that depends entirely on outside pressure tends to collapse the moment that pressure is removed, which is why self-driven students keep learning long after their schooling ends.", fn: "Explanation" },
+            { text: "Ultimately the responsibility for learning rests with the person doing it, and no reform of schools can transfer that responsibility elsewhere.", fn: "Develop" },
+            { text: "To this extent the statement is right: discipline is the engine, and the learner alone can switch it on.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But schools shape motivation",
+          sentences: [
+            { text: "However, the claim that schools cannot motivate students is plainly false.", fn: "Pivot", moves: ["However"] },
+            { text: "Discipline itself is not simply innate; it is cultivated, and a good school is one of the places it is most often cultivated.", fn: "Point", vocab: [{ term: "innate", gloss: "與生俱來的；天生的" }, { term: "cultivated", gloss: "培養的" }] },
+            { text: "An inspiring teacher can awaken a passion a student never knew he had, turning a reluctant pupil into a lifelong reader or scientist.", fn: "Example", vocab: [{ term: "reluctant", gloss: "不情願的" }] },
+            { text: "Schools shape motivation through the curiosity they spark, the encouragement they offer, the expectations they set, and the example of peers who care.", fn: "Explanation", vocab: [{ term: "curiosity", gloss: "好奇心" }] },
+            { text: "A child surrounded by enthusiastic teachers and ambitious classmates is far likelier to develop discipline than the same child left in a dull or chaotic environment.", fn: "Develop", vocab: [{ term: "enthusiastic", gloss: "熱情的；充滿幹勁的" }] },
+            { text: "Countless people can name the single teacher who changed the course of their life, which would be impossible if schools could not motivate at all.", fn: "Example" },
+            { text: "Discipline and environment are not rivals; the right environment is one of the chief ways discipline is built.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Learning is a partnership",
+          sentences: [
+            { text: "Moreover, learning is best understood as a partnership between the student and the school.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The learner must supply the effort, but the institution supplies the conditions — inspiration, structure, expectation — that make effort more likely and more rewarding.", fn: "Explanation" },
+            { text: "Blaming students alone lets bad schools off the hook, while blaming schools alone lets lazy students off theirs, when both share the work and the responsibility.", fn: "Develop" },
+            { text: "The best learning happens where a disciplined student meets a school that knows how to feed that discipline.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, learning does depend heavily on personal discipline, but not on discipline alone.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Schools and colleges may not be able to learn for their students, but they can do a great deal to awaken and sustain the motivation on which all learning depends.", fn: "Synthesis" },
+            { text: "Discipline lights the fire, but a good school is what hands the student the match.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-036",
@@ -2128,6 +2351,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Scientists and other researchers should focus their research on areas that are likely to benefit the greatest number of people.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that shows why mass benefit cannot be predicted and why a head-count standard neglects the few, then concedes a legitimate role for weighing benefit; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "With limited money and talent, it seems only sensible to point science at the problems that would help the most people.", fn: "Hook" },
+            { text: "The recommendation makes this a rule, urging scientists to focus their research on areas likely to benefit the greatest number.", fn: "Context (the recommendation)" },
+            { text: "The recommendation is appealing and partly right, but as a governing principle it would do real harm, because the most beneficial discoveries are often unpredictable and the neediest people are not always the most numerous.", fn: "Thesis statement (qualified position)", vocab: [{ term: "unpredictable", gloss: "不可預測的" }] },
+          ],
+        },
+        {
+          role: "Body — Benefit cannot be predicted",
+          sentences: [
+            { text: "First, the recommendation assumes we can know in advance which research will benefit the most people, and usually we cannot.", fn: "Topic sentence", moves: ["First"] },
+            { text: "The most world-changing discoveries — electricity, the structure of DNA, the mathematics behind computers — began as curiosity-driven work with no foreseeable application.", fn: "Example", vocab: [{ term: "foreseeable", gloss: "可預見的" }] },
+            { text: "Had scientists been required to justify their benefit to the masses beforehand, much of this research would never have been funded, and the benefits would never have arrived.", fn: "Explanation" },
+            { text: "Directing all research toward foreseeable mass benefit would therefore starve precisely the basic science from which the largest benefits unpredictably flow.", fn: "Develop" },
+            { text: "The laser was once a solution in search of a problem; today it is everywhere, in surgery, in communication, and in industry.", fn: "Example" },
+            { text: "A policy that funded only the obviously useful would, ironically, sacrifice the discoveries that prove most useful of all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — 'Greatest number' neglects the few",
+          sentences: [
+            { text: "Moreover, a focus on the greatest number would abandon people whose needs are real but rare.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A strict head-count standard would steer research toward common conditions and away from rare diseases that afflict only thousands, leaving those sufferers with no hope at all.", fn: "Point" },
+            { text: "Yet a person with a rare illness is no less deserving of a cure than one with a common cold, and a just society does not measure the worth of research solely by how many it helps.", fn: "Explanation" },
+            { text: "The same logic would neglect the distant future, since people not yet born cannot be counted among today's greatest number, even though research now may save them later.", fn: "Develop" },
+            { text: "Climate and pandemic research benefit chiefly the people of the future, who do not appear in any present tally of beneficiaries.", fn: "Example", vocab: [{ term: "beneficiaries", gloss: "受益者" }] },
+            { text: "Counting heads is a poor way to decide whose suffering matters.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The legitimate kernel",
+          sentences: [
+            { text: "However, the recommendation does point at something legitimate.", fn: "Concede", moves: ["However"] },
+            { text: "Where two equally promising projects compete for the same scarce funds, the likely scale of benefit is a perfectly reasonable thing to weigh.", fn: "Develop the concession" },
+            { text: "But weighing benefit among options is very different from making mass benefit the sole focus of all research, which is what the recommendation proposes.", fn: "Rebut" },
+            { text: "A wise science policy funds a broad portfolio — applied work aimed at present needs and basic work whose payoffs cannot yet be seen — rather than betting everything on the foreseeable.", fn: "State the better policy", vocab: [{ term: "portfolio", gloss: "組合；投資配置" }] },
+            { text: "To serve the most people in the long run, science must be free to pursue more than what serves the most people now.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, scientists should consider the benefit of their work without being confined to whatever helps the largest number.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the greatest discoveries are unforeseeable and the neediest are not always the most numerous, a rule of mass benefit would impoverish science and neglect the vulnerable.", fn: "Synthesis", vocab: [{ term: "vulnerable", gloss: "弱勢的；易受傷害的" }] },
+            { text: "The surest way to benefit the greatest number is to let science explore widely, including the questions whose usefulness no one can yet predict.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-037",
@@ -2279,6 +2557,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "People should undertake risky action only after they have carefully considered its consequences.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that endorses weighing consequences in most circumstances while showing that the word 'only' would paralyze action that must be seized quickly; balanced and well developed.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It sounds like the very definition of prudence: never take a risk until you have carefully weighed what might go wrong.", fn: "Hook", vocab: [{ term: "prudence", gloss: "審慎；謹慎" }] },
+            { text: "The recommendation makes this a rule, advising that people undertake risky action only after carefully considering its consequences.", fn: "Context (the recommendation)" },
+            { text: "As general advice the recommendation is sound, because most regrettable risks are taken thoughtlessly, but its only after is too absolute, since some valuable risks must be seized before deliberation can finish.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Deliberation usually prevents disaster",
+          sentences: [
+            { text: "First, in most circumstances careful thought before a risky act is plainly wise.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Many of the worst decisions people make — reckless investments, dangerous stunts, hasty commitments — come not from bad luck but from acting before thinking.", fn: "Reason", vocab: [{ term: "reckless", gloss: "魯莽的；不顧後果的" }] },
+            { text: "The driver who speeds to save five minutes, the investor who pours his savings into a scheme he does not understand, the speaker who lashes out in anger, all neglect consequences they could easily have foreseen.", fn: "Example" },
+            { text: "Considering what might go wrong lets us weigh the possible gain against the possible loss, prepare for setbacks, and often discover a safer path to the same goal.", fn: "Explanation" },
+            { text: "Risk taken with open eyes is responsible; risk taken blindly is merely gambling with outcomes one has refused to examine.", fn: "Develop" },
+            { text: "In the ordinary run of life the recommendation is exactly right, and most people would suffer fewer disasters by following it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But 'only' invites paralysis",
+          sentences: [
+            { text: "However, the word only makes the advice too rigid for a world that does not always wait.", fn: "Pivot", moves: ["However"] },
+            { text: "Some opportunities and emergencies demand action faster than careful consideration allows, and to insist on finishing one's deliberation first would be to lose them.", fn: "Point" },
+            { text: "A firefighter who paused to weigh every consequence before entering a burning building, or an entrepreneur who waited for certainty before launching, would arrive far too late to matter.", fn: "Example" },
+            { text: "Many of life's richest rewards, in love, in enterprise, and in adventure, go to those willing to act amid uncertainty, since the chance to weigh every consequence is a luxury reality rarely grants.", fn: "Explanation", vocab: [{ term: "uncertainty", gloss: "不確定性" }] },
+            { text: "Endless deliberation can itself become a trap, a way of avoiding the risk of living by hiding behind the appearance of caution.", fn: "Develop" },
+            { text: "The person who never acts until every doubt is resolved will, in practice, never act at all.", fn: "Example" },
+            { text: "Carried to extremes, the recommendation would simply replace one error, recklessness, with another, paralysis.", fn: "Sub-conclusion", vocab: [{ term: "paralysis", gloss: "癱瘓；動彈不得" }] },
+          ],
+        },
+        {
+          role: "Body — A matter of proportion",
+          sentences: [
+            { text: "Moreover, the recommendation is best read as a matter of proportion rather than an absolute.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The greater and the less reversible the stakes, the more consideration a risk deserves; the smaller or more fleeting the opportunity, the less it can afford.", fn: "Explanation" },
+            { text: "A wise person matches the depth of deliberation to the weight of the decision, thinking hard before betting a fortune but trusting trained instinct in the heat of a moment.", fn: "Develop" },
+            { text: "Consider consequences carefully, yes, but not so long that the very moment for action slips away.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, people should usually weigh the consequences before taking a risk, but not in every case and not without limit.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Thoughtless risk invites disaster, yet some of life's greatest gains require acting before all the consequences can be counted, so wisdom lies in matching deliberation to the stakes.", fn: "Synthesis" },
+            { text: "The goal is not to fear risk or to court it blindly, but to take it with as much foresight as the moment allows.", fn: "Final judgment", vocab: [{ term: "foresight", gloss: "先見之明；遠見" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-039",
