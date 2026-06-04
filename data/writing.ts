@@ -27,6 +27,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Governments should place few, if any, restrictions on scientific research and development.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a clear, qualified position well suited to a recommendation prompt, drawing a sharp line between the circumstances where freedom serves science and the few where restriction is essential; thoughtful examples and fluent prose.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Almost every advance that defines modern life — the vaccines that lengthened our lifespans, the transistors that power our devices, the chemistry behind abundant food — grew out of research conducted by people free to follow their curiosity wherever it led.", fn: "Hook (the fruits of free inquiry)" },
+            { text: "From that history it is easy to draw a sweeping lesson: that governments should place few, if any, restrictions on scientific research and development, trusting that freedom alone will deliver progress.", fn: "Context (the recommendation)" },
+            { text: "While I agree that the default should be freedom, I cannot accept the recommendation as an absolute, because the wisdom of restriction depends entirely on circumstances, and in a few of them restraint is not an obstacle to progress but a precondition for it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — When freedom serves science",
+          sentences: [
+            { text: "In the overwhelming majority of fields, light regulation is plainly the wiser course.", fn: "Topic sentence", vocab: [{ term: "regulation", gloss: "監管；法規" }] },
+            { text: "Basic inquiry into mathematics, astronomy, or cell biology threatens no one, and its eventual benefits are usually impossible to foresee at the moment the work begins.", fn: "Explanation" },
+            { text: "When Alexander Fleming left a dish of bacteria unattended and noticed a mould killing the colonies around it, no committee had authorized a search for antibiotics, yet that accident of free inquiry has since saved tens of millions of lives.", fn: "Concrete example" },
+            { text: "Heavy-handed rules, by contrast, would slow such discoveries, drive talented researchers toward more permissive countries, and quietly deprive society of breakthroughs no planner could ever have requested in advance.", fn: "Develop the cost of over-regulation", moves: ["by contrast"] },
+            { text: "Where the risks are negligible and the rewards unpredictable, the recommendation is exactly right, and the burden of proof should fall on anyone who wishes to interfere.", fn: "Sub-conclusion", vocab: [{ term: "unpredictable", gloss: "不可預測的" }] },
+          ],
+        },
+        {
+          role: "Body — When restriction is essential",
+          sentences: [
+            { text: "However, a handful of circumstances turn that logic on its head.", fn: "Pivot to the exception", moves: ["However"] },
+            { text: "Research on lethal pathogens, on nuclear and biological weapons, or on technologies that could be turned against whole populations carries dangers that spill far beyond the laboratory walls.", fn: "Example", vocab: [{ term: "pathogens", gloss: "病原體" }] },
+            { text: "A single engineered virus that escaped containment could kill more people than any experiment could realistically hope to save, and once such knowledge exists it can never be recalled.", fn: "Explain the stakes" },
+            { text: "In these cases the absence of restriction is not freedom at all but recklessness, and a responsible government has not merely the right but the duty to impose firm limits.", fn: "Name the principle", vocab: [{ term: "recklessness", gloss: "魯莽；輕率" }] },
+            { text: "The very hands-off policy that nurtures pure mathematics would be indefensible if applied, without modification, to the design of pathogens or the building of weapons.", fn: "Drive the contrast home" },
+          ],
+        },
+        {
+          role: "Body — The ethical circumstance",
+          sentences: [
+            { text: "A second category of exception is ethical rather than physical.", fn: "Topic sentence" },
+            { text: "Experiments that treat human beings as mere material — testing drugs on people without their consent, or gathering data through deception and harm — violate principles that no promised benefit can justify overriding.", fn: "Example", vocab: [{ term: "consent", gloss: "同意；知情同意" }] },
+            { text: "The twentieth century offers a grim catalogue of what unrestrained research becomes when ambition is severed from conscience, from coerced medical trials to studies that knowingly left patients untreated.", fn: "Support with history" },
+            { text: "Restrictions of this kind do not impede science so much as protect the very people in whose name science is supposedly conducted, and they preserve the public trust without which research cannot long survive.", fn: "Reframe limits as protection" },
+            { text: "A discovery purchased through cruelty corrupts the very enterprise it claims to advance.", fn: "Aphoristic close" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the recommendation captures a genuine and important truth, but states it far too absolutely.", fn: "Restate the position", moves: ["In conclusion"] },
+            { text: "Governments should grant research broad freedom wherever the dangers are small and the payoffs uncertain, while reserving strict limits for the rare cases in which safety or basic ethics is at stake.", fn: "Synthesis" },
+            { text: "The mark of a mature science policy is not the number of restrictions it imposes or removes, but its skill in telling the two kinds of circumstance apart.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-002",
@@ -35,6 +88,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best way to teach is to praise positive actions and ignore negative ones.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): engages both halves of the statement, grants the power of praise, and then shows persuasively why ignoring negative actions fails students; concrete classroom examples and a balanced, well-controlled argument.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Anyone who has watched a hesitant child light up at a few words of encouragement understands the extraordinary power of praise.", fn: "Hook (the power of praise)" },
+            { text: "Some educators distil that observation into a rule for all teaching: that the surest method is to praise positive actions and to ignore negative ones entirely, on the theory that attention rewards whatever it touches.", fn: "Context (the statement)" },
+            { text: "Praise should indeed sit at the heart of good teaching, but the instruction to ignore negative actions altogether goes too far, since students who are never corrected are denied the very feedback that improvement requires.", fn: "Thesis statement (partial agreement)", vocab: [{ term: "feedback", gloss: "回饋；反饋" }] },
+          ],
+        },
+        {
+          role: "Body — Where the statement holds true",
+          sentences: [
+            { text: "It is true that the first half of the claim rests on solid ground.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "A child repeatedly scolded for clumsy handwriting often concludes, not unreasonably, that writing is simply something she cannot do, and gives up before she has fairly begun.", fn: "Example" },
+            { text: "Praising what she manages well, by contrast, supplies the confidence and motivation on which any further effort depends, and decades of research suggest that encouragement outperforms the fear of punishment over the long run.", fn: "Explanation", vocab: [{ term: "motivation", gloss: "動機；動力" }], moves: ["by contrast"] },
+            { text: "Even adults respond this way, working harder for a manager who notices their successes than for one who points only at their failures.", fn: "Broaden beyond children" },
+            { text: "To this extent, a teacher who leads with praise rather than criticism is usually closer to the truth than one who does the reverse.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where it fails",
+          sentences: [
+            { text: "However, to ignore negative actions completely is to mistake kindness for neglect.", fn: "Pivot", moves: ["However"] },
+            { text: "A student who keeps solving the same equation the same wrong way will go on doing so indefinitely unless someone interrupts the pattern and shows a better path.", fn: "Example" },
+            { text: "Silence in the face of error is not generosity; it abandons the learner to rehearse a mistake until it sets, like cement, into a permanent habit.", fn: "Explanation" },
+            { text: "Worse still, to overlook genuinely harmful behavior — cheating, dishonesty, cruelty toward classmates — teaches the entire room that such conduct carries no consequences, a lesson far more damaging than any spelling error.", fn: "Strengthen the objection", vocab: [{ term: "consequences", gloss: "後果" }], moves: ["Worse still"] },
+            { text: "Students are remarkably quick to read what a teacher chooses to ignore, and they adjust their own behavior to match that silent signal.", fn: "Develop the point" },
+            { text: "A teacher who never corrects has not spared her students; she has quietly failed them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The real lesson",
+          sentences: [
+            { text: "The resolution lies in recognizing that the real question is not whether to address negative actions but how.", fn: "Topic sentence" },
+            { text: "Correction offered gently, as an invitation to solve a problem rather than a verdict on the student's worth, repairs the error without wounding the person.", fn: "Example" },
+            { text: "Understood this way, criticism becomes an extension of encouragement rather than its enemy, and the two work as partners instead of rivals.", fn: "Reframe" },
+            { text: "Tone, timing, and trust are what separate the correction that motivates from the criticism that merely stings, and a skilled teacher attends to all three.", fn: "Elaboration" },
+            { text: "The aim is never to humiliate but to inform, so that the student leaves the exchange knowing exactly how to do better next time.", fn: "Clarify the goal" },
+            { text: "What students need is not the absence of correction but its presence in a constructive, humane form.", fn: "Sub-conclusion", vocab: [{ term: "constructive", gloss: "建設性的" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is half right and half dangerous.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Praise should be the foundation on which a classroom is built, but ignoring negative actions would strip students of the guidance that turns effort into genuine progress.", fn: "Synthesis", vocab: [{ term: "guidance", gloss: "引導；指導" }] },
+            { text: "The finest teachers do not choose between encouragement and correction; they offer both, praising generously and correcting with care.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-003",
@@ -43,6 +151,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Governments should offer college and university education free of charge to all students.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that separates the circumstances in which free education is plainly beneficial from those in which a blanket promise is wasteful; relevant examples and a clear, qualified stance.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Few proposals wear their generosity as openly as the promise of a university education offered free of charge to every student who wants one.", fn: "Hook" },
+            { text: "Its champions argue that such a policy would throw open the doors of opportunity, dissolve the advantage of inherited wealth, and build a society both more skilled and more just.", fn: "Context (the case for the recommendation)" },
+            { text: "I share the impulse behind the recommendation and believe governments should heavily subsidize higher education, yet offering it free to all students, in every circumstance, would be neither fair nor financially sound.", fn: "Thesis statement (qualified position)", vocab: [{ term: "subsidize", gloss: "補貼；資助" }] },
+          ],
+        },
+        {
+          role: "Body — Where free education helps",
+          sentences: [
+            { text: "First, in a great many circumstances, removing the cost of education is unambiguously beneficial.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A gifted student born into a poor family, who could flourish at university but cannot begin to afford the tuition, is a loss not only to herself but to a society that will never receive the contributions she might have made.", fn: "Example", vocab: [{ term: "tuition", gloss: "學費" }] },
+            { text: "Lifting that financial barrier converts wasted potential into doctors, engineers, and teachers, which is among the most productive investments a state can make.", fn: "Explanation", vocab: [{ term: "barrier", gloss: "障礙；阻礙" }] },
+            { text: "The nations of northern Europe that fund higher education generously have reaped exactly this reward in the form of highly skilled and adaptable workforces.", fn: "Support" },
+            { text: "Talent, after all, is distributed fairly evenly between rich and poor families, even though the opportunity to develop it is not.", fn: "State the fairness rationale" },
+            { text: "Where money alone stands between a capable student and a degree, the case for free education is overwhelming.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where 'free for all' fails",
+          sentences: [
+            { text: "However, the moment the policy is extended to all students regardless of need or ability, its logic begins to fray.", fn: "Pivot", moves: ["However"] },
+            { text: "Wealthy families who could comfortably pay full fees would receive an expensive subsidy they do not require, financed by taxes that might otherwise have rescued poorer students or repaired crumbling schools.", fn: "Example" },
+            { text: "Making education entirely free can also draw in students with little genuine interest in study, swelling enrolment, straining resources, and eroding the standards that give a degree its meaning.", fn: "Explanation", vocab: [{ term: "resources", gloss: "資源" }] },
+            { text: "Public money is finite, and every dollar handed to a student who could easily have paid is a dollar withheld from one who genuinely could not.", fn: "Opportunity cost" },
+            { text: "A policy that ignores circumstances ends up treating the desperate and the comfortable as though their situations were identical, which is the very opposite of fairness.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Who pays",
+          sentences: [
+            { text: "Finally, there remains the unavoidable question of who actually pays.", fn: "Topic sentence", moves: ["Finally"] },
+            { text: "Free tuition is never truly free; it is financed from a public purse that must also fund hospitals, infrastructure, and the primary schools on which all later learning depends.", fn: "Example", vocab: [{ term: "infrastructure", gloss: "基礎建設" }] },
+            { text: "Whether the trade-off is worth making depends entirely on a country's wealth and on the priorities its citizens are willing to defend.", fn: "Explanation" },
+            { text: "Citizens who applaud free college in the abstract may feel very differently once the cost arrives as higher taxes or longer hospital queues.", fn: "Political reality" },
+            { text: "In a poorer nation, a grand promise of free university for everyone could quietly translate into overcrowded classrooms and underpaid teachers for the youngest children.", fn: "Drive the point home" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the recommendation is admirable in spirit but too absolute in form.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Governments should make higher education genuinely affordable and remove cost as an obstacle for everyone who needs help, but a blanket promise of free tuition for all, regardless of circumstance, is a blunt instrument poorly suited to a complex problem.", fn: "Synthesis" },
+            { text: "Affordability for all who need it, rather than free education for all who want it, is the wiser and more sustainable goal.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-004",
@@ -51,6 +213,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The luxuries and conveniences of contemporary life prevent people from developing into truly strong and independent individuals.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): reframes the statement with real subtlety, conceding that comfort can breed dependence while arguing that convenience relocates rather than removes the challenges that build character; fluent and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is one of the oldest complaints in human history that comfort breeds weakness, and every generation seems convinced that its conveniences are quietly softening the next.", fn: "Hook" },
+            { text: "In its modern form the worry holds that dishwashers, smartphones, and same-day delivery have stripped away the daily hardships that once forged strong, self-reliant individuals, leaving us pampered and dependent.", fn: "Context (the statement's logic)", vocab: [{ term: "self-reliant", gloss: "自立的；自給自足的" }] },
+            { text: "There is a grain of truth in this anxiety, but I largely disagree, because convenience does not abolish the challenges that build character so much as relocate them, and the work of becoming strong has simply moved to new ground.", fn: "Thesis statement (reframe)" },
+          ],
+        },
+        {
+          role: "Body — Where the statement holds true",
+          sentences: [
+            { text: "It would be foolish to pretend that no conveniences encourage dependence.", fn: "Concession (topic sentence)", moves: ["It would be foolish"] },
+            { text: "Someone who has never cooked a meal, found a route without a screen, or repaired anything with their own hands has indeed surrendered skills their grandparents would have considered basic.", fn: "Example" },
+            { text: "When a device dissolves every minor difficulty the instant it appears, the patience and resourcefulness that grow only out of struggle have little occasion to develop.", fn: "Explanation", vocab: [{ term: "resourcefulness", gloss: "機智；隨機應變的能力" }] },
+            { text: "A generation accustomed to instant answers may find ordinary patience, and the slow effort real mastery demands, surprisingly difficult to summon.", fn: "Develop the dependence point" },
+            { text: "To that limited extent, the statement identifies something real.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Strength relocated, not removed",
+          sentences: [
+            { text: "However, strength and independence have never sprung from hardship alone, and to assume they do is to romanticize mere difficulty.", fn: "Pivot", moves: ["However"] },
+            { text: "The same conveniences that the statement condemns also liberate people from the exhausting drudgery — hauling water, scrubbing laundry by hand, walking miles for supplies — that once consumed entire lives.", fn: "Example", vocab: [{ term: "drudgery", gloss: "苦差事；單調的勞動" }] },
+            { text: "The hours and energy thus reclaimed can be poured into education, creativity, and ambition, so that the farmer's daughter who once spent her dawn fetching water may now spend it studying medicine or building a business.", fn: "Explanation" },
+            { text: "Those pursuits demand discipline and resilience every bit as real as chopping wood ever did; the challenge has not vanished, it has merely changed its address.", fn: "Elaboration", vocab: [{ term: "resilience", gloss: "韌性；復原力" }] },
+            { text: "A young person freed from chores is not automatically idle; many pour that reclaimed time into sport, study, or the painstaking practice a craft requires.", fn: "Reinforce reallocation" },
+            { text: "What looks from a distance like softness is often simply strength aimed at an unfamiliar target.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — New tests of character",
+          sentences: [
+            { text: "Modern life, moreover, has invented entirely new tests of character that earlier generations never had to pass.", fn: "Topic sentence", moves: ["moreover"] },
+            { text: "To resist the bottomless distractions of a phone, to think for oneself amid a deafening flood of online opinion, and to stay disciplined when no overseer is watching all require a formidable inner strength.", fn: "Example" },
+            { text: "In a world of constant temptation, self-control may in fact be harder to summon than it ever was in a world of simple scarcity.", fn: "Turn the claim around" },
+            { text: "Choosing to finish a demanding book while an ocean of entertainment waits in your pocket is a discipline our ancestors were simply never asked to exercise.", fn: "Modern discipline example" },
+            { text: "These struggles are not the disappearance of difficulty but its reappearance in a subtler and arguably more demanding form.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement mistakes a change in the location of our challenges for their outright removal.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Luxuries can certainly encourage laziness in those who surrender to them, but they also free us to cultivate strengths our ancestors had no time even to attempt.", fn: "Synthesis" },
+            { text: "Whether convenience weakens us or liberates us depends not on the comforts themselves but on what we choose to do with the freedom they hand us.", fn: "Final judgment", vocab: [{ term: "liberates", gloss: "解放；使自由" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-005",
@@ -59,6 +275,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In any field of inquiry, the beginner is more likely than the expert to make important contributions.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the newcomer's occasional advantage, then argues clearly that deep expertise produces most contributions and that the statement mistakes the memorable exception for the rule; logically sound and well developed.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "There is a romance to the idea of the gifted amateur — the outsider who, precisely because no one has told him what is impossible, stumbles upon what the specialists have missed.", fn: "Hook" },
+            { text: "The statement elevates that romance into a general law, claiming that in any field the beginner is more likely than the expert to make important contributions.", fn: "Context (the statement)" },
+            { text: "I disagree, for although the newcomer's fresh perspective can occasionally prove decisive, the overwhelming majority of important contributions come from experts whose deep knowledge is precisely what makes meaningful innovation possible.", fn: "Thesis statement (clear position)", vocab: [{ term: "perspective", gloss: "觀點；視角" }, { term: "innovation", gloss: "創新" }] },
+          ],
+        },
+        {
+          role: "Body — The beginner's real but limited value",
+          sentences: [
+            { text: "It is true that inexperience carries certain advantages.", fn: "Concession (topic sentence)", vocab: [{ term: "inexperience", gloss: "缺乏經驗" }], moves: ["It is true that"] },
+            { text: "A beginner is not yet imprisoned by the habits of thought that long training quietly instills, and may therefore ask the naive question that everyone else has stopped thinking to ask.", fn: "Example" },
+            { text: "Now and then this outsider's view pays off handsomely, especially when a method from one discipline is carried, by someone ignorant of the usual boundaries, into another where no one had thought to try it.", fn: "Explanation" },
+            { text: "Disciplines do occasionally calcify, repeating inherited assumptions until a stranger, unaware that a question is supposedly forbidden, simply asks it anyway.", fn: "Develop the value of fresh eyes" },
+            { text: "So the statement is not absurd; fresh eyes are genuinely valuable, and a field that silences them grows stale.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why experts make most contributions",
+          sentences: [
+            { text: "However, valuable as fresh eyes are, important contributions almost always rest on the deep understanding that only experience can provide.", fn: "Pivot", moves: ["However"] },
+            { text: "To improve meaningfully on what is known, one must first grasp it thoroughly — its established results, its discredited dead ends, and the precise questions that remain stubbornly open.", fn: "Explanation", vocab: [{ term: "thoroughly", gloss: "徹底地" }] },
+            { text: "A novice in physics may overflow with bold ideas, yet without years of disciplined study he cannot tell the genuinely new from the long-since-refuted, and most of his inspirations will prove to be old errors in fresh clothing.", fn: "Example" },
+            { text: "The landmark achievements of any field — a cure, a theorem, a transformative technology — are built upon a hard-won mastery that beginners, by definition, have not yet acquired.", fn: "Elaboration", vocab: [{ term: "mastery", gloss: "精通；嫻熟" }] },
+            { text: "Expertise is not a warehouse of facts but a trained instinct for which questions are worth pursuing and which roads lead nowhere, and that instinct takes years to build.", fn: "Deepen what expertise is" },
+            { text: "The fresh eye sees the field differently; the trained eye sees far more of it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Exception mistaken for rule",
+          sentences: [
+            { text: "Moreover, the statement commits a familiar error, mistaking the memorable exception for the ordinary rule.", fn: "Topic sentence", moves: ["Moreover"] },
+            { text: "We remember the rare amateur who overturned a discipline precisely because such upheavals are so unusual that they pass into legend.", fn: "Explanation" },
+            { text: "Behind every such story stand thousands of expert specialists who, without fanfare, extended human knowledge through patient and informed work.", fn: "Counter the myth" },
+            { text: "Knowing in advance what has already failed spares the seasoned researcher from squandering a decade rediscovering somebody else's dead end.", fn: "Practical value of experience" },
+            { text: "To count only the dramatic exceptions is to draw a wildly distorted map of where progress actually originates.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the beginner's role is real but distinctly limited.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A fresh perspective can occasionally ignite something important, but it is the steady, demanding labor of experts that produces the vast majority of genuine contributions.", fn: "Synthesis" },
+            { text: "A field flourishes not by ignoring experience in favor of novelty, but when expert knowledge keeps itself open to the occasional unschooled question.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-006",
@@ -67,6 +337,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The surest indicator of a great nation is represented not by the achievements of its rulers, artists, or scientists, but by the general welfare of its people.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees with a clear rationale, shows why broad welfare is a more demanding and reliable indicator than elite achievement, then qualifies the claim by linking the two; well organized and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When we reach for examples of national greatness, our minds turn almost reflexively to monuments and masterpieces — the cathedral, the symphony, the prize-winning scientist, the conquering general.", fn: "Hook" },
+            { text: "The statement asks us to resist that reflex, insisting that the surest indicator of a great nation lies not in the achievements of its rulers, artists, or scientists, but in the general welfare of its ordinary people.", fn: "Context (the statement)" },
+            { text: "I largely agree, because how a nation treats the mass of its citizens reveals its character far more honestly than the brilliance of a celebrated few.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Why welfare is the better indicator",
+          sentences: [
+            { text: "A handful of dazzling achievements can conceal a multitude of failures.", fn: "Topic sentence" },
+            { text: "A country may raise glittering palaces and endow magnificent galleries while the majority of its people languish in poverty, without schooling, clean water, or recourse to justice.", fn: "Example", vocab: [{ term: "poverty", gloss: "貧窮" }] },
+            { text: "Such achievements measure the wealth and ambition of a narrow elite, not the health of the nation taken as a whole.", fn: "Explanation", vocab: [{ term: "elite", gloss: "菁英；上層階級" }] },
+            { text: "By contrast, a society in which ordinary men and women are educated, healthy, and treated with fairness has accomplished the hardest and most consequential task any nation can set itself.", fn: "Counterpoint", moves: ["By contrast"] },
+            { text: "Grand monuments are easy to photograph and easier still to boast about, which is exactly why they so often mislead the visitor.", fn: "Why achievements deceive" },
+            { text: "Greatness shared among millions is more real, and more admirable, than greatness merely displayed by a fortunate few.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Welfare is the harder test",
+          sentences: [
+            { text: "The welfare of ordinary people is, moreover, a far more demanding test than the production of celebrated individuals.", fn: "Topic sentence", moves: ["moreover"] },
+            { text: "Funding a single brilliant laboratory requires only money and talent, but ensuring that tens of millions of citizens live decent lives requires fair laws, honest institutions, and effort sustained across generations.", fn: "Example", vocab: [{ term: "institutions", gloss: "制度；機構" }, { term: "sustained", gloss: "持續的" }] },
+            { text: "A nation that manages the second has solved problems incomparably more complex than the raising of any monument.", fn: "Explanation" },
+            { text: "It is far simpler to bankroll one celebrated laboratory than to guarantee that every child has a teacher and every patient a bed.", fn: "Concrete contrast of difficulty" },
+            { text: "That is precisely why broad well-being is the surer indicator: it cannot be faked, bought cheaply, or concentrated in a single showcase for visitors to admire.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Achievement and welfare connected",
+          sentences: [
+            { text: "However, the statement should not be read as a wholesale dismissal of achievement.", fn: "Qualify", moves: ["However"] },
+            { text: "The discoveries of scientists and the decisions of able leaders frequently improve ordinary lives, as vaccines, just laws, and new technologies raise the welfare of everyone they touch.", fn: "Example" },
+            { text: "Achievement and welfare are not adversaries; the finest achievements are exactly those that lift the general population rather than a privileged sliver of it.", fn: "Reframe" },
+            { text: "A discovery reaches its full worth only when it touches the ordinary patient, and a wise law proves itself only in the ordinary life it quietly improves.", fn: "Tie achievement to welfare" },
+            { text: "The point is not that achievements fail to matter, but that they matter most when measured by how widely their benefits are shared.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the general welfare of its people is indeed the surest indicator of a nation's greatness.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Monuments and prizes can dazzle, but they can also distract us from the unglamorous question of how ordinary people actually live from one day to the next.", fn: "Synthesis" },
+            { text: "A truly great nation is measured less by the brilliance gathered at its summit than by the dignity it secures at its base.", fn: "Final judgment", vocab: [{ term: "dignity", gloss: "尊嚴" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-007",
