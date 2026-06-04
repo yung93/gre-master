@@ -1708,6 +1708,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educators should teach facts only after their students have studied the ideas, trends, and concepts that help explain those facts.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): a recommendation-appropriate response that endorses leading with understanding while showing that facts and concepts cannot be cleanly separated; clear and well organized, though the analysis stays fairly general.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Anyone who has crammed a list of dates only to forget them by morning knows that facts without understanding rarely stick.", fn: "Hook" },
+            { text: "From this truth the recommendation draws a rule: that educators should teach facts only after students have studied the ideas, trends, and concepts that explain them.", fn: "Context (the recommendation)" },
+            { text: "The recommendation rightly insists that understanding should guide instruction, but its strict ordering is mistaken, because facts and concepts are so intertwined that neither can be fully taught before the other.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Leading with ideas helps",
+          sentences: [
+            { text: "First, there is genuine wisdom in leading with ideas rather than isolated facts.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A fact lodged in a framework of meaning is understood and remembered, while a fact memorized in a vacuum is soon lost.", fn: "Reason", vocab: [{ term: "framework", gloss: "架構；框架" }] },
+            { text: "A student who first grasps why empires rise and fall will absorb the dates of particular conquests far more readily than one who merely memorizes them.", fn: "Example" },
+            { text: "Concepts act like shelves on which facts can be stored, and without them new information has nowhere to rest.", fn: "Explanation" },
+            { text: "This is why the best teachers open a topic with a big question rather than a list of terms, giving students a reason to care about the details to come.", fn: "Develop" },
+            { text: "Begin with a fact and many students see only something to be memorized; begin with a question and the same fact becomes an answer they actually wanted.", fn: "Sharpen" },
+            { text: "Understanding first, in short, makes the facts that follow meaningful.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Facts and concepts are inseparable",
+          sentences: [
+            { text: "However, the recommendation's strict sequence — concepts first, facts only afterward — misunderstands how learning actually works.", fn: "Pivot", moves: ["However"] },
+            { text: "Concepts are themselves built out of facts, and a student cannot grasp a trend without knowing at least some of the particulars that compose it.", fn: "Point" },
+            { text: "One cannot understand the concept of evolution without facts about finches and fossils, or the idea of inflation without facts about prices and wages.", fn: "Example" },
+            { text: "Ideas and facts are learned together, each illuminating the other, in a back-and-forth rather than a straight line.", fn: "Explanation", vocab: [{ term: "illuminating", gloss: "闡明；照亮" }] },
+            { text: "To withhold all facts until the concepts are mastered would leave students trying to understand explanations of nothing in particular.", fn: "Develop" },
+            { text: "Even the youngest reader learns letters and sounds at the same time, not one fully before the other.", fn: "Reinforce" },
+            { text: "In practice, every good lesson weaves the two together from the very start.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Emphasis, not sequence",
+          sentences: [
+            { text: "Moreover, the recommendation is best understood as a matter of emphasis rather than rigid sequence.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Where teaching has degenerated into the rote memorization of disconnected facts, shifting toward concepts would be a clear improvement.", fn: "Concede the legitimate point", vocab: [{ term: "rote", gloss: "死記硬背的" }] },
+            { text: "But the goal is integration, not a rule that facts must always wait their turn.", fn: "Rebut", vocab: [{ term: "integration", gloss: "整合；融會貫通" }] },
+            { text: "A skilled teacher introduces just enough fact to make a concept graspable, then uses the concept to organize further facts, circling between them.", fn: "Explain how" },
+            { text: "Whether to lead with the idea or the example depends on the subject, the students, and the moment, which no universal rule can dictate.", fn: "Develop" },
+            { text: "Flexibility, not a fixed order, is what good teaching truly requires.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the recommendation is right that understanding should lead but wrong to bar facts until concepts are mastered.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because facts and ideas are learned together, educators should weave them, emphasizing meaning over memorization without pretending the two can be cleanly separated.", fn: "Synthesis", vocab: [{ term: "memorization", gloss: "死記；記憶" }] },
+            { text: "Teach the idea and the fact in conversation, and each will make the other stick.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-027",
@@ -1716,6 +1774,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: We can usually learn much more from people whose views we share than from those whose views contradict our own. Reason: Disagreement can cause stress and inhibit learning.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): correctly grants the reason a partial truth and then breaks the link, arguing that we learn most from disagreement and that the reason confuses comfort with learning; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is more pleasant to talk with people who nod along than with those who argue back, and the temptation to stay among the like-minded is strong.", fn: "Hook" },
+            { text: "The claim elevates this comfort into a principle — that we usually learn more from people who share our views — and rests it on the reason that disagreement causes stress and inhibits learning.", fn: "Context (claim and reason)" },
+            { text: "The reason holds a grain of truth, but it does not support the claim; in fact the opposite is closer to the truth, because we learn most from precisely the disagreement the reason warns against.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is partly true",
+          sentences: [
+            { text: "First, the reason is not entirely wrong.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "Hostile, contemptuous disagreement can indeed shut a mind down, making a person defensive rather than curious.", fn: "Example", vocab: [{ term: "defensive", gloss: "防衛的；自我防備的" }] },
+            { text: "When an exchange feels like an attack, people stop listening and start protecting themselves, and in that state little is learned.", fn: "Explanation" },
+            { text: "There is also a comfort in shared assumptions, which lets a conversation move quickly without re-arguing every premise.", fn: "Develop" },
+            { text: "So the reason identifies something real: not all disagreement is productive, and stress can certainly impede learning.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But disagreement teaches most",
+          sentences: [
+            { text: "However, from the fact that hostile disagreement can hinder learning, it does not follow that we learn more from those who agree with us.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "People who share our views mostly confirm what we already think, and confirmation, however pleasant, teaches us nothing new.", fn: "Point", vocab: [{ term: "confirmation", gloss: "確認；認同" }] },
+            { text: "It is the person who disagrees who exposes the flaw in our argument, the fact we overlooked, the possibility we never considered.", fn: "Example" },
+            { text: "A debate with a thoughtful opponent forces us to examine our reasons, abandon the weak ones, and strengthen the rest, which is the very definition of learning.", fn: "Explanation" },
+            { text: "An echo chamber of agreement, by contrast, leaves our beliefs untested and our knowledge frozen where it began.", fn: "Develop", vocab: [{ term: "echo", gloss: "回聲；附和" }] },
+            { text: "Nothing sharpens a belief like the obligation to defend it against someone who genuinely doubts it.", fn: "Reinforce" },
+            { text: "We are challenged, corrected, and stretched by those who differ, not by those who simply echo us.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Comfort is not learning",
+          sentences: [
+            { text: "Moreover, the reason quietly mistakes comfort for learning, which are not the same thing at all.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Learning is frequently uncomfortable precisely because it requires giving up a cherished error, and the mild stress of disagreement is often the feeling of a mind being changed.", fn: "Point" },
+            { text: "To avoid that discomfort by seeking only agreement is to trade growth for ease.", fn: "Explanation", vocab: [{ term: "discomfort", gloss: "不適；不安" }] },
+            { text: "The stress the reason treats as an obstacle is, within limits, a sign that real intellectual work is taking place.", fn: "Develop" },
+            { text: "Growth lives just past the edge of comfort, which is exactly where honest disagreement takes us.", fn: "Sharpen" },
+            { text: "What inhibits learning is not disagreement but contempt, and the remedy is to disagree respectfully, not to avoid disagreement altogether.", fn: "Sub-conclusion", vocab: [{ term: "respectfully", gloss: "尊重地；有禮地" }] },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is half true but the claim does not follow from it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Disagreement can cause stress, but stress is not the same as the absence of learning, and it is from those who challenge our views, not those who share them, that we usually learn the most.", fn: "Synthesis" },
+            { text: "Seek out the people who disagree with you well; they, far more than your allies, are the ones who will teach you something.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-028",
@@ -1724,6 +1838,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people they serve.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that names the circumstances in which independent judgment is a duty and those in which it threatens democracy, and resolves the tension through the word 'unquestioningly'; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Democracies rest on a tension: officials are chosen to serve the people, yet the people elect them precisely to exercise the judgment the public lacks the time or expertise to exercise itself.", fn: "Hook (the tension)" },
+            { text: "The recommendation comes down on one side, urging officials to rely on their own judgment rather than unquestioningly carry out the will of the people they serve.", fn: "Context (the recommendation)" },
+            { text: "The recommendation is right in important circumstances, but stated so broadly it is dangerous, because an official who routinely substitutes his judgment for the public's will undermines the democracy he was elected to serve.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — When judgment must prevail",
+          sentences: [
+            { text: "First, there are clear circumstances in which an official must follow his own judgment over popular opinion.", fn: "Topic sentence", moves: ["First"] },
+            { text: "The public often demands contradictory things, or short-term benefits that carry long-term ruin, and a leader who simply obeyed would steer the country onto the rocks.", fn: "Example" },
+            { text: "Officials also have access to expertise, intelligence, and detail that the public lacks, which is precisely why we delegate decisions to them rather than vote on everything directly.", fn: "Explanation", vocab: [{ term: "delegate", gloss: "委派；授權" }] },
+            { text: "Some duties — protecting an unpopular minority, upholding the law against a furious majority — require resisting the public will rather than obeying it.", fn: "Develop" },
+            { text: "Leaders who once defied popular prejudice to extend rights are now remembered as heroes, not as traitors to democracy.", fn: "Example" },
+            { text: "Where the public is misinformed, divided, or bent on injustice, independent judgment is not arrogance but duty.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — When the public will must rule",
+          sentences: [
+            { text: "However, to make independent judgment the general rule would corrode democracy itself.", fn: "Pivot", moves: ["However"] },
+            { text: "The legitimacy of an official rests entirely on the consent of the governed, and once he sets his judgment routinely above their will, he becomes a ruler rather than a representative.", fn: "Point", vocab: [{ term: "legitimacy", gloss: "正當性；合法性" }] },
+            { text: "History is full of leaders who knew better than their people and used that conviction to justify ignoring them, often disastrously.", fn: "Example" },
+            { text: "The people's will, even when imperfect, is the ultimate check on power, and an official free to override it whenever he disagrees is accountable to no one.", fn: "Explanation", vocab: [{ term: "accountable", gloss: "須負責的；應問責的" }] },
+            { text: "Confidence in one's own judgment is exactly what tyrants share with statesmen; the difference lies in submitting to the public's verdict.", fn: "Develop" },
+            { text: "An official who ignores the people he serves has forgotten whom he serves.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The key word is 'unquestioningly'",
+          sentences: [
+            { text: "Moreover, the recommendation is most defensible because of a single word: unquestioningly.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "There is a vast space between blindly executing every public whim and arrogantly disregarding the public altogether.", fn: "Point" },
+            { text: "The wise official neither obeys without thought nor rules without consent; he leads the public by persuasion, explains hard choices, and accepts that the final authority is theirs.", fn: "Explanation", vocab: [{ term: "persuasion", gloss: "說服；勸說" }, { term: "consent", gloss: "同意；認可" }] },
+            { text: "He uses his judgment to shape and inform the public will, and then defers to it, rather than replacing it.", fn: "Develop" },
+            { text: "To question the public's will is healthy; to override it as a matter of course is not.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, officials should certainly exercise judgment rather than obey unquestioningly, but they must not mistake that for a license to ignore the people.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "In circumstances of expertise, urgency, or injustice, independent judgment is essential, yet it must operate within, not above, the democratic consent that gives an official any authority at all.", fn: "Synthesis" },
+            { text: "The best leaders guide the public will with their judgment and submit to it with their conscience, doing neither alone.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-029",
@@ -1732,6 +1901,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Young people should be encouraged to pursue long-term, realistic goals rather than seek immediate fame and recognition.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that shows where long-term goals beat the pursuit of fame and then carefully qualifies the word 'realistic' so it does not stifle ambition; concrete and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "In an age when a single video can make an unknown teenager famous overnight, the pull of instant recognition has never been stronger.", fn: "Hook" },
+            { text: "Against it, the recommendation urges young people to pursue long-term, realistic goals rather than chase immediate fame.", fn: "Context (the recommendation)" },
+            { text: "The recommendation is largely wise, because lasting fulfillment grows from sustained effort rather than from sudden celebrity, though the word realistic should not be used to discourage genuine ambition.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Long-term goals build something real",
+          sentences: [
+            { text: "First, long-term goals build the skills, character, and satisfaction that fleeting fame cannot.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Mastery of anything worthwhile — medicine, music, a craft, a science — takes years of patient work, and the person who pursues it gains abilities that remain when the applause fades.", fn: "Reason", vocab: [{ term: "mastery", gloss: "精通；嫻熟" }] },
+            { text: "A young woman who spends a decade becoming an excellent surgeon has built something no viral moment could give her and nothing a scandal could take away.", fn: "Example" },
+            { text: "Fulfillment tends to come from growth and contribution, not from being noticed, and a life organized around recognition is built on the shifting opinions of strangers.", fn: "Explanation", vocab: [{ term: "fulfillment", gloss: "成就感；滿足" }] },
+            { text: "Long-term goals also teach resilience, since they are reached only by surviving the setbacks that a quick path never encounters.", fn: "Develop", vocab: [{ term: "resilience", gloss: "韌性；復原力" }] },
+            { text: "Skills compound quietly over years, while fame, even when it lands, can evaporate within a week.", fn: "Reinforce" },
+            { text: "What is earned slowly tends to last; what arrives overnight tends to vanish overnight.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Fame is hollow and unreliable",
+          sentences: [
+            { text: "Moreover, immediate fame is both unreliable as a goal and hollow as a reward.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Fame arrives, when it arrives at all, by luck as much as merit, so to aim at it is to stake one's life on a lottery.", fn: "Point" },
+            { text: "For every young person made briefly famous online, countless others chase the same recognition and gain nothing but wasted years.", fn: "Example" },
+            { text: "Those who do achieve sudden fame often find it empty, fleeting, and corrosive, since attention is not the same as respect and rarely satisfies for long.", fn: "Explanation", vocab: [{ term: "corrosive", gloss: "腐蝕性的；傷害身心的" }] },
+            { text: "The modern machinery of instant celebrity is especially treacherous, rewarding spectacle over substance and discarding people as fast as it raises them.", fn: "Develop", vocab: [{ term: "spectacle", gloss: "奇觀；表演噱頭" }] },
+            { text: "Aiming at applause means letting strangers decide whether your life has succeeded.", fn: "Sharpen" },
+            { text: "To build a life around so fickle a prize is to build on sand.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But do not let 'realistic' kill ambition",
+          sentences: [
+            { text: "However, the recommendation must be read with care, because the word realistic can do real harm.", fn: "Pivot", moves: ["However"] },
+            { text: "Told to be realistic, a gifted young person might abandon a bold dream — to start a company, make art, change a field — that looked impossible but was well worth attempting.", fn: "Concede the danger" },
+            { text: "The point is not to aim low but to aim at something real and lasting rather than at mere visibility.", fn: "Rebut" },
+            { text: "A long-term goal can be wildly ambitious, even unlikely, as long as it is pursued for its substance and not for the spotlight.", fn: "Explain" },
+            { text: "There is a world of difference between a hard dream and a hollow one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, young people are well advised to pursue long-term goals over immediate fame.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Sustained effort toward something real builds skill, resilience, and genuine fulfillment, while the chase for instant recognition usually delivers neither and rarely lasts.", fn: "Synthesis" },
+            { text: "Aim high and aim far, and let any fame that comes arrive as the reward for the work rather than as its purpose.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-030",
@@ -1740,6 +1966,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "If a goal is worthy, then any means taken to attain it are justifiable.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the absolute claim with two strong reasons — means cause real harm and corrupt the ends they serve — then concedes the limited truth before reaffirming the position; tightly reasoned.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is a seductive idea that a noble enough end can excuse whatever it takes to reach it, and history is littered with crimes committed in the name of good causes.", fn: "Hook" },
+            { text: "The statement embraces this logic fully, holding that if a goal is worthy, then any means taken to attain it are justifiable.", fn: "Context (the statement)" },
+            { text: "I strongly disagree, because the means we use have consequences and a moral weight of their own, and a worthy goal pursued through monstrous means is neither worthy nor truly achieved.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Means cause real harm",
+          sentences: [
+            { text: "First, no end exists in isolation, and the means used to reach it produce consequences of their own.", fn: "Topic sentence", moves: ["First"] },
+            { text: "To pursue a good goal through violence, deceit, or cruelty is to create real suffering now in exchange for a benefit that is only hoped for later.", fn: "Point" },
+            { text: "Revolutions launched to free people have, through terror and bloodshed, produced tyrannies worse than the ones they replaced.", fn: "Example" },
+            { text: "The harm done by the means is certain and immediate, while the worthy end is often distant and unsure, so any means trades guaranteed evil for speculative good.", fn: "Explanation", vocab: [{ term: "speculative", gloss: "臆測的；不確定的" }] },
+            { text: "A doctor does not cure a patient by killing him, and a society does not achieve justice by committing injustice along the way.", fn: "Develop" },
+            { text: "History's bloodiest chapters were written by people convinced that their cause excused the carnage.", fn: "Reinforce" },
+            { text: "Because means cause real harm, they cannot be excused merely by pointing at a distant goal.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Means corrupt the end",
+          sentences: [
+            { text: "Moreover, immoral means tend to corrupt the very goal they were meant to serve.", fn: "Pivot", vocab: [{ term: "corrupt", gloss: "敗壞；使墮落" }], moves: ["Moreover"] },
+            { text: "A cause defended through lies becomes a cause built on lies, and the habits formed in pursuing it do not vanish once the goal is reached.", fn: "Point" },
+            { text: "A movement for freedom that wins through terror tends to keep ruling through terror, because the people and methods that triumph are the ones the struggle has shaped.", fn: "Example" },
+            { text: "Means are not neutral tools laid down at the finish line; they become part of whatever is built.", fn: "Explanation" },
+            { text: "The end never quite arrives pure, because it carries within it everything done to attain it.", fn: "Develop" },
+            { text: "To say the goal justifies any means is to forget that the means become the goal.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The kernel of truth and its limit",
+          sentences: [
+            { text: "Admittedly, there is a limited truth buried in the statement.", fn: "Concede", moves: ["Admittedly"] },
+            { text: "Worthy goals do sometimes justify difficult or costly means — a just war, a painful sacrifice, a hard compromise — that would be wrong in the absence of any purpose.", fn: "Develop the concession", vocab: [{ term: "sacrifice", gloss: "犧牲" }] },
+            { text: "But this is a far cry from any means, which would license torture, murder, and betrayal whenever the cause seemed grand enough.", fn: "Rebut" },
+            { text: "The honest principle is that a worthy end can justify some means and never others, and that the more monstrous the means, the worthier the end must be even to be debated.", fn: "State the better principle" },
+            { text: "The worthier the goal, the more tempting it becomes to forgive ourselves anything done in its name.", fn: "Sharpen" },
+            { text: "Any is precisely the word that turns a reasonable idea into a dangerous one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, a worthy goal can justify some means but never any means whatever.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because means cause real harm and shape the ends they serve, the word any makes the statement an invitation to atrocity dressed up as idealism.", fn: "Synthesis", vocab: [{ term: "atrocity", gloss: "暴行" }, { term: "idealism", gloss: "理想主義" }] },
+            { text: "The worthiness of a goal is a reason to choose our means with more care, not less.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-031",
@@ -1748,6 +2031,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In order to become well-rounded individuals, all college students should be required to take courses in which they read poetry, novels, mythology, and other types of imaginative literature.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that argues literature builds empathy, language, and breadth no technical training provides, then answers the worry about bad teaching; well organized and convincing.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A student can graduate from many universities having read spreadsheets and lab reports but not a single poem or novel, and the recommendation finds that troubling.", fn: "Hook" },
+            { text: "It proposes that all college students, whatever their field, be required to take courses in poetry, novels, mythology, and other imaginative literature.", fn: "Context (the recommendation)" },
+            { text: "I largely agree, because imaginative literature develops capacities — empathy, imagination, and a feel for language — that no technical training provides, though the requirement must be designed thoughtfully to do real good.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Literature builds empathy",
+          sentences: [
+            { text: "First, literature teaches something no other subject teaches as well: what it is like to be someone else.", fn: "Topic sentence", moves: ["First"] },
+            { text: "To read a novel is to live, for a while, inside another person's mind, feeling their fears and following their reasons from the inside.", fn: "Reason" },
+            { text: "This rehearsal of other lives builds empathy and moral imagination, the ability to understand people quite unlike ourselves.", fn: "Explanation", vocab: [{ term: "empathy", gloss: "同理心" }] },
+            { text: "An engineer who has inhabited the characters of great fiction is likelier to remember, when designing for millions, that numbers stand for human beings.", fn: "Example" },
+            { text: "In a world that rewards specialization, this widening of sympathy is exactly the corrective a narrow education needs.", fn: "Develop" },
+            { text: "Numbers and code describe the world; stories let us feel what living in it is actually like.", fn: "Reinforce" },
+            { text: "A graduate who can build a bridge but cannot imagine another's suffering is only half educated.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Literature sharpens language and thought",
+          sentences: [
+            { text: "Moreover, imaginative literature trains the mind and the language in ways that pay off in any field.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Reading complex prose and poetry stretches a student's vocabulary, attention, and capacity to handle ambiguity and nuance.", fn: "Point", vocab: [{ term: "ambiguity", gloss: "模稜兩可；多義" }, { term: "nuance", gloss: "細微差別" }] },
+            { text: "The lawyer who has wrestled with a difficult poem reads contracts more closely, and the scientist who has followed a subtle plot frames an argument more clearly.", fn: "Example" },
+            { text: "Great literature also carries the accumulated wisdom of human experience, the myths and stories through which cultures have always thought about love, death, power, and justice.", fn: "Explanation" },
+            { text: "To be ignorant of this inheritance is to be cut off from the deepest conversation the human race has been having with itself.", fn: "Develop", vocab: [{ term: "inheritance", gloss: "遺產；傳承" }] },
+            { text: "These are not soft extras but core tools of a thinking life.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The requirement must be taught well",
+          sentences: [
+            { text: "However, the value of the requirement depends entirely on how it is carried out.", fn: "Pivot", moves: ["However"] },
+            { text: "A mandatory literature course taught badly — reduced to dull summaries and tests on plot — could breed resentment rather than a love of reading.", fn: "Concede the danger", vocab: [{ term: "resentment", gloss: "怨恨；反感" }] },
+            { text: "But this is an argument for teaching it well, not for abandoning the requirement, just as a poorly taught math class is no reason to stop teaching math.", fn: "Rebut" },
+            { text: "Designed thoughtfully, with real books and genuine discussion, such courses can reach even students who arrive convinced that they hate reading.", fn: "Explain" },
+            { text: "Almost any subject can be ruined by poor teaching, and that is a reason to teach it better, not to drop it.", fn: "Reinforce" },
+            { text: "The requirement is sound; its success lies entirely in the execution.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, requiring college students to study imaginative literature is a wise policy.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Literature cultivates the empathy, language, and breadth that make a person well-rounded rather than merely trained, and these are gains no specialist education should be allowed to skip.", fn: "Synthesis" },
+            { text: "A university that sends its students into the world without a single great story has taught them how to make a living but not how to understand a life.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-032",
