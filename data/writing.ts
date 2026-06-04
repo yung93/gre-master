@@ -4933,6 +4933,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that scientific discoveries have given us a much better understanding of the world around us. Others believe that science has revealed to us that the world is infinitely more complex than we ever realized.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a two-views response that grants the clarity science brings and the complexity it reveals, then shows the two are faces of one truth rather than rivals; even-handed and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Has science made the world clearer or stranger? Ask a scientist and you may well get both answers at once.", fn: "Hook" },
+            { text: "Some hold that scientific discoveries have given us a far better understanding of the world; others hold that science has revealed the world to be infinitely more complex than we ever realized.", fn: "Context (state both views)" },
+            { text: "Both views are true, and my position is that they are not rivals at all: science gives us a much better understanding precisely while revealing how much more complex the world is than we knew.", fn: "Thesis statement (which view aligns)" },
+          ],
+        },
+        {
+          role: "Body — The case that science clarifies",
+          sentences: [
+            { text: "The first view rests on the undeniable clarity science has brought to a once-baffling world.", fn: "Topic sentence (view one)" },
+            { text: "Phenomena that terrified our ancestors — disease, lightning, eclipses, the movements of the stars — are now understood well enough to predict, prevent, and harness.", fn: "Explanation", vocab: [{ term: "phenomena", gloss: "現象" }] },
+            { text: "We know that germs cause illness, that the earth orbits the sun, and that matter is made of atoms, replacing myth and guesswork with reliable knowledge.", fn: "Example" },
+            { text: "This understanding is not merely abstract; it lets us cure diseases, build machines, and feed billions, which would be impossible without a genuine grasp of how the world works.", fn: "Develop" },
+            { text: "Those who say science has vastly improved our understanding are plainly right: we comprehend our world as no earlier age ever could.", fn: "Sub-conclusion", vocab: [{ term: "comprehend", gloss: "理解；領會" }] },
+            { text: "Where there was once mystery, there is now mechanism.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The case that science reveals complexity",
+          sentences: [
+            { text: "However, the second view captures an equally real truth: that every discovery uncovers deeper layers of complexity.", fn: "Pivot (view two)", moves: ["However"] },
+            { text: "The more science learns, the more it finds, and each answer opens onto a host of new and harder questions.", fn: "Point" },
+            { text: "The atom, once thought indivisible, turned out to contain particles within particles; the gene, once a simple unit, revealed a staggering web of regulation we are still untangling.", fn: "Example", vocab: [{ term: "untangling", gloss: "理清；解開" }] },
+            { text: "Fields we imagined nearly complete — physics, biology, the study of the brain — keep proving vastly more intricate than anyone expected.", fn: "Explanation", vocab: [{ term: "intricate", gloss: "錯綜複雜的；精細的" }] },
+            { text: "Science has revealed a universe far older, larger, and stranger than common sense suggested, full of phenomena we can describe but barely comprehend.", fn: "Develop" },
+            { text: "Those who say science shows the world to be infinitely complex are right: knowledge has expanded the frontier of mystery, not closed it.", fn: "Sub-conclusion", vocab: [{ term: "frontier", gloss: "前沿；邊界" }] },
+            { text: "Every island of knowledge has a longer coastline of the unknown.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — My position: two faces of one truth",
+          sentences: [
+            { text: "On balance, my own view is that these are two faces of a single truth, not opposing claims.", fn: "Pivot (my position)", moves: ["On balance"] },
+            { text: "Better understanding and greater complexity grow together, because it is precisely by understanding something deeply that we discover how complicated it really is.", fn: "Point" },
+            { text: "A child thinks the world is simple; the expert knows it is not, and that very knowledge of its complexity is a higher understanding, not a failure of one.", fn: "Explanation" },
+            { text: "Science has both clarified the world and revealed its depth, and the sense that it has made things more mysterious is itself a sign of how much more we now understand.", fn: "Develop" },
+            { text: "To see the world as more complex is, in the end, to see it more truly.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, my position embraces both views, because they describe the same achievement from two different sides.", fn: "Restate (which view)", moves: ["In conclusion"] },
+            { text: "Science has given us a far better understanding of the world and, in doing so, revealed it to be infinitely more complex than we realized, so the two views are not in conflict but in partnership.", fn: "Synthesis" },
+            { text: "We understand the world far better than our ancestors did, and one of the things we best understand is how much remains to be understood.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-076",
@@ -4941,6 +4997,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In any profession — business, politics, education, government — those in power should step down after five years.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the blanket rule by showing it discards valuable experience and ignores how power differs across professions, then meets the corruption objection with accountability rather than an arbitrary limit; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Power has a way of overstaying its welcome, and the claim offers a blunt remedy: in every profession, those in charge should step down after five years.", fn: "Hook" },
+            { text: "Whether in business, politics, education, or government, the rule would force a regular turnover of leadership.", fn: "Context (the claim)" },
+            { text: "The claim rightly fears entrenched power, but its blanket rule is too rigid, because five years is arbitrary, experience is valuable, and forcing out capable leaders would waste as much as it renews.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — It discards valuable experience",
+          sentences: [
+            { text: "First, mastering many leadership roles takes far longer than five years.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A surgeon, a university president, or a head of state often becomes most effective only after years of learning the job, building relationships, and seeing the results of earlier decisions.", fn: "Explanation" },
+            { text: "To force out a leader just as she reaches her peak would throw away hard-won experience and hand power to a novice every five years.", fn: "Example", vocab: [{ term: "novice", gloss: "新手；菜鳥" }] },
+            { text: "Many great achievements — a long reform, a major project, an institution slowly built — require a continuity that a rigid five-year limit would constantly disrupt.", fn: "Develop", vocab: [{ term: "continuity", gloss: "延續性；連貫" }] },
+            { text: "A rule that removes leaders precisely when they have learned to lead well would sacrifice competence for the sake of mere change.", fn: "Sub-conclusion" },
+            { text: "Change for its own sake is not the same thing as improvement.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — 'Any profession' ignores difference",
+          sentences: [
+            { text: "Moreover, the claim's reach across any profession ignores how differently power works in different fields.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The case for limiting a president, who commands a state, is far stronger than for limiting a surgeon, a scientist, or a small-business owner, whose power threatens no one.", fn: "Point" },
+            { text: "A fixed five-year rule treats a dictator and a dentist alike, which is plainly absurd.", fn: "Explanation" },
+            { text: "We do not want our best researchers, teachers, or craftsmen forced to abandon their work every five years simply because they have grown senior in it.", fn: "Example" },
+            { text: "Where leadership is freely chosen and easily replaced — by voters, by boards, or by customers — there is no need for an arbitrary expiry date at all.", fn: "Develop", vocab: [{ term: "arbitrary", gloss: "武斷的；任意的" }] },
+            { text: "A rule meant for tyrants makes little sense applied to everyone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The corruption objection, answered",
+          sentences: [
+            { text: "The most compelling argument for the claim is that long-held power tends to corrupt and to stagnate.", fn: "Identify the strongest counter", vocab: [{ term: "stagnate", gloss: "停滯；不前" }], moves: ["The most compelling"] },
+            { text: "There is real force here: leaders who stay too long can grow complacent, surround themselves with yes-men, and cling to power for its own sake, and a regular turnover does bring fresh ideas.", fn: "Concede its force", vocab: [{ term: "complacent", gloss: "自滿的；得過且過的" }] },
+            { text: "But the remedy for this is accountability, not an arbitrary five-year guillotine that removes the good along with the bad.", fn: "Rebut" },
+            { text: "Elections, term limits where power is genuinely dangerous, oversight, and the freedom to replace a failing leader all check entrenchment without discarding capable ones on a fixed schedule.", fn: "Explain" },
+            { text: "The answer to bad leaders who overstay is to remove them, not to remove everyone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim's fear of entrenched power is valid, but its universal five-year rule is far too crude.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because experience is valuable, professions differ, and good leaders should not be discarded with the bad, the right safeguard is accountability tailored to each field, not a blanket expiry date.", fn: "Synthesis" },
+            { text: "Limit power where it is dangerous and remove leaders who fail, but do not throw out the able merely because the calendar says so.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-077",
@@ -4949,6 +5060,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Requiring university students to take a variety of courses outside their major fields of study is the best way to ensure that students become truly educated.",
     directions: D_STATEMENT,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): grants that breadth genuinely educates while showing it is one route among several rather than the best; clear and well organized, though it treads familiar ground.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Everyone agrees we want students to become truly educated, but how best to get there is far from settled.", fn: "Hook" },
+            { text: "The statement offers one confident answer: that requiring university students to take courses outside their major is the best way to ensure a true education.", fn: "Context (the statement)" },
+            { text: "Breadth of study genuinely helps make a person educated, but the statement overstates its case, because requiring outside courses is one valuable means among several, not the single best way.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Breadth genuinely educates",
+          sentences: [
+            { text: "It is true that studying beyond one's major contributes a great deal to becoming truly educated.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "A person who knows only one field sees the world through a single lens, while one exposed to several can connect ideas, weigh different ways of thinking, and avoid the narrowness of pure specialization.", fn: "Explanation", vocab: [{ term: "specialization", gloss: "專業化；專精" }] },
+            { text: "An engineer who has studied some history and ethics, or a poet who understands a little science, brings a fuller mind to whatever they do.", fn: "Example" },
+            { text: "Real problems cross the boundaries between subjects, so a broadly educated person is better equipped for the mixed questions of life and work.", fn: "Develop" },
+            { text: "So the statement is right that breadth matters, and required outside courses are a sensible way to encourage it.", fn: "Sub-conclusion" },
+            { text: "A mind confined to one subject is only half furnished.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But it is not the best way",
+          sentences: [
+            { text: "However, to call required outside courses the best way to ensure a true education claims far too much.", fn: "Pivot", moves: ["However"] },
+            { text: "Being truly educated is not the same as having sampled many subjects; it involves judgment, depth, and the ability to think, which a scattering of outside courses does not guarantee.", fn: "Point" },
+            { text: "A student could take a dozen unrelated classes and remain shallow in all of them, mistaking exposure for understanding.", fn: "Explanation", vocab: [{ term: "exposure", gloss: "接觸；涉獵" }] },
+            { text: "Other paths may matter more: mastering a single field deeply teaches rigor and how knowledge is built, and learning to think critically can be done within one subject or across many.", fn: "Develop", vocab: [{ term: "rigor", gloss: "嚴謹" }] },
+            { text: "Some of the most truly educated people the world has known were deep specialists, not dabblers in everything.", fn: "Example", vocab: [{ term: "dabblers", gloss: "涉獵者；半吊子" }] },
+            { text: "Breadth is one route to a real education, but to crown it the best ignores the equal claims of depth and good teaching.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — True education has many sources",
+          sentences: [
+            { text: "Moreover, what truly educates a person is rarely a single requirement but a combination of forces.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Inspiring teachers, the habit of questioning, deep engagement with at least one subject, and breadth across several all contribute, and no one of them is sufficient alone.", fn: "Point" },
+            { text: "A required survey course taken without interest may leave a student no more educated than before, while a single great mentor can transform one entirely.", fn: "Explanation", vocab: [{ term: "mentor", gloss: "導師；良師" }] },
+            { text: "To single out one method as the best misunderstands how complex and personal a real education is.", fn: "Develop" },
+            { text: "There is no one road to an educated mind, only many that must be travelled together.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, requiring courses outside the major helps make students educated but is not the single best way to ensure it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Breadth is valuable, yet depth, good teaching, and the habit of critical thought matter at least as much, so a true education comes from their combination rather than from any one requirement crowned above the rest.", fn: "Synthesis" },
+            { text: "Require breadth by all means, but do not mistake one good ingredient for the whole recipe of an educated mind.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-078",
@@ -4957,6 +5123,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists. Reason: The surest indicator of a great nation is actually the welfare of all its people.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms both the reason and the claim it supports, showing welfare is the truer measure of greatness, then qualifies the sharp opposition by noting that the finest achievements raise welfare; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When we call a nation great, we usually picture its monuments, its masterpieces, and its famous names.", fn: "Hook" },
+            { text: "The claim challenges this, holding that the surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, while the reason offers the alternative: that it is the welfare of all its people.", fn: "Context (claim and reason)" },
+            { text: "Both the claim and the reason are largely right, and the reason strongly supports the claim, though the sharp opposition between achievement and welfare is slightly overdrawn.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is sound",
+          sentences: [
+            { text: "First, the reason rests on solid ground: broad welfare is the most reliable sign of a nation's greatness.", fn: "Topic sentence (assess the reason)", vocab: [{ term: "welfare", gloss: "福祉；福利" }], moves: ["First"] },
+            { text: "A nation exists for its people, and how the ordinary many actually live — whether they are educated, healthy, secure, and free — reveals its character more honestly than any prize or palace.", fn: "Explanation" },
+            { text: "A country can produce dazzling art and science while most of its people suffer in poverty, and we rightly hesitate to call such a place truly great.", fn: "Example", vocab: [{ term: "poverty", gloss: "貧窮" }] },
+            { text: "Widespread welfare is also harder to achieve and harder to fake than a few brilliant achievements, which makes it the more demanding and trustworthy test.", fn: "Develop" },
+            { text: "So the reason is valid: the welfare of all its people is indeed a surer indicator than the triumphs of a gifted few.", fn: "Sub-conclusion" },
+            { text: "Greatness shared by millions is more real than greatness displayed by a handful.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — So the claim follows",
+          sentences: [
+            { text: "Because the reason holds, the claim it supports is largely correct.", fn: "Topic sentence (the reason supports the claim)" },
+            { text: "If welfare is the surest indicator, then the achievements of rulers, artists, and scientists cannot be, at least not on their own.", fn: "Point" },
+            { text: "Such achievements measure the talent and resources of a narrow elite, not the condition of the nation as a whole, and history offers many great states whose splendor masked widespread misery.", fn: "Explanation", vocab: [{ term: "elite", gloss: "菁英；上層階級" }, { term: "splendor", gloss: "光彩；輝煌" }] },
+            { text: "Empires remembered for their art and feared for their power often treated most of their people abominably, which should give us pause before equating achievement with greatness.", fn: "Example" },
+            { text: "The claim rightly denies that elite achievement is the surest sign of a great nation.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the opposition is overdrawn",
+          sentences: [
+            { text: "However, the claim's sharp contrast between achievement and welfare is somewhat misleading.", fn: "Pivot", moves: ["However"] },
+            { text: "Achievement and welfare are not really opposites, because the best achievements of a nation's scientists and leaders often improve the welfare of its people directly.", fn: "Point" },
+            { text: "Vaccines, just laws, and new technologies are achievements that raise the welfare of millions, so the two indicators frequently point the same way.", fn: "Example" },
+            { text: "The truth is not that achievements are irrelevant to greatness, but that they matter most when they serve the general welfare rather than a privileged few.", fn: "Explanation", vocab: [{ term: "privileged", gloss: "享有特權的" }] },
+            { text: "A fuller statement would say that the surest indicator of greatness is whether a nation's achievements reach its ordinary people, uniting the claim and the reason rather than opposing them.", fn: "Develop" },
+            { text: "Achievement and welfare are best seen as two measures of one greatness, not as enemies.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and the reason are largely right, and the reason strongly supports the claim.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The welfare of all its people is indeed the surest indicator of a great nation, and elite achievement is not, though the two are connected, since the finest achievements are those that lift the general welfare.", fn: "Synthesis" },
+            { text: "Judge a nation not by the brilliance at its summit, but by the lives at its base, and by how far that brilliance reaches them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-079",
@@ -4965,6 +5186,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Any leader who is quickly and easily influenced by shifts in popular opinion will accomplish little.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that a leader without conviction accomplishes little, then carefully distinguishes weak vacillation from healthy responsiveness and argues the best leaders combine the two; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A leader who checks the polls before every decision and reverses course at each shift of mood inspires little confidence and even less loyalty.", fn: "Hook" },
+            { text: "The statement captures this, claiming that any leader easily influenced by shifts in popular opinion will accomplish little.", fn: "Context (the statement)" },
+            { text: "There is real truth here, because leadership requires a conviction that mere popularity cannot supply, but the statement must be read carefully, since being responsive to the people is not the same as being weakly swayed by them.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Why the easily-swayed leader fails",
+          sentences: [
+            { text: "First, a leader with no firm convictions, who bends to every shift in opinion, accomplishes little because he stands for nothing.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Real achievement — a long reform, a difficult policy, an unpopular but necessary choice — requires a steady purpose maintained against opposition and doubt.", fn: "Explanation" },
+            { text: "Many great changes were unpopular at first, and a leader who abandoned them at the first dip in the polls would have achieved nothing lasting.", fn: "Example" },
+            { text: "Constant reversal also destroys trust, since people cannot follow a leader who changes direction with the wind, and allies and opponents alike learn that his word means little.", fn: "Develop" },
+            { text: "So the statement is right that a leader ruled by the shifting mood of the crowd will accomplish little of value.", fn: "Sub-conclusion" },
+            { text: "A weathervane points everywhere and leads nowhere.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But responsiveness is not weakness",
+          sentences: [
+            { text: "However, the statement risks confusing two very different things: being weakly swayed and being properly responsive.", fn: "Pivot", vocab: [{ term: "responsive", gloss: "回應的；善於回應的" }], moves: ["However"] },
+            { text: "A leader who listens to the people and adjusts to their genuine needs is not weak but wise, since in a democracy he serves them and ignores their will at his peril.", fn: "Point" },
+            { text: "There is a crucial difference between abandoning principle at every poll and changing course when the public reveals that a policy is failing or that circumstances have shifted.", fn: "Explanation" },
+            { text: "A leader who stubbornly clings to an unpopular and mistaken course, deaf to all opinion, can accomplish as little as one who has no spine at all.", fn: "Example", vocab: [{ term: "stubbornly", gloss: "固執地；頑固地" }] },
+            { text: "Indeed, a leader utterly indifferent to popular opinion soon loses the consent and cooperation on which, in a free society, his power depends.", fn: "Develop", vocab: [{ term: "consent", gloss: "同意；認可" }] },
+            { text: "Listening to the people is a strength; being unable to resist them is the weakness the statement means to condemn.", fn: "Sub-conclusion" },
+            { text: "Flexibility and spinelessness are not the same thing.", fn: "Reinforce", vocab: [{ term: "flexibility", gloss: "靈活；變通" }] },
+          ],
+        },
+        {
+          role: "Body — Conviction plus responsiveness",
+          sentences: [
+            { text: "Moreover, the most effective leaders combine firm conviction with genuine responsiveness.", fn: "Pivot", vocab: [{ term: "conviction", gloss: "堅定的信念；信念" }], moves: ["Moreover"] },
+            { text: "They hold to their principles and goals while remaining open to evidence, persuasion, and the legitimate demands of those they serve.", fn: "Point" },
+            { text: "Such a leader changes his methods without abandoning his ends, and listens to the public without being enslaved by its every passing mood.", fn: "Explanation" },
+            { text: "The statement is right about the leader with no conviction, but it should not be taken to praise the one with no ears.", fn: "Develop" },
+            { text: "Steadiness of purpose, not deafness to the people, is what real leadership requires.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, a leader easily blown about by popular opinion will indeed accomplish little, but the cure is conviction, not deafness.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Leadership demands the firmness to pursue worthy goals against passing moods, together with the wisdom to listen to the people, so the fault lies in having no principles, not in heeding the public at all.", fn: "Synthesis" },
+            { text: "The leader who accomplishes most holds steady to his ends while staying genuinely open to those he leads.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-080",
@@ -4973,6 +5250,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people whom they serve.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): shows where the statement holds — independent judgment against an uninformed or unjust majority — and where it fails — any reading that lets officials ignore the people — and resolves it through the word 'unquestioningly'; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Are elected officials meant to follow the people's wishes or to lead by their own judgment? The tension is as old as democracy itself.", fn: "Hook" },
+            { text: "The statement takes a side, holding that government officials should rely on their own judgment rather than unquestioningly carry out the will of the people they serve.", fn: "Context (the statement)" },
+            { text: "The statement is right that officials should not obey blindly, but how far it holds depends entirely on the word unquestioningly, because independent judgment is a duty within democracy, not a license to override it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Where the statement holds",
+          sentences: [
+            { text: "First, there are clear cases where an official must follow his own judgment over raw public opinion.", fn: "Topic sentence", moves: ["First"] },
+            { text: "The public is often uninformed about complex matters, swayed by passion, or demanding things that cannot all be had at once, and a leader who simply obeyed would govern badly.", fn: "Explanation" },
+            { text: "A crowd may clamor for a policy that experts know will fail, or demand the harsh treatment of an unpopular minority, and here an official's duty is to resist rather than to comply.", fn: "Example" },
+            { text: "We elect representatives precisely to study issues, weigh evidence, and exercise the judgment we cannot all exercise ourselves, which is why we do not vote directly on everything.", fn: "Develop" },
+            { text: "So the statement holds in these cases: blind obedience to the public can be a failure of leadership, not a virtue.", fn: "Sub-conclusion" },
+            { text: "Sometimes the people's truest servant is the one who tells them no.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Where it fails",
+          sentences: [
+            { text: "However, the statement would be dangerous if taken to mean that officials may routinely substitute their judgment for the public's will.", fn: "Pivot", moves: ["However"] },
+            { text: "In a democracy the people are sovereign, and an official's authority comes entirely from their consent, so one who habitually overrides them becomes a ruler rather than a representative.", fn: "Point", vocab: [{ term: "sovereign", gloss: "擁有最高權力的；主權的" }, { term: "consent", gloss: "同意；認可" }] },
+            { text: "Confidence in one's own judgment is exactly what every would-be tyrant has shared, and history is full of leaders who knew better and used that certainty to ignore and oppress those they served.", fn: "Explanation" },
+            { text: "An official free to disregard the people whenever he disagrees is accountable to no one, and the people's will, even when imperfect, is the ultimate check on his power.", fn: "Example", vocab: [{ term: "accountable", gloss: "須負責的；應問責的" }] },
+            { text: "Where the statement fails is in any reading that treats the public as an obstacle to be managed rather than the source of legitimate authority.", fn: "Develop", vocab: [{ term: "legitimate", gloss: "正當的；合法的" }] },
+            { text: "An official who forgets that he serves the people has misunderstood his office entirely.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The key word is 'unquestioningly'",
+          sentences: [
+            { text: "Moreover, the statement is most defensible because of a single word: it condemns carrying out the will of the people unquestioningly.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Between blindly executing every public whim and arrogantly disregarding the public lies the proper role of the official.", fn: "Point" },
+            { text: "The good leader neither obeys without thought nor rules without consent; he uses his judgment to inform and persuade the public while accepting that the final authority rests with them.", fn: "Explanation", vocab: [{ term: "persuade", gloss: "說服；勸服" }] },
+            { text: "To question the people's will, explain hard truths, and try to lead opinion is healthy; to override it as a matter of course is not.", fn: "Develop" },
+            { text: "Judgment should guide the public will, not replace it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement holds where it means that officials should use judgment rather than obey blindly, but fails where it would let them ignore the people altogether.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Independent judgment is essential against an uninformed or unjust majority, yet it must operate within the democratic consent that grants an official any authority, so the wise official questions the public's will without overriding it.", fn: "Synthesis" },
+            { text: "Lead the people with your judgment, and submit to them with your conscience, doing neither alone.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-081",
