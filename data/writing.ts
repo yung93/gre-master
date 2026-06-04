@@ -3000,6 +3000,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe it is often necessary, even desirable, for political leaders to withhold information from the public. Others believe that the public has a right to be fully informed.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a two-views response that grants the necessity of some secrecy while siding firmly with the public's right to know, treating openness as the default and secrecy as a narrow exception; even-handed and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Every government keeps secrets, and every government insists its secrets are necessary, which makes the question of what leaders may hide from the public a permanent democratic dilemma.", fn: "Hook" },
+            { text: "Some hold that political leaders must sometimes, even desirably, withhold information from the public; others hold that the public has a right to be fully informed.", fn: "Context (state both views)" },
+            { text: "Each view protects something real, but my position leans firmly toward the public's right to know: leaders may withhold information only in narrow and temporary circumstances, and the burden of proof must always rest on secrecy, not on openness.", fn: "Thesis statement (which view aligns)" },
+          ],
+        },
+        {
+          role: "Body — The case for withholding",
+          sentences: [
+            { text: "The first view rests on the genuine necessity of some secrecy in public life.", fn: "Topic sentence (view one)" },
+            { text: "A government cannot broadcast troop movements during a war, the details of an ongoing investigation, or the private medical records of citizens without doing real harm.", fn: "Example" },
+            { text: "Some information, released at the wrong moment, endangers lives, ruins delicate negotiations, or hands an advantage to enemies and criminals.", fn: "Explanation" },
+            { text: "Leaders also handle complex matters the public cannot judge in real time, and a constant demand for full disclosure can paralyze decisions that require confidentiality to be made at all.", fn: "Develop", vocab: [{ term: "confidentiality", gloss: "機密；保密" }] },
+            { text: "Those who defend some withholding are right that absolute, instant transparency would be reckless.", fn: "Sub-conclusion", vocab: [{ term: "transparency", gloss: "透明；公開" }] },
+            { text: "Not every truth can safely be told the very moment it is known.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The case for full information",
+          sentences: [
+            { text: "However, the second view guards something even more fundamental: the very basis of self-government.", fn: "Pivot (view two)", moves: ["However"] },
+            { text: "In a democracy the people are sovereign, and they cannot judge their leaders, vote wisely, or consent to policies they are not allowed to know about.", fn: "Point", vocab: [{ term: "sovereign", gloss: "擁有最高權力的；主權的" }] },
+            { text: "An uninformed public is a powerless one, and leaders who control what citizens know end up controlling the citizens themselves.", fn: "Explanation" },
+            { text: "History shows that necessary secrecy is the favorite disguise of corruption and abuse, from hidden wars to covered-up scandals justified, always, as protecting the public.", fn: "Example" },
+            { text: "Once leaders are trusted to decide what the public needs to know, the exception swallows the rule, and secrecy expands to shield not the nation but those in power.", fn: "Develop" },
+            { text: "Those who insist on the right to be informed are right that secrecy is the natural enemy of accountability.", fn: "Sub-conclusion", vocab: [{ term: "accountability", gloss: "問責；負責" }] },
+            { text: "A government that hides too much soon has too much to hide.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — My position: openness as the default",
+          sentences: [
+            { text: "On balance, my own view sides with the public's right to know, while admitting the narrow exceptions the first view defends.", fn: "Pivot (my position)", moves: ["On balance"] },
+            { text: "The right principle is that openness is the default and secrecy the exception, justified only by a clear and serious harm, limited in scope, and temporary in duration.", fn: "Point" },
+            { text: "A leader may delay announcing a military operation, but not hide a war's true cost; may protect a name during an investigation, but not bury its findings forever.", fn: "Explanation" },
+            { text: "The danger of too much disclosure is real but manageable; the danger of leaders deciding in secret what their citizens may know is corrosive to democracy itself.", fn: "Develop", vocab: [{ term: "corrosive", gloss: "腐蝕性的；逐漸破壞的" }] },
+            { text: "When in doubt, a free society errs toward telling the people the truth.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, my position aligns far more closely with those who defend the public's right to be informed than with those who would license leaders to withhold.", fn: "Restate (which view)", moves: ["In conclusion"] },
+            { text: "Some secrecy is genuinely necessary, but it must be the rare, justified exception, because a public kept in the dark cannot govern itself, and self-government is the whole point.", fn: "Synthesis" },
+            { text: "Leaders should be allowed to keep only the secrets they can openly justify keeping.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-046",
@@ -3008,6 +3064,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Universities should require every student to take a variety of courses outside the student's major field of study. Reason: Acquiring knowledge of various academic disciplines is the best way to become truly educated.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): correctly affirms the claim while showing the reason overreaches in calling breadth the best way to be educated; clear and well organized, though it could press the depth argument a little harder.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "The idea that a chemistry student should also read some history, or a poet take a course in statistics, has a long and respectable pedigree.", fn: "Hook" },
+            { text: "The claim that universities should require such breadth rests on the reason that acquiring knowledge of various disciplines is the best way to become truly educated.", fn: "Context (claim and reason)" },
+            { text: "The claim is sound and the reason contains real truth, but the reason overstates its case, because exposure to many disciplines is one good path to a true education, not the single best one.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is partly right",
+          sentences: [
+            { text: "First, the reason correctly identifies a genuine benefit of breadth.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "A person who knows only one field sees the world through a single lens, while one who has studied several can connect ideas, spot what specialists miss, and think across boundaries.", fn: "Explanation", vocab: [{ term: "lens", gloss: "視角；觀點" }] },
+            { text: "An engineer who has also studied ethics builds differently, and a doctor who has read literature understands patients as people rather than merely as cases.", fn: "Example" },
+            { text: "Real problems rarely respect the divisions between subjects, so a mind stocked with several disciplines is better equipped for the messy, mixed questions of adult life.", fn: "Develop" },
+            { text: "To this extent the reason is valid, and the claim follows from it: breadth genuinely contributes to becoming educated.", fn: "Sub-conclusion" },
+            { text: "Knowing more than one subject is a real ingredient of a broad mind.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But 'best way' overstates it",
+          sentences: [
+            { text: "However, the reason claims too much when it calls breadth the best way to become truly educated.", fn: "Pivot (test the link)", moves: ["However"] },
+            { text: "Acquiring knowledge of various disciplines is not the same as being truly educated, which involves judgment, depth, and the capacity to think, not merely a scattering of facts from many fields.", fn: "Point" },
+            { text: "A student could sample a dozen subjects and remain shallow in all of them, mistaking acquaintance with genuine understanding.", fn: "Explanation", vocab: [{ term: "acquaintance", gloss: "略知；泛泛之交" }] },
+            { text: "There are other, arguably deeper roads to a true education: mastering a single field profoundly can teach rigor, humility, and how knowledge is actually built.", fn: "Develop", vocab: [{ term: "rigor", gloss: "嚴謹" }, { term: "humility", gloss: "謙遜" }] },
+            { text: "A scholar who has gone truly deep in one discipline often understands more about thinking itself than a dilettante who has dabbled in ten.", fn: "Example", vocab: [{ term: "dilettante", gloss: "涉獵者；半吊子" }] },
+            { text: "Breadth is one route to a true education, but to crown it the best ignores the rival claims of depth.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — So the claim survives, the reason softens",
+          sentences: [
+            { text: "Moreover, because the reason overreaches, it supports the claim less firmly than it appears to.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "If breadth is merely one good path among several, then requiring it is reasonable but not obligatory in the way the reason implies.", fn: "Point" },
+            { text: "The strongest case for the requirement is not that breadth is the best route to education, but that it is a reliable one which students left to themselves often skip.", fn: "Explanation" },
+            { text: "Defended that way the claim stands; defended by the reason's stronger assertion, it promises more than breadth can actually deliver.", fn: "Develop" },
+            { text: "The requirement is wise; the reason simply oversells it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right but the reason is only partly so.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Universities should require some study outside the major because breadth genuinely helps, yet the reason errs in calling it the best way to become educated, when depth offers a powerful path of its own.", fn: "Synthesis" },
+            { text: "Breadth and depth together make a true education, and no single one of them deserves to be called the best.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-047",
@@ -3016,6 +3127,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Knowing about the past cannot help people to make important decisions today.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the statement with strong reasons about patterns and avoidable error, then concedes that history offers no mechanical formula before reaffirming its value; persuasive and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Those who forget the past, the saying goes, are condemned to repeat it, and the statement boldly denies the wisdom of that warning.", fn: "Hook" },
+            { text: "It asserts that knowing about the past cannot help people make important decisions today.", fn: "Context (the statement)" },
+            { text: "The statement is mistaken, because while the past never repeats exactly, knowledge of it is one of the most powerful guides we have for the decisions of the present.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — History reveals patterns and consequences",
+          sentences: [
+            { text: "First, history reveals patterns and consequences that no amount of present cleverness could supply on its own.", fn: "Topic sentence", vocab: [{ term: "patterns", gloss: "模式；規律" }], moves: ["First"] },
+            { text: "By studying how past decisions turned out, we learn which actions tend to lead to which results, turning the experience of millions into guidance for our own choices.", fn: "Explanation" },
+            { text: "Economists study past depressions to avoid repeating the policies that deepened them, and doctors study the history of disease to recognize an epidemic before it spreads.", fn: "Example" },
+            { text: "A leader deciding whether to appease an aggressor, or a nation weighing a costly war, has centuries of comparable cases to consult, each a warning or an encouragement.", fn: "Develop" },
+            { text: "To make important decisions without this record is to throw away the hard-won lessons of everyone who faced similar choices before.", fn: "Sub-conclusion" },
+            { text: "Experience is the most expensive teacher there is, and history lets us learn from experience we never had to pay for ourselves.", fn: "Reinforce" },
+            { text: "The past is the only laboratory in which the results of human decisions can actually be observed.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Ignoring the past repeats its mistakes",
+          sentences: [
+            { text: "Moreover, those who ignore the past do not escape it; they simply blunder into the errors it had already exposed.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Every generation is tempted to believe its situation is unprecedented, and that belief is precisely what leads it to repeat old catastrophes.", fn: "Point", vocab: [{ term: "unprecedented", gloss: "前所未有的" }] },
+            { text: "Financial bubbles, failed invasions, and political extremism recur in part because each new set of decision-makers assumes the old rules do not apply to them.", fn: "Example" },
+            { text: "Knowing the history of such episodes is exactly what allows a wise person to recognize the warning signs and choose differently.", fn: "Explanation" },
+            { text: "Even in private life, understanding how past choices shaped a family, a company, or a community helps people decide what to do next.", fn: "Develop" },
+            { text: "Far from being useless, historical knowledge is often the difference between a considered decision and a blind one.", fn: "Sub-conclusion", vocab: [{ term: "considered", gloss: "深思熟慮的" }] },
+          ],
+        },
+        {
+          role: "Body — History guides without dictating",
+          sentences: [
+            { text: "There is, however, a limited truth the statement may be reaching for.", fn: "Concede", moves: ["however"] },
+            { text: "The past never repeats itself exactly, and circumstances change, so history offers no formula that can be applied mechanically to a new decision.", fn: "Develop the concession" },
+            { text: "But to say history cannot be copied blindly is very different from saying it cannot help at all.", fn: "Rebut" },
+            { text: "Used with judgment — as a source of patterns, warnings, and analogies rather than rigid rules — knowledge of the past sharpens present decisions rather than dictating them.", fn: "Explain", vocab: [{ term: "analogies", gloss: "類比；類推" }] },
+            { text: "History is a guide, not a script, and a guide is exactly what hard decisions require.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, knowing about the past does not just help with today's decisions; it is one of our most valuable aids in making them.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The past supplies the patterns, precedents, and warnings that present circumstances alone cannot, and although it never repeats exactly, the decision-maker who ignores it acts half blind.", fn: "Synthesis", vocab: [{ term: "precedents", gloss: "先例；前例" }] },
+            { text: "We cannot see the future, but the past is the closest thing we have to a map.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-048",
@@ -3024,6 +3191,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In this age of intensive media coverage, it is no longer possible for a society to regard any living man or woman as a hero.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that media coverage has ended the flawless idol while arguing that heroism rests on deeds rather than perfection, and that the media age has its own visible heroes; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "In a world of cameras, leaks, and relentless reporting, no public figure can keep their flaws hidden for long, and the statement concludes that heroism itself has become impossible.", fn: "Hook" },
+            { text: "It claims that in this age of intensive media coverage, a society can no longer regard any living man or woman as a hero.", fn: "Context (the statement)" },
+            { text: "Media exposure has certainly changed how we admire, but the statement is wrong, because heroism depends on what a person does, not on whether the cameras ever catch them being ordinary.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Media has ended the flawless idol",
+          sentences: [
+            { text: "It is true that intensive coverage makes the old kind of flawless hero impossible.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Where past heroes were known through statues and carefully managed stories, today's are filmed, recorded, and subjected to constant scrutiny until every weakness is on display.", fn: "Example", vocab: [{ term: "scrutiny", gloss: "審視；細察" }] },
+            { text: "A general's temper, a champion's private failures, a leader's hypocrisies now reach millions, and the polished image cannot survive the exposure.", fn: "Explanation", vocab: [{ term: "hypocrisies", gloss: "偽善；言行不一" }] },
+            { text: "The pedestal, in the age of the smartphone, has become very hard to stay on.", fn: "Develop" },
+            { text: "So the statement is right that the spotless idol of earlier eras can no longer exist.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But heroism was never about being spotless",
+          sentences: [
+            { text: "However, this confuses the loss of the flawless image with the loss of heroism itself.", fn: "Pivot", moves: ["However"] },
+            { text: "A hero is a person who does something brave, selfless, or great, not a person without faults, and no amount of coverage of those faults can undo a courageous act.", fn: "Point" },
+            { text: "We do not stop honoring a firefighter who saved a family, or a doctor who served through a plague, because the media later reveals that they were difficult at home.", fn: "Example" },
+            { text: "Heroism attaches to the deed, and deeds are not erased by the discovery that the person who performed them was, like everyone, imperfect.", fn: "Explanation" },
+            { text: "If anything, knowing that heroes are flawed human beings who rose to a great moment makes their courage more admirable, because it shows such courage is within ordinary reach.", fn: "Develop" },
+            { text: "The cameras reveal that heroes are people; they do not reveal that there are no heroes.", fn: "Sub-conclusion" },
+            { text: "Courage shown in a crisis is not cancelled by rudeness shown at the dinner table.", fn: "Sharpen" },
+            { text: "What media coverage destroys is the myth of perfection, not the reality of greatness.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The media age has its own heroes",
+          sentences: [
+            { text: "Moreover, the same media that exposes flaws also reveals heroism that earlier ages would never have seen.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Cameras now broadcast the ordinary rescuer, the whistleblower, the aid worker, and the protester, turning unknown people into widely admired figures.", fn: "Point" },
+            { text: "We admire them with full knowledge of their humanity, which is a more honest admiration than the worship of distant, airbrushed idols ever was.", fn: "Explanation", vocab: [{ term: "admiration", gloss: "欽佩；敬仰" }] },
+            { text: "Across the world, living people are still revered for real courage and real sacrifice, which would be impossible if the statement were true.", fn: "Develop", vocab: [{ term: "revered", gloss: "崇敬；敬仰" }] },
+            { text: "If anything, a hero we know to be human is one we can actually hope to emulate.", fn: "Develop" },
+            { text: "Intensive coverage has not abolished heroes; it has only made us admire them with our eyes open.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the age of media coverage has changed heroism, not ended it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "It has killed the illusion of the flawless idol, but heroism, which rests on great deeds rather than perfect lives, survives the exposure unharmed.", fn: "Synthesis", vocab: [{ term: "illusion", gloss: "錯覺；幻象" }] },
+            { text: "We can still call the living heroes; we have simply learned to honor real people instead of polished myths.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-049",
@@ -3032,6 +3256,66 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "We can usually learn much more from people whose views we share than from people whose views contradict our own.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues that agreement mostly confirms while disagreement challenges and corrects, then concedes that we learn from knowledgeable allies only where they differ from us; clear and well reasoned.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is easier and more pleasant to talk with people who agree with us, and the statement turns that comfort into a claim about learning.", fn: "Hook" },
+            { text: "It holds that we usually learn much more from people whose views we share than from those whose views contradict our own.", fn: "Context (the statement)" },
+            { text: "I disagree, because while like-minded company is comfortable and sometimes useful, it is disagreement, not agreement, that most reliably teaches us something new.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Agreement confirms, rarely teaches",
+          sentences: [
+            { text: "First, people who share our views tend to confirm what we already believe rather than expand it.", fn: "Topic sentence", moves: ["First"] },
+            { text: "When everyone in a conversation starts from the same assumptions, those assumptions go unexamined, and we leave the exchange thinking exactly what we thought before.", fn: "Explanation", vocab: [{ term: "assumptions", gloss: "假設；前提" }] },
+            { text: "A roomful of people who agree may sharpen their shared conclusions, but they rarely discover the error they all happen to share.", fn: "Example" },
+            { text: "Comfort and confirmation feel like learning, but mostly they reinforce, and reinforcement is not the same as growth.", fn: "Develop", vocab: [{ term: "confirmation", gloss: "確認；認同" }, { term: "reinforcement", gloss: "強化；加強" }] },
+            { text: "From those who echo us, we usually receive applause rather than an education.", fn: "Sub-conclusion" },
+            { text: "An echo, however loud, adds nothing to the voice it returns.", fn: "Aphoristic" },
+            { text: "Agreement polishes our opinions; it seldom corrects them.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Disagreement teaches the most",
+          sentences: [
+            { text: "However, it is the person who disagrees who actually teaches us the most.", fn: "Pivot", moves: ["However"] },
+            { text: "An opponent points out the fact we ignored, the weakness in our reasoning, and the possibility we never considered, none of which an ally was likely to raise.", fn: "Point" },
+            { text: "Defending a belief against genuine challenge forces us to examine its foundations, discard what cannot be defended, and understand more deeply whatever survives.", fn: "Explanation" },
+            { text: "Scientists advance by attacking one another's theories, courts pursue truth through opposing arguments, and the best thinkers deliberately seek out their sharpest critics.", fn: "Example", vocab: [{ term: "critics", gloss: "批評者；評論者" }] },
+            { text: "Every important change of mind begins with encountering a view we did not already hold, which by definition comes from someone who disagrees.", fn: "Develop" },
+            { text: "Comfort asks nothing of us, while a real challenge demands that we actually think.", fn: "Sharpen" },
+            { text: "A belief that has never been attacked has never really been tested.", fn: "Develop" },
+            { text: "It is friction, not flattery, that sharpens a mind.", fn: "Sharpen" },
+            { text: "We are stretched by difference and lulled by sameness.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The kernel of truth",
+          sentences: [
+            { text: "There is, however, a sliver of truth in the statement.", fn: "Concede", moves: ["however"] },
+            { text: "We do sometimes learn efficiently from those who share our broad outlook but know more than we do — a mentor, an expert, a more experienced colleague.", fn: "Develop the concession", vocab: [{ term: "mentor", gloss: "導師；良師" }] },
+            { text: "But notice that we learn from them precisely where they differ from us, where they know what we do not, not where they merely agree.", fn: "Rebut" },
+            { text: "What teaches is always the gap between their view and ours, and that gap is widest with those who genuinely disagree.", fn: "Explain" },
+            { text: "Even a great teacher helps us most by knowing precisely what we do not yet know.", fn: "Reinforce" },
+            { text: "Even learning from an ally is, in truth, learning from a kind of difference.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement has it backward: we usually learn more from those who contradict us than from those who share our views.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Agreement comforts and confirms, but disagreement challenges, corrects, and enlarges, which is what learning actually requires.", fn: "Synthesis" },
+            { text: "If you want to be reassured, seek those who agree; if you want to learn, seek those who do not.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-050",
@@ -3040,6 +3324,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The most effective way to understand contemporary culture is to analyze the trends of its youth.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that youth trends forecast a culture's direction while arguing that a culture is also its institutions, history, and enduring habits, so youth is one window and not the most effective; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Each generation's young people seem to embody where a culture is heading, which makes the statement's focus on youth immediately appealing.", fn: "Hook" },
+            { text: "It holds that the most effective way to understand contemporary culture is to analyze the trends of its youth.", fn: "Context (the statement)" },
+            { text: "The trends of the young do offer a revealing window onto a culture, but the statement overstates the case, because youth show only one part of a culture and miss much of what shapes it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Youth reveal a great deal",
+          sentences: [
+            { text: "It is true that the young are a culture's most sensitive barometer.", fn: "Concession (topic sentence)", vocab: [{ term: "barometer", gloss: "風向標；晴雨表" }], moves: ["It is true that"] },
+            { text: "Less bound by established habits, young people adopt new technologies, language, music, and values first, so the trends visible among them often forecast where the wider culture is going.", fn: "Explanation" },
+            { text: "Movements in music, fashion, and politics frequently begin with the young and only later spread to everyone else, which is why advertisers and analysts watch them so closely.", fn: "Example" },
+            { text: "To study a culture's youth is therefore to glimpse its likely future and to see which old assumptions are quietly being abandoned.", fn: "Develop" },
+            { text: "So the statement is right that youth trends are a powerful and revealing source of insight.", fn: "Sub-conclusion" },
+            { text: "If you want to know where a society is going, the young are a good place to look.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — But youth are only part of the picture",
+          sentences: [
+            { text: "However, to call this the most effective way to understand a culture ignores how much of that culture lies elsewhere.", fn: "Pivot", moves: ["However"] },
+            { text: "A culture is not only its newest trends but its institutions, its history, its laws, its religions, and the settled habits of the many who are no longer young.", fn: "Point", vocab: [{ term: "institutions", gloss: "制度；體制" }] },
+            { text: "The young show what is changing, but understanding a culture also means understanding what endures, and the forces of continuity rarely live among the young.", fn: "Explanation", vocab: [{ term: "continuity", gloss: "延續性；連續性" }] },
+            { text: "To grasp a society one must study its governments and corporations, its families and traditions, its economy and its memory, none of which youth trends reveal on their own.", fn: "Example" },
+            { text: "Much of what is most powerful in a culture is controlled by the middle-aged and the old, whose decisions shape the very world the young merely react to.", fn: "Develop" },
+            { text: "Looking only at youth is like judging a river by its surface ripples while ignoring the deep current beneath.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Youth trends can mislead",
+          sentences: [
+            { text: "Moreover, the trends of the young can positively mislead an observer who relies on them alone.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Much youth culture is transient fashion that fades, a passing enthusiasm mistaken, in the moment, for a lasting transformation.", fn: "Point", vocab: [{ term: "transient", gloss: "短暫的；轉瞬即逝的" }] },
+            { text: "Every era's elders have wrongly predicted the future from the fads of its young, which shows how unreliable a sole guide those fads can be.", fn: "Explanation" },
+            { text: "Youth trends are best read alongside everything else, as one source among many rather than as a master key.", fn: "Develop" },
+            { text: "The surface tells part of the story; it is not the whole of it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, analyzing the trends of its youth is one effective way to understand a culture, but not the single most effective one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The young reveal what is emerging, yet a culture is also its institutions, history, and enduring habits, so a full understanding must look well beyond them.", fn: "Synthesis", vocab: [{ term: "enduring", gloss: "持久的；歷久不衰的" }] },
+            { text: "To understand a culture, watch its youth by all means, but do not forget to study everyone and everything else they are reacting to.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-051",
