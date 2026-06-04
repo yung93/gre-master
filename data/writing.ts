@@ -1171,6 +1171,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The greatness of individuals can be decided only by those who live after them, not by their contemporaries.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a balanced reading that grants posterity's perspective while showing that contemporaries often see greatness clearly and that later ages bring distortions of their own; well organized and thoughtful.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "History is full of geniuses who died unknown and frauds who were celebrated in their own day, which lends the statement an immediate plausibility.", fn: "Hook" },
+            { text: "It claims that the greatness of individuals can be judged only by those who come after them, never by their contemporaries.", fn: "Context (the statement)" },
+            { text: "Posterity certainly enjoys advantages of perspective that the present lacks, but the word only overstates the case, because contemporaries often recognize greatness clearly, and later generations bring distortions of their own.", fn: "Thesis statement (qualified position)", vocab: [{ term: "perspective", gloss: "觀點；眼界" }] },
+          ],
+        },
+        {
+          role: "Body — Time confers clarity",
+          sentences: [
+            { text: "It is true that time confers a clarity the present cannot have.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "Contemporaries are swept up in fashions, rivalries, and prejudices that make a fair judgment difficult.", fn: "Reason", vocab: [{ term: "prejudices", gloss: "偏見" }] },
+            { text: "Van Gogh sold almost nothing in his lifetime, and Mendel's discoveries in genetics were ignored for decades before later scientists grasped their importance.", fn: "Example" },
+            { text: "Only after the noise of an era fades can the lasting value of a person's work be weighed against everything that came before and after.", fn: "Explanation" },
+            { text: "Many a politician adored in office looks small a century later, while quiet figures overlooked at the time loom large.", fn: "Develop" },
+            { text: "A reputation needs time to be tested against changing tastes, rival claims, and the eventual verdict of results.", fn: "Develop" },
+            { text: "In this sense the statement captures something real: distance can reveal what proximity hides.", fn: "Sub-conclusion", vocab: [{ term: "proximity", gloss: "鄰近；近距離" }] },
+          ],
+        },
+        {
+          role: "Body — Contemporaries see greatness too",
+          sentences: [
+            { text: "However, to say that only posterity can judge is to ignore how often greatness is recognized in its own time.", fn: "Pivot", moves: ["However"] },
+            { text: "Shakespeare was celebrated by his contemporaries, Newton was honored across Europe in his lifetime, and Lincoln was mourned by millions who already sensed his stature.", fn: "Example" },
+            { text: "The people who actually witness a discovery, a performance, or an act of leadership often grasp its power more vividly than those who later read about it.", fn: "Explanation" },
+            { text: "A scientist's peers are frequently the best placed of all to judge the importance of her work, since they alone fully understand the problem she solved.", fn: "Develop" },
+            { text: "Audiences who wept at a symphony's premiere were not mistaken about its power simply because they happened to live too early to be objective.", fn: "Reinforce" },
+            { text: "Contemporary judgment is not always wrong; it is merely incomplete, as every judgment is.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Posterity has its own biases",
+          sentences: [
+            { text: "Moreover, later generations are not the impartial jury the statement imagines.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Each age rewrites the past to suit its own values, elevating figures it finds useful and burying those who have fallen out of fashion.", fn: "Example" },
+            { text: "A reputation can rise and fall many times across the centuries, so posterity delivers not a single final verdict but an endless series of revisions.", fn: "Explanation", vocab: [{ term: "verdict", gloss: "定論；裁決" }] },
+            { text: "If contemporaries are biased by being too close, descendants are biased by being too far, judging across a gulf of changed assumptions they barely notice.", fn: "Develop" },
+            { text: "The final judgment of history is really just the opinion of whichever age happens to be speaking at the moment.", fn: "Sharpen" },
+            { text: "There is no privileged vantage point from which greatness is seen plainly and forever.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right that time adds perspective but wrong to make posterity the sole judge.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Greatness is assessed in a long conversation between an age and all the ages that follow, each correcting the others without any reaching the final word.", fn: "Synthesis" },
+            { text: "Greatness, in the end, is less a fixed fact to be discovered than a reputation continually argued over.", fn: "Reinforce" },
+            { text: "We should trust neither the applause of the present nor the verdict of the future entirely, but listen, with appropriate humility, to both.", fn: "Final judgment", vocab: [{ term: "humility", gloss: "謙遜" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-020",
@@ -1179,6 +1237,65 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Students should always question what they are taught instead of accepting it passively.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that questioning is essential, then qualifies the absolute always by showing that foundations must first be absorbed and that questioning must be selective; clear and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A good education is meant to produce independent thinkers rather than parrots, so the call for students to question what they are taught has obvious appeal.", fn: "Hook" },
+            { text: "The statement urges students to always question their lessons rather than accept anything passively.", fn: "Context (the statement)" },
+            { text: "Questioning is indeed essential to real learning, but the word always pushes a sound principle too far, because some knowledge must first be absorbed before it can be intelligently questioned at all.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Questioning is essential",
+          sentences: [
+            { text: "It is true that passive acceptance is the enemy of genuine understanding.", fn: "Concession (topic sentence)", moves: ["It is true that"] },
+            { text: "A student who merely memorizes and repeats has learned to obey rather than to think, and forgets the material the moment the exam ends.", fn: "Reason" },
+            { text: "The great advances of science and reform came from people who refused to accept received wisdom, from Galileo questioning the heavens to reformers questioning unjust laws.", fn: "Example" },
+            { text: "Questioning forces a student to understand why something is true, to find its limits, and to own the knowledge rather than merely rent it.", fn: "Explanation" },
+            { text: "A classroom that rewards obedience over curiosity produces graduates who can recite but cannot reason.", fn: "Develop", vocab: [{ term: "curiosity", gloss: "好奇心" }] },
+            { text: "Progress in almost every field began with someone unwilling to take the textbook's word for it.", fn: "Reinforce" },
+            { text: "In this respect the statement is plainly right: questioning is the engine of understanding.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But foundations come first",
+          sentences: [
+            { text: "However, to question everything always is neither possible nor wise.", fn: "Pivot", moves: ["However"] },
+            { text: "A beginner cannot meaningfully question calculus before learning arithmetic, or debate history before learning what happened, because the raw materials of thought must be acquired before they can be challenged.", fn: "Example" },
+            { text: "There is a stage in every subject when a student must trust the teacher enough to absorb the basics, just as an apprentice copies before he creates.", fn: "Explanation" },
+            { text: "To demand that a child question the multiplication table or the spelling of words is not independence but paralysis.", fn: "Develop", vocab: [{ term: "paralysis", gloss: "癱瘓；停滯" }] },
+            { text: "No one reinvents mathematics from scratch before daring to use it.", fn: "Sharpen" },
+            { text: "Even the boldest critic must stand on a great deal of knowledge he has simply accepted on trust.", fn: "Reinforce" },
+            { text: "Acceptance, at the right moment, is not passivity but the foundation on which later questioning is built.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Question well, not reflexively",
+          sentences: [
+            { text: "Moreover, the value lies not in questioning constantly but in questioning well.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Reflexive doubt that challenges everything indiscriminately is as lazy as blind acceptance, merely contrarian rather than thoughtful.", fn: "Point", vocab: [{ term: "contrarian", gloss: "為反對而反對的；唱反調的" }] },
+            { text: "The educated mind knows when to absorb and when to interrogate, trusting established knowledge while staying alert to its weaknesses.", fn: "Explanation" },
+            { text: "Real critical thinking is selective: it spends its skepticism where it is warranted rather than scattering it everywhere at once.", fn: "Develop", vocab: [{ term: "skepticism", gloss: "懷疑；質疑" }] },
+            { text: "To question wisely, a student must first know enough to tell a real weakness from an imagined one.", fn: "Develop" },
+            { text: "Wisdom is knowing which lessons to question and which to learn first.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, students should question what they are taught, but not always and not everything at once.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "They should absorb the foundations a subject requires and then question actively as their understanding grows, treating acceptance and inquiry as stages rather than enemies.", fn: "Synthesis", vocab: [{ term: "inquiry", gloss: "探究；質問" }] },
+            { text: "Curiosity without foundations is mere noise; foundations without curiosity are dead weight.", fn: "Aphoristic" },
+            { text: "The goal is not a student who doubts everything, but one who knows when to learn and when to challenge.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-021",
@@ -1187,6 +1304,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The increasingly rapid pace of life today causes more problems than it solves.",
     directions: D_STATEMENT,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): clearly organized, with relevant examples on both sides and a sensible thesis that the harms come from how we use speed; the analysis is sound though it stays fairly general.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Modern life moves fast: messages arrive in seconds, news refreshes by the minute, and the patient rhythms of earlier centuries can feel impossibly distant.", fn: "Hook" },
+            { text: "Many conclude, as the statement does, that this accelerating pace causes more problems than it solves.", fn: "Context (the statement)" },
+            { text: "The complaint points to real harms, but I disagree with its verdict, because the speed of modern life is largely a by-product of genuine progress, and most of its problems come from how we use that speed rather than from speed itself.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The pace reflects real gains",
+          sentences: [
+            { text: "First, the rapid pace is inseparable from advances that have plainly improved life.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A doctor can now receive test results in minutes, a family scattered across continents can speak every day, and a question that once required a library can be answered instantly.", fn: "Example" },
+            { text: "The same speed that feels overwhelming also saves lives, reunites people, and spreads knowledge at a scale earlier ages could not imagine.", fn: "Explanation" },
+            { text: "What we experience as hurry is often just the felt side of efficiency, of doing in an hour what once took a week.", fn: "Develop", vocab: [{ term: "efficiency", gloss: "效率" }] },
+            { text: "Speed has dissolved distances that once kept families, ideas, and opportunities apart for whole lifetimes.", fn: "Reinforce" },
+            { text: "To call this a net loss is to forget how slow, and how limited, life used to be.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The problems are real",
+          sentences: [
+            { text: "However, it would be foolish to deny that the acceleration brings genuine harm.", fn: "Pivot", moves: ["However"] },
+            { text: "Constant haste breeds stress and exhaustion, encourages shallow attention over deep thought, and leaves little room for the patience that good work and real relationships require.", fn: "Example", vocab: [{ term: "exhaustion", gloss: "疲憊；精疲力竭" }] },
+            { text: "When everything demands an instant response, people react rather than reflect, and important matters get the same hurried treatment as trivial ones.", fn: "Explanation", vocab: [{ term: "trivial", gloss: "瑣碎的；微不足道的" }] },
+            { text: "A culture that never pauses risks losing the slow pleasures — reading, conversation, rest — that give life much of its meaning.", fn: "Develop" },
+            { text: "A mind perpetually interrupted rarely produces the patient, sustained thought that real achievement requires.", fn: "Develop" },
+            { text: "These costs are real, and dismissing them would be as foolish as denying the benefits.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Mastery, not speed, is the issue",
+          sentences: [
+            { text: "Moreover, the deepest point is that these harms flow from how we manage speed, not from speed as such.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A phone that can interrupt us every minute does not have to, since the same tool can be silenced, scheduled, and set aside.", fn: "Example" },
+            { text: "The rapid pace becomes a problem mainly when we let it dictate our attention instead of directing it ourselves.", fn: "Explanation" },
+            { text: "Individuals and societies that build in deliberate pauses — protected time, slower rituals, limits on the always-on — enjoy the speed without drowning in it.", fn: "Develop", vocab: [{ term: "deliberate", gloss: "刻意的；從容的" }] },
+            { text: "The same notification that distracts one person is the alert that lets another respond to an emergency in time.", fn: "Two-sided point" },
+            { text: "Speed is a tool, and like any tool it harms only the hand that wields it carelessly.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the rapid pace of modern life solves more than it causes, provided we learn to govern it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Its problems are real but largely self-inflicted, the price of using a powerful capacity without discipline rather than an inevitable curse of the capacity itself.", fn: "Synthesis", vocab: [{ term: "discipline", gloss: "自律；紀律" }] },
+            { text: "Blaming the clock conveniently spares us the harder task of examining our own habits.", fn: "Sharpen" },
+            { text: "The answer is not to slow the world down but to master our own pace within it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-022",
@@ -1195,6 +1369,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: It is no longer possible for a society to regard any living man or woman as a hero. Reason: The reputation of anyone who is subjected to media scrutiny will eventually be diminished.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): correctly separates the reason from the claim, granting that scrutiny tarnishes reputations while arguing that heroism never required perfection, so the claim does not follow; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We seem to delight in tearing down the people we once admired, and every week brings a fresh revelation about some public figure's feet of clay.", fn: "Hook" },
+            { text: "The claim concludes from this that no living man or woman can any longer be regarded as a hero, and it rests on the reason that media scrutiny will eventually diminish anyone's reputation.", fn: "Context (claim and reason)" },
+            { text: "The reason contains a real truth, but it does not support the claim, because heroism has never required a flawless life, and the exposure of imperfection does not abolish the possibility of admiration.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is partly true",
+          sentences: [
+            { text: "First, the reason describes something genuinely characteristic of our age.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "Relentless media coverage now follows public figures into their private lives, and few reputations survive that exposure entirely intact.", fn: "Example" },
+            { text: "Where earlier heroes were known only through carefully controlled images, today's are photographed, recorded, and investigated until their flaws become public property.", fn: "Explanation" },
+            { text: "Even genuinely admirable people turn out, on close inspection, to be vain, inconsistent, or unkind in some corner of their lives.", fn: "Develop" },
+            { text: "A single embarrassing clip can now travel further in a day than a lifetime of quiet good deeds.", fn: "Reinforce" },
+            { text: "So the reason is not wrong: scrutiny does tend to tarnish reputations that distance once kept shining.", fn: "Sub-conclusion", vocab: [{ term: "scrutiny", gloss: "審視；細察" }] },
+          ],
+        },
+        {
+          role: "Body — But heroism never meant perfection",
+          sentences: [
+            { text: "However, the reason supports the claim only if heroism requires a spotless life, and it never has.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "A hero is someone who does something brave, generous, or great, not someone who is perfect in every respect.", fn: "Point" },
+            { text: "The soldier who saves his comrades, the doctor who serves the dying, the dissident who defies a tyrant — each is heroic for a deed, whatever their private failings.", fn: "Example", vocab: [{ term: "dissident", gloss: "異議人士" }] },
+            { text: "To demand moral perfection before we will admire anyone is to misunderstand what admiration is for, since we honor the act and not the saint.", fn: "Explanation" },
+            { text: "Indeed, knowing that heroes are flawed people who rose to a great occasion makes their courage more inspiring, not less, because it shows that ordinary humans are capable of it.", fn: "Develop" },
+            { text: "We do not stop calling a firefighter brave because we learn that he is also short-tempered at home.", fn: "Concrete rebuttal" },
+            { text: "The exposure of weakness does not destroy heroism; it merely strips away the illusion that heroes are gods.", fn: "Sub-conclusion", vocab: [{ term: "illusion", gloss: "錯覺；幻象" }] },
+          ],
+        },
+        {
+          role: "Body — Living heroes still exist",
+          sentences: [
+            { text: "Moreover, the claim is plainly contradicted by everyday experience.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "People around the world still revere living figures — humanitarians, scientists, ordinary rescuers — whose specific deeds earn genuine admiration despite full knowledge of their humanity.", fn: "Example", vocab: [{ term: "revere", gloss: "崇敬；敬仰" }] },
+            { text: "What has changed is not the possibility of heroism but the naivety of hero-worship, for we now admire with our eyes open.", fn: "Explanation", vocab: [{ term: "naivety", gloss: "天真；幼稚" }] },
+            { text: "That is arguably healthier, since a society that can honor real, fallible people is less likely to be betrayed by the idols it once pretended were perfect.", fn: "Develop" },
+            { text: "Admiration survives disillusionment whenever it was attached to a deed rather than to a fantasy of perfection.", fn: "Develop" },
+            { text: "Scrutiny has changed how we admire, not whether we can.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is partly true but the claim simply does not follow from it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Media scrutiny does diminish inflated reputations, but heroism was never about flawlessness, so its exposure of human weakness leaves the real thing intact.", fn: "Synthesis" },
+            { text: "Maturity in admiration is not the loss of heroes but the gain of honesty about them.", fn: "Reinforce" },
+            { text: "We can still regard the living as heroes; we have merely learned to admire them as people rather than worship them as myths.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-023",
@@ -1203,6 +1435,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Competition for high grades seriously limits the quality of learning at all levels of education.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): largely agrees with strong, well-developed reasons about how grade competition distorts learning, then fairly concedes the value of mild rivalry before reaffirming the position; persuasive and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "From a child's first gold star to a university honors list, education runs on grades, and students compete fiercely to earn the highest ones.", fn: "Hook" },
+            { text: "The statement charges that this competition for high grades seriously limits the quality of learning at every level of education.", fn: "Context (the statement)" },
+            { text: "I largely agree, because the pursuit of grades tends to crowd out the curiosity, risk-taking, and depth that real learning requires, even though a measured amount of competition can spur effort.", fn: "Thesis statement (largely agree)" },
+          ],
+        },
+        {
+          role: "Body — Grades replace learning as the goal",
+          sentences: [
+            { text: "First, fierce grade competition quietly changes what students are actually trying to do.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Their goal stops being to understand and becomes to score, and the two are not the same thing.", fn: "Point" },
+            { text: "A student chasing an A learns what the test rewards, memorizes what will be marked, and forgets it the moment the grade is recorded.", fn: "Example" },
+            { text: "Curiosity, the natural desire to know, withers when every question becomes a calculation about marks.", fn: "Explanation", vocab: [{ term: "curiosity", gloss: "好奇心" }] },
+            { text: "An education meant to open minds instead trains students to ask only one question: will this be on the exam?", fn: "Develop" },
+            { text: "Ask a class what grade they received and they can tell you instantly; ask what they actually learned and they often cannot.", fn: "Reinforce" },
+            { text: "When the grade becomes the point, learning becomes a means to it, and often a casualty of it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Competition discourages risk and depth",
+          sentences: [
+            { text: "Moreover, competing for grades pushes students away from exactly the behavior that deep learning demands.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A student worried about her ranking avoids hard courses where she might stumble, sticks to safe topics, and never risks the bold mistakes from which people learn most.", fn: "Example" },
+            { text: "Real understanding requires struggling with difficult material and being willing to be wrong, yet a grading contest punishes precisely that.", fn: "Explanation" },
+            { text: "It also corrodes cooperation, turning classmates who might have learned together into rivals guarding their advantage.", fn: "Develop", vocab: [{ term: "cooperation", gloss: "合作" }, { term: "corrodes", gloss: "侵蝕；逐漸損害" }] },
+            { text: "Fear of a lower mark teaches caution, and caution is the quiet enemy of discovery.", fn: "Sharpen" },
+            { text: "A system that rewards looking smart over becoming smart limits learning at its very root.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The qualification",
+          sentences: [
+            { text: "However, it would be an exaggeration to call all competition harmful.", fn: "Pivot", moves: ["However"] },
+            { text: "A degree of healthy rivalry can motivate effort, and the prospect of falling behind pushes some students to work who would otherwise drift.", fn: "Concede", vocab: [{ term: "rivalry", gloss: "競爭；對抗" }] },
+            { text: "But the statement speaks of competition that seriously limits learning, and that describes the obsessive, high-stakes grading that dominates most schools, not the mild kind.", fn: "Rebut" },
+            { text: "The problem is not a little friendly comparison but a system in which a single number can decide a future, making the grade matter more than the knowledge it supposedly measures.", fn: "Explain" },
+            { text: "A little ambition is healthy, but an arms race over ranking is not.", fn: "Reinforce" },
+            { text: "Competition energizes in small doses and corrupts in large ones, and education has chosen the large dose.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is largely right: the intense competition for grades does seriously limit the quality of learning.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "By making the score the goal, discouraging risk, and poisoning cooperation, the grade chase undermines the very understanding it claims to measure.", fn: "Synthesis" },
+            { text: "Grades should serve learning, not the other way around.", fn: "Aphoristic" },
+            { text: "Schools need not abolish all assessment, but they should loosen its grip, so that students compete once again to learn rather than merely to be ranked.", fn: "Final judgment", vocab: [{ term: "assessment", gloss: "評量；評估" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-024",
@@ -1352,6 +1642,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educators should find out what students want included in the curriculum and then offer it to them.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that separates the circumstances in which student input helps from those in which it would gut the curriculum, and reframes the educator's duty; clear and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It sounds democratic and humane to ask students what they want to learn and then teach them exactly that.", fn: "Hook" },
+            { text: "The recommendation would have educators discover students' preferences and shape the curriculum to match them.", fn: "Context (the recommendation)" },
+            { text: "Consulting students is genuinely valuable, but the recommendation goes too far, because a curriculum built mainly on what students want would shortchange them on the very things an education exists to provide.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Where consulting students helps",
+          sentences: [
+            { text: "First, in some respects listening to students would clearly improve education.", fn: "Topic sentence", moves: ["First"] },
+            { text: "When teachers learn what examples excite a class, which topics it finds dull, and what questions it is burning to ask, they can teach the same material far more effectively.", fn: "Example" },
+            { text: "Student input is especially valuable for electives, projects, and the choice of illustrations, where many paths lead equally well to the goal.", fn: "Explanation" },
+            { text: "A class that helped shape part of its own course tends to be more engaged and to take more responsibility for the result.", fn: "Develop", vocab: [{ term: "engaged", gloss: "投入的；專注的" }] },
+            { text: "Knowing a class is fascinated by space, a physics teacher can smuggle hard equations in aboard a rocket.", fn: "Concrete example" },
+            { text: "Within these limits, adopting the recommendation would be a real improvement.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Students cannot judge what they need",
+          sentences: [
+            { text: "However, the trouble begins the moment preference is allowed to determine the substance of the curriculum.", fn: "Pivot", vocab: [{ term: "curriculum", gloss: "課程" }], moves: ["However"] },
+            { text: "Students, by definition, do not yet know a subject, so they cannot reliably judge what is worth learning within it.", fn: "Point" },
+            { text: "Few children would request grammar, fractions, or history, yet these unglamorous foundations are exactly what they will need and cannot acquire on their own.", fn: "Example" },
+            { text: "An expert curriculum exists precisely to include the difficult, the unfamiliar, and the not-yet-appreciated, the things students would never think to ask for.", fn: "Explanation" },
+            { text: "To offer only what students already want is to lock them inside their current horizons rather than expand them.", fn: "Develop", vocab: [{ term: "horizons", gloss: "視野；眼界" }] },
+            { text: "The whole point of schooling is to take students somewhere they could not have found on their own.", fn: "Reinforce" },
+            { text: "A patient who prescribed his own medicine, or a traveler who mapped a country he had never seen, would fare no better.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The educator's duty",
+          sentences: [
+            { text: "Moreover, the recommendation quietly misunderstands the educator's role.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A teacher's authority rests on knowing what students do not yet know, including what they do not yet know to want.", fn: "Point" },
+            { text: "To hand the design of the curriculum to the very people who came to be educated is to abdicate exactly the expertise they are paying for.", fn: "Explanation", vocab: [{ term: "abdicate", gloss: "放棄（責任、職位）" }] },
+            { text: "The consequence would be an education that flatters students' existing tastes while failing to enlarge them, popular in the moment and impoverishing over time.", fn: "Develop", vocab: [{ term: "impoverishing", gloss: "使貧乏；使匱乏" }] },
+            { text: "A guide who only ever went where the tourists already wanted to go would not be worth hiring.", fn: "Analogy" },
+            { text: "Genuine respect for students lies not in giving them whatever they ask for, but in giving them what will truly serve them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, educators should consult students without surrendering the curriculum to them.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Student preferences should shape how a subject is taught and inform its optional parts, but the core should be set by those who know what an education requires.", fn: "Synthesis" },
+            { text: "Listen closely for what excites students, then lead them somewhere they did not yet know they wanted to go.", fn: "Reinforce" },
+            { text: "The wise teacher listens carefully to what students want and then teaches them, in part, what they did not yet know to ask for.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-026",
