@@ -5313,6 +5313,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "It is primarily in cities that a nation's cultural traditions are generated and preserved.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): concedes the city's real power to concentrate and display culture, then shows where the claim overreaches — rural origins and regional preservation — and turns on the word 'primarily'; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Walk through any capital and you find the museums, theatres, and grand libraries that a nation points to as proof of its culture.", fn: "Hook" },
+            { text: "From this familiar sight the statement concludes that it is primarily in cities that a nation's cultural traditions are generated and preserved.", fn: "Context (the statement)" },
+            { text: "Cities certainly concentrate and display culture as nowhere else, but the claim that they are its primary source overlooks the countryside and the regions, where much of a nation's deepest tradition is in fact born and kept alive.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Where the statement holds",
+          sentences: [
+            { text: "There is real truth in the statement, because cities gather the people, wealth, and institutions that culture needs in order to flourish.", fn: "Topic sentence" },
+            { text: "A great city draws artists, scholars, and craftsmen from across the land, and the density of talent lets ideas collide and traditions develop faster than they ever could in isolation.", fn: "Explanation" },
+            { text: "The patronage of wealthy citizens and of the state has always concentrated in cities, funding the painters, composers, and architects whose work becomes a nation's heritage.", fn: "Example", vocab: [{ term: "patronage", gloss: "贊助；資助" }, { term: "heritage", gloss: "遺產；傳統" }] },
+            { text: "It is no accident that we name whole artistic movements after cities, from Florentine painting to Viennese music, for the city gives a tradition both a stage and an audience.", fn: "Develop" },
+            { text: "So the statement holds in this respect: the city is where culture is gathered, refined, and put on display.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where it fails",
+          sentences: [
+            { text: "However, to call the city the primary place where traditions are generated mistakes the showcase for the source.", fn: "Pivot", moves: ["However"] },
+            { text: "Many of a nation's oldest traditions — its folk songs, festivals, crafts, dialects, and dishes — were generated in the countryside and only later carried into the city.", fn: "Point" },
+            { text: "The rhythms of farming life, religious custom, and regional identity shaped these traditions long before any urban institution took the slightest interest in them.", fn: "Explanation" },
+            { text: "The folk melodies a metropolitan composer later weaves into a symphony were first sung by villagers, and the dishes that come to define a national cuisine were perfected in rural kitchens.", fn: "Example", vocab: [{ term: "metropolitan", gloss: "大都會的；都市的" }] },
+            { text: "Cities often borrow, repackage, and sell these traditions rather than create them, so crediting the city with their generation reverses the real order of things.", fn: "Develop" },
+            { text: "The countryside is frequently the true cradle of tradition, and the city merely its later beneficiary.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Preservation is shared",
+          sentences: [
+            { text: "Moreover, preservation too is more widely shared than the statement allows.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Rural communities, with their slower pace and stronger continuity, often guard old customs more faithfully than fast-changing cities do.", fn: "Point", vocab: [{ term: "continuity", gloss: "延續性；連貫性" }] },
+            { text: "A village may keep a dialect, a craft, or a seasonal rite alive for centuries, while the same tradition fades in the city under the constant pressure of fashion and commerce.", fn: "Explanation" },
+            { text: "The city preserves what it can catalogue and display in an institution, but living tradition, the kind passed quietly from parent to child, is often kept most securely out in the regions.", fn: "Develop", vocab: [{ term: "catalogue", gloss: "編目；分類記錄" }] },
+            { text: "Preservation, then, is a task the whole nation shares, not the city's alone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement captures the city's real power to concentrate and exhibit culture, but it claims too much when it makes the city the primary source of tradition.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A nation's traditions are generated as much in its fields, villages, and regions as in its capitals, and they are preserved wherever a community chooses to keep them alive.", fn: "Synthesis" },
+            { text: "The city displays the nation's culture brilliantly, but it did not make that culture alone, and it does not keep it alone.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-082",
@@ -5321,6 +5375,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "We can learn much more from people whose views we share than from people whose views contradict our own.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): concedes the value of shared ground, then argues the deeper case that contradiction teaches more by exposing assumptions, and warns of the echo chamber; coherent and well supported.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is comfortable to spend our time among people who think as we do, nodding along and feeling confirmed.", fn: "Hook" },
+            { text: "The statement defends that comfort intellectually, claiming that we can learn much more from people whose views we share than from people whose views contradict our own.", fn: "Context (the statement)" },
+            { text: "This reverses the truth: while allies help us refine what we already believe, it is usually those who contradict us who teach us the most, by forcing us to examine assumptions we would otherwise never question.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The grain of truth",
+          sentences: [
+            { text: "Admittedly, there is something real to be gained from people who share our views.", fn: "Topic sentence", moves: ["Admittedly"] },
+            { text: "Among those who agree on fundamentals, we can build, specialize, and push an idea further without having to defend its foundations at every step.", fn: "Explanation" },
+            { text: "Scientists in the same field can collaborate to extend a theory, and colleagues who share a premise can work quickly because they need not argue it from the start.", fn: "Example", vocab: [{ term: "premise", gloss: "前提；假設" }] },
+            { text: "Shared ground lets us go deep, and that is a genuine kind of learning.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Contradiction teaches more",
+          sentences: [
+            { text: "However, the deeper learning almost always comes from those who contradict us.", fn: "Pivot", moves: ["However"] },
+            { text: "When someone challenges our view, we are forced to articulate and defend it, and in doing so we discover whether it can actually stand.", fn: "Point", vocab: [{ term: "articulate", gloss: "清楚表達；明確闡述" }] },
+            { text: "Agreement leaves our assumptions untouched and invisible, while opposition drags them into the light, where they can finally be examined.", fn: "Explanation", vocab: [{ term: "assumptions", gloss: "假設；假定" }] },
+            { text: "A student who reads only authors she agrees with merely collects confirmation, whereas one who wrestles with a thinker she finds wrong is forced to sharpen every reason she holds.", fn: "Example" },
+            { text: "Even when the challenge proves misguided, answering it still teaches us something, because we must locate exactly where it goes wrong and show why our own position survives.", fn: "Develop" },
+            { text: "It is uncomfortable to have our convictions questioned, but that discomfort is the very feeling of learning, of a mind being stretched rather than flattered.", fn: "Develop", vocab: [{ term: "convictions", gloss: "堅定的信念；信仰" }] },
+            { text: "We rarely deepen a belief by hearing it echoed; we do so by hearing it contradicted.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The danger of agreement only",
+          sentences: [
+            { text: "Moreover, learning only from those who agree carries a real danger.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A circle of like-minded people steadily hardens into an echo chamber, in which shared error is mistaken for confirmed truth.", fn: "Point", vocab: [{ term: "echo chamber", gloss: "同溫層；迴聲室效應" }] },
+            { text: "With no one to object, mistakes go uncorrected and grow more extreme, because every voice simply repeats and amplifies the same assumptions.", fn: "Explanation" },
+            { text: "Worse still, a group that hears only itself slowly loses the very habit of justification, growing not merely mistaken but unable to recognize a mistake when one finally arrives.", fn: "Develop", moves: ["Worse still"] },
+            { text: "History's worst collective errors, in politics and in science alike, have often come from groups so unanimous that no dissenting voice could reach them.", fn: "Develop" },
+            { text: "Contradiction is not merely instructive; it is the safeguard that keeps a mind, or a whole society, honest.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement mistakes comfort for learning.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "People who share our views can help us build on common ground, and that has value, but it is those who contradict us who test our assumptions, correct our errors, and force the growth that agreement never demands.", fn: "Synthesis" },
+            { text: "We learn most not from the chorus that agrees with us, but from the voice that makes us think again.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-083",
@@ -5329,6 +5438,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "When old buildings stand on ground that modern planners feel could be better used for modern purposes, modern development should be given precedence over the preservation of historic buildings.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that some old buildings must yield, then defends the irreplaceable value of genuinely historic ones and exposes how subjective a planner's 'feel' is; balanced and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Land in a growing city is scarce and valuable, and an old building can look like a stubborn obstacle to progress.", fn: "Hook" },
+            { text: "The statement sides firmly with progress, holding that when planners feel the ground could be better used, modern development should take precedence over preserving historic buildings.", fn: "Context (the statement)" },
+            { text: "The statement is too quick to sacrifice the past, for while not every old structure deserves saving, historic buildings carry a value a planner's sense of efficiency cannot measure, and the word feel exposes how subjective that judgment really is.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Where development must win",
+          sentences: [
+            { text: "Admittedly, preservation cannot always prevail.", fn: "Topic sentence", moves: ["Admittedly"] },
+            { text: "A city must grow, house its people, and renew itself, and not every old building is a treasure; a great many are simply old.", fn: "Explanation" },
+            { text: "A derelict warehouse of no distinction, sitting on ground a city urgently needs for housing or a hospital, has no real claim against the living needs of the present.", fn: "Example", vocab: [{ term: "derelict", gloss: "荒廢的；被棄置的" }] },
+            { text: "Where a building has little worth and the public need is great, development reasonably comes first.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The irreplaceable value of history",
+          sentences: [
+            { text: "However, the statement treats history as if it were merely unused space.", fn: "Pivot", moves: ["However"] },
+            { text: "A genuinely historic building is irreplaceable in a way an office tower is not, for once it is demolished it is gone for good, and with it a tangible link to the past.", fn: "Point", vocab: [{ term: "demolished", gloss: "拆毀；摧毀" }, { term: "tangible", gloss: "有形的；實際可觸的" }] },
+            { text: "Such buildings give a city its identity and its memory, telling residents where they came from and grounding a community in something older than the present moment.", fn: "Explanation" },
+            { text: "The economic value a planner measures is real but narrow, and it cannot capture what a cathedral, an old market, or a historic square means to the people who live around it.", fn: "Develop" },
+            { text: "Nor can such value be recreated later, since even a faithful copy is only ever a replica, lacking the very age and authenticity that made the original worth keeping.", fn: "Develop" },
+            { text: "To weigh only modern usefulness is to price the one thing and ignore the other entirely.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The weakness of 'feel'",
+          sentences: [
+            { text: "Moreover, the statement rests its whole case on what a planner happens to feel, and that is a fragile foundation.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "What planners feel could be better used is a subjective and shifting judgment, often driven by short-term profit or fashion rather than lasting public good.", fn: "Point", vocab: [{ term: "subjective", gloss: "主觀的" }] },
+            { text: "Cities have repeatedly torn down beloved landmarks in the name of progress, only to regret the loss within a generation, once the fashion that justified it had passed.", fn: "Explanation" },
+            { text: "Because demolition is irreversible and feelings are not, the burden ought to fall on those who would destroy, not on those who would preserve.", fn: "Develop" },
+            { text: "A mere feeling that ground could be used better is far too weak a reason to erase what can never be rebuilt.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right that not every old building can stand in the way of a city's needs, but wrong to give development automatic precedence.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Worthless structures may yield to real public need, yet truly historic buildings hold an irreplaceable value that a planner's feeling cannot outweigh, so the choice demands careful judgment rather than a standing rule in favour of the new.", fn: "Synthesis", vocab: [{ term: "irreplaceable", gloss: "無可取代的；不可替代的" }] },
+            { text: "A city that measures its ground only by modern use will, in time, find that it has demolished its own memory.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-084",
@@ -5337,6 +5499,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: The surest indicator of a great nation must be the achievements of its rulers, artists, or scientists. Reason: Great achievements by a nation's rulers, artists, or scientists will ensure a good life for the majority of that nation's people.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): addresses both claim and reason, granting achievements as one mark of greatness but denying they are the surest, and showing the reason fails because elite achievement has long coexisted with mass suffering.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When we picture a great nation, we often summon images of its masterpieces, its discoveries, and its commanding leaders.", fn: "Hook" },
+            { text: "The claim builds on this instinct, holding that the surest indicator of a great nation is the achievements of its rulers, artists, or scientists, on the reasoning that such achievements will ensure a good life for the majority of its people.", fn: "Context (claim and reason)" },
+            { text: "Both parts deserve doubt: great achievements are one mark of a nation but not the surest, and the reason is weaker still, because the brilliance of a nation's elite has often coexisted with the misery of its many.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The claim is only partly right",
+          sentences: [
+            { text: "Consider first the claim itself.", fn: "Topic sentence", moves: ["first"] },
+            { text: "Achievements in art, science, and statecraft are genuine glories, and a nation that produces them has clearly done something right.", fn: "Explanation" },
+            { text: "But they measure a nation at its peak, not in its ordinary life, and a few towering figures tell us very little about how the average citizen actually lives.", fn: "Point" },
+            { text: "A surer indicator of greatness is how a nation treats its weakest members — its poor, its sick, its powerless — for that reveals its character far more honestly than the genius of a gifted few.", fn: "Develop", vocab: [{ term: "genius", gloss: "天才；天賦" }] },
+            { text: "Achievements are an indicator of greatness, then, but hardly the surest one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The reason is weaker still",
+          sentences: [
+            { text: "The reason, however, is more vulnerable still.", fn: "Pivot", moves: ["however"] },
+            { text: "It assumes that the achievements of rulers, artists, and scientists will ensure a good life for the majority, yet history offers no such guarantee.", fn: "Point", vocab: [{ term: "guarantee", gloss: "保證；擔保" }] },
+            { text: "Magnificent palaces, paintings, and monuments have been raised by societies whose ordinary people lived in poverty and bondage, their labour funding a splendour they could never share.", fn: "Example", vocab: [{ term: "bondage", gloss: "奴役；束縛" }] },
+            { text: "Scientific triumphs, too, can enrich a narrow elite or serve a state's power while leaving the majority no better off, and sometimes worse.", fn: "Explanation" },
+            { text: "The same pattern recurs in our own age, where a nation may boast world-class laboratories and prizes even while millions of its citizens still lack basic schooling or medical care.", fn: "Develop" },
+            { text: "Achievement at the top and suffering at the bottom have coexisted far too often for us to believe that one ensures the welfare of the other.", fn: "Develop", vocab: [{ term: "coexisted", gloss: "共存；並存" }] },
+            { text: "The reason mistakes the showcase of a civilization for the real condition of its people.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — What greatness truly shows",
+          sentences: [
+            { text: "Moreover, if we want the surest indicator, we should look exactly where the claim does not.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The welfare of the whole population — its health, freedom, education, and dignity — is a far more reliable measure of national greatness than any list of elite accomplishments.", fn: "Point", vocab: [{ term: "dignity", gloss: "尊嚴" }] },
+            { text: "A nation in which the many live decent, free, and secure lives has achieved something harder and more admirable than a nation that merely produces brilliant individuals atop a wretched mass.", fn: "Explanation" },
+            { text: "Greatness is most surely shown not in the heights a few reach, but in the floor that lies beneath everyone else.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason fall short.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The achievements of rulers, artists, and scientists are real ornaments of a nation, but they are not its surest measure, and they do not ensure a good life for the majority, as the long history of splendour built on suffering makes plain.", fn: "Synthesis" },
+            { text: "Judge a nation not by the monuments it raises, but by the lives that are lived in their shadow.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-085",
@@ -5345,6 +5561,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people claim that you can tell whether a nation is great by looking at the achievements of its rulers, artists, or scientists. Others argue that the surest indicator of a great nation is, in fact, the general welfare of all its people.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): steelmans the achievement view, then sides with the welfare view through the argument that splendour can mask suffering while broad welfare cannot be faked; addresses both views as required.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "How should we measure the greatness of a nation: by the heights its finest minds reach, or by the lives its ordinary people lead?", fn: "Hook" },
+            { text: "One view holds that a nation's greatness is shown by the achievements of its rulers, artists, and scientists; the other insists that the surest indicator is the general welfare of all its people.", fn: "Context (the two views)" },
+            { text: "Both point to something real, but the second view is closer to the truth: dazzling achievements can adorn a nation that fails most of its citizens, whereas widespread welfare reflects a greatness that reaches everyone.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for achievements",
+          sentences: [
+            { text: "Admittedly, the first view has real force.", fn: "Topic sentence", moves: ["Admittedly"] },
+            { text: "A nation's great achievements are what endure and what the world remembers, since centuries later a civilization is known by its art, its thought, and its discoveries far more than by the daily routines of its people.", fn: "Explanation" },
+            { text: "Such achievements also lift the whole of humanity, and a nation that produces them has plainly cultivated talent, supported learning, and aimed at something beyond mere survival.", fn: "Point", vocab: [{ term: "cultivated", gloss: "培養；陶冶" }] },
+            { text: "By this measure, greatness means leaving a lasting mark on civilization.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why that view falls short",
+          sentences: [
+            { text: "However, this view confuses a nation's ornaments with its substance.", fn: "Pivot", moves: ["However"] },
+            { text: "The achievements of a brilliant few can coexist with the suffering of the many, and a glittering culture has often rested on a foundation of poverty and oppression.", fn: "Point", vocab: [{ term: "oppression", gloss: "壓迫；壓制" }] },
+            { text: "A handful of celebrated names tells us what a society's elite could accomplish, not how that society treated everyone outside the charmed circle.", fn: "Explanation" },
+            { text: "If splendour at the top can hide misery at the bottom, then achievement alone is an unreliable, even flattering, indicator of greatness.", fn: "Develop", vocab: [{ term: "unreliable", gloss: "不可靠的" }] },
+            { text: "What a nation builds matters less than whom that building actually serves.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why welfare is sounder",
+          sentences: [
+            { text: "The second view, by contrast, measures a nation where it is hardest to fake.", fn: "Pivot", moves: ["by contrast"] },
+            { text: "The general welfare of all the people — their health, freedom, education, and security — reflects choices that reach into every life, not merely the lives of the gifted.", fn: "Point", vocab: [{ term: "security", gloss: "安全；保障" }] },
+            { text: "A nation that feeds, educates, and protects its whole population has achieved something more demanding than producing a few masterpieces, because it must succeed at scale rather than in isolated brilliance.", fn: "Explanation", vocab: [{ term: "isolated", gloss: "孤立的；個別的" }] },
+            { text: "Anyone can point to a celebrated artist or two, but no nation can fake the health, literacy, and freedom of an entire population, for those appear only when the whole system genuinely works.", fn: "Develop" },
+            { text: "Great achievements, on this view, are most admirable when they grow out of a flourishing people rather than tower over a broken one.", fn: "Develop" },
+            { text: "Welfare is the surer indicator because it cannot be faked by a handful of shining exceptions.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while the achievements of rulers, artists, and scientists are a genuine source of national pride, they are not the surest sign of greatness.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "I side with the second view: the general welfare of all the people is the more honest measure, for it reveals not what a nation's best can do, but what kind of life it secures for everyone, and the finest achievements are worth most when they rise from such a foundation.", fn: "Synthesis" },
+            { text: "A nation is great not when a few of its people soar, but when none of them are left to sink.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-086",
@@ -5353,6 +5622,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that a society's heroes mirror its values, then qualifies the claim with who controls the choosing and the gap between professed and real heroes; nuanced and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Tell me whom a people admire, and I will tell you a great deal about who they are.", fn: "Hook" },
+            { text: "The statement turns this instinct into a method, proposing that the best way to understand a society's character is to examine the character of those it chooses as its heroes or role models.", fn: "Context (the claim)" },
+            { text: "There is real wisdom here, for a society's heroes are a mirror of its values; yet the claim needs qualifying, because who does the choosing, and the gap between professed and genuine heroes, can distort the reflection.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Heroes reveal values",
+          sentences: [
+            { text: "It is largely true that a society reveals itself through its heroes.", fn: "Topic sentence" },
+            { text: "To call someone a hero is to hold up a model of what a human being should be, so the virtues a society honours in its heroes are the virtues it embodies as a people.", fn: "Explanation", vocab: [{ term: "embodies", gloss: "體現；具體表現" }] },
+            { text: "A society that reveres warriors values courage and conquest; one that celebrates scientists prizes reason and discovery; one that idolizes the rich and famous reveals what it truly worships.", fn: "Example", vocab: [{ term: "reveres", gloss: "崇敬；敬仰" }] },
+            { text: "Because a hero is a public choice, repeated across a whole culture, it exposes shared values more reliably than any single person's private opinion ever could.", fn: "Develop" },
+            { text: "In this sense the statement is right: heroes are a society's values made visible.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But who does the choosing?",
+          sentences: [
+            { text: "However, we must ask who actually does the choosing.", fn: "Pivot", moves: ["However"] },
+            { text: "A society does not always select its heroes freely, for rulers, media, and commercial interests can manufacture role models and impose them from above.", fn: "Point", vocab: [{ term: "manufacture", gloss: "製造；捏造" }] },
+            { text: "An authoritarian state may parade official heroes the people do not truly admire, and a culture saturated with advertising may elevate celebrities chosen by industry rather than by genuine esteem.", fn: "Explanation", vocab: [{ term: "esteem", gloss: "敬重；尊重" }] },
+            { text: "In such cases the heroes on display reveal the character of those with the power to promote them, not necessarily the character of the society as a whole.", fn: "Develop" },
+            { text: "We learn the most only when the choice of heroes is genuinely the society's own.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Professed versus real heroes",
+          sentences: [
+            { text: "Moreover, there is often a gap between the heroes a society professes and the ones it actually rewards.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A nation may officially honour saints, teachers, and reformers while in practice lavishing its wealth and attention on athletes, entertainers, and tycoons.", fn: "Point" },
+            { text: "To understand such a society, we must look past the heroes it names in speeches to the ones it truly elevates in daily life, because the second list is the honest one.", fn: "Explanation" },
+            { text: "Examined carefully, this very gap is revealing, exposing the distance between a society's stated ideals and its real priorities.", fn: "Develop", vocab: [{ term: "ideals", gloss: "理想；典範" }] },
+            { text: "Heroes still illuminate a society's character, but only if we read both the official list and the real one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, examining a society's heroes is indeed one of the best ways to understand its character.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The men and women a people choose to admire mirror the qualities it values, but we must ask whether the choice is truly free and whether its professed heroes match its real ones; read with that care, a society's heroes tell us, more honestly than it might wish, exactly who it is.", fn: "Synthesis" },
+            { text: "Show me a society's heroes, read them honestly, and you have read the society itself.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-087",
