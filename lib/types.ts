@@ -121,6 +121,28 @@ export interface WritingPrompt {
   sample?: SampleEssay;
 }
 
+/**
+ * Lightweight prompt metadata generated into data/writing-index.json (no sample
+ * body). The reader bundles this and lazy-fetches the essay from
+ * /essays/<id>.json only when a sampled prompt is opened, keeping the writing
+ * route's bundle flat as the essay library grows.
+ */
+export interface WritingPromptMeta {
+  id: string;
+  type: EssayType;
+  category: string;
+  prompt: string;
+  directions: string;
+  hasSample: boolean;
+}
+
+/** A useful word harvested for the essay-vocabulary page, with its source sentence. */
+export interface EssayVocabRow {
+  term: string;
+  gloss: string;
+  example: string;
+}
+
 export type MockSectionType = "writing" | "verbal" | "quant";
 
 export interface MockQuestion {

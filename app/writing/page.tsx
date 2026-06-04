@@ -2,9 +2,12 @@
 
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { WRITING_PROMPTS } from "@/data/writing";
+import writingIndex from "@/data/writing-index.json";
 import { useLocalState } from "@/lib/storage";
-import type { EssaySentence, SampleEssay, WritingPrompt } from "@/lib/types";
+import type { EssaySentence, SampleEssay, WritingPromptMeta } from "@/lib/types";
+
+// Lightweight prompt metadata; essay bodies are lazy-fetched from /essays/<id>.json.
+const PROMPTS = writingIndex.prompts as WritingPromptMeta[];
 
 // Matches the section id slugs on /writing/words so a category filter can deep-link.
 function categorySlug(category: string): string {
@@ -58,8 +61,13 @@ function CheckCircleIcon({ className }: { className?: string }) {
 
 export default function WritingPage() {
   const [category, setCategory] = useState<string>("all");
-  const [selectedId, setSelectedId] = useState<string>(() => WRITING_PROMPTS[0].id);
+  const [selectedId, setSelectedId] = useState<string>(() => PROMPTS[0].id);
   const [read, setRead] = useLocalState<Record<string, boolean>>("writing/read", {});
+
+  // Lazy-loaded essay body for the selected prompt, cached in-session.
+  const essayCache = useRef<Map<string, SampleEssay>>(new Map());
+  const [essay, setEssay] = useState<SampleEssay | null>(null);
+  const [essayLoading, setEssayLoading] = useState(false);
 
   function toggleRead(id: string) {
     setRead((prev) => {
@@ -71,17 +79,17 @@ export default function WritingPage() {
   }
 
   const filtered = useMemo(() => {
-    return WRITING_PROMPTS.filter((p) => category === "all" || p.category === category);
+    return PROMPTS.filter((p) => category === "all" || p.category === category);
   }, [category]);
 
   const categories = useMemo(() => {
     const set = new Set<string>();
-    WRITING_PROMPTS.forEach((p) => set.add(p.category));
+    PROMPTS.forEach((p) => set.add(p.category));
     return ["all", ...Array.from(set).sort()];
   }, []);
 
   const selected = useMemo(
-    () => WRITING_PROMPTS.find((p) => p.id === selectedId) ?? filtered[0] ?? null,
+    () => PROMPTS.find((p) => p.id === selectedId) ?? filtered[0] ?? null,
     [selectedId, filtered],
   );
 
@@ -89,6 +97,45 @@ export default function WritingPage() {
     () => filtered.reduce((n, p) => (read[p.id] ? n + 1 : n), 0),
     [filtered, read],
   );
+
+  useEffect(() => {
+    if (!selected || !selected.hasSample) {
+      setEssay(null);
+      setEssayLoading(false);
+      return;
+    }
+    const id = selected.id;
+    const cached = essayCache.current.get(id);
+    if (cached) {
+      setEssay(cached);
+      setEssayLoading(false);
+      return;
+    }
+    let cancelled = false;
+    setEssay(null);
+    setEssayLoading(true);
+    fetch(`/essays/${id}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json() as Promise<SampleEssay>;
+      })
+      .then((data) => {
+        essayCache.current.set(id, data);
+        if (!cancelled) {
+          setEssay(data);
+          setEssayLoading(false);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setEssay(null);
+          setEssayLoading(false);
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [selected]);
 
   return (
     <div className="page-shell pt-10 pb-20">
@@ -108,7 +155,7 @@ export default function WritingPage() {
           <p className="eyebrow">Issue pool{category !== "all" ? ` · ${category}` : ""}</p>
           <p className="serif text-3xl mt-1">
             {filtered.length}
-            <span className="text-[var(--color-ink-faint)] text-base"> / {WRITING_PROMPTS.length} prompts · </span>
+            <span className="text-[var(--color-ink-faint)] text-base"> / {writingIndex.total} prompts · </span>
             <span className="text-[var(--color-success)] text-base font-medium">{readCount}</span>
             <span className="text-[var(--color-ink-faint)] text-base"> read</span>
           </p>
@@ -179,6 +226,8 @@ export default function WritingPage() {
           {selected ? (
             <PromptDetail
               prompt={selected}
+              essay={essay}
+              essayLoading={essayLoading}
               isRead={!!read[selected.id]}
               onToggleRead={() => toggleRead(selected.id)}
             />
@@ -192,12 +241,14 @@ export default function WritingPage() {
 }
 
 interface PromptDetailProps {
-  prompt: WritingPrompt;
+  prompt: WritingPromptMeta;
+  essay: SampleEssay | null;
+  essayLoading: boolean;
   isRead: boolean;
   onToggleRead: () => void;
 }
 
-function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
+function PromptDetail({ prompt, essay, essayLoading, isRead, onToggleRead }: PromptDetailProps) {
   const tt = taskType(prompt.directions);
   return (
     <>
@@ -209,7 +260,7 @@ function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
-            {prompt.sample && (
+            {prompt.hasSample && (
               <button
                 type="button"
                 onClick={onToggleRead}
@@ -237,10 +288,16 @@ function PromptDetail({ prompt, isRead, onToggleRead }: PromptDetailProps) {
         <p className="mt-6 text-sm text-[var(--color-ink-muted)] leading-relaxed">{prompt.directions}</p>
       </article>
 
-      {prompt.sample ? <SampleEssayView essay={prompt.sample} promptText={prompt.prompt} /> : (
+      {!prompt.hasSample ? (
         <article className="surface-soft p-7 text-sm text-[var(--color-ink-muted)] leading-relaxed">
           No sample response for this prompt yet — outline your own using the structure
           patterns from the annotated samples in this category.
+        </article>
+      ) : essay ? (
+        <SampleEssayView essay={essay} promptText={prompt.prompt} />
+      ) : (
+        <article className="surface p-7 text-sm text-[var(--color-ink-muted)]">
+          {essayLoading ? "Loading sample response…" : "Could not load the sample response. Please try again."}
         </article>
       )}
     </>

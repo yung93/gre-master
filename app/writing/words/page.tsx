@@ -1,51 +1,17 @@
 import Link from "next/link";
-import { WRITING_PROMPTS } from "@/data/writing";
-import type { EssayVocab } from "@/lib/types";
-
-interface VocabRow extends EssayVocab {
-  example: string;
-}
+import writingWords from "@/data/writing-words.json";
+import type { EssayVocabRow } from "@/lib/types";
 
 interface CategoryGroup {
   category: string;
-  words: VocabRow[];
+  words: EssayVocabRow[];
 }
+
+const GROUPS = writingWords.groups as CategoryGroup[];
+const MOVES = writingWords.moves as string[];
 
 function slug(category: string): string {
   return category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
-/** Collect the useful words from every sample essay, grouped by prompt category. */
-function harvestByCategory(): CategoryGroup[] {
-  const map = new Map<string, VocabRow[]>();
-  for (const prompt of WRITING_PROMPTS) {
-    if (!prompt.sample) continue;
-    for (const section of prompt.sample.sections) {
-      for (const sentence of section.sentences) {
-        for (const vocab of sentence.vocab ?? []) {
-          const list = map.get(prompt.category) ?? [];
-          const seen = list.some((w) => w.term.toLowerCase() === vocab.term.toLowerCase());
-          if (!seen) list.push({ ...vocab, example: sentence.text });
-          map.set(prompt.category, list);
-        }
-      }
-    }
-  }
-  return [...map.entries()]
-    .map(([category, words]) => ({ category, words }))
-    .sort((a, b) => a.category.localeCompare(b.category));
-}
-
-/** De-duplicated rhetorical signposts (the orange highlights) across all samples. */
-function harvestMoves(): string[] {
-  const set = new Set<string>();
-  for (const prompt of WRITING_PROMPTS) {
-    if (!prompt.sample) continue;
-    for (const section of prompt.sample.sections)
-      for (const sentence of section.sentences)
-        for (const move of sentence.moves ?? []) set.add(move);
-  }
-  return [...set].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 }
 
 function withTerm(text: string, term: string): React.ReactNode {
@@ -61,9 +27,9 @@ function withTerm(text: string, term: string): React.ReactNode {
 }
 
 export default function WritingWordsPage() {
-  const groups = harvestByCategory();
-  const moves = harvestMoves();
-  const total = groups.reduce((n, g) => n + g.words.length, 0);
+  const groups = GROUPS;
+  const moves = MOVES;
+  const total = writingWords.total;
 
   return (
     <div className="page-shell pt-10 pb-20">

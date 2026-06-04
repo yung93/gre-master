@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { VOCAB } from "@/data/vocab";
 import { QUANT } from "@/data/quant";
-import { WRITING_PROMPTS } from "@/data/writing";
+import writingIndex from "@/data/writing-index.json";
 
 interface Pillar {
   href: string;
@@ -12,9 +12,6 @@ interface Pillar {
 }
 
 export default function Home() {
-  const issueCount = WRITING_PROMPTS.filter((p) => p.type === "issue").length;
-  const argCount = WRITING_PROMPTS.filter((p) => p.type === "argument").length;
-
   const pillars: Pillar[] = [
     {
       href: "/verbal",
@@ -35,10 +32,10 @@ export default function Home() {
     {
       href: "/writing",
       eyebrow: "Analytical Writing",
-      title: "Issue & Argument library",
+      title: "Issue topic library",
       blurb:
-        "Prompts in the official format, organized by category, plus annotated sample responses where every useful phrase is highlighted in the margin.",
-      count: `${issueCount} Issue · ${argCount} Argument`,
+        "The official GRE Issue pool, organized by category, with annotated sample responses where every useful phrase and structural move is highlighted.",
+      count: `${writingIndex.total} prompts · ${writingIndex.sampleCount} samples`,
     },
   ];
 
