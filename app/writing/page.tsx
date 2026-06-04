@@ -422,21 +422,19 @@ function TooltipLayer({ children }: { children: React.ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<{ text: string; left: number; top: number } | null>(null);
 
-  function handleOver(e: React.MouseEvent) {
+  // Anchor the bubble's x to the cursor (a wrapped sentence's bounding box would
+  // otherwise center it in the paragraph); keep y at the element's top edge.
+  function handleMove(e: React.MouseEvent) {
     const el = (e.target as HTMLElement).closest<HTMLElement>("[data-tip]");
-    if (!el || !rootRef.current?.contains(el)) return;
-    const text = el.dataset.tip;
-    if (!text) return;
-    const r = el.getBoundingClientRect();
-    setTip({ text, left: r.left + r.width / 2, top: r.top });
-  }
-
-  function handleOut(e: React.MouseEvent) {
-    if ((e.target as HTMLElement).closest("[data-tip]")) setTip(null);
+    if (!el || !rootRef.current?.contains(el) || !el.dataset.tip) {
+      setTip(null);
+      return;
+    }
+    setTip({ text: el.dataset.tip, left: e.clientX, top: el.getBoundingClientRect().top });
   }
 
   return (
-    <div ref={rootRef} onMouseOver={handleOver} onMouseOut={handleOut}>
+    <div ref={rootRef} onMouseMove={handleMove} onMouseLeave={() => setTip(null)}>
       {children}
       {tip && (
         <div
