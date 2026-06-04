@@ -3782,6 +3782,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that in order to thrive, a society must put its own overall success before the well-being of its individual citizens. Others believe that the well- being of a society can only be measured by the general welfare of all its people.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a two-views response that grants the first view's point about necessary sacrifice while arguing that a society's success is ultimately measured by its people's welfare, and shows the opposition is largely false; even-handed.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "What does it mean for a society to thrive — a powerful nation and a booming economy, or healthy, secure, and contented citizens?", fn: "Hook" },
+            { text: "Some hold that a society must put its overall success ahead of the well-being of its individual members; others hold that a society's well-being can only be measured by the general welfare of all its people.", fn: "Context (state both views)" },
+            { text: "Each view contains a truth, but my position lies firmly with the second: a society's success is ultimately measured by the welfare of its people, even though achieving that welfare sometimes requires individuals to sacrifice.", fn: "Thesis statement (which view aligns)" },
+          ],
+        },
+        {
+          role: "Body — The case for collective success",
+          sentences: [
+            { text: "The first view rests on a real and uncomfortable fact: that collective goods sometimes demand individual sacrifice.", fn: "Topic sentence (view one)" },
+            { text: "A nation at war asks soldiers to risk their lives, a society fighting a plague asks citizens to give up freedoms, and an economy reforming for the future may ask some to bear short-term loss.", fn: "Explanation" },
+            { text: "If every individual could veto any policy that cost them personally, a society could never build a road, raise an army, or tax anyone, and would soon collapse.", fn: "Example" },
+            { text: "Some overall successes — security, infrastructure, the rule of law — benefit everyone but require that particular people give something up to achieve them.", fn: "Develop", vocab: [{ term: "infrastructure", gloss: "基礎建設" }] },
+            { text: "Those who stress overall success are right that a society cannot always indulge every individual and still function.", fn: "Sub-conclusion" },
+            { text: "Sometimes the part must yield to the whole.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The case that welfare is the measure",
+          sentences: [
+            { text: "However, the second view captures something deeper: that a society's success has no meaning apart from the lives of the people who compose it.", fn: "Pivot (view two)", moves: ["However"] },
+            { text: "A nation is not a thing over and above its citizens; its wealth, power, and glory are worthless if its people are miserable, oppressed, or poor.", fn: "Point", vocab: [{ term: "oppressed", gloss: "受壓迫的" }] },
+            { text: "History is full of successful states — rich, powerful, feared — whose ordinary people lived wretched lives, and we rightly judge such societies failures, not triumphs.", fn: "Explanation" },
+            { text: "An empire that builds monuments while its citizens starve has not thrived; it has merely concealed its failure behind a grand facade.", fn: "Example", vocab: [{ term: "facade", gloss: "表面；門面" }] },
+            { text: "To put overall success above the welfare of people is to mistake the scoreboard for the game, the statistic for the human reality it is supposed to describe.", fn: "Develop" },
+            { text: "Those who measure a society by the welfare of all its people are right that this is the only success that finally counts.", fn: "Sub-conclusion" },
+            { text: "A country exists for its people, not its people for the country.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — My position: the opposition is false",
+          sentences: [
+            { text: "On balance, my own view is that the opposition between the two is largely false.", fn: "Pivot (my position)", moves: ["On balance"] },
+            { text: "Genuine overall success and the welfare of citizens are not rivals but, in the long run, the same thing: a society succeeds precisely by securing good lives for its people.", fn: "Point" },
+            { text: "The sacrifices the first view defends are justified only when they serve the welfare of the people in the end, since soldiers fight to protect citizens and taxes fund services that benefit them.", fn: "Explanation" },
+            { text: "What is never justified is sacrificing the people's welfare for an abstract success that never returns to them, which is exactly what tyrants claim when they grind citizens down for the glory of the state.", fn: "Develop", vocab: [{ term: "abstract", gloss: "抽象的；空泛的" }] },
+            { text: "Individual sacrifice is acceptable in the service of the common welfare, never as a substitute for it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, my position aligns with those who measure a society by the welfare of its people, while granting that pursuing that welfare sometimes requires individual sacrifice.", fn: "Restate (which view)", moves: ["In conclusion"] },
+            { text: "A society's overall success is not an end above its citizens but a means to their flourishing, so the two views, properly understood, point in the same direction.", fn: "Synthesis", vocab: [{ term: "flourishing", gloss: "繁榮；蓬勃發展" }] },
+            { text: "A society thrives not when it triumphs over its people, but when it triumphs for them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-058",
@@ -3790,6 +3846,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Any piece of information referred to as a fact should be mistrusted, since it may well be proven false in the future. Reason: Much of the information that people assume is factual actually turns out to be inaccurate.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that some facts are revised while showing that this licenses careful skepticism, not wholesale mistrust, and that the claim is self-defeating; tightly reasoned and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Science has overturned many things once called facts — the flat earth, the four humors, the immovable continents — and the claim seizes on this to recommend mistrusting facts altogether.", fn: "Hook" },
+            { text: "It holds that any piece of information called a fact should be mistrusted, on the reason that much of what people assume is factual turns out to be inaccurate.", fn: "Context (claim and reason)" },
+            { text: "The reason states a genuine truth, but it cannot support so sweeping a claim, because that some facts are later revised is no reason to mistrust all of them, and wholesale mistrust would make knowledge itself impossible.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is partly true",
+          sentences: [
+            { text: "First, the reason rightly reminds us that much supposed knowledge is mistaken.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "Medicine, nutrition, and physics are full of yesterday's certainties that today's research has corrected, and confident facts are revised in every field.", fn: "Example" },
+            { text: "People also accept as fact a great deal of rumor, outdated belief, and careless reporting that does not survive scrutiny.", fn: "Explanation", vocab: [{ term: "scrutiny", gloss: "審視；細察" }] },
+            { text: "A healthy skepticism toward claims labeled factual is therefore not paranoia but plain good sense.", fn: "Develop", vocab: [{ term: "skepticism", gloss: "懷疑；質疑" }] },
+            { text: "So the reason is sound as far as it goes: not everything called a fact deserves our trust.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But it does not justify mistrusting all facts",
+          sentences: [
+            { text: "However, from the truth that some facts are wrong, it does not follow that all facts should be mistrusted.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "Facts differ enormously in how well they are established, and to treat the boiling point of water like a contested theory is to ignore those differences entirely.", fn: "Point" },
+            { text: "That a few facts were overturned does not erase the millions that have held firm for centuries and underpin everything we do.", fn: "Explanation" },
+            { text: "We trust that the earth orbits the sun, that water is two parts hydrogen, and that vaccines prevent disease, not because such facts are infallible, but because the evidence for them is overwhelming.", fn: "Example", vocab: [{ term: "infallible", gloss: "絕對可靠的；不會出錯的" }] },
+            { text: "The claim treats a small fraction of revised facts as if it discredited the vast body of reliable ones, which is like distrusting all bridges because a few have fallen.", fn: "Develop" },
+            { text: "Some facts deserve doubt; most deserve provisional trust; none of this licenses mistrusting facts as such.", fn: "Sub-conclusion", vocab: [{ term: "provisional", gloss: "暫定的；臨時的" }] },
+            { text: "Revision is how knowledge improves, not proof that knowledge is worthless.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The claim is self-defeating",
+          sentences: [
+            { text: "Moreover, the claim quietly destroys itself.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "If every fact should be mistrusted because it might be false, then the fact that facts are unreliable should be mistrusted too, and the claim collapses under its own rule.", fn: "Point" },
+            { text: "A blanket mistrust of facts would also paralyze life, since we cannot cross a street, take medicine, or make any decision without relying on facts we treat as true.", fn: "Explanation" },
+            { text: "The sane response to fallible knowledge is not to mistrust everything but to weigh the evidence, holding well-established facts with confidence and uncertain ones with appropriate doubt.", fn: "Develop", vocab: [{ term: "evidence", gloss: "證據" }] },
+            { text: "Doubt is a tool for sorting good knowledge from bad, not a reason to discard all of it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is valid but the claim does not follow from it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "That some facts are later proven false is a reason for careful, evidence-based skepticism, not for the wholesale mistrust the claim demands, which would be both self-defeating and unlivable.", fn: "Synthesis" },
+            { text: "We should mistrust facts that are poorly supported and trust those that are well supported, which is simply to say we should think, not abandon facts altogether.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-059",
@@ -3798,6 +3909,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed. Reason: It is inappropriate — and, perhaps, even cruel — to use public resources to fund the arts when people's basic needs are not being met.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): respects the moral feeling behind the reason while showing it rests on a false competition between art and basic needs, so the claim does not follow; coherent and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It can feel obscene to fund an opera while families go hungry, and the claim turns that feeling into a policy.", fn: "Hook" },
+            { text: "It holds that nations should suspend arts funding when many citizens are hungry or unemployed, on the reason that it is inappropriate, even cruel, to spend public money on art while people's basic needs go unmet.", fn: "Context (claim and reason)" },
+            { text: "The reason expresses a real moral intuition, but it does not justify the claim, because it rests on a false competition between art and basic needs, and acting on it would help no one while harming much.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason has emotional force",
+          sentences: [
+            { text: "First, the reason draws on a feeling worth taking seriously.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "There is something jarring about a government lavishing money on galleries while citizens cannot afford food, and it is right to insist that basic needs come first.", fn: "Explanation" },
+            { text: "No one would defend a state that built a marble concert hall and left its people to starve outside its doors.", fn: "Example" },
+            { text: "The reason correctly senses that a society's priorities should reflect its values, and that human survival outranks cultural luxury.", fn: "Develop", vocab: [{ term: "priorities", gloss: "優先事項；輕重緩急" }] },
+            { text: "So the moral instinct behind the reason is genuine, and any honest answer must respect it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But it assumes a false competition",
+          sentences: [
+            { text: "However, the reason rests on an assumption that does not hold: that arts funding and basic needs are competing for the same money.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "Government arts budgets are tiny, a rounding error beside the cost of feeding and employing a population, so suspending them would free almost nothing for basic needs.", fn: "Point" },
+            { text: "The choice the reason imagines — art or bread — is largely an illusion, since cutting the art would not buy the bread.", fn: "Explanation", vocab: [{ term: "illusion", gloss: "錯覺；假象" }] },
+            { text: "A hungry family is not fed by closing a museum; the saved money is too small to matter, and may not reach them at all.", fn: "Example" },
+            { text: "If the worry is genuinely that resources are misallocated, the vast budgets for defense or subsidies dwarf the arts, yet the reason singles out culture, the cheapest and most visible target.", fn: "Develop", vocab: [{ term: "misallocated", gloss: "分配不當的；錯置的" }] },
+            { text: "The reason's force comes from a vivid contrast that real budgets do not support.", fn: "Sub-conclusion" },
+            { text: "It feels like a choice between art and bread, but the arithmetic says otherwise.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — The arts serve people too",
+          sentences: [
+            { text: "Moreover, the reason ignores that the arts themselves serve people, including those who are suffering.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Art employs workers, draws tourism, and sustains the morale and identity of a people in hard times, so funding it is not opposed to human welfare but part of it.", fn: "Point", vocab: [{ term: "morale", gloss: "士氣；精神面貌" }, { term: "identity", gloss: "認同；身分" }] },
+            { text: "The hardest eras have funded art precisely to give the desperate hope and to put artists to work, treating culture as relief rather than as its enemy.", fn: "Explanation" },
+            { text: "Because hunger and unemployment are nearly always present somewhere, the claim's rule would suspend the arts permanently, impoverishing society for no real gain.", fn: "Develop" },
+            { text: "Honoring basic needs does not require abolishing everything that makes life worth living once those needs are met.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason voices a real moral concern but does not justify the claim.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because cutting the arts would not feed the hungry and would sacrifice something genuinely valuable, the cruelty the reason fears lies not in funding art but in pretending that doing so starves anyone.", fn: "Synthesis" },
+            { text: "A caring society can feed its people and keep its art, and it need not burn the one to warm the other.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-060",
@@ -3806,6 +3972,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Many problems of modern society cannot be solved by laws and the legal system. Reason: Laws cannot change what is in people's hearts or minds.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that law cannot command belief while showing it solves countless problems by governing behavior and can even reshape attitudes over time, so the claim overstates its case; well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We pass laws against almost everything we dislike, yet prejudice, greed, and cruelty persist, which gives the claim a surface plausibility.", fn: "Hook" },
+            { text: "It holds that many problems of modern society cannot be solved by laws and the legal system, on the reason that laws cannot change what lies in people's hearts and minds.", fn: "Context (claim and reason)" },
+            { text: "The reason captures a real limit of law, but it does not justify the sweeping claim, because laws solve a great many problems regardless of people's hearts, and can even change those hearts over time.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason has truth",
+          sentences: [
+            { text: "First, the reason rightly identifies something law cannot directly do.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "A statute can forbid an act, but it cannot order a person to feel differently, and outlawing hatred does not by itself make anyone tolerant.", fn: "Explanation", vocab: [{ term: "tolerant", gloss: "寬容的；包容的" }] },
+            { text: "Laws against discrimination do not instantly erase prejudice, and a person forced to obey may go on resenting the rule in private.", fn: "Example", vocab: [{ term: "prejudice", gloss: "偏見；歧視" }] },
+            { text: "Problems that live in attitudes — bigotry, selfishness, contempt — cannot be legislated out of existence by decree.", fn: "Develop", vocab: [{ term: "legislated", gloss: "以立法規定；立法禁止" }] },
+            { text: "So the reason is correct that law has no direct power over the inner life.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But law solves problems by governing behavior",
+          sentences: [
+            { text: "However, from the fact that law cannot command belief, it does not follow that it cannot solve society's problems.", fn: "Pivot (break the link)", moves: ["However"] },
+            { text: "A great many problems require not a change of heart but a change of behavior, and behavior is exactly what law can compel.", fn: "Point" },
+            { text: "It does not matter whether a factory owner cares about clean air, only whether the law makes him stop polluting; the river grows clean either way.", fn: "Explanation" },
+            { text: "Traffic laws, food-safety rules, and property rights solve enormous problems while caring nothing for what is in anyone's heart.", fn: "Example" },
+            { text: "Much of modern life works smoothly precisely because law reliably governs conduct that good intentions alone could never coordinate.", fn: "Develop" },
+            { text: "The reason confuses changing minds with solving problems, when law solves countless problems by governing actions instead.", fn: "Sub-conclusion" },
+            { text: "The point of a speed limit is not to make drivers virtuous but to keep them alive.", fn: "Sharpen" },
+            { text: "We do not need everyone to be virtuous, only to drive on the correct side of the road.", fn: "Reinforce", vocab: [{ term: "virtuous", gloss: "有德行的；品行端正的" }] },
+          ],
+        },
+        {
+          role: "Body — And law can change hearts over time",
+          sentences: [
+            { text: "Moreover, the reason underestimates how law shapes the very hearts and minds it cannot directly command.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Behavior, once enforced, tends to reshape attitudes over time, as people come to accept and then to believe in what they were first merely required to do.", fn: "Point" },
+            { text: "Laws ending segregation or extending rights were resented by many at first, yet within a generation they had helped transform public attitudes, not just public conduct.", fn: "Example", vocab: [{ term: "segregation", gloss: "種族隔離；隔離" }] },
+            { text: "Law teaches as well as commands, signaling what a society holds to be right and slowly bending opinion toward it.", fn: "Explanation" },
+            { text: "Yesterday's grudging compliance has a way of becoming tomorrow's common sense.", fn: "Aphoristic" },
+            { text: "Hearts follow habits more often than the reason allows.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason names a real limit but the claim overstates it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Law cannot directly command belief, but it solves vast numbers of problems by governing behavior, and over time it can even change the hearts the reason says it cannot touch.", fn: "Synthesis" },
+            { text: "Laws are not the whole answer to society's problems, but they are far more of the answer than the claim admits.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-061",
@@ -3814,6 +4037,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educators should take students' interests into account when planning the content of the courses they teach.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): a recommendation-appropriate response that endorses taking interests into account, shows how to use them, and marks the limit that interest should inform but not govern; clear, if working a familiar theme.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A class bored by its lessons learns little, and a class gripped by them learns almost in spite of itself.", fn: "Hook" },
+            { text: "The recommendation builds on this, urging educators to take students' interests into account when planning the content of their courses.", fn: "Context (the recommendation)" },
+            { text: "This is sound advice in nearly every circumstance, because attending to what engages students makes teaching more effective, provided their interests inform the curriculum rather than dictate it.", fn: "Thesis statement (qualified endorsement)" },
+          ],
+        },
+        {
+          role: "Body — Interest drives learning",
+          sentences: [
+            { text: "First, in almost any classroom, a teacher who knows what interests her students can teach the same material far better.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Interest is among the strongest engines of attention and memory, so a lesson connected to what students care about reaches them where an indifferent one does not.", fn: "Explanation" },
+            { text: "A history teacher who frames the past around questions her students are already asking, or a science teacher who builds a unit on a topic the class loves, harnesses a motivation that a dull syllabus simply wastes.", fn: "Example", vocab: [{ term: "motivation", gloss: "動機；動力" }, { term: "syllabus", gloss: "教學大綱；課程綱要" }] },
+            { text: "Taking interests into account also signals respect, and students who feel their curiosity matters take more responsibility for their own learning.", fn: "Develop" },
+            { text: "In these everyday circumstances, the recommendation is plainly advantageous.", fn: "Sub-conclusion" },
+            { text: "Curiosity, once it is lit, does much of the teacher's work for her.", fn: "Reinforce" },
+            { text: "A teacher ignorant of what her students care about is teaching half blind.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — How to honor interest",
+          sentences: [
+            { text: "Moreover, there are many ways to honor students' interests without surrendering the curriculum to them.", fn: "Pivot", vocab: [{ term: "curriculum", gloss: "課程" }], moves: ["Moreover"] },
+            { text: "Interests are best used to shape how a subject is taught — the examples chosen, the questions raised, the projects offered — rather than which essential topics are covered.", fn: "Point" },
+            { text: "The same required mathematics can be taught through sports statistics or through music, and the choice can follow what a particular class finds compelling.", fn: "Explanation" },
+            { text: "Even within a fixed syllabus, a teacher can leave room for students to pursue a related topic of their own, channeling enthusiasm into the material.", fn: "Example" },
+            { text: "Used this way, student interest becomes a tool for teaching the necessary, not an excuse for avoiding it.", fn: "Develop" },
+            { text: "Taken into account wisely, interest serves the curriculum instead of replacing it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Interest informs, does not govern",
+          sentences: [
+            { text: "However, the recommendation is sound precisely because it says take into account, not be governed by.", fn: "Pivot", moves: ["However"] },
+            { text: "Students, by definition, do not yet know a subject, so they cannot always judge what within it is most worth learning.", fn: "Concede the limit" },
+            { text: "An educator who let interests dictate content would quietly drop the difficult, unglamorous foundations students need but would never request.", fn: "Develop" },
+            { text: "The teacher's expertise lies in knowing what students do not yet know to want, and in weaving their interests into that larger plan rather than abandoning it.", fn: "Explain" },
+            { text: "Children rarely ask to study the very things that will matter most to them later.", fn: "Develop" },
+            { text: "Interest should guide the route, but the destination is the teacher's to set.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, educators should certainly take students' interests into account when planning their courses.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Doing so makes learning more engaging and respectful, and as long as interest informs rather than dictates the content, it strengthens an education without diluting it.", fn: "Synthesis", vocab: [{ term: "diluting", gloss: "稀釋；削弱" }, { term: "engaging", gloss: "引人入勝的；能吸引人的" }] },
+            { text: "The best teaching listens closely to what students want and uses it to teach them what they truly need.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-062",
@@ -3822,6 +4102,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The primary goal of technological advancement should be to increase people's efficiency so that they have more leisure time.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects leisure as the primary goal by pointing to technology's higher purposes, questioning whether leisure is the chief good, and noting that efficiency has not in fact delivered leisure; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We were promised that machines would do our work and leave us free to rest, yet many feel busier than ever.", fn: "Hook" },
+            { text: "The statement proposes a clear purpose for technology: that its primary goal should be to increase efficiency so that people have more leisure time.", fn: "Context (the statement)" },
+            { text: "More leisure is a worthy benefit of technology, but the statement is mistaken to make it the primary goal, because technology serves far higher purposes than free time, and efficiency has not reliably produced leisure anyway.", fn: "Thesis statement (clear position)" },
+          ],
+        },
+        {
+          role: "Body — Technology's purposes are bigger than leisure",
+          sentences: [
+            { text: "First, to reduce the purpose of technology to leisure is to ignore its very greatest achievements.", fn: "Topic sentence", moves: ["First"] },
+            { text: "The most valuable advances have not freed up afternoons but saved lives, cured diseases, fed billions, and extended human knowledge into space and the atom.", fn: "Explanation" },
+            { text: "Vaccines, clean water, and medical scanners exist to relieve suffering and prolong life, goals beside which more leisure looks trivial.", fn: "Example", vocab: [{ term: "trivial", gloss: "瑣碎的；微不足道的" }] },
+            { text: "If we had aimed technology primarily at leisure, we might have better hammocks but worse hospitals.", fn: "Develop" },
+            { text: "The primary goal of technology should be to improve human life broadly, of which leisure is only one small part.", fn: "Sub-conclusion" },
+            { text: "A cure for cancer matters more than a shorter work week.", fn: "Reinforce" },
+          ],
+        },
+        {
+          role: "Body — Leisure is not the highest good",
+          sentences: [
+            { text: "Moreover, the statement assumes that leisure is the chief thing a good life needs, which is questionable.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Free time is valuable, but meaningful work, health, knowledge, connection, and purpose matter at least as much, and technology can serve all of these.", fn: "Point" },
+            { text: "Many people find their deepest satisfaction not in idleness but in work made more creative or productive by their tools.", fn: "Explanation", vocab: [{ term: "idleness", gloss: "無所事事；閒散" }, { term: "satisfaction", gloss: "滿足感；成就感" }] },
+            { text: "A surgeon with better instruments, a scientist with faster computers, and an artist with new media gain not leisure but the power to do more of what gives life meaning.", fn: "Example" },
+            { text: "To organize technology around maximizing free time is to mistake rest for the goal, when rest is valuable mainly as a support for a fuller life.", fn: "Develop" },
+            { text: "Leisure is a means to well-being, not its summit, and a poor north star for technology.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Efficiency has not delivered leisure",
+          sentences: [
+            { text: "However, there is a deeper irony: aiming at efficiency has not actually given us more leisure.", fn: "Pivot", moves: ["However"] },
+            { text: "Despite centuries of labor-saving invention, many people work as hard as ever, because the time efficiency frees is promptly filled with more work and more consumption.", fn: "Point", vocab: [{ term: "consumption", gloss: "消費；消耗" }] },
+            { text: "Efficiency tends to raise expectations and output rather than to shorten the working day, so the leisure the statement hopes for keeps receding.", fn: "Explanation", vocab: [{ term: "receding", gloss: "逐漸退去；漸行漸遠" }] },
+            { text: "If more free time is genuinely the goal, it will come from how we choose to use our tools and arrange our societies, not from efficiency alone.", fn: "Develop" },
+            { text: "Technology can make leisure possible, but only human choices can make it real.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, increasing leisure is a fine benefit of technology but a poor candidate for its primary goal.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Technology's deepest purpose is to improve human life in all its dimensions — health, knowledge, meaning, and yes, leisure — and to crown free time above the rest both undervalues those greater goods and misreads what efficiency actually produces.", fn: "Synthesis" },
+            { text: "We should ask technology not merely to give us more time, but to help us live better in the time we have.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-063",
