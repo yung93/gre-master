@@ -786,6 +786,63 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educational institutions should dissuade students from pursuing fields of study in which they are unlikely to succeed.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a policy-appropriate response that weighs the consequences of institutional dissuasion, shows why they are harmful, and answers the legitimate concern with a better alternative; well organized and persuasive.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A university naturally wants its students to succeed, and it can feel kind to steer the likely failures away before they waste their years and their money.", fn: "Hook (the appeal of the policy)" },
+            { text: "From this impulse comes the proposed policy: that educational institutions should actively dissuade students from pursuing fields of study in which they are unlikely to succeed.", fn: "Context (the policy)" },
+            { text: "However well meant, I believe this policy would do far more harm than good, because predictions of failure are notoriously unreliable and the act of dissuasion would crush the very ambition that schools exist to nurture.", fn: "Thesis statement (clear position)", vocab: [{ term: "ambition", gloss: "抱負；雄心" }], moves: ["However"] },
+          ],
+        },
+        {
+          role: "Body — Predictions of failure are unreliable",
+          sentences: [
+            { text: "First, implementing the policy would require institutions to predict who will fail, and such predictions are far less accurate than they look.", fn: "Topic sentence", moves: ["First"] },
+            { text: "Talent often reveals itself slowly, and a field that seems the wrong fit at eighteen can become a life's calling by twenty-two.", fn: "Develop the unreliability" },
+            { text: "Late bloomers, students who stumbled early and flourished later, and those who simply needed a different teacher fill the history of every discipline.", fn: "Example" },
+            { text: "Einstein was an unremarkable student, and countless accomplished professionals once looked hopeless in the very field they came to master.", fn: "Concrete example" },
+            { text: "Many disciplines reward persistence as much as raw aptitude, and persistence is exactly what an early prediction cannot measure.", fn: "Develop" },
+            { text: "A policy that acted on early signs of weakness would inevitably turn away many who would have succeeded, a cost no institution should impose so casually.", fn: "State the consequence" },
+          ],
+        },
+        {
+          role: "Body — Dissuasion entrenches bias",
+          sentences: [
+            { text: "Worse, judgments about who is unlikely to succeed are easily distorted by prejudice.", fn: "Pivot", vocab: [{ term: "prejudice", gloss: "偏見" }], moves: ["Worse"] },
+            { text: "Throughout history women were told they could not do science and the poor were told they did not belong at university, predictions that reflected bias rather than ability.", fn: "Example" },
+            { text: "A policy of dissuasion would hand institutions a respectable-sounding excuse to push disadvantaged students out of demanding fields, hardening the very inequalities education should dissolve.", fn: "Explanation", vocab: [{ term: "inequalities", gloss: "不平等" }] },
+            { text: "The phrase unlikely to succeed attaches most easily to exactly the students who have always been told they do not belong.", fn: "Sharpen the point" },
+            { text: "A confident prediction of failure can also become self-fulfilling, draining the very motivation a student needs to prove it wrong.", fn: "Self-fulfilling point" },
+            { text: "The consequence would be a narrower, less diverse, and less just set of professions.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Inform, do not dissuade",
+          sentences: [
+            { text: "The policy does respond to a genuine problem, and that much should be granted.", fn: "Concede the legitimate concern" },
+            { text: "Students who pour years and savings into a field for which they are truly unsuited suffer real and avoidable harm.", fn: "Develop the concern" },
+            { text: "But the answer is to inform, not to dissuade: institutions should offer honest feedback, clear data about outcomes, and frank guidance, then let students choose.", fn: "Rebut with the alternative", vocab: [{ term: "guidance", gloss: "引導；指導" }] },
+            { text: "Such counsel respects students as adults capable of weighing risk, whereas dissuasion treats a fallible prediction as a verdict and quietly closes a door that was theirs to open.", fn: "Explain the difference", vocab: [{ term: "verdict", gloss: "定論；判決" }] },
+            { text: "Treated as capable adults, students tend to rise to the responsibility; treated as likely failures, many simply give up.", fn: "Reinforce" },
+            { text: "The distance between advising and dissuading is the distance between empowering a choice and overriding it.", fn: "Reframe" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the consequences of a policy of dissuasion would clearly outweigh its benefits.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because predictions fail, because bias creeps in, and because ambition matters, institutions should equip students to make wise choices rather than make those choices for them.", fn: "Synthesis" },
+            { text: "Education should widen the range of what a young person might become, not quietly shrink it.", fn: "Reinforce" },
+            { text: "A school's task is to open doors and tell the truth about what lies beyond them, not to bar the doors it doubts a student can walk through.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-014",
@@ -794,6 +851,64 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Governments should not fund any scientific research whose consequences are unclear.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that distinguishes the ordinary uncertainty of discovery from genuinely foreseeable danger, showing where withholding funds helps and where it would be ruinous; fluent and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Caution sounds like wisdom, and refusing to fund research whose consequences are unclear can look like simple prudence with public money.", fn: "Hook (the appeal of caution)", vocab: [{ term: "prudence", gloss: "審慎；謹慎" }] },
+            { text: "The recommendation would have governments withhold funding from any research whose outcomes cannot be foreseen.", fn: "Context (the recommendation)" },
+            { text: "Yet I strongly disagree, because the unclear consequence is the normal condition of discovery, and a government that funded only research with predictable results would extinguish the very science that has transformed human life.", fn: "Thesis statement (clear position)", moves: ["Yet"] },
+          ],
+        },
+        {
+          role: "Body — Uncertainty is the nature of research",
+          sentences: [
+            { text: "First, to demand clear consequences before funding is to misunderstand what research actually is.", fn: "Topic sentence", moves: ["First"] },
+            { text: "By definition, genuinely new inquiry ventures into the unknown, and if its results could be foreseen it would scarcely be worth doing.", fn: "Explanation" },
+            { text: "No one funding early work on electricity, on radio waves, or on the structure of DNA could have described the consequences, which turned out to be the modern world.", fn: "Example" },
+            { text: "Apply the recommendation honestly and almost all basic science would lose its support, since its payoffs are precisely what cannot be predicted in advance.", fn: "State the consequence" },
+            { text: "Almost every transformative technology began as research whose eventual uses no one involved could have named.", fn: "Reinforce" },
+            { text: "Uncertainty, in short, is not a flaw in such research but its defining feature.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The hidden cost would be immense",
+          sentences: [
+            { text: "Moreover, the long-term cost of such a policy would be enormous and largely invisible.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The breakthroughs that cure diseases and power economies almost always begin as curiosity-driven work with no obvious application.", fn: "Explanation" },
+            { text: "The mathematics behind modern encryption was once pure abstraction, and the biology behind gene editing began as an obscure study of how bacteria defend themselves.", fn: "Example", vocab: [{ term: "encryption", gloss: "加密" }] },
+            { text: "A nation that funded only the foreseeable would hand these gifts to bolder rivals and slowly fall behind.", fn: "Consequence" },
+            { text: "The country that waits for certainty before investing will always be importing the discoveries that braver nations dared to make.", fn: "Reinforce" },
+            { text: "Worse still, the benefits forgone can never be counted, because no one mourns the cures and inventions that were never allowed to begin.", fn: "Invisible-cost point" },
+            { text: "What looks like thrift would, over decades, prove to be the most expensive policy of all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The legitimate kernel of caution",
+          sentences: [
+            { text: "There is, admittedly, a reasonable worry buried inside the recommendation.", fn: "Concede the legitimate concern" },
+            { text: "Some research carries clearly foreseeable dangers — engineering deadlier pathogens, for instance — and there it is right to demand caution or to refuse funding outright.", fn: "Develop the concern", vocab: [{ term: "pathogens", gloss: "病原體" }] },
+            { text: "But that is a case of consequences that are ominously clear, not unclear, which is the very opposite of what the recommendation describes.", fn: "Rebut" },
+            { text: "The sensible policy restricts research whose harms are foreseeable and grave, while funding generously the vast remainder whose benefits are merely unknown.", fn: "Explain the better rule" },
+            { text: "The real test is not whether the outcome is clear, but whether the foreseeable risk is one we should accept.", fn: "Clarify the rule" },
+            { text: "Uncertainty is a reason to investigate, not a reason to refuse.", fn: "Reframe" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the recommendation mistakes the ordinary uncertainty of discovery for a danger to be avoided.", fn: "Restate", vocab: [{ term: "uncertainty", gloss: "不確定性" }], moves: ["In conclusion"] },
+            { text: "Governments should indeed scrutinize research whose harms are clear and serious, but should fund freely the open-ended inquiry whose consequences no one can yet foresee.", fn: "Synthesis", vocab: [{ term: "scrutinize", gloss: "仔細審查" }] },
+            { text: "A wise government distinguishes the merely unknown from the genuinely dangerous, funding the first while restraining the second.", fn: "Reinforce" },
+            { text: "To fund only the predictable is to guarantee a future no more advanced than the present.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-015",
@@ -802,6 +917,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Society should identify those children who have special talents and provide training for them at an early age to develop their talents.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that names the circumstances in which early training helps and those in which early selection harms, and qualifies the policy accordingly; concrete examples and a clear stance.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is natural to want to nurture exceptional talent, and starting early can seem the obvious way to turn promise into achievement.", fn: "Hook" },
+            { text: "The recommendation urges society to identify children with special talents and to train them intensively from an early age.", fn: "Context (the recommendation)" },
+            { text: "Early cultivation of talent can be valuable in the right circumstances, but as a general policy the recommendation carries serious risks, and whether it helps or harms depends entirely on how it is carried out.", fn: "Thesis statement (qualified position)", vocab: [{ term: "cultivation", gloss: "培養；栽培" }] },
+          ],
+        },
+        {
+          role: "Body — Where early training helps",
+          sentences: [
+            { text: "In certain fields, early and intensive training is genuinely close to necessary.", fn: "Topic sentence" },
+            { text: "Violinists, gymnasts, and chess players who begin in childhood develop abilities that are difficult or impossible to acquire later, when the body and brain are less pliable.", fn: "Example", vocab: [{ term: "pliable", gloss: "可塑的；易塑造的" }] },
+            { text: "Where a skill depends on years of practice during a developmental window, identifying talent early lets a child make the most of a fleeting opportunity.", fn: "Explanation", vocab: [{ term: "developmental", gloss: "發展的；發育的" }] },
+            { text: "Miss the window for a concert pianist or an Olympic gymnast, and no amount of later effort will fully close the gap.", fn: "Reinforce" },
+            { text: "A violin or a pair of figure skates placed in young hands at the right moment can quietly shape an entire life.", fn: "Reinforce" },
+            { text: "In these circumstances the recommendation is sound and even generous, since to delay would be to waste the very years that matter most.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Where it misjudges children",
+          sentences: [
+            { text: "However, applied broadly the policy runs into a stubborn problem: childhood talent is a poor predictor of adult achievement.", fn: "Pivot", moves: ["However"] },
+            { text: "Many gifted children plateau, while many ordinary ones bloom late, so any system that sorts the young into talented and ordinary will misjudge enormous numbers of them.", fn: "Example", vocab: [{ term: "plateau", gloss: "停滯不前；進入平台期" }] },
+            { text: "Worse, the children labeled untalented may be quietly written off and denied the encouragement that might have revealed their gifts.", fn: "Strengthen the objection", moves: ["Worse"] },
+            { text: "Labels handed out early have a way of hardening into expectations that trail a child for years.", fn: "Labeling point" },
+            { text: "Children develop at wildly different rates, so a snapshot taken at six tells us far less than it appears to.", fn: "Develop" },
+            { text: "A policy that picks winners at the age of six is bound to be wrong about a great many of them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The costs of pressure and inequality",
+          sentences: [
+            { text: "There is also a real cost to the children themselves and to fairness.", fn: "Topic sentence" },
+            { text: "Intensive early training can rob a child of an ordinary childhood and impose a pressure that produces burnout rather than brilliance.", fn: "Example", vocab: [{ term: "burnout", gloss: "倦怠；身心俱疲" }] },
+            { text: "And because wealthy families can spot and fund talent far more easily, a formal program risks widening rather than narrowing the gap between rich and poor.", fn: "Develop the inequity" },
+            { text: "A childhood spent wholly in training for one pursuit can leave a person narrow, fragile, and unready for a life that rarely goes to plan.", fn: "Reinforce" },
+            { text: "Talent that depends on early investment will too often turn out to mean the talent that money happened to notice.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the recommendation is wise in some circumstances and dangerous in others.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Society should certainly nurture exceptional ability, especially where a developmental window makes early training essential, but it should do so through broad and flexible opportunity rather than rigid early selection.", fn: "Synthesis" },
+            { text: "Genuine talent, given broad opportunity, has a way of announcing itself in time.", fn: "Reinforce" },
+            { text: "The aim should be to give every child the chance to discover a talent, not to decide at six which children are permitted to have one.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-016",
@@ -810,6 +981,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "It is primarily through our identification with social groups that we define ourselves.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a nuanced reading that grants the shaping power of groups while arguing that individual experience and the capacity to resist a group are equally central to the self; well organized and thoughtful.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Ask people who they are and they will often answer with groups: their nationality, their religion, their profession, their family, their team.", fn: "Hook" },
+            { text: "The statement builds on this familiar fact to claim that it is primarily through our identification with social groups that we define ourselves.", fn: "Context (the statement)" },
+            { text: "Social groups undeniably shape who we are, but the statement overstates their role, because individual experience, personal choice, and even the act of resisting our groups are just as central to the self.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Groups do shape us",
+          sentences: [
+            { text: "It is true that social groups supply much of the raw material of identity.", fn: "Concession (topic sentence)", vocab: [{ term: "identity", gloss: "身份；自我認同" }], moves: ["It is true that"] },
+            { text: "The language we think in, the values we absorb, the religion or nation we are born into all arrive before we can choose them and shape us profoundly.", fn: "Example" },
+            { text: "We understand ourselves partly through belonging and contrast, as members of this family, that profession, this generation, and those labels genuinely organize a life.", fn: "Explanation" },
+            { text: "Even our deepest convictions usually arrive wrapped in the assumptions of some community that first taught them to us.", fn: "Reinforce" },
+            { text: "To this extent the statement is plainly right: no one defines themselves in a vacuum.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Individuality defines us too",
+          sentences: [
+            { text: "However, to call group identity primary is to underrate everything that makes one member of a group differ from another.", fn: "Pivot", moves: ["However"] },
+            { text: "Two siblings raised in the same family, faith, and town can grow into utterly different people, shaped by private experiences, temperaments, and choices no group dictated.", fn: "Example", vocab: [{ term: "temperaments", gloss: "性情；氣質" }] },
+            { text: "Much of who we are is forged in solitary moments — a book that changes our mind, a loss that reshapes our values, a decision made against everyone's advice.", fn: "Develop the point", vocab: [{ term: "solitary", gloss: "獨自的；孤獨的" }] },
+            { text: "A person is not merely a sample of their categories but a particular history that no category can fully contain.", fn: "Develop" },
+            { text: "No two lives are identical, even within the tightest-knit group, and that difference is precisely where the individual self lives.", fn: "Reinforce" },
+            { text: "These are not group identities but personal histories, and they often matter most of all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Defining ourselves against groups",
+          sentences: [
+            { text: "Moreover, we frequently define ourselves not through our groups but in deliberate opposition to them.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The reformer who breaks with her religion, the immigrant who refuses old expectations, the child who rejects a family trade — each forges an identity precisely by resisting a group.", fn: "Example" },
+            { text: "If belonging defined us completely, such rebellion would be impossible, yet the capacity to stand apart is one of the deepest marks of a self.", fn: "Explanation", vocab: [{ term: "rebellion", gloss: "反叛；反抗" }] },
+            { text: "The freedom to question, leave, or remake a group is itself a defining mark of being a self rather than a cell in a hive.", fn: "Reinforce" },
+            { text: "We are shaped by our groups, but we are plainly not their mere products.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, social groups are a major source of identity but not the single primary one the statement claims.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "We define ourselves through a constant negotiation between the groups that shape us and the individual experiences, choices, and refusals that make us distinct.", fn: "Synthesis", vocab: [{ term: "distinct", gloss: "與眾不同的；獨特的" }] },
+            { text: "We are, in the end, both members and individuals, and any honest account of identity must hold the two together.", fn: "Reinforce" },
+            { text: "The self is neither purely a group's creation nor wholly its own author, but the meeting place of the two.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-017",
@@ -818,6 +1044,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "College students should be encouraged to pursue subjects that interest them rather than the courses that seem most likely to lead to jobs.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): a recommendation-appropriate response that argues interest itself is practical, then concedes the circumstances in which students need frank career guidance, landing on a balanced position; well developed.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Students arrive at university pulled in two directions: toward the subjects that fascinate them and toward the ones that promise a steady paycheck.", fn: "Hook" },
+            { text: "The recommendation urges universities to favor the first, encouraging genuine interest rather than courses chosen mainly for their job prospects.", fn: "Context (the recommendation)" },
+            { text: "I largely agree that universities should encourage interest, because interest is what produces excellence and durable skills, though in some circumstances they also owe students a frank word about the job market.", fn: "Thesis statement (qualified position)", vocab: [{ term: "excellence", gloss: "卓越；優異" }] },
+          ],
+        },
+        {
+          role: "Body — Interest is itself practical",
+          sentences: [
+            { text: "First, encouraging students toward what genuinely interests them tends to produce better students and, in the end, better workers.", fn: "Topic sentence", moves: ["First"] },
+            { text: "A young man who studies history because he loves it will read more, think harder, and write better than one grinding joylessly through a practical major he never wanted.", fn: "Example" },
+            { text: "Employers ultimately reward the sharp, the curious, and the capable, and those qualities grow far more readily from passion than from grim calculation.", fn: "Explanation" },
+            { text: "Passion is what sustains the long, unglamorous hours of study that genuine competence quietly demands.", fn: "Reinforce" },
+            { text: "In this sense the recommendation is not naive but shrewd: interest, properly understood, is itself a form of practicality.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Skills outlast jobs",
+          sentences: [
+            { text: "Moreover, the specific jobs a degree seems to target are a shifting and unreliable foundation.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Industries that look safe when a freshman enrolls can be automated or upended by the time she graduates, while the abilities a deep education builds — reasoning, communication, the habit of learning itself — never go out of date.", fn: "Example" },
+            { text: "Universities serve students best by cultivating these lasting capacities, which interest-driven study develops far more reliably than anxious course-shopping for employability.", fn: "Explanation", vocab: [{ term: "employability", gloss: "就業能力" }] },
+            { text: "The most valuable graduates are not those who memorized a trade but those who learned how to keep learning.", fn: "Reinforce" },
+            { text: "To chase the job market is to aim at a target that keeps moving; to pursue genuine interest is to build something that lasts.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The qualifying circumstance",
+          sentences: [
+            { text: "There are, however, circumstances in which encouraging interest alone would be irresponsible.", fn: "Pivot", moves: ["however"] },
+            { text: "A student shouldering crushing debt, or one with a family to support, cannot treat the job market as a triviality, and a university that ignored this would fail them.", fn: "Concede the concern" },
+            { text: "But encouraging interest and informing students about careers are not opposites; the wise institution does both at once.", fn: "Rebut" },
+            { text: "It should fire students' curiosity while also giving them honest data about outcomes, so that they pursue what they love with their eyes open.", fn: "Explain how", vocab: [{ term: "curiosity", gloss: "好奇心" }] },
+            { text: "Telling students the truth about careers does not discourage interest; it takes their futures seriously.", fn: "Reframe" },
+            { text: "Ignoring money would be a luxury available only to students who already have plenty of it.", fn: "Concede further" },
+            { text: "Encouragement and honesty are partners, not rivals.", fn: "Reframe" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, universities are right to encourage interest over mere employability.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Interest drives the excellence and adaptable skill that actually lead to good work, and a degree pursued with real passion is rarely wasted.", fn: "Synthesis", vocab: [{ term: "adaptable", gloss: "適應力強的；可調適的" }] },
+            { text: "A university that inspires and informs in equal measure serves its students far better than one that manages only one.", fn: "Reinforce" },
+            { text: "The ideal is to send students toward what they love while making sure they understand the world that awaits them, so that interest and prudence walk together rather than apart.", fn: "Final judgment", vocab: [{ term: "prudence", gloss: "審慎；謹慎" }] },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-018",
@@ -826,6 +1108,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: When planning courses, educators should take into account the interests and suggestions of their students. Reason: Students are more motivated to learn when they are interested in what they are studying.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 4.5,
+      scoreNote:
+        "Between Adequate and Strong (4.5): correctly addresses both the claim and the reason and tests whether the reason supports the claim; clear and well organized, though the analysis could probe the limits a little more deeply.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Few teachers would deny that a bored class learns little, and the call to consult students about what they study has obvious appeal.", fn: "Hook" },
+            { text: "The claim holds that educators should take students' interests and suggestions into account when planning courses, and it rests on the reason that students are more motivated to learn when they are interested in the material.", fn: "Context (claim and reason)" },
+            { text: "The reason is largely true and the claim is partly right, but the reason does not justify the claim as fully as it first appears, because motivation is not the only aim of education and students do not always know what they most need to learn.", fn: "Thesis statement (evaluate both)" },
+          ],
+        },
+        {
+          role: "Body — The reason is sound",
+          sentences: [
+            { text: "First, the reason on which the claim rests is well supported.", fn: "Topic sentence (assess the reason)", moves: ["First"] },
+            { text: "Interest is one of the strongest engines of learning; a student curious about a subject reads beyond the assignment, remembers more, and persists through difficulty.", fn: "Example" },
+            { text: "A teacher who connects a lesson to what students actually care about will almost always reach them more effectively than one who lectures at them indifferently.", fn: "Explanation" },
+            { text: "We learn fastest when we genuinely want to know the answer, which is why one gripping question can teach more than a week of dull drills.", fn: "Reinforce the reason" },
+            { text: "So the reason is not really in doubt: interest genuinely fuels motivation, and motivation genuinely aids learning.", fn: "Sub-conclusion", vocab: [{ term: "motivation", gloss: "動機；動力" }] },
+          ],
+        },
+        {
+          role: "Body — So the claim has real merit",
+          sentences: [
+            { text: "Because the reason holds, the claim has genuine merit as well.", fn: "Topic sentence (the reason supports a modest claim)" },
+            { text: "An educator who takes students' interests into account — choosing examples they find relevant, leaving room for topics they raise — will teach a more engaged and successful class.", fn: "Explanation", vocab: [{ term: "engaged", gloss: "投入的；專注的" }] },
+            { text: "A literature teacher who lets students help choose some of the novels, or a science teacher who builds a unit around a question the class asked, harnesses motivation that a fixed syllabus would simply waste.", fn: "Example", vocab: [{ term: "syllabus", gloss: "教學大綱；課程綱要" }] },
+            { text: "Inviting students into the planning also teaches them to take some responsibility for their own learning.", fn: "Develop" },
+            { text: "To this extent, the claim follows sensibly from its reason.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the reason proves less than the full claim",
+          sentences: [
+            { text: "However, the reason proves less than the strongest version of the claim may be taken to assert.", fn: "Pivot (test the link)", moves: ["However"] },
+            { text: "Motivation is essential, but it is not the only goal of education, which must also teach things students do not yet find interesting and could not think to suggest.", fn: "Limit the claim" },
+            { text: "A child may have no interest in fractions, grammar, or history, yet a curriculum guided mainly by student preference would quietly abandon exactly the difficult, unglamorous knowledge that schooling exists to transmit.", fn: "Example", vocab: [{ term: "curriculum", gloss: "課程" }, { term: "transmit", gloss: "傳授；傳遞" }] },
+            { text: "Students, by definition, do not yet know the subject, so they cannot always judge what is worth learning, and an educator who simply deferred to their suggestions would sometimes be following the less informed.", fn: "Explanation" },
+            { text: "Left entirely to choose, few children would ever ask to practice the very skills they will most need as adults.", fn: "Reinforce the limit" },
+            { text: "Interest should inform the planning of courses, but it cannot be allowed to govern it, and the reason — true as it is — supports the modest claim, not the sweeping one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is valid and the claim is right in a modest form.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Educators should certainly take students' interests into account, because motivation genuinely aids learning, but they should weigh those interests alongside their own expert judgment about what students truly need.", fn: "Synthesis" },
+            { text: "The teacher's expertise lies precisely in knowing what students cannot yet know to want.", fn: "Aphoristic" },
+            { text: "Consulting students is wise; surrendering the curriculum to them is not, and that gap is exactly the gap between the reason and the strongest reading of the claim.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-019",
