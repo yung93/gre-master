@@ -6422,6 +6422,58 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Major policy decisions should always be left to politicians and other government experts. Reason: Politicians and other government experts are more informed and thus have better judgment and perspective than do members of the general public.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that experts are better informed, then shows the claim fails because policy turns on values, experts are fallible and partial, and democratic consent supplies legitimacy and self-correction; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Faced with bewildering problems, it is tempting to hand the hardest choices to those who seem to know best.", fn: "Hook" },
+            { text: "The claim does exactly that, insisting that major policy decisions should always be left to politicians and government experts, on the reason that such experts are better informed and so possess sounder judgment and perspective than the general public.", fn: "Context (claim and reason)" },
+            { text: "The reason holds a genuine truth about expertise, but it cannot support so sweeping a claim: policy turns on values as well as facts, experts are neither infallible nor disinterested, and in a democracy the public's consent is not an obstacle to good decisions but their foundation.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Expertise genuinely matters",
+          sentences: [
+            { text: "It would be foolish to deny the value the reason points to.", fn: "Topic sentence" },
+            { text: "Major policy often depends on technical knowledge — of economics, medicine, engineering, or law — that the average citizen simply does not have, and ignoring expert judgment can be disastrous.", fn: "Explanation", vocab: [{ term: "disastrous", gloss: "災難性的" }] },
+            { text: "When a bridge must be built or an epidemic contained, we rightly want informed specialists, not a show of hands, deciding the technical questions.", fn: "Example", vocab: [{ term: "specialists", gloss: "專家；專門人才" }] },
+            { text: "On matters of fact and method, expert judgment genuinely is more reliable than popular opinion.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But policy is about values",
+          sentences: [
+            { text: "However, the claim mistakes part of a decision for the whole of it.", fn: "Pivot", moves: ["However"] },
+            { text: "Most major policy questions are not purely technical; they turn on values — on what we owe each other, what risks we will accept, and whose interests come first — and on these the expert has no special authority.", fn: "Point", vocab: [{ term: "authority", gloss: "權威；權力" }] },
+            { text: "An economist can tell us the likely effects of a tax, but not whether fairness or growth should matter more; a scientist can describe a risk, but not how much of it a free people should be willing to bear.", fn: "Explanation" },
+            { text: "These are questions for citizens, since they are the ones who must live with the answers, and no expertise confers the right to decide them on everyone's behalf.", fn: "Develop", vocab: [{ term: "confers", gloss: "賦予；授予" }] },
+            { text: "Where a decision rests on values, the public is not less qualified than the expert but more entitled.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Experts are fallible and partial",
+          sentences: [
+            { text: "Moreover, the word always ignores how often experts err or serve themselves.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Politicians and officials are not disinterested oracles; they have ambitions, blind spots, and ties to the powerful, and history is full of confident experts who turned out to be catastrophically wrong.", fn: "Point" },
+            { text: "Left entirely to insiders, policy drifts toward the interests of those insiders, and the people lose the power to correct mistakes the experts themselves cannot see.", fn: "Explanation" },
+            { text: "Public scrutiny and the threat of being voted out are precisely what keep experts honest, so excluding the public removes the very check that improves their decisions.", fn: "Develop", vocab: [{ term: "scrutiny", gloss: "審查；仔細檢視" }] },
+            { text: "Far from guaranteeing good policy, leaving everything to experts removes the accountability that good policy needs.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is right that experts are often better informed, but the claim built on it is wrong.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Expertise should inform major decisions, not monopolize them, because policy is a matter of values as well as facts, experts are fallible and partial, and in a democracy the public's consent and oversight are what give decisions both legitimacy and self-correction.", fn: "Synthesis" },
+            { text: "Let experts advise and citizens decide; neither is safe doing the other's job alone.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-100",
@@ -6430,6 +6482,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that universities should require every student to take a variety of courses outside the student's field of study. Others believe that universities should not force students to take any courses other than those that will help prepare them for jobs in their chosen fields.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the value of focused job preparation, then argues that required breadth makes graduates sharper, more adaptable, and more fully educated; sides with the first view while addressing both.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Should a university train a specialist or educate a whole person?", fn: "Hook" },
+            { text: "Some believe universities should require every student to take a variety of courses outside the student's field of study; others believe universities should force no courses beyond those that prepare students for jobs in their chosen field.", fn: "Context (the two views)" },
+            { text: "While job preparation is a legitimate aim, the first view is sounder: a required breadth of study makes graduates more capable, more adaptable, and more fully educated than a narrow training in one field alone.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for focus",
+          sentences: [
+            { text: "The case for sticking to one's field is not without sense.", fn: "Topic sentence" },
+            { text: "Students pay dearly for their degrees and need jobs at the end, and time spent on unrelated courses can feel like a costly detour from the skills the market actually rewards.", fn: "Explanation", vocab: [{ term: "detour", gloss: "繞道；迂迴" }] },
+            { text: "A future engineer or nurse, the argument runs, is better served by mastering her own demanding field than by a scattering of half-learned subjects.", fn: "Point" },
+            { text: "There is real value in depth and in respecting students' time and money.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Breadth makes better thinkers",
+          sentences: [
+            { text: "However, an education confined to a single field produces a narrow specialist, not an educated mind.", fn: "Pivot", moves: ["However"] },
+            { text: "Courses outside one's field teach different ways of thinking — the scientist's rigor, the historian's context, the writer's clarity — and these transferable habits strengthen work in any profession.", fn: "Point", vocab: [{ term: "transferable", gloss: "可轉移的；通用的" }] },
+            { text: "The hardest problems rarely respect the boundaries of a discipline, and the graduate who can draw on several ways of seeing will outthink the one who knows only one.", fn: "Explanation", vocab: [{ term: "discipline", gloss: "學科；專業領域" }] },
+            { text: "An engineer who has studied ethics, a doctor who has read literature, a programmer who understands history will each bring to their work a judgment that pure technical training cannot supply.", fn: "Develop" },
+            { text: "Employers themselves increasingly prize graduates who can communicate, reason across domains, and keep learning, none of which a single-track training reliably produces.", fn: "Develop" },
+            { text: "Breadth does not dilute a professional; it deepens her.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Adaptability and purpose",
+          sentences: [
+            { text: "Moreover, narrow training serves students poorly in a changing world.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Careers now shift repeatedly across a lifetime, and the specific skills prized today may be obsolete tomorrow, while the broad capacity to learn, adapt, and connect ideas endures.", fn: "Point", vocab: [{ term: "obsolete", gloss: "過時的；廢棄的" }] },
+            { text: "A university that trains only for the first job leaves its graduates stranded when that job changes, whereas one that cultivates a versatile mind prepares them for a whole working life.", fn: "Explanation", vocab: [{ term: "versatile", gloss: "多才多藝的；通用的" }] },
+            { text: "The most valuable workers are rarely the most narrowly trained, but those who can move between roles and connect ideas that others keep apart.", fn: "Develop" },
+            { text: "And a university is meant to be more than a job-training centre; it exists to form citizens and thinkers, not merely employees, and breadth is how it keeps that larger promise.", fn: "Develop" },
+            { text: "Required breadth equips students for a lifetime, not just a first paycheck.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while preparing students for work is a real and proper goal, universities should require some study beyond a student's chosen field.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A required breadth of courses makes graduates sharper thinkers, more adaptable workers, and more complete people, achieving the very thing a narrow, job-only training cannot, and serving students best precisely where it seems least practical.", fn: "Synthesis" },
+            { text: "Train students for the first job by all means, but educate them for the rest of their lives.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-101",
@@ -6438,6 +6544,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "It is more harmful to compromise one's own beliefs than to adhere to them.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that holding firm to a sound belief is the less harmful course, then argues the statement fails in general because beliefs can be wrong, rigid adherence does great harm, and reasonable compromise is the basis of living together.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We admire those who stand by their convictions and distrust those who bend, yet the world's worst harms have often been done by people who would not bend at all.", fn: "Hook" },
+            { text: "The statement takes the admiring view, holding that it is more harmful to compromise one's own beliefs than to adhere to them.", fn: "Context (the statement)" },
+            { text: "Integrity is genuinely valuable, so the statement is sometimes right; but as a general rule it fails, because beliefs can be mistaken, stubborn adherence can do enormous harm, and much depends on what we mean by compromise.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — When holding firm is right",
+          sentences: [
+            { text: "There is real truth in the statement when our beliefs are sound.", fn: "Topic sentence" },
+            { text: "A person who abandons her principles for convenience, fear, or gain loses something essential, and a society where everyone bends under pressure has no defense against injustice.", fn: "Explanation", vocab: [{ term: "principles", gloss: "原則；信念" }] },
+            { text: "Those who refused to compromise with tyranny or cruelty, at great cost to themselves, are rightly honored, and had they yielded the harm would only have been greater.", fn: "Example" },
+            { text: "Conscience, once surrendered, is hard to recover, and a person who bends every time it is costly to stand may end with no self left to betray.", fn: "Develop" },
+            { text: "Where a belief is right and the pressure is to do wrong, holding firm is indeed the less harmful course.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But beliefs can be wrong",
+          sentences: [
+            { text: "However, the statement assumes that our beliefs deserve our loyalty, and often they do not.", fn: "Pivot", moves: ["However"] },
+            { text: "Beliefs can be mistaken, prejudiced, or cruel, and to adhere to a wrong belief is to multiply its harm rather than contain it.", fn: "Point", vocab: [{ term: "prejudiced", gloss: "有偏見的" }] },
+            { text: "History's great wrongs — persecutions, wars, and bigotries — were committed largely by people faithfully adhering to convictions they should have questioned.", fn: "Explanation", vocab: [{ term: "convictions", gloss: "堅定的信念；信仰" }] },
+            { text: "For such a person, compromising the belief — softening it, doubting it, abandoning it — would have been far less harmful than clinging to it with a clear conscience.", fn: "Develop" },
+            { text: "When a belief is wrong, adherence is the greater harm, not compromise.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The meaning of compromise",
+          sentences: [
+            { text: "Moreover, the statement trades on an ambiguity in the word compromise.", fn: "Pivot", vocab: [{ term: "ambiguity", gloss: "歧義；模稜兩可" }], moves: ["Moreover"] },
+            { text: "To compromise can mean to betray a principle, but it can also mean to reach reasonable agreement with others who see things differently, and these are not the same thing.", fn: "Point" },
+            { text: "In a shared world of differing views, the refusal to compromise in this second sense is not integrity but rigidity, making cooperation impossible and conflict endless.", fn: "Explanation", vocab: [{ term: "rigidity", gloss: "僵化；固執" }] },
+            { text: "Politics, family life, and friendship all depend on people willing to give ground, and the person who will never compromise any belief is not admirable but unbearable, and often dangerous.", fn: "Develop" },
+            { text: "Compromise of this everyday kind is not a harm to be avoided but the very condition of living together.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement holds only in the narrow case where a sound belief is pitted against pressure to do wrong.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because beliefs are often mistaken, because rigid adherence has done some of history's worst harm, and because reasonable compromise is what allows people to live together, it is simply not true in general that compromising one's beliefs is more harmful than adhering to them.", fn: "Synthesis" },
+            { text: "Hold firm when you are right and the cost is only to yourself; be willing to bend when you might be wrong or the cost falls on others.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-102",
@@ -6446,6 +6605,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Colleges and universities should specify all required courses and eliminate elective courses in order to provide clear guidance for students. Reason: College students — like people in general — prefer to follow directions rather than make their own decisions.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the claim by defending the value of electives and independence, then turns the reason against itself — a preference for being told what to do is a weakness to outgrow — and offers guidance without abolishing choice.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It would certainly be simpler if a college handed every student a fixed list and removed the burden of choice.", fn: "Hook" },
+            { text: "The claim recommends exactly that — specifying all required courses and eliminating electives to give clear guidance — on the reason that students, like people in general, prefer to follow directions rather than make their own decisions.", fn: "Context (claim and reason)" },
+            { text: "Both parts are flawed: eliminating electives would impoverish education and stunt the very independence it should build, and the reason, even where true, describes a weakness to be corrected, not a guide to be obeyed.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Electives are valuable",
+          sentences: [
+            { text: "Consider first the claim, which sacrifices far too much for the sake of tidiness.", fn: "Topic sentence", moves: ["first"] },
+            { text: "Electives let students explore interests, discover unexpected passions, and shape an education to their own goals, and a curriculum of nothing but required courses would strip all of this away.", fn: "Explanation", vocab: [{ term: "curriculum", gloss: "課程；教學大綱" }] },
+            { text: "Many students find their calling in a course they took on a whim, far outside the prescribed path, and a fixed list would close that door entirely.", fn: "Example" },
+            { text: "A degree is not a conveyor belt; students differ in their aims, talents, and aptitudes, and the freedom to choose lets each build a course of study no single list could fit to them all.", fn: "Develop", vocab: [{ term: "aptitudes", gloss: "才能；天資" }] },
+            { text: "To eliminate electives is to trade the richness of education for the convenience of administration.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The reason draws the wrong lesson",
+          sentences: [
+            { text: "However, the reason is weaker still, for it rests on a cynical view of students and then draws the wrong lesson from it.", fn: "Pivot", moves: ["However"] },
+            { text: "Even granting that people often prefer to follow directions rather than decide, that preference reflects a passivity to be outgrown, not a standard for designing an education.", fn: "Point", vocab: [{ term: "passivity", gloss: "被動；消極" }] },
+            { text: "The whole point of higher education is to produce independent thinkers who can weigh options and choose wisely, exactly the capacity the claim proposes to let atrophy.", fn: "Explanation", vocab: [{ term: "atrophy", gloss: "萎縮；衰退" }] },
+            { text: "To remove choice because students find choosing hard is like refusing to let a child walk because she might stumble, since the difficulty is the reason to practice, not to avoid it.", fn: "Develop" },
+            { text: "A college that indulges the wish to be told what to do betrays its purpose of teaching students to think for themselves.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Guidance without elimination",
+          sentences: [
+            { text: "Moreover, the clear guidance the claim wants does not require eliminating choice at all.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A college can offer structure and direction — core requirements, recommended paths, and good mentoring — while still leaving genuine room for students to choose.", fn: "Point", vocab: [{ term: "mentoring", gloss: "指導；師徒輔導" }] },
+            { text: "This gives the direction that genuinely helps without surrendering the freedom that genuinely educates, securing the benefit the claim seeks without its heavy cost.", fn: "Explanation" },
+            { text: "Guidance and choice are not opposites, and the best curricula combine a firm foundation with the liberty to build upon it.", fn: "Develop" },
+            { text: "The remedy for confused students is better guidance, not the abolition of their choices.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason should be rejected.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Eliminating electives would gut the exploration and independence that make an education worth having, and the fact that students may prefer to be told what to do is precisely the habit a college should help them overcome, not entrench.", fn: "Synthesis" },
+            { text: "Give students structure and guidance by all means, but teach them to choose, rather than choosing for them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-103",
@@ -6454,6 +6666,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "No field of study can advance significantly unless it incorporates knowledge and experience from outside that field.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms that outside knowledge is a powerful engine of advance, then qualifies the absolute 'no field can advance unless' by noting genuine internal progress, and reconciles the two as a strong tendency rather than a law.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "The great leaps in knowledge often happen at the borders between fields, where ideas from one discipline suddenly illuminate another.", fn: "Hook" },
+            { text: "The statement makes this a rule, claiming that no field of study can advance significantly unless it incorporates knowledge and experience from outside that field.", fn: "Context (the statement)" },
+            { text: "The statement captures a powerful truth about how knowledge grows, and outside ideas are indeed among the strongest engines of progress; but the absolute no field can advance unless overstates it, since significant advances can and do arise from within a field as well.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Outside knowledge drives advance",
+          sentences: [
+            { text: "There is overwhelming evidence for the statement's central insight.", fn: "Topic sentence" },
+            { text: "Fields advance dramatically when they borrow tools, methods, and ideas from others, importing fresh perspectives that those inside cannot generate on their own.", fn: "Explanation", vocab: [{ term: "perspectives", gloss: "觀點；視角" }] },
+            { text: "Biology was transformed by chemistry and physics, economics by psychology, and medicine by engineering and statistics, each leaping forward on borrowed knowledge.", fn: "Example" },
+            { text: "Time and again a question that resisted a field's own methods has yielded the moment an outsider's tool was turned on it.", fn: "Develop" },
+            { text: "An isolated field tends to exhaust its own questions and methods, circling familiar ground, while contact with outside disciplines opens problems and solutions it could never have reached by itself.", fn: "Develop", vocab: [{ term: "exhaust", gloss: "耗盡；用盡" }] },
+            { text: "Outside knowledge is plainly one of the most reliable sources of significant advance.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the absolute claim overreaches",
+          sentences: [
+            { text: "However, the statement claims too much when it says no field can advance significantly without outside input.", fn: "Pivot", moves: ["However"] },
+            { text: "Important advances also come from within a field, as practitioners push their own methods deeper, notice anomalies, and refine their theories on their own terms.", fn: "Point", vocab: [{ term: "anomalies", gloss: "反常；異常現象" }] },
+            { text: "A mathematician proving a long-standing conjecture, or a physicist deriving a new result from existing principles, may advance the field profoundly using only its internal resources.", fn: "Explanation", vocab: [{ term: "conjecture", gloss: "猜想；推測" }] },
+            { text: "Much real progress is the patient internal work of a discipline deepening its own understanding, and to deny that any such advance is significant is simply false.", fn: "Develop" },
+            { text: "Fields can and do move forward from within, not only by importing from without.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — A strong tendency, not a law",
+          sentences: [
+            { text: "Moreover, the statement is best understood as a strong claim about a tendency, not a law without exceptions.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Even internal advances rarely happen in total isolation, since every field is shaped by the wider intellectual climate, the tools available, and the questions its age finds pressing.", fn: "Point", vocab: [{ term: "isolation", gloss: "孤立；隔絕" }] },
+            { text: "So while outside knowledge is not strictly necessary for every advance, the broader a field's exposure to other ideas, the more and the faster it tends to progress.", fn: "Explanation" },
+            { text: "The wise reading keeps the statement's insight — that openness fuels progress — while dropping its overstated claim that nothing significant can happen without it.", fn: "Develop" },
+            { text: "Cross-fertilization is a powerful engine of advance, even if it is not the only one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is largely right but overstated.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Incorporating knowledge from outside a field is one of the surest ways to advance it, and isolation tends to stagnate, yet significant progress can still arise from within, so openness should be embraced as a great engine of discovery rather than enforced as an absolute condition for it.", fn: "Synthesis" },
+            { text: "A field that opens itself to others will almost always outrun the one that talks only to itself.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-104",
@@ -6462,6 +6728,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "True success can be measured primarily in terms of the goals one sets for oneself.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that self-set goals are a humane corrective to empty comparison, then argues 'primarily' overreaches because goals can be unworthy and success has an outward, ethical dimension; nuanced and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "One runner is thrilled to finish a race she trained years for; another, far faster, is bitter at coming second — which of them has succeeded?", fn: "Hook" },
+            { text: "The statement answers by making success personal, holding that true success can be measured primarily in terms of the goals one sets for oneself.", fn: "Context (the statement)" },
+            { text: "Measuring success against one's own goals is a real and valuable corrective to empty comparison, but the word primarily claims too much, since the worth of one's goals, and the effect of one's success on others, also belong to any honest measure.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Self-set goals are a fair measure",
+          sentences: [
+            { text: "The statement rightly resists measuring everyone by a single external yardstick.", fn: "Topic sentence", vocab: [{ term: "yardstick", gloss: "衡量標準；準繩" }] },
+            { text: "People begin from different circumstances and want different things, so judging them all by the same standard of wealth or fame is both unfair and shallow.", fn: "Explanation" },
+            { text: "A person who overcomes great obstacles to reach a modest goal has succeeded more truly than one who inherits an easy triumph, even if the world ranks them otherwise.", fn: "Example", vocab: [{ term: "obstacles", gloss: "障礙；阻礙" }] },
+            { text: "Setting and reaching one's own goals also reflects autonomy and self-knowledge, measuring success by growth and effort rather than by accident of birth or luck.", fn: "Develop", vocab: [{ term: "autonomy", gloss: "自主；自主權" }] },
+            { text: "As a guard against hollow comparison, the statement holds much wisdom.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But goals can be unworthy",
+          sentences: [
+            { text: "However, to make personal goals the primary measure ignores that the goals themselves can be poor.", fn: "Pivot", moves: ["However"] },
+            { text: "A person may set goals that are trivial, far beneath her potential, or even wicked, and reaching them is no true success at all.", fn: "Point", vocab: [{ term: "trivial", gloss: "瑣碎的；微不足道的" }] },
+            { text: "A criminal who achieves every aim he sets has, by the statement's logic, succeeded, which shows that merely hitting one's targets cannot by itself make success genuine.", fn: "Explanation" },
+            { text: "If we can succeed simply by aiming low and clearing the bar we set for ourselves, then success becomes too easy and too empty to mean much.", fn: "Develop" },
+            { text: "A goal set deliberately low is not a triumph to celebrate but a horizon needlessly shrunk.", fn: "Develop" },
+            { text: "What we aim at matters as much as whether we reach it, so goals cannot be the whole measure.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Success has an outward dimension",
+          sentences: [
+            { text: "Moreover, success is not a purely private affair.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "How our achievements affect others — whether they help or harm, build or exploit — belongs to any true measure of success, however well they satisfy our own goals.", fn: "Point", vocab: [{ term: "exploit", gloss: "剝削；利用" }] },
+            { text: "A life counted successful by its own goals but ruinous to everyone around it is not a model of success but a warning, and we sense this immediately.", fn: "Explanation" },
+            { text: "The fullest success unites worthy goals, real achievement, and a positive effect on the world, none of which the statement's inward measure captures on its own.", fn: "Develop" },
+            { text: "Personal goals are one dimension of success, but worth and consequence are others the statement leaves out.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right that self-set goals are a meaningful and humane measure of success, but wrong to make them the primary one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "True success depends not only on whether we reach the goals we set, but on whether those goals are worthy and whether our achievement does good in the world, so personal goals are an essential part of the measure rather than the whole of it.", fn: "Synthesis" },
+            { text: "Measure yourself by your own goals, but choose goals worth measuring up to.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-105",
