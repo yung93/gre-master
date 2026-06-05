@@ -7906,6 +7906,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Governments should offer a free university education to any student who has been admitted to a university but who cannot afford the tuition.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues the policy's aim is just and economically wise, then weighs the cost and fairness consequences of the open-ended 'any', and shows careful design can preserve the promise while controlling cost; weighs the policy's effects.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A brilliant student wins a place at a great university, then turns it down because she cannot pay — a loss not only to her but to everyone.", fn: "Hook" },
+            { text: "To prevent such losses, the proposed policy would have governments offer a free university education to any student admitted to a university who cannot afford the tuition.", fn: "Context (the policy)" },
+            { text: "The policy is, in its aim, both just and wise, since talent wasted for lack of money is a loss to the whole society; but its sweeping form raises real questions of cost and fairness that a well-designed version must answer.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for the policy",
+          sentences: [
+            { text: "The core of the policy is compelling.", fn: "Topic sentence" },
+            { text: "When admission depends on ability but attendance depends on wealth, gifted students from poor families are shut out, and the nation loses the doctors, scientists, and thinkers they might have become.", fn: "Explanation" },
+            { text: "Funding their education is not charity but investment, for an educated population repays the cost many times over in productivity, innovation, and taxes.", fn: "Point", vocab: [{ term: "productivity", gloss: "生產力" }] },
+            { text: "It also serves justice, ensuring that the doors of opportunity open by merit rather than by the accident of a family's bank balance.", fn: "Develop", vocab: [{ term: "merit", gloss: "才能；功績" }] },
+            { text: "On both grounds — fairness and the public good — the policy's aim is sound.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The cost and fairness concerns",
+          sentences: [
+            { text: "However, the word any, and the open-ended cost it implies, demand careful thought.", fn: "Pivot", moves: ["However"] },
+            { text: "A blanket promise to fund anyone admitted who cannot pay could become enormously expensive, straining public budgets and competing with other urgent needs like schools and hospitals.", fn: "Point" },
+            { text: "It might also push universities to admit more students or to raise tuition, knowing the state will pay, inflating costs without improving education.", fn: "Explanation", vocab: [{ term: "inflating", gloss: "使膨脹；抬高" }] },
+            { text: "And cannot afford is slippery, since without careful definition subsidies could flow to families who could pay but prefer not to, wasting money meant for the truly needy.", fn: "Develop", vocab: [{ term: "subsidies", gloss: "補貼；補助" }] },
+            { text: "The policy's generosity must be matched by discipline about cost and eligibility, or its strengths will be undone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — How to make it work",
+          sentences: [
+            { text: "Moreover, these concerns argue for refining the policy, not abandoning it.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A sound version would means-test support carefully, perhaps cover tuition in return for later repayment once a graduate earns well, and tie funding to fields and institutions that serve the public.", fn: "Point" },
+            { text: "Such measures keep the policy's central promise — that no admitted student is turned away for lack of money — while controlling its cost and protecting its fairness.", fn: "Explanation" },
+            { text: "Many nations already fund higher education in roughly this way, proving that the goal is achievable without bankrupting the treasury.", fn: "Develop", vocab: [{ term: "treasury", gloss: "國庫；財政" }] },
+            { text: "The right response to the policy's risks is to design it well, not to deny able students the chance they have earned.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, governments should help any admitted student who cannot afford university, for the policy's aim is both just and economically wise.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Wasting talent for lack of money harms everyone, so the policy is advantageous wherever it opens opportunity by merit; its dangers lie not in the goal but in an undisciplined design, which careful means-testing, repayment, and clear eligibility can readily address.", fn: "Synthesis" },
+            { text: "No student admitted on merit should be sent home for want of money — but the promise must be funded wisely, not blindly.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-124",
@@ -7914,6 +7967,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: In any situation, the best way to persuade other people is to present them with facts and statistics rather than with emotional arguments. Reason: Facts are objective, so they are more persuasive than subjective appeals.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): shows the reason confuses being objective with being persuasive, argues emotion is often essential to moving people, and that no single method fits every situation; addresses claim and reason and resolves them.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We like to think we are convinced by evidence, but anyone who has watched a roomful of people moved by a single story knows better.", fn: "Hook" },
+            { text: "The claim insists that in any situation the best way to persuade others is to present facts and statistics rather than emotional arguments, on the reason that facts are objective and therefore more persuasive than subjective appeals.", fn: "Context (claim and reason)" },
+            { text: "Facts matter, and good persuasion should rest on them; but the claim and its reason both fail, because objectivity is not the same as persuasiveness, emotion is often essential to moving people, and no single method works in every situation.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Objective is not persuasive",
+          sentences: [
+            { text: "The reason rests on a basic confusion.", fn: "Topic sentence" },
+            { text: "That facts are objective tells us they are true or reliable, not that they are persuasive, since persuasion is about how human minds actually respond, not about what is logically sound.", fn: "Explanation", vocab: [{ term: "persuasion", gloss: "說服；勸服" }] },
+            { text: "People are not calculating machines, and a column of statistics may be perfectly accurate and still leave an audience cold and indifferent.", fn: "Point", vocab: [{ term: "indifferent", gloss: "漠不關心的；冷淡的" }] },
+            { text: "Whether a fact persuades depends on attention, trust, and meaning — all psychological matters — so being objective gives a fact no automatic power to convince.", fn: "Develop" },
+            { text: "The graveyard of failed campaigns is full of arguments that were entirely correct and utterly unconvincing.", fn: "Develop" },
+            { text: "Objectivity is a virtue of truth, not a guarantee of persuasion.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Emotion moves people",
+          sentences: [
+            { text: "Moreover, emotion is not the enemy of good persuasion but often its very engine.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Facts tell people what is so, but emotion tells them why it matters and moves them to care and to act, which is what persuasion ultimately aims at.", fn: "Point" },
+            { text: "The most effective persuaders — great advocates, leaders, and teachers — marry evidence to feeling, using a vivid story or a sense of justice to give their facts force.", fn: "Explanation", vocab: [{ term: "advocates", gloss: "倡導者；辯護者" }] },
+            { text: "A single human face can do what a thousand statistics cannot, not by replacing the facts but by making us feel their weight.", fn: "Develop" },
+            { text: "Stripped of all emotion, even true facts often fail to persuade anyone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Context decides the method",
+          sentences: [
+            { text: "Furthermore, the claim's in any situation ignores how much persuasion depends on context.", fn: "Pivot", moves: ["Furthermore"] },
+            { text: "What persuades varies with the audience, the subject, and the setting: a scientific panel may want data, a grieving public may need empathy, a jury may require both.", fn: "Point", vocab: [{ term: "empathy", gloss: "同理心；共情" }] },
+            { text: "To insist that facts alone are always best is to ignore the obvious truth that different people, in different situations, are moved by different things.", fn: "Explanation" },
+            { text: "The skilled persuader reads the moment and chooses her means, sometimes leading with evidence, sometimes with feeling, and usually with both.", fn: "Develop", vocab: [{ term: "evidence", gloss: "證據" }] },
+            { text: "A courtroom, a classroom, and a campaign rally each reward a different mix of reason and feeling.", fn: "Develop" },
+            { text: "No single method is best in every case, least of all facts entirely without feeling.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason are mistaken.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Facts are indispensable, but being objective does not make them persuasive, emotion is often what actually moves people, and no method works in every situation, so the best persuasion weds sound evidence to genuine feeling, suited to the audience at hand.", fn: "Synthesis" },
+            { text: "Give people the facts, but also a reason to care about them — that is how minds are actually changed.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-125",
@@ -7922,6 +8030,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that success in creative fields, such as painting, fiction writing, and filmmaking, primarily requires hard work and perseverance. Others believe that such success mainly requires innate talents that cannot be learned.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that innate talent matters at the summit, then argues that hard work is what realizes any success and is the more decisive of the two for nearly everyone; addresses both views and resolves them.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We love the myth of the born genius, the painter or writer who simply had it — but behind almost every masterpiece lie years of unglamorous labor.", fn: "Hook" },
+            { text: "Some believe that success in creative fields like painting, fiction, and filmmaking primarily requires hard work and perseverance; others believe it mainly requires innate talents that cannot be learned.", fn: "Context (the two views)" },
+            { text: "Both talent and effort clearly matter, but the dichotomy is misleading: talent sets a ceiling, yet it is hard work and perseverance that actually carry a creator to success, making effort the more decisive of the two.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Talent is real",
+          sentences: [
+            { text: "It would be foolish to deny the role of innate talent.", fn: "Topic sentence", vocab: [{ term: "innate", gloss: "天生的；與生俱來的" }] },
+            { text: "Some people are simply born with sharper eyes, better ears, or a richer feel for language, and at the very highest level such gifts seem to separate the great from the merely good.", fn: "Explanation" },
+            { text: "No amount of practice will turn most people into a Mozart, and to pretend talent counts for nothing flatters effort beyond its due.", fn: "Develop" },
+            { text: "The very top of any art is crowded with people of extraordinary, undeniable gifts.", fn: "Develop" },
+            { text: "Talent is real, and at the summit of any creative field it plainly matters.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But work realizes it",
+          sentences: [
+            { text: "However, talent alone produces nothing, since it is hard work that turns potential into achievement.", fn: "Pivot", moves: ["However"] },
+            { text: "Creative skill must be developed through years of practice, study, and revision, and the history of every art is full of prodigies who wasted their gifts and ordinary talents who, through relentless effort, achieved greatness.", fn: "Point", vocab: [{ term: "prodigies", gloss: "神童；奇才" }] },
+            { text: "A novel is rewritten a dozen times, a film remade in the editing room, a painter's eye trained over decades — endless revision that talent never performs on its own.", fn: "Explanation", vocab: [{ term: "revision", gloss: "修改；修訂" }] },
+            { text: "Even raw talent only grows through perseverance, since the gifted who never work are overtaken by the diligent who never quit.", fn: "Develop", vocab: [{ term: "diligent", gloss: "勤勉的；用功的" }] },
+            { text: "Whatever talent one starts with, it is effort that converts it into real work.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Work is the more decisive",
+          sentences: [
+            { text: "Moreover, of the two, hard work is the more decisive for almost everyone.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Outside the rare summit where natural genius rules, success in creative fields goes overwhelmingly to those who show up, practice, fail, and persist, not simply to the most gifted.", fn: "Point" },
+            { text: "Talent may be unevenly handed out, but it is common enough that what distinguishes the successful is usually not how much they had but how hard they worked it.", fn: "Explanation" },
+            { text: "Effort can also enlarge what looked like fixed talent, since skills once thought innate often turn out to grow with deliberate practice.", fn: "Develop", vocab: [{ term: "deliberate", gloss: "刻意的；審慎的" }] },
+            { text: "Ask any accomplished artist how she got there, and she will speak of years of work far more than of a gift she was born with.", fn: "Develop" },
+            { text: "For all but a handful, perseverance, not raw gift, is what decides creative success.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while innate talent is real and matters most at the very top, success in creative fields depends primarily on hard work and perseverance.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Talent may set the ceiling, but effort is what actually reaches it, developing skill, redeeming ordinary gifts, and carrying creators past the many who were merely talented, so the two are partners in which work does the heavier lifting.", fn: "Synthesis" },
+            { text: "Talent may open the door, but only work walks through it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-126",
@@ -7930,6 +8092,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In business, education, and government, it is always appropriate to remain skeptical of new leaders until those leaders show that they are worthy of trust.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that caution toward an untested leader is prudent, then argues that 'always' and total skepticism cripple leadership, and that earned, provisional trust under watchful eyes is the right balance; addresses the claim directly.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When a new boss, principal, or president arrives, should we extend a welcome or fold our arms and wait?", fn: "Hook" },
+            { text: "The claim counsels caution, holding that in business, education, and government it is always appropriate to remain skeptical of new leaders until they show themselves worthy of trust.", fn: "Context (the claim)" },
+            { text: "A measure of initial caution is wise, since trust should be earned rather than assumed; but the claim's always and its posture of withholding all trust go too far, because leaders need some provisional confidence to function, and unrelenting skepticism can be as corrosive as blind faith.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Caution is reasonable",
+          sentences: [
+            { text: "The claim rests on a sensible instinct.", fn: "Topic sentence" },
+            { text: "A new leader is an unknown quantity, and history offers plenty of charming newcomers who proved incompetent or corrupt, so handing over full trust on day one would be naive.", fn: "Explanation", vocab: [{ term: "incompetent", gloss: "無能的；不能勝任的" }] },
+            { text: "Trust that must be earned keeps leaders accountable and protects an institution from those who would abuse it.", fn: "Point", vocab: [{ term: "accountable", gloss: "須負責的；應問責的" }] },
+            { text: "Confidence too freely given to the wrong person can cost an institution dearly before the mistake is even noticed.", fn: "Develop" },
+            { text: "Some healthy skepticism toward an untested leader is plainly prudent.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But 'always' goes too far",
+          sentences: [
+            { text: "However, the claim's insistence on always remaining skeptical asks too much.", fn: "Pivot", moves: ["However"] },
+            { text: "A leader who is met with nothing but suspicion cannot lead, since cooperation, morale, and the benefit of the doubt are exactly what a new leader needs to get anything done.", fn: "Point", vocab: [{ term: "morale", gloss: "士氣；鬥志" }] },
+            { text: "An organization that withholds all trust until it is fully proven paralyzes itself, treating every initiative as a threat and every leader as guilty until proven innocent.", fn: "Explanation", vocab: [{ term: "paralyzes", gloss: "使癱瘓；使動彈不得" }] },
+            { text: "Some provisional trust is not naivety but the necessary basis of any working relationship, given and then confirmed or withdrawn as the leader acts.", fn: "Develop" },
+            { text: "People give their best to a leader they are allowed to believe in, and their least to one they are told to distrust.", fn: "Develop" },
+            { text: "Total, permanent skepticism does not protect an institution so much as cripple it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The balanced view",
+          sentences: [
+            { text: "Moreover, the real choice is not between skepticism and trust but about their balance.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The wise stance gives a new leader a fair, provisional trust while watching closely, ready to extend more as it is earned and to withdraw it the moment it is betrayed.", fn: "Point" },
+            { text: "This is neither the blind faith the claim rightly warns against nor the unbroken suspicion it mistakenly demands, but the watchful vigilance that healthy institutions actually practice.", fn: "Explanation", vocab: [{ term: "vigilance", gloss: "警覺；警惕" }] },
+            { text: "Skepticism should be a readiness to judge by evidence, not a refusal to trust at all, and it should ease as a leader proves herself rather than persisting forever.", fn: "Develop" },
+            { text: "Trust extended and then tested is how every healthy relationship, between people or within institutions, actually begins.", fn: "Develop" },
+            { text: "Earned trust, not endless suspicion, is the right response to a new leader.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right that trust in new leaders should be earned, but wrong to demand that we always remain skeptical.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Initial caution is wise, but a leader met with permanent suspicion cannot lead, so the sound course is a provisional trust held under watchful eyes, deepened as it is earned and revoked if it is abused, rather than a skepticism that never lifts.", fn: "Synthesis" },
+            { text: "Let new leaders earn our trust, but give them enough of it to have the chance.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-127",
@@ -7938,6 +8155,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Group assignments that students must work together to complete should replace a substantial amount of traditional lecture-based instruction in college and university courses. Reason: It is vital for students to gain experience collaborating with peers to study a topic and to achieve a common goal.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that collaboration is a vital skill, then argues the claim overreaches because lectures and group work serve complementary purposes and group work brings its own flaws; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "The lecture hall has been pronounced dead so often that it is worth asking what we would actually lose by emptying it.", fn: "Hook" },
+            { text: "The claim would empty a good deal of it, proposing that group assignments replace a substantial amount of traditional lecture-based instruction, on the reason that it is vital for students to gain experience collaborating with peers toward a common goal.", fn: "Context (claim and reason)" },
+            { text: "The reason is sound — collaboration really is a vital skill — but the claim does not follow, because lectures and group work serve different and complementary purposes, and replacing one substantially with the other would trade real strengths for known weaknesses.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Collaboration is worth learning",
+          sentences: [
+            { text: "The reason deserves agreement: collaboration genuinely matters.", fn: "Topic sentence" },
+            { text: "Almost all work beyond school is done with others, and the ability to share ideas, divide labor, and reconcile disagreements is a skill students must actually practice to learn.", fn: "Explanation", vocab: [{ term: "reconcile", gloss: "調和；使一致" }] },
+            { text: "A lecture alone never teaches a student how to work in a team, so some group work is a valuable part of a real education.", fn: "Develop" },
+            { text: "Employers consistently rank the ability to work with others among the most valuable skills a graduate can bring.", fn: "Develop" },
+            { text: "On the reason's central point — that collaboration is worth learning — the claim is right.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But lectures do something unique",
+          sentences: [
+            { text: "However, this does not justify replacing a substantial amount of lecture-based teaching.", fn: "Pivot", moves: ["However"] },
+            { text: "A good lecture transmits a large body of organized knowledge efficiently, letting an expert guide many students through difficult material in a way peers cannot.", fn: "Point", vocab: [{ term: "transmits", gloss: "傳遞；傳授" }] },
+            { text: "Students working in groups often lack the very knowledge they are meant to be acquiring, so they may reinforce each other's errors or stall where an expert would have moved them forward.", fn: "Explanation", vocab: [{ term: "reinforce", gloss: "強化；加強" }] },
+            { text: "Lectures and group work do different jobs — one delivers and explains content, the other practices applying and collaborating — and one cannot simply substitute for the other.", fn: "Develop", vocab: [{ term: "substitute", gloss: "替代；取代" }] },
+            { text: "To replace much of the lecture with group work is to lose what the lecture uniquely provides.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Group work's own flaws",
+          sentences: [
+            { text: "Moreover, group assignments carry well-known flaws that the claim conveniently ignores.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "In group work some students coast on the efforts of others, the load falls unevenly, and a confident but mistaken member can drag a whole team off course.", fn: "Point" },
+            { text: "Group work is also slower, covering less material in more time, so making it a substantial replacement would mean students learn less content even as they practice cooperation.", fn: "Explanation" },
+            { text: "These problems do not make group work worthless, but they do mean it should supplement lectures, not displace them in large measure.", fn: "Develop", vocab: [{ term: "supplement", gloss: "補充；輔助" }] },
+            { text: "The flaws of group work are a strong reason to add it carefully, not to substitute it wholesale.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, collaboration is a vital skill worth teaching, but that does not mean group assignments should replace a substantial amount of lecture-based instruction.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Lectures and group work serve different and complementary ends, and group work brings real weaknesses of its own, so the wise course is to add collaborative learning to lectures where it helps, rather than to gut the efficient teaching that lectures still do best.", fn: "Synthesis" },
+            { text: "Teach students to collaborate, by all means, but not by emptying the lecture hall that teaches them what to collaborate about.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-128",
@@ -7946,6 +8216,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that in order to be effective, political leaders must yield to public opinion and abandon principle for the sake of compromise. Others believe that the most essential quality of an effective leader is the ability to remain consistently committed to particular principles and objectives.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the first view's surrender of principle, affirms the second view's commitment to principle as essential, then qualifies it by distinguishing firm principles from flexible means; addresses both views.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Is the great leader the one who reads the public mood and bends to it, or the one who holds a course no matter which way the wind blows?", fn: "Hook" },
+            { text: "Some believe that to be effective political leaders must yield to public opinion and abandon principle for the sake of compromise; others believe the most essential quality of an effective leader is the ability to remain consistently committed to particular principles and objectives.", fn: "Context (the two views)" },
+            { text: "The first view mistakes surrender for skill, while the second names something genuinely essential; yet effectiveness requires more than rigid constancy, so the truth is that a leader must hold firmly to principle while compromising intelligently on the means of achieving it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The first view is followership",
+          sentences: [
+            { text: "The first view confuses effective leadership with mere followership.", fn: "Topic sentence" },
+            { text: "A leader who simply yields to public opinion and abandons principle is not leading at all but being led, drifting wherever the polls happen to point.", fn: "Explanation" },
+            { text: "Such a leader can never take a society anywhere it does not already want to go, and abandons exactly the convictions that give leadership its purpose and direction.", fn: "Point", vocab: [{ term: "convictions", gloss: "堅定的信念；信仰" }] },
+            { text: "History's admired leaders are remembered for standing firm on principle against the popular tide, not for bending to it.", fn: "Develop" },
+            { text: "Followers can sense at once when a leader is merely echoing them rather than actually guiding them.", fn: "Develop" },
+            { text: "To abandon principle for every compromise is to give up leadership itself.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Commitment to principle is essential",
+          sentences: [
+            { text: "By contrast, the second view names something genuinely essential.", fn: "Pivot", moves: ["By contrast"] },
+            { text: "Consistent commitment to clear principles and objectives is what gives a leader direction, credibility, and the trust of those who follow her.", fn: "Point", vocab: [{ term: "credibility", gloss: "可信度；信譽" }] },
+            { text: "People follow leaders they can predict and believe in, and a leader who keeps faith with her stated aims, even when it is costly, earns an authority that no crowd-pleaser ever can.", fn: "Explanation", vocab: [{ term: "authority", gloss: "權威；威信" }] },
+            { text: "Without a steady commitment to principle, a leader has nothing to offer but the echo of whatever others already think.", fn: "Develop" },
+            { text: "Constancy of principle is indeed the more essential quality of the two.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the means must stay flexible",
+          sentences: [
+            { text: "However, the second view becomes dangerous if it is read as a demand for total inflexibility.", fn: "Pivot", moves: ["However"] },
+            { text: "An effective leader must distinguish between principles, which she should hold firm, and the means and timing of achieving them, on which she must be willing to compromise.", fn: "Point", vocab: [{ term: "compromise", gloss: "妥協；折衷" }] },
+            { text: "A leader who will not bend at all, who treats every tactic as a sacred principle, achieves nothing in a world of competing interests and ends in futile deadlock.", fn: "Explanation", vocab: [{ term: "deadlock", gloss: "僵局；僵持" }] },
+            { text: "The greatest leaders combine the two: unwavering about their ends, flexible about the path, compromising on details precisely so they can advance the principles they will not surrender.", fn: "Develop" },
+            { text: "Commitment to principle and willingness to compromise on means are partners, not opposites.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the second view is right that consistent commitment to principle is the more essential quality, while the first wrongly mistakes abandoning principle for effectiveness.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "A leader who surrenders principle to public opinion ceases to lead, but one who refuses all compromise cannot govern, so true effectiveness lies in holding firmly to principles and objectives while compromising shrewdly on the means of reaching them.", fn: "Synthesis" },
+            { text: "Be immovable about where you are going, and flexible about how you get there.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-129",
