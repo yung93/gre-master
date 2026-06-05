@@ -41,7 +41,7 @@ export default function Flashcard({ cardKey, front, back, footerFront, footerBac
   }
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-col flex-1 min-h-0 lg:block lg:flex-none">
       <div
         role="button"
         tabIndex={0}
@@ -54,15 +54,15 @@ export default function Flashcard({ cardKey, front, back, footerFront, footerBac
           setFlipped((prev) => !prev);
         }}
         onKeyDown={handleKeyDown}
-        className="block w-full text-left surface px-8 sm:px-12 py-10 sm:py-14 min-h-[22rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] transition-shadow hover:shadow-[var(--shadow-soft)] cursor-pointer"
+        className="block w-full text-left surface px-6 sm:px-12 py-7 sm:py-14 flex-1 min-h-0 overflow-y-auto lg:flex-none lg:overflow-visible lg:min-h-[22rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] transition-shadow hover:shadow-[var(--shadow-soft)] cursor-pointer"
       >
         <div key={`${cardKey}-${flipped ? "back" : "front"}`} className="anim-fade-up">
           {flipped ? back : front}
         </div>
       </div>
 
-      <div className="flex items-center justify-between mt-3 text-xs text-[var(--color-ink-faint)]">
-        <span>
+      <div className="flex items-center justify-end sm:justify-between mt-3 text-xs text-[var(--color-ink-faint)]">
+        <span className="hidden sm:inline">
           Press <kbd className="mono px-1.5 py-0.5 rounded bg-[var(--color-accent-soft)] text-[var(--color-ink)]">space</kbd> to flip
         </span>
         <div>{flipped ? footerBack : footerFront}</div>

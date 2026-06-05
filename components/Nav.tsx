@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AuthButton from "./AuthButton";
@@ -18,9 +19,28 @@ const NAV_ITEMS: NavItem[] = [
 export default function Nav() {
   const pathname = usePathname();
   const mockActive = pathname === "/mock" || pathname.startsWith("/mock/");
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Publish the live nav height so the fixed study panel (verbal/quant on mobile)
+  // can offset itself to sit directly below the nav: top: var(--nav-h).
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const apply = () => {
+      document.documentElement.style.setProperty("--nav-h", `${el.offsetHeight}px`);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(el);
+    window.addEventListener("resize", apply);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", apply);
+    };
+  }, []);
 
   return (
-    <header className="relative border-b border-[var(--color-rule)]">
+    <header ref={headerRef} className="relative border-b border-[var(--color-rule)]">
       <div className="page-shell pt-5 pb-2 flex justify-center items-baseline gap-3">
         <Link href="/" className="flex items-baseline gap-3">
           <span className="serif text-2xl tracking-tight">GRE Master</span>
@@ -62,7 +82,7 @@ export default function Nav() {
           </li>
         </ul>
       </nav>
-      <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-6 lg:right-8">
+      <div className="absolute right-4 top-3 sm:top-1/2 sm:-translate-y-1/2 sm:right-6 lg:right-8">
         <AuthButton />
       </div>
     </header>

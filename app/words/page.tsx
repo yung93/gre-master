@@ -138,7 +138,8 @@ export default function WordsPage() {
             aria-label="Search words"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="flex flex-wrap gap-2 sm:contents">
           {statusFilters.map((f) => (
             <button
               key={f.value}
@@ -152,6 +153,8 @@ export default function WordsPage() {
               {f.label}
             </button>
           ))}
+          </div>
+          <div className="flex gap-2 sm:contents">
           <button
             onClick={toggleSort}
             className={`inline-flex items-center justify-center h-9 w-9 rounded-md border transition-colors ${
@@ -177,6 +180,7 @@ export default function WordsPage() {
           >
             {hideZh ? <EyeIcon /> : <EyeOffIcon />}
           </button>
+          </div>
         </div>
       </div>
 
@@ -232,11 +236,11 @@ function Pagination({ currentPage, totalPages, onChange, rangeStart, rangeEnd, t
     );
   }
   return (
-    <div className="mt-5 flex items-center justify-between gap-4">
-      <span className="text-xs text-[var(--color-ink-faint)] mono">
+    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <span className="text-xs text-[var(--color-ink-faint)] mono text-center sm:text-left">
         {rangeStart}–{rangeEnd} of {total}
       </span>
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center justify-between sm:justify-end gap-1.5">
         <button
           onClick={() => onChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -274,18 +278,19 @@ function WordRow({ entry, index, progress, hideZh }: WordRowProps) {
     <li>
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="w-full text-left px-5 py-4 grid grid-cols-[auto_1fr_auto] sm:grid-cols-[3rem_minmax(8rem,1fr)_minmax(0,1.4fr)_auto] gap-x-4 gap-y-1 items-baseline hover:bg-[oklch(96%_0.005_80)] transition-colors"
+        className="w-full text-left px-5 py-4 flex items-baseline gap-x-3 gap-y-1 sm:grid sm:grid-cols-[3rem_minmax(8rem,1fr)_minmax(0,1.4fr)_auto] sm:gap-x-4 hover:bg-[oklch(96%_0.005_80)] transition-colors"
         aria-expanded={expanded}
       >
-        <span className="mono text-xs text-[var(--color-ink-faint)] hidden sm:block">
+        <StatusDot status={status} className="shrink-0 sm:order-4" />
+        <span className="mono text-xs text-[var(--color-ink-faint)] hidden sm:block sm:order-1">
           {String(index + 1).padStart(3, "0")}
         </span>
-        <span className="flex items-baseline gap-2 min-w-0">
+        <span className="flex items-baseline gap-2 min-w-0 shrink-0 sm:order-2">
           <span className="serif text-lg leading-tight truncate">{entry.word}</span>
-          <span className="italic text-xs text-[var(--color-ink-faint)] shrink-0">{entry.partOfSpeech}</span>
+          <span className="italic text-xs text-[var(--color-ink-faint)] shrink-0 hidden sm:inline">{entry.partOfSpeech}</span>
         </span>
         <span
-          className={`serif leading-snug col-span-2 sm:col-span-1 transition-colors ${
+          className={`serif leading-snug min-w-0 flex-1 sm:order-3 transition-colors ${
             hideZh
               ? "text-transparent bg-[var(--color-rule)] rounded select-none"
               : "text-[var(--color-ink)]"
@@ -293,7 +298,6 @@ function WordRow({ entry, index, progress, hideZh }: WordRowProps) {
         >
           {entry.meaningZh}
         </span>
-        <StatusDot status={status} />
       </button>
 
       {expanded && (
@@ -324,7 +328,7 @@ function WordRow({ entry, index, progress, hideZh }: WordRowProps) {
   );
 }
 
-function StatusDot({ status }: { status: StatusFilter }) {
+function StatusDot({ status, className }: { status: StatusFilter; className?: string }) {
   const config: Record<StatusFilter, { color: string; label: string }> = {
     mastered: { color: "var(--color-success)", label: "mastered" },
     learning: { color: "var(--color-warm)", label: "learning" },
@@ -333,7 +337,7 @@ function StatusDot({ status }: { status: StatusFilter }) {
   };
   const c = config[status];
   return (
-    <span className="flex items-center gap-1.5 justify-self-end" title={c.label}>
+    <span className={`flex items-center gap-1.5 sm:justify-self-end ${className ?? ""}`} title={c.label}>
       <span aria-hidden className="w-2 h-2 rounded-full" style={{ background: c.color }} />
       <span className="hidden sm:inline text-[10px] mono text-[var(--color-ink-faint)] w-14">{c.label}</span>
     </span>

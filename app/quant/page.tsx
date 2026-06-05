@@ -52,6 +52,7 @@ export default function QuantPage() {
   const [batch, setBatch] = useLocalState<string[]>("learn/quant-batch", []);
   const [stats, setStats] = useState<SessionStats>({ reviewed: 0, masteredThisSession: 0 });
   const [currentId, setCurrentId] = useState<string | null>(null);
+  const [showTopics, setShowTopics] = useState(false);
   const hydratedRef = useRef(false);
 
   // On first hydration, build or repair the persisted batch once (topic-balanced).
@@ -151,7 +152,7 @@ export default function QuantPage() {
 
   return (
     <div className="page-shell pt-10 pb-20">
-      <header className="grid lg:grid-cols-[2fr_1fr] gap-8 items-end">
+      <header className="hidden lg:grid lg:grid-cols-[2fr_1fr] gap-8 items-end">
         <div>
           <p className="eyebrow">Quantitative · Drills</p>
           <h1 className="serif mt-3 text-[length:var(--text-headline)] leading-tight">
@@ -172,12 +173,24 @@ export default function QuantPage() {
         </div>
       </header>
 
-      <div className="mt-6 flex items-center gap-3">
-        <ProgressBar label="Overall mastery" value={masteredCount} total={QUANT.length} />
-        <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
-      </div>
+      <div className="fixed inset-x-0 bottom-0 top-[var(--nav-h,148px)] z-20 bg-[var(--color-bg)] flex flex-col gap-4 px-[var(--space-page-x)] py-3 box-border lg:static lg:inset-auto lg:z-auto lg:bg-transparent lg:mt-6 lg:px-0 lg:py-0 lg:gap-0 lg:block">
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setShowTopics((v) => !v)}
+            aria-expanded={showTopics}
+            aria-controls="quant-topics"
+            className="flex-1 min-w-0 text-left lg:pointer-events-none"
+          >
+            <ProgressBar label="Overall mastery" value={masteredCount} total={QUANT.length} />
+          </button>
+          <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
+        </div>
 
-      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-4">
+        <div
+          id="quant-topics"
+          className={`${showTopics ? "grid" : "hidden"} sm:grid-cols-2 lg:grid lg:grid-cols-5 gap-x-6 gap-y-4 lg:mt-6`}
+        >
         {TOPIC_ORDER.map((topic) => {
           const t = statsByTopic.get(topic);
           return (
@@ -192,7 +205,7 @@ export default function QuantPage() {
         })}
       </div>
 
-      <div className="mt-8">
+        <div className="flex-1 min-h-0 flex flex-col pb-[60px] lg:block lg:flex-none lg:mt-8 lg:pb-0">
         {current && currentProgress ? (
           <>
             <Flashcard
@@ -246,6 +259,7 @@ export default function QuantPage() {
             <p className="serif text-2xl">Loading your batch…</p>
           </div>
         )}
+        </div>
       </div>
     </div>
   );

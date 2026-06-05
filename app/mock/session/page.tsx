@@ -114,19 +114,19 @@ function MockSessionPage() {
 
   return (
     <div className="page-shell pt-8 pb-20">
-      <div className="sticky top-0 z-30 -mx-[var(--space-page-x)] px-[var(--space-page-x)] py-3 bg-[var(--color-bg)]/85 backdrop-blur border-b border-[var(--color-rule)] flex items-center justify-between">
-        <div className="flex items-baseline gap-4">
+      <div className="sticky top-0 z-30 -mx-[var(--space-page-x)] px-[var(--space-page-x)] py-3 bg-[var(--color-bg)]/85 backdrop-blur border-b border-[var(--color-rule)] flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <div className="flex items-baseline gap-x-3 gap-y-1 flex-wrap min-w-0">
           <p className="eyebrow">Section {session.sectionIndex + 1} of {test.sections.length}</p>
-          <p className="serif text-lg">{section.label}</p>
+          <p className="serif text-lg truncate">{section.label}</p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 ml-auto">
           <Timer
             startedAt={session.sectionStartedAt}
             durationSeconds={section.durationSeconds}
             onExpire={advanceSection}
           />
-          <button onClick={endTestEarly} className="btn btn-ghost text-xs">End test</button>
-          <button onClick={discardAndExit} className="btn btn-ghost text-xs">Discard</button>
+          <button onClick={endTestEarly} className="btn btn-ghost text-xs px-2 sm:px-3">End test</button>
+          <button onClick={discardAndExit} className="btn btn-ghost text-xs px-2 sm:px-3">Discard</button>
         </div>
       </div>
 

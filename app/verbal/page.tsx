@@ -161,7 +161,7 @@ export default function VerbalPage() {
 
   return (
     <div className="page-shell pt-10 pb-20">
-      <header className="grid lg:grid-cols-[2fr_1fr] gap-8 items-end">
+      <header className="hidden lg:grid lg:grid-cols-[2fr_1fr] gap-8 items-end">
         <div>
           <p className="eyebrow">Verbal · Vocabulary</p>
           <h1 className="serif mt-3 text-[length:var(--text-headline)] leading-tight">
@@ -190,12 +190,13 @@ export default function VerbalPage() {
         </div>
       </header>
 
-      <div className="mt-6 flex items-center gap-3">
-        <ProgressBar value={masteredCount} total={VOCAB.length} />
-        <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
-      </div>
+      <div className="fixed inset-x-0 bottom-0 top-[var(--nav-h,148px)] z-20 bg-[var(--color-bg)] flex flex-col gap-4 px-[var(--space-page-x)] py-3 box-border lg:static lg:inset-auto lg:z-auto lg:bg-transparent lg:mt-6 lg:px-0 lg:py-0 lg:gap-0 lg:block">
+        <div className="flex items-center gap-3">
+          <ProgressBar value={masteredCount} total={VOCAB.length} />
+          <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
+        </div>
 
-      <div className="mt-8">
+        <div className="flex-1 min-h-0 flex flex-col lg:block lg:flex-none lg:mt-8">
         {current && currentProgress ? (
           <>
             <Flashcard
@@ -209,9 +210,6 @@ export default function VerbalPage() {
                   </div>
                   <p className="text-lg leading-relaxed text-[var(--color-ink)] max-w-2xl">
                     {renderClozeSentence(current.example, current.word)}
-                  </p>
-                  <p className="eyebrow">
-                    Tap card or press <kbd className="mono">space</kbd> to reveal · press <kbd className="mono">s</kbd> to hear it
                   </p>
                 </div>
               }
@@ -258,6 +256,10 @@ export default function VerbalPage() {
             <p className="serif text-2xl">Loading your batch…</p>
           </div>
         )}
+          <div className="lg:hidden mt-3">
+            <Link href="/words" className="btn btn-secondary text-xs w-full">Browse word list →</Link>
+          </div>
+        </div>
       </div>
     </div>
   );

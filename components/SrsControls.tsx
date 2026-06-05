@@ -47,7 +47,7 @@ export default function SrsControls({ onGrade, disabled, shown = true }: SrsCont
           className={`btn ${g.tone} border flex-col gap-0 py-3`}
         >
           <span className="text-sm font-medium">{g.label}</span>
-          <span className="text-[10px] mono opacity-60">{g.key}</span>
+          <span className="hidden sm:block text-[10px] mono opacity-60">{g.key}</span>
         </button>
       ))}
     </div>

@@ -62,6 +62,7 @@ function CheckCircleIcon({ className }: { className?: string }) {
 export default function WritingPage() {
   const [category, setCategory] = useState<string>("all");
   const [selectedId, setSelectedId] = useState<string>(() => PROMPTS[0].id);
+  const [listOpen, setListOpen] = useState(false);
   const [read, setRead] = useLocalState<Record<string, boolean>>("writing/read", {});
 
   // Lazy-loaded essay body for the selected prompt, cached in-session.
@@ -97,6 +98,20 @@ export default function WritingPage() {
     () => filtered.reduce((n, p) => (read[p.id] ? n + 1 : n), 0),
     [filtered, read],
   );
+
+  // Prev/next navigation through the filtered prompts (mobile pager controls).
+  const currentIndex = useMemo(
+    () => (selected ? filtered.findIndex((p) => p.id === selected.id) : -1),
+    [selected, filtered],
+  );
+  const canPrev = currentIndex > 0;
+  const canNext = currentIndex >= 0 && currentIndex < filtered.length - 1;
+  function goPrev() {
+    if (canPrev) setSelectedId(filtered[currentIndex - 1].id);
+  }
+  function goNext() {
+    if (canNext) setSelectedId(filtered[currentIndex + 1].id);
+  }
 
   useEffect(() => {
     if (!selected || !selected.hasSample) {
@@ -168,58 +183,49 @@ export default function WritingPage() {
         </div>
       </header>
 
-      <div className="mt-8 flex flex-wrap gap-2">
+      <div className="mt-8 flex gap-2 overflow-x-auto lg:flex-wrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {categories.map((c) => (
           <button
             key={c}
             onClick={() => setCategory(c)}
-            className={`btn text-xs ${c === category ? "btn-primary" : "btn-secondary"}`}
+            className={`btn text-xs shrink-0 whitespace-nowrap ${c === category ? "btn-primary" : "btn-secondary"}`}
           >
             {c === "all" ? "All categories" : c}
           </button>
         ))}
       </div>
 
+      <div className="mt-3 flex items-center justify-between gap-2 lg:hidden">
+        <button
+          type="button"
+          onClick={goPrev}
+          disabled={!canPrev}
+          aria-label="Previous prompt"
+          className="btn btn-secondary px-3 shrink-0"
+        >
+          <ChevronLeftIcon />
+        </button>
+        <button
+          type="button"
+          onClick={() => setListOpen(true)}
+          className="btn btn-secondary text-xs"
+        >
+          Browse prompts · {filtered.length}
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          disabled={!canNext}
+          aria-label="Next prompt"
+          className="btn btn-secondary px-3 shrink-0"
+        >
+          <ChevronRightIcon />
+        </button>
+      </div>
+
       <div className="mt-8 grid lg:grid-cols-[1fr_2fr] gap-8 items-start">
-        <aside className="surface divide-y divide-[var(--color-rule)] overflow-hidden max-h-[42rem] overflow-y-auto">
-          {filtered.length === 0 && (
-            <div className="px-5 py-6 text-sm text-[var(--color-ink-muted)]">No prompts in this category.</div>
-          )}
-          {filtered.map((prompt) => {
-            const active = selected?.id === prompt.id;
-            const isRead = !!read[prompt.id];
-            return (
-              <button
-                key={prompt.id}
-                onClick={() => setSelectedId(prompt.id)}
-                className={`block w-full text-left px-5 py-4 transition-colors ${
-                  active ? "bg-[var(--color-accent-soft)]" : "hover:bg-[oklch(96%_0.005_80)]"
-                }`}
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 flex-wrap min-w-0">
-                    <p className="eyebrow">{prompt.category}</p>
-                    <TaskTypePill task={taskType(prompt.directions)} />
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    {isRead && (
-                      <span title="Read" className="inline-flex text-[var(--color-success)]">
-                        <CheckCircleIcon className="w-4 h-4" />
-                        <span className="sr-only">Read</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <p
-                  className={`serif mt-2 leading-snug line-clamp-3 text-base ${
-                    isRead ? "text-[var(--color-ink-muted)]" : "text-[var(--color-ink)]"
-                  }`}
-                >
-                  {prompt.prompt}
-                </p>
-              </button>
-            );
-          })}
+        <aside className="hidden lg:block surface divide-y divide-[var(--color-rule)] overflow-hidden max-h-[42rem] overflow-y-auto">
+          <PromptList prompts={filtered} selectedId={selected?.id} read={read} onSelect={setSelectedId} />
         </aside>
 
         <section className="space-y-8">
@@ -236,7 +242,106 @@ export default function WritingPage() {
           )}
         </section>
       </div>
+
+      {listOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Prompts">
+          <button
+            type="button"
+            aria-label="Close prompts"
+            onClick={() => setListOpen(false)}
+            className="absolute inset-0 bg-[oklch(20%_0.02_60)]/40"
+          />
+          <div className="absolute inset-x-3 top-[var(--nav-h,148px)] bottom-3 surface flex flex-col overflow-hidden shadow-[var(--shadow-lift)]">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-[var(--color-rule)] shrink-0">
+              <p className="eyebrow">Prompts · {filtered.length}</p>
+              <button onClick={() => setListOpen(false)} className="btn btn-ghost text-xs">Close ✕</button>
+            </div>
+            <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-[var(--color-rule)]">
+              <PromptList
+                prompts={filtered}
+                selectedId={selected?.id}
+                read={read}
+                onSelect={(id) => {
+                  setSelectedId(id);
+                  setListOpen(false);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  );
+}
+
+function PromptList({
+  prompts,
+  selectedId,
+  read,
+  onSelect,
+}: {
+  prompts: WritingPromptMeta[];
+  selectedId: string | undefined;
+  read: Record<string, boolean>;
+  onSelect: (id: string) => void;
+}) {
+  if (prompts.length === 0) {
+    return <div className="px-5 py-6 text-sm text-[var(--color-ink-muted)]">No prompts in this category.</div>;
+  }
+  return (
+    <>
+      {prompts.map((prompt) => {
+        const active = selectedId === prompt.id;
+        const isRead = !!read[prompt.id];
+        return (
+          <button
+            key={prompt.id}
+            onClick={() => onSelect(prompt.id)}
+            className={`block w-full text-left px-5 py-4 transition-colors ${
+              active ? "bg-[var(--color-accent-soft)]" : "hover:bg-[oklch(96%_0.005_80)]"
+            }`}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 flex-wrap min-w-0">
+                <p className="eyebrow">{prompt.category}</p>
+                <TaskTypePill task={taskType(prompt.directions)} />
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                {isRead && (
+                  <span title="Read" className="inline-flex text-[var(--color-success)]">
+                    <CheckCircleIcon className="w-4 h-4" />
+                    <span className="sr-only">Read</span>
+                  </span>
+                )}
+              </div>
+            </div>
+            <p
+              className={`serif mt-2 leading-snug line-clamp-3 text-base ${
+                isRead ? "text-[var(--color-ink-muted)]" : "text-[var(--color-ink)]"
+              }`}
+            >
+              {prompt.prompt}
+            </p>
+          </button>
+        );
+      })}
+    </>
+  );
+}
+
+function ChevronLeftIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
@@ -253,12 +358,12 @@ function PromptDetail({ prompt, essay, essayLoading, isRead, onToggleRead }: Pro
   return (
     <>
       <article className="surface p-7 sm:p-9">
-        <div className="flex items-baseline justify-between gap-4 mb-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 mb-4">
           <div className="flex items-center gap-2.5 flex-wrap">
             <p className="eyebrow">{prompt.category}</p>
             <TaskTypePill task={tt} />
           </div>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 ml-auto">
             <p className="mono text-xs text-[var(--color-ink-faint)]">30 min suggested</p>
             {prompt.hasSample && (
               <button
@@ -365,7 +470,7 @@ function SampleEssayView({ essay, promptText }: { essay: SampleEssay; promptText
                   <Fragment key={j}>
                     <span
                       data-tip={sentence.fn}
-                      className="cursor-default decoration-dotted decoration-[var(--color-ink-faint)] underline-offset-[5px] hover:underline"
+                      className="cursor-default decoration-dotted decoration-[var(--color-ink-faint)] underline-offset-[5px] hover:underline [&[data-tip-active]]:underline"
                     >
                       {renderSentence(sentence)}
                     </span>{" "}
@@ -511,11 +616,20 @@ function ReciteDialog({
  */
 function TooltipLayer({ children }: { children: React.ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
+  const activeRef = useRef<HTMLElement | null>(null);
   const [tip, setTip] = useState<{ text: string; left: number; top: number } | null>(null);
+
+  function clearPinned() {
+    if (activeRef.current) {
+      activeRef.current.removeAttribute("data-tip-active");
+      activeRef.current = null;
+    }
+  }
 
   // Anchor the bubble's x to the cursor (a wrapped sentence's bounding box would
   // otherwise center it in the paragraph); keep y at the element's top edge.
   function handleMove(e: React.MouseEvent) {
+    clearPinned(); // a real pointer is hovering — drop any tap-pinned highlight
     const el = (e.target as HTMLElement).closest<HTMLElement>("[data-tip]");
     if (!el || !rootRef.current?.contains(el) || !el.dataset.tip) {
       setTip(null);
@@ -524,8 +638,23 @@ function TooltipLayer({ children }: { children: React.ReactNode }) {
     setTip({ text: el.dataset.tip, left: e.clientX, top: el.getBoundingClientRect().top });
   }
 
+  // Touch devices have no hover: tap a sentence to pin its underline + tooltip,
+  // tap it again or tap elsewhere to dismiss.
+  function handleClick(e: React.MouseEvent) {
+    const el = (e.target as HTMLElement).closest<HTMLElement>("[data-tip]");
+    if (!el || !rootRef.current?.contains(el) || !el.dataset.tip || activeRef.current === el) {
+      clearPinned();
+      setTip(null);
+      return;
+    }
+    clearPinned();
+    el.setAttribute("data-tip-active", "");
+    activeRef.current = el;
+    setTip({ text: el.dataset.tip, left: e.clientX, top: el.getBoundingClientRect().top });
+  }
+
   return (
-    <div ref={rootRef} onMouseMove={handleMove} onMouseLeave={() => setTip(null)}>
+    <div ref={rootRef} onMouseMove={handleMove} onMouseLeave={() => setTip(null)} onClick={handleClick}>
       {children}
       {tip && (
         <div

@@ -16,8 +16,10 @@ export default function AuthButton() {
   if (!user) {
     return (
       <div className="flex flex-col items-end gap-1">
-        <button onClick={signIn} className="btn btn-secondary text-xs">
-          <GoogleMark /> Sign in to sync
+        <button onClick={signIn} className="btn btn-secondary text-xs" title="Sign in to sync">
+          <GoogleMark />
+          <span className="hidden sm:inline">Sign in to sync</span>
+          <span className="sm:hidden">Sync</span>
         </button>
         {error && (
           <span className="mono text-[10px] text-[var(--color-danger)] max-w-[16rem] text-right leading-tight">
