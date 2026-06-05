@@ -6053,6 +6053,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that our ever-increasing use of technology significantly reduces our opportunities for human interaction. Other people believe that technology provides us with new and better ways to communicate and connect with one another.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): credits technology's real gains in reach, then argues it thins the depth of interaction and that its effect depends on use; sides with the first view as the more pressing truth while addressing both.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We have never been more connected, and yet complaints of loneliness have never been louder.", fn: "Hook" },
+            { text: "Some believe that our ever-increasing use of technology significantly reduces our opportunities for human interaction; others believe that technology gives us new and better ways to communicate and connect with one another.", fn: "Context (the two views)" },
+            { text: "Both views capture something true, but on balance the first is more persuasive: technology vastly expands the reach of our contact while quietly thinning its depth, so it tends to multiply connections even as it erodes the richest forms of interaction.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for connection",
+          sentences: [
+            { text: "The optimistic view rests on undeniable gains.", fn: "Topic sentence" },
+            { text: "Technology lets us speak instantly with people across the world, sustain friendships that distance would once have ended, and find communities of others who share our interests or our struggles.", fn: "Explanation", vocab: [{ term: "sustain", gloss: "維持；維繫" }] },
+            { text: "A grandparent video-calls a grandchild on another continent, a patient finds a support group for a rare illness, and an immigrant stays close to the family she left behind.", fn: "Example" },
+            { text: "For the lonely, the housebound, and the far-flung, these tools do not reduce interaction but create it where little was possible before.", fn: "Develop" },
+            { text: "For many people, then, technology has plainly widened, not narrowed, the circle of human contact.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The cost in depth",
+          sentences: [
+            { text: "However, this reach comes at a cost the second view overlooks.", fn: "Pivot", moves: ["However"] },
+            { text: "The same devices that connect us across the world can pull us away from the people in the same room, as a family at dinner each disappears into a separate screen.", fn: "Point" },
+            { text: "Digital contact tends to be more superficial than presence — a text is not a conversation, a click of approval is not friendship — and hours spent on screens are hours not spent face to face.", fn: "Explanation", vocab: [{ term: "superficial", gloss: "膚淺的；表面的" }] },
+            { text: "When shallow online exchange substitutes for deeper interaction rather than supplementing it, the quantity of contact rises while its quality quietly falls.", fn: "Develop", vocab: [{ term: "substitutes", gloss: "取代；替代" }] },
+            { text: "Technology can crowd out the very interaction it appears to provide.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It depends on how we use it",
+          sentences: [
+            { text: "Moreover, the deeper truth is that technology is a tool, and its effect depends on how we use it.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Used to arrange a meeting, stay in touch between visits, or reach someone otherwise unreachable, it deepens human connection; used as a replacement for presence, it hollows it out.", fn: "Point" },
+            { text: "The danger the first view names is real not because technology must isolate us, but because it makes shallow contact so easy that we drift into accepting it for the real thing.", fn: "Explanation", vocab: [{ term: "drift", gloss: "漂移；不知不覺地陷入" }] },
+            { text: "The question is not whether the tool can connect us, since it plainly can, but whether we let it supplement our relationships or quietly replace them.", fn: "Develop", vocab: [{ term: "supplement", gloss: "補充；輔助" }] },
+            { text: "On current evidence, too often it replaces, which is why the first view's warning deserves the greater weight.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, technology undeniably offers new and powerful ways to connect, yet it also tends to erode the depth of our interaction.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the gains in reach are so easily offset by losses in depth, and because the easy substitute so often crowds out the richer original, the first view captures the more pressing truth: our tools multiply contact while endangering genuine human interaction.", fn: "Synthesis" },
+            { text: "Let technology carry us to one another, not stand in for being there.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-094",
@@ -6061,6 +6114,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Knowing about the past cannot help people to make important decisions today. Reason: The world today is significantly more complex than it was even in the relatively recent past.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the claim by showing how decisions actually draw on the past, then turns the reason against itself — complexity makes history more necessary, not less — before conceding history must be applied with judgment.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "It is tempting, in a fast-moving age, to treat the past as a closed book with nothing left to teach us.", fn: "Hook" },
+            { text: "The claim makes this explicit, asserting that knowing about the past cannot help people make important decisions today, on the reason that the world is now significantly more complex than it was even in the recent past.", fn: "Context (claim and reason)" },
+            { text: "Both parts fail: knowledge of the past is among our most valuable guides to present decisions, and the world's growing complexity, far from making history useless, makes its lessons more necessary than ever.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The claim is wrong",
+          sentences: [
+            { text: "The claim collapses as soon as we look at how good decisions are actually made.", fn: "Topic sentence" },
+            { text: "Every serious decision rests on some understanding of cause and effect, and the past is our only record of how human choices have turned out before.", fn: "Explanation" },
+            { text: "A doctor relies on the recorded history of past cases, a government studies earlier wars and financial crises for precedent, and an individual learns from her own and others' mistakes.", fn: "Example", vocab: [{ term: "precedent", gloss: "先例；前例" }] },
+            { text: "To strip away knowledge of the past would not free a decision-maker from error but blind her, forcing her to relearn by painful trial what history already records.", fn: "Develop" },
+            { text: "Strip a surgeon, a general, or a finance minister of all knowledge of past cases, campaigns, or crises, and you have not freed them to think clearly but disarmed them.", fn: "Develop" },
+            { text: "Far from being useless, the past is the very material from which sound judgment is built.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The reason backfires",
+          sentences: [
+            { text: "The reason — that today's world is more complex — does not rescue the claim; if anything, it undermines it.", fn: "Pivot", moves: ["if anything"] },
+            { text: "Greater complexity does not erase the patterns of the past, for human nature, ambition, fear, and folly persist beneath every new technology and institution.", fn: "Point", vocab: [{ term: "folly", gloss: "愚行；愚蠢" }] },
+            { text: "A more complex world is precisely one in which we most need the orientation that history provides, lest we mistake every new situation for something wholly unprecedented.", fn: "Explanation", vocab: [{ term: "orientation", gloss: "方向感；定位" }] },
+            { text: "The financial crises, pandemics, and political upheavals of recent years all had clear precedents, and those who knew that history were far better prepared than those who assumed the past no longer applied.", fn: "Develop" },
+            { text: "Complexity is a reason to study the past more closely, not to discard it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — A grain of truth",
+          sentences: [
+            { text: "There is, admittedly, a kernel of truth worth acknowledging.", fn: "Pivot", moves: ["admittedly"] },
+            { text: "The past must be applied with judgment, since no two situations are identical and history offers analogies, not blueprints.", fn: "Point", vocab: [{ term: "analogies", gloss: "類比；比擬" }] },
+            { text: "A careless reading of history can mislead, as when leaders fight the last war instead of the present one.", fn: "Explanation" },
+            { text: "But this argues for using the past wisely, not for the claim that it cannot help us at all, since the cure for misused history is better history, not ignorance of it.", fn: "Develop", vocab: [{ term: "ignorance", gloss: "無知；愚昧" }] },
+            { text: "Properly handled, knowledge of the past sharpens present decisions rather than distorting them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is mistaken and its reason backfires.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Knowing about the past is one of the surest aids to important decisions, and the very complexity of the modern world makes that knowledge more, not less, essential, since patterns and precedents are exactly what a bewildering present most needs.", fn: "Synthesis" },
+            { text: "We decide best about the future not by forgetting the past, but by remembering it well.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-095",
@@ -6069,6 +6176,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Knowing about the past cannot help people to make important decisions today. Reason: We are not able to make connections between current events and past events until we have some distance from both.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the reason's insight about perspective, then shows it cannot support the claim — decisions cannot wait for hindsight, the past we use is already distant, and even rough connections instruct; engages the specific reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Historians often say we cannot judge our own era clearly until it has cooled into history.", fn: "Hook" },
+            { text: "From this the claim concludes that knowing about the past cannot help people make important decisions today, reasoning that we cannot connect current events to past ones until we have gained some distance from both.", fn: "Context (claim and reason)" },
+            { text: "The reason contains a real insight about perspective, but it does not support the claim: we already possess ample distance from the past, present decisions cannot wait for hindsight, and even tentative connections to history are better than none.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Decisions cannot wait",
+          sentences: [
+            { text: "The claim asks the impossible of decision-makers: to wait for a clarity that only the future can supply.", fn: "Topic sentence" },
+            { text: "Important decisions cannot be postponed until events have aged into tidy lessons, for leaders, doctors, and individuals must act now, with whatever understanding they can muster.", fn: "Explanation", vocab: [{ term: "postponed", gloss: "推遲；延後" }] },
+            { text: "If we could use the past only after attaining perfect distance, we could never use it at all, since by then new decisions would already be pressing upon us.", fn: "Develop" },
+            { text: "A guide that may be consulted only in hindsight is no guide for the choices we face today.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — We already have distance from the past",
+          sentences: [
+            { text: "However, the reason misstates our actual situation.", fn: "Pivot", moves: ["However"] },
+            { text: "We need distance only from the present, and we are not connecting two equally close events, because the past in question is already remote, studied, and understood.", fn: "Point", vocab: [{ term: "remote", gloss: "遙遠的；久遠的" }] },
+            { text: "When we draw on the fall of an empire, a financial panic of a century ago, or a long-settled war, we are using events from which ample time has already passed.", fn: "Explanation" },
+            { text: "The decision-maker stands at a vantage the reason ignores, looking back on a distant, well-documented past to help interpret a present she is still living through.", fn: "Develop", vocab: [{ term: "vantage", gloss: "有利位置；視角" }] },
+            { text: "We are rarely asked to connect two unformed moments; usually we read a settled past to illuminate an unsettled present.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Imperfect connections still help",
+          sentences: [
+            { text: "Moreover, even connections made without full hindsight are valuable.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "We need not perfectly match a present event to a past one for history to be useful, since a rough analogy can still warn, suggest, and prepare.", fn: "Point", vocab: [{ term: "analogy", gloss: "類比；比擬" }] },
+            { text: "Recognizing that a current crisis rhymes with an earlier one, even imperfectly, can prompt us to ask better questions and avoid mistakes already on record.", fn: "Explanation" },
+            { text: "Even a partial parallel can flag a danger that would otherwise pass unnoticed, turning a vague sense of unease into a specific, answerable question and buying us time to prepare.", fn: "Develop" },
+            { text: "The reason at most counsels humility about our judgments, urging us to hold them provisionally; it does not show that the past cannot help, only that it must be used with care.", fn: "Develop", vocab: [{ term: "provisionally", gloss: "暫時地；臨時地" }] },
+            { text: "Imperfect lessons, applied modestly, still beat facing the present with no memory at all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason rightly reminds us that perspective improves with time, but the claim it is meant to support does not follow.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because decisions cannot wait for hindsight, because the past we consult is already at a distance, and because even tentative connections instruct us, knowing about the past remains a genuine help to present choices.", fn: "Synthesis" },
+            { text: "We cannot wait for history to ripen before we act; we must let the history we already have guide us now.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-096",
@@ -6077,6 +6237,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educational institutions should actively encourage their students to choose fields of study that will prepare them for lucrative careers.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that students need honest career information, then argues that actively steering them toward lucrative fields would distort education and, in its consequences, harm students and society; weighs the policy's likely effects.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Few questions weigh on a student more heavily than whether a beloved subject will ever pay the rent.", fn: "Hook" },
+            { text: "One proposed answer is a policy under which educational institutions would actively encourage their students to choose fields of study that prepare them for lucrative careers.", fn: "Context (the policy)" },
+            { text: "Institutions should certainly inform students about the practical prospects of different paths, but a policy of actively steering them toward lucrative fields would distort the purpose of education and, in its likely consequences, harm both students and society.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The legitimate kernel",
+          sentences: [
+            { text: "The policy is not wholly without merit.", fn: "Topic sentence" },
+            { text: "Students do need honest information about earnings, employment, and debt, and an institution that lets them drift into ruinous choices in ignorance fails them.", fn: "Explanation", vocab: [{ term: "ruinous", gloss: "毀滅性的；招致破產的" }] },
+            { text: "Where graduates face crushing loans and thin job markets, guidance toward viable careers is a real kindness, not a betrayal of learning.", fn: "Point", vocab: [{ term: "viable", gloss: "可行的；能維持的" }] },
+            { text: "Some attention to students' material futures is a legitimate part of an institution's duty.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Active steering distorts education",
+          sentences: [
+            { text: "However, to actively push students toward whatever pays best mistakes the very purpose of education.", fn: "Pivot", moves: ["However"] },
+            { text: "Education exists to develop minds, transmit knowledge, and let people discover what they are good at and care about, not merely to feed the labour market.", fn: "Point", vocab: [{ term: "transmit", gloss: "傳遞；傳授" }] },
+            { text: "A policy that elevates earning potential above all else would treat poetry, history, basic science, and teaching as mistakes to be discouraged, simply because they pay less.", fn: "Explanation" },
+            { text: "It would, in effect, tell a gifted young historian or teacher that her calling is a mistake, and judge the worth of her education by a salary it was never meant to chase.", fn: "Develop" },
+            { text: "Students pressed into lucrative fields they neither enjoy nor excel at often end up mediocre and miserable, serving neither themselves nor the professions they were herded into.", fn: "Develop", vocab: [{ term: "mediocre", gloss: "平庸的" }] },
+            { text: "What looks like prudence can in fact misdirect a life.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The social consequences",
+          sentences: [
+            { text: "Moreover, the policy's likely consequences reach far beyond the individual student.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A society needs more than highly paid professionals; it needs teachers, artists, nurses, scholars, and public servants, many of whom work in fields the policy would actively discourage.", fn: "Point" },
+            { text: "These are the people who teach the children, heal the sick, and hold a community together, and a society that fails to produce them cannot simply buy itself whole again with private wealth.", fn: "Develop" },
+            { text: "If every institution steered its students toward the most lucrative careers, we would soon face a glut in a few fields and a damaging shortage in many essential others.", fn: "Explanation", vocab: [{ term: "glut", gloss: "供過於求；過剩" }] },
+            { text: "Worse, defining a worthwhile education by its paycheck teaches a whole generation that value means money, impoverishing the culture even as it enriches some graduates.", fn: "Develop" },
+            { text: "A policy that optimizes for individual income can leave the wider society poorer.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while educational institutions owe their students honest guidance about careers, they should not adopt a policy of actively steering them toward lucrative fields.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Such a policy would be advantageous only where students are drifting blindly into ruin, but in its broader consequences it would narrow the purpose of education, push students into ill-fitting careers, and starve society of the work that pays little yet matters most.", fn: "Synthesis" },
+            { text: "Let institutions inform their students about the cost of every path, then trust them to choose a life, not just a salary.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-097",
@@ -6085,6 +6299,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Educational institutions have a responsibility to dissuade students from pursuing fields of study in which they are unlikely to succeed.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that institutions owe candid information, then argues that a duty to dissuade overreaches because predictions of failure are unreliable, the risk belongs to the student, and the role is to open doors rather than ration ambition.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Should a struggling student be gently warned off her dream, or given the chance to prove the doubters wrong?", fn: "Hook" },
+            { text: "The statement comes down on the side of caution, holding that educational institutions have a responsibility to dissuade students from pursuing fields in which they are unlikely to succeed.", fn: "Context (the statement)" },
+            { text: "Institutions certainly owe students honesty about the demands and risks of a field, but the word dissuade goes too far, for predictions of failure are unreliable, the duty to inform is not a duty to discourage, and an institution's role is to open doors rather than close them.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The honest kernel",
+          sentences: [
+            { text: "The statement rests on a genuine responsibility.", fn: "Topic sentence" },
+            { text: "Institutions should tell students the truth about a field's difficulty, its admission and completion rates, and the prospects that await, so that no one commits years and money in illusion.", fn: "Explanation", vocab: [{ term: "illusion", gloss: "幻想；錯覺" }] },
+            { text: "To let a student pour everything into a path while concealing how steep it is would indeed be a failure of duty.", fn: "Point" },
+            { text: "Candid, even discouraging, information is part of what an institution owes its students.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why 'dissuade' overreaches",
+          sentences: [
+            { text: "However, a responsibility to inform is not a responsibility to dissuade.", fn: "Pivot", moves: ["However"] },
+            { text: "Predicting who is unlikely to succeed is notoriously unreliable, and institutions that try are often wrong, mistaking a slow start, a poor background, or an unconventional mind for a lack of ability.", fn: "Point", vocab: [{ term: "unconventional", gloss: "非傳統的；不落俗套的" }] },
+            { text: "History is full of people who failed early, were written off by their teachers, and went on to excel in the very fields they had been told to abandon.", fn: "Explanation" },
+            { text: "An institution that sets itself up to talk students out of their ambitions will inevitably crush some who would have succeeded, and the loss is borne by the student, not the adviser.", fn: "Develop", vocab: [{ term: "ambitions", gloss: "抱負；志向" }] },
+            { text: "Because such judgments are so fallible, active dissuasion does real and uneven harm.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Whose choice it is",
+          sentences: [
+            { text: "Moreover, dissuasion easily becomes gatekeeping, and it puts the wrong people in charge of a student's life.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "It is the student who must bear the risk of her choice, and so it should be the student, fully informed, who makes it, for that autonomy is hers to exercise.", fn: "Point", vocab: [{ term: "autonomy", gloss: "自主；自主權" }] },
+            { text: "An institution's proper task is to lay out the difficulties honestly and then support whoever chooses to try, not to ration ambition according to its own fallible forecasts.", fn: "Explanation", vocab: [{ term: "ration", gloss: "配給；限量供應" }] },
+            { text: "Success, moreover, is not one thing, and a student who never reaches the top of a field may still gain knowledge, growth, and a direction no adviser could have foreseen.", fn: "Develop" },
+            { text: "To narrow that to a single measure of success, decided in advance by someone else, is to take from students the very experiment that an education is supposed to be.", fn: "Develop" },
+            { text: "An institution serves students best by informing and supporting their choices, not by overruling them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, educational institutions owe students candor about the odds, but not a campaign to dissuade them from difficult paths.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because forecasts of failure are unreliable, because the risk belongs to the student, and because an institution's role is to open opportunities rather than ration them, the responsibility is to inform honestly and support fully, leaving the final choice where it belongs.", fn: "Synthesis" },
+            { text: "Tell students the truth about the climb, then help those who still wish to attempt it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-098",
@@ -6093,6 +6360,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that competition for high grades motivates students to excel in the classroom. Others believe that such competition seriously limits the quality of real learning.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that competition can summon effort, then argues it distorts study toward grades, corrodes collaboration, and weakens intrinsic curiosity; sides with the view that it limits real learning while addressing both.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Ask students what drives them and many will say grades; ask them what they remember a year later and many will say very little.", fn: "Hook" },
+            { text: "Some believe that competition for high grades motivates students to excel in the classroom; others believe that such competition seriously limits the quality of real learning.", fn: "Context (the two views)" },
+            { text: "Competition does spur effort, so the first view is not wrong, but the second is closer to the truth: the chase for grades tends to crowd out curiosity, distort what students study, and substitute the appearance of learning for the real thing.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for competition",
+          sentences: [
+            { text: "There is real force in the first view.", fn: "Topic sentence" },
+            { text: "Grades give students a clear, immediate goal, and competition for them can summon the effort, discipline, and focus that pure curiosity does not always provide.", fn: "Explanation", vocab: [{ term: "discipline", gloss: "自律；紀律" }] },
+            { text: "A student who might otherwise drift through a subject will often work far harder when a tangible incentive — a scholarship or a place at university — is at stake.", fn: "Example", vocab: [{ term: "incentive", gloss: "誘因；激勵" }] },
+            { text: "Deadlines, rankings, and the simple fear of falling behind can concentrate the mind in a way that a vague, unhurried love of the subject sometimes cannot.", fn: "Develop" },
+            { text: "Used well, competition can push students to do more than they otherwise would.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — How it distorts learning",
+          sentences: [
+            { text: "However, competition for grades tends to corrupt the very learning it is meant to serve.", fn: "Pivot", moves: ["However"] },
+            { text: "When the grade becomes the goal, understanding becomes a mere means, and students learn to chase marks rather than knowledge, memorizing for the test and forgetting soon after.", fn: "Point", vocab: [{ term: "memorizing", gloss: "死記硬背" }] },
+            { text: "Real learning thrives on curiosity, risk, and the freedom to struggle and fail, but a student fixated on grades avoids hard questions, plays every choice safe, and never ventures beyond what is rewarded.", fn: "Explanation" },
+            { text: "The deepest learning often looks inefficient — following a tangent, wrestling with a difficult idea, reading beyond the syllabus — exactly the things a grade-driven student cannot afford.", fn: "Develop", vocab: [{ term: "syllabus", gloss: "教學大綱；課程綱要" }] },
+            { text: "Competition can thus replace genuine understanding with its mere appearance.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — What it does to learners",
+          sentences: [
+            { text: "Moreover, competition can poison the very conditions in which learning flourishes.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "When students compete for a fixed share of top grades, they are set against one another, discouraged from helping, sharing, or learning together.", fn: "Point" },
+            { text: "Knowledge that might have grown richer by being shared instead gets hoarded, and classmates who could have been collaborators are quietly recast as obstacles to outscore.", fn: "Develop" },
+            { text: "It also teaches them to value learning only for its external reward, weakening the intrinsic curiosity that sustains learning long after the last exam is over.", fn: "Explanation", vocab: [{ term: "intrinsic", gloss: "內在的；本質的" }] },
+            { text: "A classroom organized around beating others tends to produce anxious grade-seekers rather than confident, lifelong learners.", fn: "Develop" },
+            { text: "What competition gains in short-term effort it can lose in lasting understanding and love of learning.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while competition for high grades can motivate students to work harder, I side with the view that it seriously limits the quality of real learning.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The pursuit of marks does summon effort, but it narrows curiosity, distorts study toward what is tested, and corrodes both collaboration and the intrinsic motivation on which deep learning depends, so its costs to real understanding outweigh its motivational gains.", fn: "Synthesis" },
+            { text: "Grades may make students work; only curiosity makes them learn.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-099",
