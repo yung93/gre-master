@@ -7537,6 +7537,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Scandals are useful because they focus our attention on problems in ways that no speaker or reformer ever could.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that scandals seize public attention as argument cannot, then argues they distort attention toward villains rather than causes and fade too fast to be reliable, so they are a spark that still needs the patient reformer.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Nothing seizes public attention like a scandal: a respectable figure exposed, a hidden wrong dragged suddenly into the light.", fn: "Hook" },
+            { text: "The claim treats this as a virtue, holding that scandals are useful because they focus our attention on problems in ways that no speaker or reformer ever could.", fn: "Context (the claim)" },
+            { text: "Scandals do command attention as patient argument rarely can, and sometimes they spur real reform; but the claim overstates their usefulness, since the attention they bring is distorted, fleeting, and often aimed at the wrong target.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Scandals seize attention",
+          sentences: [
+            { text: "There is real truth in the claim about the power of scandal to capture attention.", fn: "Topic sentence" },
+            { text: "A dry speech about corruption may be ignored, but a vivid scandal exposing one corrupt official can outrage millions and force a problem onto the public agenda overnight.", fn: "Explanation" },
+            { text: "Scandals have toppled governments, exposed abuses, and prompted laws that years of earnest campaigning had failed to achieve.", fn: "Example" },
+            { text: "By attaching an abstract problem to a concrete wrong with names and faces, a scandal makes it impossible to look away, which a reformer's statistics often cannot.", fn: "Develop", vocab: [{ term: "abstract", gloss: "抽象的" }] },
+            { text: "It can transform an issue from background noise into a national conversation in a single day.", fn: "Develop" },
+            { text: "On the narrow point that scandals seize attention, the claim is clearly right.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But they distort the problem",
+          sentences: [
+            { text: "However, the attention a scandal brings is badly distorted.", fn: "Pivot", moves: ["However"] },
+            { text: "A scandal fixes the public gaze on a single villain rather than on the systemic conditions that produced him, so we punish one offender and feel the problem solved while its real causes survive untouched.", fn: "Point", vocab: [{ term: "systemic", gloss: "系統性的；根本的" }] },
+            { text: "The deeper, duller problems — bad incentives, weak institutions, ordinary injustice — make no scandal and so escape the very attention that scandal commands.", fn: "Explanation", vocab: [{ term: "incentives", gloss: "誘因；激勵機制" }] },
+            { text: "By personalizing every issue, scandal teaches us to hunt for villains instead of fixing structures, which can leave the underlying problem worse.", fn: "Develop" },
+            { text: "Scandal focuses attention, but often on the wrong thing entirely.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — And they are fleeting and unreliable",
+          sentences: [
+            { text: "Moreover, scandal is a fickle and short-lived guide to what matters.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Which problems become scandals depends on chance, drama, and what sells, not on importance, so grave issues that lack a scandalous face are ignored while trivial ones dominate.", fn: "Point", vocab: [{ term: "trivial", gloss: "瑣碎的；微不足道的" }] },
+            { text: "The attention also fades fast, since today's outrage is forgotten by next week's, and the problem outlives the brief alarm that the scandal raised.", fn: "Explanation", vocab: [{ term: "outlives", gloss: "比……存在更久；長過" }] },
+            { text: "The patient speaker and reformer, far from being useless, are exactly who must do the slow work of turning a scandal's flash of attention into lasting change.", fn: "Develop" },
+            { text: "As a way of directing public concern, scandal is powerful but unreliable, and no substitute for sustained argument.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, scandals do focus attention with a force that speakers and reformers cannot match, but they are far less useful than the claim suggests.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the attention a scandal brings is distorted toward villains rather than causes, governed by drama rather than importance, and gone almost as fast as it came, the scandal is at best a spark, and it still needs the patient reformer to turn that spark into real and lasting reform.", fn: "Synthesis" },
+            { text: "Let scandal raise the alarm if it must, but leave the actual fixing to those who think past it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-118",
@@ -7545,6 +7599,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Governments must ensure that their major cities receive the financial support they need in order to thrive. Reason: It is primarily in cities that a nation's cultural traditions are preserved and generated.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that cities deserve public investment, then shows the cultural reason is false because tradition lives as much in the regions, and that the false reason cannot justify prioritizing cities; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Great cities are a nation's showcases, and it seems only natural to lavish public money on keeping them magnificent.", fn: "Hook" },
+            { text: "The claim urges exactly that, insisting that governments must ensure their major cities receive the financial support they need to thrive, on the reason that it is primarily in cities that a nation's cultural traditions are preserved and generated.", fn: "Context (claim and reason)" },
+            { text: "Cities do deserve public investment, so the claim is not wholly wrong; but the reason given for it is false, and once that false reason is removed, the case for prioritizing cities over everywhere else largely collapses.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Cities deserve some support",
+          sentences: [
+            { text: "Cities certainly have a real claim on public funds.", fn: "Topic sentence" },
+            { text: "They concentrate a nation's population, commerce, and infrastructure, and when a major city decays the whole economy can suffer, so keeping cities functioning serves everyone.", fn: "Explanation", vocab: [{ term: "infrastructure", gloss: "基礎建設；基礎設施" }] },
+            { text: "A government that let its great cities collapse into decay and dysfunction would harm the entire nation that depends on them.", fn: "Develop" },
+            { text: "Roads, transit, and public services in a great city carry millions of lives, and letting them fail would be a costly mistake.", fn: "Develop" },
+            { text: "That cities warrant public investment is, in itself, perfectly reasonable.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the reason is false",
+          sentences: [
+            { text: "However, the reason offered for this support does not hold up.", fn: "Pivot", moves: ["However"] },
+            { text: "It is simply not true that cultural traditions are preserved and generated primarily in cities, for much of a nation's deepest heritage is born and kept alive in the countryside and the regions.", fn: "Point", vocab: [{ term: "heritage", gloss: "遺產；傳統" }] },
+            { text: "Folk customs, dialects, crafts, festivals, and religious life often survive far more strongly in rural communities than in fast-changing, cosmopolitan cities, which tend to borrow and repackage tradition rather than create it.", fn: "Explanation", vocab: [{ term: "cosmopolitan", gloss: "國際化的；世界性的" }] },
+            { text: "The city is culture's great stage and marketplace, but it is frequently not its source, so resting the case for funding cities on their supposed monopoly over tradition rests it on a falsehood.", fn: "Develop" },
+            { text: "The reason mistakes where a nation's traditions actually live.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — So the priority collapses",
+          sentences: [
+            { text: "Moreover, because the reason is false, it cannot justify the claim's demand to prioritize cities.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "If traditions are generated and preserved as much in the regions as in the cities, then the cultural argument, if anything, supports funding rural areas too, not pouring money disproportionately into the capitals.", fn: "Point", vocab: [{ term: "disproportionately", gloss: "不成比例地；過度地" }] },
+            { text: "Worse, a policy that channels public money to already-thriving cities on a mistaken cultural pretext risks starving the very rural communities where tradition is most fragile and most in need.", fn: "Explanation", vocab: [{ term: "pretext", gloss: "藉口；託辭" }] },
+            { text: "Cities should be supported for honest reasons — their economic role and the needs of their residents — not for a cultural primacy they do not actually possess.", fn: "Develop" },
+            { text: "Strip away the false reason and the claim's special priority for cities falls away with it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while major cities deserve public investment, the reason the claim gives for it is mistaken.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Cities warrant support for their genuine economic and social importance, but not because they are the primary home of a nation's culture, which they are not, so a government's duty is to sustain its cities and its regions alike, rather than to privilege the cities on a false cultural pretext.", fn: "Synthesis" },
+            { text: "Fund the cities for what they truly are, not for a cultural monopoly they were never given.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-119",
@@ -7553,6 +7660,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that government funding of the arts is necessary to ensure that the arts can flourish and be available to all people. Others believe that government funding of the arts threatens the integrity of the arts.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the real risk that public money can tame art, then argues funding is necessary for the arts to flourish and reach all, and that the threat to integrity can be managed by arm's-length funding; addresses both views.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Should the state be the patron of the arts, or does the artist who takes the king's coin end up singing the king's song?", fn: "Hook" },
+            { text: "Some believe that government funding of the arts is necessary to ensure that the arts flourish and remain available to all; others believe that such funding threatens the integrity of the arts.", fn: "Context (the two views)" },
+            { text: "Both views see something real, but on balance government funding does more good than harm: it keeps the arts alive and accessible in ways the market cannot, and the threat to integrity, though genuine, can be managed rather than merely feared.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The risk to integrity is real",
+          sentences: [
+            { text: "The worry about integrity is not imaginary.", fn: "Topic sentence" },
+            { text: "When the government pays, it can be tempted to dictate, favoring art that flatters those in power and quietly starving work that criticizes them.", fn: "Explanation", vocab: [{ term: "flatters", gloss: "奉承；討好" }] },
+            { text: "Artists dependent on official money may censor themselves, softening their vision to keep the grants coming, and art that must please a committee can grow safe and bland.", fn: "Point", vocab: [{ term: "censor", gloss: "審查；自我審查" }] },
+            { text: "History's greatest art was very often made for patrons, the church and the state among them, with no loss of greatness.", fn: "Develop" },
+            { text: "There is a real danger that public funding will tame the very art it supports.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But funding lets the arts flourish",
+          sentences: [
+            { text: "However, without public funding much valuable art would simply not survive.", fn: "Pivot", moves: ["However"] },
+            { text: "The market rewards only what sells, so it starves difficult, experimental, or minority art, along with the museums, orchestras, and theatres that cannot pay their own way.", fn: "Point", vocab: [{ term: "experimental", gloss: "實驗性的" }] },
+            { text: "Public funding sustains exactly this work, and it keeps the arts available to all rather than only to those rich enough to pay, opening galleries and concerts to ordinary people.", fn: "Explanation", vocab: [{ term: "sustains", gloss: "維持；支撐" }] },
+            { text: "Left to the market alone, a nation's cultural life would shrink to whatever happens to turn a profit, losing much of what gives it depth and variety.", fn: "Develop" },
+            { text: "Public libraries, free museums, community theatres, and school music programmes reach children who would otherwise never encounter the arts at all.", fn: "Develop" },
+            { text: "Funding is often what allows the arts to flourish and to reach everyone.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The risk can be managed",
+          sentences: [
+            { text: "Moreover, the threat to integrity is real but manageable, not a reason to abandon funding altogether.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The danger comes from political control, not from public money as such, and it can be checked by funding the arts at arm's length, through independent bodies that decide on merit rather than politics.", fn: "Point", vocab: [{ term: "merit", gloss: "優點；功績；才能" }] },
+            { text: "Many countries fund the arts generously while protecting their freedom, precisely by keeping politicians out of the decisions about what gets made.", fn: "Explanation" },
+            { text: "The choice is not between pure, unfunded art and corrupt, funded art, but between designing public support well or designing it badly.", fn: "Develop" },
+            { text: "With the right safeguards, a nation can fund the arts without owning them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while government funding of the arts does pose a genuine risk to their integrity, that risk is outweighed by the good such funding does.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Public money keeps valuable art alive and open to all, which the market alone will not do, and the threat to artistic freedom can be contained by funding at arm's length, so a wise nation supports its arts generously while guarding their independence.", fn: "Synthesis" },
+            { text: "Pay for the arts, but do not presume to compose them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-120",
@@ -7561,6 +7722,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: In any field — business, politics, education, government — those in power should step down after five years. Reason: The surest path to success for any enterprise is revitalization through new leadership.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): attacks the reason by showing new leadership is not the surest path to success, then the claim by showing a universal five-year limit would squander experience, and proposes renewal through accountability rather than automatic turnover.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Fresh leadership can breathe new life into a tired institution — but does that make pushing out every leader every five years a law worth passing?", fn: "Hook" },
+            { text: "The claim says it does, holding that those in power in any field should step down after five years, on the reason that the surest path to success for any enterprise is revitalization through new leadership.", fn: "Context (claim and reason)" },
+            { text: "Both the claim and its reason go too far: forced turnover in every field would waste expertise as often as it renews things, and revitalization through new leadership, though sometimes valuable, is hardly the surest path to success.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The reason overstates new leadership",
+          sentences: [
+            { text: "Consider first the reason, which mistakes one occasional benefit for a universal law.", fn: "Topic sentence", moves: ["first"] },
+            { text: "New leaders can indeed bring fresh energy and ideas, and an enterprise that has grown stale sometimes needs exactly that.", fn: "Explanation" },
+            { text: "But to call new leadership the surest path to success is plainly false, since success far more often depends on competence, sound strategy, and steady execution than on novelty for its own sake.", fn: "Point", vocab: [{ term: "competence", gloss: "能力；勝任" }] },
+            { text: "A capable leader who has mastered her role typically serves an enterprise better than an untested newcomer, and replacing her on schedule is as likely to interrupt success as to renew it.", fn: "Develop", vocab: [{ term: "untested", gloss: "未經考驗的" }] },
+            { text: "Stability and mastery, not constant reshuffling, are what most successful enterprises actually run on.", fn: "Develop" },
+            { text: "Revitalization is one path to success among many, not the surest.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The claim discards experience",
+          sentences: [
+            { text: "However, the claim built on this shaky reason is shakier still.", fn: "Pivot", moves: ["However"] },
+            { text: "Forcing every leader in every field out after five years would throw away the accumulated knowledge, relationships, and judgment that take far longer than that to build.", fn: "Point", vocab: [{ term: "accumulated", gloss: "累積的" }] },
+            { text: "A surgeon, a scientist, a teacher, or a seasoned manager often reaches her most valuable years only after a decade, and a rigid five-year limit would expel her at her peak.", fn: "Explanation" },
+            { text: "The constant churn would mean perpetual inexperience, with institutions forever relearning what their departed leaders already knew.", fn: "Develop", vocab: [{ term: "churn", gloss: "頻繁更替；流失" }] },
+            { text: "A rule that sacrifices experience to a theory of perpetual renewal would weaken the very enterprises it means to strengthen.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — A better path to renewal",
+          sentences: [
+            { text: "Moreover, where renewal genuinely matters, there are better ways to secure it than expelling everyone on a timer.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "An enterprise can refresh itself through new ideas, regular evaluation, and the steady promotion of talent without discarding its most capable people every five years.", fn: "Point" },
+            { text: "The real danger is not long service but entrenched, unaccountable power, and that is met by accountability — review, competition, and the freedom to remove poor leaders — not by removing good ones automatically.", fn: "Explanation", vocab: [{ term: "entrenched", gloss: "根深蒂固的；牢固的" }] },
+            { text: "Keep the leaders who are succeeding, renew those who are failing, and let performance rather than the calendar decide.", fn: "Develop" },
+            { text: "Renewal is best pursued by judgment, not by a blanket expiry date stamped on competence.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason should be rejected.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "New leadership is sometimes revitalizing but is far from the surest path to success, and a universal five-year limit would squander expertise across every field, so enterprises are better served by keeping capable leaders, removing failing ones, and seeking renewal through accountability rather than automatic turnover.", fn: "Synthesis" },
+            { text: "Replace leaders who have failed, not leaders who have merely lasted.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-121",
@@ -7569,6 +7784,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In any field of endeavor, it is impossible to make a significant contribution without first being strongly influenced by past achievements within that field.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms that significant contributions nearly always build on a field's past, then qualifies the absolutes by noting rare outsiders who contribute by escaping the past, and that influence can constrain as well as enable.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Every innovator, however original, learned a language, a craft, or a body of knowledge before bending it to something new.", fn: "Hook" },
+            { text: "The statement makes this universal, claiming that in any field it is impossible to make a significant contribution without first being strongly influenced by past achievements within that field.", fn: "Context (the statement)" },
+            { text: "The statement captures a deep truth — almost all real contributions build on what came before — but the absolutes impossible and strongly push it too far, since influence can also constrain, and rare outsiders sometimes contribute precisely by escaping the past.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Contributions build on the past",
+          sentences: [
+            { text: "The statement's central insight is overwhelmingly true.", fn: "Topic sentence" },
+            { text: "To contribute to a field, one must first understand it — its problems, its methods, and its prior achievements — for without that grounding one cannot tell what is genuinely new from what is merely ignorant.", fn: "Explanation" },
+            { text: "Einstein mastered the physics of his day before overturning part of it; great novelists read deeply before writing; even rebels must know the rules they mean to break.", fn: "Example" },
+            { text: "Knowledge is cumulative, and each generation stands on the achievements of the last, so the most original work usually grows out of a thorough command of what already exists.", fn: "Develop", vocab: [{ term: "cumulative", gloss: "累積的；逐漸增加的" }] },
+            { text: "Even the boldest leap forward is usually a response to problems the field had already carefully defined.", fn: "Develop" },
+            { text: "In the overwhelming majority of cases, significant contribution begins in deep study of the past.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But 'impossible' overstates it",
+          sentences: [
+            { text: "However, the word impossible overstates a strong tendency into an iron law.", fn: "Pivot", moves: ["However"] },
+            { text: "Now and then an outsider, unburdened by a field's assumptions, makes a significant contribution precisely because she was not strongly shaped by its past.", fn: "Point", vocab: [{ term: "assumptions", gloss: "假設；成見" }] },
+            { text: "Newcomers from other disciplines, or self-taught amateurs, sometimes solve problems that insiders could not, by bringing fresh methods and ignoring the dead ends everyone else had accepted.", fn: "Explanation", vocab: [{ term: "disciplines", gloss: "學科；專業領域" }] },
+            { text: "Such cases are uncommon, but they exist, and a single one is enough to show that strong influence by the past is not strictly necessary for every contribution.", fn: "Develop" },
+            { text: "Usually the past is the foundation, but not in every case without exception.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Influence can constrain too",
+          sentences: [
+            { text: "Moreover, being strongly influenced by past achievements is not purely an advantage.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The same tradition that equips a contributor can also imprison her, training her to see only what the field already sees and to accept its limits as natural.", fn: "Point", vocab: [{ term: "imprison", gloss: "禁錮；束縛" }] },
+            { text: "Many breakthroughs required not deeper immersion in the past but a willingness to question and break from it, which heavy influence can actually discourage.", fn: "Explanation", vocab: [{ term: "immersion", gloss: "沉浸；投入" }] },
+            { text: "The ideal is to learn the past thoroughly and then hold it loosely, drawing on it without being ruled by it.", fn: "Develop" },
+            { text: "Influence by the past is usually necessary, but it must be transcended, not merely absorbed.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is largely right: significant contributions nearly always build on a strong grounding in a field's past achievements.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Knowledge is cumulative and originality usually grows from mastery, so the statement holds as a powerful rule; but impossible is too strong, since rare outsiders contribute by escaping the past, and influence itself must be questioned rather than simply obeyed.", fn: "Synthesis" },
+            { text: "Learn deeply from those who came before — then be ready, when you must, to leave them behind.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-122",
@@ -7577,6 +7846,58 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Nations should pass laws to preserve any remaining wilderness areas in their natural state, even if these areas could be developed for economic gain.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues the policy should be adopted because the economic gain forgone is temporary while the wilderness lost is permanent, and a firm law resists piecemeal erosion, while qualifying the absolute 'any' with narrow exceptions for genuine need.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When a forest can be felled for timber or a marsh drained for farmland, the wealth is tempting and the loss is easy to ignore — until it is too late.", fn: "Hook" },
+            { text: "The proposed policy meets that temptation head-on, urging nations to pass laws preserving any remaining wilderness in its natural state, even where the land could be developed for economic gain.", fn: "Context (the policy)" },
+            { text: "The policy is, on balance, wise and should be adopted, because the economic gain it forgoes is temporary while the wilderness it protects is irreplaceable; its one real weakness is the word any, which ought to admit narrow exceptions for genuine human necessity.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Temporary gain, permanent loss",
+          sentences: [
+            { text: "The heart of the policy is sound because the choice it addresses is between the temporary and the permanent.", fn: "Topic sentence" },
+            { text: "Economic gain from developing wilderness is real but finite — the timber is sold, the mine is exhausted, the profit is spent — whereas the wilderness destroyed to obtain it is gone for good.", fn: "Explanation", vocab: [{ term: "finite", gloss: "有限的" }] },
+            { text: "Because the loss is irreversible and the gain is fleeting, a law that errs on the side of preservation protects future generations who will have no chance to undo today's clearing.", fn: "Develop", vocab: [{ term: "irreversible", gloss: "不可逆的；無法挽回的" }] },
+            { text: "Adopting the policy trades a passing profit for a permanent inheritance, which is usually a wise bargain.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — A firm law resists erosion",
+          sentences: [
+            { text: "Furthermore, the likely consequences of leaving wilderness unprotected make the case stronger still.", fn: "Pivot", moves: ["Furthermore"] },
+            { text: "Without a firm law, each wild area is decided case by case, and short-term economic pressure almost always wins, so wilderness is lost in incremental pieces until little remains.", fn: "Point" },
+            { text: "Wilderness also provides services no development can replace — clean water, a stable climate, biodiversity, and refuge — whose value markets routinely fail to count.", fn: "Explanation", vocab: [{ term: "biodiversity", gloss: "生物多樣性" }] },
+            { text: "A standing law that says no by default corrects this bias, forcing a nation to weigh the true, long-term worth of wild land against the immediate profit of destroying it.", fn: "Develop" },
+            { text: "The policy's great advantage is that it resists the steady, piecemeal erosion that unprotected wilderness always suffers.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But 'any' needs exceptions",
+          sentences: [
+            { text: "However, the policy's blanket word any goes a step too far.", fn: "Pivot", moves: ["However"] },
+            { text: "A poor nation may sometimes face genuine necessity — land truly needed to feed, house, or power its people — and an absolute, exceptionless ban would ignore those legitimate human claims.", fn: "Point", vocab: [{ term: "legitimate", gloss: "正當的；合法的" }] },
+            { text: "A wiser law would preserve wilderness as the strong default while allowing rare, carefully justified exceptions, rather than forbidding every use of every acre regardless of circumstance.", fn: "Explanation" },
+            { text: "This preserves the policy's real strength — a heavy presumption against development — while avoiding the rigidity that would discredit it and invite evasion.", fn: "Develop", vocab: [{ term: "presumption", gloss: "推定；假定" }] },
+            { text: "Adopt the policy's firm protection, but build in narrow, honest exceptions for true necessity.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, nations should adopt this policy, for preserving wilderness even at an economic cost is usually the wiser long-term choice.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The gain from developing wild land is temporary and the loss permanent, and only a firm law can resist the constant pressure to trade the irreplaceable for a quick profit, so the policy is advantageous wherever it sets a strong presumption for preservation while allowing narrow exceptions for genuine need.", fn: "Synthesis" },
+            { text: "Forgo the easy profit and keep the wilderness; the gain would be spent in a generation, but the loss would last forever.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-123",
