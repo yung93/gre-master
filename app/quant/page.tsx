@@ -182,7 +182,7 @@ export default function QuantPage() {
             aria-controls="quant-topics"
             className="flex-1 min-w-0 text-left lg:pointer-events-none"
           >
-            <ProgressBar label="Overall mastery" value={masteredCount} total={QUANT.length} />
+            <ProgressBar label="Mastery" value={masteredCount} total={QUANT.length} />
           </button>
           <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
         </div>

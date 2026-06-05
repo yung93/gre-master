@@ -56,6 +56,9 @@ html, body {
   /* Prevent any stray horizontal scroll site-wide. `clip` (not `hidden`) avoids
      creating a scroll container, so it does not break sticky/fixed positioning. */
   overflow-x: clip;
+  /* Kill the rubber-band/overscroll bounce (and pull-to-refresh) so the header
+     stays put when you drag past the top of the page. */
+  overscroll-behavior: none;
 }
 
 ::selection {
