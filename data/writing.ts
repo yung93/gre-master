@@ -8649,6 +8649,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that it is helpful to view a challenging situation as an opportunity for personal growth. Others believe that reimagining challenging situations this way occupies too much of the focus one needs to face challenges effectively.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues the growth framing builds resilience and engagement, grants the second view's warning that reflection can distract from action, and reconciles them by making the reframe serve action; addresses both views.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Faced with a setback, one person asks how to survive it and another asks how it will make them stronger — and the difference matters.", fn: "Hook" },
+            { text: "Some believe it is helpful to view a challenging situation as an opportunity for personal growth; others believe that reimagining challenges this way takes up too much of the focus one needs to face them effectively.", fn: "Context (the two views)" },
+            { text: "The first view is closer to the truth: seeing challenges as chances to grow builds the resilience and perspective that help us meet them; yet the second view carries a real warning, since the reframe must support practical action, not replace it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The growth view helps",
+          sentences: [
+            { text: "Viewing a challenge as an opportunity for growth is genuinely helpful, above all for how we cope with it.", fn: "Topic sentence" },
+            { text: "A difficulty seen only as a threat breeds fear and helplessness, while the same difficulty seen as a chance to learn invites curiosity, effort, and hope.", fn: "Explanation" },
+            { text: "This framing builds resilience, turning setbacks from things that merely happen to us into things we can actually use.", fn: "Point", vocab: [{ term: "resilience", gloss: "韌性；復原力" }] },
+            { text: "It also keeps us engaged rather than defeated, since a person who expects to grow from hardship is far more likely to persist through it.", fn: "Develop", vocab: [{ term: "persist", gloss: "堅持；持續" }] },
+            { text: "By changing how a challenge feels, the growth view changes how well we face it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The second view's warning",
+          sentences: [
+            { text: "However, the second view rightly warns that the reframe can become a distraction.", fn: "Pivot", moves: ["However"] },
+            { text: "Someone so busy turning every problem into a lesson about themselves may lose sight of the problem itself, philosophizing when they should be acting.", fn: "Point", vocab: [{ term: "philosophizing", gloss: "空談哲理；空想" }] },
+            { text: "A pilot in a crisis needs to fly the plane, not reflect on how the emergency is shaping her character, and there are moments when growth-talk is simply in the way.", fn: "Explanation", vocab: [{ term: "reflect", gloss: "反思；沉思" }] },
+            { text: "When the reframe becomes self-absorbed rumination, it can drain the very focus and energy that solving the problem requires.", fn: "Develop", vocab: [{ term: "rumination", gloss: "反覆思量；沉思" }] },
+            { text: "The growth view harms when it replaces facing the challenge with merely thinking about it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The reframe should serve action",
+          sentences: [
+            { text: "Moreover, these two views are reconciled once we see that the reframe should serve action, not substitute for it.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The growth mindset is most useful as a background attitude that steadies and motivates us, while our active attention stays on solving the problem in front of us.", fn: "Point" },
+            { text: "Seen this way, viewing a challenge as an opportunity is not a distraction but a source of the calm and persistence that effective action needs.", fn: "Explanation" },
+            { text: "The danger the second view names is real only when reflection crowds out response, since kept in its place, the growth view strengthens response rather than weakening it.", fn: "Develop" },
+            { text: "Used as fuel rather than as escape, the growth view helps us face challenges, not avoid them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while the second view usefully warns against losing ourselves in reflection, the first is more nearly right: viewing challenges as opportunities for growth genuinely helps us face them.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Seen as a steadying attitude that builds resilience and keeps us engaged, the growth view supports effective action; it harms only when it turns into self-absorbed rumination, so the wise course is to grow through our challenges while keeping our focus on overcoming them.", fn: "Synthesis" },
+            { text: "Let a challenge make you stronger — but first, deal with the challenge.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-136",
@@ -8657,6 +8710,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that traveling to and living in numerous places increases one's ability to relate and connect to other people. Others believe that this ability is better cultivated by living in one place and developing a deep understanding of that community.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues breadth of place teaches us to bridge difference while depth in one community teaches intimate knowledge, then shows the two are complementary halves of the ability to connect; rejects the dichotomy.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Does the seasoned traveler or the lifelong neighbor understand people better?", fn: "Hook" },
+            { text: "Some believe that traveling to and living in many places increases one's ability to relate and connect to others; others believe this ability is better cultivated by living in one place and developing a deep understanding of that community.", fn: "Context (the two views)" },
+            { text: "Each view captures a real but partial truth, for breadth and depth cultivate different sides of our ability to connect, and the fullest capacity to relate to others draws on both rather than on either alone.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for breadth",
+          sentences: [
+            { text: "Living in many places genuinely widens our ability to relate to others.", fn: "Topic sentence" },
+            { text: "Encountering different cultures, customs, and ways of life teaches us that our own habits are not universal, breeding the humility and flexibility that real understanding requires.", fn: "Explanation", vocab: [{ term: "humility", gloss: "謙遜；謙卑" }] },
+            { text: "Someone who has lived among very different people learns to bridge difference, to find common ground with those who at first seem entirely foreign.", fn: "Point" },
+            { text: "Breadth of experience expands the range of people we can connect with, replacing prejudice with the firsthand knowledge that others, however different, are recognizably human.", fn: "Develop", vocab: [{ term: "prejudice", gloss: "偏見" }] },
+            { text: "Travel and movement enlarge the circle of those we are able to understand.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The case for depth",
+          sentences: [
+            { text: "However, depth offers something breadth cannot: the intimate knowledge of truly belonging.", fn: "Pivot", vocab: [{ term: "belonging", gloss: "歸屬感" }], moves: ["However"] },
+            { text: "Living long in one community lets us know people not as fascinating strangers but as neighbors, watching them through seasons of joy and grief until we understand them from the inside.", fn: "Point" },
+            { text: "Such depth teaches commitment, patience, and the kind of loyalty that only grows between people who stay, none of which a constant traveler ever has time to develop.", fn: "Explanation", vocab: [{ term: "loyalty", gloss: "忠誠；忠心" }] },
+            { text: "The rootless wanderer may know a little about many people but truly belong to none, and connection at its deepest requires the staying that depth demands.", fn: "Develop" },
+            { text: "To know one community profoundly is to learn a kind of human closeness that movement alone cannot teach.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — They are complementary",
+          sentences: [
+            { text: "Moreover, the two are not rivals but complementary halves of the ability to connect.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Breadth teaches us to reach across difference, while depth teaches us to bind closely to those near us, and a full human being needs both reach and roots.", fn: "Point" },
+            { text: "A person who has only traveled may connect widely but shallowly, while one who has only stayed may connect deeply but narrowly, each missing what the other has learned.", fn: "Explanation" },
+            { text: "The richest capacity to relate belongs to those who have known both the stranger and the neighbor, learning openness from the one and devotion from the other.", fn: "Develop", vocab: [{ term: "devotion", gloss: "奉獻；投入" }] },
+            { text: "The traveler's openness and the neighbor's loyalty are not opposites but the two skills any deep relationship needs.", fn: "Develop" },
+            { text: "Breadth and depth each teach half of what it means to connect, and together they teach the whole.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the question poses a false choice, since both views describe a genuine path to connecting with others.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Living in many places teaches us to bridge difference and meet the stranger, while living deeply in one teaches us to truly know the neighbor, so the fullest ability to relate to people grows not from breadth or depth alone but from drawing on both.", fn: "Synthesis" },
+            { text: "Wander enough to understand the stranger, and stay long enough to love the neighbor.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-137",
@@ -8665,6 +8772,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Young people's tendency to make extensive use of portable devices like smartphones and tablets has hurt their development of social skills. Reason: These devices encourage users to form artificial personalities and relationships online rather than fully and honestly engaging with the people around them.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that screens can crowd out the practice social skills require and invite an artificial self, then argues the claim overstates the harm since devices also forge genuine connection, and that the effect depends on use; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Watch a group of teenagers together yet each lost in a separate screen, and the worry writes itself.", fn: "Hook" },
+            { text: "The claim gives that worry a sharp form, arguing that young people's heavy use of portable devices has hurt their development of social skills, on the reason that these devices encourage artificial personalities and relationships online rather than honest engagement with the people around them.", fn: "Context (claim and reason)" },
+            { text: "There is real truth in both the claim and its reason — screens can crowd out the practice that social skills require — but each overstates the case, since devices also connect young people in genuine ways, and the harm depends on how the devices are used.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The real concern",
+          sentences: [
+            { text: "The claim points to a genuine danger.", fn: "Topic sentence" },
+            { text: "Social skills are learned through practice — reading faces, handling awkward silences, working through conflict in person — and time spent on a screen is time not spent in that demanding practice.", fn: "Explanation" },
+            { text: "A young person who relates to others mostly through curated posts and quick messages may never develop the harder skills of face-to-face presence.", fn: "Point", vocab: [{ term: "curated", gloss: "精心挑選的；經過修飾的" }] },
+            { text: "The reason has force too, for online life does invite a polished facade, performed for an audience rather than honestly shared.", fn: "Develop", vocab: [{ term: "facade", gloss: "表象；假象" }] },
+            { text: "Where screens replace real interaction, the worry the claim expresses is well founded.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the claim overstates it",
+          sentences: [
+            { text: "However, the claim and its reason paint too dark and one-sided a picture.", fn: "Pivot", moves: ["However"] },
+            { text: "Devices do not only isolate; they also connect, letting young people maintain friendships, find others who share their interests, and reach communities they could never have reached before.", fn: "Point", vocab: [{ term: "isolate", gloss: "孤立；隔離" }] },
+            { text: "Online interaction is not always artificial, since much of it deepens real friendships rather than replacing them, and for the shy or marginalized it can be a lifeline to genuine connection.", fn: "Explanation", vocab: [{ term: "marginalized", gloss: "邊緣化的；被排斥的" }] },
+            { text: "Every new medium, from the telephone onward, has been accused of ruining the young, yet each became a new way of relating rather than the end of relating.", fn: "Develop" },
+            { text: "Devices reshape how young people connect, but they do not simply destroy their ability to do so.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It depends on how they are used",
+          sentences: [
+            { text: "Moreover, the truth is that the harm depends on how devices are used, not on the devices themselves.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Used to avoid all face-to-face life, a device does stunt social skills; used to supplement real relationships, it can extend and enrich them.", fn: "Point" },
+            { text: "The danger the claim names is real when screens crowd out in-person practice entirely, but not when they are simply one tool among many for staying connected.", fn: "Explanation" },
+            { text: "The sensible response is not to condemn the devices but to ensure young people also get the irreplaceable practice of being together in person.", fn: "Develop", vocab: [{ term: "irreplaceable", gloss: "無可取代的" }] },
+            { text: "Whether devices hurt social skills is a question of balance, not a foregone conclusion.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim and its reason capture a real risk but exaggerate it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Heavy device use can indeed crowd out the in-person practice on which social skills depend, and online life can encourage an artificial self, but devices also forge genuine connections, so they harm social development only when they replace real interaction rather than supplement it.", fn: "Synthesis" },
+            { text: "Let young people have their screens, but make sure they also learn to look one another in the eye.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-138",
@@ -8673,6 +8833,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: When one is making a decision, it is better to have a limited number of options. Reason: The more options a person has, the more difficult it is to make a rational decision.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the reason's truth about choice overload, then argues the claim overstates it because too few options can force a poor result, and that the ideal is a moderate, well-chosen range; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Anyone who has stood frozen before a wall of fifty nearly identical products knows that more choice does not always feel like freedom.", fn: "Hook" },
+            { text: "The claim draws a lesson from that paralysis, holding that it is better to have a limited number of options when making a decision, on the reason that the more options one has, the harder it becomes to decide rationally.", fn: "Context (claim and reason)" },
+            { text: "The reason captures a genuine truth about the burden of too much choice, so the claim is often right; but it overstates the case, since too few options can be as bad as too many, and the real ideal is a moderate range, not a minimal one.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The reason is sound",
+          sentences: [
+            { text: "The reason rests on a well-documented feature of how we actually decide.", fn: "Topic sentence" },
+            { text: "Beyond a certain point, more options overwhelm rather than empower us, since comparing them all demands more attention and information than the mind can comfortably handle.", fn: "Explanation", vocab: [{ term: "overwhelm", gloss: "使不知所措；壓垮" }] },
+            { text: "Faced with too many choices, people often freeze, decide poorly, or avoid deciding at all, exhausted by the effort of weighing endless alternatives.", fn: "Point", vocab: [{ term: "alternatives", gloss: "選擇；替代方案" }] },
+            { text: "Each added option also raises the nagging fear of having chosen wrongly, so more choice can bring more anxiety and regret rather than more satisfaction.", fn: "Develop", vocab: [{ term: "regret", gloss: "懊悔；後悔" }] },
+            { text: "On the reason's central point — that too many options impair decision — the claim is right.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But too few is also bad",
+          sentences: [
+            { text: "However, the claim overstates the case, for too few options is its own kind of trap.", fn: "Pivot", moves: ["However"] },
+            { text: "A decision among only one or two choices is barely a choice at all, and may force us to settle for a poor option simply because nothing better was offered.", fn: "Point" },
+            { text: "Limiting options too severely risks excluding the very alternative that would have served us best, trading the burden of choosing for the cost of a worse outcome.", fn: "Explanation" },
+            { text: "Real freedom and good decisions both require enough options to find a genuinely fitting one, which a too-narrow set cannot provide.", fn: "Develop" },
+            { text: "Fewer options ease the decision but can worsen the result, so fewer is not always better.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The ideal is moderate",
+          sentences: [
+            { text: "Moreover, the truth the claim gropes toward is not that fewer is always better but that there is a healthy middle.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The best number of options is enough to include a genuinely good choice but few enough to compare without being overwhelmed, a moderate range rather than either extreme.", fn: "Point", vocab: [{ term: "moderate", gloss: "適度的；中等的" }] },
+            { text: "What matters is also the kind of options, since a few meaningfully different ones are far easier to choose among than dozens of trivial variations.", fn: "Explanation", vocab: [{ term: "trivial", gloss: "瑣碎的；微不足道的" }] },
+            { text: "So the wise course is not to minimize choice but to curate it, offering a manageable set of genuinely distinct and worthwhile options.", fn: "Develop" },
+            { text: "The goal is the right amount of choice, not the least.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the reason is largely sound, but the claim it supports goes too far.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Too many options really do make decisions harder, so limiting choice often helps; but too few options can force a poor result, so the ideal is not the fewest options but a moderate, well-chosen range that makes a good decision both possible and manageable.", fn: "Synthesis" },
+            { text: "Seek not the fewest choices, but few enough to decide and enough to decide well.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-139",
@@ -8681,6 +8894,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Because people increasingly feel compelled to share their personal details online, the right to privacy is eroding.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees privacy is eroding, then argues the claim's cause is too narrow because corporate and government collection do most of the damage, and that a right is not the same as its exercise; addresses the claim directly.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We broadcast our locations, opinions, purchases, and faces to the world, then wonder why nothing feels private anymore.", fn: "Hook" },
+            { text: "The claim draws the obvious conclusion, holding that because people increasingly feel compelled to share their personal details online, the right to privacy is eroding.", fn: "Context (the claim)" },
+            { text: "The claim is right that privacy is eroding, but its explanation is too simple, for voluntary oversharing is only part of the story, and a right does not vanish merely because people choose not to exercise it.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Privacy really is eroding",
+          sentences: [
+            { text: "The claim is correct about the basic fact: privacy really is in retreat.", fn: "Topic sentence" },
+            { text: "More of our lives is recorded, shared, and stored than ever before, and information once private — where we go, what we buy, whom we know — is now routinely exposed.", fn: "Explanation" },
+            { text: "Much of this we do voluntarily, posting details we would once have guarded and feeling steady social pressure to share ever more of our lives online.", fn: "Develop", vocab: [{ term: "voluntarily", gloss: "自願地；主動地" }] },
+            { text: "A generation ago, the details now scattered across distant servers would have lived only in our own memories.", fn: "Develop" },
+            { text: "On the central observation — that privacy is shrinking — the claim is plainly right.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But the cause is broader",
+          sentences: [
+            { text: "However, the claim blames the wrong culprit, or at least far too narrow a one.", fn: "Pivot", moves: ["However"] },
+            { text: "Privacy is eroded less by what people willingly post than by what is taken from them without their knowledge or consent.", fn: "Point", vocab: [{ term: "consent", gloss: "同意；認可" }] },
+            { text: "Corporations harvest vast data on people who share nothing willingly, and governments surveil citizens who never chose to be watched, so the deepest threats to privacy are not voluntary at all.", fn: "Explanation", vocab: [{ term: "surveil", gloss: "監視；監控" }] },
+            { text: "To pin the erosion of privacy mainly on people's compulsion to share is to excuse the powerful institutions that quietly do most of the eroding.", fn: "Develop" },
+            { text: "The most invasive watchers are precisely the ones we never knowingly agreed to.", fn: "Develop" },
+            { text: "Voluntary oversharing is real, but it is far from the main force destroying privacy.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — A right is not its exercise",
+          sentences: [
+            { text: "Moreover, the claim confuses the erosion of privacy in practice with the erosion of the right to it.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "A right to privacy does not disappear simply because people choose to share, since one can give away one's privacy while fully retaining the right to it, just as one can waive a right without losing it.", fn: "Point", vocab: [{ term: "waive", gloss: "放棄；棄權" }] },
+            { text: "The right erodes only when law and society stop protecting privacy, allowing it to be taken regardless of consent, which is a political failure rather than a personal one.", fn: "Explanation", vocab: [{ term: "erodes", gloss: "侵蝕；削弱" }] },
+            { text: "That people overshare is a cultural habit that could change tomorrow, whereas whether the right survives depends on whether we still defend it in law.", fn: "Develop" },
+            { text: "Privacy as a practice may be fading, but the right to it stands or falls on what we are willing to protect.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right that privacy is eroding, but wrong to trace it mainly to people's compulsion to share.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Privacy really is in retreat, yet the heaviest blows come from corporate and governmental collection rather than from voluntary posting, and the right to privacy survives our oversharing, eroding only if we let law and society stop defending it.", fn: "Synthesis" },
+            { text: "We are giving away our privacy, but we have not yet lost the right to demand it back.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-140",
@@ -8689,5 +8956,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that journalism should make news entertaining to keep the public engaged and informed. Others believe that this practice prioritizes entertainment and undermines the mission of journalism.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that accessible news serves an informed public, then argues that once entertainment becomes the goal it crowds out serious news and distorts what remains; sides with the second view while addressing both.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "If no one reads the news, does it matter how good it is? But if the news becomes a show, is it still news?", fn: "Hook" },
+            { text: "Some believe journalism should make news entertaining to keep the public engaged and informed; others believe that this practice prioritizes entertainment and undermines the mission of journalism.", fn: "Context (the two views)" },
+            { text: "Accessibility matters, and the first view rightly notes that news no one consumes informs no one; but the second view is closer to the truth, because once entertainment becomes the goal, it steadily corrupts the very mission journalism exists to serve.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for engaging news",
+          sentences: [
+            { text: "The first view rests on a real and important point.", fn: "Topic sentence" },
+            { text: "Journalism that no one reads or watches fails at its basic purpose, and dry, lifeless reporting can leave a public uninformed simply because it is too dull to follow.", fn: "Explanation" },
+            { text: "Making the news clear, vivid, and compelling is a genuine service, drawing people toward information they would otherwise ignore.", fn: "Point", vocab: [{ term: "compelling", gloss: "引人入勝的；扣人心弦的" }] },
+            { text: "A free society depends on an informed public, so anything that genuinely helps people pay attention to real news serves that public good.", fn: "Develop" },
+            { text: "Reaching an audience is the first condition of informing it, not in itself a betrayal of that duty.", fn: "Develop" },
+            { text: "Up to a point, making news engaging is not a betrayal of journalism but a means of fulfilling it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But entertainment as the goal corrupts",
+          sentences: [
+            { text: "However, the second view sees the deeper danger, for there is a difference between presenting news engagingly and making entertainment the goal.", fn: "Pivot", moves: ["However"] },
+            { text: "Once the aim is to entertain, the questions change from what is important to what is exciting, and the news drifts toward whatever is sensational rather than whatever matters.", fn: "Point", vocab: [{ term: "sensational", gloss: "聳動的；煽情的" }] },
+            { text: "Serious but unexciting stories — policy, foreign affairs, slow injustices — get crowded out by scandal, spectacle, and conflict, simply because they hold an audience better.", fn: "Explanation", vocab: [{ term: "spectacle", gloss: "奇觀；場面" }] },
+            { text: "The result is a public that feels informed while actually being entertained, knowing the latest sensation but ignorant of what truly affects their lives.", fn: "Develop" },
+            { text: "When entertainment leads, journalism's duty to inform quietly gives way to its appetite to amuse.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It distorts the news that remains",
+          sentences: [
+            { text: "Moreover, the pursuit of entertainment corrupts not only what is covered but how.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "To keep the show exciting, complex issues are flattened into drama, every story given heroes and villains, and measured truth sacrificed to a gripping narrative.", fn: "Point", vocab: [{ term: "narrative", gloss: "敘事；故事" }] },
+            { text: "News built to entertain rewards outrage and oversimplification, distorting the public's understanding even as it captures its attention.", fn: "Explanation", vocab: [{ term: "oversimplification", gloss: "過度簡化" }] },
+            { text: "The mission of journalism is to tell people the truth they need, and an industry measured by amusement will, in the end, tell them what they enjoy instead.", fn: "Develop" },
+            { text: "Entertainment does not just crowd out serious news; it warps the news that remains.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while making news accessible and engaging is a legitimate aim, the second view is right that prizing entertainment undermines journalism's mission.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "News must be readable enough to reach people, but the moment entertainment becomes the goal rather than the means, journalism trades importance for excitement and truth for drama, so its real task is to inform compellingly, never to amuse at the expense of informing.", fn: "Synthesis" },
+            { text: "Make the news engaging if you can, but never forget that its job is to inform, not to entertain.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
 ];
