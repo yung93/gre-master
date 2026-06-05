@@ -7163,6 +7163,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "We learn our most valuable lessons in life from struggling with our limitations rather than from enjoying our successes.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that struggle teaches more deeply than success because it exposes weakness and builds character, then qualifies the claim by noting that success too can instruct and that reflection is what turns either into a lesson.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Triumph feels like the great teacher, yet ask people what truly shaped them and most will point to a hard time, not a victory lap.", fn: "Hook" },
+            { text: "The claim captures this, holding that we learn our most valuable lessons from struggling with our limitations rather than from enjoying our successes.", fn: "Context (the claim)" },
+            { text: "The claim is largely right, for struggle forces a kind of growth that success rarely demands; yet it overstates the case slightly, since success too can teach, and the deepest learning often comes from how we respond to both.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Struggle teaches more",
+          sentences: [
+            { text: "Struggling with our limitations is a powerful teacher because it forces us to confront what we cannot yet do.", fn: "Topic sentence" },
+            { text: "Failure and difficulty expose our weaknesses plainly, demanding that we examine our methods, learn new skills, and develop the patience and resilience that ease never requires.", fn: "Explanation", vocab: [{ term: "resilience", gloss: "韌性；復原力" }] },
+            { text: "A student who fails an exam, an athlete who loses, an entrepreneur whose venture collapses each learns precisely where they fell short and what they must change.", fn: "Example", vocab: [{ term: "venture", gloss: "創業；冒險事業" }] },
+            { text: "The pain of falling short is uncomfortable, but it is precisely that discomfort that fixes the lesson firmly in the memory.", fn: "Develop" },
+            { text: "Struggle also builds character — humility, perseverance, and the capacity to recover — lessons about ourselves that no easy triumph could deliver.", fn: "Develop", vocab: [{ term: "perseverance", gloss: "毅力；堅持不懈" }] },
+            { text: "We learn most from our limitations because they show us, unmistakably, where we need to grow.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Why success teaches less",
+          sentences: [
+            { text: "By contrast, enjoying our successes tends to teach us comparatively little.", fn: "Pivot", moves: ["By contrast"] },
+            { text: "Success is comfortable, and comfort breeds complacency rather than reflection, so we rarely examine why we won as closely as we examine why we lost.", fn: "Point", vocab: [{ term: "complacency", gloss: "自滿；安於現狀" }] },
+            { text: "Victory can even mislead, tempting us to credit our own brilliance for outcomes that owed much to luck or circumstance.", fn: "Explanation" },
+            { text: "When everything goes well, we have little reason to question our assumptions, and so we learn to repeat what worked rather than to understand it.", fn: "Develop" },
+            { text: "Success can confirm us, but it seldom changes us the way struggle does.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But success and response matter too",
+          sentences: [
+            { text: "Still, the claim goes a little too far in dismissing success altogether.", fn: "Pivot", moves: ["Still"] },
+            { text: "Success, examined honestly, can teach real lessons — what our strengths are, what is worth pursuing, and how to build on what already works.", fn: "Point" },
+            { text: "And struggle does not teach automatically, since a person can fail repeatedly and learn nothing, growing only bitter, while another turns the same failure into wisdom.", fn: "Explanation" },
+            { text: "What matters most, then, is not struggle or success in itself but the reflection we bring to either, since an unexamined hardship teaches as little as an unexamined win.", fn: "Develop", vocab: [{ term: "reflection", gloss: "反思；自省" }] },
+            { text: "The lesson is not handed over by the experience itself but earned by the honesty we bring to examining it.", fn: "Develop" },
+            { text: "Struggle holds the richer lessons, but only for those willing to learn them.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right that our most valuable lessons usually come from struggling with our limitations rather than from enjoying our successes.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Struggle exposes our weaknesses and builds our character as comfort never can, so it is the deeper teacher; yet success too can instruct the honest mind, and in the end it is reflection that turns any experience, hard or happy, into a lesson worth keeping.", fn: "Synthesis" },
+            { text: "Our limitations teach us most, provided we have the courage to study them.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-112",
@@ -7171,6 +7226,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: While boredom is often expressed with a sense of self-satisfaction, it should really be a source of embarrassment. Reason: Boredom arises from a lack of imagination and self-motivation.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the kernel that habitual boredom can reveal an incurious mind, then argues both claim and reason overreach — boredom often springs from dull circumstances and can even spark creativity; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "There is a certain pride in announcing that one is bored, as if the world had simply failed to be interesting enough.", fn: "Hook" },
+            { text: "The claim challenges that pride, arguing that boredom, often expressed with self-satisfaction, should really embarrass us, on the reason that it arises from a lack of imagination and self-motivation.", fn: "Context (claim and reason)" },
+            { text: "The claim contains a real insight about chronic boredom, but both it and its reason overreach: boredom often springs from genuinely deadening circumstances rather than from any personal failing, and far from being merely shameful, it can even be useful.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The kernel of truth",
+          sentences: [
+            { text: "There is genuine truth in the claim when boredom becomes a habit.", fn: "Topic sentence" },
+            { text: "A person who is bored everywhere, who can find nothing worth doing in a world full of books, ideas, work, and people, has revealed something about the poverty of his own inner life.", fn: "Explanation", vocab: [{ term: "poverty", gloss: "貧乏；匱乏" }] },
+            { text: "To boast of such boredom, as though it were the world's fault, is indeed closer to a confession than a complaint.", fn: "Point" },
+            { text: "The imaginative, curious, self-driven person rarely runs out of things to engage, and in this sense the reason has a point.", fn: "Develop" },
+            { text: "Where boredom reflects a dull and incurious mind, the claim's rebuke lands.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But circumstances cause boredom too",
+          sentences: [
+            { text: "However, the reason wrongly blames boredom entirely on the bored.", fn: "Pivot", moves: ["However"] },
+            { text: "Much boredom arises not from a lack of imagination but from genuinely monotonous circumstances — tedious work, empty waiting, mindless tasks — that would dull even the liveliest mind.", fn: "Point", vocab: [{ term: "monotonous", gloss: "單調的；乏味的" }] },
+            { text: "A worker on a repetitive assembly line or a child trapped in a lifeless lesson is not failing to imagine, since the situation itself offers nothing for imagination to work with.", fn: "Explanation", vocab: [{ term: "repetitive", gloss: "重複的；單調的" }] },
+            { text: "To call such boredom embarrassing blames the victim and excuses the dreariness that caused it, when often the right response is to change the circumstances, not to feel ashamed.", fn: "Develop", vocab: [{ term: "dreariness", gloss: "沉悶；枯燥乏味" }] },
+            { text: "Boredom is frequently a signal about our surroundings, not a verdict on our character.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Boredom can be useful",
+          sentences: [
+            { text: "Moreover, boredom is not only often blameless but sometimes genuinely valuable.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Far from being a mark of an empty mind, boredom can be the mind's signal that it craves a fresh stimulus, and it is often the very spur to creativity.", fn: "Point", vocab: [{ term: "stimulus", gloss: "刺激；激勵" }] },
+            { text: "Many people report that their best ideas come in idle, bored moments, when the mind, left without distraction, begins to wander and invent.", fn: "Explanation" },
+            { text: "Boredom can also prompt healthy change, pushing us to seek better work, deeper interests, or rest we genuinely needed, none of which is cause for embarrassment.", fn: "Develop" },
+            { text: "A walk taken out of restlessness, or a daydream born of an idle afternoon, has launched more inventions than any amount of forced diligence.", fn: "Develop" },
+            { text: "Used well, boredom is less a failing to hide than a prompt to heed.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim rightly criticizes the smug, habitual boredom of an incurious mind, but it and its reason claim far too much.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Boredom is not always a failure of imagination, since it often arises from genuinely dull circumstances and can even spark creativity and useful change, so while self-satisfied, chronic boredom may deserve a little embarrassment, boredom as such does not.", fn: "Synthesis" },
+            { text: "Be embarrassed not by being bored, but by having nothing within you when the world goes quiet.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-113",
@@ -7179,6 +7288,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that the most important qualities of an effective teacher are understanding and empathy. Others believe that it is more important for teachers to be rigorous and demanding in their expectations for students.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the dichotomy, arguing that empathy and rigor are not rivals but partners — high demands without understanding crush students, and understanding without demands leaves them where they are; addresses both views.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We remember two kinds of great teachers: the kind one who believed in us, and the hard one who would not let us coast.", fn: "Hook" },
+            { text: "Some believe the most important qualities of an effective teacher are understanding and empathy; others believe it is more important for teachers to be rigorous and demanding in their expectations.", fn: "Context (the two views)" },
+            { text: "The choice is a false one: the best teaching unites both, and far from competing, empathy and rigor depend on each other, since high demands without understanding crush students, while understanding without high demands leaves them where they are.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for empathy",
+          sentences: [
+            { text: "Understanding and empathy are essential because learning is personal and often difficult.", fn: "Topic sentence" },
+            { text: "A teacher who knows her students — their fears, their gaps, and their circumstances — can meet them where they are, encourage them through frustration, and build the trust and rapport that learning requires.", fn: "Explanation", vocab: [{ term: "rapport", gloss: "融洽關係；和諧" }] },
+            { text: "Without empathy, a teacher cannot tell why a student is struggling, and may mistake fear or confusion for laziness, losing the very pupils who most need help.", fn: "Develop" },
+            { text: "Students will work hardest for a teacher who they believe genuinely wants them to succeed, and will give up for one who seems not to care.", fn: "Develop" },
+            { text: "Empathy is what allows a teacher to reach a student at all.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The case for rigor",
+          sentences: [
+            { text: "Yet rigor and high expectations are just as essential.", fn: "Pivot", moves: ["Yet"] },
+            { text: "Students often rise or sink to the level expected of them, and a teacher who demands little quietly tells students that little is expected of their potential.", fn: "Point", vocab: [{ term: "potential", gloss: "潛力；潛能" }] },
+            { text: "Real learning is hard, and a demanding teacher who refuses to accept sloppy work pushes students to discover capacities they did not know they had.", fn: "Explanation", vocab: [{ term: "capacities", gloss: "能力；才能" }] },
+            { text: "Empathy without rigor can curdle into indulgence and easy praise, comforting students while leaving them unchallenged and unprepared.", fn: "Develop", vocab: [{ term: "indulgence", gloss: "縱容；放任" }] },
+            { text: "Low expectations, however warmly offered, are a quiet way of giving up on a student before she has even begun.", fn: "Develop" },
+            { text: "To demand a great deal of a student is itself a form of respect.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — They depend on each other",
+          sentences: [
+            { text: "Moreover, the two qualities are not rivals but partners, each making the other work.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Rigor without empathy is mere harshness, demanding what a student cannot yet give and breaking rather than building him.", fn: "Point", vocab: [{ term: "harshness", gloss: "嚴厲；苛刻" }] },
+            { text: "But empathy makes rigor humane and effective, for a teacher who understands her students can push them hard precisely because she knows how far each can be stretched.", fn: "Explanation" },
+            { text: "The best teachers hold high standards and believe their students can meet them, combining warmth and demand into a single act of faith in what a student might become.", fn: "Develop" },
+            { text: "The very demand that would wound a discouraged child can inspire one who feels understood and supported.", fn: "Develop" },
+            { text: "Understanding tells a teacher how to demand; rigor gives that understanding something to aim at.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the question wrongly forces a choice, since the most effective teachers are both deeply understanding and genuinely demanding.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Empathy without rigor leaves students comfortable but unchallenged, and rigor without empathy leaves them challenged but crushed, so real teaching weds the two, using understanding to make high demands both bearable and transformative.", fn: "Synthesis" },
+            { text: "The teacher who expects much and understands deeply gives a student both a goal and the means to reach it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-114",
@@ -7187,6 +7351,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: Though often considered an objective pursuit, learning about the historical past requires creativity. Reason: Because we can never know the past directly, we must reconstruct it by imaginatively interpreting historical accounts, documents, and artifacts.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms the reason that the past survives only in fragments, agrees the claim follows because reconstruction is creative, then qualifies that this creativity is disciplined interpretation bound by evidence, not free invention.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "We imagine the historian as a kind of accountant of the past, simply tallying what happened — but the past leaves no ledger, only fragments.", fn: "Hook" },
+            { text: "The claim insists that learning about the historical past, though often thought objective, requires creativity, on the reason that we can never know the past directly and must reconstruct it by imaginatively interpreting accounts, documents, and artifacts.", fn: "Context (claim and reason)" },
+            { text: "The claim and its reason are largely right: history is necessarily an act of imaginative reconstruction, not passive recording; but creativity here means disciplined interpretation, not free invention, and that distinction keeps history from collapsing into fiction.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The past survives only in fragments",
+          sentences: [
+            { text: "The reason rests on an undeniable fact about the past: it is gone.", fn: "Topic sentence" },
+            { text: "We cannot observe the fall of Rome or the signing of a treaty; all we have are scattered documents, ruins, and accounts, each one partial, biased, and incomplete.", fn: "Explanation", vocab: [{ term: "biased", gloss: "有偏見的" }] },
+            { text: "From these fragments the historian must build a coherent picture, filling gaps, weighing conflicting sources, and inferring what the evidence only suggests.", fn: "Develop", vocab: [{ term: "inferring", gloss: "推斷；推論" }] },
+            { text: "Even the sources we do possess were written by people with their own purposes, blind spots, and agendas, and so must be read with suspicion.", fn: "Develop" },
+            { text: "Since the past survives only in traces, knowing it must mean reconstructing it, not simply reading it off.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Reconstruction is creative",
+          sentences: [
+            { text: "Indeed, such reconstruction is unavoidably creative.", fn: "Pivot", moves: ["Indeed"] },
+            { text: "To turn a heap of documents into a meaningful account requires imagination — to picture vanished worlds, to grasp why people acted as they did, and to see the pattern connecting isolated facts.", fn: "Point", vocab: [{ term: "imagination", gloss: "想像力" }] },
+            { text: "Historians studying the very same evidence reach different interpretations precisely because each brings a creative vision to the gaps the evidence leaves open.", fn: "Explanation", vocab: [{ term: "interpretations", gloss: "詮釋；解讀" }] },
+            { text: "Two honest scholars, given the same letters and ruins, may tell genuinely different yet equally defensible stories.", fn: "Develop" },
+            { text: "Choosing what matters, framing a narrative, and entering imaginatively into a foreign age are all creative acts, no less than they are scholarly ones.", fn: "Develop" },
+            { text: "The objective-looking work of history is shot through with creative judgment.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But creativity is disciplined",
+          sentences: [
+            { text: "Still, this creativity must be carefully distinguished from mere invention.", fn: "Pivot", moves: ["Still"] },
+            { text: "The historian's imagination is bound at every step by the evidence, for she may interpret the documents, but she may not contradict or fabricate them.", fn: "Point", vocab: [{ term: "fabricate", gloss: "捏造；偽造" }] },
+            { text: "This is what separates history from historical fiction, since both are imaginative, but history's creativity answers to facts that can prove it wrong.", fn: "Explanation" },
+            { text: "A historian who simply invents whatever suits her has stopped doing history and started writing a novel.", fn: "Develop" },
+            { text: "So the claim is right that history requires creativity, but it is a disciplined creativity, free to interpret yet always accountable to the record.", fn: "Develop" },
+            { text: "History is imaginative reconstruction under the constant constraint of evidence.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason hold: because we reach the past only through its fragments, learning about it genuinely requires creativity.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "History is no mere transcription of objective facts but an imaginative reconstruction of a world we cannot see directly, and its creativity, disciplined by evidence rather than freed from it, is exactly what makes the discipline both demanding and alive.", fn: "Synthesis" },
+            { text: "The past does not simply hand itself to us; we must imagine it back into being, faithfully.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-115",
@@ -7195,6 +7414,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: No act is done purely for the benefit of others. Reason: All actions — even those that seem to be done for other people — are based on self-interest.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): rejects the claim by exposing the reason as an unfalsifiable redefinition of self-interest that confuses an act's byproduct with its motive, then points to genuine self-sacrifice as decisive counter-evidence; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "When a stranger dives into a freezing river to save a drowning child, are we really to believe he did it for himself?", fn: "Hook" },
+            { text: "The claim says we must, asserting that no act is ever done purely for the benefit of others, on the reason that all actions, even apparently selfless ones, are based on self-interest.", fn: "Context (claim and reason)" },
+            { text: "The claim is mistaken, and its reason rests on a trick: by defining self-interest so broadly that it swallows everything, the argument makes itself impossible to disprove, while genuine self-sacrifice shows that purely other-directed acts do exist.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The reason cannot be disproved",
+          sentences: [
+            { text: "The reason wins only by cheating, stretching self-interest until the word means almost nothing.", fn: "Topic sentence" },
+            { text: "When someone sacrifices for others and feels satisfaction, the egoist says he acted for that satisfaction; if he feels nothing, the egoist says he acted to avoid guilt, so there is no possible act the theory cannot explain away.", fn: "Explanation", vocab: [{ term: "egoist", gloss: "利己主義者" }] },
+            { text: "But a claim that no evidence could ever refute is not a profound truth; it is an empty one, true only because it has been made unfalsifiable by definition.", fn: "Develop", vocab: [{ term: "unfalsifiable", gloss: "無法證偽的" }] },
+            { text: "An argument that counts every act as selfish, no matter what, has explained nothing about our real motives.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It confuses byproduct with motive",
+          sentences: [
+            { text: "Moreover, the reason confuses the byproducts of an act with its purpose.", fn: "Pivot", vocab: [{ term: "byproducts", gloss: "副產品；附帶結果" }], moves: ["Moreover"] },
+            { text: "That a kind act also brings the doer pleasure does not show that pleasure was the goal, since the satisfaction may simply be the natural result of caring genuinely about someone else.", fn: "Point" },
+            { text: "A parent who feeds her child before herself feels good because she loves the child, not the other way around, so her motive is the child's good and her own feeling a mere consequence.", fn: "Explanation" },
+            { text: "We do not say a doctor heals patients merely for the salary because she is paid; the payment accompanies the work without being its point.", fn: "Develop" },
+            { text: "To insist that the feeling must be the real aim is to assume the very thing in question, reversing cause and effect to protect the theory.", fn: "Develop" },
+            { text: "Benefiting from a good act is not the same as doing it for that benefit.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Genuine altruism exists",
+          sentences: [
+            { text: "Most decisively, there are acts that cannot be squared with self-interest at all.", fn: "Pivot", moves: ["Most decisively"] },
+            { text: "A soldier who throws himself on a grenade to save his comrades gains nothing and loses everything, including the very self that self-interest is supposed to serve.", fn: "Point", vocab: [{ term: "comrades", gloss: "同袍；戰友" }] },
+            { text: "An anonymous donor who will never be thanked, or a stranger who helps at real cost and walks away, acts for others with no benefit left to collect.", fn: "Explanation", vocab: [{ term: "anonymous", gloss: "匿名的；不具名的" }] },
+            { text: "Such acts are rare, but they need only exist to refute a claim that no act is ever purely for others, since a single genuine sacrifice is enough.", fn: "Develop" },
+            { text: "Pure altruism may be uncommon, but it is plainly real.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, both the claim and its reason fail.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The reason saves itself only by defining self-interest so loosely that nothing could ever count against it, and it mistakes the pleasant byproduct of a generous act for its motive, while genuine self-sacrifice proves that some acts truly are done purely for the benefit of others.", fn: "Synthesis" },
+            { text: "We are not always selfish; sometimes we act, simply and wholly, for someone else.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-116",
@@ -7203,6 +7475,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "To understand the most important characteristics of a society, one must study its major cities.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that cities concentrate and lead a society, then argues the statement overreaches because much that is essential lives outside the cities and the city can misrepresent the whole; qualified and well organized.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A nation's great cities dazzle the visitor and seem to hold everything that matters about it.", fn: "Hook" },
+            { text: "The statement trusts that impression, claiming that to understand the most important characteristics of a society, one must study its major cities.", fn: "Context (the statement)" },
+            { text: "Cities reveal a great deal about a society and are an indispensable part of any study of it, but the statement claims too much: much of what is essential lives outside the cities, and cities can mislead as well as reveal.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Cities reveal much",
+          sentences: [
+            { text: "There is much truth in the statement, for cities concentrate a society's life.", fn: "Topic sentence" },
+            { text: "A major city gathers the wealth, power, art, commerce, and diversity of a society in one place, putting its ambitions and its conflicts vividly on display.", fn: "Explanation", vocab: [{ term: "diversity", gloss: "多樣性；多元" }] },
+            { text: "To study a nation's politics, economy, and culture, one naturally looks to its capitals and great cities, where these forces are concentrated and most visible.", fn: "Example" },
+            { text: "The currents that move a nation are usually strongest and most visible where its people are packed most densely together.", fn: "Develop" },
+            { text: "Cities also tend to lead, generating the trends and tensions that shape a society's future, so they reveal not only what it is but where it is going.", fn: "Develop" },
+            { text: "No serious understanding of a society could ignore its major cities.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But much lies outside them",
+          sentences: [
+            { text: "However, to say one must study only the cities ignores how much of a society lives elsewhere.", fn: "Pivot", moves: ["However"] },
+            { text: "The countryside, small towns, and regions often preserve a society's deepest traditions, values, and ways of life, which the cosmopolitan city has long left behind.", fn: "Point", vocab: [{ term: "cosmopolitan", gloss: "國際化的；世界性的" }] },
+            { text: "A nation's religion, family structure, dialects, and folk culture frequently survive most strongly far from its urban centers, and to skip them is to miss much of what defines it.", fn: "Explanation" },
+            { text: "In many societies most people do not live in major cities at all, so to study only the cities is to study a minority and call it the whole.", fn: "Develop", vocab: [{ term: "minority", gloss: "少數；少數族群" }] },
+            { text: "What is most important about a society is often kept not in its cities but in the places the cities overlooked.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — And cities can mislead",
+          sentences: [
+            { text: "Moreover, the major city can actively distort the picture.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Cities are frequently unrepresentative — wealthier, more diverse, and more liberal than the nation around them — so a visitor who studies only the capital may badly misjudge the society as a whole.", fn: "Point", vocab: [{ term: "unrepresentative", gloss: "不具代表性的" }] },
+            { text: "Many have mistaken a glittering, cosmopolitan capital for the whole country, only to be stunned when the rest of the nation revealed very different values.", fn: "Explanation" },
+            { text: "To understand a society truly, one must set the city against the country and read them together, for each corrects the other's distortions.", fn: "Develop", vocab: [{ term: "distortions", gloss: "扭曲；偏差" }] },
+            { text: "The city is one crucial window onto a society, but a window that can deceive if it is the only one.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, studying a society's major cities is necessary but not sufficient for understanding it.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Cities concentrate and lead a society and must be studied closely, yet much of what is most important survives beyond them, and the city can misrepresent the whole, so genuine understanding requires reading the cities alongside the regions, not in place of them.", fn: "Synthesis" },
+            { text: "To know a society, study its cities — and then go and see everywhere its cities are not.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-117",
