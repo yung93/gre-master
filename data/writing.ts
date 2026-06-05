@@ -6790,6 +6790,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The general welfare of a nation's people is a better indication of that nation's greatness than are the achievements of its rulers, artists, or scientists.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): agrees that welfare is the better indicator because it is representative of the whole nation, cannot be faked, and tends to underlie achievement, while granting that great achievements remain a real and related sign of greatness.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Confronted with two nations — one of glittering monuments and miserable masses, the other of modest art but healthy, free, and educated citizens — which would we call the greater?", fn: "Hook" },
+            { text: "The claim answers without hesitation, holding that the general welfare of a nation's people is a better indication of its greatness than the achievements of its rulers, artists, or scientists.", fn: "Context (the claim)" },
+            { text: "The claim is right: welfare is the better indicator because it is more representative, harder to fake, and more durable than achievement, even though great achievements remain a real and related sign of a nation's strength.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Welfare represents the whole",
+          sentences: [
+            { text: "Welfare is the better indicator first because it represents the whole nation rather than a fraction of it.", fn: "Topic sentence", moves: ["first"] },
+            { text: "The achievements of rulers, artists, and scientists are the work of a tiny, gifted elite, and they tell us what a nation's best can do, not how its ordinary people live.", fn: "Explanation", vocab: [{ term: "elite", gloss: "精英；菁英階層" }] },
+            { text: "A nation can produce world-famous artists while most of its people go hungry, so its celebrated art tells us little about the condition of the many.", fn: "Example" },
+            { text: "General welfare, by contrast, is a measure of the entire population, sampling the whole rather than its rare peaks, and so it indicates the state of the nation far more faithfully.", fn: "Develop", vocab: [{ term: "faithfully", gloss: "忠實地；如實地" }] },
+            { text: "Because it speaks for everyone and not just the gifted few, welfare is the more representative measure.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Welfare cannot be faked",
+          sentences: [
+            { text: "Furthermore, welfare is the better indicator because it cannot be counterfeited.", fn: "Pivot", moves: ["Furthermore"] },
+            { text: "A repressive or deeply unequal regime can still fund a few brilliant artists or scientists and parade them as proof of greatness, masking the suffering beneath.", fn: "Point", vocab: [{ term: "repressive", gloss: "壓制的；專制的" }] },
+            { text: "But the broad health, freedom, and prosperity of an entire population cannot be staged for show, since either the many live well or they plainly do not.", fn: "Explanation" },
+            { text: "Achievement can be a glittering surface laid over a rotten foundation, whereas widespread welfare is the foundation itself, visible to anyone who looks.", fn: "Develop" },
+            { text: "Greatness that can be faked by a handful of names is no sure greatness; welfare, which cannot, is the truer test.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Achievement is related, not opposed",
+          sentences: [
+            { text: "Still, the claim need not despise achievement, for the two are not enemies.", fn: "Pivot", moves: ["Still"] },
+            { text: "Great achievements are a genuine sign of a nation's vitality, and a people who are healthy, free, and educated will tend to produce more of them.", fn: "Point", vocab: [{ term: "vitality", gloss: "活力；生命力" }] },
+            { text: "The point is not that achievements are worthless, but that they are a partial and unreliable indicator, while welfare is comprehensive and dependable.", fn: "Explanation", vocab: [{ term: "comprehensive", gloss: "全面的；綜合的" }] },
+            { text: "Where welfare is high, achievement usually follows; where achievement is high but welfare low, we should suspect a greatness that serves the few at the expense of the many.", fn: "Develop" },
+            { text: "Welfare is the better indicator precisely because it captures what achievement alone can hide.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is sound: the general welfare of a nation's people indicates its greatness better than the achievements of its rulers, artists, or scientists.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Welfare measures the whole nation rather than a gifted fraction, it cannot be faked as a few celebrated achievements can, and it tends to be the very ground from which real achievement grows, so it is the fuller and more honest sign of greatness.", fn: "Synthesis" },
+            { text: "Read a nation's greatness in the lives of its many, not the names of its few.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-106",
@@ -6798,6 +6851,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best test of an argument is the argument's ability to convince someone with an opposing viewpoint.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): credits persuading an opponent as a demanding test, then argues it is not the best one because sound arguments can fail to convince and unsound ones often succeed; relocates the best test in truth and validity.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "An argument that changes an opponent's mind feels like a victory, proof that we were right all along.", fn: "Hook" },
+            { text: "The statement makes that feeling into a standard, holding that the best test of an argument is its ability to convince someone who holds an opposing viewpoint.", fn: "Context (the statement)" },
+            { text: "Persuading an opponent is a demanding and valuable test, but it is not the best one, because soundness and persuasiveness are not the same: good arguments sometimes fail to convince, and bad ones often succeed.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The test has real value",
+          sentences: [
+            { text: "The statement points to something genuinely valuable.", fn: "Topic sentence" },
+            { text: "To convince someone who disagrees, an argument must do more than comfort those who already agree; it must meet objections, rest on premises the other side accepts, and survive hostile scrutiny.", fn: "Explanation", vocab: [{ term: "premises", gloss: "前提；假設" }, { term: "scrutiny", gloss: "審查；仔細檢視" }] },
+            { text: "It is one thing to please an ally who already shares our starting point, and quite another to move someone who begins by rejecting the very premises we rely on.", fn: "Develop" },
+            { text: "An argument that can cross that divide has been tested against resistance, not merely applauded by friends, and that is a real mark of strength.", fn: "Develop" },
+            { text: "Persuading the unconvinced is indeed a sterner test than preaching to the converted.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Sound arguments can fail",
+          sentences: [
+            { text: "However, the ability to convince an opponent is not the same as being right.", fn: "Pivot", moves: ["However"] },
+            { text: "A sound argument may fail to persuade for reasons that have nothing to do with its quality, since the opponent may be stubborn, biased, ignorant, or simply unwilling to be moved.", fn: "Point", vocab: [{ term: "biased", gloss: "有偏見的" }] },
+            { text: "Many true and well-reasoned arguments — that the earth orbits the sun, that disease is spread by germs — were long rejected by opponents who could not or would not accept them.", fn: "Explanation" },
+            { text: "Their arguments were no weaker for being resisted, since the failure lay in the audience, not in the reasoning itself.", fn: "Develop" },
+            { text: "If persuading the unwilling were the best test, then every truth that met fierce resistance would have to count as a weak argument, which is absurd.", fn: "Develop" },
+            { text: "An argument can be excellent and still fail to convince a closed mind.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Bad arguments often persuade",
+          sentences: [
+            { text: "Moreover, the test cuts the other way too, since bad arguments frequently do convince.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Demagogues, advertisers, and manipulators persuade opponents every day, not by sound reasoning but by flattery, fear, and clever distortion.", fn: "Point", vocab: [{ term: "manipulators", gloss: "操縱者；擺布他人者" }] },
+            { text: "Persuasion depends on the audience as much as on the argument, so an appeal to emotion or self-interest may convince where careful logic fails.", fn: "Explanation", vocab: [{ term: "logic", gloss: "邏輯；推理" }] },
+            { text: "The most persuasive voice in the room is too often the one least burdened by the truth, armed with confidence where it lacks evidence.", fn: "Develop" },
+            { text: "A standard that would crown such tactics the best argument simply because they worked confuses winning with being right.", fn: "Develop" },
+            { text: "Since unsound arguments can persuade and sound ones can fail, persuasion alone cannot be the best test.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, convincing an opponent is a worthy and demanding test of an argument, but not the best one.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The best test of an argument is whether its premises are true and its reasoning valid, for persuasion measures the audience as much as the argument, and an argument's worth lies in its soundness, not merely in whom it happens to convince.", fn: "Synthesis" },
+            { text: "Ask not only whether an argument wins, but whether it deserves to.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-107",
@@ -6806,6 +6914,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Nations should pass laws to preserve any remaining wilderness areas in their natural state.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms that wilderness needs strong legal protection, then qualifies the absolutes 'any' and 'in their natural state' by arguing for prioritized protection and limited sustainable use; balanced and well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "The world's wild places are shrinking fast, and once a wilderness is gone, no law can bring it back.", fn: "Hook" },
+            { text: "In response the claim urges that nations should pass laws to preserve any remaining wilderness areas in their natural state.", fn: "Context (the claim)" },
+            { text: "The impulse behind the claim is sound, and strong legal protection for wilderness is urgently needed; but the words any and in their natural state make the claim too absolute, for wise preservation requires judgment about which areas and what uses, not a blanket rule.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Wilderness needs the law",
+          sentences: [
+            { text: "The claim is right that wilderness deserves the protection of law.", fn: "Topic sentence" },
+            { text: "Left to the market, wild land is steadily cleared, drained, and built over, because its enormous long-term value — clean water, a stable climate, biodiversity — is rarely priced in the short term.", fn: "Explanation", vocab: [{ term: "biodiversity", gloss: "生物多樣性" }] },
+            { text: "A market that profits from clearing land has every reason to discount what is lost and no reason of its own to stop.", fn: "Develop" },
+            { text: "Only law can defend what the market undervalues and individuals cannot protect alone, holding wilderness in trust against the pressure of immediate gain.", fn: "Develop", vocab: [{ term: "undervalues", gloss: "低估；輕視" }] },
+            { text: "On the core point — that nations should use law to preserve wilderness — the claim is clearly correct.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But 'any' is too broad",
+          sentences: [
+            { text: "However, the word any sweeps too broadly.", fn: "Pivot", moves: ["However"] },
+            { text: "Not every remaining patch of undeveloped land is a precious wilderness, and treating each one as untouchable would tie a nation's hands where real human needs are pressing.", fn: "Point", vocab: [{ term: "untouchable", gloss: "不可碰觸的；神聖不可侵犯的" }] },
+            { text: "A poor country may genuinely need some of its land for housing, farming, or energy, and an absolute ban on touching any wild area ignores the legitimate claims of its own people.", fn: "Explanation", vocab: [{ term: "legitimate", gloss: "正當的；合法的" }] },
+            { text: "To forbid all use of every wild acre, however small or ordinary, would invite resentment and quiet defiance rather than lasting protection.", fn: "Develop" },
+            { text: "Sensible protection sets priorities — defending the most valuable and irreplaceable areas first — rather than freezing every acre regardless of worth or need.", fn: "Develop" },
+            { text: "Protection should be strong and well-targeted, not indiscriminate.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — And 'natural state' is too rigid",
+          sentences: [
+            { text: "Moreover, the demand that wilderness stay strictly in its natural state is itself too rigid.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Carefully regulated human presence — sustainable tourism, scientific research, the traditional livelihoods of indigenous peoples — can coexist with conservation and even help to fund and defend it.", fn: "Point", vocab: [{ term: "sustainable", gloss: "可持續的；永續的" }] },
+            { text: "Insisting on absolute, untouched purity can actually harm preservation, by setting the goal so high that it loses the public and political support it needs.", fn: "Explanation" },
+            { text: "Well-managed visitors who come to value a wilderness often become its fiercest defenders.", fn: "Develop" },
+            { text: "The realistic aim is to keep wilderness genuinely wild and ecologically intact, not to forbid every human footprint within it.", fn: "Develop" },
+            { text: "Preserving wilderness well means protecting its character, not enforcing a museum-like stillness.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, nations certainly should pass strong laws to preserve their wilderness, so the claim's heart is right.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "But the absolutes any and in their natural state go too far, since wise preservation protects the most valuable areas as a priority and allows the limited, sustainable use that can coexist with keeping them wild, achieving real protection without an unworkable rigidity.", fn: "Synthesis" },
+            { text: "Guard the wild fiercely, but guard it wisely, not by a rule that admits no judgment.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-108",
@@ -6814,6 +6977,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "In any field — business, politics, education, government — those in power should be required to step down after five years.",
     directions: D_POLICY,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that term limits guard against entrenched political power, then argues that applying them to any field is too blunt, discarding valuable experience and mistaking long-held power for unaccountable power; weighs the policy's consequences.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Power has a way of digging in, and few who hold it ever leave willingly.", fn: "Hook" },
+            { text: "One proposed remedy is a sweeping policy requiring those in power in any field — business, politics, education, or government — to step down after five years.", fn: "Context (the policy)" },
+            { text: "The policy rightly targets the dangers of entrenched power, and fixed limits make real sense for political office; but applied to any field without distinction, it is too blunt, discarding valuable experience and ignoring how different kinds of power actually work.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The danger it addresses",
+          sentences: [
+            { text: "The policy responds to a genuine and serious problem.", fn: "Topic sentence" },
+            { text: "Those who hold power too long tend to grow complacent, surround themselves with yes-men, and confuse their own interest with the good of the institution.", fn: "Explanation", vocab: [{ term: "complacent", gloss: "自滿的；安於現狀的" }] },
+            { text: "In politics especially, leaders who cannot be removed drift toward corruption and tyranny, which is why fixed terms have long been a safeguard of free government.", fn: "Example", vocab: [{ term: "tyranny", gloss: "暴政；專制" }] },
+            { text: "Where power is hard to check, a forced limit on tenure is a wise protection.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But it discards experience",
+          sentences: [
+            { text: "However, a blanket five-year limit would throw away hard-won experience along with the danger.", fn: "Pivot", moves: ["However"] },
+            { text: "Much valuable work depends on expertise, relationships, and continuity that take far longer than five years to build, and forcing every leader out on a fixed schedule would squander it.", fn: "Point", vocab: [{ term: "continuity", gloss: "延續性；連貫性" }] },
+            { text: "A surgeon, a researcher, a teacher, or a skilled manager often does her best work after decades, and removing her at her peak would harm the very institution the policy means to protect.", fn: "Explanation" },
+            { text: "Experience is not a danger to be term-limited away but an asset that years of patient practice slowly accumulate.", fn: "Develop" },
+            { text: "Not all power is alike, for the threat posed by a long-serving dictator is nothing like that posed by a veteran professor or a trusted family doctor.", fn: "Develop" },
+            { text: "A rule that treats all authority as equally dangerous would do real damage in fields where experience is everything.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The consequences would be perverse",
+          sentences: [
+            { text: "Moreover, the likely consequences of so broad a rule would often be perverse.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Constant forced turnover can mean perpetual inexperience, lost knowledge, and organizations that never benefit from a steady, accountable hand.", fn: "Point", vocab: [{ term: "turnover", gloss: "人員流動；更替" }] },
+            { text: "The real problem is not power itself but unaccountable power, and that is better met by elections, oversight, and transparency than by automatically expelling everyone competent after five years.", fn: "Explanation", vocab: [{ term: "transparency", gloss: "透明度；公開" }] },
+            { text: "Strip every institution of its most seasoned people on a fixed timer, and you trade the rare risk of a tyrant for the constant cost of amateurs.", fn: "Develop" },
+            { text: "Where power is genuinely dangerous, by all means limit it; where it is checked and earning its keep, removing it on a timer is a cure worse than the disease.", fn: "Develop" },
+            { text: "Term limits are a precise tool for political power, not a universal rule for every field.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, requiring leaders to step down after five years is advantageous for political office, where entrenched power is a grave danger, but mistaken as a rule for any field.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because experience, continuity, and expertise matter enormously outside politics, and because the real evil is unaccountable rather than long-held power, the policy should be applied where entrenchment threatens freedom and replaced elsewhere by accountability that does not waste competence.", fn: "Synthesis" },
+            { text: "Limit power where it festers, but do not expel skill simply for having lasted.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-109",
@@ -6822,6 +7039,61 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people claim that the goal of politics should be the pursuit of an ideal. Others argue that the goal should be finding common ground and reaching reasonable consensus.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): credits ideals as the conscience of politics, then argues that pursued alone they breed conflict and coercion, and that finding common ground fits what politics actually is; sides with consensus while keeping ideals as a compass.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Should a politician be a visionary chasing the perfect society, or a broker patiently stitching together what people can agree on?", fn: "Hook" },
+            { text: "Some claim that the goal of politics should be the pursuit of an ideal; others argue that its goal should be finding common ground and reaching reasonable consensus.", fn: "Context (the two views)" },
+            { text: "Ideals give politics its direction and conscience, so they cannot be discarded; but the more practical goal of finding common ground is the sounder primary aim, because politics is the art of living together among people who will never fully agree.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The case for ideals",
+          sentences: [
+            { text: "There is nobility in making politics the pursuit of an ideal.", fn: "Topic sentence" },
+            { text: "Without some vision of justice, freedom, or the good society, politics becomes mere management, drifting without purpose and settling for whatever already exists.", fn: "Explanation", vocab: [{ term: "vision", gloss: "願景；遠見" }] },
+            { text: "The great moral advances — the abolition of slavery, the winning of equal rights — were driven by people who refused to accept the compromised present and held out for an ideal.", fn: "Point", vocab: [{ term: "abolition", gloss: "廢除；廢止" }] },
+            { text: "To strip politics of all ideals is to leave it with nothing to aim at but the preservation of those who already hold power.", fn: "Develop" },
+            { text: "Ideals supply the direction and the conscience that politics needs.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But pure idealism is dangerous",
+          sentences: [
+            { text: "However, when the pursuit of an ideal becomes the whole goal of politics, it turns dangerous.", fn: "Pivot", moves: ["However"] },
+            { text: "People hold deeply different ideals, and a politics that insists on one and refuses compromise leads not to the perfect society but to conflict, deadlock, or tyranny.", fn: "Point", vocab: [{ term: "deadlock", gloss: "僵局；僵持" }] },
+            { text: "The uncompromising idealist, certain he is right, is tempted to override and crush those who disagree, and some of history's worst regimes were built by people chasing a perfect vision.", fn: "Explanation" },
+            { text: "Convinced that compromise is betrayal, the zealot ends by treating his fellow citizens as obstacles rather than as partners.", fn: "Develop" },
+            { text: "An ideal pursued without regard for others' ideals does not end disagreement; it merely decides to stop listening to it.", fn: "Develop" },
+            { text: "Idealism unchecked by compromise endangers the very freedom it so often claims to serve.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Common ground fits politics",
+          sentences: [
+            { text: "The pursuit of common ground, by contrast, fits what politics actually is.", fn: "Pivot", moves: ["by contrast"] },
+            { text: "Politics exists precisely because people disagree, and its task is to let them live together peacefully despite that disagreement, which requires consensus, not conquest.", fn: "Point", vocab: [{ term: "consensus", gloss: "共識；一致意見" }] },
+            { text: "Finding common ground means that everyone gets something and no one is simply crushed, producing decisions a diverse society can actually accept and sustain.", fn: "Explanation" },
+            { text: "A bargain that leaves each side a little dissatisfied is often the surest sign that a fair agreement has been reached.", fn: "Develop" },
+            { text: "This is not the abandonment of ideals but the responsible pursuit of them, advancing toward what we believe by persuasion and agreement rather than by force.", fn: "Develop", vocab: [{ term: "persuasion", gloss: "說服；勸服" }] },
+            { text: "Consensus is the goal that keeps a free and divided people governing themselves together.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while ideals must guide politics, its primary goal should be finding common ground and reasonable consensus.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Ideals give politics its direction, but pursued alone they breed conflict and coercion, whereas the search for common ground lets a society of differing visions live and decide together, so the wise politician keeps her ideals as a compass while making agreement her aim.", fn: "Synthesis" },
+            { text: "Let ideals point the way, but let consensus carry us there.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-110",
@@ -6830,6 +7102,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The best way to solve environmental problems caused by consumer-generated waste is for towns and cities to impose strict limits on the amount of trash they will accept from each household.",
     directions: D_CLAIM,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that household trash limits can reduce waste, then argues they are not the best way because they treat a symptom rather than the cause, fall unfairly on ordinary people, and can drive illegal dumping; addresses the claim directly.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Mountains of household trash are a real and growing problem, and it is tempting to attack them right at the curb.", fn: "Hook" },
+            { text: "The claim proposes one such attack, holding that the best way to solve the environmental problems of consumer waste is for towns and cities to impose strict limits on the trash they will accept from each household.", fn: "Context (the claim)" },
+            { text: "Household limits can be a useful part of the solution, but they are not the best way, because they treat a symptom rather than the cause, fall unfairly on ordinary people, and can backfire in ways that make the problem worse.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Limits can help",
+          sentences: [
+            { text: "The claim is not without merit.", fn: "Topic sentence" },
+            { text: "Charging for or capping household waste does give people a reason to throw away less, buy more carefully, and recycle more diligently than they otherwise would.", fn: "Explanation", vocab: [{ term: "diligently", gloss: "勤勉地；認真地" }] },
+            { text: "Faced with a bill for every extra bag, even careless shoppers begin to notice how much they discard.", fn: "Develop" },
+            { text: "Where such limits have been tried, households often do cut their waste, at least at first, proving that the incentive has some real effect.", fn: "Example", vocab: [{ term: "incentive", gloss: "誘因；激勵" }] },
+            { text: "As one tool among many, trash limits can genuinely reduce what reaches the landfill.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It treats the symptom",
+          sentences: [
+            { text: "However, the limit attacks the end of the problem, not its source.", fn: "Pivot", moves: ["However"] },
+            { text: "Most consumer waste is created long before it reaches the household, in the packaging, the planned obsolescence, and the disposable design that manufacturers build into their products.", fn: "Point", vocab: [{ term: "obsolescence", gloss: "過時；淘汰" }] },
+            { text: "A family can only discard what it was sold, so limiting the bin does nothing to stop the flood of needless wrapping and throwaway goods at its origin.", fn: "Explanation" },
+            { text: "The most effective solutions work upstream — reducing packaging, requiring producers to take back their waste, and designing goods to last and be recycled — none of which a household trash cap addresses.", fn: "Develop", vocab: [{ term: "upstream", gloss: "上游；源頭" }] },
+            { text: "Capping the bin treats the symptom while leaving the disease untouched.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — It is unfair and backfires",
+          sentences: [
+            { text: "Moreover, strict household limits are both unfair and prone to backfire.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The burden falls hardest on large families and the poor, who cannot easily afford the special bags or fees such schemes usually involve, making the policy regressive.", fn: "Point", vocab: [{ term: "regressive", gloss: "累退的；對窮人不利的" }] },
+            { text: "Worse, when legal disposal is capped or made costly, some people resort to illegal dumping, burning, or quietly dropping their excess waste elsewhere, shifting the problem rather than solving it.", fn: "Explanation" },
+            { text: "A measure that punishes consumers for waste they did not design, and that pushes trash into ditches and back roads, can leave the environment worse off than before.", fn: "Develop" },
+            { text: "A solution that is unjust and so easily evaded cannot be the best way to tackle waste.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, strict household trash limits may help at the margins, but they are not the best way to solve the problem of consumer waste.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Because the waste is mostly created before it reaches the home, because the burden falls unfairly on ordinary households, and because such limits can drive illegal dumping, the better path attacks waste at its source — through producer responsibility, less packaging, and durable, recyclable design — with household measures playing only a supporting role.", fn: "Synthesis" },
+            { text: "Stop the waste where it is made, not only where it is thrown away.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-111",
