@@ -8278,6 +8278,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Formal education tends to restrain our minds and spirits rather than set them free.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that rigid, rote education can restrain the mind, then argues that in its proper form education liberates through knowledge and that even its discipline is the precondition of freedom; refutes the general charge.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Critics from poets to dropouts have charged that schools cage the mind, drilling obedience where they should kindle wonder.", fn: "Hook" },
+            { text: "The statement sides with them, claiming that formal education tends to restrain our minds and spirits rather than set them free.", fn: "Context (the statement)" },
+            { text: "Formal education can indeed restrain when it is done badly, and the criticism is not baseless; but on the whole it does the opposite, since the knowledge, skills, and exposure it provides are precisely what free a mind, making the statement's general charge mistaken.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — When education does restrain",
+          sentences: [
+            { text: "There is real force in the statement when education is rigid and rote.", fn: "Topic sentence" },
+            { text: "A school that demands memorization, punishes curiosity, and rewards only the expected answer can dull the very minds it is meant to develop, teaching conformity rather than thought.", fn: "Explanation", vocab: [{ term: "conformity", gloss: "從眾；墨守成規" }] },
+            { text: "Systems built around endless tests and obedience can leave students afraid to question, mistaking the recall of facts for genuine understanding.", fn: "Example" },
+            { text: "At its worst, formal education can indeed standardize and constrain, pressing every student into the same narrow mold.", fn: "Develop", vocab: [{ term: "standardize", gloss: "使標準化；劃一" }] },
+            { text: "Where education becomes mere drill and discipline, the statement's charge lands.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But education mainly liberates",
+          sentences: [
+            { text: "However, in its proper form education frees the mind far more than it restrains it.", fn: "Pivot", moves: ["However"] },
+            { text: "Knowledge is liberating, for a person who cannot read, reason, or grasp the world is trapped within a tiny horizon, and education is exactly what enlarges it.", fn: "Point", vocab: [{ term: "horizon", gloss: "視野；眼界" }] },
+            { text: "By teaching us language, history, science, and how to think, formal education hands us the tools to question, imagine, and choose, none of which an untrained mind possesses.", fn: "Explanation" },
+            { text: "Far from caging the spirit, education opens doors the ignorant cannot even see, exposing students to ideas and possibilities beyond anything they were born into.", fn: "Develop" },
+            { text: "The educated person can travel freely through centuries of human thought, while the unschooled mind is confined to the small world it happens to inhabit.", fn: "Develop" },
+            { text: "A trained mind is a freer mind, with more it can understand, attempt, and become.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Even discipline serves freedom",
+          sentences: [
+            { text: "Moreover, the discipline education imposes is not the opposite of freedom but often its precondition.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Mastering a craft, a language, or a body of knowledge requires structure and effort, yet it is exactly this hard-won mastery that lets a person create, innovate, and think for herself.", fn: "Point", vocab: [{ term: "mastery", gloss: "精通；熟練" }] },
+            { text: "The musician is freed by learning scales, the writer by learning grammar, the scientist by learning method, so in each the constraint is the path to the freedom.", fn: "Explanation" },
+            { text: "What looks like restraint is frequently the apprenticeship that genuine freedom requires, since no one creates freely in a field she has not first learned.", fn: "Develop", vocab: [{ term: "apprenticeship", gloss: "學徒期；學習階段" }] },
+            { text: "Education's discipline is usually a ladder to freedom, not a cage against it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, formal education can restrain minds when it is rigid and rote, but it tends, on the whole, to set them free.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "The knowledge, skills, and exposure that education provides expand a mind's horizons and equip it to think, and even its discipline is the precondition of real freedom, so the statement mistakes the failures of bad education for the nature of education itself.", fn: "Synthesis" },
+            { text: "Done well, education does not cage the mind; it hands it the keys.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-130",
@@ -8286,6 +8340,62 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "The well-being of a society is enhanced when many of its people question authority.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): argues that questioning authority checks the abuse of power and drives progress, then qualifies that the well-being promised depends on reasoned, responsible questioning rather than reflexive defiance; well argued.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Every tyrant's favorite citizen is the one who never asks why.", fn: "Hook" },
+            { text: "The statement takes the opposite side, holding that a society's well-being is enhanced when many of its people question authority.", fn: "Context (the statement)" },
+            { text: "The statement is largely right, since the habit of questioning authority checks abuses and drives progress that obedience never could; but it holds only when the questioning is reasoned and responsible, not mere reflexive defiance.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Questioning checks power",
+          sentences: [
+            { text: "A society is healthier when its people question authority because power left unquestioned tends to corrupt.", fn: "Topic sentence" },
+            { text: "Rulers, officials, and institutions naturally drift toward serving themselves, and only a public willing to scrutinize and challenge them keeps that drift in check.", fn: "Explanation", vocab: [{ term: "scrutinize", gloss: "仔細審查；詳查" }] },
+            { text: "Where citizens question authority, corruption is exposed and tyranny resisted; where they do not, abuses go unchallenged until they harden into oppression.", fn: "Example", vocab: [{ term: "oppression", gloss: "壓迫；壓制" }] },
+            { text: "A questioning public is the ultimate check on power, the force that makes leaders answerable and keeps them honest.", fn: "Develop" },
+            { text: "A free press, an active citizenry, and the courage to demand answers are what stand between a people and the abuse of their rulers.", fn: "Develop" },
+            { text: "By holding the powerful to account, widespread questioning protects a society from those who would misrule it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Questioning drives progress",
+          sentences: [
+            { text: "Moreover, questioning authority is the engine of progress as well as the guardian against abuse.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Almost every advance in human knowledge and justice began when someone refused to accept the reigning dogma that authority had declared true.", fn: "Point", vocab: [{ term: "dogma", gloss: "教條；信條" }] },
+            { text: "Science advanced by doubting old certainties, and societies grew freer by questioning the right of kings, masters, and customs to command unthinking obedience.", fn: "Explanation" },
+            { text: "A society where no one questions authority stagnates, repeating its errors because no one is permitted to point them out.", fn: "Develop" },
+            { text: "Those who challenged kings, priests, and slaveholders were called troublemakers in their day and are honored as liberators now.", fn: "Develop" },
+            { text: "Progress depends on people willing to ask whether what they are told is actually true or just.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But it must be reasoned",
+          sentences: [
+            { text: "Still, the statement holds only when the questioning is thoughtful and responsible.", fn: "Pivot", moves: ["Still"] },
+            { text: "Questioning authority is valuable as a search for truth and justice, not as reflexive contrarianism that rejects every rule simply because it is a rule.", fn: "Point", vocab: [{ term: "contrarianism", gloss: "逆反；唱反調的傾向" }] },
+            { text: "A society in which people reject all authority, including legitimate and necessary authority, descends not into freedom but into chaos and mutual distrust.", fn: "Explanation", vocab: [{ term: "legitimate", gloss: "正當的；合法的" }] },
+            { text: "The well-being the statement promises comes from citizens who question in order to improve and hold to account, not from those who merely defy for its own sake.", fn: "Develop" },
+            { text: "The point is to question authority intelligently and in good faith, not to despise it indiscriminately.", fn: "Develop" },
+            { text: "It is reasoned questioning, aimed at truth and accountability, that enhances a society.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the statement is right that a society's well-being is enhanced when many of its people question authority.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Such questioning checks the abuse of power and drives the progress that obedience cannot, so it is genuinely good for a society, provided it is the reasoned, responsible questioning that seeks truth and accountability rather than the empty defiance that seeks only to reject.", fn: "Synthesis" },
+            { text: "Teach a people to question wisely, and you have given them the surest guard of their own freedom.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-131",
@@ -8294,6 +8404,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Governments should focus on solving the immediate problems of today rather than on trying to solve the anticipated problems of the future.",
     directions: D_RECOMMENDATION,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that pressing present needs are real and predictions uncertain, then argues neglecting the future is costly and self-defeating, and that the recommendation rests on a false choice; weighs the recommendation's circumstances.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A government that ignored today's crises to plan for the future would be voted out, yet one that ignored the future to manage today would doom it.", fn: "Hook" },
+            { text: "The recommendation urges the first course, advising governments to focus on solving the immediate problems of today rather than the anticipated problems of the future.", fn: "Context (the recommendation)" },
+            { text: "The recommendation rightly insists that present needs cannot be neglected, but it sets up a false choice: a wise government must address both, since failing to prepare for the future is one of the surest ways to multiply the problems of tomorrow.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Present needs are real",
+          sentences: [
+            { text: "The recommendation has a genuine point in its favor.", fn: "Topic sentence" },
+            { text: "Present suffering is real and urgent — people who are hungry, sick, or jobless today cannot be told to wait while their government plans for decades ahead.", fn: "Explanation" },
+            { text: "Future problems are also uncertain, and predictions often prove wrong, so a government that chased every danger could waste resources on speculative threats that never arrive.", fn: "Point", vocab: [{ term: "speculative", gloss: "推測的；臆測的" }] },
+            { text: "A government deaf to the suffering directly in front of it would rightly forfeit the trust of those it serves.", fn: "Develop" },
+            { text: "Attending to today's real and pressing problems is, in itself, a legitimate priority.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But neglecting the future is costly",
+          sentences: [
+            { text: "However, to neglect the future in order to focus on the present is short-sighted and often self-defeating.", fn: "Pivot", moves: ["However"] },
+            { text: "Many of the gravest problems — climate change, aging populations, decaying infrastructure, looming shortages — develop slowly and grow far harder and costlier to solve the longer they are ignored.", fn: "Point", vocab: [{ term: "infrastructure", gloss: "基礎建設；基礎設施" }] },
+            { text: "A problem cheaply prevented today can become a catastrophe tomorrow, so a government that always waits until a future problem becomes a present one will meet it at its worst and most expensive.", fn: "Explanation", vocab: [{ term: "catastrophe", gloss: "災難；大禍" }] },
+            { text: "Today's emergencies are often yesterday's neglected forecasts, the predictable result of leaders who refused to look ahead.", fn: "Develop", vocab: [{ term: "forecasts", gloss: "預測；預報" }] },
+            { text: "Ignoring the future does not avoid its problems; it merely guarantees meeting them unprepared.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The choice is false",
+          sentences: [
+            { text: "Moreover, the recommendation rests on a false opposition between present and future.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Governing is not a choice between today and tomorrow but the constant task of balancing both, meeting urgent needs while laying the foundations for what is coming.", fn: "Point" },
+            { text: "Much good policy serves both at once, since educating children, building infrastructure, and sustaining the environment all relieve present needs while preparing for the future.", fn: "Explanation" },
+            { text: "The real skill of government is not to pick one over the other but to weigh them with prudent judgment, never sacrificing tomorrow entirely to today or today entirely to tomorrow.", fn: "Develop", vocab: [{ term: "prudent", gloss: "審慎的；明智的" }] },
+            { text: "Indeed, the best policies pay a double dividend, easing a hardship now and forestalling a larger one later.", fn: "Develop" },
+            { text: "A capable government solves today's problems without becoming blind to tomorrow's.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, while governments must certainly attend to the urgent problems of today, the recommendation wrongly tells them to do so rather than prepare for the future.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Present needs are real and must be met, but the future's problems, ignored, only grow worse and more expensive, so a wise government refuses the false choice and does both, relieving today's hardships while preparing for the challenges it can already see coming.", fn: "Synthesis" },
+            { text: "Solve the problems of today, but not by manufacturing the catastrophes of tomorrow.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-132",
@@ -8302,6 +8466,58 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Some people believe that college students should consider only their own talents and interests when choosing a field of study. Others believe that college students should base their choice of a field of study on the availability of jobs in that field.",
     directions: D_TWO_VIEWS,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants the wisdom of starting from talents and interests, then argues that ignoring job availability is naive, and that the wisest choice blends both; rejects the dichotomy and addresses both views.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Follow your passion, we are told; but passion does not pay the rent, and a job you hate does not nourish the soul.", fn: "Hook" },
+            { text: "Some believe college students should consider only their own talents and interests in choosing a field of study; others believe they should base the choice on the availability of jobs in that field.", fn: "Context (the two views)" },
+            { text: "Each view captures half the truth and errs by excluding the other: a wise choice begins with one's talents and interests but must be tempered by the realities of work, so neither passion nor prospects should decide alone.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Start from talents and interests",
+          sentences: [
+            { text: "There is real wisdom in starting from one's talents and interests.", fn: "Topic sentence" },
+            { text: "People do their best and most sustained work in fields they are genuinely drawn to and have a real aptitude for, and a student forced into a subject she neither enjoys nor excels at will likely struggle and stall.", fn: "Explanation", vocab: [{ term: "aptitude", gloss: "才能；天資" }] },
+            { text: "Interest sustains the effort that mastery requires, and talent gives that effort something to build on, so ignoring them courts both mediocrity and misery.", fn: "Point", vocab: [{ term: "mediocrity", gloss: "平庸" }] },
+            { text: "To disregard one's talents and interests is to build a career on sand.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But job availability matters",
+          sentences: [
+            { text: "However, to consider only talents and interests, ignoring whether the field offers any work, is dangerously naive.", fn: "Pivot", moves: ["However"] },
+            { text: "A degree is an enormous investment of time and money, and a student who pours it into a field with almost no jobs may graduate passionate but with no prospects of work.", fn: "Point", vocab: [{ term: "prospects", gloss: "前景；展望" }] },
+            { text: "Work is not only how we earn a living but how we put our talents to use, so a field where one cannot find a job frustrates the very interests it was meant to serve.", fn: "Explanation" },
+            { text: "Ignoring the job market does not free a student from it; it merely ensures a harder collision with it after graduation.", fn: "Develop" },
+            { text: "A choice that ignores whether a field can support a life is no kindness to the student who makes it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The wise path blends both",
+          sentences: [
+            { text: "Moreover, the two considerations are not enemies but partners in any sound decision.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "The wisest students begin with their talents and interests and then look for where those can meet a real demand, seeking the overlap between what they love and what the world will pay for.", fn: "Point", vocab: [{ term: "overlap", gloss: "重疊；交集" }] },
+            { text: "Most fields are broad enough to offer such an overlap, letting a student honor her interests while choosing a direction within them that has a future.", fn: "Explanation" },
+            { text: "Treating passion and prospects as a stark either-or is a false choice, since the real task is to weigh both and find a path that satisfies each.", fn: "Develop", vocab: [{ term: "passion", gloss: "熱情；熱衷" }] },
+            { text: "The best choice of study serves both the self and the future at once.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, students should consider neither their talents and interests alone nor job availability alone, but both together.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Talents and interests should lead, since they sustain the effort that any field demands, but the realities of work must temper the choice, so the wisest course is to pursue what one loves and is good at along a path that can actually support a life.", fn: "Synthesis" },
+            { text: "Choose a field you can love and live on; the happiest careers manage to be both.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-133",
@@ -8310,6 +8526,60 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Laws should be flexible enough to take account of various circumstances, times, and places.",
     directions: D_STATEMENT,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): grants that rigid law applied blindly can work injustice, then argues that unlimited flexibility destroys the predictability and equality law depends on, and resolves it as disciplined, principled discretion.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "A law that fits every case perfectly in theory can still work injustice when applied blindly to the one case it did not foresee.", fn: "Hook" },
+            { text: "The statement responds to this danger, holding that laws should be flexible enough to take account of various circumstances, times, and places.", fn: "Context (the statement)" },
+            { text: "The statement is largely right, since rigid laws applied without regard to context can produce real injustice; but flexibility has limits, because the rule of law also requires consistency and predictability, so the goal is a balance, not flexibility without end.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — Rigid law can be unjust",
+          sentences: [
+            { text: "Laws certainly need some flexibility, because no rule can anticipate every situation.", fn: "Topic sentence" },
+            { text: "A law written for the typical case will sometimes meet a circumstance its authors never imagined, where applying it literally would produce an absurd or even cruel result.", fn: "Explanation" },
+            { text: "A law against weapons in public should not jail a chef carrying his knives to work, and a curfew meant for safety should bend for a doctor rushing to an emergency.", fn: "Example" },
+            { text: "Circumstances also change with time and place, so a law sensible in one era or region may be pointless or harmful in another, and rigid law cannot adapt.", fn: "Develop", vocab: [{ term: "rigid", gloss: "僵化的；死板的" }] },
+            { text: "Justice often lies precisely in the exception that a perfectly rigid rule is unable to make for itself.", fn: "Develop" },
+            { text: "Some flexibility is essential if law is to serve justice rather than defeat it.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But flexibility threatens the rule of law",
+          sentences: [
+            { text: "However, flexibility carried too far undermines the very purpose of law.", fn: "Pivot", moves: ["However"] },
+            { text: "Law gains its power from being predictable and equal, so that people can know the rules in advance and trust that they apply to everyone alike.", fn: "Point", vocab: [{ term: "predictable", gloss: "可預測的" }] },
+            { text: "If a law can bend to every circumstance, it becomes uncertain and arbitrary, and officials gain the power to apply it as they please, favoring some and punishing others.", fn: "Explanation", vocab: [{ term: "arbitrary", gloss: "專斷的；任意的" }] },
+            { text: "Endless flexibility can quietly destroy equality before the law, turning fixed rights into favors that depend on who happens to be judging.", fn: "Develop" },
+            { text: "Too much flexibility trades away the certainty and fairness that make law worth having.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — The balance is disciplined discretion",
+          sentences: [
+            { text: "Moreover, the answer is not to choose between rigidity and flexibility but to balance them carefully.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Good legal systems achieve this by keeping clear, firm rules while allowing structured discretion — judges who can weigh circumstances, and laws that are revised as the times change.", fn: "Point", vocab: [{ term: "discretion", gloss: "裁量權；斟酌" }] },
+            { text: "Flexibility works best when it is itself governed by principles, so that adapting a law to circumstance remains an act of justice rather than of whim.", fn: "Explanation", vocab: [{ term: "whim", gloss: "一時興起；任性" }] },
+            { text: "The aim is a law steady enough to be trusted yet humane enough to bend where blind application would do wrong.", fn: "Develop" },
+            { text: "Disciplined flexibility, not boundless flexibility, is what justice actually requires.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, laws should indeed be flexible enough to take account of circumstance, time, and place, so the statement is largely right.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Rigid law applied blindly can work real injustice, yet unlimited flexibility destroys the predictability and equality that give law its worth, so the wise course is a disciplined flexibility — firm rules softened by principled discretion — rather than flexibility without limit.", fn: "Synthesis" },
+            { text: "Let the law bend enough to be just, but not so much that no one can rely on it.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-134",
@@ -8318,6 +8588,59 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
     prompt:
       "Claim: The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models. Reason: Heroes and role models reveal a society's highest ideals.",
     directions: D_CLAIM_REASON,
+    sample: {
+      score: 5,
+      scoreNote:
+        "Strong (5): affirms the claim that a society's heroes reveal its character, then corrects the reason by arguing heroes reveal real values rather than highest ideals, and shows this makes the method an even more honest mirror; addresses claim and reason.",
+      sections: [
+        {
+          role: "Introduction",
+          sentences: [
+            { text: "Tell me whom a people truly admire, and I will tell you a great deal about who they are — but perhaps not the flattering tale they tell about themselves.", fn: "Hook" },
+            { text: "The claim holds that the best way to understand a society's character is to examine the character of those it chooses as heroes and role models, on the reason that such heroes reveal a society's highest ideals.", fn: "Context (claim and reason)" },
+            { text: "The claim is largely right, since a society's heroes are a revealing mirror of what it values; but the reason is too flattering, because heroes reveal what a society actually worships, which is often a long way from its highest ideals.", fn: "Thesis statement (qualified position)" },
+          ],
+        },
+        {
+          role: "Body — The claim is sound",
+          sentences: [
+            { text: "The claim's central insight is sound: a society shows itself in whom it chooses to honor.", fn: "Topic sentence" },
+            { text: "To make someone a hero is to hold him up as a model of what a person should be, so the qualities a society celebrates in its heroes are the qualities it actually prizes.", fn: "Explanation", vocab: [{ term: "prizes", gloss: "珍視；看重" }] },
+            { text: "A society that worships warriors values conquest; one that idolizes inventors values progress; one that adores the merely rich and famous reveals what it really cares about.", fn: "Example", vocab: [{ term: "idolizes", gloss: "崇拜；偶像化" }] },
+            { text: "Because choosing heroes is a collective act, repeated across a whole culture, it exposes shared values more reliably than any speech or slogan ever could.", fn: "Develop" },
+            { text: "Examining a society's heroes is indeed one of the best ways to read its character.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — But heroes reveal real values, not ideals",
+          sentences: [
+            { text: "However, the reason claims too much in saying that heroes reveal a society's highest ideals.", fn: "Pivot", moves: ["However"] },
+            { text: "Heroes reveal what a society truly values, which is not always the same as what it would proudly call its highest ideals.", fn: "Point", vocab: [{ term: "ideals", gloss: "理想；典範" }] },
+            { text: "A society may profess to honor wisdom, courage, and justice while in fact lavishing its real admiration on wealth, fame, and power, so its actual heroes expose the gap between its stated and its lived values.", fn: "Explanation", vocab: [{ term: "profess", gloss: "聲稱；表明" }] },
+            { text: "When a culture's most celebrated figures are entertainers and tycoons rather than reformers and thinkers, its heroes reveal not its highest ideals but its real priorities, which may fall well short of them.", fn: "Develop" },
+            { text: "Heroes reveal a society's true values, sometimes precisely by betraying how far they sit below its professed ideals.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Body — Which makes the method more honest",
+          sentences: [
+            { text: "Moreover, this flaw in the reason actually strengthens the claim rather than weakening it.", fn: "Pivot", moves: ["Moreover"] },
+            { text: "Because heroes expose real values rather than flattering ideals, they are an unusually honest mirror, catching even the hypocrisy a society would rather hide.", fn: "Point", vocab: [{ term: "hypocrisy", gloss: "偽善；虛偽" }] },
+            { text: "To understand a society, we should therefore study not the ideals it announces but the heroes it actually elevates, since the second reveals far more than the first.", fn: "Explanation" },
+            { text: "Read this way, a society's choice of heroes tells us its genuine character — its real values, and the distance between those and the ideals it professes.", fn: "Develop" },
+            { text: "The heroes a society chooses are revealing exactly because they show its truth, ideals and shortfalls alike.", fn: "Sub-conclusion" },
+          ],
+        },
+        {
+          role: "Conclusion",
+          sentences: [
+            { text: "In conclusion, the claim is right that examining a society's heroes is among the best ways to understand its character, though its reason needs correcting.", fn: "Restate", moves: ["In conclusion"] },
+            { text: "Heroes do reveal a society, but they reveal its real values rather than only its highest ideals, and that is precisely what makes them so useful, since the figures a people truly admire show its character honestly, professed virtues and actual priorities together.", fn: "Synthesis" },
+            { text: "To know a society, look not at the ideals it preaches but at the heroes it actually crowns.", fn: "Final judgment" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "w-issue-135",
