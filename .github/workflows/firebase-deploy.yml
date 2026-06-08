@@ -21,6 +21,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Pronunciation clips are gitignored (not in the repo), so pull them into
+      # public/audio/ before the build copies public/ into out/. Cached by the
+      # vocab hash, so this only re-downloads when the word list changes.
+      - name: Cache pronunciation clips
+        uses: actions/cache@v4
+        with:
+          path: public/audio
+          key: audio-clips-${{ hashFiles('data/vocab.ts') }}
+
+      - name: Fetch pronunciation clips
+        run: node scripts/download-audio.mjs
+
       - name: Build static site
         run: npm run build
 

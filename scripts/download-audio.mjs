@@ -43,21 +43,32 @@ let skipped = 0;
 let failed = 0;
 const concurrency = 16;
 
+const MAX_ATTEMPTS = 3;
+
 async function fetchOne(word) {
   const dest = join(OUT_DIR, `${word}.m4a`);
   if (await exists(dest)) {
     skipped += 1;
     return;
   }
-  try {
-    const res = await fetch(storageUrl(word));
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const buf = Buffer.from(await res.arrayBuffer());
-    await writeFile(dest, buf);
-    downloaded += 1;
-  } catch (err) {
+  let lastErr;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    try {
+      const res = await fetch(storageUrl(word));
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const buf = Buffer.from(await res.arrayBuffer());
+      await writeFile(dest, buf);
+      downloaded += 1;
+      lastErr = undefined;
+      break;
+    } catch (err) {
+      lastErr = err;
+      if (attempt < MAX_ATTEMPTS) await new Promise((r) => setTimeout(r, 300 * attempt));
+    }
+  }
+  if (lastErr) {
     failed += 1;
-    console.warn(`  ! ${word}: ${err.message}`);
+    console.warn(`  ! ${word}: ${lastErr.message}`);
   }
   if ((downloaded + skipped + failed) % 100 === 0) {
     console.log(`  progress: ${downloaded + skipped + failed}/${words.length}`);
