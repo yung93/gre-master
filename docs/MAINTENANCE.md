@@ -25,20 +25,40 @@ covers the non-obvious recurring tasks.)
 
 ## Pronunciation audio (the non-obvious part)
 
-Audio is **not** in the repo and **not** in the deploy bundle. It is
-pre-generated and stored in **Firebase Cloud Storage** under `audio/<word>.m4a`,
-served publicly (read-only rule on the `audio/` path). `SpeakButton` plays
-`https://firebasestorage.googleapis.com/v0/b/<bucket>/o/audio%2F<word>.m4a?alt=media`.
+Audio is **not** in the repo (git-ignored), but it **is** in the deploy bundle.
+Clips live in `public/audio/<word>.m4a` and are served from the **Firebase
+Hosting CDN** at the same-origin path `/audio/<word>.m4a` (long `immutable`
+cache header, see `firebase.json`). `SpeakButton` plays that URL; if a clip is
+missing it falls back to the regional Storage bucket, then a dictionary
+recording. The clips also still live in **Firebase Cloud Storage** (the source
+of truth / fallback) under `audio/<word>.m4a`.
 
 ### Why this setup
 - Browser `SpeechSynthesis` did not work on the target device.
 - Google Translate TTS 404s browser requests (referer-gated).
 - Recorded clips (Free Dictionary API) only cover ~half the words.
-- So: pre-generate every clip once with the macOS **Samantha** voice, host on
-  Storage, play as plain media. 100% coverage, no runtime TTS dependency.
+- So: pre-generate every clip once with the macOS **Samantha** voice. 100%
+  coverage, no runtime TTS dependency.
+- Originally served straight from the Storage **download API**, but that has
+  ~1s TTFB (regional bucket, no CDN) on the first play of each word. Moving the
+  clips into the Hosting deploy puts them behind Google's edge CDN → tens of ms.
+  `lib/audio.ts` + `SpeakButton` prime the current word on render and
+  `/verbal` warms the whole 10-word batch, so cards play instantly.
+
+### Before each deploy: populate `public/audio/`
+The clips are git-ignored, so a fresh checkout has none. Pull them from the
+public Storage URLs (no credentials, no macOS needed; idempotent):
+
+```bash
+node scripts/download-audio.mjs        # -> public/audio/<word>.m4a
+```
+
+`npm run deploy` builds (`out/` copies `public/`) and ships the clips via
+Hosting. Re-run the download whenever new words are added and uploaded.
 
 ### Regenerating audio after adding new words
-Run on **macOS** (uses built-in `say` + `afconvert`):
+Run on **macOS** (uses built-in `say` + `afconvert`), then re-upload to Storage
+(the source of truth) so `download-audio.mjs` can pick the new clips up:
 
 ```bash
 # 1. Generate M4A clips for any words missing one (idempotent)
@@ -47,6 +67,9 @@ bash scripts/generate-audio.sh          # -> /tmp/gre-audio/out/<word>.m4a
 # 2. Upload to Firebase Storage (skips files already uploaded)
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/serviceAccount.json \
   node scripts/upload-audio.mjs /tmp/gre-audio/out
+
+# 3. Pull everything into public/audio/ for the deploy bundle
+node scripts/download-audio.mjs
 ```
 
 - The **service-account JSON** is a Firebase Admin key (Console → Project
@@ -61,7 +84,8 @@ GOOGLE_APPLICATION_CREDENTIALS=/path/to/serviceAccount.json \
     }
   }
   ```
-- New words show a silent (greyed) speaker button until their clip is uploaded.
+- New words show a silent (greyed) speaker button until their clip is generated,
+  uploaded, and pulled into `public/audio/`.
 
 ## Mastery counts
 

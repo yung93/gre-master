@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { decodeWord, playWord, storageFallbackUrl } from "@/lib/audio";
 
 interface SpeakButtonProps {
   text: string;
@@ -16,16 +17,6 @@ interface DictionaryPhonetic {
 }
 interface DictionaryEntry {
   phonetics?: DictionaryPhonetic[];
-}
-
-// Pre-generated Samantha MP3/M4A clips live in Firebase Cloud Storage under
-// audio/<word>.m4a. Public read is enabled on that folder, so they play as
-// plain same-origin-style media (no CORS/referer issues).
-const STORAGE_BUCKET = "gre-master-a2ec8.firebasestorage.app";
-
-function storageUrl(word: string): string {
-  const path = `audio/${word.toLowerCase()}.m4a`;
-  return `https://firebasestorage.googleapis.com/v0/b/${STORAGE_BUCKET}/o/${encodeURIComponent(path)}?alt=media`;
 }
 
 async function fetchPronunciationUrl(word: string): Promise<string | null> {
@@ -74,32 +65,64 @@ async function fetchPronunciationUrl(word: string): Promise<string | null> {
 
 export default function SpeakButton({ text, label, shortcut, size = "sm" }: SpeakButtonProps) {
   const [status, setStatus] = useState<Status>("loading");
-  const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  // Active Web Audio source for the current single word (so we can stop it).
+  const sourceRef = useRef<AudioBufferSourceNode | null>(null);
+  // Resolved lazily only if the Storage clip turns out to be missing.
+  const fallbackUrlRef = useRef<string | null>(null);
 
-  // Single word → a pre-generated Storage clip exists, so the button is ready
-  // immediately. Multi-word text (e.g. a sentence) has no clip, so look one up.
+  // Single word → a pre-generated clip exists on the CDN. Multi-word text
+  // (e.g. a sentence) has no clip, so look one up in the dictionary API.
   const isSingleWord = !/\s/.test(text.trim());
 
+  const bindAudio = useCallback((audio: HTMLAudioElement) => {
+    audio.onplay = () => setPlaying(true);
+    audio.onended = () => setPlaying(false);
+    audio.onpause = () => setPlaying(false);
+  }, []);
+
+  const stopSource = useCallback(() => {
+    try {
+      sourceRef.current?.stop();
+    } catch {
+      // Already stopped/ended; ignore.
+    }
+    sourceRef.current = null;
+  }, []);
+
+  // Decode the clip as soon as the card renders, so the first click plays
+  // instantly via Web Audio (no HTMLAudioElement pipeline/decode latency).
   useEffect(() => {
-    setAudioUrl(null);
     const cleaned = text.trim();
+    fallbackUrlRef.current = null;
+    stopSource();
+    audioRef.current?.pause();
+    audioRef.current = null;
+    setPlaying(false);
+
     if (!cleaned) {
       setStatus("unavailable");
       return;
     }
+
     if (isSingleWord) {
+      void decodeWord(cleaned); // decode ahead of the click
       setStatus("ready");
-      return;
+      return stopSource;
     }
-    // Phrase: fall back to the dictionary recording lookup.
+
+    // Phrase: resolve a dictionary recording first, then prime an <audio>.
     setStatus("loading");
     let cancelled = false;
     fetchPronunciationUrl(cleaned).then((url) => {
       if (cancelled) return;
       if (url) {
-        setAudioUrl(url);
+        const audio = new Audio(url);
+        audio.preload = "auto";
+        bindAudio(audio);
+        audio.load();
+        audioRef.current = audio;
         setStatus("ready");
       } else {
         setStatus("unavailable");
@@ -107,44 +130,63 @@ export default function SpeakButton({ text, label, shortcut, size = "sm" }: Spea
     });
     return () => {
       cancelled = true;
-    };
-  }, [text, isSingleWord]);
-
-  const playUrl = useCallback((url: string, onError?: () => void) => {
-    try {
       audioRef.current?.pause();
+    };
+  }, [text, isSingleWord, bindAudio, stopSource]);
+
+  // Swap in a fresh <audio> source and play it; returns the play() promise so
+  // callers can chain the next fallback on failure.
+  const playFrom = useCallback(
+    (url: string) => {
       const audio = new Audio(url);
       audio.preload = "auto";
+      bindAudio(audio);
       audioRef.current = audio;
-      audio.onplay = () => setPlaying(true);
-      audio.onended = () => setPlaying(false);
-      audio.onerror = () => {
-        setPlaying(false);
-        if (onError) onError();
-      };
-      audio.play().catch(() => {
-        setPlaying(false);
-        if (onError) onError();
-      });
-    } catch {
-      if (onError) onError();
-    }
-  }, []);
+      return audio.play();
+    },
+    [bindAudio],
+  );
 
   const play = useCallback(() => {
-    if (audioUrl) {
-      playUrl(audioUrl);
-      return;
-    }
+    const cleaned = text.trim();
+
     if (isSingleWord) {
-      // Storage clip first; if missing, fall back to a dictionary recording.
-      playUrl(storageUrl(text.trim()), () => {
-        fetchPronunciationUrl(text.trim()).then((url) => {
-          if (url) playUrl(url);
+      stopSource();
+      playWord(cleaned, {
+        onStart: () => setPlaying(true),
+        onEnd: () => setPlaying(false),
+      }).then((source) => {
+        if (source) {
+          sourceRef.current = source;
+          return;
+        }
+        // Web Audio unavailable / clip missing → Storage → dictionary recording.
+        playFrom(storageFallbackUrl(cleaned)).catch(() => {
+          setPlaying(false);
+          if (fallbackUrlRef.current) {
+            playFrom(fallbackUrlRef.current).catch(() => setPlaying(false));
+            return;
+          }
+          fetchPronunciationUrl(cleaned).then((url) => {
+            if (!url) return;
+            fallbackUrlRef.current = url;
+            playFrom(url).catch(() => setPlaying(false));
+          });
         });
       });
+      return;
     }
-  }, [audioUrl, isSingleWord, text, playUrl]);
+
+    // Phrase: replay the primed dictionary recording.
+    const audio = audioRef.current;
+    if (!audio) return;
+    try {
+      audio.currentTime = 0;
+    } catch {
+      // Seeking before metadata loads is a no-op in some browsers; ignore.
+    }
+    audio.play().catch(() => setPlaying(false));
+  }, [isSingleWord, text, playFrom, stopSource]);
 
   useEffect(() => {
     if (!shortcut || status !== "ready") return;

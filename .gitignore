@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# pronunciation clips — served from Hosting CDN but not committed to the repo.
+# Populate locally before deploy with: node scripts/download-audio.mjs
+/public/audio/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

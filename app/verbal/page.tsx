@@ -21,9 +21,11 @@ import {
   seedBatch,
 } from "@/lib/learn-queue";
 import { useLocalState } from "@/lib/storage";
+import { prefetchAudio } from "@/lib/audio";
 import type { LearnProgress, MemoryAid, SrsGrade, SrsState } from "@/lib/types";
 
 const ORDERED_IDS = VOCAB.map((v) => v.id);
+const WORD_BY_ID = new Map(VOCAB.map((v) => [v.id, v.word]));
 
 interface SessionStats {
   reviewed: number;
@@ -82,6 +84,17 @@ export default function VerbalPage() {
 
   const current = useMemo(() => VOCAB.find((v) => v.id === currentId) ?? null, [currentId]);
   const currentProgress = currentId ? progress[currentId] ?? initialLearnProgress() : null;
+
+  // The next card is non-deterministic (it depends on the grade) but always
+  // comes from the current batch, so warm all 10 clips up front. ~76KB total;
+  // every card in rotation then plays instantly from the CDN/browser cache.
+  useEffect(() => {
+    if (batch.length === 0) return;
+    const words = batch
+      .map((id) => WORD_BY_ID.get(id))
+      .filter((w): w is string => Boolean(w));
+    prefetchAudio(words);
+  }, [batch]);
 
   // "Mastered" counts words ever mastered, so it does not dip during revisits.
   const masteredCount = useMemo(
