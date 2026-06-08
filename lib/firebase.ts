@@ -1,6 +1,6 @@
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, type Auth } from "firebase/auth";
-import { getFirestore, type Firestore } from "firebase/firestore";
+import { initializeFirestore, type Firestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAao1Di5egzBlT8swDvEVx7bnKI9oOZyX0",
@@ -27,7 +27,14 @@ export function getFirebaseAuth(): Auth {
 }
 
 export function getFirebaseDb(): Firestore {
-  if (!dbInstance) dbInstance = getFirestore(getApp());
+  if (!dbInstance) {
+    // Auto-detect long-polling so the client still works when the streaming
+    // WebChannel transport is blocked (ad blockers, proxies, VPNs, some
+    // networks), which otherwise shows up as Firestore "maximum backoff" warnings.
+    dbInstance = initializeFirestore(getApp(), {
+      experimentalAutoDetectLongPolling: true,
+    });
+  }
   return dbInstance;
 }
 
