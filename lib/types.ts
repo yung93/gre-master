@@ -55,18 +55,53 @@ export type QuantTopic =
   | "arithmetic"
   | "algebra"
   | "geometry"
-  | "data-analysis"
-  | "word-problem";
+  | "number-properties"
+  | "ratio-proportion"
+  | "word-problems"
+  | "statistics"
+  | "probability-combinatorics"
+  | "coordinate-geometry"
+  | "data-interpretation";
 
-export interface QuantEntry {
+/**
+ * GRE quantitative question formats, mirroring the official test (and the
+ * Manhattan Review practice pool the question bank is modeled on).
+ * `quantitative-comparison` uses the fixed four-option answer set;
+ * `single` is multiple choice with one answer; `multi` allows one or more;
+ * `numeric` is free numeric entry.
+ */
+export type QuantFormat = "quantitative-comparison" | "single" | "multi" | "numeric";
+
+export interface QuantQuestion {
   id: string;
   topic: QuantTopic;
+  format: QuantFormat;
+  difficulty: 1 | 2 | 3;
   question: string;
+  /** The two quantities of a quantitative-comparison question. */
+  quantityA?: string;
+  quantityB?: string;
+  /** Answer options for single/multi formats (QC uses the standard fixed four). */
   choices?: string[];
-  answer: string;
+  /**
+   * Correct answer(s): choice letters ("A"…) for choice formats, or the
+   * accepted numeric value(s) for numeric entry (e.g. ["0.25", "1/4"]).
+   */
+  correct: string[];
   explanation: string;
   explanationZh: string;
-  difficulty: 1 | 2 | 3;
+}
+
+/**
+ * Result record for one quant question. `outcome` reflects the most recent
+ * answer; `firstOutcome` is frozen at the first attempt so honest first-try
+ * accuracy survives retries. A question is "finished" once a record exists.
+ */
+export interface QuantAttempt {
+  outcome: "correct" | "wrong";
+  firstOutcome: "correct" | "wrong";
+  attempts: number;
+  lastAnsweredAt: number;
 }
 
 export type EssayType = "issue" | "argument";

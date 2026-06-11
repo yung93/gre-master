@@ -2,6 +2,8 @@
 
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { EyeIcon, EyeOffIcon } from "@/components/Icons";
+import Pagination from "@/components/Pagination";
 import SpeakButton from "@/components/SpeakButton";
 import { VOCAB } from "@/data/vocab";
 import { isMastered } from "@/lib/learn-queue";
@@ -210,54 +212,10 @@ export default function WordsPage() {
               rangeStart={pageStart + 1}
               rangeEnd={pageStart + pageItems.length}
               total={filtered.length}
+              itemNoun="word"
             />
           </>
         )}
-      </div>
-    </div>
-  );
-}
-
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onChange: (page: number) => void;
-  rangeStart: number;
-  rangeEnd: number;
-  total: number;
-}
-
-function Pagination({ currentPage, totalPages, onChange, rangeStart, rangeEnd, total }: PaginationProps) {
-  if (totalPages <= 1) {
-    return (
-      <p className="mt-4 text-xs text-[var(--color-ink-faint)] mono text-center">
-        {total} word{total === 1 ? "" : "s"}
-      </p>
-    );
-  }
-  return (
-    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-      <span className="text-xs text-[var(--color-ink-faint)] mono text-center sm:text-left">
-        {rangeStart}–{rangeEnd} of {total}
-      </span>
-      <div className="flex items-center justify-between sm:justify-end gap-1.5">
-        <button
-          onClick={() => onChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="btn btn-secondary text-xs"
-        >
-          ← Prev
-        </button>
-        <span className="mono text-xs text-[var(--color-ink-muted)] px-2 tabular-nums">
-          {currentPage} / {totalPages}
-        </span>
-        <button
-          onClick={() => onChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="btn btn-secondary text-xs"
-        >
-          Next →
-        </button>
       </div>
     </div>
   );
@@ -388,37 +346,3 @@ function SortAzIcon() {
   );
 }
 
-function EyeIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="12" r="2.6" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function EyeOffIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M3 3l18 18"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M10.6 6.2A9.7 9.7 0 0 1 12 6c6.5 0 10 6 10 6a16.4 16.4 0 0 1-3.3 3.9M6.5 7.6A16.3 16.3 0 0 0 2 12s3.5 6 10 6a9.6 9.6 0 0 0 4-.85"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}

@@ -26,8 +26,8 @@ export default function Home() {
       eyebrow: "Quantitative Reasoning",
       title: "Problem-set drills",
       blurb:
-        "Original GRE-style problems by topic. Try the problem on the front, check the worked solution on the back, then grade yourself the same way you do for vocabulary.",
-      count: `${QUANT.length} problems`,
+        "GRE-style questions by topic — quantitative comparison, multiple choice, and numeric entry. Answer each one, get checked on the spot, and watch every topic's correct/wrong record fill in.",
+      count: `${QUANT.length} questions`,
     },
     {
       href: "/writing",

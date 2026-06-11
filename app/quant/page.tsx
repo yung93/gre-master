@@ -1,175 +1,196 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import Flashcard from "@/components/Flashcard";
-import SrsControls from "@/components/SrsControls";
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import { CheckCircleIcon, CrossCircleIcon } from "@/components/StatusIcons";
 import { QUANT } from "@/data/quant";
-import { initialSrsState, scheduleNext } from "@/lib/srs";
 import {
-  GOOD_STEPS_TO_GRADUATE,
-  applyGrade,
-  initialLearnProgress,
-  isMastered,
-  pickFromBatch,
-  refillBatchByTopic,
-  seedBatchByTopic,
-  topicMastery,
-} from "@/lib/learn-queue";
+  FORMAT_LABEL,
+  TOPIC_LABEL,
+  TOPIC_ORDER,
+  choiceLetter,
+  choicesOf,
+  correctAnswerText,
+  isAnswerCorrect,
+} from "@/lib/quant";
 import { useLocalState } from "@/lib/storage";
-import type { LearnProgress, QuantTopic, SrsGrade, SrsState } from "@/lib/types";
+import type { QuantAttempt, QuantQuestion, QuantTopic } from "@/lib/types";
 
-// Quant's deck is small, so the batch is tighter than verbal's 10. Unlike verbal,
-// a mastered problem is retired for good — there is no spaced revisit.
-const QUANT_BATCH_SIZE = 6;
+type PracticeMode = "new" | "wrong";
 
-const TOPIC_LABEL: Record<QuantTopic, string> = {
-  arithmetic: "Arithmetic",
-  algebra: "Algebra",
-  geometry: "Geometry",
-  "data-analysis": "Data Analysis",
-  "word-problem": "Word Problems",
-};
-const TOPIC_ORDER: QuantTopic[] = [
-  "arithmetic",
-  "algebra",
-  "geometry",
-  "data-analysis",
-  "word-problem",
-];
+const TOPIC_QUESTIONS = new Map<QuantTopic, QuantQuestion[]>(
+  TOPIC_ORDER.map((topic) => [topic, QUANT.filter((q) => q.topic === topic)]),
+);
 
-const ORDERED_IDS = QUANT.map((q) => q.id);
-const TOPIC_OF = new Map<string, QuantTopic>(QUANT.map((q) => [q.id, q.topic]));
-const topicOf = (id: string): string => TOPIC_OF.get(id) ?? "arithmetic";
+/**
+ * Pick the next question: unanswered ones first (mode "new") or previously
+ * missed ones (mode "wrong"), always drawn from the topic with the lowest
+ * finished ratio so weak/neglected areas surface first.
+ */
+function pickNext(attempts: Record<string, QuantAttempt>, mode: PracticeMode): QuantQuestion | null {
+  const inPool = (q: QuantQuestion) =>
+    mode === "new" ? !attempts[q.id] : attempts[q.id]?.outcome === "wrong";
+  let bestTopic: QuantTopic | null = null;
+  let minRatio = Infinity;
+  for (const topic of TOPIC_ORDER) {
+    const questions = TOPIC_QUESTIONS.get(topic) ?? [];
+    if (!questions.some(inPool)) continue;
+    const finished = questions.reduce((n, q) => (attempts[q.id] ? n + 1 : n), 0);
+    const ratio = finished / questions.length;
+    if (ratio < minRatio) {
+      minRatio = ratio;
+      bestTopic = topic;
+    }
+  }
+  if (!bestTopic) return null;
+  return (TOPIC_QUESTIONS.get(bestTopic) ?? []).find(inPool) ?? null;
+}
 
-interface SessionStats {
-  reviewed: number;
-  masteredThisSession: number;
+interface Feedback {
+  isCorrect: boolean;
+  selected: string[];
 }
 
 export default function QuantPage() {
-  const [progress, setProgress] = useLocalState<Record<string, LearnProgress>>("learn/quant", {});
-  const [srs, setSrs] = useLocalState<Record<string, SrsState>>("srs/quant", {});
-  const [batch, setBatch] = useLocalState<string[]>("learn/quant-batch", []);
-  const [stats, setStats] = useState<SessionStats>({ reviewed: 0, masteredThisSession: 0 });
-  const [currentId, setCurrentId] = useState<string | null>(null);
+  const [attempts, setAttempts] = useLocalState<Record<string, QuantAttempt>>("quant/attempts", {});
+  const [mode, setMode] = useState<PracticeMode>("new");
+  // While feedback is shown, the answered question stays pinned so the derived
+  // "next" pick doesn't swap it away mid-explanation.
+  const [pinnedId, setPinnedId] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string[]>([]);
+  const [numericInput, setNumericInput] = useState("");
+  const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [showTopics, setShowTopics] = useState(false);
-  const hydratedRef = useRef(false);
 
-  // On first hydration, build or repair the persisted batch once (topic-balanced).
-  useEffect(() => {
-    if (hydratedRef.current) return;
-    hydratedRef.current = true;
+  const current = useMemo(() => {
+    if (pinnedId) return QUANT.find((q) => q.id === pinnedId) ?? null;
+    return pickNext(attempts, mode);
+  }, [attempts, mode, pinnedId]);
 
-    setBatch((prev) => {
-      const repaired = prev.length > 0
-        ? refillBatchByTopic(prev, ORDERED_IDS, progress, topicOf, QUANT_BATCH_SIZE)
-        : seedBatchByTopic(ORDERED_IDS, progress, topicOf, QUANT_BATCH_SIZE);
-      setCurrentId(pickFromBatch(repaired, progress));
-      return repaired;
+  const tally = useMemo(() => {
+    let correct = 0;
+    let wrong = 0;
+    for (const q of QUANT) {
+      const a = attempts[q.id];
+      if (!a) continue;
+      if (a.outcome === "correct") correct += 1;
+      else wrong += 1;
+    }
+    return { correct, wrong, finished: correct + wrong };
+  }, [attempts]);
+
+  const topicTallies = useMemo(
+    () =>
+      TOPIC_ORDER.map((topic) => {
+        const questions = TOPIC_QUESTIONS.get(topic) ?? [];
+        let correct = 0;
+        let wrong = 0;
+        for (const q of questions) {
+          const a = attempts[q.id];
+          if (!a) continue;
+          if (a.outcome === "correct") correct += 1;
+          else wrong += 1;
+        }
+        return { topic, correct, wrong, total: questions.length };
+      }),
+    [attempts],
+  );
+
+  const answer = current?.format === "numeric" ? [numericInput] : selected;
+  const canSubmit =
+    current !== null &&
+    (current.format === "numeric" ? numericInput.trim() !== "" : selected.length > 0);
+
+  function toggleChoice(letter: string) {
+    if (!current || feedback) return;
+    if (current.format === "multi") {
+      setSelected((prev) =>
+        prev.includes(letter) ? prev.filter((l) => l !== letter) : [...prev, letter].sort(),
+      );
+    } else {
+      setSelected([letter]);
+    }
+  }
+
+  function handleSubmit() {
+    if (!current || !canSubmit || feedback) return;
+    const isCorrect = isAnswerCorrect(current, answer);
+    const outcome = isCorrect ? "correct" : "wrong";
+    setAttempts((prev) => {
+      const existing = prev[current.id];
+      return {
+        ...prev,
+        [current.id]: {
+          outcome,
+          firstOutcome: existing?.firstOutcome ?? outcome,
+          attempts: (existing?.attempts ?? 0) + 1,
+          lastAnsweredAt: Date.now(),
+        },
+      };
     });
-  }, [progress, setBatch]);
+    setPinnedId(current.id);
+    setFeedback({ isCorrect, selected: answer });
+  }
 
-  // Keep a valid current card whenever the batch changes.
-  useEffect(() => {
-    if (!hydratedRef.current) return;
-    if (currentId && batch.includes(currentId)) return;
-    if (batch.length > 0) setCurrentId(pickFromBatch(batch, progress));
-    else setCurrentId(null);
-  }, [batch, currentId, progress]);
+  function handleNext() {
+    setPinnedId(null);
+    setSelected([]);
+    setNumericInput("");
+    setFeedback(null);
+  }
 
-  const current = useMemo(() => QUANT.find((q) => q.id === currentId) ?? null, [currentId]);
-  const currentProgress = currentId ? progress[currentId] ?? initialLearnProgress() : null;
-
-  const topicStats = useMemo(() => topicMastery(ORDERED_IDS, progress, topicOf), [progress]);
-  const statsByTopic = useMemo(
-    () => new Map(topicStats.map((t) => [t.topic, t])),
-    [topicStats],
-  );
-  const masteredCount = useMemo(
-    () => ORDERED_IDS.reduce((n, id) => (isMastered(progress[id]) ? n + 1 : n), 0),
-    [progress],
-  );
-  const activeInBatch = batch.filter(
-    (id) => (progress[id]?.seen ?? 0) > 0 && !progress[id]?.graduated,
-  ).length;
-
-  // The topic the next new card will be drawn from (lowest mastery ratio).
-  const weakestTopic = useMemo<QuantTopic | null>(() => {
-    let weakest: QuantTopic | null = null;
-    let min = Infinity;
-    for (const topic of TOPIC_ORDER) {
-      const ratio = statsByTopic.get(topic)?.ratio ?? 0;
-      if (ratio < min) {
-        min = ratio;
-        weakest = topic;
-      }
-    }
-    return masteredCount === QUANT.length ? null : weakest;
-  }, [statsByTopic, masteredCount]);
-
-  function handleGrade(grade: SrsGrade) {
+  /**
+   * Free navigation through the bank in its fixed order (wrapping at the
+   * ends), independent of the weakest-topic auto-pick. Useful for skipping a
+   * question or revisiting a specific one; answering still records normally.
+   */
+  function step(direction: 1 | -1) {
     if (!current) return;
-    const now = Date.now();
-    const id = current.id;
-    const prevProgress = progress[id] ?? initialLearnProgress();
-    const nextProgress = applyGrade(prevProgress, grade, now);
+    const index = QUANT.findIndex((q) => q.id === current.id);
+    const target = QUANT[(index + direction + QUANT.length) % QUANT.length];
+    setPinnedId(target.id);
+    setSelected([]);
+    setNumericInput("");
+    setFeedback(null);
+  }
 
-    const nextProgressMap = { ...progress, [id]: nextProgress };
-    setProgress(nextProgressMap);
-
-    // A mastered problem graduates out of the batch for good (no revisit). Its
-    // freed slot is backfilled with a new problem from the weakest topic.
-    const justMastered = nextProgress.graduated && !prevProgress.graduated;
-    if (justMastered) {
-      const prevSrs = srs[id] ?? initialSrsState(now);
-      setSrs((s) => ({ ...s, [id]: scheduleNext(prevSrs, grade === "easy" ? "easy" : "good", now) }));
-    }
-
-    const nextBatch = justMastered
-      ? refillBatchByTopic(batch, ORDERED_IDS, nextProgressMap, topicOf, QUANT_BATCH_SIZE)
-      : batch;
-
-    setStats((s) => ({
-      reviewed: s.reviewed + 1,
-      masteredThisSession: s.masteredThisSession + (justMastered ? 1 : 0),
-    }));
-
-    setBatch(nextBatch);
-    setCurrentId(pickFromBatch(nextBatch, nextProgressMap, id));
+  function startRedoWrong() {
+    setMode("wrong");
+    handleNext();
   }
 
   function resetProgress() {
     if (typeof window !== "undefined" && !window.confirm("Reset all quantitative progress?")) return;
-    setProgress({});
-    setSrs({});
-    const fresh = seedBatchByTopic(ORDERED_IDS, {}, topicOf, QUANT_BATCH_SIZE);
-    setBatch(fresh);
-    setStats({ reviewed: 0, masteredThisSession: 0 });
-    setCurrentId(pickFromBatch(fresh, {}));
+    setAttempts({});
+    setMode("new");
+    handleNext();
   }
 
-  const allMastered = masteredCount === QUANT.length;
+  const allFinished = tally.finished === QUANT.length;
 
   return (
     <div className="page-shell pt-10 pb-20">
       <header className="hidden lg:grid lg:grid-cols-[2fr_1fr] gap-8 items-end">
         <div>
-          <p className="eyebrow">Quantitative · Drills</p>
+          <p className="eyebrow">Quantitative · Practice</p>
           <h1 className="serif mt-3 text-[length:var(--text-headline)] leading-tight">
-            <em className="not-italic">Work</em> it, then flip.
+            <em className="not-italic">Answer</em>, then learn.
           </h1>
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
-            You drill a rolling set of {QUANT_BATCH_SIZE} problems. Answer{" "}
-            <span className="font-medium text-[var(--color-ink)]">Good</span> {GOOD_STEPS_TO_GRADUATE} times
-            (or <span className="font-medium text-[var(--color-ink)]">Easy</span> once) to master a problem; once
-            mastered it retires for good, and a new one takes its place — drawn from whichever topic you've mastered{" "}
-            <em className="not-italic">least</em>, so weak areas surface first.
+            {QUANT.length} GRE-style problems — quantitative comparison, multiple choice, and numeric
+            entry — organized by topic. Each question is drawn from whichever topic you&apos;ve finished{" "}
+            <em className="not-italic">least</em>, and every answer is recorded as correct or wrong.
           </p>
         </div>
-        <div className="surface-soft px-5 py-4 grid grid-cols-3 gap-4">
-          <Stat label="In batch" value={`${activeInBatch}/${QUANT_BATCH_SIZE}`} />
-          <Stat label="Mastered" value={`${masteredCount}`} />
-          <Stat label="Total" value={`${QUANT.length}`} />
+        <div className="surface-soft px-5 py-4">
+          <div className="grid grid-cols-3 gap-4">
+            <Stat label="Finished" value={`${tally.finished}/${QUANT.length}`} />
+            <Stat label="Correct" value={`${tally.correct}`} tone="success" />
+            <Stat label="Wrong" value={`${tally.wrong}`} tone="danger" />
+          </div>
+          <Link href="/quant/list" className="btn btn-secondary text-xs w-full mt-4">
+            Browse question list →
+          </Link>
         </div>
       </header>
 
@@ -182,7 +203,7 @@ export default function QuantPage() {
             aria-controls="quant-topics"
             className="flex-1 min-w-0 text-left lg:pointer-events-none"
           >
-            <ProgressBar label="Mastery" value={masteredCount} total={QUANT.length} />
+            <OverallBar correct={tally.correct} wrong={tally.wrong} total={QUANT.length} />
           </button>
           <button onClick={resetProgress} className="btn btn-ghost text-xs shrink-0">Reset</button>
         </div>
@@ -191,151 +212,307 @@ export default function QuantPage() {
           id="quant-topics"
           className={`${showTopics ? "grid" : "hidden"} sm:grid-cols-2 lg:grid lg:grid-cols-5 gap-x-6 gap-y-4 lg:mt-6`}
         >
-        {TOPIC_ORDER.map((topic) => {
-          const t = statsByTopic.get(topic);
-          return (
+          {topicTallies.map((t) => (
             <TopicProgress
-              key={topic}
-              label={TOPIC_LABEL[topic]}
-              mastered={t?.mastered ?? 0}
-              total={t?.total ?? 0}
-              isWeakest={topic === weakestTopic}
+              key={t.topic}
+              label={TOPIC_LABEL[t.topic]}
+              correct={t.correct}
+              wrong={t.wrong}
+              total={t.total}
             />
-          );
-        })}
-      </div>
+          ))}
+        </div>
 
-        <div className="flex-1 min-h-0 flex flex-col pb-[60px] lg:block lg:flex-none lg:mt-8 lg:pb-0">
-        {current && currentProgress ? (
-          <>
-            <Flashcard
-              cardKey={current.id}
-              front={
-                <div className="space-y-6">
-                  <div className="flex items-baseline justify-between">
-                    <p className="eyebrow">{TOPIC_LABEL[current.topic]}</p>
-                    <p className="mono text-xs text-[var(--color-ink-faint)]">
-                      difficulty {"●".repeat(current.difficulty)}{"○".repeat(3 - current.difficulty)}
-                    </p>
-                  </div>
-                  <p className="serif text-2xl leading-relaxed max-w-2xl">{current.question}</p>
-                  {current.choices && (
-                    <ul className="grid sm:grid-cols-2 gap-2 max-w-2xl">
-                      {current.choices.map((choice, i) => (
-                        <li key={i} className="surface-soft px-4 py-3 text-sm flex items-baseline gap-3">
-                          <span className="mono text-xs text-[var(--color-ink-faint)]">{String.fromCharCode(65 + i)}</span>
-                          <span>{choice}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+        <div className="flex-1 min-h-0 flex flex-col lg:block lg:flex-none lg:mt-8">
+        {current ? (
+          <article className="surface p-6 sm:p-8 flex-1 min-h-0 overflow-y-auto lg:flex-none lg:min-h-[auto] lg:overflow-visible">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <p className="eyebrow">
+                {TOPIC_LABEL[current.topic]} · {FORMAT_LABEL[current.format]}
+              </p>
+              <p className="mono text-xs text-[var(--color-ink-faint)]">
+                difficulty {"●".repeat(current.difficulty)}{"○".repeat(3 - current.difficulty)}
+              </p>
+            </div>
+
+            {current.question && (
+              <p className="serif mt-5 text-xl sm:text-2xl leading-relaxed max-w-2xl">{current.question}</p>
+            )}
+
+            {current.format === "quantitative-comparison" && (
+              <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
+                <QuantityPanel label="Quantity A" value={current.quantityA ?? ""} />
+                <QuantityPanel label="Quantity B" value={current.quantityB ?? ""} />
+              </div>
+            )}
+
+            {current.format === "multi" && !feedback && (
+              <p className="mt-4 text-xs text-[var(--color-ink-muted)]">Select all that apply.</p>
+            )}
+
+            {current.format === "numeric" ? (
+              <form
+                className="mt-6 flex items-center gap-3"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSubmit();
+                }}
+              >
+                <input
+                  type="text"
+                  inputMode="decimal"
+                  value={numericInput}
+                  onChange={(e) => setNumericInput(e.target.value)}
+                  disabled={feedback !== null}
+                  placeholder="Your answer"
+                  aria-label="Numeric answer"
+                  className="mono w-44 px-4 py-3 text-base bg-[var(--color-bg-elevated)] border border-[var(--color-rule)] rounded-md focus:outline-2 focus:outline-[var(--color-accent)] disabled:opacity-60"
+                />
+              </form>
+            ) : (
+              <ul className="mt-6 grid gap-2 max-w-2xl">
+                {choicesOf(current).map((choice, i) => {
+                  const letter = choiceLetter(i);
+                  const isSelected = selected.includes(letter);
+                  const isCorrectChoice = current.correct.includes(letter);
+                  let stateClass = "border-[var(--color-rule)] hover:border-[var(--color-rule-strong)]";
+                  if (feedback) {
+                    if (isCorrectChoice) stateClass = "border-[var(--color-success)] bg-[var(--color-accent-soft)]";
+                    else if (isSelected) stateClass = "border-[var(--color-danger)] bg-[var(--color-warm-soft)]";
+                    else stateClass = "border-[var(--color-rule)] opacity-60";
+                  } else if (isSelected) {
+                    stateClass = "border-[var(--color-accent)] bg-[var(--color-accent-soft)]";
+                  }
+                  return (
+                    <li key={letter}>
+                      <button
+                        type="button"
+                        onClick={() => toggleChoice(letter)}
+                        disabled={feedback !== null}
+                        aria-pressed={isSelected}
+                        className={`w-full text-left px-4 py-3 text-sm flex items-baseline gap-3 rounded-md border transition-colors ${stateClass}`}
+                      >
+                        <span className="mono text-xs text-[var(--color-ink-faint)]">{letter}</span>
+                        <span>{choice}</span>
+                        {feedback && isCorrectChoice && (
+                          <span aria-hidden className="ml-auto self-center inline-flex">
+                            <CheckCircleIcon />
+                          </span>
+                        )}
+                        {feedback && !isCorrectChoice && isSelected && (
+                          <span aria-hidden className="ml-auto self-center inline-flex">
+                            <CrossCircleIcon />
+                          </span>
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+
+            {feedback ? (
+              <div className="mt-6">
+                <p
+                  className={`serif text-2xl inline-flex items-center gap-2.5 ${
+                    feedback.isCorrect ? "text-[var(--color-success)]" : "text-[var(--color-danger)]"
+                  }`}
+                  role="status"
+                >
+                  {feedback.isCorrect ? "Correct" : "Not quite"}
+                  {feedback.isCorrect ? <CheckCircleIcon size={24} /> : <CrossCircleIcon size={24} />}
+                </p>
+                {!feedback.isCorrect && (
+                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+                    Answer: <span className="font-medium text-[var(--color-ink)]">{correctAnswerText(current)}</span>
+                  </p>
+                )}
+                <hr className="rule mt-5" />
+                <div className="mt-5 grid md:grid-cols-2 gap-5">
+                  <p className="leading-relaxed text-sm text-[var(--color-ink-muted)]">{current.explanation}</p>
+                  <p className="serif leading-relaxed md:border-l md:border-[var(--color-rule)] md:pl-5">
+                    {current.explanationZh}
+                  </p>
                 </div>
-              }
-              back={
-                <div className="space-y-5">
-                  <p className="eyebrow">{TOPIC_LABEL[current.topic]} · Answer</p>
-                  <p className="serif text-3xl text-[var(--color-accent)]">{current.answer}</p>
-                  <hr className="rule" />
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <p className="leading-relaxed text-[var(--color-ink-muted)]">{current.explanation}</p>
-                    <p className="serif leading-relaxed md:border-l md:border-[var(--color-rule)] md:pl-5">{current.explanationZh}</p>
-                  </div>
-                </div>
-              }
-              footerFront={<MasteryPips streak={currentProgress.streak} />}
-              footerBack={<MasteryPips streak={currentProgress.streak} />}
-            />
-            <SrsControls onGrade={handleGrade} />
-          </>
-        ) : allMastered ? (
+                <button onClick={handleNext} className="btn btn-primary mt-6">
+                  Next question →
+                </button>
+              </div>
+            ) : (
+              <div className="mt-6 flex items-center gap-2">
+                <button
+                  onClick={() => step(-1)}
+                  className="btn btn-secondary h-9 w-9 !px-0 inline-flex items-center justify-center shrink-0"
+                  aria-label="Previous question"
+                  title="Previous question"
+                >
+                  <ChevronLeftIcon />
+                </button>
+                <button onClick={handleSubmit} disabled={!canSubmit} className="btn btn-primary">
+                  Check answer
+                </button>
+                <button
+                  onClick={() => step(1)}
+                  className="btn btn-secondary h-9 w-9 !px-0 inline-flex items-center justify-center shrink-0"
+                  aria-label="Next question"
+                  title="Next question"
+                >
+                  <ChevronRightIcon />
+                </button>
+              </div>
+            )}
+          </article>
+        ) : mode === "wrong" || allFinished ? (
           <div className="surface p-12 text-center">
-            <p className="serif text-2xl">Every problem mastered. 🎉</p>
-            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
-              All {QUANT.length} problems have graduated. Add more, or reset to run through them again.
+            <p className="serif text-2xl">
+              {tally.wrong === 0 ? `All ${QUANT.length} questions answered correctly. 🎉` : "Every question finished."}
             </p>
+            <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
+              {tally.correct} correct · {tally.wrong} wrong.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {tally.wrong > 0 && mode !== "wrong" && (
+                <button onClick={startRedoWrong} className="btn btn-primary">
+                  Redo the {tally.wrong} wrong question{tally.wrong === 1 ? "" : "s"}
+                </button>
+              )}
+              <Link href="/quant/list" className="btn btn-secondary">Browse all questions</Link>
+            </div>
           </div>
         ) : (
           <div className="surface p-12 text-center">
-            <p className="serif text-2xl">Loading your batch…</p>
+            <p className="serif text-2xl">Loading…</p>
           </div>
         )}
+          <div className="lg:hidden mt-3">
+            <Link href="/quant/list" className="btn btn-secondary text-xs w-full">Browse question list →</Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({ label, value, tone }: { label: string; value: string; tone?: "success" | "danger" }) {
+  const color =
+    tone === "success"
+      ? "text-[var(--color-success)]"
+      : tone === "danger"
+        ? "text-[var(--color-danger)]"
+        : "";
   return (
     <div>
       <p className="eyebrow">{label}</p>
-      <p className="serif text-2xl mt-1">{value}</p>
+      <p className={`serif text-2xl mt-1 ${color}`}>{value}</p>
     </div>
   );
 }
 
-function ProgressBar({ label, value, total }: { label: string; value: number; total: number }) {
-  const pct = total === 0 ? 0 : Math.round((value / total) * 100);
+/**
+ * Progress bar of finished questions, split into correct (green) and wrong
+ * (red) segments. The breakdown appears in a tooltip on hover (same bubble
+ * style as the essay annotations on the writing page). `pointer-events-auto`
+ * keeps hover alive even when an ancestor disables pointer events (the
+ * overall bar sits inside a mobile-only toggle button).
+ */
+function SplitBar({ correct, wrong, total }: { correct: number; wrong: number; total: number }) {
+  const pct = (n: number) => (total === 0 ? 0 : (n / total) * 100);
+  return (
+    <div className="relative group/bar py-1 -my-1 pointer-events-auto">
+      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden flex">
+        <div
+          className="h-full bg-[var(--color-success)] transition-[width] duration-500"
+          style={{ width: `${pct(correct)}%` }}
+        />
+        <div
+          className="h-full bg-[var(--color-danger)] transition-[width] duration-500"
+          style={{ width: `${pct(wrong)}%` }}
+        />
+      </div>
+      <div
+        role="tooltip"
+        className="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover/bar:block z-10"
+      >
+        <div className="relative bg-[var(--color-bg-elevated)] text-[var(--color-ink)] text-sm leading-snug rounded-lg border border-[var(--color-rule)] shadow-[var(--shadow-lift)] px-3 py-2 whitespace-nowrap">
+          <span className="inline-flex items-center gap-3 mono text-xs">
+            <span className="inline-flex items-center gap-1.5">
+              <CheckCircleIcon size={14} /> {correct}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <CrossCircleIcon size={14} /> {wrong}
+            </span>
+          </span>
+          <span
+            aria-hidden
+            className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rotate-45 bg-[var(--color-bg-elevated)] border-r border-b border-[var(--color-rule)]"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function OverallBar({ correct, wrong, total }: { correct: number; wrong: number; total: number }) {
+  const finished = correct + wrong;
+  const pct = total === 0 ? 0 : Math.round((finished / total) * 100);
   return (
     <div className="flex-1">
       <div className="flex items-baseline justify-between mb-1">
-        <span className="eyebrow">{label}</span>
-        <span className="mono text-xs text-[var(--color-ink-faint)]">{value} / {total} · {pct}%</span>
+        <span className="eyebrow">Finished</span>
+        <span className="mono text-xs text-[var(--color-ink-faint)]">
+          {finished} / {total} · {pct}%
+        </span>
       </div>
-      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden">
-        <div
-          className="h-full bg-[var(--color-accent)] transition-[width] duration-500"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
+      <SplitBar correct={correct} wrong={wrong} total={total} />
     </div>
   );
 }
 
 function TopicProgress({
   label,
-  mastered,
+  correct,
+  wrong,
   total,
-  isWeakest,
 }: {
   label: string;
-  mastered: number;
+  correct: number;
+  wrong: number;
   total: number;
-  isWeakest: boolean;
 }) {
-  const pct = total === 0 ? 0 : Math.round((mastered / total) * 100);
   return (
     <div>
       <div className="flex items-baseline justify-between gap-2 mb-1">
         <span className="text-xs font-medium text-[var(--color-ink)]">{label}</span>
-        <span className="mono text-[11px] text-[var(--color-ink-faint)]">{mastered}/{total}</span>
+        <span className="mono text-[11px] text-[var(--color-ink-faint)]">
+          {correct + wrong}/{total}
+        </span>
       </div>
-      <div className="h-1.5 rounded-full bg-[var(--color-rule)] overflow-hidden">
-        <div
-          className="h-full transition-[width] duration-500"
-          style={{
-            width: `${pct}%`,
-            background: isWeakest ? "var(--color-warm)" : "var(--color-accent)",
-          }}
-        />
-      </div>
+      <SplitBar correct={correct} wrong={wrong} total={total} />
     </div>
   );
 }
 
-function MasteryPips({ streak }: { streak: number }) {
+function ChevronLeftIcon() {
   return (
-    <span className="inline-flex items-center gap-1.5">
-      <span className="text-[var(--color-ink-faint)]">mastery</span>
-      {Array.from({ length: GOOD_STEPS_TO_GRADUATE }).map((_, i) => (
-        <span
-          key={i}
-          aria-hidden
-          className={`w-2 h-2 rounded-full ${
-            i < streak ? "bg-[var(--color-success)]" : "bg-[var(--color-rule-strong)]"
-          }`}
-        />
-      ))}
-    </span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="m14.5 6-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="m9.5 6 6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function QuantityPanel({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="surface-soft px-4 py-4">
+      <p className="eyebrow">{label}</p>
+      <p className="serif mt-2 text-lg leading-relaxed">{value}</p>
+    </div>
   );
 }

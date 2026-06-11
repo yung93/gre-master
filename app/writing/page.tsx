@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { CloseIcon, EyeIcon, EyeOffIcon, ICON_BTN, ICON_BTN_ACTIVE } from "@/components/Icons";
 import writingIndex from "@/data/writing-index.json";
 import { useLocalState } from "@/lib/storage";
 import type { EssaySentence, SampleEssay, WritingPromptMeta } from "@/lib/types";
@@ -254,7 +255,14 @@ export default function WritingPage() {
           <div className="absolute inset-x-3 top-[var(--nav-h,148px)] bottom-3 surface flex flex-col overflow-hidden shadow-[var(--shadow-lift)]">
             <div className="flex items-center justify-between px-5 py-3 border-b border-[var(--color-rule)] shrink-0">
               <p className="eyebrow">Prompts · {filtered.length}</p>
-              <button onClick={() => setListOpen(false)} className="btn btn-ghost text-xs">Close ✕</button>
+              <button
+                onClick={() => setListOpen(false)}
+                className={ICON_BTN}
+                aria-label="Close"
+                title="Close"
+              >
+                <CloseIcon />
+              </button>
             </div>
             <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-[var(--color-rule)]">
               <PromptList
@@ -539,25 +547,34 @@ function ReciteDialog({
         className="surface w-full max-w-2xl max-h-[90vh] flex flex-col shadow-[var(--shadow-lift)]"
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="shrink-0 border-b border-[var(--color-rule)] px-6 py-4 flex items-start justify-between gap-4">
-          <div>
+        <div className="shrink-0 border-b border-[var(--color-rule)] px-6 py-4">
+          <div className="flex items-center justify-between gap-4">
             <p className="eyebrow">Recite from structure</p>
-            <p className="text-sm text-[var(--color-ink-muted)] mt-0.5">
-              Write each sentence from its cue, then tap to reveal and compare.
-            </p>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => setRevealed(allRevealed ? new Set() : new Set(keys))}
+                className={allRevealed ? ICON_BTN_ACTIVE : ICON_BTN}
+                aria-pressed={allRevealed}
+                aria-label={allRevealed ? "Hide all sentences" : "Reveal all sentences"}
+                title={allRevealed ? "Hide all" : "Reveal all"}
+              >
+                {allRevealed ? <EyeOffIcon /> : <EyeIcon />}
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className={ICON_BTN}
+                aria-label="Close"
+                title="Close"
+              >
+                <CloseIcon />
+              </button>
+            </div>
           </div>
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={() => setRevealed(allRevealed ? new Set() : new Set(keys))}
-              className="btn btn-secondary text-xs"
-            >
-              {allRevealed ? "Hide all" : "Reveal all"}
-            </button>
-            <button type="button" onClick={onClose} className="btn btn-ghost text-xs">
-              Close
-            </button>
-          </div>
+          <p className="text-sm text-[var(--color-ink-muted)] mt-1.5">
+            Write each sentence from its cue, then tap to reveal and compare.
+          </p>
         </div>
 
         <div className="overflow-y-auto px-6 py-5 space-y-7">
