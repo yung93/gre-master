@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { CheckCircleIcon, CrossCircleIcon } from "@/components/StatusIcons";
 import { QUANT } from "@/data/quant";
@@ -42,6 +42,13 @@ function randomSeed(): number {
 interface Feedback {
   isCorrect: boolean;
   selected: string[];
+  elapsedMs: number;
+}
+
+function formatClock(totalSeconds: number): string {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
 }
 
 export default function QuantPage() {
@@ -66,6 +73,26 @@ export default function QuantPage() {
     [seed],
   );
   const current = index < order.length ? order[index] : null;
+  const currentId = current?.id ?? null;
+
+  // Per-question stopwatch. The start time lives in a ref so ticking doesn't
+  // restart it; it resets whenever a different question lands on the card and
+  // stops counting once the answer is revealed.
+  const startedAtRef = useRef(Date.now());
+  const [elapsedSec, setElapsedSec] = useState(0);
+
+  useEffect(() => {
+    startedAtRef.current = Date.now();
+    setElapsedSec(0);
+  }, [currentId]);
+
+  useEffect(() => {
+    if (feedback || currentId === null) return;
+    const tick = setInterval(() => {
+      setElapsedSec(Math.floor((Date.now() - startedAtRef.current) / 1000));
+    }, 1000);
+    return () => clearInterval(tick);
+  }, [feedback, currentId]);
 
   const tally = useMemo(() => {
     let correct = 0;
@@ -128,7 +155,7 @@ export default function QuantPage() {
         },
       };
     });
-    setFeedback({ isCorrect, selected: answer });
+    setFeedback({ isCorrect, selected: answer, elapsedMs: Date.now() - startedAtRef.current });
   }
 
   function clearEntry() {
@@ -231,9 +258,18 @@ export default function QuantPage() {
               <p className="eyebrow">
                 {TOPIC_LABEL[current.topic]} · {FORMAT_LABEL[current.format]}
               </p>
-              <p className="mono text-xs text-[var(--color-ink-faint)]">
-                difficulty {"●".repeat(current.difficulty)}{"○".repeat(3 - current.difficulty)}
-              </p>
+              <div className="flex items-baseline gap-4">
+                <p
+                  role="timer"
+                  aria-label="Time on this question"
+                  className="mono text-xs text-[var(--color-ink-faint)] tabular-nums"
+                >
+                  {formatClock(feedback ? Math.round(feedback.elapsedMs / 1000) : elapsedSec)}
+                </p>
+                <p className="mono text-xs text-[var(--color-ink-faint)]">
+                  difficulty {"●".repeat(current.difficulty)}{"○".repeat(3 - current.difficulty)}
+                </p>
+              </div>
             </div>
 
             {current.question && (
@@ -333,8 +369,14 @@ export default function QuantPage() {
                   {feedback.isCorrect ? "Correct" : "Not quite"}
                   {feedback.isCorrect ? <CheckCircleIcon size={24} /> : <CrossCircleIcon size={24} />}
                 </p>
+                <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+                  Time used:{" "}
+                  <span className="mono text-xs text-[var(--color-ink)] tabular-nums">
+                    {formatClock(Math.round(feedback.elapsedMs / 1000))}
+                  </span>
+                </p>
                 {!feedback.isCorrect && (
-                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+                  <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
                     Answer: <span className="font-medium text-[var(--color-ink)]">{correctAnswerText(current)}</span>
                   </p>
                 )}
