@@ -133,8 +133,8 @@ export const GEOMETRY: QuantQuestion[] = [
       width: 360,
       height: 200,
     },
-    choices: ["105", "115", "125", "135", "145"],
-    correct: ["C"],
+    choices: ["55", "70", "110", "125", "145"],
+    correct: ["D"],
     explanation:
       "An exterior angle of a triangle equals the sum of the two remote interior angles, so x = 55 + 70 = 125. (Equivalently, the third interior angle is 180 − 55 − 70 = 55, and x = 180 − 55 = 125.)",
     explanationZh: "三角形的外角等於兩個不相鄰內角之和，所以 x = 55 + 70 = 125。（亦可：第三個內角為 180 − 55 − 70 = 55，故 x = 180 − 55 = 125。）",
@@ -143,7 +143,7 @@ export const GEOMETRY: QuantQuestion[] = [
     id: "q-geo-12",
     topic: "geometry",
     format: "single",
-    difficulty: 1,
+    difficulty: 2,
     question: "In the figure, lines ℓ and m are parallel. What is the value of x?",
     figure: {
       src: "/figures/quant/q-geo-12.svg",
@@ -151,7 +151,7 @@ export const GEOMETRY: QuantQuestion[] = [
       width: 360,
       height: 210,
     },
-    choices: ["40", "50", "60", "120", "130"],
+    choices: ["40", "50", "65", "130", "140"],
     correct: ["B"],
     explanation:
       "Corresponding angles are equal, so the angle above m on the right of the transversal is also 130°. x is its supplement along the transversal: x = 180 − 130 = 50.",

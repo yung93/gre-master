@@ -145,8 +145,8 @@ export const DATA_INTERPRETATION: QuantQuestion[] = [
     choices: ["15%", "37.5%", "50%", "60%", "62.5%"],
     correct: ["D"],
     explanation:
-      "Sales rose from 25 to 40 thousand dollars, an increase of 15. Percent increase is measured against the starting value: 15/25 = 0.6 = 60%.",
-    explanationZh: "銷售額從 25 千美元升至 40 千美元，增加 15。百分比增幅以起始值為基準：15/25 = 0.6，即 60%。",
+      "Percent increase is measured against the starting value. Sales rose from 25 to 40 thousand dollars, an increase of 15, so the increase is 15/25 = 0.6 = 60%.",
+    explanationZh: "百分比增幅以起始值為基準。銷售額從 25 千美元升至 40 千美元，增加 15，故增幅為 15/25 = 0.6，即 60%。",
   },
   {
     id: "q-data-12",

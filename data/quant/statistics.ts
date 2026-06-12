@@ -129,14 +129,14 @@ export const STATISTICS: QuantQuestion[] = [
       "The line graph shows a city's daily high temperature, in degrees Celsius, over six days. What is the median of the six temperatures?",
     figure: {
       src: "/figures/quant/q-stat-11.svg",
-      alt: "Line graph of daily high temperatures in degrees Celsius: Monday 12, Tuesday 18, Wednesday 15, Thursday 21, Friday 18, Saturday 24.",
+      alt: "Line graph of daily high temperatures in degrees Celsius: Monday 12, Tuesday 19, Wednesday 15, Thursday 21, Friday 18, Saturday 24.",
       width: 380,
       height: 230,
     },
-    choices: ["15", "16.5", "18", "19.5", "21"],
+    choices: ["15", "18", "18.5", "19", "21"],
     correct: ["C"],
     explanation:
-      "Sorted, the values are 12, 15, 18, 18, 21, 24. With six values the median is the mean of the middle two: (18 + 18) / 2 = 18.",
-    explanationZh: "排序後為 12, 15, 18, 18, 21, 24。六個數的中位數是中間兩數的平均：(18 + 18) / 2 = 18。",
+      "Sort the values first: 12, 15, 18, 19, 21, 24. With six values the median is the mean of the middle two: (18 + 19) / 2 = 18.5.",
+    explanationZh: "先排序：12, 15, 18, 19, 21, 24。六個數的中位數是中間兩數的平均：(18 + 19) / 2 = 18.5。",
   },
 ];
