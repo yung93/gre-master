@@ -113,6 +113,8 @@ export interface QuantAttempt {
   firstOutcome: "correct" | "wrong";
   attempts: number;
   lastAnsweredAt: number;
+  /** Stopwatch reading of the last answered attempt; absent if the timer was never run. */
+  timeMs?: number;
 }
 
 export type EssayType = "issue" | "argument";

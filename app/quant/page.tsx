@@ -12,6 +12,7 @@ import {
   choiceLetter,
   choicesOf,
   correctAnswerText,
+  formatClock,
   isAnswerCorrect,
 } from "@/lib/quant";
 import { useLocalState, writeJson } from "@/lib/storage";
@@ -45,11 +46,7 @@ interface Feedback {
   elapsedMs: number;
 }
 
-function formatClock(totalSeconds: number): string {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${String(seconds).padStart(2, "0")}`;
-}
+type TimerState = "stopped" | "running" | "paused";
 
 export default function QuantPage() {
   const [attempts, setAttempts] = useLocalState<Record<string, QuantAttempt>>("quant/attempts", {});
@@ -75,24 +72,50 @@ export default function QuantPage() {
   const current = index < order.length ? order[index] : null;
   const currentId = current?.id ?? null;
 
-  // Per-question stopwatch. The start time lives in a ref so ticking doesn't
-  // restart it; it resets whenever a different question lands on the card and
-  // stops counting once the answer is revealed.
+  // Per-question stopwatch with ▶/⏸/⏹ controls. It starts out stopped and
+  // only stops again via the ⏹ button; landing on another question just
+  // zeroes the clock and, if it was running, keeps it running. Accumulated
+  // time lives in refs so ticking re-renders don't restart it.
+  const [timerState, setTimerState] = useState<TimerState>("stopped");
   const startedAtRef = useRef(Date.now());
-  const [elapsedSec, setElapsedSec] = useState(0);
+  const baseMsRef = useRef(0);
+  const [elapsedMs, setElapsedMs] = useState(0);
 
   useEffect(() => {
+    baseMsRef.current = 0;
     startedAtRef.current = Date.now();
-    setElapsedSec(0);
+    setElapsedMs(0);
   }, [currentId]);
 
   useEffect(() => {
-    if (feedback || currentId === null) return;
+    if (feedback || timerState !== "running" || currentId === null) return;
     const tick = setInterval(() => {
-      setElapsedSec(Math.floor((Date.now() - startedAtRef.current) / 1000));
+      setElapsedMs(baseMsRef.current + Date.now() - startedAtRef.current);
     }, 1000);
     return () => clearInterval(tick);
-  }, [feedback, currentId]);
+  }, [feedback, timerState, currentId]);
+
+  function timerElapsedMs(): number {
+    return baseMsRef.current + (timerState === "running" ? Date.now() - startedAtRef.current : 0);
+  }
+
+  function toggleTimer() {
+    if (timerState === "running") {
+      baseMsRef.current += Date.now() - startedAtRef.current;
+      setElapsedMs(baseMsRef.current);
+      setTimerState("paused");
+    } else {
+      startedAtRef.current = Date.now();
+      setTimerState("running");
+    }
+  }
+
+  function stopTimer() {
+    baseMsRef.current = 0;
+    startedAtRef.current = Date.now();
+    setElapsedMs(0);
+    setTimerState("stopped");
+  }
 
   const tally = useMemo(() => {
     let correct = 0;
@@ -143,6 +166,7 @@ export default function QuantPage() {
     if (!current || !canSubmit || feedback) return;
     const isCorrect = isAnswerCorrect(current, answer);
     const outcome = isCorrect ? "correct" : "wrong";
+    const timeMs = timerElapsedMs();
     setAttempts((prev) => {
       const existing = prev[current.id];
       return {
@@ -152,10 +176,12 @@ export default function QuantPage() {
           firstOutcome: existing?.firstOutcome ?? outcome,
           attempts: (existing?.attempts ?? 0) + 1,
           lastAnsweredAt: Date.now(),
+          // Keep the previous reading if this attempt was made with the timer off.
+          timeMs: timeMs > 0 ? timeMs : existing?.timeMs,
         },
       };
     });
-    setFeedback({ isCorrect, selected: answer, elapsedMs: Date.now() - startedAtRef.current });
+    setFeedback({ isCorrect, selected: answer, elapsedMs: timeMs });
   }
 
   function clearEntry() {
@@ -259,13 +285,33 @@ export default function QuantPage() {
                 {TOPIC_LABEL[current.topic]} · {FORMAT_LABEL[current.format]}
               </p>
               <div className="flex items-baseline gap-4">
-                <p
-                  role="timer"
-                  aria-label="Time on this question"
-                  className="mono text-xs text-[var(--color-ink-faint)] tabular-nums"
-                >
-                  {formatClock(feedback ? Math.round(feedback.elapsedMs / 1000) : elapsedSec)}
-                </p>
+                <span className="inline-flex items-center gap-0.5">
+                  <span
+                    role="timer"
+                    aria-label="Time on this question"
+                    className="mono text-xs text-[var(--color-ink-faint)] tabular-nums mr-1"
+                  >
+                    {formatClock(feedback ? feedback.elapsedMs : elapsedMs)}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={toggleTimer}
+                    aria-label={timerState === "running" ? "Pause timer" : "Start timer"}
+                    title={timerState === "running" ? "Pause timer" : "Start timer"}
+                    className="px-1 text-xs leading-none text-[var(--color-ink-faint)] hover:text-[var(--color-ink)] transition-colors"
+                  >
+                    {timerState === "running" ? "⏸︎" : "▶︎"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={stopTimer}
+                    aria-label="Stop timer"
+                    title="Stop timer"
+                    className="px-1 text-xs leading-none text-[var(--color-ink-faint)] hover:text-[var(--color-ink)] transition-colors"
+                  >
+                    {"⏹︎"}
+                  </button>
+                </span>
                 <p className="mono text-xs text-[var(--color-ink-faint)]">
                   difficulty {"●".repeat(current.difficulty)}{"○".repeat(3 - current.difficulty)}
                 </p>
@@ -369,12 +415,14 @@ export default function QuantPage() {
                   {feedback.isCorrect ? "Correct" : "Not quite"}
                   {feedback.isCorrect ? <CheckCircleIcon size={24} /> : <CrossCircleIcon size={24} />}
                 </p>
-                <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
-                  Time used:{" "}
-                  <span className="mono text-xs text-[var(--color-ink)] tabular-nums">
-                    {formatClock(Math.round(feedback.elapsedMs / 1000))}
-                  </span>
-                </p>
+                {feedback.elapsedMs > 0 && (
+                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">
+                    Time used:{" "}
+                    <span className="mono text-xs text-[var(--color-ink)] tabular-nums">
+                      {formatClock(feedback.elapsedMs)}
+                    </span>
+                  </p>
+                )}
                 {!feedback.isCorrect && (
                   <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
                     Answer: <span className="font-medium text-[var(--color-ink)]">{correctAnswerText(current)}</span>

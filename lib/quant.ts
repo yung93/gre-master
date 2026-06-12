@@ -62,6 +62,14 @@ export function choicesOf(q: QuantQuestion): string[] {
 
 export const choiceLetter = (index: number): string => String.fromCharCode(65 + index);
 
+/** Format a duration in milliseconds as a m:ss stopwatch reading. */
+export function formatClock(ms: number): string {
+  const totalSeconds = Math.round(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
 /**
  * Parse a numeric-entry answer: plain decimals ("72.5"), fractions ("1/6"),
  * optional commas and a leading $ are tolerated. Returns null if unparseable.

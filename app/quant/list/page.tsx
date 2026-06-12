@@ -12,6 +12,7 @@ import {
   choiceLetter,
   choicesOf,
   correctAnswerText,
+  formatClock,
 } from "@/lib/quant";
 import { useLocalState } from "@/lib/storage";
 import type { QuantAttempt, QuantQuestion, QuantTopic } from "@/lib/types";
@@ -268,7 +269,12 @@ function QuestionRow({ question, index, attempt }: QuestionRowProps) {
             {"●".repeat(question.difficulty)}{"○".repeat(3 - question.difficulty)}
           </span>
         </span>
-        <span className="shrink-0 self-center">
+        <span className="shrink-0 self-center inline-flex items-center gap-1.5">
+          {attempt?.timeMs !== undefined && (
+            <span className="mono text-[11px] text-[var(--color-ink-faint)] tabular-nums">
+              {formatClock(attempt.timeMs)}
+            </span>
+          )}
           <StatusIcon attempt={attempt} />
         </span>
       </button>
