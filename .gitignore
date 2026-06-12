@@ -44,8 +44,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# editor / agent local state
-.claude/
+# editor / agent local state — but share project agents/commands via git
+# (a fully-ignored directory can't be re-included, hence the /* + negations)
+.claude/*
+!.claude/agents/
+!.claude/commands/
 .idea/
 .vscode/
 

@@ -7,9 +7,10 @@
   },
   "scripts": {
     "gen": "node --experimental-strip-types scripts/gen-writing-data.mjs",
+    "validate:quant": "node --experimental-strip-types scripts/validate-quant.mjs",
     "predev": "npm run gen",
     "dev": "next dev",
-    "prebuild": "npm run gen",
+    "prebuild": "npm run gen && npm run validate:quant",
     "build": "next build",
     "start": "next start",
     "deploy": "npm run build && firebase deploy --only hosting"
