@@ -6,6 +6,7 @@ import { CheckCircleIcon, CrossCircleIcon } from "@/components/StatusIcons";
 import { QUANT } from "@/data/quant";
 import {
   FORMAT_LABEL,
+  QUANT_RESET_KEY,
   TOPIC_LABEL,
   TOPIC_ORDER,
   choiceLetter,
@@ -13,7 +14,7 @@ import {
   correctAnswerText,
   isAnswerCorrect,
 } from "@/lib/quant";
-import { useLocalState } from "@/lib/storage";
+import { useLocalState, writeJson } from "@/lib/storage";
 import type { QuantAttempt, QuantQuestion, QuantTopic } from "@/lib/types";
 
 const TOPIC_QUESTIONS = new Map<QuantTopic, QuantQuestion[]>(
@@ -160,6 +161,9 @@ export default function QuantPage() {
 
   function resetProgress() {
     if (typeof window !== "undefined" && !window.confirm("Reset all quantitative progress?")) return;
+    // Stamp the reset so the cloud merge drops the old attempts instead of
+    // syncing them straight back from Firestore.
+    writeJson(QUANT_RESET_KEY, Date.now());
     setAttempts({});
     reshuffle();
   }

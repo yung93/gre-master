@@ -1,5 +1,12 @@
 import type { QuantFormat, QuantQuestion, QuantTopic } from "./types";
 
+/**
+ * Local-storage key holding the epoch ms of the latest "Reset progress". The
+ * cloud merge drops attempts answered before it, so a reset isn't resurrected
+ * by the otherwise-additive sync.
+ */
+export const QUANT_RESET_KEY = "quant/attempts-reset-at";
+
 export const TOPIC_ORDER: QuantTopic[] = [
   "arithmetic",
   "algebra",

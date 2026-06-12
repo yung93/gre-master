@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { doc, getDoc, onSnapshot, serverTimestamp, setDoc, type Timestamp } from "firebase/firestore";
 import { getFirebaseDb } from "./firebase";
 import { useAuth } from "./auth";
+import { QUANT_RESET_KEY } from "./quant";
 import { readJson, writeJson } from "./storage";
 import type { LearnProgress, MockSessionState, QuantAttempt, SrsState } from "./types";
 
@@ -20,6 +21,7 @@ export type SyncStatus = "idle" | "loading" | "ready" | "syncing" | "error";
 interface CloudPayload {
   vocab: Record<string, SrsState>;
   quantAttempts: Record<string, QuantAttempt>;
+  quantResetAt: number;
   learnVocab: Record<string, LearnProgress>;
   learnVocabMastery: number;
   mockActive: MockSessionState | null;
@@ -31,6 +33,7 @@ function readLocalPayload(): CloudPayload {
   return {
     vocab: readJson<Record<string, SrsState>>(KEY_VOCAB, {}),
     quantAttempts: readJson<Record<string, QuantAttempt>>(KEY_QUANT_ATTEMPTS, {}),
+    quantResetAt: readJson<number>(QUANT_RESET_KEY, 0),
     learnVocab: readJson<Record<string, LearnProgress>>(KEY_LEARN_VOCAB, {}),
     learnVocabMastery: readJson<number>(KEY_LEARN_VOCAB_MASTERY, 0),
     mockActive: readJson<MockSessionState | null>(KEY_MOCK, null),
@@ -41,6 +44,7 @@ function readLocalPayload(): CloudPayload {
 function writeLocalPayload(payload: CloudPayload): void {
   writeJson(KEY_VOCAB, payload.vocab);
   writeJson(KEY_QUANT_ATTEMPTS, payload.quantAttempts);
+  writeJson(QUANT_RESET_KEY, payload.quantResetAt);
   writeJson(KEY_LEARN_VOCAB, payload.learnVocab);
   writeJson(KEY_LEARN_VOCAB_MASTERY, payload.learnVocabMastery);
   writeJson(KEY_MOCK, payload.mockActive);
@@ -101,6 +105,23 @@ function mergeAttempts(
   return out;
 }
 
+/**
+ * Drop attempts answered before the latest "Reset progress". Without this the
+ * additive merge resurrects cleared attempts from the cloud (or another
+ * device) right after a reset.
+ */
+function pruneResetAttempts(
+  attempts: Record<string, QuantAttempt>,
+  resetAt: number,
+): Record<string, QuantAttempt> {
+  if (resetAt <= 0) return attempts;
+  const out: Record<string, QuantAttempt> = {};
+  for (const id in attempts) {
+    if (attempts[id].lastAnsweredAt > resetAt) out[id] = attempts[id];
+  }
+  return out;
+}
+
 function pickLatestMock(
   a: MockSessionState | null,
   b: MockSessionState | null,
@@ -127,9 +148,14 @@ function mergeReadState(
 }
 
 function mergePayloads(local: CloudPayload, remote: Partial<CloudPayload>): CloudPayload {
+  const quantResetAt = Math.max(local.quantResetAt, remote.quantResetAt ?? 0);
   return {
     vocab: mergeSrs(local.vocab, remote.vocab ?? {}),
-    quantAttempts: mergeAttempts(local.quantAttempts, remote.quantAttempts ?? {}),
+    quantAttempts: pruneResetAttempts(
+      mergeAttempts(local.quantAttempts, remote.quantAttempts ?? {}),
+      quantResetAt,
+    ),
+    quantResetAt,
     learnVocab: mergeLearn(local.learnVocab, remote.learnVocab ?? {}),
     learnVocabMastery: Math.max(local.learnVocabMastery, remote.learnVocabMastery ?? 0),
     mockActive: pickLatestMock(local.mockActive, remote.mockActive ?? null),
