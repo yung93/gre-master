@@ -6,7 +6,6 @@ import Pagination from "@/components/Pagination";
 import { CheckCircleIcon, CrossCircleIcon, DashCircleIcon } from "@/components/StatusIcons";
 import { QUANT } from "@/data/quant";
 import {
-  FORMAT_LABEL,
   FORMAT_SHORT,
   TOPIC_LABEL,
   TOPIC_ORDER,
@@ -276,9 +275,6 @@ function QuestionRow({ question, index, attempt }: QuestionRowProps) {
 
       {expanded && (
         <div className="px-5 pb-5 pt-1 sm:pl-[4.75rem] grid gap-4 anim-fade-up">
-          <p className="eyebrow">
-            {TOPIC_LABEL[question.topic]} · {FORMAT_LABEL[question.format]}
-          </p>
           {question.question && (
             <p className="serif text-lg leading-relaxed max-w-2xl">{question.question}</p>
           )}
