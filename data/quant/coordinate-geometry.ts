@@ -113,4 +113,22 @@ export const COORDINATE_GEOMETRY: QuantQuestion[] = [
     explanation: "(8 − 2) / (k − 1) = 3 gives 6 = 3(k − 1), so k = 3.",
     explanationZh: "(8 − 2) / (k − 1) = 3，得 6 = 3(k − 1)，故 k = 3。",
   },
+  {
+    id: "q-coord-11",
+    topic: "coordinate-geometry",
+    format: "single",
+    difficulty: 1,
+    question: "Line k is shown in the figure. What is the slope of line k?",
+    figure: {
+      src: "/figures/quant/q-coord-11.svg",
+      alt: "The xy-plane with line k passing through the labeled points (−2, 0) and (0, 4), rising from lower left to upper right.",
+      width: 280,
+      height: 280,
+    },
+    choices: ["−2", "−1/2", "1/2", "2", "4"],
+    correct: ["D"],
+    explanation:
+      "Slope = rise / run between the labeled points: (4 − 0) / (0 − (−2)) = 4 / 2 = 2.",
+    explanationZh: "斜率 = 兩標示點的縱差除以橫差：(4 − 0) / (0 − (−2)) = 4 / 2 = 2。",
+  },
 ];

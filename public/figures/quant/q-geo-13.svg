@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="210" viewBox="0 0 260 210" fill="none">
+  <circle cx="130" cy="105" r="75" stroke="#2e2a24" stroke-width="2"/>
+
+  <!-- radii to A and B (central angle 80°) -->
+  <line x1="130" y1="105" x2="87" y2="166" stroke="#2e2a24" stroke-width="1.8"/>
+  <line x1="130" y1="105" x2="173" y2="166" stroke="#2e2a24" stroke-width="1.8"/>
+  <!-- chords from C to A and B (inscribed angle) -->
+  <line x1="130" y1="30" x2="87" y2="166" stroke="#2e2a24" stroke-width="1.8"/>
+  <line x1="130" y1="30" x2="173" y2="166" stroke="#2e2a24" stroke-width="1.8"/>
+
+  <!-- center -->
+  <circle cx="130" cy="105" r="2.5" fill="#2e2a24"/>
+  <text x="141" y="103" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#2e2a24">O</text>
+
+  <!-- central angle 80° -->
+  <path d="M119.7 119.7 A18 18 0 0 0 140.3 119.7" stroke="#6e675c" stroke-width="1.5"/>
+  <text x="130" y="142" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#2e2a24">80°</text>
+
+  <!-- inscribed angle x° -->
+  <path d="M124 49.1 A20 20 0 0 0 136 49.1" stroke="#15798a" stroke-width="1.5"/>
+  <text x="130" y="68" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#15798a">x°</text>
+
+  <!-- vertex labels -->
+  <text x="78" y="182" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#2e2a24">A</text>
+  <text x="182" y="182" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#2e2a24">B</text>
+  <text x="130" y="20" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#2e2a24">C</text>
+
+  <text x="130" y="204" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#6e675c">Figure not drawn to scale</text>
+</svg>

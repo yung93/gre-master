@@ -139,4 +139,40 @@ export const GEOMETRY: QuantQuestion[] = [
       "An exterior angle of a triangle equals the sum of the two remote interior angles, so x = 55 + 70 = 125. (Equivalently, the third interior angle is 180 − 55 − 70 = 55, and x = 180 − 55 = 125.)",
     explanationZh: "三角形的外角等於兩個不相鄰內角之和，所以 x = 55 + 70 = 125。（亦可：第三個內角為 180 − 55 − 70 = 55，故 x = 180 − 55 = 125。）",
   },
+  {
+    id: "q-geo-12",
+    topic: "geometry",
+    format: "single",
+    difficulty: 1,
+    question: "In the figure, lines ℓ and m are parallel. What is the value of x?",
+    figure: {
+      src: "/figures/quant/q-geo-12.svg",
+      alt: "Parallel lines ℓ and m cut by a transversal. At line ℓ the angle above the line, to the right of the transversal, is 130°. At line m the angle below the line, to the right of the transversal, is x°.",
+      width: 360,
+      height: 210,
+    },
+    choices: ["40", "50", "60", "120", "130"],
+    correct: ["B"],
+    explanation:
+      "Corresponding angles are equal, so the angle above m on the right of the transversal is also 130°. x is its supplement along the transversal: x = 180 − 130 = 50.",
+    explanationZh: "同位角相等，故 m 線上方、截線右側的角也是 130°。x 與它互補：x = 180 − 130 = 50。",
+  },
+  {
+    id: "q-geo-13",
+    topic: "geometry",
+    format: "numeric",
+    difficulty: 2,
+    question:
+      "In the figure, points A, B, and C lie on the circle with center O. What is the value of x?",
+    figure: {
+      src: "/figures/quant/q-geo-13.svg",
+      alt: "A circle with center O. Points A, B, and C lie on the circle. Radii OA and OB form a central angle of 80°; chords CA and CB form an inscribed angle of x° at C on the major arc.",
+      width: 260,
+      height: 210,
+    },
+    correct: ["40"],
+    explanation:
+      "An inscribed angle is half the central angle that subtends the same arc. Angle ACB subtends arc AB, the same arc as the 80° central angle, so x = 80 / 2 = 40.",
+    explanationZh: "圓周角是同弧所對圓心角的一半。∠ACB 與 80° 的圓心角對著同一弧 AB，故 x = 80 / 2 = 40。",
+  },
 ];

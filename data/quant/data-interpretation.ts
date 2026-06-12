@@ -148,4 +148,21 @@ export const DATA_INTERPRETATION: QuantQuestion[] = [
       "Sales rose from 25 to 40 thousand dollars, an increase of 15. Percent increase is measured against the starting value: 15/25 = 0.6 = 60%.",
     explanationZh: "銷售額從 25 千美元升至 40 千美元，增加 15。百分比增幅以起始值為基準：15/25 = 0.6，即 60%。",
   },
+  {
+    id: "q-data-12",
+    topic: "data-interpretation",
+    format: "numeric",
+    difficulty: 1,
+    question:
+      "The circle graph shows how a family allocates its $2,400 monthly budget. How many dollars go to food each month?",
+    figure: {
+      src: "/figures/quant/q-data-12.svg",
+      alt: "Circle graph of a $2,400 monthly budget: Rent 35%, Food 25%, Transport 15%, Savings 10%, Other 15%.",
+      width: 360,
+      height: 220,
+    },
+    correct: ["600"],
+    explanation: "Food is 25% of the budget: 0.25 × 2,400 = 600 dollars.",
+    explanationZh: "食物佔預算的 25%：0.25 × 2,400 = 600 美元。",
+  },
 ];

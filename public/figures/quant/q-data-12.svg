@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" fill="none">
+  <!-- pie: center (110,110), r 80, clockwise from 12 o'clock -->
+  <!-- Rent 35% -->
+  <path d="M110 110 L110 30 A80 80 0 0 1 174.7 157 Z" fill="#15798a"/>
+  <!-- Food 25% -->
+  <path d="M110 110 L174.7 157 A80 80 0 0 1 63 174.7 Z" fill="#54a0ad"/>
+  <!-- Transport 15% -->
+  <path d="M110 110 L63 174.7 A80 80 0 0 1 30 110 Z" fill="#92c2cb"/>
+  <!-- Savings 10% -->
+  <path d="M110 110 L30 110 A80 80 0 0 1 45.3 63 Z" fill="#cfe2e6"/>
+  <!-- Other 15% -->
+  <path d="M110 110 L45.3 63 A80 80 0 0 1 110 30 Z" fill="#ded9cf"/>
+  <circle cx="110" cy="110" r="80" stroke="#2e2a24" stroke-width="1.5"/>
+
+  <!-- legend -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#2e2a24">
+    <rect x="218" y="44" width="13" height="13" fill="#15798a"/>
+    <text x="240" y="55">Rent &#183; 35%</text>
+    <rect x="218" y="72" width="13" height="13" fill="#54a0ad"/>
+    <text x="240" y="83">Food &#183; 25%</text>
+    <rect x="218" y="100" width="13" height="13" fill="#92c2cb"/>
+    <text x="240" y="111">Transport &#183; 15%</text>
+    <rect x="218" y="128" width="13" height="13" fill="#cfe2e6" stroke="#ded9cf"/>
+    <text x="240" y="139">Savings &#183; 10%</text>
+    <rect x="218" y="156" width="13" height="13" fill="#ded9cf"/>
+    <text x="240" y="167">Other &#183; 15%</text>
+  </g>
+
+  <text x="110" y="212" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#6e675c">Monthly budget &#183; $2,400</text>
+</svg>
