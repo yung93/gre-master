@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { CheckCircleIcon, CrossCircleIcon } from "@/components/StatusIcons";
 import { QUANT } from "@/data/quant";
@@ -23,11 +23,31 @@ const TOPIC_QUESTIONS = new Map<QuantTopic, QuantQuestion[]>(
 );
 
 /**
+ * Deterministic 32-bit hash of a question id under a session seed. Ordering
+ * the pool by this hash shuffles it without calling Math.random() during
+ * render, which would desync the server-rendered HTML from hydration.
+ */
+function shuffleRank(seed: number, id: string): number {
+  let h = seed ^ 0x9e3779b9;
+  for (let i = 0; i < id.length; i += 1) {
+    h = Math.imul(h ^ id.charCodeAt(i), 0x85ebca6b);
+    h ^= h >>> 13;
+  }
+  return h >>> 0;
+}
+
+/**
  * Pick the next question: unanswered ones first (mode "new") or previously
  * missed ones (mode "wrong"), always drawn from the topic with the lowest
- * finished ratio so weak/neglected areas surface first.
+ * finished ratio so weak/neglected areas surface first. Within that topic the
+ * pool is shuffled by the session seed, so questions arrive in a random order
+ * with no repeats until the pool is exhausted.
  */
-function pickNext(attempts: Record<string, QuantAttempt>, mode: PracticeMode): QuantQuestion | null {
+function pickNext(
+  attempts: Record<string, QuantAttempt>,
+  mode: PracticeMode,
+  seed: number,
+): QuantQuestion | null {
   const inPool = (q: QuantQuestion) =>
     mode === "new" ? !attempts[q.id] : attempts[q.id]?.outcome === "wrong";
   let bestTopic: QuantTopic | null = null;
@@ -43,7 +63,17 @@ function pickNext(attempts: Record<string, QuantAttempt>, mode: PracticeMode): Q
     }
   }
   if (!bestTopic) return null;
-  return (TOPIC_QUESTIONS.get(bestTopic) ?? []).find(inPool) ?? null;
+  let pick: QuantQuestion | null = null;
+  let minRank = Infinity;
+  for (const q of TOPIC_QUESTIONS.get(bestTopic) ?? []) {
+    if (!inPool(q)) continue;
+    const rank = shuffleRank(seed, q.id);
+    if (rank < minRank) {
+      minRank = rank;
+      pick = q;
+    }
+  }
+  return pick;
 }
 
 interface Feedback {
@@ -61,11 +91,18 @@ export default function QuantPage() {
   const [numericInput, setNumericInput] = useState("");
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [showTopics, setShowTopics] = useState(false);
+  // Shuffle seed for the random question order. Starts at 0 so server render
+  // and hydration agree, then re-rolls once per visit after mount.
+  const [seed, setSeed] = useState(0);
+
+  useEffect(() => {
+    setSeed(Math.floor(Math.random() * 0x7fffffff) + 1);
+  }, []);
 
   const current = useMemo(() => {
     if (pinnedId) return QUANT.find((q) => q.id === pinnedId) ?? null;
-    return pickNext(attempts, mode);
-  }, [attempts, mode, pinnedId]);
+    return pickNext(attempts, mode, seed);
+  }, [attempts, mode, pinnedId, seed]);
 
   const tally = useMemo(() => {
     let correct = 0;
