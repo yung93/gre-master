@@ -283,6 +283,17 @@ function QuestionRow({ question, index, attempt }: QuestionRowProps) {
             <p className="serif text-lg leading-relaxed max-w-2xl">{question.question}</p>
           )}
 
+          {question.figure && (
+            <img
+              src={question.figure.src}
+              alt={question.figure.alt}
+              width={question.figure.width}
+              height={question.figure.height}
+              loading="lazy"
+              className="h-auto max-w-full"
+            />
+          )}
+
           {question.format === "quantitative-comparison" && (
             <div className="grid sm:grid-cols-2 gap-3 max-w-xl">
               <div className="surface-soft px-4 py-3">

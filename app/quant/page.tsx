@@ -240,6 +240,16 @@ export default function QuantPage() {
               <p className="serif mt-5 text-xl sm:text-2xl leading-relaxed max-w-2xl">{current.question}</p>
             )}
 
+            {current.figure && (
+              <img
+                src={current.figure.src}
+                alt={current.figure.alt}
+                width={current.figure.width}
+                height={current.figure.height}
+                className="mt-5 h-auto max-w-full"
+              />
+            )}
+
             {current.format === "quantitative-comparison" && (
               <div className="mt-5 grid sm:grid-cols-2 gap-3 max-w-2xl">
                 <QuantityPanel label="Quantity A" value={current.quantityA ?? ""} />

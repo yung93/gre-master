@@ -121,4 +121,22 @@ export const GEOMETRY: QuantQuestion[] = [
     explanation: "V = πr²h = π × 9 × 4 = 36π, so k = 36.",
     explanationZh: "V = πr²h = π × 9 × 4 = 36π，故 k = 36。",
   },
+  {
+    id: "q-geo-11",
+    topic: "geometry",
+    format: "single",
+    difficulty: 2,
+    question: "In the figure, what is the value of x?",
+    figure: {
+      src: "/figures/quant/q-geo-11.svg",
+      alt: "A triangle with interior angles of 55° and 70°. Its base is extended beyond the third vertex, forming an exterior angle of x°.",
+      width: 360,
+      height: 200,
+    },
+    choices: ["105", "115", "125", "135", "145"],
+    correct: ["C"],
+    explanation:
+      "An exterior angle of a triangle equals the sum of the two remote interior angles, so x = 55 + 70 = 125. (Equivalently, the third interior angle is 180 − 55 − 70 = 55, and x = 180 − 55 = 125.)",
+    explanationZh: "三角形的外角等於兩個不相鄰內角之和，所以 x = 55 + 70 = 125。（亦可：第三個內角為 180 − 55 − 70 = 55，故 x = 180 − 55 = 125。）",
+  },
 ];

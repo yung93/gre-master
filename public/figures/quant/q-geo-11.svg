@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" fill="none">
+  <!-- triangle with base extended past the right vertex -->
+  <path d="M40 160 L260 160 L150 40 Z" stroke="#2e2a24" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M260 160 L330 160" stroke="#2e2a24" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- interior angle at left vertex: 55° -->
+  <path d="M68 160 A28 28 0 0 0 58.9 139.4" stroke="#6e675c" stroke-width="1.5"/>
+  <text x="78" y="151" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#2e2a24">55°</text>
+
+  <!-- interior angle at apex: 70° -->
+  <path d="M132.4 59.2 A26 26 0 0 0 167.6 59.2" stroke="#6e675c" stroke-width="1.5"/>
+  <text x="150" y="84" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#2e2a24">70°</text>
+
+  <!-- exterior angle at right vertex: x° -->
+  <path d="M290 160 A30 30 0 0 0 239.7 137.9" stroke="#15798a" stroke-width="1.5"/>
+  <text x="284" y="136" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="#15798a">x°</text>
+
+  <text x="180" y="192" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-style="italic" fill="#6e675c">Figure not drawn to scale</text>
+</svg>

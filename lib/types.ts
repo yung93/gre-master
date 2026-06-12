@@ -72,12 +72,23 @@ export type QuantTopic =
  */
 export type QuantFormat = "quantitative-comparison" | "single" | "multi" | "numeric";
 
+/** A figure (SVG/image under public/figures/quant) displayed with a question. */
+export interface QuantFigure {
+  src: string;
+  /** Full description including any values shown — it stands in for the figure. */
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface QuantQuestion {
   id: string;
   topic: QuantTopic;
   format: QuantFormat;
   difficulty: 1 | 2 | 3;
   question: string;
+  /** Optional diagram or chart shown between the question text and the answers. */
+  figure?: QuantFigure;
   /** The two quantities of a quantitative-comparison question. */
   quantityA?: string;
   quantityB?: string;

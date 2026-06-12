@@ -129,4 +129,23 @@ export const DATA_INTERPRETATION: QuantQuestion[] = [
     explanation: "5000 × 1.1² = 5000 × 1.21 = 6,050. Growth compounds — it is not simply 20%.",
     explanationZh: "5000 × 1.1² = 5000 × 1.21 = 6,050。成長是複合的，不是單純加 20%。",
   },
+  {
+    id: "q-data-11",
+    topic: "data-interpretation",
+    format: "single",
+    difficulty: 2,
+    question:
+      "The bar graph shows a bookstore's monthly sales, in thousands of dollars, from January through May. By what percent did sales increase from March to April?",
+    figure: {
+      src: "/figures/quant/q-data-11.svg",
+      alt: "Bar graph of monthly sales in thousands of dollars: January 20, February 35, March 25, April 40, May 30.",
+      width: 380,
+      height: 240,
+    },
+    choices: ["15%", "37.5%", "50%", "60%", "62.5%"],
+    correct: ["D"],
+    explanation:
+      "Sales rose from 25 to 40 thousand dollars, an increase of 15. Percent increase is measured against the starting value: 15/25 = 0.6 = 60%.",
+    explanationZh: "銷售額從 25 千美元升至 40 千美元，增加 15。百分比增幅以起始值為基準：15/25 = 0.6，即 60%。",
+  },
 ];

@@ -11,9 +11,9 @@ import { COORDINATE_GEOMETRY } from "./coordinate-geometry";
 import { DATA_INTERPRETATION } from "./data-interpretation";
 
 /**
- * The full question bank: 100 questions, 10 per topic, modeled on the
- * Manhattan Review GRE practice pool (quantitative comparison, single- and
- * multi-answer multiple choice, and numeric entry).
+ * The full question bank, organized by topic and modeled on the Manhattan
+ * Review GRE practice pool (quantitative comparison, single- and multi-answer
+ * multiple choice, and numeric entry; some questions carry an SVG figure).
  */
 export const QUANT: QuantQuestion[] = [
   ...ARITHMETIC,
