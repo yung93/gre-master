@@ -16,15 +16,13 @@ import {
 import { useLocalState } from "@/lib/storage";
 import type { QuantAttempt, QuantQuestion, QuantTopic } from "@/lib/types";
 
-type PracticeMode = "new" | "wrong";
-
 const TOPIC_QUESTIONS = new Map<QuantTopic, QuantQuestion[]>(
   TOPIC_ORDER.map((topic) => [topic, QUANT.filter((q) => q.topic === topic)]),
 );
 
 /**
  * Deterministic 32-bit hash of a question id under a session seed. Ordering
- * the pool by this hash shuffles it without calling Math.random() during
+ * the bank by this hash shuffles it without calling Math.random() during
  * render, which would desync the server-rendered HTML from hydration.
  */
 function shuffleRank(seed: number, id: string): number {
@@ -36,44 +34,8 @@ function shuffleRank(seed: number, id: string): number {
   return h >>> 0;
 }
 
-/**
- * Pick the next question: unanswered ones first (mode "new") or previously
- * missed ones (mode "wrong"), always drawn from the topic with the lowest
- * finished ratio so weak/neglected areas surface first. Within that topic the
- * pool is shuffled by the session seed, so questions arrive in a random order
- * with no repeats until the pool is exhausted.
- */
-function pickNext(
-  attempts: Record<string, QuantAttempt>,
-  mode: PracticeMode,
-  seed: number,
-): QuantQuestion | null {
-  const inPool = (q: QuantQuestion) =>
-    mode === "new" ? !attempts[q.id] : attempts[q.id]?.outcome === "wrong";
-  let bestTopic: QuantTopic | null = null;
-  let minRatio = Infinity;
-  for (const topic of TOPIC_ORDER) {
-    const questions = TOPIC_QUESTIONS.get(topic) ?? [];
-    if (!questions.some(inPool)) continue;
-    const finished = questions.reduce((n, q) => (attempts[q.id] ? n + 1 : n), 0);
-    const ratio = finished / questions.length;
-    if (ratio < minRatio) {
-      minRatio = ratio;
-      bestTopic = topic;
-    }
-  }
-  if (!bestTopic) return null;
-  let pick: QuantQuestion | null = null;
-  let minRank = Infinity;
-  for (const q of TOPIC_QUESTIONS.get(bestTopic) ?? []) {
-    if (!inPool(q)) continue;
-    const rank = shuffleRank(seed, q.id);
-    if (rank < minRank) {
-      minRank = rank;
-      pick = q;
-    }
-  }
-  return pick;
+function randomSeed(): number {
+  return Math.floor(Math.random() * 0x7fffffff) + 1;
 }
 
 interface Feedback {
@@ -83,10 +45,6 @@ interface Feedback {
 
 export default function QuantPage() {
   const [attempts, setAttempts] = useLocalState<Record<string, QuantAttempt>>("quant/attempts", {});
-  const [mode, setMode] = useState<PracticeMode>("new");
-  // While feedback is shown, the answered question stays pinned so the derived
-  // "next" pick doesn't swap it away mid-explanation.
-  const [pinnedId, setPinnedId] = useState<string | null>(null);
   const [selected, setSelected] = useState<string[]>([]);
   const [numericInput, setNumericInput] = useState("");
   const [feedback, setFeedback] = useState<Feedback | null>(null);
@@ -94,15 +52,19 @@ export default function QuantPage() {
   // Shuffle seed for the random question order. Starts at 0 so server render
   // and hydration agree, then re-rolls once per visit after mount.
   const [seed, setSeed] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    setSeed(Math.floor(Math.random() * 0x7fffffff) + 1);
+    setSeed(randomSeed());
   }, []);
 
-  const current = useMemo(() => {
-    if (pinnedId) return QUANT.find((q) => q.id === pinnedId) ?? null;
-    return pickNext(attempts, mode, seed);
-  }, [attempts, mode, pinnedId, seed]);
+  // The whole bank in seed-shuffled order. "Next question" and the prev/next
+  // arrows all walk this same order; the deck reshuffles on every reload.
+  const order = useMemo(
+    () => [...QUANT].sort((a, b) => shuffleRank(seed, a.id) - shuffleRank(seed, b.id)),
+    [seed],
+  );
+  const current = index < order.length ? order[index] : null;
 
   const tally = useMemo(() => {
     let correct = 0;
@@ -165,45 +127,42 @@ export default function QuantPage() {
         },
       };
     });
-    setPinnedId(current.id);
     setFeedback({ isCorrect, selected: answer });
   }
 
-  function handleNext() {
-    setPinnedId(null);
+  function clearEntry() {
     setSelected([]);
     setNumericInput("");
     setFeedback(null);
+  }
+
+  function handleNext() {
+    setIndex((i) => i + 1);
+    clearEntry();
   }
 
   /**
-   * Free navigation through the bank in its fixed order (wrapping at the
-   * ends), independent of the weakest-topic auto-pick. Useful for skipping a
-   * question or revisiting a specific one; answering still records normally.
+   * Free navigation through the shuffled order (wrapping at the ends). Useful
+   * for skipping a question or revisiting one; answering still records
+   * normally.
    */
   function step(direction: 1 | -1) {
-    if (!current) return;
-    const index = QUANT.findIndex((q) => q.id === current.id);
-    const target = QUANT[(index + direction + QUANT.length) % QUANT.length];
-    setPinnedId(target.id);
-    setSelected([]);
-    setNumericInput("");
-    setFeedback(null);
+    setIndex((i) => (i + direction + order.length) % order.length);
+    clearEntry();
   }
 
-  function startRedoWrong() {
-    setMode("wrong");
-    handleNext();
+  /** Re-roll the seed for a fresh shuffle and start from the top of the deck. */
+  function reshuffle() {
+    setSeed(randomSeed());
+    setIndex(0);
+    clearEntry();
   }
 
   function resetProgress() {
     if (typeof window !== "undefined" && !window.confirm("Reset all quantitative progress?")) return;
     setAttempts({});
-    setMode("new");
-    handleNext();
+    reshuffle();
   }
-
-  const allFinished = tally.finished === QUANT.length;
 
   return (
     <div className="page-shell pt-10 pb-20">
@@ -215,8 +174,9 @@ export default function QuantPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-[var(--color-ink-muted)] leading-relaxed text-sm">
             {QUANT.length} GRE-style problems — quantitative comparison, multiple choice, and numeric
-            entry — organized by topic. Each question is drawn from whichever topic you&apos;ve finished{" "}
-            <em className="not-italic">least</em>, and every answer is recorded as correct or wrong.
+            entry — organized by topic. The whole bank is reshuffled into a{" "}
+            <em className="not-italic">fresh random order</em> on every visit, and every answer is
+            recorded as correct or wrong.
           </p>
         </div>
         <div className="surface-soft px-5 py-4">
@@ -399,26 +359,22 @@ export default function QuantPage() {
               </div>
             )}
           </article>
-        ) : mode === "wrong" || allFinished ? (
+        ) : (
           <div className="surface p-12 text-center">
             <p className="serif text-2xl">
-              {tally.wrong === 0 ? `All ${QUANT.length} questions answered correctly. 🎉` : "Every question finished."}
+              {tally.finished === QUANT.length && tally.wrong === 0
+                ? `All ${QUANT.length} questions answered correctly. 🎉`
+                : "End of the deck."}
             </p>
             <p className="mt-3 text-sm text-[var(--color-ink-muted)]">
               {tally.correct} correct · {tally.wrong} wrong.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {tally.wrong > 0 && mode !== "wrong" && (
-                <button onClick={startRedoWrong} className="btn btn-primary">
-                  Redo the {tally.wrong} wrong question{tally.wrong === 1 ? "" : "s"}
-                </button>
-              )}
+              <button onClick={reshuffle} className="btn btn-primary">
+                Shuffle and go again
+              </button>
               <Link href="/quant/list" className="btn btn-secondary">Browse all questions</Link>
             </div>
-          </div>
-        ) : (
-          <div className="surface p-12 text-center">
-            <p className="serif text-2xl">Loading…</p>
           </div>
         )}
           <div className="lg:hidden mt-3">
