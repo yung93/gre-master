@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { doc, getDoc, onSnapshot, serverTimestamp, setDoc, type Timestamp } from "firebase/firestore";
+import { doc, getDoc, serverTimestamp, setDoc, type Timestamp } from "firebase/firestore";
 import { getFirebaseDb } from "./firebase";
 import { useAuth } from "./auth";
 import { QUANT_RESET_KEY } from "./quant";
@@ -28,6 +28,19 @@ interface CloudPayload {
   writingRead: Record<string, boolean>;
   updatedAt?: Timestamp;
 }
+
+const EMPTY_PAYLOAD: CloudPayload = {
+  vocab: {},
+  quantAttempts: {},
+  quantResetAt: 0,
+  learnVocab: {},
+  learnVocabMastery: 0,
+  mockActive: null,
+  writingRead: {},
+};
+
+/** How long after a pull before tab focus is allowed to trigger another one. */
+const MIN_PULL_INTERVAL_MS = 30_000;
 
 function readLocalPayload(): CloudPayload {
   return {
@@ -194,24 +207,48 @@ export function useCloudSync(): CloudSyncResult {
     const db = getFirebaseDb();
     const userDoc = doc(db, "users", user.uid);
     let cancelled = false;
-    setStatus("loading");
+    let pulling = false;
+    let lastPullAt = 0;
 
-    async function bootstrap() {
-      try {
-        const snap = await getDoc(userDoc);
-        if (cancelled) return;
-        const remote = snap.exists() ? (snap.data() as Partial<CloudPayload>) : {};
-        const local = readLocalPayload();
-        const merged = mergePayloads(local, remote);
-        if (!payloadsEqual(local, merged)) {
-          writeLocalPayload(merged);
-        }
+    // Read the cloud doc once, merge it with local, and push the result back
+    // only when it actually diverges from what the cloud already holds.
+    //
+    // This deliberately does NOT keep an onSnapshot listener open. A live
+    // listener re-downloads the entire user document on every server-confirmed
+    // change — including the echo of our own writes — which was the source of
+    // almost all Firestore egress (the only billed dimension). A single
+    // document has no field-level delta, so each echo ships the whole blob.
+    async function pullMergePush() {
+      const snap = await getDoc(userDoc);
+      if (cancelled) return;
+      const remote = snap.exists() ? (snap.data() as Partial<CloudPayload>) : {};
+      const local = readLocalPayload();
+      const merged = mergePayloads(local, remote);
+      if (!payloadsEqual(local, merged)) {
+        // Set the signature before writing so the local-write event this
+        // triggers doesn't schedule a redundant flush of the same payload.
+        lastWrittenSignatureRef.current = JSON.stringify(merged);
+        writeLocalPayload(merged);
+      }
+      // Push only if the merge produced something the cloud is missing. setDoc
+      // overwrites the whole doc, so we must never write back stale data — but
+      // we just merged remote in, so `merged` is a superset of `remote`.
+      const normalizedRemote = mergePayloads(EMPTY_PAYLOAD, remote);
+      if (!payloadsEqual(merged, normalizedRemote)) {
         lastWrittenSignatureRef.current = JSON.stringify(merged);
         await setDoc(userDoc, { ...merged, updatedAt: serverTimestamp() });
+      }
+      setLastSyncedAt(Date.now());
+    }
+
+    async function bootstrap() {
+      setStatus("loading");
+      try {
+        await pullMergePush();
         if (cancelled) return;
         initializedRef.current = true;
+        lastPullAt = Date.now();
         setStatus("ready");
-        setLastSyncedAt(Date.now());
       } catch (err) {
         if (cancelled) return;
         setStatus("error");
@@ -220,26 +257,28 @@ export function useCloudSync(): CloudSyncResult {
     }
     void bootstrap();
 
-    const unsubscribe = onSnapshot(
-      userDoc,
-      (snap) => {
-        if (!initializedRef.current) return;
-        if (snap.metadata.hasPendingWrites) return;
-        if (!snap.exists()) return;
-        const remote = snap.data() as Partial<CloudPayload>;
-        const local = readLocalPayload();
-        const merged = mergePayloads(local, remote);
-        if (!payloadsEqual(local, merged)) {
-          writeLocalPayload(merged);
-          lastWrittenSignatureRef.current = JSON.stringify(merged);
-          setLastSyncedAt(Date.now());
-        }
-      },
-      (err) => {
+    // Re-pull when the tab regains focus, so a change made on another device
+    // is picked up. Throttled, and skipped while hidden or already pulling, so
+    // it costs a handful of reads per session instead of one per write.
+    async function resync() {
+      if (!initializedRef.current || cancelled || pulling) return;
+      if (typeof document !== "undefined" && document.visibilityState !== "visible") return;
+      if (Date.now() - lastPullAt < MIN_PULL_INTERVAL_MS) return;
+      pulling = true;
+      setStatus("syncing");
+      try {
+        await pullMergePush();
+        if (cancelled) return;
+        lastPullAt = Date.now();
+        setStatus("ready");
+      } catch (err) {
+        if (cancelled) return;
         setStatus("error");
-        setError(err.message);
-      },
-    );
+        setError(err instanceof Error ? err.message : "Sync failed");
+      } finally {
+        pulling = false;
+      }
+    }
 
     function flushToCloud() {
       if (!initializedRef.current) return;
@@ -250,10 +289,12 @@ export function useCloudSync(): CloudSyncResult {
       setStatus("syncing");
       setDoc(userDoc, { ...payload, updatedAt: serverTimestamp() })
         .then(() => {
+          if (cancelled) return;
           setStatus("ready");
           setLastSyncedAt(Date.now());
         })
         .catch((err: unknown) => {
+          if (cancelled) return;
           setStatus("error");
           setError(err instanceof Error ? err.message : "Sync failed");
         });
@@ -263,14 +304,18 @@ export function useCloudSync(): CloudSyncResult {
       if (writeTimerRef.current) window.clearTimeout(writeTimerRef.current);
       writeTimerRef.current = window.setTimeout(flushToCloud, 800);
     }
+
     window.addEventListener(LOCAL_WRITE_EVENT, onLocalWrite);
     window.addEventListener("storage", onLocalWrite);
+    window.addEventListener("focus", resync);
+    document.addEventListener("visibilitychange", resync);
 
     return () => {
       cancelled = true;
-      unsubscribe();
       window.removeEventListener(LOCAL_WRITE_EVENT, onLocalWrite);
       window.removeEventListener("storage", onLocalWrite);
+      window.removeEventListener("focus", resync);
+      document.removeEventListener("visibilitychange", resync);
       if (writeTimerRef.current) window.clearTimeout(writeTimerRef.current);
     };
   }, [user]);
