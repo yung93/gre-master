@@ -2,7 +2,7 @@
 
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { EyeIcon, EyeOffIcon } from "@/components/Icons";
+import { EyeIcon, EyeOffIcon, StarIcon } from "@/components/Icons";
 import Pagination from "@/components/Pagination";
 import SpeakButton from "@/components/SpeakButton";
 import { VOCAB } from "@/data/vocab";
@@ -11,6 +11,7 @@ import { useLocalState } from "@/lib/storage";
 import type { LearnProgress, MemoryAid, VocabEntry } from "@/lib/types";
 
 type StatusFilter = "all" | "mastered" | "learning" | "new";
+type WordFilter = StatusFilter | "starred";
 
 const PAGE_SIZE = 20;
 
@@ -24,8 +25,9 @@ type SortMode = "az" | "shuffle";
 
 export default function WordsPage() {
   const [progress] = useLocalState<Record<string, LearnProgress>>("learn/vocab", {});
+  const [starred, setStarred] = useLocalState<Record<string, boolean>>("star/vocab", {});
   const [query, setQuery] = useState("");
-  const [status, setStatus] = useState<StatusFilter>("all");
+  const [status, setStatus] = useState<WordFilter>("all");
   const [hideZh, setHideZh] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>("az");
   const [shuffleSeed, setShuffleSeed] = useState(0);
@@ -37,10 +39,23 @@ export default function WordsPage() {
     [progress],
   );
 
+  function toggleStar(id: string) {
+    setStarred((prev) => {
+      const next = { ...prev };
+      if (next[id]) delete next[id];
+      else next[id] = true;
+      return next;
+    });
+  }
+
   const filtered = useMemo(() => {
     const q = deferredQuery.trim().toLowerCase();
     const matched = VOCAB.filter((v) => {
-      if (status !== "all" && statusOf(progress[v.id]) !== status) return false;
+      if (status === "starred") {
+        if (!starred[v.id]) return false;
+      } else if (status !== "all" && statusOf(progress[v.id]) !== status) {
+        return false;
+      }
       if (!q) return true;
       return (
         v.word.toLowerCase().includes(q) ||
@@ -65,7 +80,7 @@ export default function WordsPage() {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
-  }, [deferredQuery, status, progress, sortMode, shuffleSeed]);
+  }, [deferredQuery, status, progress, starred, sortMode, shuffleSeed]);
 
   // Reset to the first page whenever the result set or order changes.
   useEffect(() => {
@@ -87,11 +102,12 @@ export default function WordsPage() {
   const pageStart = (currentPage - 1) * PAGE_SIZE;
   const pageItems = filtered.slice(pageStart, pageStart + PAGE_SIZE);
 
-  const statusFilters: { value: StatusFilter; label: string }[] = [
+  const statusFilters: { value: WordFilter; label: string }[] = [
     { value: "all", label: "All" },
     { value: "mastered", label: "Mastered" },
     { value: "learning", label: "Learning" },
     { value: "new", label: "New" },
+    { value: "starred", label: "Starred" },
   ];
 
   return (
@@ -202,6 +218,8 @@ export default function WordsPage() {
                   index={pageStart + idx}
                   progress={progress[entry.id]}
                   hideZh={hideZh}
+                  starred={!!starred[entry.id]}
+                  onToggleStar={() => toggleStar(entry.id)}
                 />
               ))}
             </ol>
@@ -226,37 +244,52 @@ interface WordRowProps {
   index: number;
   progress: LearnProgress | undefined;
   hideZh: boolean;
+  starred: boolean;
+  onToggleStar: () => void;
 }
 
-function WordRow({ entry, index, progress, hideZh }: WordRowProps) {
+function WordRow({ entry, index, progress, hideZh, starred, onToggleStar }: WordRowProps) {
   const [expanded, setExpanded] = useState(false);
   const status = statusOf(progress);
 
   return (
     <li>
-      <button
-        onClick={() => setExpanded((v) => !v)}
-        className="w-full text-left px-5 py-4 flex items-baseline gap-x-3 gap-y-1 sm:grid sm:grid-cols-[3rem_minmax(8rem,1fr)_minmax(0,1.4fr)_auto] sm:gap-x-4 hover:bg-[oklch(96%_0.005_80)] transition-colors"
-        aria-expanded={expanded}
-      >
-        <StatusDot status={status} className="shrink-0 sm:order-4" />
-        <span className="mono text-xs text-[var(--color-ink-faint)] hidden sm:block sm:order-1">
-          {String(index + 1).padStart(3, "0")}
-        </span>
-        <span className="flex items-baseline gap-2 min-w-0 shrink-0 sm:order-2">
-          <span className="serif text-lg leading-tight truncate">{entry.word}</span>
-          <span className="italic text-xs text-[var(--color-ink-faint)] shrink-0 hidden sm:inline">{entry.partOfSpeech}</span>
-        </span>
-        <span
-          className={`serif leading-snug min-w-0 flex-1 sm:order-3 transition-colors ${
-            hideZh
-              ? "text-transparent bg-[var(--color-rule)] rounded select-none"
-              : "text-[var(--color-ink)]"
-          }`}
+      <div className="flex items-stretch">
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          className="flex-1 min-w-0 text-left px-5 py-4 flex items-baseline gap-x-3 gap-y-1 sm:grid sm:grid-cols-[3rem_minmax(8rem,1fr)_minmax(0,1.4fr)_auto] sm:gap-x-4 hover:bg-[oklch(96%_0.005_80)] transition-colors"
+          aria-expanded={expanded}
         >
-          {entry.meaningZh}
-        </span>
-      </button>
+          <StatusDot status={status} className="shrink-0 sm:order-4" />
+          <span className="mono text-xs text-[var(--color-ink-faint)] hidden sm:block sm:order-1">
+            {String(index + 1).padStart(3, "0")}
+          </span>
+          <span className="flex items-baseline gap-2 min-w-0 shrink-0 sm:order-2">
+            <span className="serif text-lg leading-tight truncate">{entry.word}</span>
+            <span className="italic text-xs text-[var(--color-ink-faint)] shrink-0 hidden sm:inline">{entry.partOfSpeech}</span>
+          </span>
+          <span
+            className={`serif leading-snug min-w-0 flex-1 sm:order-3 transition-colors ${
+              hideZh
+                ? "text-transparent bg-[var(--color-rule)] rounded select-none"
+                : "text-[var(--color-ink)]"
+            }`}
+          >
+            {entry.meaningZh}
+          </span>
+        </button>
+        <button
+          onClick={onToggleStar}
+          className={`shrink-0 px-4 flex items-center transition-colors hover:bg-[oklch(96%_0.005_80)] ${
+            starred ? "text-[var(--color-warm)]" : "text-[var(--color-ink-faint)] hover:text-[var(--color-ink-muted)]"
+          }`}
+          aria-pressed={starred}
+          aria-label={starred ? `Unstar ${entry.word}` : `Star ${entry.word}`}
+          title={starred ? "Starred" : "Star this word"}
+        >
+          <StarIcon filled={starred} />
+        </button>
+      </div>
 
       {expanded && (
         <div className="px-5 pb-5 pt-1 sm:pl-[4.75rem] grid gap-3 anim-fade-up">
