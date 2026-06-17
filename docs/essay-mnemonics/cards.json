@@ -1,0 +1,2522 @@
+[
+  {
+    "id": "w-issue-001",
+    "category": "Science & Inquiry",
+    "prompt": "Governments should place few, if any, restrictions on scientific research and development.",
+    "thesis": "I agree that most research should remain free, but I believe a small number of dangerous fields require firm limits.",
+    "bodies": [
+      {
+        "role": "Body 1 — Most research should be free",
+        "topic": "First, the great majority of research is safe, and giving scientists freedom is what produces important discoveries.",
+        "example": "For example, the antibiotic penicillin was found by accident when Alexander Fleming noticed mould killing bacteria in a forgotten dish, and it has since saved millions of lives."
+      },
+      {
+        "role": "Body 2 — Some research needs limits",
+        "topic": "Second, however, a few kinds of research are so dangerous that limits become essential.",
+        "example": "Consider an engineered virus that escapes from a laboratory and spreads before anyone can stop it, causing a pandemic that kills far more people than the research could ever save and leaving damage that can never be undone."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-002",
+    "category": "Education",
+    "prompt": "The best way to teach is to praise positive actions and ignore negative ones.",
+    "thesis": "I agree that praise is essential, but I do not think teachers should ignore bad behavior, because students also need correction in order to improve.",
+    "bodies": [
+      {
+        "role": "Body 1 — Praise helps students",
+        "topic": "First, praise builds the confidence and motivation that learning depends on.",
+        "example": "For example, a young child who is praised for slowly improving her messy handwriting will gain confidence and practise more, while a child who hears only criticism may decide she is simply bad at writing and give up."
+      },
+      {
+        "role": "Body 2 — Ignoring bad actions is harmful",
+        "topic": "Second, however, ignoring negative actions can seriously damage learning.",
+        "example": "A teacher who ignores cheating sends a damaging signal to the whole class, since other students quickly notice that there are no consequences and may begin to cheat as well."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-003",
+    "category": "Education",
+    "prompt": "Governments should offer college and university education free of charge to all students.",
+    "thesis": "I agree that the government should help students who cannot afford university, but making college free for everyone would be both unfair and financially unwise.",
+    "bodies": [
+      {
+        "role": "Body 1 — Free education can help",
+        "topic": "First, removing the cost of higher education would especially help talented students from low-income families.",
+        "example": "For example, a gifted student from a poor rural area who dreams of becoming a doctor might instead start working straight after secondary school."
+      },
+      {
+        "role": "Body 2 — Free for everyone has problems",
+        "topic": "Second, however, offering free college to all students regardless of need would waste limited public money.",
+        "example": "The money spent on these richer students could instead fund hospitals, vocational training, or need-based grants for those who are genuinely struggling."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-004",
+    "category": "The Individual",
+    "prompt": "The luxuries and conveniences of contemporary life prevent people from developing into truly strong and independent individuals.",
+    "thesis": "There is some truth in this worry, but I largely disagree, because convenience does not remove life's challenges so much as change their form.",
+    "bodies": [
+      {
+        "role": "Body 1 — Where the statement holds",
+        "topic": "First, it is fair to admit that too much comfort can sometimes weaken people.",
+        "example": "For example, a student who can find every answer online may never build the discipline needed to solve a hard problem alone."
+      },
+      {
+        "role": "Body 2 — Why it largely fails",
+        "topic": "Second, however, convenience does not destroy challenges so much as move them to new areas.",
+        "example": "Consider a young entrepreneur who uses modern tools to launch a business, yet still must master risk, failure, and self-discipline to succeed."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-005",
+    "category": "Science & Inquiry",
+    "prompt": "In any field of inquiry, the beginner is more likely than the expert to make important contributions.",
+    "thesis": "I agree that beginners occasionally bring valuable new ideas, but I disagree that they are generally more likely than experts to advance a field.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of beginners",
+        "topic": "First, beginners do enjoy one real advantage, which is freedom from fixed assumptions.",
+        "example": "For example, young scientists in their twenties have occasionally proposed ideas that older specialists had dismissed as unrealistic."
+      },
+      {
+        "role": "Body 2 — Why experts contribute more",
+        "topic": "Second, however, the great majority of important contributions still come from experts.",
+        "example": "Consider the years of study a doctor needs before she can safely test a new treatment or interpret a confusing result."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-006",
+    "category": "Arts & Humanities",
+    "prompt": "The surest indicator of a great nation is represented not by the achievements of its rulers, artists, or scientists, but by the general welfare of its people.",
+    "thesis": "I largely agree that the welfare of the people is the best measure of greatness, though remarkable achievements still matter as part of the picture.",
+    "bodies": [
+      {
+        "role": "Body 1 — Welfare as the clearest measure",
+        "topic": "First, the well-being of ordinary people is the clearest test of how well a nation actually works.",
+        "example": "For example, a nation with grand monuments but hungry children has clearly failed at its most basic duty."
+      },
+      {
+        "role": "Body 2 — Why achievements still matter",
+        "topic": "Second, however, the achievements of rulers, artists, and scientists should not be dismissed entirely.",
+        "example": "Consider the way medical research extends ordinary lives, or how great literature shapes a society's values."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-007",
+    "category": "Education",
+    "prompt": "The best way to teach — whether as an educator, employer, or parent — is to praise positive actions and ignore negative ones.",
+    "thesis": "I agree that praise is a powerful teaching tool, but I do not believe that ignoring negative actions is ever the best approach.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why praise works",
+        "topic": "First, praise encourages people to repeat the behavior we want to see.",
+        "example": "For example, an employee whose good work is regularly recognized will usually stay motivated and loyal."
+      },
+      {
+        "role": "Body 2 — Why ignoring bad actions fails",
+        "topic": "Second, however, ignoring negative actions can be careless and even harmful.",
+        "example": "Imagine a manager who says nothing while an employee repeatedly mishandles money or treats customers badly."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-008",
+    "category": "Education",
+    "prompt": "Teachers' salaries should be based on their students' academic performance.",
+    "thesis": "I agree that good teaching should be rewarded, but I believe basing salaries mainly on student results would be unfair and harmful.",
+    "bodies": [
+      {
+        "role": "Body 1 — The appeal of the idea",
+        "topic": "First, the idea does contain a reasonable goal, which is to encourage good teaching.",
+        "example": "For example, a school that recognises its excellent teachers can motivate others to improve."
+      },
+      {
+        "role": "Body 2 — Why it would be unfair",
+        "topic": "Second, however, student results depend on far more than the teacher alone.",
+        "example": "Consider two teachers of equal skill, one in a wealthy school and one in a poor neighbourhood with few resources."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-009",
+    "category": "Environment",
+    "prompt": "Society should make efforts to save endangered species only if the potential extinction of those species is the result of human activities.",
+    "thesis": "I understand the appeal of this policy, but I believe it is too narrow, because the value of saving a species rarely depends on the cause of its danger.",
+    "bodies": [
+      {
+        "role": "Body 1 — The policy's reasonable side",
+        "topic": "First, there is a fair point behind the policy, which is that humans have a special duty to repair their own damage.",
+        "example": "For example, governments that banned harmful chemicals helped several bird species recover from near extinction."
+      },
+      {
+        "role": "Body 2 — Why it is too narrow",
+        "topic": "Second, however, the cause of a species' decline is a poor reason to decide whether it is worth saving.",
+        "example": "Consider an animal vital to its ecosystem that begins to vanish for reasons we do not fully understand."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-010",
+    "category": "Education",
+    "prompt": "College students should base their choice of a field of study on the availability of jobs in that field.",
+    "thesis": "I agree that job prospects deserve serious thought, but I do not believe they should be the only basis for the decision.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why job availability matters",
+        "topic": "First, it is sensible for students to consider where the jobs are.",
+        "example": "For example, a student who trains in nursing or engineering can usually expect dependable employment after graduating."
+      },
+      {
+        "role": "Body 2 — Why it should not be the only basis",
+        "topic": "Second, however, choosing a field by jobs alone can lead to an unhappy and unproductive life.",
+        "example": "Consider a talented artist who forces herself into accounting only because it pays, then performs poorly and soon quits."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-011",
+    "category": "Science & Inquiry",
+    "prompt": "As we acquire more knowledge, things do not become more comprehensible, but more complex and mysterious.",
+    "thesis": "I agree that new knowledge often uncovers new mysteries, but I disagree that the world therefore becomes less understandable overall.",
+    "bodies": [
+      {
+        "role": "Body 1 — Where the statement is true",
+        "topic": "First, it is true that learning more often reveals how much we still do not know.",
+        "example": "For example, when physicists explained the atom, they uncovered a strange quantum world that puzzles experts to this day."
+      },
+      {
+        "role": "Body 2 — Why much becomes clearer",
+        "topic": "Second, however, knowledge also makes a great deal of the world far more understandable.",
+        "example": "Consider how diseases once blamed on curses are now understood as infections we can treat and prevent."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-012",
+    "category": "Society & Culture",
+    "prompt": "In any situation, progress requires discussion among people who have contrasting points of view.",
+    "thesis": "I agree that such discussion usually drives progress, but I think the word any makes the statement too absolute.",
+    "bodies": [
+      {
+        "role": "Body 1 — Where contrasting views help",
+        "topic": "First, in most situations, debate between different viewpoints clearly improves results.",
+        "example": "For example, scientific progress depends on researchers questioning and testing each other's claims."
+      },
+      {
+        "role": "Body 2 — Why it is not always required",
+        "topic": "Second, however, the claim that progress always requires such discussion goes too far.",
+        "example": "Consider an emergency, such as a fire or a flood, where arguing over viewpoints would only cost lives."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-013",
+    "category": "Education",
+    "prompt": "Educational institutions should dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+    "thesis": "I agree that schools should give honest guidance, but I believe actively discouraging students would do more harm than good.",
+    "bodies": [
+      {
+        "role": "Body 1 — The reasonable aim",
+        "topic": "First, the policy is built on a fair concern for students' futures.",
+        "example": "For example, a counsellor who gently warns a weak maths student about a demanding engineering course may spare her real disappointment."
+      },
+      {
+        "role": "Body 2 — Why discouraging is wrong",
+        "topic": "Second, however, actively dissuading students can crush ambition and prove badly mistaken.",
+        "example": "Consider the many famous scientists and writers who were once judged hopeless by their own teachers."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-014",
+    "category": "Science & Inquiry",
+    "prompt": "Governments should not fund any scientific research whose consequences are unclear.",
+    "thesis": "I understand the wish to avoid waste and danger, but I believe this recommendation would block most of the valuable research a society depends on.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why funding uncertain research is usually right",
+        "topic": "First, in the great majority of cases, unclear consequences are not a reason to refuse funding but the very nature of discovery.",
+        "example": "For example, the early study of electricity seemed useless and unpredictable, yet it eventually came to power almost every part of modern life."
+      },
+      {
+        "role": "Body 2 — Where caution makes sense",
+        "topic": "Second, however, there are a few cases in which unclear consequences should genuinely make a government cautious.",
+        "example": "Consider work on powerful new weapons or on altering the human genome, where a single mistake could affect millions of people permanently."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-015",
+    "category": "Society & Culture",
+    "prompt": "Society should identify those children who have special talents and provide training for them at an early age to develop their talents.",
+    "thesis": "I agree that early encouragement can be valuable, but I believe that selecting and labelling children too early would do real harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of early support",
+        "topic": "First, in many cases, giving talented children early training helps them reach their full potential.",
+        "example": "For example, most world-class violinists and ballet dancers started intense practice long before they reached their teenage years."
+      },
+      {
+        "role": "Body 2 — The dangers of early selection",
+        "topic": "Second, however, identifying and separating talented children too early carries serious risks.",
+        "example": "Consider a child wrongly judged ordinary at an early age, who is then denied the chances quietly given to the chosen few."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-016",
+    "category": "Society & Culture",
+    "prompt": "It is primarily through our identification with social groups that we define ourselves.",
+    "thesis": "I agree that groups play a powerful role in shaping who we are, but I do not believe they define us more than our own choices and experiences do.",
+    "bodies": [
+      {
+        "role": "Body 1 — The power of groups",
+        "topic": "First, the groups we belong to clearly shape a great deal of our sense of identity.",
+        "example": "For example, people often describe themselves first by their nationality, religion, or profession when asked who they are."
+      },
+      {
+        "role": "Body 2 — Why individuality matters too",
+        "topic": "Second, however, we are defined just as deeply by our own choices, talents, and inner lives.",
+        "example": "Consider two siblings who share a background completely yet hold opposite beliefs, careers, and dreams."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-017",
+    "category": "Education",
+    "prompt": "College students should be encouraged to pursue subjects that interest them rather than the courses that seem most likely to lead to jobs.",
+    "thesis": "I agree that interest should guide students more than fear of the job market, but I believe job prospects cannot be ignored completely.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why interest should lead",
+        "topic": "First, students usually learn best and achieve most when they study something they genuinely care about.",
+        "example": "For example, a student fascinated by history will read, think, and write far more deeply than one who chose a subject only for money."
+      },
+      {
+        "role": "Body 2 — Why prospects still matter",
+        "topic": "Second, however, encouraging interest should not mean ignoring the practical question of employment.",
+        "example": "Consider a talented student who studies a beloved subject with no job prospects, then struggles for years under heavy debt."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-018",
+    "category": "Education",
+    "prompt": "Claim: When planning courses, educators should take into account the interests and suggestions of their students. Reason: Students are more motivated to learn when they are interested in what they are studying.",
+    "thesis": "I largely agree with both the claim and its reason, but I believe student interest should guide teaching rather than completely control it.",
+    "bodies": [
+      {
+        "role": "Body 1 — Agreeing with the claim and reason",
+        "topic": "First, the reason behind the claim is sound, because motivation truly is one of the strongest forces in learning.",
+        "example": "For example, a science class that lets students investigate questions they chose themselves often produces lively discussion and real understanding."
+      },
+      {
+        "role": "Body 2 — Why teachers must still guide",
+        "topic": "Second, however, student interest cannot be the only thing that shapes what is taught.",
+        "example": "Consider a class that would happily skip difficult mathematics, even though those very skills prove essential later in life."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-019",
+    "category": "The Individual",
+    "prompt": "The greatness of individuals can be decided only by those who live after them, not by their contemporaries.",
+    "thesis": "I agree that time often clarifies who was truly great, but I do not believe that contemporaries are completely unable to recognise greatness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why later generations judge well",
+        "topic": "First, later generations often see a person's greatness more clearly than the people who lived alongside her.",
+        "example": "For example, the painter Vincent van Gogh sold almost nothing in his life, yet is now regarded as one of the greatest artists in history."
+      },
+      {
+        "role": "Body 2 — Why contemporaries can judge too",
+        "topic": "Second, however, it is simply not true that contemporaries can never recognise greatness.",
+        "example": "Consider leaders like Nelson Mandela or scientists like Albert Einstein, whose greatness was widely acknowledged while they still lived."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-020",
+    "category": "Education",
+    "prompt": "Students should always question what they are taught instead of accepting it passively.",
+    "thesis": "I strongly agree that questioning is essential, but I believe the word always goes too far, since some knowledge must be accepted before it can be questioned wisely.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of questioning",
+        "topic": "First, questioning what we are taught lies at the very heart of real learning.",
+        "example": "For example, science itself advances only because researchers refuse to accept old answers and keep testing them."
+      },
+      {
+        "role": "Body 2 — Why some acceptance is needed",
+        "topic": "Second, however, the demand that students question everything at all times is unrealistic and even unwise.",
+        "example": "Consider a beginner in mathematics who must accept the rules of arithmetic before she can challenge anything more advanced."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-021",
+    "category": "Society & Culture",
+    "prompt": "The increasingly rapid pace of life today causes more problems than it solves.",
+    "thesis": "I agree that a fast pace brings real problems, but I do not believe it causes more harm than good, since the same speed also solves a great deal.",
+    "bodies": [
+      {
+        "role": "Body 1 — The problems of speed",
+        "topic": "First, it is true that the rushing pace of modern life creates serious problems.",
+        "example": "For example, many workers today feel exhausted and anxious, still answering messages long after the working day should have ended."
+      },
+      {
+        "role": "Body 2 — How speed also solves problems",
+        "topic": "Second, however, the same fast pace solves an enormous number of problems as well.",
+        "example": "Consider how a fast ambulance, a quick internet search, or rapid communication can now save lives that would once have been lost."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-022",
+    "category": "Technology",
+    "prompt": "Claim: It is no longer possible for a society to regard any living man or woman as a hero. Reason: The reputation of anyone who is subjected to media scrutiny will eventually be diminished.",
+    "thesis": "I agree that intense scrutiny can damage reputations, but I disagree that genuine heroes have therefore become impossible.",
+    "bodies": [
+      {
+        "role": "Body 1 — The truth in the reason",
+        "topic": "First, there is real force in the reason offered for the claim.",
+        "example": "For example, several admired leaders and athletes have seen their images badly damaged once their private faults became public."
+      },
+      {
+        "role": "Body 2 — Why heroes are still possible",
+        "topic": "Second, however, the claim that no living person can be a hero goes much too far.",
+        "example": "Consider the doctors, rescue workers, and ordinary people who risk their lives for others and are rightly admired by all who hear of them."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-023",
+    "category": "Education",
+    "prompt": "Competition for high grades seriously limits the quality of learning at all levels of education.",
+    "thesis": "I largely agree that grade competition can harm real learning, though I believe a moderate amount of competition can also do some good.",
+    "bodies": [
+      {
+        "role": "Body 1 — How grade competition harms learning",
+        "topic": "First, an intense focus on grades often pushes students to chase marks rather than genuine understanding.",
+        "example": "For example, a student may cram facts the night before an exam, pass it, and learn almost nothing of lasting value."
+      },
+      {
+        "role": "Body 2 — Why competition has some value",
+        "topic": "Second, however, a moderate amount of competition is not entirely harmful.",
+        "example": "Consider a student who studies more carefully simply because she wants to match the standard set by her peers."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-024",
+    "category": "Education",
+    "prompt": "Universities should require every student to take a variety of courses outside the student's field of study.",
+    "thesis": "I largely agree that such breadth benefits students, though I believe the requirement should allow some flexibility.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of breadth",
+        "topic": "First, studying outside one's main field makes students more rounded and capable thinkers.",
+        "example": "For example, an engineering student who studies history or ethics may make wiser decisions about how her work affects people."
+      },
+      {
+        "role": "Body 2 — Why flexibility is needed",
+        "topic": "Second, however, such a requirement should be applied with care rather than rigidly forced on everyone.",
+        "example": "Consider a medical student whose time is so limited that extra required courses leave too little room for essential training."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-025",
+    "category": "Education",
+    "prompt": "Educators should find out what students want included in the curriculum and then offer it to them.",
+    "thesis": "I agree that listening to students is valuable, but I believe educators must shape the curriculum with their own knowledge rather than just delivering whatever students request.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of student input",
+        "topic": "First, asking students what they want to learn can make education far more engaging.",
+        "example": "For example, a class allowed to choose some of its reading or projects often shows noticeably more energy and curiosity."
+      },
+      {
+        "role": "Body 2 — Why educators must lead",
+        "topic": "Second, however, simply offering whatever students ask for would be a serious mistake.",
+        "example": "Consider a class that would gladly drop difficult but essential topics, leaving dangerous gaps in its knowledge."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-026",
+    "category": "Education",
+    "prompt": "Educators should teach facts only after their students have studied the ideas, trends, and concepts that help explain those facts.",
+    "thesis": "I agree that understanding concepts first makes learning richer, but I believe facts and ideas must often be taught together rather than in a strict order.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why concepts first helps",
+        "topic": "First, learning the big ideas before the details helps facts make real sense.",
+        "example": "For example, a student who first understands why wars begin will remember the relevant dates and battles much more easily."
+      },
+      {
+        "role": "Body 2 — Why a strict order fails",
+        "topic": "Second, however, teaching facts only after concepts would be too rigid to follow in practice.",
+        "example": "Consider a child who cannot grasp the idea of multiplication without first learning the simple facts of counting and addition."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-027",
+    "category": "Education",
+    "prompt": "Claim: We can usually learn much more from people whose views we share than from those whose views contradict our own. Reason: Disagreement can cause stress and inhibit learning.",
+    "thesis": "I agree that disagreement can be uncomfortable, but I disagree with the claim, because we often learn the most from people who challenge our views.",
+    "bodies": [
+      {
+        "role": "Body 1 — The grain of truth in the reason",
+        "topic": "First, there is some truth in the reason behind the claim.",
+        "example": "For example, a student attacked for her opinion may grow defensive and stop listening altogether."
+      },
+      {
+        "role": "Body 2 — Why opposing views teach more",
+        "topic": "Second, however, we usually learn far more from people whose views contradict our own.",
+        "example": "Consider a debate in which an opponent raises a fact we had never considered, forcing us to think again."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-028",
+    "category": "Government & Policy",
+    "prompt": "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people they serve.",
+    "thesis": "I agree that officials must use their own judgment, but I believe they cannot simply ignore the will of the people in a democracy.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why officials need judgment",
+        "topic": "First, officials often need to follow their own judgment rather than public opinion alone.",
+        "example": "For example, a sudden public panic might demand a harmful policy that a wiser leader knows would do real damage."
+      },
+      {
+        "role": "Body 2 — Why the public will matters",
+        "topic": "Second, however, officials cannot simply ignore the will of the people they were chosen to serve.",
+        "example": "Consider an official who repeatedly overrules the clear wishes of the public, convinced that he always knows best."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-029",
+    "category": "Technology",
+    "prompt": "Young people should be encouraged to pursue long-term, realistic goals rather than seek immediate fame and recognition.",
+    "thesis": "I largely agree that long-term goals are wiser, though I believe a desire for recognition is not always harmful.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why long-term goals are wiser",
+        "topic": "First, long-term, realistic goals usually lead to deeper and more lasting success.",
+        "example": "For example, a young person who trains patiently for years to become a doctor gains both security and genuine respect."
+      },
+      {
+        "role": "Body 2 — Why recognition is not always bad",
+        "topic": "Second, however, the wish for recognition is not always something to discourage.",
+        "example": "Consider a young scientist whose hope of being recognised pushes her to make a real and lasting discovery."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-030",
+    "category": "The Individual",
+    "prompt": "If a goal is worthy, then any means taken to attain it are justifiable.",
+    "thesis": "I strongly disagree, because even the worthiest goal cannot justify every action, and cruel means often destroy the good they claim to serve.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why worthy goals justify some hard means",
+        "topic": "First, it is true that good goals sometimes require difficult or unpleasant means.",
+        "example": "For example, a doctor may cause a patient real pain during surgery in order to save her life."
+      },
+      {
+        "role": "Body 2 — Why not any means",
+        "topic": "Second, however, the claim that any means are justified goes dangerously too far.",
+        "example": "Consider rulers who have killed and oppressed millions while insisting they were building a better world."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-031",
+    "category": "Arts & Humanities",
+    "prompt": "In order to become well-rounded individuals, all college students should be required to take courses in which they read poetry, novels, mythology, and other types of imaginative literature.",
+    "thesis": "I largely agree that imaginative literature makes students more well-rounded, though I believe the requirement should remain flexible.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of literature",
+        "topic": "First, reading imaginative literature develops qualities that other subjects often leave untouched.",
+        "example": "For example, a science student who reads a powerful novel may come to understand human suffering far more deeply."
+      },
+      {
+        "role": "Body 2 — Why flexibility is needed",
+        "topic": "Second, however, forcing every student to take such courses rigidly could do more harm than good.",
+        "example": "Consider a medical or engineering student whose tight schedule leaves little room for several literature classes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-032",
+    "category": "Arts & Humanities",
+    "prompt": "In order for any work of art — for example, a film, a novel, a poem, or a song — to have merit, it must be understandable to most people.",
+    "thesis": "I agree that art should try to communicate something, but I disagree that it must be widely understood to be valuable.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why reaching an audience matters",
+        "topic": "First, there is a fair point in the idea that art should reach an audience.",
+        "example": "For example, a song or film that moves millions of people clearly has a powerful kind of merit."
+      },
+      {
+        "role": "Body 2 — Why merit needs no majority",
+        "topic": "Second, however, demanding that art be understandable to most people sets a mistaken standard.",
+        "example": "Consider paintings or symphonies once mocked as confusing, which are now treasured as masterpieces."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-033",
+    "category": "Science & Inquiry",
+    "prompt": "Many important discoveries or creations are accidental: it is usually while seeking the answer to one question that we come across the answer to another.",
+    "thesis": "I agree that accidents play a large role in discovery, but I believe they reward only those who have prepared themselves through careful work.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why accidents matter",
+        "topic": "First, it is clearly true that many great discoveries happen by accident.",
+        "example": "For example, the discovery of penicillin came from a mould that appeared by chance in a forgotten dish."
+      },
+      {
+        "role": "Body 2 — Why accidents need prepared minds",
+        "topic": "Second, however, such accidents almost never help people who are not prepared to notice them.",
+        "example": "Consider how the scientist who found penicillin recognised its meaning only because of years of patient study."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-034",
+    "category": "Society & Culture",
+    "prompt": "The main benefit of the study of history is to dispel the illusion that people living now are significantly different from people who lived in earlier times.",
+    "thesis": "I agree that history reveals how similar people have always been, but I believe this is only one of its benefits and not the main one.",
+    "bodies": [
+      {
+        "role": "Body 1 — How history shows continuity",
+        "topic": "First, history really does show how much human beings have stayed the same.",
+        "example": "For example, ancient letters and stories reveal jealousies and ambitions that feel strikingly modern."
+      },
+      {
+        "role": "Body 2 — Why its main benefit is broader",
+        "topic": "Second, however, this is far from the main benefit that history offers.",
+        "example": "Consider how studying the causes of past wars can help leaders avoid repeating the same disasters."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-035",
+    "category": "Education",
+    "prompt": "Learning is primarily a matter of personal discipline; students cannot be motivated by school or college alone.",
+    "thesis": "I agree that personal discipline is vital, but I disagree that schools play only a small part in motivating students to learn.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why discipline is central",
+        "topic": "First, personal discipline truly is at the centre of all real learning.",
+        "example": "For example, two students in the same class often achieve very different results because of their own effort."
+      },
+      {
+        "role": "Body 2 — Why schools do motivate",
+        "topic": "Second, however, it is wrong to claim that schools cannot motivate students at all.",
+        "example": "Consider a bored pupil who suddenly loves science because an inspiring teacher made it exciting and clear."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-036",
+    "category": "Science & Inquiry",
+    "prompt": "Scientists and other researchers should focus their research on areas that are likely to benefit the greatest number of people.",
+    "thesis": "I agree that research should often serve the many, but I believe focusing only on the greatest number would harm science and neglect those in need.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why serving the many is wise",
+        "topic": "First, directing research toward the greatest benefit is often a wise and fair use of resources.",
+        "example": "For example, research into common diseases like malaria can save far more lives than work on a very rare condition."
+      },
+      {
+        "role": "Body 2 — Why it cannot be the only aim",
+        "topic": "Second, however, focusing only on the greatest number would damage science in serious ways.",
+        "example": "Consider how curiosity-driven study of electricity, with no obvious benefit, eventually transformed the entire world."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-037",
+    "category": "Government & Policy",
+    "prompt": "Politicians should pursue common ground and reasonable consensus rather than elusive ideals.",
+    "thesis": "I agree that compromise is often necessary, but I believe politicians must not abandon their ideals altogether.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why consensus is valuable",
+        "topic": "First, seeking common ground is often the only way to get things done in government.",
+        "example": "For example, a budget or a peace deal usually passes only when opposing sides agree to give up something."
+      },
+      {
+        "role": "Body 2 — Why ideals are still needed",
+        "topic": "Second, however, abandoning all ideals in the name of consensus would be a serious mistake.",
+        "example": "Consider reformers who refused to compromise on justice and slowly changed unfair laws that most people once accepted."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-038",
+    "category": "The Individual",
+    "prompt": "People should undertake risky action only after they have carefully considered its consequences.",
+    "thesis": "I largely agree that thinking before acting is wise, but I believe demanding full consideration before every risk would sometimes do more harm than good.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why considering consequences is wise",
+        "topic": "First, in most situations, weighing the consequences before taking a risk is plainly sensible.",
+        "example": "For example, a person who studies the dangers before investing her savings is far less likely to lose everything."
+      },
+      {
+        "role": "Body 2 — Why some risks need fast action",
+        "topic": "Second, however, insisting on full consideration before every risk would itself cause problems.",
+        "example": "Consider a person who must decide in mere seconds whether to pull a stranger out of danger."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-039",
+    "category": "Government & Policy",
+    "prompt": "Leaders are created by the demands that are placed on them.",
+    "thesis": "I agree that difficult circumstances often bring out leaders, but I believe a person's own qualities and choices matter just as much.",
+    "bodies": [
+      {
+        "role": "Body 1 — How demands create leaders",
+        "topic": "First, it is true that hard situations often turn ordinary people into leaders.",
+        "example": "For example, many wartime leaders were quiet, unremarkable figures until danger forced them to step forward."
+      },
+      {
+        "role": "Body 2 — Why personal qualities matter",
+        "topic": "Second, however, demands alone cannot create a leader from someone who lacks the right qualities.",
+        "example": "Consider two officials in the same emergency, where one collapses under pressure and the other inspires calm."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-040",
+    "category": "Environment",
+    "prompt": "There is little justification for society to make extraordinary efforts — especially at a great cost in money and jobs — to save endangered animal or plant species.",
+    "thesis": "I understand the concern about cost, but I strongly disagree, because protecting species brings benefits that usually outweigh the price.",
+    "bodies": [
+      {
+        "role": "Body 1 — The cost concern has some weight",
+        "topic": "First, it is fair to admit that saving species can be expensive and difficult.",
+        "example": "For example, halting logging or fishing to save a species can hurt the workers who depend on that industry."
+      },
+      {
+        "role": "Body 2 — Why saving species is justified",
+        "topic": "Second, however, the benefits of saving species usually outweigh these costs by far.",
+        "example": "Consider how the loss of bees, which pollinate our crops, could threaten the food supply of millions."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-041",
+    "category": "Technology",
+    "prompt": "The human mind will always be superior to machines because machines are only tools of human minds.",
+    "thesis": "I agree that the human mind has unique strengths, but I believe the word always claims far too much.",
+    "bodies": [
+      {
+        "role": "Body 1 — The mind's unique strengths",
+        "topic": "First, the human mind possesses qualities that machines still cannot match.",
+        "example": "For example, a human can write a heartfelt poem or sense a friend's hidden sadness."
+      },
+      {
+        "role": "Body 2 — Why machines surpass us in many ways",
+        "topic": "Second, however, it is simply not true that the mind will always be superior in everything.",
+        "example": "Consider how a computer can scan millions of records in seconds, a task no human could ever finish."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-042",
+    "category": "Government & Policy",
+    "prompt": "People who are the most deeply committed to an idea or policy are also the most critical of it.",
+    "thesis": "I agree that genuine commitment can lead to honest criticism, but I do not believe this is true of committed people in general.",
+    "bodies": [
+      {
+        "role": "Body 1 — How commitment can bring criticism",
+        "topic": "First, people who care deeply about an idea often do examine it most closely.",
+        "example": "For example, a devoted scientist may test her own favourite theory harder than anyone else would."
+      },
+      {
+        "role": "Body 2 — Why commitment often blinds",
+        "topic": "Second, however, deep commitment just as often makes people less critical, not more.",
+        "example": "Consider devoted followers of a movement who refuse to admit even its most obvious mistakes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-043",
+    "category": "Environment",
+    "prompt": "Some people believe that society should try to save every plant and animal species, despite the expense to humans in effort, time, and financial well-being. Others believe that society need not make extraordinary efforts, especially at a great cost in money and jobs, to save endangered species.",
+    "thesis": "I find more truth in the first view, but I believe our efforts to save species must still be balanced against real human needs.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why I lean toward saving species",
+        "topic": "First, the view that we should work hard to save species rests on strong reasons.",
+        "example": "For example, losing the insects that pollinate our crops could damage the food supply of millions."
+      },
+      {
+        "role": "Body 2 — Taking the cost view seriously",
+        "topic": "Second, however, the opposing view rightly reminds us that such efforts carry heavy costs.",
+        "example": "Consider a town whose livelihood disappears when an industry is shut down to protect one rare animal."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-044",
+    "category": "Education",
+    "prompt": "Some people believe that the purpose of education is to free the mind and the spirit. Others believe that formal education tends to restrain our minds and spirits rather than set them free.",
+    "thesis": "I believe education mainly frees the mind, though I admit that poor or rigid schooling can sometimes restrain it.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why education frees the mind",
+        "topic": "First, good education opens the mind to ideas, choices, and possibilities it would never find alone.",
+        "example": "For example, a student who learns history and science can understand the world far beyond her own village."
+      },
+      {
+        "role": "Body 2 — When schooling restrains it",
+        "topic": "Second, however, the opposing view rightly warns that schooling can sometimes restrain the mind.",
+        "example": "Consider a rigid classroom where students are punished for asking questions or thinking differently."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-045",
+    "category": "Government & Policy",
+    "prompt": "Some people believe it is often necessary, even desirable, for political leaders to withhold information from the public. Others believe that the public has a right to be fully informed.",
+    "thesis": "I lean strongly toward the public's right to know, though I accept that a few rare cases may justify secrecy.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why the public has a right to know",
+        "topic": "First, in a free society, people generally have a right to know what their leaders are doing.",
+        "example": "For example, a government that hides a public health danger leaves people unable to protect themselves."
+      },
+      {
+        "role": "Body 2 — When secrecy may be justified",
+        "topic": "Second, however, the opposing view is right that a few situations may justify withholding information.",
+        "example": "Consider plans for defending a country, which would be useless if every detail were made public."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-046",
+    "category": "Education",
+    "prompt": "Claim: Universities should require every student to take a variety of courses outside the student's major field of study. Reason: Acquiring knowledge of various academic disciplines is the best way to become truly educated.",
+    "thesis": "I agree with the claim and largely with its reason, though I believe the requirement should leave some room for choice.",
+    "bodies": [
+      {
+        "role": "Body 1 — Agreeing with the claim and reason",
+        "topic": "First, the reason behind the claim is largely sound, because broad knowledge does make people more truly educated.",
+        "example": "For example, a literature student who also learns some science can think about the world more completely."
+      },
+      {
+        "role": "Body 2 — Why the requirement needs flexibility",
+        "topic": "Second, however, the requirement should be applied flexibly rather than forced on everyone in the same way.",
+        "example": "Consider a medical student whose demanding schedule leaves very little time for many extra classes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-047",
+    "category": "The Individual",
+    "prompt": "Knowing about the past cannot help people to make important decisions today.",
+    "thesis": "I strongly disagree, because the past offers lessons that guide wise decisions, even if it is not a perfect guide.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why the past has real limits",
+        "topic": "First, it is fair to admit that the past cannot answer every question we face today.",
+        "example": "For example, ancient ways of running a small village cannot simply be copied to govern a huge modern city."
+      },
+      {
+        "role": "Body 2 — Why the past clearly helps",
+        "topic": "Second, however, it is plainly false that the past cannot help us decide today.",
+        "example": "Consider how the study of past economic crashes helps leaders avoid repeating the same mistakes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-048",
+    "category": "Technology",
+    "prompt": "In this age of intensive media coverage, it is no longer possible for a society to regard any living man or woman as a hero.",
+    "thesis": "I agree that constant coverage exposes human weakness, but I disagree that real heroes have become impossible.",
+    "bodies": [
+      {
+        "role": "Body 1 — How media exposes weakness",
+        "topic": "First, it is true that heavy media coverage makes it harder for anyone to seem heroic.",
+        "example": "For example, beloved athletes and leaders have lost public respect once their private failings appeared in the news."
+      },
+      {
+        "role": "Body 2 — Why heroes are still possible",
+        "topic": "Second, however, the claim that no living person can be a hero goes much too far.",
+        "example": "Consider the firefighters, doctors, and ordinary people who risk everything to help others in danger."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-049",
+    "category": "Education",
+    "prompt": "We can usually learn much more from people whose views we share than from people whose views contradict our own.",
+    "thesis": "I agree that like-minded people can teach us some things, but I believe we usually learn more from those who disagree with us.",
+    "bodies": [
+      {
+        "role": "Body 1 — What shared views can teach",
+        "topic": "First, people who share our views can genuinely help us learn.",
+        "example": "For example, two scientists with the same theory can build on each other's work to make it stronger."
+      },
+      {
+        "role": "Body 2 — Why opposing views teach more",
+        "topic": "Second, however, we usually learn the most from people whose views contradict our own.",
+        "example": "Consider how a strong opponent in a debate can reveal a flaw in our argument we never saw."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-050",
+    "category": "Society & Culture",
+    "prompt": "The most effective way to understand contemporary culture is to analyze the trends of its youth.",
+    "thesis": "I agree that youth culture reveals a great deal, but I do not believe it is the only or the best way to understand a society.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why youth trends reveal much",
+        "topic": "First, the trends of young people often show where a culture is heading.",
+        "example": "For example, the way teenagers embraced the internet early showed how deeply technology would reshape daily life."
+      },
+      {
+        "role": "Body 2 — Why they are not the whole picture",
+        "topic": "Second, however, youth trends alone cannot reveal the whole of a culture.",
+        "example": "Consider how a country's laws, religions, and history shape daily life far more than any passing teenage fashion."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-051",
+    "category": "Technology",
+    "prompt": "People's attitudes are determined more by their immediate situation or surroundings than by society as a whole.",
+    "thesis": "I agree that our surroundings strongly shape our attitudes, but I believe the wider society influences us just as deeply.",
+    "bodies": [
+      {
+        "role": "Body 1 — The power of the immediate situation",
+        "topic": "First, our immediate surroundings clearly have a powerful effect on how we think and feel.",
+        "example": "For example, a calm person may become angry in a tense crowd or fearful in a dangerous place."
+      },
+      {
+        "role": "Body 2 — Why society shapes us deeply",
+        "topic": "Second, however, the wider society shapes our attitudes just as deeply, if less visibly.",
+        "example": "Consider how ideas about right and wrong, learned from society, stay with us even when no one is watching."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-052",
+    "category": "Arts & Humanities",
+    "prompt": "Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed.",
+    "thesis": "I agree that basic needs must come first, but I believe cutting all arts funding would be a mistake even in hard times.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why basic needs come first",
+        "topic": "First, in a serious crisis, meeting people's basic needs must clearly come before funding art.",
+        "example": "For example, money spent on a grand new museum would be hard to justify while families nearby go hungry."
+      },
+      {
+        "role": "Body 2 — Why not cut all arts funding",
+        "topic": "Second, however, suspending all arts funding even in hard times would do real harm.",
+        "example": "Consider how music and stories have lifted people's spirits during wars and other times of great hardship."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-053",
+    "category": "Education",
+    "prompt": "All parents should be required to volunteer time to their children's schools.",
+    "thesis": "I agree that parental involvement is valuable, but I believe forcing every parent to volunteer would be unfair and unworkable.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why involvement is good",
+        "topic": "First, parental involvement genuinely benefits children and schools alike.",
+        "example": "For example, a class with parent helpers can give pupils more attention than a single teacher could alone."
+      },
+      {
+        "role": "Body 2 — Why compulsory volunteering is unfair",
+        "topic": "Second, however, requiring every parent to volunteer would be both unfair and impractical.",
+        "example": "Consider a single mother with two jobs who would be punished for failing to give time she cannot afford."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-054",
+    "category": "Education",
+    "prompt": "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
+    "thesis": "I agree that studying abroad is valuable, but I believe making it compulsory for all students would be unfair and impractical.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why study abroad is valuable",
+        "topic": "First, studying abroad offers experiences that classrooms at home rarely provide.",
+        "example": "For example, a student who spends months abroad often returns more independent, open-minded, and mature."
+      },
+      {
+        "role": "Body 2 — Why a universal requirement is unfair",
+        "topic": "Second, however, forcing every student to study abroad would create serious problems.",
+        "example": "Consider a student supporting her family who could never pay for a semester overseas."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-055",
+    "category": "Education",
+    "prompt": "Teachers' salaries should be based on the academic performance of their students.",
+    "thesis": "I agree that strong teaching deserves reward, but I believe tying pay mainly to student results would be unfair and harmful.",
+    "bodies": [
+      {
+        "role": "Body 1 — The reasonable aim",
+        "topic": "First, the recommendation grows from a fair wish to reward effective teaching.",
+        "example": "For example, recognising a school's most successful teachers could inspire their colleagues to improve."
+      },
+      {
+        "role": "Body 2 — Why it would be unfair",
+        "topic": "Second, however, basing pay mainly on student results would be deeply unfair.",
+        "example": "Consider a devoted teacher in a poor area whose students still score lower than those in a wealthy school."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-056",
+    "category": "Society & Culture",
+    "prompt": "It is no longer possible for a society to regard any living man or woman as a hero.",
+    "thesis": "I disagree with this claim, because genuine heroes still exist, even though admiration is harder to keep today.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why the claim seems convincing",
+        "topic": "First, it is worth admitting why this claim seems convincing to many people.",
+        "example": "For example, once-admired stars and leaders are often disgraced when their hidden failings appear in the news."
+      },
+      {
+        "role": "Body 2 — Why the claim goes too far",
+        "topic": "Second, however, the claim that no living hero is possible simply goes too far.",
+        "example": "Consider the rescue workers and volunteers who risk their lives in disasters and are deeply admired by all."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-057",
+    "category": "Government & Policy",
+    "prompt": "Some people believe that in order to thrive, a society must put its own overall success before the well-being of its individual citizens. Others believe that the well- being of a society can only be measured by the general welfare of all its people.",
+    "thesis": "I lean toward the second view, but I accept that a society's collective strength also matters for its people.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why welfare measures success",
+        "topic": "First, the well-being of ordinary people is the truest measure of a society's success.",
+        "example": "For example, a country with a strong army but hungry citizens has failed at its most basic task."
+      },
+      {
+        "role": "Body 2 — Why collective strength matters too",
+        "topic": "Second, however, the opposing view rightly notes that a society's overall success also matters.",
+        "example": "Consider a country that raises taxes or asks for sacrifice in wartime to protect everyone's future."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-058",
+    "category": "Science & Inquiry",
+    "prompt": "Claim: Any piece of information referred to as a fact should be mistrusted, since it may well be proven false in the future. Reason: Much of the information that people assume is factual actually turns out to be inaccurate.",
+    "thesis": "I agree that we should question facts carefully, but I disagree that we should mistrust all of them.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of healthy doubt",
+        "topic": "First, there is real value in the caution the claim recommends.",
+        "example": "For example, doctors once treated patients in ways we now know were useless or even harmful."
+      },
+      {
+        "role": "Body 2 — Why total mistrust is unworkable",
+        "topic": "Second, however, mistrusting every fact would make life and thought impossible.",
+        "example": "Consider that doubting whether bridges hold weight or whether medicines work would paralyse us completely."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-059",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed. Reason: It is inappropriate — and, perhaps, even cruel — to use public resources to fund the arts when people's basic needs are not being met.",
+    "thesis": "I agree that basic needs come first, but I disagree that funding the arts is therefore cruel or always wrong.",
+    "bodies": [
+      {
+        "role": "Body 1 — The force of the reason",
+        "topic": "First, there is real force in the reason behind the claim.",
+        "example": "For example, a costly new theatre would be hard to defend in a town where families cannot eat."
+      },
+      {
+        "role": "Body 2 — Why the arts are not cruel",
+        "topic": "Second, however, funding the arts is not truly cruel, even in difficult times.",
+        "example": "Consider how songs and stories have sustained whole communities through war and disaster."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-060",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: Many problems of modern society cannot be solved by laws and the legal system. Reason: Laws cannot change what is in people's hearts or minds.",
+    "thesis": "I largely agree that laws alone cannot solve every problem, but I believe they still do far more good than the claim suggests.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why laws cannot change hearts",
+        "topic": "First, it is true that some problems lie beyond what any law can reach.",
+        "example": "For example, a law against prejudice cannot, by itself, remove the hatred in a person's heart."
+      },
+      {
+        "role": "Body 2 — Why laws still do much",
+        "topic": "Second, however, it is wrong to conclude that laws cannot help solve these problems at all.",
+        "example": "Consider how laws against unfair treatment have slowly changed what people accept as normal."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-061",
+    "category": "Education",
+    "prompt": "Educators should take students' interests into account when planning the content of the courses they teach.",
+    "thesis": "I agree that student interests should shape teaching, but I believe educators must still decide what students truly need to learn.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why interests should shape teaching",
+        "topic": "First, paying attention to students' interests can make learning far more effective.",
+        "example": "For example, a history class built around questions students chose often sparks lively discussion."
+      },
+      {
+        "role": "Body 2 — Why educators must guide",
+        "topic": "Second, however, student interests cannot be the only thing that shapes a course.",
+        "example": "Consider a class that would gladly skip difficult writing or mathematics that it will later badly need."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-062",
+    "category": "Technology",
+    "prompt": "The primary goal of technological advancement should be to increase people's efficiency so that they have more leisure time.",
+    "thesis": "I agree that more leisure is a worthy benefit, but I do not believe it should be the primary goal of technology.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why leisure is a real benefit",
+        "topic": "First, using technology to free people for leisure is genuinely valuable.",
+        "example": "For example, washing machines and dishwashers have freed countless hours once lost to household chores."
+      },
+      {
+        "role": "Body 2 — Why it should not be the primary goal",
+        "topic": "Second, however, leisure should not be the single most important goal of technology.",
+        "example": "Consider medical technology that heals the sick or clean-water systems that protect whole populations."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-063",
+    "category": "Education",
+    "prompt": "Educators should base their assessment of students' learning not on students' grasp of facts but on the ability to explain the ideas, trends, and concepts that those facts illustrate.",
+    "thesis": "I agree that understanding matters most, but I believe facts and ideas must both be part of any fair assessment.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why understanding reveals more",
+        "topic": "First, judging students by their understanding reveals far more than testing facts alone.",
+        "example": "For example, a learner who explains why the seasons change understands more than one who only names them."
+      },
+      {
+        "role": "Body 2 — Why facts are still needed",
+        "topic": "Second, however, ideas cannot truly be understood or explained without some facts to build on.",
+        "example": "Consider a science learner who must know certain facts before she can explain any larger theory."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-064",
+    "category": "Technology",
+    "prompt": "Unfortunately, in contemporary society, creating an appealing image has become more important than the reality or truth behind that image.",
+    "thesis": "I agree that image often seems to dominate today, but I believe truth still matters deeply in the end.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why image often dominates",
+        "topic": "First, it is true that image frequently seems to matter more than reality today.",
+        "example": "For example, a product with clever advertising can outsell a better but less glamorous rival."
+      },
+      {
+        "role": "Body 2 — Why truth still reasserts itself",
+        "topic": "Second, however, the truth behind an image still matters and usually reasserts itself.",
+        "example": "Consider a company that sells a poor product through clever marketing and quickly loses its customers."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-065",
+    "category": "Government & Policy",
+    "prompt": "The effectiveness of a country's leaders is best measured by examining the well- being of that country's citizens.",
+    "thesis": "I largely agree with this claim, though I believe a few other measures of leadership also matter.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why well-being is the key measure",
+        "topic": "First, the well-being of citizens is indeed the clearest sign of effective leadership.",
+        "example": "For example, a government that improves health, safety, and jobs has plainly done its work well."
+      },
+      {
+        "role": "Body 2 — Why other measures matter too",
+        "topic": "Second, however, well-being alone does not capture everything about effective leadership.",
+        "example": "Consider a leader who guides a nation wisely through a war whose hardships no one could have avoided."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-066",
+    "category": "Education",
+    "prompt": "A nation should require all of its students to study the same national curriculum until they enter college.",
+    "thesis": "I agree that a shared core of learning is valuable, but I believe forcing complete sameness would also do harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why a common curriculum helps",
+        "topic": "First, a shared national curriculum brings real and important benefits.",
+        "example": "For example, a common standard means a student who moves to a new city is not left behind."
+      },
+      {
+        "role": "Body 2 — Why complete sameness harms",
+        "topic": "Second, however, requiring complete sameness in every subject would also cause problems.",
+        "example": "Consider a gifted young artist or engineer forced to follow exactly the same path as everyone else."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-067",
+    "category": "Education",
+    "prompt": "Educational institutions should actively encourage their students to choose fields of study in which jobs are plentiful.",
+    "thesis": "I agree that schools should inform students about job prospects, but I believe actively pushing them toward certain fields would do harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why informing students helps",
+        "topic": "First, helping students consider where jobs are plentiful is genuinely useful.",
+        "example": "For example, a student warned that a field has very few jobs can plan more wisely and avoid heavy debt."
+      },
+      {
+        "role": "Body 2 — Why actively pushing backfires",
+        "topic": "Second, however, actively pushing students into certain fields could backfire badly.",
+        "example": "Consider a gifted artist steered into business who performs poorly and abandons the field entirely."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-068",
+    "category": "Society & Culture",
+    "prompt": "People's behavior is largely determined by forces not of their own making.",
+    "thesis": "I agree that outside forces shape us powerfully, but I believe our own choices still play a vital part.",
+    "bodies": [
+      {
+        "role": "Body 1 — How outside forces shape us",
+        "topic": "First, much of our behaviour really is shaped by forces beyond our control.",
+        "example": "For example, a child raised amid violence may grow up treating aggression as normal."
+      },
+      {
+        "role": "Body 2 — Why choice still matters",
+        "topic": "Second, however, our own choices still shape our behaviour in crucial ways.",
+        "example": "Consider two children from the same troubled home, where one turns to crime and the other to helping others."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-069",
+    "category": "Education",
+    "prompt": "Although innovations such as video, computers, and the Internet seem to offer schools improved methods for instructing students, these technologies all too often distract from real learning.",
+    "thesis": "I agree that these tools can distract, but I believe they also help learning greatly when they are used well.",
+    "bodies": [
+      {
+        "role": "Body 1 — How technology can distract",
+        "topic": "First, it is true that classroom technology can easily distract students.",
+        "example": "For example, a student with a laptop may drift into browsing instead of following the lesson."
+      },
+      {
+        "role": "Body 2 — How technology aids learning",
+        "topic": "Second, however, these same technologies can powerfully support real learning.",
+        "example": "Consider how a video can make a difficult idea clear in minutes, or how online lessons reach distant students."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-070",
+    "category": "Society & Culture",
+    "prompt": "The best ideas arise from a passionate interest in commonplace things.",
+    "thesis": "I agree that passion for ordinary things often sparks great ideas, but I do not believe this is their only source.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why everyday passion sparks ideas",
+        "topic": "First, a deep interest in ordinary things really can lead to remarkable ideas.",
+        "example": "For example, the simple sight of an apple falling is said to have led Newton toward the idea of gravity."
+      },
+      {
+        "role": "Body 2 — Why rare problems matter too",
+        "topic": "Second, however, many of the best ideas come from rare or difficult problems, not commonplace ones.",
+        "example": "Consider the abstract puzzles of mathematics or space that have reshaped how we understand the universe."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-071",
+    "category": "Government & Policy",
+    "prompt": "To be an effective leader, a public official must maintain the highest ethical and moral standards.",
+    "thesis": "I agree that good character matters greatly in a leader, but I believe the word highest sets too strict a test.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why ethics matter for leadership",
+        "topic": "First, strong moral standards genuinely help a leader to be effective.",
+        "example": "For example, an official known for fairness and honesty is far more likely to be believed and followed."
+      },
+      {
+        "role": "Body 2 — Why 'highest' is too strict",
+        "topic": "Second, however, demanding the highest possible standards may be too strict to be useful.",
+        "example": "Consider leaders with personal failings who still governed wisely and improved millions of lives."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-072",
+    "category": "Government & Policy",
+    "prompt": "Claim: Imagination is a more valuable asset than experience. Reason: People who lack experience are free to imagine what is possible without the constraints of established habits and attitudes.",
+    "thesis": "I agree that imagination is precious, but I disagree that it is generally more valuable than experience.",
+    "bodies": [
+      {
+        "role": "Body 1 — The truth in the reason",
+        "topic": "First, there is real truth in the reason behind the claim.",
+        "example": "For example, a newcomer may suggest a fresh solution simply because she does not know it is supposed to be impossible."
+      },
+      {
+        "role": "Body 2 — Why experience is vital",
+        "topic": "Second, however, experience is just as valuable as imagination, and often more so.",
+        "example": "Consider a surgeon whose years of practice let her handle a crisis no imagination alone could solve."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-073",
+    "category": "Science & Inquiry",
+    "prompt": "In most professions and academic fields, imagination is more important than knowledge.",
+    "thesis": "I agree that imagination is essential, but I believe it is rarely more important than knowledge in most fields.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why imagination is vital",
+        "topic": "First, imagination is clearly essential to progress in nearly every field.",
+        "example": "For example, a scientist must first imagine a possibility before she can ever test it."
+      },
+      {
+        "role": "Body 2 — Why knowledge is equally important",
+        "topic": "Second, however, imagination is rarely more important than the knowledge that supports it.",
+        "example": "Consider an engineer who imagines a beautiful bridge but lacks the knowledge to keep it from collapsing."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-074",
+    "category": "Science & Inquiry",
+    "prompt": "Critical judgment of work in any given field has little value unless it comes from someone who is an expert in that field.",
+    "thesis": "I agree that expert judgment carries special weight, but I believe non-experts can also offer valuable criticism.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why expert judgment carries weight",
+        "topic": "First, judgment from a true expert often does carry the greatest weight.",
+        "example": "For example, a trained musician can hear subtle mistakes in a performance that most listeners never notice."
+      },
+      {
+        "role": "Body 2 — Why non-experts matter too",
+        "topic": "Second, however, valuable judgment can also come from people who are not experts.",
+        "example": "Consider how the lasting popularity of a film with everyday viewers can reveal a worth critics missed."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-075",
+    "category": "Science & Inquiry",
+    "prompt": "Some people believe that scientific discoveries have given us a much better understanding of the world around us. Others believe that science has revealed to us that the world is infinitely more complex than we ever realized.",
+    "thesis": "I believe both views are true, and that science deepens our understanding and our sense of complexity at the same time.",
+    "bodies": [
+      {
+        "role": "Body 1 — How science gives understanding",
+        "topic": "First, science has clearly given us a far better understanding of the world.",
+        "example": "For example, we now understand that illness comes from germs rather than from curses or bad air."
+      },
+      {
+        "role": "Body 2 — How science reveals complexity",
+        "topic": "Second, however, the more science learns, the more complex the world appears.",
+        "example": "Consider how studying the atom uncovered a strange quantum world that still puzzles the experts."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-076",
+    "category": "Education",
+    "prompt": "In any profession — business, politics, education, government — those in power should step down after five years.",
+    "thesis": "I agree that limiting time in power can be healthy, but I believe a strict five-year rule would also cause harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why limits prevent abuse",
+        "topic": "First, limiting how long people hold power can prevent serious abuse.",
+        "example": "For example, rulers who cling to power for decades often become corrupt and difficult to remove."
+      },
+      {
+        "role": "Body 2 — Why a rigid rule is too strict",
+        "topic": "Second, however, forcing everyone to step down after exactly five years would be too rigid.",
+        "example": "Consider a skilled leader removed just as she has finally mastered a difficult and complex job."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-077",
+    "category": "Education",
+    "prompt": "Requiring university students to take a variety of courses outside their major fields of study is the best way to ensure that students become truly educated.",
+    "thesis": "I agree that such breadth helps, but I do not believe it is the single best way to educate a student.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why breadth helps",
+        "topic": "First, studying outside one's major genuinely broadens a student's mind.",
+        "example": "For example, a science student who studies ethics may think more wisely about how her work affects people."
+      },
+      {
+        "role": "Body 2 — Why it is not the best way",
+        "topic": "Second, however, calling breadth the best way to ensure a true education claims too much.",
+        "example": "Consider a student who takes many varied courses but learns each one only shallowly."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-078",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists. Reason: The surest indicator of a great nation is actually the welfare of all its people.",
+    "thesis": "I largely agree that welfare is the truest measure, but I believe great achievements still matter as part of it.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why welfare is the surest indicator",
+        "topic": "First, the reason behind the claim is sound, because the welfare of the people is the clearest test of greatness.",
+        "example": "For example, a country with famous monuments but starving people has failed at its most basic duty."
+      },
+      {
+        "role": "Body 2 — Why achievements still matter",
+        "topic": "Second, however, the claim goes too far in dismissing achievements entirely.",
+        "example": "Consider how medical research lengthens ordinary lives or how great art enriches a whole culture."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-079",
+    "category": "Government & Policy",
+    "prompt": "Any leader who is quickly and easily influenced by shifts in popular opinion will accomplish little.",
+    "thesis": "I largely agree that leaders need firmness, but I believe listening to public opinion is not always a weakness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why easily-swayed leaders fail",
+        "topic": "First, a leader who follows every change in opinion usually achieves very little.",
+        "example": "For example, a leader who abandons a good plan at the first complaint will leave it half done."
+      },
+      {
+        "role": "Body 2 — Why listening can be a strength",
+        "topic": "Second, however, paying attention to public opinion is not always a weakness.",
+        "example": "Consider a leader who wisely changes a harmful policy after the public points out its real dangers."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-080",
+    "category": "Government & Policy",
+    "prompt": "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people whom they serve.",
+    "thesis": "I agree that officials must use their judgment, but I believe they cannot simply ignore the wishes of the public.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why judgment is needed",
+        "topic": "First, officials often must follow their own judgment instead of public opinion alone.",
+        "example": "For example, a brief public panic might call for a harmful policy that a careful leader knows to avoid."
+      },
+      {
+        "role": "Body 2 — Why the public will must be respected",
+        "topic": "Second, however, officials cannot simply override the will of the people they were chosen to serve.",
+        "example": "Consider an official who ignores the clear and repeated wishes of the public, sure that he knows best."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-081",
+    "category": "Government & Policy",
+    "prompt": "It is primarily in cities that a nation's cultural traditions are generated and preserved.",
+    "thesis": "I agree that cities play a major cultural role, but I do not believe traditions live primarily in cities alone.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why cities are major centres",
+        "topic": "First, cities truly are powerful centres of cultural life.",
+        "example": "For example, great cities house the museums, libraries, and theatres that preserve a nation's art."
+      },
+      {
+        "role": "Body 2 — Why tradition lives beyond cities",
+        "topic": "Second, however, much of a nation's tradition is generated and kept alive far from its cities.",
+        "example": "Consider how traditional food, dance, and dress are frequently preserved best in rural communities."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-082",
+    "category": "Education",
+    "prompt": "We can learn much more from people whose views we share than from people whose views contradict our own.",
+    "thesis": "I agree that like-minded people can teach us something, but I believe we usually learn more from those who disagree.",
+    "bodies": [
+      {
+        "role": "Body 1 — What shared views can teach",
+        "topic": "First, people who share our views can certainly help us learn.",
+        "example": "For example, colleagues who agree on a project can build steadily on one another's work."
+      },
+      {
+        "role": "Body 2 — Why opposing views teach more",
+        "topic": "Second, however, we usually learn the most from people whose views oppose our own.",
+        "example": "Consider how a sharp opponent can expose a flaw in our argument that no friend would mention."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-083",
+    "category": "Environment",
+    "prompt": "When old buildings stand on ground that modern planners feel could be better used for modern purposes, modern development should be given precedence over the preservation of historic buildings.",
+    "thesis": "I agree that development sometimes matters more, but I believe historic buildings deserve strong protection in most cases.",
+    "bodies": [
+      {
+        "role": "Body 1 — When development should win",
+        "topic": "First, there are real cases where modern development should come first.",
+        "example": "For example, replacing a crumbling, empty building with housing can help many families in real need."
+      },
+      {
+        "role": "Body 2 — Why preservation usually wins",
+        "topic": "Second, however, historic buildings usually deserve protection rather than destruction.",
+        "example": "Consider a historic town centre that draws visitors and gives its people a deep sense of belonging."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-084",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: The surest indicator of a great nation must be the achievements of its rulers, artists, or scientists. Reason: Great achievements by a nation's rulers, artists, or scientists will ensure a good life for the majority of that nation's people.",
+    "thesis": "I agree that achievements matter, but I disagree that they are the surest indicator or that they ensure a good life for the majority.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of achievements",
+        "topic": "First, the achievements of a nation do carry real importance.",
+        "example": "For example, medical research and new technology have lengthened and eased countless ordinary lives."
+      },
+      {
+        "role": "Body 2 — Why the reason fails",
+        "topic": "Second, however, great achievements do not actually ensure a good life for most people.",
+        "example": "Consider a country with world-famous scientists whose ordinary citizens still lack food and decent work."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-085",
+    "category": "Arts & Humanities",
+    "prompt": "Some people claim that you can tell whether a nation is great by looking at the achievements of its rulers, artists, or scientists. Others argue that the surest indicator of a great nation is, in fact, the general welfare of all its people.",
+    "thesis": "I lean toward the second view, but I believe a nation's achievements still form part of its greatness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why welfare is the surest sign",
+        "topic": "First, the welfare of all the people is the surest sign of a nation's greatness.",
+        "example": "For example, a nation with grand achievements but widespread poverty has failed the very people it serves."
+      },
+      {
+        "role": "Body 2 — Why achievements matter too",
+        "topic": "Second, however, the first view rightly reminds us that achievements also matter.",
+        "example": "Consider how scientific discoveries cure disease, or how great art gives a nation pride and meaning."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-086",
+    "category": "Society & Culture",
+    "prompt": "The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models.",
+    "thesis": "I largely agree that a society's heroes reveal its values, but I believe they are not the only way to understand it.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why heroes reveal values",
+        "topic": "First, the people a society admires reveal what it truly values.",
+        "example": "For example, a nation that honours soldiers and a nation that honours scientists clearly value different things."
+      },
+      {
+        "role": "Body 2 — Why heroes are not the only sign",
+        "topic": "Second, however, heroes alone cannot reveal the whole character of a society.",
+        "example": "Consider a nation that praises noble heroes yet quietly mistreats its poor and powerless."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-087",
+    "category": "Education",
+    "prompt": "All college and university students would benefit from spending at least one semester studying in a foreign country.",
+    "thesis": "I agree that most students would gain a great deal, but I do not believe the word all is true for everyone.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why most students benefit",
+        "topic": "First, the great majority of students would indeed benefit from studying abroad.",
+        "example": "For example, a student who studies overseas often returns more confident, mature, and open-minded."
+      },
+      {
+        "role": "Body 2 — Why 'all' is too strong",
+        "topic": "Second, however, the claim that all students would benefit goes too far.",
+        "example": "Consider a student caring for a sick parent, for whom a semester overseas would bring more harm than good."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-088",
+    "category": "Environment",
+    "prompt": "Some people claim that a nation's government should preserve its wilderness areas in their natural state. Others argue that these areas should be developed for potential economic gain.",
+    "thesis": "I lean toward preserving wilderness, but I accept that careful development is sometimes justified.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why preservation matters",
+        "topic": "First, preserving wilderness in its natural state brings deep and lasting value.",
+        "example": "For example, untouched forests clean our air and water and shelter species found nowhere else."
+      },
+      {
+        "role": "Body 2 — Why some development is justified",
+        "topic": "Second, however, the opposing view rightly notes that some development can be justified.",
+        "example": "Consider a poor region where careful, limited development could lift many families out of poverty."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-089",
+    "category": "Arts & Humanities",
+    "prompt": "The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, but the general well-being of all its people.",
+    "thesis": "I largely agree with this claim, though I believe achievements still play a part in true greatness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why well-being is the surest sign",
+        "topic": "First, the well-being of all the people is indeed the surest sign of national greatness.",
+        "example": "For example, a country famous for its art but full of hungry families has failed its basic duty."
+      },
+      {
+        "role": "Body 2 — Why achievements still matter",
+        "topic": "Second, however, the achievements of a nation should not be dismissed entirely.",
+        "example": "Consider how new medicine lengthens ordinary lives or how great art enriches a whole people."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-090",
+    "category": "Work & Economy",
+    "prompt": "Some people argue that successful leaders in government, industry, or other fields must be highly competitive. Other people claim that in order to be successful, a leader must be willing and able to cooperate with others.",
+    "thesis": "I believe both qualities matter, though I lean toward the view that cooperation is the more important of the two.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why competitiveness helps",
+        "topic": "First, a degree of competitiveness genuinely helps leaders succeed.",
+        "example": "For example, a competitive business leader may fight hard to make her company the best in its field."
+      },
+      {
+        "role": "Body 2 — Why cooperation matters more",
+        "topic": "Second, however, the ability to cooperate is at least as important, and often more so.",
+        "example": "Consider a leader who unites a divided team and inspires everyone to pull in the same direction."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-091",
+    "category": "Work & Economy",
+    "prompt": "Some people believe that corporations have a responsibility to promote the well- being of the societies and environments in which they operate. Others believe that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible.",
+    "thesis": "I lean toward the view that corporations have wider responsibilities, though I accept that making a profit is also necessary.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why corporations bear responsibility",
+        "topic": "First, corporations do have a real responsibility beyond simply making money.",
+        "example": "For example, a factory that pollutes a river damages the health of everyone who lives nearby."
+      },
+      {
+        "role": "Body 2 — Why profit is also necessary",
+        "topic": "Second, however, the opposing view is right that companies must also make money to survive.",
+        "example": "Consider a company that spends so much on good causes that it goes bankrupt and helps no one."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-092",
+    "category": "Science & Inquiry",
+    "prompt": "Claim: Researchers should not limit their investigations to only those areas in which they expect to discover something that has an immediate, practical application. Reason: It is impossible to predict the outcome of a line of research with any certainty.",
+    "thesis": "I agree with both the claim and its reason, though I believe some practical research still deserves a place.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why research should roam freely",
+        "topic": "First, the reason behind the claim is clearly sound, since no one can predict where research will lead.",
+        "example": "For example, early study of electricity had no obvious use, yet it transformed the modern world."
+      },
+      {
+        "role": "Body 2 — Why practical research matters too",
+        "topic": "Second, however, research with an immediate practical aim also deserves real support.",
+        "example": "Consider the urgent search for a vaccine during an epidemic, where practical results save lives at once."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-093",
+    "category": "Technology",
+    "prompt": "Some people believe that our ever-increasing use of technology significantly reduces our opportunities for human interaction. Other people believe that technology provides us with new and better ways to communicate and connect with one another.",
+    "thesis": "I believe both views hold truth, and that technology can either weaken or strengthen our connections depending on how we use it.",
+    "bodies": [
+      {
+        "role": "Body 1 — How technology can reduce interaction",
+        "topic": "First, technology really can reduce genuine human interaction.",
+        "example": "For example, a group at dinner may each stare at a phone instead of talking to one another."
+      },
+      {
+        "role": "Body 2 — How technology can connect us",
+        "topic": "Second, however, technology also gives us powerful new ways to connect.",
+        "example": "Consider a family spread across distant countries who can now see and speak to one another every day."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-094",
+    "category": "The Individual",
+    "prompt": "Claim: Knowing about the past cannot help people to make important decisions today. Reason: The world today is significantly more complex than it was even in the relatively recent past.",
+    "thesis": "I disagree with the claim, because the past still teaches lessons that help us even in a complex world.",
+    "bodies": [
+      {
+        "role": "Body 1 — The truth that the world is more complex",
+        "topic": "First, there is some truth in the reason that today's world is more complex.",
+        "example": "For example, no ancient ruler ever had to manage the internet or worldwide climate change."
+      },
+      {
+        "role": "Body 2 — Why the past still helps",
+        "topic": "Second, however, the claim that the past cannot help us today is plainly false.",
+        "example": "Consider how the study of past financial crashes still helps leaders avoid the same mistakes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-095",
+    "category": "The Individual",
+    "prompt": "Claim: Knowing about the past cannot help people to make important decisions today. Reason: We are not able to make connections between current events and past events until we have some distance from both.",
+    "thesis": "I disagree with the claim, because we can and do learn from the past even while living through the present.",
+    "bodies": [
+      {
+        "role": "Body 1 — How distance can help",
+        "topic": "First, there is some truth in the idea that distance helps us understand events.",
+        "example": "For example, the full meaning of a war or a crisis often becomes clear only years afterward."
+      },
+      {
+        "role": "Body 2 — Why the past still helps now",
+        "topic": "Second, however, we do not need full distance to learn useful lessons from the past.",
+        "example": "Consider how leaders today study past wars and crises to avoid repeating old mistakes."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-096",
+    "category": "Education",
+    "prompt": "Educational institutions should actively encourage their students to choose fields of study that will prepare them for lucrative careers.",
+    "thesis": "I agree that schools should inform students about earnings, but I believe actively pushing them toward money would do harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why informing about earnings helps",
+        "topic": "First, helping students understand which fields pay well is genuinely useful.",
+        "example": "For example, a student warned that a field pays very little can plan her finances more wisely."
+      },
+      {
+        "role": "Body 2 — Why pushing toward money harms",
+        "topic": "Second, however, actively pushing students toward lucrative careers could do real damage.",
+        "example": "Consider a gifted teacher or artist pressured into finance who performs poorly and feels trapped."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-097",
+    "category": "Education",
+    "prompt": "Educational institutions have a responsibility to dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+    "thesis": "I agree that schools should advise students honestly, but I believe a duty to dissuade them would do more harm than good.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why honest advice is good",
+        "topic": "First, schools do have a duty to give students honest and realistic advice.",
+        "example": "For example, a counsellor who gently shares the true difficulty of a field helps a student plan wisely."
+      },
+      {
+        "role": "Body 2 — Why dissuading is wrong",
+        "topic": "Second, however, an active duty to dissuade students would often be mistaken and harmful.",
+        "example": "Consider the many famous achievers who were once judged hopeless by their own teachers."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-098",
+    "category": "Education",
+    "prompt": "Some people believe that competition for high grades motivates students to excel in the classroom. Others believe that such competition seriously limits the quality of real learning.",
+    "thesis": "I believe both views hold truth, though I lean toward the idea that moderate competition helps while excessive competition harms.",
+    "bodies": [
+      {
+        "role": "Body 1 — How competition motivates",
+        "topic": "First, a healthy level of competition genuinely motivates students to do their best.",
+        "example": "For example, a student may prepare more carefully simply to match the strong results of her classmates."
+      },
+      {
+        "role": "Body 2 — How excess harms learning",
+        "topic": "Second, however, too much competition for grades can seriously damage real learning.",
+        "example": "Consider a student who crams facts for a test, passes it, and forgets everything a week later."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-099",
+    "category": "Science & Inquiry",
+    "prompt": "Claim: Major policy decisions should always be left to politicians and other government experts. Reason: Politicians and other government experts are more informed and thus have better judgment and perspective than do members of the general public.",
+    "thesis": "I agree that experts have valuable knowledge, but I disagree that major decisions should always be left to them alone.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why expert knowledge matters",
+        "topic": "First, there is real truth in the reason that experts are better informed.",
+        "example": "For example, an economist may understand the likely effects of a tax far better than the average voter."
+      },
+      {
+        "role": "Body 2 — Why the public must have a say",
+        "topic": "Second, however, major decisions should not always be left to experts alone.",
+        "example": "Consider a major decision about going to war, which changes countless lives and belongs to the whole nation."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-100",
+    "category": "Education",
+    "prompt": "Some people believe that universities should require every student to take a variety of courses outside the student's field of study. Others believe that universities should not force students to take any courses other than those that will help prepare them for jobs in their chosen fields.",
+    "thesis": "I lean toward requiring some breadth, but I accept that job preparation also deserves real weight.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why breadth matters",
+        "topic": "First, studying outside one's field makes students wiser and more complete thinkers.",
+        "example": "For example, an engineering student who studies ethics may use her skills more responsibly."
+      },
+      {
+        "role": "Body 2 — Why job preparation matters",
+        "topic": "Second, however, the opposing view rightly values courses that prepare students for work.",
+        "example": "Consider a student deep in debt who urgently needs practical skills to find employment soon."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-101",
+    "category": "Government & Policy",
+    "prompt": "It is more harmful to compromise one's own beliefs than to adhere to them.",
+    "thesis": "I agree that holding to our beliefs has real value, but I do not believe compromise is always the more harmful choice.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of holding to beliefs",
+        "topic": "First, staying true to our beliefs is often genuinely important.",
+        "example": "For example, a worker who refuses to lie even under pressure keeps both honour and a clear conscience."
+      },
+      {
+        "role": "Body 2 — Why rigid adherence can harm",
+        "topic": "Second, however, refusing ever to compromise can be just as harmful, if not more so.",
+        "example": "Consider a leader so devoted to a failed idea that she refuses to change while her people suffer."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-102",
+    "category": "Education",
+    "prompt": "Claim: Colleges and universities should specify all required courses and eliminate elective courses in order to provide clear guidance for students. Reason: College students — like people in general — prefer to follow directions rather than make their own decisions.",
+    "thesis": "I agree that clear guidance helps students, but I disagree that electives should be eliminated, and I doubt the reason behind the claim.",
+    "bodies": [
+      {
+        "role": "Body 1 — The value of clear guidance",
+        "topic": "First, there is some value in giving students clear guidance about what to study.",
+        "example": "For example, requiring basic writing and reasoning helps students in almost any later field."
+      },
+      {
+        "role": "Body 2 — Why electives should stay",
+        "topic": "Second, however, eliminating electives entirely would be a serious mistake.",
+        "example": "Consider a student who finds her future career only because an elective sparked a new passion."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-103",
+    "category": "Science & Inquiry",
+    "prompt": "No field of study can advance significantly unless it incorporates knowledge and experience from outside that field.",
+    "thesis": "I agree that outside knowledge often drives progress, but I believe the word no makes the claim too absolute.",
+    "bodies": [
+      {
+        "role": "Body 1 — How outside knowledge drives progress",
+        "topic": "First, borrowing knowledge from other fields often leads to major advances.",
+        "example": "For example, biology advanced enormously once it began using the methods of chemistry and physics."
+      },
+      {
+        "role": "Body 2 — Why 'no field' is too absolute",
+        "topic": "Second, however, the claim that no field can advance without outside knowledge goes too far.",
+        "example": "Consider a mathematician who solves a long-standing problem using only the tools of mathematics itself."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-104",
+    "category": "The Individual",
+    "prompt": "True success can be measured primarily in terms of the goals one sets for oneself.",
+    "thesis": "I agree that personal goals are an important measure of success, but I do not believe they are the only or primary one.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why personal goals matter",
+        "topic": "First, measuring success by our own goals is genuinely meaningful.",
+        "example": "For example, someone who dreams of being a caring parent may feel deeply successful without any fame."
+      },
+      {
+        "role": "Body 2 — Why they are not the only measure",
+        "topic": "Second, however, success cannot be measured only by the goals we set ourselves.",
+        "example": "Consider someone whose only goal is to avoid all effort, which she easily achieves by doing nothing."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-105",
+    "category": "Arts & Humanities",
+    "prompt": "The general welfare of a nation's people is a better indication of that nation's greatness than are the achievements of its rulers, artists, or scientists.",
+    "thesis": "I largely agree with this claim, though I believe achievements still contribute to a nation's greatness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why welfare is the better indicator",
+        "topic": "First, the general welfare of the people is indeed a better indicator of greatness.",
+        "example": "For example, a country with brilliant scientists but hungry citizens has failed its most basic duty."
+      },
+      {
+        "role": "Body 2 — Why achievements contribute too",
+        "topic": "Second, however, achievements should not be dismissed as a sign of greatness.",
+        "example": "Consider how medical discoveries lengthen lives or how great art enriches an entire culture."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-106",
+    "category": "Society & Culture",
+    "prompt": "The best test of an argument is the argument's ability to convince someone with an opposing viewpoint.",
+    "thesis": "I agree that persuading an opponent is a strong test, but I do not believe it is the only measure of a good argument.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why persuading opponents is a strong test",
+        "topic": "First, convincing someone who disagrees is indeed a powerful test of an argument.",
+        "example": "For example, a lawyer who changes the mind of a doubting jury has clearly made a compelling case."
+      },
+      {
+        "role": "Body 2 — Why it is not the only test",
+        "topic": "Second, however, the power to convince is not the only mark of a good argument.",
+        "example": "Consider a sound scientific argument that a person rejects simply because it offends her beliefs."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-107",
+    "category": "Environment",
+    "prompt": "Nations should pass laws to preserve any remaining wilderness areas in their natural state.",
+    "thesis": "I strongly support protecting wilderness, but I believe a law covering every remaining area would be too rigid.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why preserving wilderness is vital",
+        "topic": "First, protecting wilderness through law brings deep and lasting benefits.",
+        "example": "For example, protected forests clean our air and water and guard plants found nowhere else."
+      },
+      {
+        "role": "Body 2 — Why 'any remaining' is too rigid",
+        "topic": "Second, however, a law protecting every remaining wild area would be too rigid to be fair.",
+        "example": "Consider a poor region that needs a small part of its wild land for water, food, or shelter."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-108",
+    "category": "Education",
+    "prompt": "In any field — business, politics, education, government — those in power should be required to step down after five years.",
+    "thesis": "I agree that limiting time in power can be healthy, but I believe a fixed five-year rule for everyone would also cause harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why limits prevent abuse",
+        "topic": "First, requiring leaders to step down can prevent the abuse that long power invites.",
+        "example": "For example, officials who hold power for decades often become corrupt and hard to remove."
+      },
+      {
+        "role": "Body 2 — Why a fixed rule is too rigid",
+        "topic": "Second, however, forcing everyone out after exactly five years would be too rigid.",
+        "example": "Consider a skilled leader removed just as she has finally mastered a difficult job."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-109",
+    "category": "Government & Policy",
+    "prompt": "Some people claim that the goal of politics should be the pursuit of an ideal. Others argue that the goal should be finding common ground and reaching reasonable consensus.",
+    "thesis": "I lean toward seeking consensus, but I believe ideals must still guide the search for it.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why consensus is the wiser goal",
+        "topic": "First, finding common ground is often the only way to make government actually work.",
+        "example": "For example, an important law usually passes only when opposing sides agree to give something up."
+      },
+      {
+        "role": "Body 2 — Why ideals must still guide it",
+        "topic": "Second, however, the pursuit of ideals should not be abandoned in the search for agreement.",
+        "example": "Consider reformers who refused to compromise on justice and changed unfair laws most people once accepted."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-110",
+    "category": "Environment",
+    "prompt": "The best way to solve environmental problems caused by consumer-generated waste is for towns and cities to impose strict limits on the amount of trash they will accept from each household.",
+    "thesis": "I agree that limiting waste can help, but I do not believe strict limits alone are the best solution.",
+    "bodies": [
+      {
+        "role": "Body 1 — How limits help",
+        "topic": "First, limiting household trash can genuinely reduce the waste a town produces.",
+        "example": "For example, a household charged for extra bags will quickly learn to waste less and recycle more."
+      },
+      {
+        "role": "Body 2 — Why limits alone are not enough",
+        "topic": "Second, however, strict limits alone are far from the best way to solve the problem.",
+        "example": "Consider a family that wants to waste less but has no recycling service to make it possible."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-111",
+    "category": "Education",
+    "prompt": "We learn our most valuable lessons in life from struggling with our limitations rather than from enjoying our successes.",
+    "thesis": "I largely agree that struggle teaches deeply, but I believe our successes also offer valuable lessons.",
+    "bodies": [
+      {
+        "role": "Body 1 — How struggle teaches",
+        "topic": "First, struggling with our limitations often teaches our deepest lessons.",
+        "example": "For example, a student who fails an exam may finally learn how to study properly."
+      },
+      {
+        "role": "Body 2 — How successes teach too",
+        "topic": "Second, however, our successes also teach valuable lessons of their own.",
+        "example": "Consider an athlete who wins a race and learns exactly which training methods truly work."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-112",
+    "category": "Science & Inquiry",
+    "prompt": "Claim: While boredom is often expressed with a sense of self-satisfaction, it should really be a source of embarrassment. Reason: Boredom arises from a lack of imagination and self-motivation.",
+    "thesis": "I agree that boredom sometimes reveals a dull mind, but I do not believe it is always something to be ashamed of.",
+    "bodies": [
+      {
+        "role": "Body 1 — When boredom reflects a dull mind",
+        "topic": "First, there is real truth in the reason behind the claim.",
+        "example": "For example, a curious child left alone with simple objects will happily invent endless games."
+      },
+      {
+        "role": "Body 2 — Why boredom is not always shameful",
+        "topic": "Second, however, boredom is not always a source of embarrassment.",
+        "example": "Consider a worker forced to repeat the same meaningless task for hours on end."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-113",
+    "category": "Education",
+    "prompt": "Some people believe that the most important qualities of an effective teacher are understanding and empathy. Others believe that it is more important for teachers to be rigorous and demanding in their expectations for students.",
+    "thesis": "I believe both qualities matter, and that the best teachers combine warmth with high expectations.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why empathy matters",
+        "topic": "First, understanding and empathy are clearly vital qualities in a teacher.",
+        "example": "For example, a patient teacher can give a frightened student the confidence to keep trying."
+      },
+      {
+        "role": "Body 2 — Why rigour matters",
+        "topic": "Second, however, being rigorous and demanding is just as important.",
+        "example": "Consider a demanding teacher who pushes her class to attempt work they thought was beyond them."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-114",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: Though often considered an objective pursuit, learning about the historical past requires creativity. Reason: Because we can never know the past directly, we must reconstruct it by imaginatively interpreting historical accounts, documents, and artifacts.",
+    "thesis": "I largely agree that history requires creativity, though I believe it also demands careful discipline and evidence.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why history requires creativity",
+        "topic": "First, the reason behind the claim is sound, since the past can never be known directly.",
+        "example": "For example, a few old letters and ruins must be imaginatively pieced together into a picture of a lost world."
+      },
+      {
+        "role": "Body 2 — Why history also needs discipline",
+        "topic": "Second, however, history requires careful discipline as much as creativity.",
+        "example": "Consider a scholar who invents an exciting story that the surviving facts simply do not support."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-115",
+    "category": "The Individual",
+    "prompt": "Claim: No act is done purely for the benefit of others. Reason: All actions — even those that seem to be done for other people — are based on self-interest.",
+    "thesis": "I agree that self-interest drives much of what we do, but I disagree that no act is ever truly selfless.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why self-interest is powerful",
+        "topic": "First, there is real truth in the reason that self-interest shapes many of our actions.",
+        "example": "For example, a person may give to charity partly to feel proud or to look good to others."
+      },
+      {
+        "role": "Body 2 — Why genuine selflessness exists",
+        "topic": "Second, however, some acts truly are done purely for the benefit of others.",
+        "example": "Consider a person who dies trying to save a drowning stranger she will never meet again."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-116",
+    "category": "Society & Culture",
+    "prompt": "To understand the most important characteristics of a society, one must study its major cities.",
+    "thesis": "I agree that cities reveal a great deal, but I do not believe they show the whole character of a society.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why cities reveal much",
+        "topic": "First, a society's major cities do reveal many of its most important features.",
+        "example": "For example, a capital city often shows a country's wealth, power, and cultural energy at a glance."
+      },
+      {
+        "role": "Body 2 — Why cities are not the whole",
+        "topic": "Second, however, cities alone cannot reveal the whole character of a society.",
+        "example": "Consider the villages and countryside where many people live and old customs survive."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-117",
+    "category": "Society & Culture",
+    "prompt": "Scandals are useful because they focus our attention on problems in ways that no speaker or reformer ever could.",
+    "thesis": "I agree that scandals can expose real problems, but I do not believe they are a reliably useful way to do so.",
+    "bodies": [
+      {
+        "role": "Body 1 — How scandals expose problems",
+        "topic": "First, scandals really can force public attention onto serious problems.",
+        "example": "For example, a scandal about unsafe products can suddenly push a government to pass stronger laws."
+      },
+      {
+        "role": "Body 2 — Why scandals are unreliable",
+        "topic": "Second, however, scandals are an unreliable and often harmful way to highlight problems.",
+        "example": "Consider how a scandal can ruin an innocent person's reputation before the facts are even clear."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-118",
+    "category": "Government & Policy",
+    "prompt": "Claim: Governments must ensure that their major cities receive the financial support they need in order to thrive. Reason: It is primarily in cities that a nation's cultural traditions are preserved and generated.",
+    "thesis": "I agree that cities deserve support, but I doubt the reason and believe the rest of the nation needs funding too.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why cities deserve support",
+        "topic": "First, major cities genuinely do need and deserve strong government support.",
+        "example": "For example, a well-funded city can offer good transport, hospitals, and jobs to millions."
+      },
+      {
+        "role": "Body 2 — Why the reason is doubtful",
+        "topic": "Second, however, the reason that culture lives primarily in cities is doubtful.",
+        "example": "Consider the folk songs, crafts, and customs that survive best far from any major city."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-119",
+    "category": "Arts & Humanities",
+    "prompt": "Some people believe that government funding of the arts is necessary to ensure that the arts can flourish and be available to all people. Others believe that government funding of the arts threatens the integrity of the arts.",
+    "thesis": "I lean toward the view that funding is necessary, but I accept that it can endanger artistic integrity.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why funding helps the arts flourish",
+        "topic": "First, government funding genuinely helps the arts flourish and reach everyone.",
+        "example": "For example, free museums and funded theatres let poor families enjoy art they could not otherwise afford."
+      },
+      {
+        "role": "Body 2 — Why funding can threaten integrity",
+        "topic": "Second, however, the opposing view rightly warns that funding can threaten artistic integrity.",
+        "example": "Consider an artist who softens her honest message for fear of losing her public funding."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-120",
+    "category": "Education",
+    "prompt": "Claim: In any field — business, politics, education, government — those in power should step down after five years. Reason: The surest path to success for any enterprise is revitalization through new leadership.",
+    "thesis": "I agree that fresh leadership often helps, but I believe a strict five-year rule and its reason both go too far.",
+    "bodies": [
+      {
+        "role": "Body 1 — How new leadership can revitalise",
+        "topic": "First, there is real truth in the reason that new leadership can revitalise an enterprise.",
+        "example": "For example, a struggling company can be transformed when a bold new leader takes charge."
+      },
+      {
+        "role": "Body 2 — Why a rigid rule loses experience",
+        "topic": "Second, however, forcing everyone out after five years would also do real harm.",
+        "example": "Consider a skilled leader removed by the rule just as her long plans were starting to succeed."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-121",
+    "category": "Society & Culture",
+    "prompt": "In any field of endeavor, it is impossible to make a significant contribution without first being strongly influenced by past achievements within that field.",
+    "thesis": "I largely agree that the past shapes new work, but I believe the word impossible claims too much.",
+    "bodies": [
+      {
+        "role": "Body 1 — How the past shapes new work",
+        "topic": "First, past achievements really do shape almost every important contribution.",
+        "example": "For example, a scientist must understand existing theories before she can improve upon them."
+      },
+      {
+        "role": "Body 2 — Why 'impossible' is too absolute",
+        "topic": "Second, however, the claim that contribution is impossible without such influence goes too far.",
+        "example": "Consider a self-taught inventor who solves a problem in a way no expert had ever considered."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-122",
+    "category": "Environment",
+    "prompt": "Nations should pass laws to preserve any remaining wilderness areas in their natural state, even if these areas could be developed for economic gain.",
+    "thesis": "I strongly support protecting wilderness, but I believe a law covering every remaining area would be too rigid.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why preserving wilderness is vital",
+        "topic": "First, protecting wilderness by law brings deep and lasting benefits.",
+        "example": "For example, protected forests clean our air and water and guard plants found nowhere else."
+      },
+      {
+        "role": "Body 2 — Why an absolute rule is too rigid",
+        "topic": "Second, however, a law protecting every remaining area would be too rigid to be fair.",
+        "example": "Consider a poor community whose only path out of poverty runs through a small part of its wild land."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-123",
+    "category": "Education",
+    "prompt": "Governments should offer a free university education to any student who has been admitted to a university but who cannot afford the tuition.",
+    "thesis": "I largely support this policy, though I believe it must be funded and managed with care.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why need-based free tuition is worthwhile",
+        "topic": "First, paying for admitted students who cannot afford tuition is plainly worthwhile.",
+        "example": "For example, a gifted student from a poor family could become a doctor the whole society needs."
+      },
+      {
+        "role": "Body 2 — Why it must be funded with care",
+        "topic": "Second, however, the policy must be funded and managed carefully to work well.",
+        "example": "Consider a government that promises free education but cannot afford it, leaving universities underfunded."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-124",
+    "category": "Science & Inquiry",
+    "prompt": "Claim: In any situation, the best way to persuade other people is to present them with facts and statistics rather than with emotional arguments. Reason: Facts are objective, so they are more persuasive than subjective appeals.",
+    "thesis": "I agree that facts matter greatly, but I disagree that they are always more persuasive than emotion.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why facts persuade",
+        "topic": "First, facts and statistics are indeed powerful tools of persuasion.",
+        "example": "For example, clear data showing that a medicine works can convince doubtful patients to take it."
+      },
+      {
+        "role": "Body 2 — Why emotion persuades too",
+        "topic": "Second, however, facts alone are often not the most persuasive approach.",
+        "example": "Consider how a single human story can stir more action than a page of statistics."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-125",
+    "category": "Arts & Humanities",
+    "prompt": "Some people believe that success in creative fields, such as painting, fiction writing, and filmmaking, primarily requires hard work and perseverance. Others believe that such success mainly requires innate talents that cannot be learned.",
+    "thesis": "I believe both matter, though I lean toward the view that hard work plays the larger role.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why hard work matters most",
+        "topic": "First, hard work and perseverance are essential to creative success.",
+        "example": "For example, famous writers often rewrite their work many times before it is any good."
+      },
+      {
+        "role": "Body 2 — Why talent matters too",
+        "topic": "Second, however, the opposing view rightly notes that inborn talent also matters.",
+        "example": "Consider a child who plays beautiful music almost effortlessly while others struggle for years."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-126",
+    "category": "Education",
+    "prompt": "In business, education, and government, it is always appropriate to remain skeptical of new leaders until those leaders show that they are worthy of trust.",
+    "thesis": "I agree that healthy caution is wise, but I believe the word always makes the claim too strict.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why skepticism is wise",
+        "topic": "First, a reasonable skepticism toward new leaders is usually wise.",
+        "example": "For example, a new manager who vows great change should be judged by results, not words."
+      },
+      {
+        "role": "Body 2 — Why 'always' goes too far",
+        "topic": "Second, however, remaining skeptical in every case would be harmful.",
+        "example": "Consider a team that refuses to cooperate with a capable new leader out of constant suspicion."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-127",
+    "category": "Education",
+    "prompt": "Claim: Group assignments that students must work together to complete should replace a substantial amount of traditional lecture-based instruction in college and university courses. Reason: It is vital for students to gain experience collaborating with peers to study a topic and to achieve a common goal.",
+    "thesis": "I agree that collaboration is valuable, but I do not believe group work should replace a substantial part of lectures.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why collaboration is valuable",
+        "topic": "First, the reason behind the claim is sound, since collaboration is a vital skill.",
+        "example": "For example, a group project can teach teamwork that a silent lecture never could."
+      },
+      {
+        "role": "Body 2 — Why lectures are still needed",
+        "topic": "Second, however, group work should not replace a substantial amount of lecture teaching.",
+        "example": "Consider a difficult subject that students cannot grasp until a skilled teacher explains it clearly first."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-128",
+    "category": "Arts & Humanities",
+    "prompt": "Some people believe that in order to be effective, political leaders must yield to public opinion and abandon principle for the sake of compromise. Others believe that the most essential quality of an effective leader is the ability to remain consistently committed to particular principles and objectives.",
+    "thesis": "I lean toward the value of principle, but I believe some willingness to compromise is also necessary.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why principle matters most",
+        "topic": "First, staying committed to principles is essential to truly effective leadership.",
+        "example": "For example, great reformers changed the world by refusing to abandon their core beliefs."
+      },
+      {
+        "role": "Body 2 — Why compromise is also needed",
+        "topic": "Second, however, some willingness to compromise is also necessary in real leadership.",
+        "example": "Consider a leader who must compromise on small points to pass a law that helps millions."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-129",
+    "category": "Education",
+    "prompt": "Formal education tends to restrain our minds and spirits rather than set them free.",
+    "thesis": "I agree that poor schooling can restrain us, but I believe good education frees the mind far more than it limits it.",
+    "bodies": [
+      {
+        "role": "Body 1 — When education can restrain",
+        "topic": "First, it is true that formal education can sometimes restrain the mind.",
+        "example": "For example, a rigid classroom may punish the very questions that real thinking requires."
+      },
+      {
+        "role": "Body 2 — Why good education frees the mind",
+        "topic": "Second, however, good education frees the mind far more than it restrains it.",
+        "example": "Consider a student who, through learning, can suddenly understand and judge the wider world."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-130",
+    "category": "Government & Policy",
+    "prompt": "The well-being of a society is enhanced when many of its people question authority.",
+    "thesis": "I largely agree that questioning authority helps a society, though unlimited questioning can also do harm.",
+    "bodies": [
+      {
+        "role": "Body 1 — How questioning helps",
+        "topic": "First, questioning authority genuinely strengthens a society.",
+        "example": "For example, citizens who question unjust laws have often pushed societies toward greater fairness."
+      },
+      {
+        "role": "Body 2 — Why questioning needs limits",
+        "topic": "Second, however, questioning authority without limit can also harm a society.",
+        "example": "Consider a society where no one trusts the police, the courts, or any shared law."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-131",
+    "category": "Technology",
+    "prompt": "Governments should focus on solving the immediate problems of today rather than on trying to solve the anticipated problems of the future.",
+    "thesis": "I agree that urgent problems deserve attention, but I believe ignoring the future would be a serious mistake.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why immediate problems matter",
+        "topic": "First, governments are right to give urgent present problems real attention.",
+        "example": "For example, a government must respond at once to a flood or a sudden disease outbreak."
+      },
+      {
+        "role": "Body 2 — Why the future cannot be ignored",
+        "topic": "Second, however, ignoring the problems of the future would cause great harm.",
+        "example": "Consider how preparing early for climate change or an ageing population can avoid future suffering."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-132",
+    "category": "Education",
+    "prompt": "Some people believe that college students should consider only their own talents and interests when choosing a field of study. Others believe that college students should base their choice of a field of study on the availability of jobs in that field.",
+    "thesis": "I believe both matter, and that the wisest choice weighs personal interest together with job prospects.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why talents and interests matter",
+        "topic": "First, a student's own talents and interests deserve serious weight.",
+        "example": "For example, a student passionate about science will study harder and achieve more than a bored one."
+      },
+      {
+        "role": "Body 2 — Why job availability matters",
+        "topic": "Second, however, the availability of jobs cannot simply be ignored.",
+        "example": "Consider a graduate with a beloved degree but no job prospects, struggling for years under debt."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-133",
+    "category": "Government & Policy",
+    "prompt": "Laws should be flexible enough to take account of various circumstances, times, and places.",
+    "thesis": "I largely agree that laws need flexibility, but I believe too much flexibility can also undermine fairness.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why flexibility makes laws just",
+        "topic": "First, laws really do need some flexibility to be just.",
+        "example": "For example, a law against theft should treat a starving person differently from a greedy one."
+      },
+      {
+        "role": "Body 2 — Why too much flexibility harms",
+        "topic": "Second, however, too much flexibility can make laws unfair and unpredictable.",
+        "example": "Consider a system where the same act is punished harshly for one person and ignored for another."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-134",
+    "category": "Society & Culture",
+    "prompt": "Claim: The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models. Reason: Heroes and role models reveal a society's highest ideals.",
+    "thesis": "I largely agree that heroes reveal a society's ideals, but I believe they do not reveal its whole character.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why heroes reveal ideals",
+        "topic": "First, the reason behind the claim is sound, since heroes do reveal a society's ideals.",
+        "example": "For example, a nation that honours brave soldiers values courage above quiet comfort."
+      },
+      {
+        "role": "Body 2 — Why heroes are not the whole character",
+        "topic": "Second, however, heroes reveal a society's ideals but not its whole character.",
+        "example": "Consider a nation that praises noble heroes yet quietly mistreats its poor."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-135",
+    "category": "The Individual",
+    "prompt": "Some people believe that it is helpful to view a challenging situation as an opportunity for personal growth. Others believe that reimagining challenging situations this way occupies too much of the focus one needs to face challenges effectively.",
+    "thesis": "I lean toward seeing challenges as chances to grow, but I accept that this view can sometimes become a distraction.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why the growth view helps",
+        "topic": "First, viewing a challenge as an opportunity for growth is often genuinely helpful.",
+        "example": "For example, a student who treats a hard exam as a chance to improve studies with more energy."
+      },
+      {
+        "role": "Body 2 — Why it can distract",
+        "topic": "Second, however, this way of thinking can sometimes distract us from the challenge itself.",
+        "example": "Consider a person so busy calling a crisis a growth opportunity that she forgets to act on it."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-136",
+    "category": "Society & Culture",
+    "prompt": "Some people believe that traveling to and living in numerous places increases one's ability to relate and connect to other people. Others believe that this ability is better cultivated by living in one place and developing a deep understanding of that community.",
+    "thesis": "I believe both can build our ability to connect, in different but equally valuable ways.",
+    "bodies": [
+      {
+        "role": "Body 1 — How wide travel builds connection",
+        "topic": "First, travelling to and living in many places can widen our ability to connect.",
+        "example": "For example, a traveller learns to find common ground with strangers of every background."
+      },
+      {
+        "role": "Body 2 — How deep roots build connection",
+        "topic": "Second, however, living deeply in one place builds a different and equally rich connection.",
+        "example": "Consider a person who, by remaining in one town, builds lifelong friendships of great depth."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-137",
+    "category": "Arts & Humanities",
+    "prompt": "Claim: Young people's tendency to make extensive use of portable devices like smartphones and tablets has hurt their development of social skills. Reason: These devices encourage users to form artificial personalities and relationships online rather than fully and honestly engaging with the people around them.",
+    "thesis": "I agree that devices can harm social skills, but I believe they can also help connection when used well.",
+    "bodies": [
+      {
+        "role": "Body 1 — How devices can hurt social skills",
+        "topic": "First, there is real truth in the reason behind the claim.",
+        "example": "For example, a teenager who texts constantly may struggle to hold a live conversation."
+      },
+      {
+        "role": "Body 2 — How devices can help connection",
+        "topic": "Second, however, the same devices can also help young people connect.",
+        "example": "Consider a shy teenager who first finds the confidence to make friends through an online group."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-138",
+    "category": "The Individual",
+    "prompt": "Claim: When one is making a decision, it is better to have a limited number of options. Reason: The more options a person has, the more difficult it is to make a rational decision.",
+    "thesis": "I agree that too many options can be overwhelming, but I do not believe fewer is always better.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why limited options help",
+        "topic": "First, there is real truth in the reason that too many options make deciding harder.",
+        "example": "For example, a shopper faced with fifty brands may give up rather than compare them all."
+      },
+      {
+        "role": "Body 2 — Why too few options harm",
+        "topic": "Second, however, having too few options can be just as harmful.",
+        "example": "Consider a patient given only one treatment when a better one exists but is not offered."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-139",
+    "category": "Technology",
+    "prompt": "Because people increasingly feel compelled to share their personal details online, the right to privacy is eroding.",
+    "thesis": "I largely agree that privacy is under threat, but I believe it is not lost and can still be protected.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why privacy is eroding",
+        "topic": "First, it is true that constant online sharing is weakening privacy.",
+        "example": "For example, photos, locations, and opinions posted online can be seen and stored by countless strangers."
+      },
+      {
+        "role": "Body 2 — Why privacy can still be protected",
+        "topic": "Second, however, the right to privacy is not lost and can still be defended.",
+        "example": "Consider how strong laws and better settings can limit who sees our personal data."
+      }
+    ]
+  },
+  {
+    "id": "w-issue-140",
+    "category": "Government & Policy",
+    "prompt": "Some people believe that journalism should make news entertaining to keep the public engaged and informed. Others believe that this practice prioritizes entertainment and undermines the mission of journalism.",
+    "thesis": "I lean toward the view that entertainment undermines journalism, though I accept that some engagement is necessary.",
+    "bodies": [
+      {
+        "role": "Body 1 — Why some engagement has value",
+        "topic": "First, there is real value in making the news engaging enough to reach people.",
+        "example": "For example, a lively report can draw people to an important issue they would otherwise ignore."
+      },
+      {
+        "role": "Body 2 — Why entertainment undermines the mission",
+        "topic": "Second, however, making news entertaining can seriously undermine its real mission.",
+        "example": "Consider a channel that covers a celebrity scandal at length while ignoring a serious crisis."
+      }
+    ]
+  }
+]

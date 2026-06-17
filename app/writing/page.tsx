@@ -4,6 +4,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { CloseIcon, EyeIcon, EyeOffIcon, ICON_BTN, ICON_BTN_ACTIVE } from "@/components/Icons";
 import writingIndex from "@/data/writing-index.json";
+import mnemonics from "@/data/mnemonics.json";
 import { useLocalState } from "@/lib/storage";
 import type { EssaySentence, SampleEssay, WritingPromptMeta } from "@/lib/types";
 
@@ -225,9 +226,14 @@ export default function WritingPage() {
       </div>
 
       <div className="mt-8 grid lg:grid-cols-[1fr_2fr] gap-8 items-start">
-        <aside className="hidden lg:block surface divide-y divide-[var(--color-rule)] overflow-hidden max-h-[42rem] overflow-y-auto">
-          <PromptList prompts={filtered} selectedId={selected?.id} read={read} onSelect={setSelectedId} />
-        </aside>
+        {/* Left column sticks to the top so the memory hook stays visible while
+            the (long) sample essay scrolls on the right. */}
+        <div className="hidden lg:flex lg:flex-col gap-5 lg:sticky lg:top-6 self-start">
+          <aside className="surface divide-y divide-[var(--color-rule)] overflow-hidden max-h-[28rem] overflow-y-auto">
+            <PromptList prompts={filtered} selectedId={selected?.id} read={read} onSelect={setSelectedId} />
+          </aside>
+          {selected && <MnemonicCard id={selected.id} />}
+        </div>
 
         <section className="space-y-8">
           {selected ? (
@@ -241,6 +247,8 @@ export default function WritingPage() {
           ) : (
             <div className="surface p-8 text-sm text-[var(--color-ink-muted)]">Select a prompt to begin.</div>
           )}
+          {/* Mobile: no left column, so the hook sits under the essay. */}
+          {selected && <MnemonicCard id={selected.id} className="lg:hidden" />}
         </section>
       </div>
 
@@ -334,6 +342,26 @@ function PromptList({
         );
       })}
     </>
+  );
+}
+
+// Visual memory hook for a prompt — an illustrated mnemonic of the essay's two
+// arguments. Renders nothing if the prompt has no published icon.
+const MNEMONICS = mnemonics as Record<string, string>;
+
+function MnemonicCard({ id, className = "" }: { id: string; className?: string }) {
+  const src = MNEMONICS[id];
+  if (!src) return null;
+  return (
+    <figure className={`surface p-4 ${className}`}>
+      <figcaption className="eyebrow mb-2">Memory hook</figcaption>
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        className="w-full aspect-square object-contain rounded-md bg-white"
+      />
+    </figure>
   );
 }
 
